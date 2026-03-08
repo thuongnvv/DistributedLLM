@@ -1,0 +1,57 @@
+[
+  {
+    "node_id": "N1",
+    "synthesis_text": "To handle a traffic increase, measure: incoming request rate (RPS), error rate, and p95 latency per service endpoint (N3:0); TCP retransmission count, round‑trip time, and socket buffer utilization (N3:1); server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). Set limits: size the connection pool to CPU cores and memory with ~20% headroom (N3:3); configure client connect timeout to roughly twice the typical RTT (e.g., 200 ms) and read timeout to twice the observed p95 latency (N3:4). Use exponential backoff with jitter starting at 100 ms and doubling each attempt (N3:5), and cap retries to 3‑5 attempts (N3:6) to avoid retry storms. Deploy a circuit‑breaker that opens when error rate >5 % over 30 s and stays open for 60 s before probing (N3:7).",
+    "used_points": [
+      "N1:0:9930e58c",
+      "N1:1:ef050c2a",
+      "N2:0:3735a6e2",
+      "N2:1:d74292a9",
+      "N3:0:4943cc8f"
+    ]
+  },
+  {
+    "node_id": "N2",
+    "synthesis_text": "To keep p95 latency stable as traffic grows, monitor the key load and health signals and apply conservative limits. Measure incoming request rate (RPS), error rate, and p95 latency per endpoint (N3:0); track TCP retransmission count, round‑trip time and socket buffer utilization (N3:1); and watch server queue lengths and thread‑pool occupancy for back‑pressure (N3:2). Size the connection pool to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). Set client‑side timeouts to about twice the typical RTT (e.g., 200 ms) for connect and twice the observed p95 latency for reads (N3:4). Use exponential back‑off with jitter for retries, starting at 100 ms and doubling each attempt (N3:5), and cap retries at 3–5 attempts (N3:6) to avoid retry storms. Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).",
+    "used_points": [
+      "N1:0:9930e58c",
+      "N1:1:ef050c2a",
+      "N2:0:3735a6e2",
+      "N2:1:d74292a9",
+      "N3:0:4943cc8f"
+    ]
+  },
+  {
+    "node_id": "N3",
+    "synthesis_text": "Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint. Track TCP retransmission count, RTT, and socket buffer utilization. Monitor server queue lengths and thread‑pool occupancy to detect back‑pressure. Size connection pools based on CPU cores and memory, leaving ~20% headroom. Set client connect timeout to roughly twice the typical RTT (e.g., 200 ms) and read timeout to about twice the observed p95 latency. Apply exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt, and cap retries at 3‑5 to avoid retry storms. Use a circuit‑breaker that opens when error rate exceeds 5% over a 30‑second window and remains open for 60 seconds before probing.",
+    "used_points": [
+      "N1:0:9930e58c",
+      "N1:1:ef050c2a",
+      "N2:0:3735a6e2",
+      "N2:1:d74292a9",
+      "N3:0:4943cc8f"
+    ]
+  },
+  {
+    "node_id": "N4",
+    "synthesis_text": "To stay safe as traffic triples, measure key load and latency signals and apply conservative limits. Measure incoming request rate (RPS), error rate, and p95 latency per endpoint (N3:0). Track TCP‑level health – retransmission count, round‑trip time, and socket buffer utilization (N3:1). Monitor server‑side back‑pressure indicators such as queue lengths and thread‑pool occupancy (N3:2). Set a connection‑pool maximum based on CPU cores and memory, leaving roughly 20 % headroom (N3:3). Configure client‑side timeouts using the observed RTT and latency: connect timeout ≈ 2 × typical RTT (e.g., 200 ms) and read timeout ≈ 2 × p95 latency (N3:4). Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5), and cap retries to 3–5 attempts to avoid retry storms (N3:6). Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and remains open for 60 seconds before probing (N3:7).",
+    "used_points": [
+      "N1:0:9930e58c",
+      "N1:1:ef050c2a",
+      "N2:0:3735a6e2",
+      "N2:1:d74292a9",
+      "N3:0:4943cc8f"
+    ]
+  },
+  {
+    "node_id": "N5",
+    "synthesis_text": "To keep latency under control while traffic grows, measure key load and health signals and apply conservative limits. \n- Track incoming request rate (RPS), error rate and p95 latency per service endpoint (N3:0). \n- Monitor TCP‑level metrics such as retransmission count, round‑trip time and socket buffer utilization (N3:1). \n- Observe server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). \n- Size connection pools to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). \n- Set client connect timeout to about twice the typical RTT (e.g., ~200 ms) and read timeout to about twice the observed p95 latency (N3:4). \n- Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5). \n- Cap retries to 3–5 attempts to avoid retry storms (N3:6). \n- Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).",
+    "used_points": [
+      "N1:0:9930e58c",
+      "N1:1:ef050c2a",
+      "N2:0:3735a6e2",
+      "N2:1:d74292a9",
+      "N3:0:4943cc8f"
+    ]
+  }
+]

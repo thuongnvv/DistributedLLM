@@ -1,0 +1,821 @@
+[
+  {
+    "timestamp": "2026-03-08T09:26:05.528810+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"Collect timestamps for request start, DB query start/end, and response send to pinpoint where latency occurs.\"},{\"text\":\"Enable DB slow‑query logging (e.g., MySQL slow_query_log) to capture queries exceeding a threshold.\"},{\"text\":\"Run network latency tests (ping, traceroute) from the app server to the DB server during slow periods.\"},{\"text\":\"Capture packets (tcpdump/wireshark) on the DB connection to measure retransmissions or loss.\"},{\"text\":\"Compare average DB execution time vs. total request time; if DB time dominates, focus on database tuning.\"},{\"text\":\"If network RTT spikes align with slow requests, suspect network congestion or packet loss as the cause.\"},{\"text\":\"Quick fix: increase DB connection pool size or enable connection reuse to reduce handshake overhead.\"},{\"text\":\"Quick fix: add missing indexes or rewrite identified slow SQL queries to improve execution speed.\"},{\"text\":\"Quick fix: enable TCP keepalive and adjust socket buffer sizes to mitigate effects of packet loss.\"},{\"text\":\"If network issues persist, route traffic through an alternate interface or VPN as a temporary bypass.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-bf47a213-4dc0-4ad1-b064-41bfccfe1aaf",
+      "object": "chat.completion",
+      "created": 1772961962,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"Collect timestamps for request start, DB query start/end, and response send to pinpoint where latency occurs.\"},{\"text\":\"Enable DB slow‑query logging (e.g., MySQL slow_query_log) to capture queries exceeding a threshold.\"},{\"text\":\"Run network latency tests (ping, traceroute) from the app server to the DB server during slow periods.\"},{\"text\":\"Capture packets (tcpdump/wireshark) on the DB connection to measure retransmissions or loss.\"},{\"text\":\"Compare average DB execution time vs. total request time; if DB time dominates, focus on database tuning.\"},{\"text\":\"If network RTT spikes align with slow requests, suspect network congestion or packet loss as the cause.\"},{\"text\":\"Quick fix: increase DB connection pool size or enable connection reuse to reduce handshake overhead.\"},{\"text\":\"Quick fix: add missing indexes or rewrite identified slow SQL queries to improve execution speed.\"},{\"text\":\"Quick fix: enable TCP keepalive and adjust socket buffer sizes to mitigate effects of packet loss.\"},{\"text\":\"If network issues persist, route traffic through an alternate interface or VPN as a temporary bypass.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 322,
+        "completion_tokens": 554,
+        "total_tokens": 876
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:26:07.006280+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N2"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"Capture query latency with pg_stat_statements (or equivalent) to pinpoint which SQL statements are slow.\"},{\"text\":\"Run EXPLAIN ANALYZE on identified slow queries to detect missing indexes or suboptimal join order.\"},{\"text\":\"Monitor DB server CPU, memory, and disk I/O during performance spikes to rule out resource saturation.\"},{\"text\":\"Check connection pool size and wait queue; adjust pool limits if connections are queuing.\"},{\"text\":\"Ping and traceroute from the application host to the DB server to detect latency or packet loss.\"},{\"text\":\"If packet loss is observed, inspect NICs, switches, or VPNs; consider relocating the DB closer to the app.\"},{\"text\":\"Quick DB fix: create or refine indexes suggested by the EXPLAIN output to speed up scans.\"},{\"text\":\"Quick DB fix: tune work_mem, shared_buffers, or isolation level to reduce contention.\"},{\"text\":\"OUT_OF_SCOPE: detailed network hardware troubleshooting beyond basic latency checks.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-7f63f69a-e7bb-4fcb-a924-5df91f19cd6e",
+      "object": "chat.completion",
+      "created": 1772961963,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"Capture query latency with pg_stat_statements (or equivalent) to pinpoint which SQL statements are slow.\"},{\"text\":\"Run EXPLAIN ANALYZE on identified slow queries to detect missing indexes or suboptimal join order.\"},{\"text\":\"Monitor DB server CPU, memory, and disk I/O during performance spikes to rule out resource saturation.\"},{\"text\":\"Check connection pool size and wait queue; adjust pool limits if connections are queuing.\"},{\"text\":\"Ping and traceroute from the application host to the DB server to detect latency or packet loss.\"},{\"text\":\"If packet loss is observed, inspect NICs, switches, or VPNs; consider relocating the DB closer to the app.\"},{\"text\":\"Quick DB fix: create or refine indexes suggested by the EXPLAIN output to speed up scans.\"},{\"text\":\"Quick DB fix: tune work_mem, shared_buffers, or isolation level to reduce contention.\"},{\"text\":\"OUT_OF_SCOPE: detailed network hardware troubleshooting beyond basic latency checks.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 318,
+        "completion_tokens": 625,
+        "total_tokens": 943
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:27:02.029207+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"Collect baseline latency: ping the endpoint and measure RTT and packet loss over a 5‑minute window.\"},{\"text\":\"Run a continuous TCP trace (tcpdump) on the server to observe retransmissions and high RTT spikes.\"},{\"text\":\"Check OS network stats (netstat -s, ss) for drops, errors, and TCP retransmit counters.\"},{\"text\":\"Correlate timestamps: align periods of packet loss with entries in the DB slow‑query log.\"},{\"text\":\"Enable the DB slow‑query log; identify queries exceeding a latency threshold and examine their plans.\"},{\"text\":\"Execute the same query locally on the DB host to see if latency persists without network hop.\"},{\"text\":\"Temporarily SSH into the DB server and run the query; fast results indicate network as the cause.\"},{\"text\":\"Quick network fix: restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers.\"},{\"text\":\"Quick DB fix: add missing indexes, increase query cache size, or restart DB to clear locks.\"},{\"text\":\"If both show issues, first resolve packet loss (check cables, switch ports) then optimize the slow queries.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-0ff292e5-a6b0-40fd-8f56-24a7310f3262",
+      "object": "chat.completion",
+      "created": 1772962021,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"Collect baseline latency: ping the endpoint and measure RTT and packet loss over a 5‑minute window.\"},{\"text\":\"Run a continuous TCP trace (tcpdump) on the server to observe retransmissions and high RTT spikes.\"},{\"text\":\"Check OS network stats (netstat -s, ss) for drops, errors, and TCP retransmit counters.\"},{\"text\":\"Correlate timestamps: align periods of packet loss with entries in the DB slow‑query log.\"},{\"text\":\"Enable the DB slow‑query log; identify queries exceeding a latency threshold and examine their plans.\"},{\"text\":\"Execute the same query locally on the DB host to see if latency persists without network hop.\"},{\"text\":\"Temporarily SSH into the DB server and run the query; fast results indicate network as the cause.\"},{\"text\":\"Quick network fix: restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers.\"},{\"text\":\"Quick DB fix: add missing indexes, increase query cache size, or restart DB to clear locks.\"},{\"text\":\"If both show issues, first resolve packet loss (check cables, switch ports) then optimize the slow queries.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 325,
+        "completion_tokens": 650,
+        "total_tokens": 975
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 53 seconds.\",\"retryAfter\":53,\"limit\":10,\"remaining\":0,\"reset\":1772962020}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 33 seconds.\",\"retryAfter\":33,\"limit\":10,\"remaining\":0,\"reset\":1772962020}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 12 seconds.\",\"retryAfter\":12,\"limit\":10,\"remaining\":0,\"reset\":1772962020}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:27:03.312644+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N4"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The question pertains to system performance troubleshooting, which is outside the math_logic domain.\"},{\"text\":\"UNKNOWN: Unable to determine a solution within the math_logic scope.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-3bb09d45-3ed9-4b50-8475-d0544381cb3a",
+      "object": "chat.completion",
+      "created": 1772962022,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The question pertains to system performance troubleshooting, which is outside the math_logic domain.\"},{\"text\":\"UNKNOWN: Unable to determine a solution within the math_logic scope.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 320,
+        "completion_tokens": 285,
+        "total_tokens": 605
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:27:04.687987+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The request asks about performance isolation between DB and network, which is outside defensive security scope.\"},{\"text\":\"UNKNOWN: No security-relevant information is provided to evaluate authentication, session safety, or secure coding aspects.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-18b95dd6-53bc-4f95-acd2-c0f526317132",
+      "object": "chat.completion",
+      "created": 1772962024,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The request asks about performance isolation between DB and network, which is outside defensive security scope.\"},{\"text\":\"UNKNOWN: No security-relevant information is provided to evaluate authentication, session safety, or secure coding aspects.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 318,
+        "completion_tokens": 330,
+        "total_tokens": 648
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:27:06.354415+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\", \"points_map\": {\"N1:0:e504efc8\": \"Collect timestamps for request start, DB query start/end, and response send to pinpoint where latency occurs.\", \"N1:1:77a4e562\": \"Enable DB slow‑query logging (e.g., MySQL slow_query_log) to capture queries exceeding a threshold.\", \"N1:2:46926cba\": \"Run network latency tests (ping, traceroute) from the app server to the DB server during slow periods.\", \"N1:3:8ead2c21\": \"Capture packets (tcpdump/wireshark) on the DB connection to measure retransmissions or loss.\", \"N1:4:840d81ac\": \"Compare average DB execution time vs. total request time; if DB time dominates, focus on database tuning.\", \"N1:5:29f1704c\": \"If network RTT spikes align with slow requests, suspect network congestion or packet loss as the cause.\", \"N1:6:44da40ab\": \"Quick fix: increase DB connection pool size or enable connection reuse to reduce handshake overhead.\", \"N1:7:2f99837b\": \"Quick fix: add missing indexes or rewrite identified slow SQL queries to improve execution speed.\", \"N2:0:3575e928\": \"Capture query latency with pg_stat_statements (or equivalent) to pinpoint which SQL statements are slow.\", \"N2:1:65106529\": \"Run EXPLAIN ANALYZE on identified slow queries to detect missing indexes or suboptimal join order.\", \"N2:2:7ac28b9f\": \"Monitor DB server CPU, memory, and disk I/O during performance spikes to rule out resource saturation.\", \"N2:3:207e7273\": \"Check connection pool size and wait queue; adjust pool limits if connections are queuing.\", \"N2:4:5bc7bf7b\": \"Ping and traceroute from the application host to the DB server to detect latency or packet loss.\", \"N2:5:6882b2ca\": \"If packet loss is observed, inspect NICs, switches, or VPNs; consider relocating the DB closer to the app.\", \"N2:6:9ef98ca2\": \"Quick DB fix: create or refine indexes suggested by the EXPLAIN output to speed up scans.\", \"N2:7:afa77d1a\": \"Quick DB fix: tune work_mem, shared_buffers, or isolation level to reduce contention.\", \"N3:0:a0b33501\": \"Collect baseline latency: ping the endpoint and measure RTT and packet loss over a 5‑minute window.\", \"N3:1:d675ebde\": \"Run a continuous TCP trace (tcpdump) on the server to observe retransmissions and high RTT spikes.\", \"N3:2:9433a25a\": \"Check OS network stats (netstat -s, ss) for drops, errors, and TCP retransmit counters.\", \"N3:3:7a914f7c\": \"Correlate timestamps: align periods of packet loss with entries in the DB slow‑query log.\", \"N3:4:ef15d719\": \"Enable the DB slow‑query log; identify queries exceeding a latency threshold and examine their plans.\", \"N3:5:7cd99109\": \"Execute the same query locally on the DB host to see if latency persists without network hop.\", \"N3:6:58e29d8d\": \"Temporarily SSH into the DB server and run the query; fast results indicate network as the cause.\", \"N3:7:252dc72c\": \"Quick network fix: restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers.\", \"N4:0:181302fb\": \"OUT_OF_SCOPE: The question pertains to system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:40b51595\": \"UNKNOWN: Unable to determine a solution within the math_logic scope.\", \"N5:0:88201ee1\": \"OUT_OF_SCOPE: The request asks about performance isolation between DB and network, which is outside defensive security scope.\", \"N5:1:7217c67e\": \"UNKNOWN: No security-relevant information is provided to evaluate authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"1. Instrument the endpoint: log timestamps for request start, DB query start/end, and response send (N1:0). 2. Enable the DB slow‑query log to capture any queries exceeding a threshold (N1:1) and also collect pg_stat_statements data (N2:0) to identify the slowest statements. 3. Run network latency checks (ping/traceroute) from the app server to the DB host during slow periods (N1:2, N3:0) and capture packets with tcpdump/wireshark to spot retransmissions or loss (N1:3). 4. Compare the average DB execution time against total request latency; if DB time dominates, focus on database tuning (N1:4). 5. Correlate any RTT spikes or packet‑loss events with entries in the slow‑query log to see if network issues line up with slow requests (N1:5). 6. For identified slow queries, run EXPLAIN ANALYZE (N2:1) and add missing indexes or rewrite the query (N1:7) as a quick DB fix. 7. Monitor DB server CPU, memory, and disk I/O during spikes to rule out resource saturation (N2:2). 8. If network latency or loss is the primary factor, apply quick network fixes such as restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7). 9. Additional DB quick win: increase the DB connection pool size or enable connection reuse to cut handshake overhead (N1:6). This systematic isolation lets you pinpoint whether the bottleneck is database‑side or network‑side and apply the appropriate rapid remediation.\",\n  \"used_points\": [\"N1:0\", \"N1:1\", \"N1:2\", \"N1:3\", \"N1:4\", \"N1:5\", \"N1:7\", \"N2:0\", \"N2:1\", \"N2:2\", \"N3:0\", \"N3:7\"]\n}",
+    "response_json": {
+      "id": "chatcmpl-fbae8b28-f13b-4f69-be84-c0023d07eaa3",
+      "object": "chat.completion",
+      "created": 1772962025,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"1. Instrument the endpoint: log timestamps for request start, DB query start/end, and response send (N1:0). 2. Enable the DB slow‑query log to capture any queries exceeding a threshold (N1:1) and also collect pg_stat_statements data (N2:0) to identify the slowest statements. 3. Run network latency checks (ping/traceroute) from the app server to the DB host during slow periods (N1:2, N3:0) and capture packets with tcpdump/wireshark to spot retransmissions or loss (N1:3). 4. Compare the average DB execution time against total request latency; if DB time dominates, focus on database tuning (N1:4). 5. Correlate any RTT spikes or packet‑loss events with entries in the slow‑query log to see if network issues line up with slow requests (N1:5). 6. For identified slow queries, run EXPLAIN ANALYZE (N2:1) and add missing indexes or rewrite the query (N1:7) as a quick DB fix. 7. Monitor DB server CPU, memory, and disk I/O during spikes to rule out resource saturation (N2:2). 8. If network latency or loss is the primary factor, apply quick network fixes such as restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7). 9. Additional DB quick win: increase the DB connection pool size or enable connection reuse to cut handshake overhead (N1:6). This systematic isolation lets you pinpoint whether the bottleneck is database‑side or network‑side and apply the appropriate rapid remediation.\",\n  \"used_points\": [\"N1:0\", \"N1:1\", \"N1:2\", \"N1:3\", \"N1:4\", \"N1:5\", \"N1:7\", \"N2:0\", \"N2:1\", \"N2:2\", \"N3:0\", \"N3:7\"]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1252,
+        "completion_tokens": 820,
+        "total_tokens": 2072
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:28:03.063196+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N2"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\", \"points_map\": {\"N1:0:e504efc8\": \"Collect timestamps for request start, DB query start/end, and response send to pinpoint where latency occurs.\", \"N1:1:77a4e562\": \"Enable DB slow‑query logging (e.g., MySQL slow_query_log) to capture queries exceeding a threshold.\", \"N1:2:46926cba\": \"Run network latency tests (ping, traceroute) from the app server to the DB server during slow periods.\", \"N1:3:8ead2c21\": \"Capture packets (tcpdump/wireshark) on the DB connection to measure retransmissions or loss.\", \"N1:4:840d81ac\": \"Compare average DB execution time vs. total request time; if DB time dominates, focus on database tuning.\", \"N1:5:29f1704c\": \"If network RTT spikes align with slow requests, suspect network congestion or packet loss as the cause.\", \"N1:6:44da40ab\": \"Quick fix: increase DB connection pool size or enable connection reuse to reduce handshake overhead.\", \"N1:7:2f99837b\": \"Quick fix: add missing indexes or rewrite identified slow SQL queries to improve execution speed.\", \"N2:0:3575e928\": \"Capture query latency with pg_stat_statements (or equivalent) to pinpoint which SQL statements are slow.\", \"N2:1:65106529\": \"Run EXPLAIN ANALYZE on identified slow queries to detect missing indexes or suboptimal join order.\", \"N2:2:7ac28b9f\": \"Monitor DB server CPU, memory, and disk I/O during performance spikes to rule out resource saturation.\", \"N2:3:207e7273\": \"Check connection pool size and wait queue; adjust pool limits if connections are queuing.\", \"N2:4:5bc7bf7b\": \"Ping and traceroute from the application host to the DB server to detect latency or packet loss.\", \"N2:5:6882b2ca\": \"If packet loss is observed, inspect NICs, switches, or VPNs; consider relocating the DB closer to the app.\", \"N2:6:9ef98ca2\": \"Quick DB fix: create or refine indexes suggested by the EXPLAIN output to speed up scans.\", \"N2:7:afa77d1a\": \"Quick DB fix: tune work_mem, shared_buffers, or isolation level to reduce contention.\", \"N3:0:a0b33501\": \"Collect baseline latency: ping the endpoint and measure RTT and packet loss over a 5‑minute window.\", \"N3:1:d675ebde\": \"Run a continuous TCP trace (tcpdump) on the server to observe retransmissions and high RTT spikes.\", \"N3:2:9433a25a\": \"Check OS network stats (netstat -s, ss) for drops, errors, and TCP retransmit counters.\", \"N3:3:7a914f7c\": \"Correlate timestamps: align periods of packet loss with entries in the DB slow‑query log.\", \"N3:4:ef15d719\": \"Enable the DB slow‑query log; identify queries exceeding a latency threshold and examine their plans.\", \"N3:5:7cd99109\": \"Execute the same query locally on the DB host to see if latency persists without network hop.\", \"N3:6:58e29d8d\": \"Temporarily SSH into the DB server and run the query; fast results indicate network as the cause.\", \"N3:7:252dc72c\": \"Quick network fix: restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers.\", \"N4:0:181302fb\": \"OUT_OF_SCOPE: The question pertains to system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:40b51595\": \"UNKNOWN: Unable to determine a solution within the math_logic scope.\", \"N5:0:88201ee1\": \"OUT_OF_SCOPE: The request asks about performance isolation between DB and network, which is outside defensive security scope.\", \"N5:1:7217c67e\": \"UNKNOWN: No security-relevant information is provided to evaluate authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"Start by instrumenting the request path: record timestamps for request receipt, DB query start/end, and response send (N1:0). Enable the DB slow‑query log (N1:1) and capture query latency via pg_stat_statements or equivalent (N2:0) to identify which statements exceed the threshold. Run network latency checks (ping/traceroute) from the app server to the DB during slow periods (N1:2) and capture packets on the DB connection (tcpdump/wireshark) to spot retransmissions or loss (N1:3). Compare the average DB execution time to the total request latency; if the DB time dominates, focus on query tuning (N1:4). If RTT spikes line up with slow requests, suspect network congestion or packet loss (N1:5). For the identified slow queries, run EXPLAIN ANALYZE (N2:1) and check server resource usage (CPU, memory, I/O) (N2:2) to spot missing indexes or suboptimal plans. Correlate packet‑loss events with entries in the slow‑query log (N3:3). Quick fixes: add missing indexes or rewrite queries (N1:7), increase DB connection‑pool size or enable connection reuse to cut handshake overhead (N1:6), and, if network issues are confirmed, restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers (N2:4). This systematic correlation isolates whether latency stems from the database or the network and provides immediate remediation steps.\",\"used_points\":[\"N1:0\",\"N1:1\",\"N1:2\",\"N1:3\",\"N1:4\",\"N1:5\",\"N1:7\",\"N2:0\",\"N2:1\",\"N2:2\",\"N2:4\",\"N3:3\"]}",
+    "response_json": {
+      "id": "chatcmpl-169e50e2-2f84-4dab-87af-74177f543496",
+      "object": "chat.completion",
+      "created": 1772962082,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"Start by instrumenting the request path: record timestamps for request receipt, DB query start/end, and response send (N1:0). Enable the DB slow‑query log (N1:1) and capture query latency via pg_stat_statements or equivalent (N2:0) to identify which statements exceed the threshold. Run network latency checks (ping/traceroute) from the app server to the DB during slow periods (N1:2) and capture packets on the DB connection (tcpdump/wireshark) to spot retransmissions or loss (N1:3). Compare the average DB execution time to the total request latency; if the DB time dominates, focus on query tuning (N1:4). If RTT spikes line up with slow requests, suspect network congestion or packet loss (N1:5). For the identified slow queries, run EXPLAIN ANALYZE (N2:1) and check server resource usage (CPU, memory, I/O) (N2:2) to spot missing indexes or suboptimal plans. Correlate packet‑loss events with entries in the slow‑query log (N3:3). Quick fixes: add missing indexes or rewrite queries (N1:7), increase DB connection‑pool size or enable connection reuse to cut handshake overhead (N1:6), and, if network issues are confirmed, restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers (N2:4). This systematic correlation isolates whether latency stems from the database or the network and provides immediate remediation steps.\",\"used_points\":[\"N1:0\",\"N1:1\",\"N1:2\",\"N1:3\",\"N1:4\",\"N1:5\",\"N1:7\",\"N2:0\",\"N2:1\",\"N2:2\",\"N2:4\",\"N3:3\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1248,
+        "completion_tokens": 842,
+        "total_tokens": 2090
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 54 seconds.\",\"retryAfter\":54,\"limit\":10,\"remaining\":0,\"reset\":1772962080}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 33 seconds.\",\"retryAfter\":33,\"limit\":10,\"remaining\":0,\"reset\":1772962080}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 13 seconds.\",\"retryAfter\":13,\"limit\":10,\"remaining\":0,\"reset\":1772962080}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:28:04.621388+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\", \"points_map\": {\"N1:0:e504efc8\": \"Collect timestamps for request start, DB query start/end, and response send to pinpoint where latency occurs.\", \"N1:1:77a4e562\": \"Enable DB slow‑query logging (e.g., MySQL slow_query_log) to capture queries exceeding a threshold.\", \"N1:2:46926cba\": \"Run network latency tests (ping, traceroute) from the app server to the DB server during slow periods.\", \"N1:3:8ead2c21\": \"Capture packets (tcpdump/wireshark) on the DB connection to measure retransmissions or loss.\", \"N1:4:840d81ac\": \"Compare average DB execution time vs. total request time; if DB time dominates, focus on database tuning.\", \"N1:5:29f1704c\": \"If network RTT spikes align with slow requests, suspect network congestion or packet loss as the cause.\", \"N1:6:44da40ab\": \"Quick fix: increase DB connection pool size or enable connection reuse to reduce handshake overhead.\", \"N1:7:2f99837b\": \"Quick fix: add missing indexes or rewrite identified slow SQL queries to improve execution speed.\", \"N2:0:3575e928\": \"Capture query latency with pg_stat_statements (or equivalent) to pinpoint which SQL statements are slow.\", \"N2:1:65106529\": \"Run EXPLAIN ANALYZE on identified slow queries to detect missing indexes or suboptimal join order.\", \"N2:2:7ac28b9f\": \"Monitor DB server CPU, memory, and disk I/O during performance spikes to rule out resource saturation.\", \"N2:3:207e7273\": \"Check connection pool size and wait queue; adjust pool limits if connections are queuing.\", \"N2:4:5bc7bf7b\": \"Ping and traceroute from the application host to the DB server to detect latency or packet loss.\", \"N2:5:6882b2ca\": \"If packet loss is observed, inspect NICs, switches, or VPNs; consider relocating the DB closer to the app.\", \"N2:6:9ef98ca2\": \"Quick DB fix: create or refine indexes suggested by the EXPLAIN output to speed up scans.\", \"N2:7:afa77d1a\": \"Quick DB fix: tune work_mem, shared_buffers, or isolation level to reduce contention.\", \"N3:0:a0b33501\": \"Collect baseline latency: ping the endpoint and measure RTT and packet loss over a 5‑minute window.\", \"N3:1:d675ebde\": \"Run a continuous TCP trace (tcpdump) on the server to observe retransmissions and high RTT spikes.\", \"N3:2:9433a25a\": \"Check OS network stats (netstat -s, ss) for drops, errors, and TCP retransmit counters.\", \"N3:3:7a914f7c\": \"Correlate timestamps: align periods of packet loss with entries in the DB slow‑query log.\", \"N3:4:ef15d719\": \"Enable the DB slow‑query log; identify queries exceeding a latency threshold and examine their plans.\", \"N3:5:7cd99109\": \"Execute the same query locally on the DB host to see if latency persists without network hop.\", \"N3:6:58e29d8d\": \"Temporarily SSH into the DB server and run the query; fast results indicate network as the cause.\", \"N3:7:252dc72c\": \"Quick network fix: restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers.\", \"N4:0:181302fb\": \"OUT_OF_SCOPE: The question pertains to system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:40b51595\": \"UNKNOWN: Unable to determine a solution within the math_logic scope.\", \"N5:0:88201ee1\": \"OUT_OF_SCOPE: The request asks about performance isolation between DB and network, which is outside defensive security scope.\", \"N5:1:7217c67e\": \"UNKNOWN: No security-relevant information is provided to evaluate authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"Start by instrumenting the request path: record timestamps for when the request arrives, when the DB query begins and ends, and when the response is sent (N1:0). Enable the database's slow‑query log to capture any statements that exceed a latency threshold (N1:1) and also collect query latency metrics with pg_stat_statements (N2:0). Run ping and traceroute from the application host to the DB server during periods of slowness to see if RTT spikes or packet loss occur (N1:2). Capture traffic on the DB connection with tcpdump or Wireshark to detect retransmissions or loss (N1:3). Compare the average DB execution time to the total request latency; if the DB portion dominates, focus on database tuning (N1:4), otherwise correlate RTT spikes with slow requests to suspect network congestion (N1:5). For quick database relief, increase the DB connection pool size or enable connection reuse to cut handshake overhead (N1:6) and add missing indexes or rewrite identified slow queries (N1:7). Run EXPLAIN ANALYZE on the flagged queries to pinpoint missing indexes or suboptimal join order (N2:1) and monitor DB server CPU, memory, and disk I/O during spikes to rule out resource saturation (N2:2). As an immediate network mitigation, restart the NIC, verify MTU settings, enable TCP window scaling, or raise socket buffer sizes (N3:7). This step‑by‑step isolation lets you quickly identify whether the bottleneck is in the database or the network and apply targeted quick fixes while deeper tuning is planned.\",\n  \"used_points\": [\n    \"N1:0:e504efc8\",\n    \"N1:1:77a4e562\",\n    \"N1:2:46926cba\",\n    \"N1:3:8ead2c21\",\n    \"N1:4:840d81ac\",\n    \"N1:5:29f1704c\",\n    \"N1:6:44da40ab\",\n    \"N1:7:2f99837b\",\n    \"N2:0:3575e928\",\n    \"N2:1:65106529\",\n    \"N2:2:7ac28b9f\",\n    \"N3:7:252dc72c\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-63bc44c4-aead-497c-96c2-19ef1b2833e8",
+      "object": "chat.completion",
+      "created": 1772962083,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"Start by instrumenting the request path: record timestamps for when the request arrives, when the DB query begins and ends, and when the response is sent (N1:0). Enable the database's slow‑query log to capture any statements that exceed a latency threshold (N1:1) and also collect query latency metrics with pg_stat_statements (N2:0). Run ping and traceroute from the application host to the DB server during periods of slowness to see if RTT spikes or packet loss occur (N1:2). Capture traffic on the DB connection with tcpdump or Wireshark to detect retransmissions or loss (N1:3). Compare the average DB execution time to the total request latency; if the DB portion dominates, focus on database tuning (N1:4), otherwise correlate RTT spikes with slow requests to suspect network congestion (N1:5). For quick database relief, increase the DB connection pool size or enable connection reuse to cut handshake overhead (N1:6) and add missing indexes or rewrite identified slow queries (N1:7). Run EXPLAIN ANALYZE on the flagged queries to pinpoint missing indexes or suboptimal join order (N2:1) and monitor DB server CPU, memory, and disk I/O during spikes to rule out resource saturation (N2:2). As an immediate network mitigation, restart the NIC, verify MTU settings, enable TCP window scaling, or raise socket buffer sizes (N3:7). This step‑by‑step isolation lets you quickly identify whether the bottleneck is in the database or the network and apply targeted quick fixes while deeper tuning is planned.\",\n  \"used_points\": [\n    \"N1:0:e504efc8\",\n    \"N1:1:77a4e562\",\n    \"N1:2:46926cba\",\n    \"N1:3:8ead2c21\",\n    \"N1:4:840d81ac\",\n    \"N1:5:29f1704c\",\n    \"N1:6:44da40ab\",\n    \"N1:7:2f99837b\",\n    \"N2:0:3575e928\",\n    \"N2:1:65106529\",\n    \"N2:2:7ac28b9f\",\n    \"N3:7:252dc72c\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1255,
+        "completion_tokens": 1198,
+        "total_tokens": 2453
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:28:06.203769+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N4"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\", \"points_map\": {\"N1:0:e504efc8\": \"Collect timestamps for request start, DB query start/end, and response send to pinpoint where latency occurs.\", \"N1:1:77a4e562\": \"Enable DB slow‑query logging (e.g., MySQL slow_query_log) to capture queries exceeding a threshold.\", \"N1:2:46926cba\": \"Run network latency tests (ping, traceroute) from the app server to the DB server during slow periods.\", \"N1:3:8ead2c21\": \"Capture packets (tcpdump/wireshark) on the DB connection to measure retransmissions or loss.\", \"N1:4:840d81ac\": \"Compare average DB execution time vs. total request time; if DB time dominates, focus on database tuning.\", \"N1:5:29f1704c\": \"If network RTT spikes align with slow requests, suspect network congestion or packet loss as the cause.\", \"N1:6:44da40ab\": \"Quick fix: increase DB connection pool size or enable connection reuse to reduce handshake overhead.\", \"N1:7:2f99837b\": \"Quick fix: add missing indexes or rewrite identified slow SQL queries to improve execution speed.\", \"N2:0:3575e928\": \"Capture query latency with pg_stat_statements (or equivalent) to pinpoint which SQL statements are slow.\", \"N2:1:65106529\": \"Run EXPLAIN ANALYZE on identified slow queries to detect missing indexes or suboptimal join order.\", \"N2:2:7ac28b9f\": \"Monitor DB server CPU, memory, and disk I/O during performance spikes to rule out resource saturation.\", \"N2:3:207e7273\": \"Check connection pool size and wait queue; adjust pool limits if connections are queuing.\", \"N2:4:5bc7bf7b\": \"Ping and traceroute from the application host to the DB server to detect latency or packet loss.\", \"N2:5:6882b2ca\": \"If packet loss is observed, inspect NICs, switches, or VPNs; consider relocating the DB closer to the app.\", \"N2:6:9ef98ca2\": \"Quick DB fix: create or refine indexes suggested by the EXPLAIN output to speed up scans.\", \"N2:7:afa77d1a\": \"Quick DB fix: tune work_mem, shared_buffers, or isolation level to reduce contention.\", \"N3:0:a0b33501\": \"Collect baseline latency: ping the endpoint and measure RTT and packet loss over a 5‑minute window.\", \"N3:1:d675ebde\": \"Run a continuous TCP trace (tcpdump) on the server to observe retransmissions and high RTT spikes.\", \"N3:2:9433a25a\": \"Check OS network stats (netstat -s, ss) for drops, errors, and TCP retransmit counters.\", \"N3:3:7a914f7c\": \"Correlate timestamps: align periods of packet loss with entries in the DB slow‑query log.\", \"N3:4:ef15d719\": \"Enable the DB slow‑query log; identify queries exceeding a latency threshold and examine their plans.\", \"N3:5:7cd99109\": \"Execute the same query locally on the DB host to see if latency persists without network hop.\", \"N3:6:58e29d8d\": \"Temporarily SSH into the DB server and run the query; fast results indicate network as the cause.\", \"N3:7:252dc72c\": \"Quick network fix: restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers.\", \"N4:0:181302fb\": \"OUT_OF_SCOPE: The question pertains to system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:40b51595\": \"UNKNOWN: Unable to determine a solution within the math_logic scope.\", \"N5:0:88201ee1\": \"OUT_OF_SCOPE: The request asks about performance isolation between DB and network, which is outside defensive security scope.\", \"N5:1:7217c67e\": \"UNKNOWN: No security-relevant information is provided to evaluate authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"To isolate whether the latency originates in the database or the network, first instrument the request path: collect timestamps for request start, DB query start/end, and response send (N1:0:e504efc8). Enable the DB slow‑query log to capture any statements exceeding a threshold (N1:1:77a4e562) and run pg_stat_statements or similar to identify the offending queries (N2:0:3575e928). In parallel, run network latency tests (ping, traceroute) from the app server to the DB server during slow periods (N1:2:46926cba, N2:4:5bc7bf7b) and capture packets on the DB connection to detect retransmissions or loss (N1:3:8ead2c21, N3:1:d675ebde). Compare the average DB execution time against the total request time; if DB time dominates, focus on database tuning (N1:4:840d81ac), otherwise, if RTT spikes or packet loss align with slow requests, suspect network congestion (N1:5:29f1704c, N2:5:6882b2ca). Quick DB fixes include increasing the connection‑pool size or enabling connection reuse (N1:6:44da40ab) and adding missing indexes or rewriting slow queries (N1:7:2f99837b). Quick network mitigations involve restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7:252dc72c). Correlate the timestamps from logs, packet captures, and network tests to pinpoint the dominant source and apply the appropriate quick fix while planning longer‑term optimizations.\",\n  \"used_points\": [\n    \"N1:0:e504efc8\",\n    \"N1:1:77a4e562\",\n    \"N1:2:46926cba\",\n    \"N1:3:8ead2c21\",\n    \"N1:4:840d81ac\",\n    \"N1:5:29f1704c\",\n    \"N1:6:44da40ab\",\n    \"N1:7:2f99837b\",\n    \"N2:4:5bc7bf7b\",\n    \"N2:5:6882b2ca\",\n    \"N3:7:252dc72c\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-482d592f-e785-4053-b474-280305e06f08",
+      "object": "chat.completion",
+      "created": 1772962085,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"To isolate whether the latency originates in the database or the network, first instrument the request path: collect timestamps for request start, DB query start/end, and response send (N1:0:e504efc8). Enable the DB slow‑query log to capture any statements exceeding a threshold (N1:1:77a4e562) and run pg_stat_statements or similar to identify the offending queries (N2:0:3575e928). In parallel, run network latency tests (ping, traceroute) from the app server to the DB server during slow periods (N1:2:46926cba, N2:4:5bc7bf7b) and capture packets on the DB connection to detect retransmissions or loss (N1:3:8ead2c21, N3:1:d675ebde). Compare the average DB execution time against the total request time; if DB time dominates, focus on database tuning (N1:4:840d81ac), otherwise, if RTT spikes or packet loss align with slow requests, suspect network congestion (N1:5:29f1704c, N2:5:6882b2ca). Quick DB fixes include increasing the connection‑pool size or enabling connection reuse (N1:6:44da40ab) and adding missing indexes or rewriting slow queries (N1:7:2f99837b). Quick network mitigations involve restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7:252dc72c). Correlate the timestamps from logs, packet captures, and network tests to pinpoint the dominant source and apply the appropriate quick fix while planning longer‑term optimizations.\",\n  \"used_points\": [\n    \"N1:0:e504efc8\",\n    \"N1:1:77a4e562\",\n    \"N1:2:46926cba\",\n    \"N1:3:8ead2c21\",\n    \"N1:4:840d81ac\",\n    \"N1:5:29f1704c\",\n    \"N1:6:44da40ab\",\n    \"N1:7:2f99837b\",\n    \"N2:4:5bc7bf7b\",\n    \"N2:5:6882b2ca\",\n    \"N3:7:252dc72c\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1250,
+        "completion_tokens": 907,
+        "total_tokens": 2157
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:28:08.408864+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\", \"points_map\": {\"N1:0:e504efc8\": \"Collect timestamps for request start, DB query start/end, and response send to pinpoint where latency occurs.\", \"N1:1:77a4e562\": \"Enable DB slow‑query logging (e.g., MySQL slow_query_log) to capture queries exceeding a threshold.\", \"N1:2:46926cba\": \"Run network latency tests (ping, traceroute) from the app server to the DB server during slow periods.\", \"N1:3:8ead2c21\": \"Capture packets (tcpdump/wireshark) on the DB connection to measure retransmissions or loss.\", \"N1:4:840d81ac\": \"Compare average DB execution time vs. total request time; if DB time dominates, focus on database tuning.\", \"N1:5:29f1704c\": \"If network RTT spikes align with slow requests, suspect network congestion or packet loss as the cause.\", \"N1:6:44da40ab\": \"Quick fix: increase DB connection pool size or enable connection reuse to reduce handshake overhead.\", \"N1:7:2f99837b\": \"Quick fix: add missing indexes or rewrite identified slow SQL queries to improve execution speed.\", \"N2:0:3575e928\": \"Capture query latency with pg_stat_statements (or equivalent) to pinpoint which SQL statements are slow.\", \"N2:1:65106529\": \"Run EXPLAIN ANALYZE on identified slow queries to detect missing indexes or suboptimal join order.\", \"N2:2:7ac28b9f\": \"Monitor DB server CPU, memory, and disk I/O during performance spikes to rule out resource saturation.\", \"N2:3:207e7273\": \"Check connection pool size and wait queue; adjust pool limits if connections are queuing.\", \"N2:4:5bc7bf7b\": \"Ping and traceroute from the application host to the DB server to detect latency or packet loss.\", \"N2:5:6882b2ca\": \"If packet loss is observed, inspect NICs, switches, or VPNs; consider relocating the DB closer to the app.\", \"N2:6:9ef98ca2\": \"Quick DB fix: create or refine indexes suggested by the EXPLAIN output to speed up scans.\", \"N2:7:afa77d1a\": \"Quick DB fix: tune work_mem, shared_buffers, or isolation level to reduce contention.\", \"N3:0:a0b33501\": \"Collect baseline latency: ping the endpoint and measure RTT and packet loss over a 5‑minute window.\", \"N3:1:d675ebde\": \"Run a continuous TCP trace (tcpdump) on the server to observe retransmissions and high RTT spikes.\", \"N3:2:9433a25a\": \"Check OS network stats (netstat -s, ss) for drops, errors, and TCP retransmit counters.\", \"N3:3:7a914f7c\": \"Correlate timestamps: align periods of packet loss with entries in the DB slow‑query log.\", \"N3:4:ef15d719\": \"Enable the DB slow‑query log; identify queries exceeding a latency threshold and examine their plans.\", \"N3:5:7cd99109\": \"Execute the same query locally on the DB host to see if latency persists without network hop.\", \"N3:6:58e29d8d\": \"Temporarily SSH into the DB server and run the query; fast results indicate network as the cause.\", \"N3:7:252dc72c\": \"Quick network fix: restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers.\", \"N4:0:181302fb\": \"OUT_OF_SCOPE: The question pertains to system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:40b51595\": \"UNKNOWN: Unable to determine a solution within the math_logic scope.\", \"N5:0:88201ee1\": \"OUT_OF_SCOPE: The request asks about performance isolation between DB and network, which is outside defensive security scope.\", \"N5:1:7217c67e\": \"UNKNOWN: No security-relevant information is provided to evaluate authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"Start by instrumenting the request path: log timestamps for request receipt, DB query start/end, and response send (N1:0). Enable the database slow‑query log (N1:1) and capture query latency with tools like pg_stat_statements (N2:0) to identify which statements exceed the threshold. Run EXPLAIN ANALYZE on those queries (N2:1) and check DB resource usage (CPU, memory, I/O) during spikes (N2:2). At the same time, run network latency tests such as ping and traceroute from the app server to the DB server (N1:2, N2:4) and capture packets with tcpdump/wireshark (N1:3) to spot retransmissions or loss. Compare the average DB execution time against total request latency (N1:4); if DB time dominates, focus on query tuning, adding missing indexes (N1:7) or increasing the connection pool size (N1:6). If network RTT spikes align with slow requests (N1:5), consider quick network fixes like restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7). Baseline endpoint latency with a 5‑minute ping test (N3:0) to quantify normal RTT and packet loss. These steps isolate the bottleneck and provide immediate mitigations for both database and network contributors.\",\"used_points\":[\"N1:0\",\"N1:1\",\"N1:2\",\"N1:3\",\"N1:4\",\"N1:5\",\"N2:0\",\"N2:1\",\"N2:2\",\"N2:4\",\"N3:0\",\"N3:7\"]}",
+    "response_json": {
+      "id": "chatcmpl-5ea92cb4-aa39-4f2a-8412-d1fc1034f090",
+      "object": "chat.completion",
+      "created": 1772962084,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"Start by instrumenting the request path: log timestamps for request receipt, DB query start/end, and response send (N1:0). Enable the database slow‑query log (N1:1) and capture query latency with tools like pg_stat_statements (N2:0) to identify which statements exceed the threshold. Run EXPLAIN ANALYZE on those queries (N2:1) and check DB resource usage (CPU, memory, I/O) during spikes (N2:2). At the same time, run network latency tests such as ping and traceroute from the app server to the DB server (N1:2, N2:4) and capture packets with tcpdump/wireshark (N1:3) to spot retransmissions or loss. Compare the average DB execution time against total request latency (N1:4); if DB time dominates, focus on query tuning, adding missing indexes (N1:7) or increasing the connection pool size (N1:6). If network RTT spikes align with slow requests (N1:5), consider quick network fixes like restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7). Baseline endpoint latency with a 5‑minute ping test (N3:0) to quantify normal RTT and packet loss. These steps isolate the bottleneck and provide immediate mitigations for both database and network contributors.\",\"used_points\":[\"N1:0\",\"N1:1\",\"N1:2\",\"N1:3\",\"N1:4\",\"N1:5\",\"N2:0\",\"N2:1\",\"N2:2\",\"N2:4\",\"N3:0\",\"N3:7\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1248,
+        "completion_tokens": 828,
+        "total_tokens": 2076
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:29:02.925224+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N1",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N2\", \"target_draft\": \"Start by instrumenting the request path: record timestamps for request receipt, DB query start/end, and response send (N1:0). Enable the DB slow‑query log (N1:1) and capture query latency via pg_stat_statements or equivalent (N2:0) to identify which statements exceed the threshold. Run network latency checks (ping/traceroute) from the app server to the DB during slow periods (N1:2) and capture packets on the DB connection (tcpdump/wireshark) to spot retransmissions or loss (N1:3). Compare the average DB execution time to the total request latency; if the DB time dominates, focus on query tuning (N1:4). If RTT spikes line up with slow requests, suspect network congestion or packet loss (N1:5). For the identified slow queries, run EXPLAIN ANALYZE (N2:1) and check server resource usage (CPU, memory, I/O) (N2:2) to spot missing indexes or suboptimal plans. Correlate packet‑loss events with entries in the slow‑query log (N3:3). Quick fixes: add missing indexes or rewrite queries (N1:7), increase DB connection‑pool size or enable connection reuse to cut handshake overhead (N1:6), and, if network issues are confirmed, restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers (N2:4). This systematic correlation isolates whether latency stems from the database or the network and provides immediate remediation steps.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\"]}, {\"target_id\": \"N3\", \"target_draft\": \"Start by instrumenting the request path: record timestamps for when the request arrives, when the DB query begins and ends, and when the response is sent (N1:0). Enable the database's slow‑query log to capture any statements that exceed a latency threshold (N1:1) and also collect query latency metrics with pg_stat_statements (N2:0). Run ping and traceroute from the application host to the DB server during periods of slowness to see if RTT spikes or packet loss occur (N1:2). Capture traffic on the DB connection with tcpdump or Wireshark to detect retransmissions or loss (N1:3). Compare the average DB execution time to the total request latency; if the DB portion dominates, focus on database tuning (N1:4), otherwise correlate RTT spikes with slow requests to suspect network congestion (N1:5). For quick database relief, increase the DB connection pool size or enable connection reuse to cut handshake overhead (N1:6) and add missing indexes or rewrite identified slow queries (N1:7). Run EXPLAIN ANALYZE on the flagged queries to pinpoint missing indexes or suboptimal join order (N2:1) and monitor DB server CPU, memory, and disk I/O during spikes to rule out resource saturation (N2:2). As an immediate network mitigation, restart the NIC, verify MTU settings, enable TCP window scaling, or raise socket buffer sizes (N3:7). This step‑by‑step isolation lets you quickly identify whether the bottleneck is in the database or the network and apply targeted quick fixes while deeper tuning is planned.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\", \"N1:5:29f1704c\", \"N1:6:44da40ab\", \"N1:7:2f99837b\", \"N2:0:3575e928\", \"N2:1:65106529\", \"N2:2:7ac28b9f\", \"N3:7:252dc72c\"]}, {\"target_id\": \"N4\", \"target_draft\": \"To isolate whether the latency originates in the database or the network, first instrument the request path: collect timestamps for request start, DB query start/end, and response send (N1:0:e504efc8). Enable the DB slow‑query log to capture any statements exceeding a threshold (N1:1:77a4e562) and run pg_stat_statements or similar to identify the offending queries (N2:0:3575e928). In parallel, run network latency tests (ping, traceroute) from the app server to the DB server during slow periods (N1:2:46926cba, N2:4:5bc7bf7b) and capture packets on the DB connection to detect retransmissions or loss (N1:3:8ead2c21, N3:1:d675ebde). Compare the average DB execution time against the total request time; if DB time dominates, focus on database tuning (N1:4:840d81ac), otherwise, if RTT spikes or packet loss align with slow requests, suspect network congestion (N1:5:29f1704c, N2:5:6882b2ca). Quick DB fixes include increasing the connection‑pool size or enabling connection reuse (N1:6:44da40ab) and adding missing indexes or rewriting slow queries (N1:7:2f99837b). Quick network mitigations involve restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7:252dc72c). Correlate the timestamps from logs, packet captures, and network tests to pinpoint the dominant source and apply the appropriate quick fix while planning longer‑term optimizations.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\", \"N1:5:29f1704c\", \"N1:6:44da40ab\", \"N1:7:2f99837b\", \"N2:4:5bc7bf7b\", \"N2:5:6882b2ca\", \"N3:7:252dc72c\"]}, {\"target_id\": \"N5\", \"target_draft\": \"Start by instrumenting the request path: log timestamps for request receipt, DB query start/end, and response send (N1:0). Enable the database slow‑query log (N1:1) and capture query latency with tools like pg_stat_statements (N2:0) to identify which statements exceed the threshold. Run EXPLAIN ANALYZE on those queries (N2:1) and check DB resource usage (CPU, memory, I/O) during spikes (N2:2). At the same time, run network latency tests such as ping and traceroute from the app server to the DB server (N1:2, N2:4) and capture packets with tcpdump/wireshark (N1:3) to spot retransmissions or loss. Compare the average DB execution time against total request latency (N1:4); if DB time dominates, focus on query tuning, adding missing indexes (N1:7) or increasing the connection pool size (N1:6). If network RTT spikes align with slow requests (N1:5), consider quick network fixes like restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7). Baseline endpoint latency with a 5‑minute ping test (N3:0) to quantify normal RTT and packet loss. These steps isolate the bottleneck and provide immediate mitigations for both database and network contributors.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\"]}], \"points_map\": {\"N1:0:e504efc8\": \"Collect timestamps for request start, DB query start/end, and response send to pinpoint where latency occurs.\", \"N1:1:77a4e562\": \"Enable DB slow‑query logging (e.g., MySQL slow_query_log) to capture queries exceeding a threshold.\", \"N1:2:46926cba\": \"Run network latency tests (ping, traceroute) from the app server to the DB server during slow periods.\", \"N1:3:8ead2c21\": \"Capture packets (tcpdump/wireshark) on the DB connection to measure retransmissions or loss.\", \"N1:4:840d81ac\": \"Compare average DB execution time vs. total request time; if DB time dominates, focus on database tuning.\", \"N1:5:29f1704c\": \"If network RTT spikes align with slow requests, suspect network congestion or packet loss as the cause.\", \"N1:6:44da40ab\": \"Quick fix: increase DB connection pool size or enable connection reuse to reduce handshake overhead.\", \"N1:7:2f99837b\": \"Quick fix: add missing indexes or rewrite identified slow SQL queries to improve execution speed.\", \"N2:0:3575e928\": \"Capture query latency with pg_stat_statements (or equivalent) to pinpoint which SQL statements are slow.\", \"N2:1:65106529\": \"Run EXPLAIN ANALYZE on identified slow queries to detect missing indexes or suboptimal join order.\", \"N2:2:7ac28b9f\": \"Monitor DB server CPU, memory, and disk I/O during performance spikes to rule out resource saturation.\", \"N2:3:207e7273\": \"Check connection pool size and wait queue; adjust pool limits if connections are queuing.\", \"N2:4:5bc7bf7b\": \"Ping and traceroute from the application host to the DB server to detect latency or packet loss.\", \"N2:5:6882b2ca\": \"If packet loss is observed, inspect NICs, switches, or VPNs; consider relocating the DB closer to the app.\", \"N2:6:9ef98ca2\": \"Quick DB fix: create or refine indexes suggested by the EXPLAIN output to speed up scans.\", \"N2:7:afa77d1a\": \"Quick DB fix: tune work_mem, shared_buffers, or isolation level to reduce contention.\", \"N3:0:a0b33501\": \"Collect baseline latency: ping the endpoint and measure RTT and packet loss over a 5‑minute window.\", \"N3:1:d675ebde\": \"Run a continuous TCP trace (tcpdump) on the server to observe retransmissions and high RTT spikes.\", \"N3:2:9433a25a\": \"Check OS network stats (netstat -s, ss) for drops, errors, and TCP retransmit counters.\", \"N3:3:7a914f7c\": \"Correlate timestamps: align periods of packet loss with entries in the DB slow‑query log.\", \"N3:4:ef15d719\": \"Enable the DB slow‑query log; identify queries exceeding a latency threshold and examine their plans.\", \"N3:5:7cd99109\": \"Execute the same query locally on the DB host to see if latency persists without network hop.\", \"N3:6:58e29d8d\": \"Temporarily SSH into the DB server and run the query; fast results indicate network as the cause.\", \"N3:7:252dc72c\": \"Quick network fix: restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers.\", \"N4:0:181302fb\": \"OUT_OF_SCOPE: The question pertains to system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:40b51595\": \"UNKNOWN: Unable to determine a solution within the math_logic scope.\", \"N5:0:88201ee1\": \"OUT_OF_SCOPE: The request asks about performance isolation between DB and network, which is outside defensive security scope.\", \"N5:1:7217c67e\": \"UNKNOWN: No security-relevant information is provided to evaluate authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated and relevant to isolating DB vs network latency.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\",\"N1:5:29f1704c\",\"N1:6:44da40ab\",\"N1:7:2f99837b\",\"N2:0:3575e928\",\"N2:1:65106529\",\"N2:2:7ac28b9f\",\"N3:7:252dc72c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated and relevant to isolating DB vs network latency.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\",\"N1:5:29f1704c\",\"N1:6:44da40ab\",\"N1:7:2f99837b\",\"N2:4:5bc7bf7b\",\"N2:5:6882b2ca\",\"N3:7:252dc72c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated and relevant to isolating DB vs network latency.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated and relevant to isolating DB vs network latency.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-04f259e7-25bd-4a2d-a980-f1008c38efad",
+      "object": "chat.completion",
+      "created": 1772962142,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated and relevant to isolating DB vs network latency.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\",\"N1:5:29f1704c\",\"N1:6:44da40ab\",\"N1:7:2f99837b\",\"N2:0:3575e928\",\"N2:1:65106529\",\"N2:2:7ac28b9f\",\"N3:7:252dc72c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated and relevant to isolating DB vs network latency.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\",\"N1:5:29f1704c\",\"N1:6:44da40ab\",\"N1:7:2f99837b\",\"N2:4:5bc7bf7b\",\"N2:5:6882b2ca\",\"N3:7:252dc72c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated and relevant to isolating DB vs network latency.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated and relevant to isolating DB vs network latency.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 3088,
+        "completion_tokens": 890,
+        "total_tokens": 3978
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 52 seconds.\",\"retryAfter\":52,\"limit\":10,\"remaining\":0,\"reset\":1772962140}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 31 seconds.\",\"retryAfter\":31,\"limit\":10,\"remaining\":0,\"reset\":1772962140}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 11 seconds.\",\"retryAfter\":11,\"limit\":10,\"remaining\":0,\"reset\":1772962140}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:29:04.920859+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N2",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"1. Instrument the endpoint: log timestamps for request start, DB query start/end, and response send (N1:0). 2. Enable the DB slow‑query log to capture any queries exceeding a threshold (N1:1) and also collect pg_stat_statements data (N2:0) to identify the slowest statements. 3. Run network latency checks (ping/traceroute) from the app server to the DB host during slow periods (N1:2, N3:0) and capture packets with tcpdump/wireshark to spot retransmissions or loss (N1:3). 4. Compare the average DB execution time against total request latency; if DB time dominates, focus on database tuning (N1:4). 5. Correlate any RTT spikes or packet‑loss events with entries in the slow‑query log to see if network issues line up with slow requests (N1:5). 6. For identified slow queries, run EXPLAIN ANALYZE (N2:1) and add missing indexes or rewrite the query (N1:7) as a quick DB fix. 7. Monitor DB server CPU, memory, and disk I/O during spikes to rule out resource saturation (N2:2). 8. If network latency or loss is the primary factor, apply quick network fixes such as restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7). 9. Additional DB quick win: increase the DB connection pool size or enable connection reuse to cut handshake overhead (N1:6). This systematic isolation lets you pinpoint whether the bottleneck is database‑side or network‑side and apply the appropriate rapid remediation.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\"]}, {\"target_id\": \"N3\", \"target_draft\": \"Start by instrumenting the request path: record timestamps for when the request arrives, when the DB query begins and ends, and when the response is sent (N1:0). Enable the database's slow‑query log to capture any statements that exceed a latency threshold (N1:1) and also collect query latency metrics with pg_stat_statements (N2:0). Run ping and traceroute from the application host to the DB server during periods of slowness to see if RTT spikes or packet loss occur (N1:2). Capture traffic on the DB connection with tcpdump or Wireshark to detect retransmissions or loss (N1:3). Compare the average DB execution time to the total request latency; if the DB portion dominates, focus on database tuning (N1:4), otherwise correlate RTT spikes with slow requests to suspect network congestion (N1:5). For quick database relief, increase the DB connection pool size or enable connection reuse to cut handshake overhead (N1:6) and add missing indexes or rewrite identified slow queries (N1:7). Run EXPLAIN ANALYZE on the flagged queries to pinpoint missing indexes or suboptimal join order (N2:1) and monitor DB server CPU, memory, and disk I/O during spikes to rule out resource saturation (N2:2). As an immediate network mitigation, restart the NIC, verify MTU settings, enable TCP window scaling, or raise socket buffer sizes (N3:7). This step‑by‑step isolation lets you quickly identify whether the bottleneck is in the database or the network and apply targeted quick fixes while deeper tuning is planned.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\", \"N1:5:29f1704c\", \"N1:6:44da40ab\", \"N1:7:2f99837b\", \"N2:0:3575e928\", \"N2:1:65106529\", \"N2:2:7ac28b9f\", \"N3:7:252dc72c\"]}, {\"target_id\": \"N4\", \"target_draft\": \"To isolate whether the latency originates in the database or the network, first instrument the request path: collect timestamps for request start, DB query start/end, and response send (N1:0:e504efc8). Enable the DB slow‑query log to capture any statements exceeding a threshold (N1:1:77a4e562) and run pg_stat_statements or similar to identify the offending queries (N2:0:3575e928). In parallel, run network latency tests (ping, traceroute) from the app server to the DB server during slow periods (N1:2:46926cba, N2:4:5bc7bf7b) and capture packets on the DB connection to detect retransmissions or loss (N1:3:8ead2c21, N3:1:d675ebde). Compare the average DB execution time against the total request time; if DB time dominates, focus on database tuning (N1:4:840d81ac), otherwise, if RTT spikes or packet loss align with slow requests, suspect network congestion (N1:5:29f1704c, N2:5:6882b2ca). Quick DB fixes include increasing the connection‑pool size or enabling connection reuse (N1:6:44da40ab) and adding missing indexes or rewriting slow queries (N1:7:2f99837b). Quick network mitigations involve restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7:252dc72c). Correlate the timestamps from logs, packet captures, and network tests to pinpoint the dominant source and apply the appropriate quick fix while planning longer‑term optimizations.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\", \"N1:5:29f1704c\", \"N1:6:44da40ab\", \"N1:7:2f99837b\", \"N2:4:5bc7bf7b\", \"N2:5:6882b2ca\", \"N3:7:252dc72c\"]}, {\"target_id\": \"N5\", \"target_draft\": \"Start by instrumenting the request path: log timestamps for request receipt, DB query start/end, and response send (N1:0). Enable the database slow‑query log (N1:1) and capture query latency with tools like pg_stat_statements (N2:0) to identify which statements exceed the threshold. Run EXPLAIN ANALYZE on those queries (N2:1) and check DB resource usage (CPU, memory, I/O) during spikes (N2:2). At the same time, run network latency tests such as ping and traceroute from the app server to the DB server (N1:2, N2:4) and capture packets with tcpdump/wireshark (N1:3) to spot retransmissions or loss. Compare the average DB execution time against total request latency (N1:4); if DB time dominates, focus on query tuning, adding missing indexes (N1:7) or increasing the connection pool size (N1:6). If network RTT spikes align with slow requests (N1:5), consider quick network fixes like restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7). Baseline endpoint latency with a 5‑minute ping test (N3:0) to quantify normal RTT and packet loss. These steps isolate the bottleneck and provide immediate mitigations for both database and network contributors.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\"]}], \"points_map\": {\"N1:0:e504efc8\": \"Collect timestamps for request start, DB query start/end, and response send to pinpoint where latency occurs.\", \"N1:1:77a4e562\": \"Enable DB slow‑query logging (e.g., MySQL slow_query_log) to capture queries exceeding a threshold.\", \"N1:2:46926cba\": \"Run network latency tests (ping, traceroute) from the app server to the DB server during slow periods.\", \"N1:3:8ead2c21\": \"Capture packets (tcpdump/wireshark) on the DB connection to measure retransmissions or loss.\", \"N1:4:840d81ac\": \"Compare average DB execution time vs. total request time; if DB time dominates, focus on database tuning.\", \"N1:5:29f1704c\": \"If network RTT spikes align with slow requests, suspect network congestion or packet loss as the cause.\", \"N1:6:44da40ab\": \"Quick fix: increase DB connection pool size or enable connection reuse to reduce handshake overhead.\", \"N1:7:2f99837b\": \"Quick fix: add missing indexes or rewrite identified slow SQL queries to improve execution speed.\", \"N2:0:3575e928\": \"Capture query latency with pg_stat_statements (or equivalent) to pinpoint which SQL statements are slow.\", \"N2:1:65106529\": \"Run EXPLAIN ANALYZE on identified slow queries to detect missing indexes or suboptimal join order.\", \"N2:2:7ac28b9f\": \"Monitor DB server CPU, memory, and disk I/O during performance spikes to rule out resource saturation.\", \"N2:3:207e7273\": \"Check connection pool size and wait queue; adjust pool limits if connections are queuing.\", \"N2:4:5bc7bf7b\": \"Ping and traceroute from the application host to the DB server to detect latency or packet loss.\", \"N2:5:6882b2ca\": \"If packet loss is observed, inspect NICs, switches, or VPNs; consider relocating the DB closer to the app.\", \"N2:6:9ef98ca2\": \"Quick DB fix: create or refine indexes suggested by the EXPLAIN output to speed up scans.\", \"N2:7:afa77d1a\": \"Quick DB fix: tune work_mem, shared_buffers, or isolation level to reduce contention.\", \"N3:0:a0b33501\": \"Collect baseline latency: ping the endpoint and measure RTT and packet loss over a 5‑minute window.\", \"N3:1:d675ebde\": \"Run a continuous TCP trace (tcpdump) on the server to observe retransmissions and high RTT spikes.\", \"N3:2:9433a25a\": \"Check OS network stats (netstat -s, ss) for drops, errors, and TCP retransmit counters.\", \"N3:3:7a914f7c\": \"Correlate timestamps: align periods of packet loss with entries in the DB slow‑query log.\", \"N3:4:ef15d719\": \"Enable the DB slow‑query log; identify queries exceeding a latency threshold and examine their plans.\", \"N3:5:7cd99109\": \"Execute the same query locally on the DB host to see if latency persists without network hop.\", \"N3:6:58e29d8d\": \"Temporarily SSH into the DB server and run the query; fast results indicate network as the cause.\", \"N3:7:252dc72c\": \"Quick network fix: restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers.\", \"N4:0:181302fb\": \"OUT_OF_SCOPE: The question pertains to system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:40b51595\": \"UNKNOWN: Unable to determine a solution within the math_logic scope.\", \"N5:0:88201ee1\": \"OUT_OF_SCOPE: The request asks about performance isolation between DB and network, which is outside defensive security scope.\", \"N5:1:7217c67e\": \"UNKNOWN: No security-relevant information is provided to evaluate authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All used points correctly reflected in draft.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\",\"N1:5:29f1704c\",\"N1:6:44da40ab\",\"N1:7:2f99837b\",\"N2:0:3575e928\",\"N2:1:65106529\",\"N2:2:7ac28b9f\",\"N3:7:252dc72c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All used points correctly reflected in draft.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\",\"N1:5:29f1704c\",\"N1:6:44da40ab\",\"N1:7:2f99837b\",\"N2:4:5bc7bf7b\",\"N2:5:6882b2ca\",\"N3:7:252dc72c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All used points correctly reflected in draft.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All used points correctly reflected in draft.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-7913381e-f2db-40ed-b261-78b8b2207db4",
+      "object": "chat.completion",
+      "created": 1772962141,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All used points correctly reflected in draft.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\",\"N1:5:29f1704c\",\"N1:6:44da40ab\",\"N1:7:2f99837b\",\"N2:0:3575e928\",\"N2:1:65106529\",\"N2:2:7ac28b9f\",\"N3:7:252dc72c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All used points correctly reflected in draft.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\",\"N1:5:29f1704c\",\"N1:6:44da40ab\",\"N1:7:2f99837b\",\"N2:4:5bc7bf7b\",\"N2:5:6882b2ca\",\"N3:7:252dc72c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All used points correctly reflected in draft.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All used points correctly reflected in draft.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 3120,
+        "completion_tokens": 1914,
+        "total_tokens": 5034
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:29:07.129343+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N3",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"1. Instrument the endpoint: log timestamps for request start, DB query start/end, and response send (N1:0). 2. Enable the DB slow‑query log to capture any queries exceeding a threshold (N1:1) and also collect pg_stat_statements data (N2:0) to identify the slowest statements. 3. Run network latency checks (ping/traceroute) from the app server to the DB host during slow periods (N1:2, N3:0) and capture packets with tcpdump/wireshark to spot retransmissions or loss (N1:3). 4. Compare the average DB execution time against total request latency; if DB time dominates, focus on database tuning (N1:4). 5. Correlate any RTT spikes or packet‑loss events with entries in the slow‑query log to see if network issues line up with slow requests (N1:5). 6. For identified slow queries, run EXPLAIN ANALYZE (N2:1) and add missing indexes or rewrite the query (N1:7) as a quick DB fix. 7. Monitor DB server CPU, memory, and disk I/O during spikes to rule out resource saturation (N2:2). 8. If network latency or loss is the primary factor, apply quick network fixes such as restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7). 9. Additional DB quick win: increase the DB connection pool size or enable connection reuse to cut handshake overhead (N1:6). This systematic isolation lets you pinpoint whether the bottleneck is database‑side or network‑side and apply the appropriate rapid remediation.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\"]}, {\"target_id\": \"N2\", \"target_draft\": \"Start by instrumenting the request path: record timestamps for request receipt, DB query start/end, and response send (N1:0). Enable the DB slow‑query log (N1:1) and capture query latency via pg_stat_statements or equivalent (N2:0) to identify which statements exceed the threshold. Run network latency checks (ping/traceroute) from the app server to the DB during slow periods (N1:2) and capture packets on the DB connection (tcpdump/wireshark) to spot retransmissions or loss (N1:3). Compare the average DB execution time to the total request latency; if the DB time dominates, focus on query tuning (N1:4). If RTT spikes line up with slow requests, suspect network congestion or packet loss (N1:5). For the identified slow queries, run EXPLAIN ANALYZE (N2:1) and check server resource usage (CPU, memory, I/O) (N2:2) to spot missing indexes or suboptimal plans. Correlate packet‑loss events with entries in the slow‑query log (N3:3). Quick fixes: add missing indexes or rewrite queries (N1:7), increase DB connection‑pool size or enable connection reuse to cut handshake overhead (N1:6), and, if network issues are confirmed, restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers (N2:4). This systematic correlation isolates whether latency stems from the database or the network and provides immediate remediation steps.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\"]}, {\"target_id\": \"N4\", \"target_draft\": \"To isolate whether the latency originates in the database or the network, first instrument the request path: collect timestamps for request start, DB query start/end, and response send (N1:0:e504efc8). Enable the DB slow‑query log to capture any statements exceeding a threshold (N1:1:77a4e562) and run pg_stat_statements or similar to identify the offending queries (N2:0:3575e928). In parallel, run network latency tests (ping, traceroute) from the app server to the DB server during slow periods (N1:2:46926cba, N2:4:5bc7bf7b) and capture packets on the DB connection to detect retransmissions or loss (N1:3:8ead2c21, N3:1:d675ebde). Compare the average DB execution time against the total request time; if DB time dominates, focus on database tuning (N1:4:840d81ac), otherwise, if RTT spikes or packet loss align with slow requests, suspect network congestion (N1:5:29f1704c, N2:5:6882b2ca). Quick DB fixes include increasing the connection‑pool size or enabling connection reuse (N1:6:44da40ab) and adding missing indexes or rewriting slow queries (N1:7:2f99837b). Quick network mitigations involve restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7:252dc72c). Correlate the timestamps from logs, packet captures, and network tests to pinpoint the dominant source and apply the appropriate quick fix while planning longer‑term optimizations.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\", \"N1:5:29f1704c\", \"N1:6:44da40ab\", \"N1:7:2f99837b\", \"N2:4:5bc7bf7b\", \"N2:5:6882b2ca\", \"N3:7:252dc72c\"]}, {\"target_id\": \"N5\", \"target_draft\": \"Start by instrumenting the request path: log timestamps for request receipt, DB query start/end, and response send (N1:0). Enable the database slow‑query log (N1:1) and capture query latency with tools like pg_stat_statements (N2:0) to identify which statements exceed the threshold. Run EXPLAIN ANALYZE on those queries (N2:1) and check DB resource usage (CPU, memory, I/O) during spikes (N2:2). At the same time, run network latency tests such as ping and traceroute from the app server to the DB server (N1:2, N2:4) and capture packets with tcpdump/wireshark (N1:3) to spot retransmissions or loss. Compare the average DB execution time against total request latency (N1:4); if DB time dominates, focus on query tuning, adding missing indexes (N1:7) or increasing the connection pool size (N1:6). If network RTT spikes align with slow requests (N1:5), consider quick network fixes like restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7). Baseline endpoint latency with a 5‑minute ping test (N3:0) to quantify normal RTT and packet loss. These steps isolate the bottleneck and provide immediate mitigations for both database and network contributors.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\"]}], \"points_map\": {\"N1:0:e504efc8\": \"Collect timestamps for request start, DB query start/end, and response send to pinpoint where latency occurs.\", \"N1:1:77a4e562\": \"Enable DB slow‑query logging (e.g., MySQL slow_query_log) to capture queries exceeding a threshold.\", \"N1:2:46926cba\": \"Run network latency tests (ping, traceroute) from the app server to the DB server during slow periods.\", \"N1:3:8ead2c21\": \"Capture packets (tcpdump/wireshark) on the DB connection to measure retransmissions or loss.\", \"N1:4:840d81ac\": \"Compare average DB execution time vs. total request time; if DB time dominates, focus on database tuning.\", \"N1:5:29f1704c\": \"If network RTT spikes align with slow requests, suspect network congestion or packet loss as the cause.\", \"N1:6:44da40ab\": \"Quick fix: increase DB connection pool size or enable connection reuse to reduce handshake overhead.\", \"N1:7:2f99837b\": \"Quick fix: add missing indexes or rewrite identified slow SQL queries to improve execution speed.\", \"N2:0:3575e928\": \"Capture query latency with pg_stat_statements (or equivalent) to pinpoint which SQL statements are slow.\", \"N2:1:65106529\": \"Run EXPLAIN ANALYZE on identified slow queries to detect missing indexes or suboptimal join order.\", \"N2:2:7ac28b9f\": \"Monitor DB server CPU, memory, and disk I/O during performance spikes to rule out resource saturation.\", \"N2:3:207e7273\": \"Check connection pool size and wait queue; adjust pool limits if connections are queuing.\", \"N2:4:5bc7bf7b\": \"Ping and traceroute from the application host to the DB server to detect latency or packet loss.\", \"N2:5:6882b2ca\": \"If packet loss is observed, inspect NICs, switches, or VPNs; consider relocating the DB closer to the app.\", \"N2:6:9ef98ca2\": \"Quick DB fix: create or refine indexes suggested by the EXPLAIN output to speed up scans.\", \"N2:7:afa77d1a\": \"Quick DB fix: tune work_mem, shared_buffers, or isolation level to reduce contention.\", \"N3:0:a0b33501\": \"Collect baseline latency: ping the endpoint and measure RTT and packet loss over a 5‑minute window.\", \"N3:1:d675ebde\": \"Run a continuous TCP trace (tcpdump) on the server to observe retransmissions and high RTT spikes.\", \"N3:2:9433a25a\": \"Check OS network stats (netstat -s, ss) for drops, errors, and TCP retransmit counters.\", \"N3:3:7a914f7c\": \"Correlate timestamps: align periods of packet loss with entries in the DB slow‑query log.\", \"N3:4:ef15d719\": \"Enable the DB slow‑query log; identify queries exceeding a latency threshold and examine their plans.\", \"N3:5:7cd99109\": \"Execute the same query locally on the DB host to see if latency persists without network hop.\", \"N3:6:58e29d8d\": \"Temporarily SSH into the DB server and run the query; fast results indicate network as the cause.\", \"N3:7:252dc72c\": \"Quick network fix: restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers.\", \"N4:0:181302fb\": \"OUT_OF_SCOPE: The question pertains to system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:40b51595\": \"UNKNOWN: Unable to determine a solution within the math_logic scope.\", \"N5:0:88201ee1\": \"OUT_OF_SCOPE: The request asks about performance isolation between DB and network, which is outside defensive security scope.\", \"N5:1:7217c67e\": \"UNKNOWN: No security-relevant information is provided to evaluate authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"All used points are accurately reflected in the draft.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"All used points are accurately reflected in the draft.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\",\"N1:5:29f1704c\",\"N1:6:44da40ab\",\"N1:7:2f99837b\",\"N2:4:5bc7bf7b\",\"N2:5:6882b2ca\",\"N3:7:252dc72c\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"All used points are accurately reflected in the draft.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"All used points are accurately reflected in the draft.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-7530d1f3-f757-4ab3-ad75-ca3a36299dae",
+      "object": "chat.completion",
+      "created": 1772962145,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"All used points are accurately reflected in the draft.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"All used points are accurately reflected in the draft.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\",\"N1:5:29f1704c\",\"N1:6:44da40ab\",\"N1:7:2f99837b\",\"N2:4:5bc7bf7b\",\"N2:5:6882b2ca\",\"N3:7:252dc72c\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"All used points are accurately reflected in the draft.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"All used points are accurately reflected in the draft.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 3033,
+        "completion_tokens": 3125,
+        "total_tokens": 6158
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:29:09.571295+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N4",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"1. Instrument the endpoint: log timestamps for request start, DB query start/end, and response send (N1:0). 2. Enable the DB slow‑query log to capture any queries exceeding a threshold (N1:1) and also collect pg_stat_statements data (N2:0) to identify the slowest statements. 3. Run network latency checks (ping/traceroute) from the app server to the DB host during slow periods (N1:2, N3:0) and capture packets with tcpdump/wireshark to spot retransmissions or loss (N1:3). 4. Compare the average DB execution time against total request latency; if DB time dominates, focus on database tuning (N1:4). 5. Correlate any RTT spikes or packet‑loss events with entries in the slow‑query log to see if network issues line up with slow requests (N1:5). 6. For identified slow queries, run EXPLAIN ANALYZE (N2:1) and add missing indexes or rewrite the query (N1:7) as a quick DB fix. 7. Monitor DB server CPU, memory, and disk I/O during spikes to rule out resource saturation (N2:2). 8. If network latency or loss is the primary factor, apply quick network fixes such as restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7). 9. Additional DB quick win: increase the DB connection pool size or enable connection reuse to cut handshake overhead (N1:6). This systematic isolation lets you pinpoint whether the bottleneck is database‑side or network‑side and apply the appropriate rapid remediation.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\"]}, {\"target_id\": \"N2\", \"target_draft\": \"Start by instrumenting the request path: record timestamps for request receipt, DB query start/end, and response send (N1:0). Enable the DB slow‑query log (N1:1) and capture query latency via pg_stat_statements or equivalent (N2:0) to identify which statements exceed the threshold. Run network latency checks (ping/traceroute) from the app server to the DB during slow periods (N1:2) and capture packets on the DB connection (tcpdump/wireshark) to spot retransmissions or loss (N1:3). Compare the average DB execution time to the total request latency; if the DB time dominates, focus on query tuning (N1:4). If RTT spikes line up with slow requests, suspect network congestion or packet loss (N1:5). For the identified slow queries, run EXPLAIN ANALYZE (N2:1) and check server resource usage (CPU, memory, I/O) (N2:2) to spot missing indexes or suboptimal plans. Correlate packet‑loss events with entries in the slow‑query log (N3:3). Quick fixes: add missing indexes or rewrite queries (N1:7), increase DB connection‑pool size or enable connection reuse to cut handshake overhead (N1:6), and, if network issues are confirmed, restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers (N2:4). This systematic correlation isolates whether latency stems from the database or the network and provides immediate remediation steps.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\"]}, {\"target_id\": \"N3\", \"target_draft\": \"Start by instrumenting the request path: record timestamps for when the request arrives, when the DB query begins and ends, and when the response is sent (N1:0). Enable the database's slow‑query log to capture any statements that exceed a latency threshold (N1:1) and also collect query latency metrics with pg_stat_statements (N2:0). Run ping and traceroute from the application host to the DB server during periods of slowness to see if RTT spikes or packet loss occur (N1:2). Capture traffic on the DB connection with tcpdump or Wireshark to detect retransmissions or loss (N1:3). Compare the average DB execution time to the total request latency; if the DB portion dominates, focus on database tuning (N1:4), otherwise correlate RTT spikes with slow requests to suspect network congestion (N1:5). For quick database relief, increase the DB connection pool size or enable connection reuse to cut handshake overhead (N1:6) and add missing indexes or rewrite identified slow queries (N1:7). Run EXPLAIN ANALYZE on the flagged queries to pinpoint missing indexes or suboptimal join order (N2:1) and monitor DB server CPU, memory, and disk I/O during spikes to rule out resource saturation (N2:2). As an immediate network mitigation, restart the NIC, verify MTU settings, enable TCP window scaling, or raise socket buffer sizes (N3:7). This step‑by‑step isolation lets you quickly identify whether the bottleneck is in the database or the network and apply targeted quick fixes while deeper tuning is planned.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\", \"N1:5:29f1704c\", \"N1:6:44da40ab\", \"N1:7:2f99837b\", \"N2:0:3575e928\", \"N2:1:65106529\", \"N2:2:7ac28b9f\", \"N3:7:252dc72c\"]}, {\"target_id\": \"N5\", \"target_draft\": \"Start by instrumenting the request path: log timestamps for request receipt, DB query start/end, and response send (N1:0). Enable the database slow‑query log (N1:1) and capture query latency with tools like pg_stat_statements (N2:0) to identify which statements exceed the threshold. Run EXPLAIN ANALYZE on those queries (N2:1) and check DB resource usage (CPU, memory, I/O) during spikes (N2:2). At the same time, run network latency tests such as ping and traceroute from the app server to the DB server (N1:2, N2:4) and capture packets with tcpdump/wireshark (N1:3) to spot retransmissions or loss. Compare the average DB execution time against total request latency (N1:4); if DB time dominates, focus on query tuning, adding missing indexes (N1:7) or increasing the connection pool size (N1:6). If network RTT spikes align with slow requests (N1:5), consider quick network fixes like restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7). Baseline endpoint latency with a 5‑minute ping test (N3:0) to quantify normal RTT and packet loss. These steps isolate the bottleneck and provide immediate mitigations for both database and network contributors.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\"]}], \"points_map\": {\"N1:0:e504efc8\": \"Collect timestamps for request start, DB query start/end, and response send to pinpoint where latency occurs.\", \"N1:1:77a4e562\": \"Enable DB slow‑query logging (e.g., MySQL slow_query_log) to capture queries exceeding a threshold.\", \"N1:2:46926cba\": \"Run network latency tests (ping, traceroute) from the app server to the DB server during slow periods.\", \"N1:3:8ead2c21\": \"Capture packets (tcpdump/wireshark) on the DB connection to measure retransmissions or loss.\", \"N1:4:840d81ac\": \"Compare average DB execution time vs. total request time; if DB time dominates, focus on database tuning.\", \"N1:5:29f1704c\": \"If network RTT spikes align with slow requests, suspect network congestion or packet loss as the cause.\", \"N1:6:44da40ab\": \"Quick fix: increase DB connection pool size or enable connection reuse to reduce handshake overhead.\", \"N1:7:2f99837b\": \"Quick fix: add missing indexes or rewrite identified slow SQL queries to improve execution speed.\", \"N2:0:3575e928\": \"Capture query latency with pg_stat_statements (or equivalent) to pinpoint which SQL statements are slow.\", \"N2:1:65106529\": \"Run EXPLAIN ANALYZE on identified slow queries to detect missing indexes or suboptimal join order.\", \"N2:2:7ac28b9f\": \"Monitor DB server CPU, memory, and disk I/O during performance spikes to rule out resource saturation.\", \"N2:3:207e7273\": \"Check connection pool size and wait queue; adjust pool limits if connections are queuing.\", \"N2:4:5bc7bf7b\": \"Ping and traceroute from the application host to the DB server to detect latency or packet loss.\", \"N2:5:6882b2ca\": \"If packet loss is observed, inspect NICs, switches, or VPNs; consider relocating the DB closer to the app.\", \"N2:6:9ef98ca2\": \"Quick DB fix: create or refine indexes suggested by the EXPLAIN output to speed up scans.\", \"N2:7:afa77d1a\": \"Quick DB fix: tune work_mem, shared_buffers, or isolation level to reduce contention.\", \"N3:0:a0b33501\": \"Collect baseline latency: ping the endpoint and measure RTT and packet loss over a 5‑minute window.\", \"N3:1:d675ebde\": \"Run a continuous TCP trace (tcpdump) on the server to observe retransmissions and high RTT spikes.\", \"N3:2:9433a25a\": \"Check OS network stats (netstat -s, ss) for drops, errors, and TCP retransmit counters.\", \"N3:3:7a914f7c\": \"Correlate timestamps: align periods of packet loss with entries in the DB slow‑query log.\", \"N3:4:ef15d719\": \"Enable the DB slow‑query log; identify queries exceeding a latency threshold and examine their plans.\", \"N3:5:7cd99109\": \"Execute the same query locally on the DB host to see if latency persists without network hop.\", \"N3:6:58e29d8d\": \"Temporarily SSH into the DB server and run the query; fast results indicate network as the cause.\", \"N3:7:252dc72c\": \"Quick network fix: restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers.\", \"N4:0:181302fb\": \"OUT_OF_SCOPE: The question pertains to system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:40b51595\": \"UNKNOWN: Unable to determine a solution within the math_logic scope.\", \"N5:0:88201ee1\": \"OUT_OF_SCOPE: The request asks about performance isolation between DB and network, which is outside defensive security scope.\", \"N5:1:7217c67e\": \"UNKNOWN: No security-relevant information is provided to evaluate authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"votes\": [\n    {\n      \"target_id\": \"N1\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [\n        \"N1:0:e504efc8\",\n        \"N1:1:77a4e562\",\n        \"N1:2:46926cba\",\n        \"N1:3:8ead2c21\",\n        \"N1:4:840d81ac\"\n      ],\n      \"note\": \"The draft addresses system performance troubleshooting, which is outside the math_logic domain.\"\n    },\n    {\n      \"target_id\": \"N2\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [\n        \"N1:0:e504efc8\",\n        \"N1:1:77a4e562\",\n        \"N1:2:46926cba\",\n        \"N1:3:8ead2c21\",\n        \"N1:4:840d81ac\"\n      ],\n      \"note\": \"The draft addresses system performance troubleshooting, which is outside the math_logic domain.\"\n    },\n    {\n      \"target_id\": \"N3\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [\n        \"N1:0:e504efc8\",\n        \"N1:1:77a4e562\",\n        \"N1:2:46926cba\",\n        \"N1:3:8ead2c21\",\n        \"N1:4:840d81ac\",\n        \"N1:5:29f1704c\",\n        \"N1:6:44da40ab\",\n        \"N1:7:2f99837b\",\n        \"N2:0:3575e928\",\n        \"N2:1:65106529\",\n        \"N2:2:7ac28b9f\",\n        \"N3:7:252dc72c\"\n      ],\n      \"note\": \"The draft addresses system performance troubleshooting, which is outside the math_logic domain.\"\n    },\n    {\n      \"target_id\": \"N5\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [\n        \"N1:0:e504efc8\",\n        \"N1:1:77a4e562\",\n        \"N1:2:46926cba\",\n        \"N1:3:8ead2c21\",\n        \"N1:4:840d81ac\"\n      ],\n      \"note\": \"The draft addresses system performance troubleshooting, which is outside the math_logic domain.\"\n    }\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-33c15dab-8046-4594-8512-61d815b77913",
+      "object": "chat.completion",
+      "created": 1772962146,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"votes\": [\n    {\n      \"target_id\": \"N1\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [\n        \"N1:0:e504efc8\",\n        \"N1:1:77a4e562\",\n        \"N1:2:46926cba\",\n        \"N1:3:8ead2c21\",\n        \"N1:4:840d81ac\"\n      ],\n      \"note\": \"The draft addresses system performance troubleshooting, which is outside the math_logic domain.\"\n    },\n    {\n      \"target_id\": \"N2\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [\n        \"N1:0:e504efc8\",\n        \"N1:1:77a4e562\",\n        \"N1:2:46926cba\",\n        \"N1:3:8ead2c21\",\n        \"N1:4:840d81ac\"\n      ],\n      \"note\": \"The draft addresses system performance troubleshooting, which is outside the math_logic domain.\"\n    },\n    {\n      \"target_id\": \"N3\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [\n        \"N1:0:e504efc8\",\n        \"N1:1:77a4e562\",\n        \"N1:2:46926cba\",\n        \"N1:3:8ead2c21\",\n        \"N1:4:840d81ac\",\n        \"N1:5:29f1704c\",\n        \"N1:6:44da40ab\",\n        \"N1:7:2f99837b\",\n        \"N2:0:3575e928\",\n        \"N2:1:65106529\",\n        \"N2:2:7ac28b9f\",\n        \"N3:7:252dc72c\"\n      ],\n      \"note\": \"The draft addresses system performance troubleshooting, which is outside the math_logic domain.\"\n    },\n    {\n      \"target_id\": \"N5\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [\n        \"N1:0:e504efc8\",\n        \"N1:1:77a4e562\",\n        \"N1:2:46926cba\",\n        \"N1:3:8ead2c21\",\n        \"N1:4:840d81ac\"\n      ],\n      \"note\": \"The draft addresses system performance troubleshooting, which is outside the math_logic domain.\"\n    }\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 3015,
+        "completion_tokens": 1181,
+        "total_tokens": 4196
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:30:03.202831+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N5",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"1. Instrument the endpoint: log timestamps for request start, DB query start/end, and response send (N1:0). 2. Enable the DB slow‑query log to capture any queries exceeding a threshold (N1:1) and also collect pg_stat_statements data (N2:0) to identify the slowest statements. 3. Run network latency checks (ping/traceroute) from the app server to the DB host during slow periods (N1:2, N3:0) and capture packets with tcpdump/wireshark to spot retransmissions or loss (N1:3). 4. Compare the average DB execution time against total request latency; if DB time dominates, focus on database tuning (N1:4). 5. Correlate any RTT spikes or packet‑loss events with entries in the slow‑query log to see if network issues line up with slow requests (N1:5). 6. For identified slow queries, run EXPLAIN ANALYZE (N2:1) and add missing indexes or rewrite the query (N1:7) as a quick DB fix. 7. Monitor DB server CPU, memory, and disk I/O during spikes to rule out resource saturation (N2:2). 8. If network latency or loss is the primary factor, apply quick network fixes such as restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7). 9. Additional DB quick win: increase the DB connection pool size or enable connection reuse to cut handshake overhead (N1:6). This systematic isolation lets you pinpoint whether the bottleneck is database‑side or network‑side and apply the appropriate rapid remediation.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\"]}, {\"target_id\": \"N2\", \"target_draft\": \"Start by instrumenting the request path: record timestamps for request receipt, DB query start/end, and response send (N1:0). Enable the DB slow‑query log (N1:1) and capture query latency via pg_stat_statements or equivalent (N2:0) to identify which statements exceed the threshold. Run network latency checks (ping/traceroute) from the app server to the DB during slow periods (N1:2) and capture packets on the DB connection (tcpdump/wireshark) to spot retransmissions or loss (N1:3). Compare the average DB execution time to the total request latency; if the DB time dominates, focus on query tuning (N1:4). If RTT spikes line up with slow requests, suspect network congestion or packet loss (N1:5). For the identified slow queries, run EXPLAIN ANALYZE (N2:1) and check server resource usage (CPU, memory, I/O) (N2:2) to spot missing indexes or suboptimal plans. Correlate packet‑loss events with entries in the slow‑query log (N3:3). Quick fixes: add missing indexes or rewrite queries (N1:7), increase DB connection‑pool size or enable connection reuse to cut handshake overhead (N1:6), and, if network issues are confirmed, restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers (N2:4). This systematic correlation isolates whether latency stems from the database or the network and provides immediate remediation steps.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\"]}, {\"target_id\": \"N3\", \"target_draft\": \"Start by instrumenting the request path: record timestamps for when the request arrives, when the DB query begins and ends, and when the response is sent (N1:0). Enable the database's slow‑query log to capture any statements that exceed a latency threshold (N1:1) and also collect query latency metrics with pg_stat_statements (N2:0). Run ping and traceroute from the application host to the DB server during periods of slowness to see if RTT spikes or packet loss occur (N1:2). Capture traffic on the DB connection with tcpdump or Wireshark to detect retransmissions or loss (N1:3). Compare the average DB execution time to the total request latency; if the DB portion dominates, focus on database tuning (N1:4), otherwise correlate RTT spikes with slow requests to suspect network congestion (N1:5). For quick database relief, increase the DB connection pool size or enable connection reuse to cut handshake overhead (N1:6) and add missing indexes or rewrite identified slow queries (N1:7). Run EXPLAIN ANALYZE on the flagged queries to pinpoint missing indexes or suboptimal join order (N2:1) and monitor DB server CPU, memory, and disk I/O during spikes to rule out resource saturation (N2:2). As an immediate network mitigation, restart the NIC, verify MTU settings, enable TCP window scaling, or raise socket buffer sizes (N3:7). This step‑by‑step isolation lets you quickly identify whether the bottleneck is in the database or the network and apply targeted quick fixes while deeper tuning is planned.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\", \"N1:5:29f1704c\", \"N1:6:44da40ab\", \"N1:7:2f99837b\", \"N2:0:3575e928\", \"N2:1:65106529\", \"N2:2:7ac28b9f\", \"N3:7:252dc72c\"]}, {\"target_id\": \"N4\", \"target_draft\": \"To isolate whether the latency originates in the database or the network, first instrument the request path: collect timestamps for request start, DB query start/end, and response send (N1:0:e504efc8). Enable the DB slow‑query log to capture any statements exceeding a threshold (N1:1:77a4e562) and run pg_stat_statements or similar to identify the offending queries (N2:0:3575e928). In parallel, run network latency tests (ping, traceroute) from the app server to the DB server during slow periods (N1:2:46926cba, N2:4:5bc7bf7b) and capture packets on the DB connection to detect retransmissions or loss (N1:3:8ead2c21, N3:1:d675ebde). Compare the average DB execution time against the total request time; if DB time dominates, focus on database tuning (N1:4:840d81ac), otherwise, if RTT spikes or packet loss align with slow requests, suspect network congestion (N1:5:29f1704c, N2:5:6882b2ca). Quick DB fixes include increasing the connection‑pool size or enabling connection reuse (N1:6:44da40ab) and adding missing indexes or rewriting slow queries (N1:7:2f99837b). Quick network mitigations involve restarting the NIC, verifying MTU, enabling TCP window scaling, or increasing socket buffers (N3:7:252dc72c). Correlate the timestamps from logs, packet captures, and network tests to pinpoint the dominant source and apply the appropriate quick fix while planning longer‑term optimizations.\", \"target_used_points\": [\"N1:0:e504efc8\", \"N1:1:77a4e562\", \"N1:2:46926cba\", \"N1:3:8ead2c21\", \"N1:4:840d81ac\", \"N1:5:29f1704c\", \"N1:6:44da40ab\", \"N1:7:2f99837b\", \"N2:4:5bc7bf7b\", \"N2:5:6882b2ca\", \"N3:7:252dc72c\"]}], \"points_map\": {\"N1:0:e504efc8\": \"Collect timestamps for request start, DB query start/end, and response send to pinpoint where latency occurs.\", \"N1:1:77a4e562\": \"Enable DB slow‑query logging (e.g., MySQL slow_query_log) to capture queries exceeding a threshold.\", \"N1:2:46926cba\": \"Run network latency tests (ping, traceroute) from the app server to the DB server during slow periods.\", \"N1:3:8ead2c21\": \"Capture packets (tcpdump/wireshark) on the DB connection to measure retransmissions or loss.\", \"N1:4:840d81ac\": \"Compare average DB execution time vs. total request time; if DB time dominates, focus on database tuning.\", \"N1:5:29f1704c\": \"If network RTT spikes align with slow requests, suspect network congestion or packet loss as the cause.\", \"N1:6:44da40ab\": \"Quick fix: increase DB connection pool size or enable connection reuse to reduce handshake overhead.\", \"N1:7:2f99837b\": \"Quick fix: add missing indexes or rewrite identified slow SQL queries to improve execution speed.\", \"N2:0:3575e928\": \"Capture query latency with pg_stat_statements (or equivalent) to pinpoint which SQL statements are slow.\", \"N2:1:65106529\": \"Run EXPLAIN ANALYZE on identified slow queries to detect missing indexes or suboptimal join order.\", \"N2:2:7ac28b9f\": \"Monitor DB server CPU, memory, and disk I/O during performance spikes to rule out resource saturation.\", \"N2:3:207e7273\": \"Check connection pool size and wait queue; adjust pool limits if connections are queuing.\", \"N2:4:5bc7bf7b\": \"Ping and traceroute from the application host to the DB server to detect latency or packet loss.\", \"N2:5:6882b2ca\": \"If packet loss is observed, inspect NICs, switches, or VPNs; consider relocating the DB closer to the app.\", \"N2:6:9ef98ca2\": \"Quick DB fix: create or refine indexes suggested by the EXPLAIN output to speed up scans.\", \"N2:7:afa77d1a\": \"Quick DB fix: tune work_mem, shared_buffers, or isolation level to reduce contention.\", \"N3:0:a0b33501\": \"Collect baseline latency: ping the endpoint and measure RTT and packet loss over a 5‑minute window.\", \"N3:1:d675ebde\": \"Run a continuous TCP trace (tcpdump) on the server to observe retransmissions and high RTT spikes.\", \"N3:2:9433a25a\": \"Check OS network stats (netstat -s, ss) for drops, errors, and TCP retransmit counters.\", \"N3:3:7a914f7c\": \"Correlate timestamps: align periods of packet loss with entries in the DB slow‑query log.\", \"N3:4:ef15d719\": \"Enable the DB slow‑query log; identify queries exceeding a latency threshold and examine their plans.\", \"N3:5:7cd99109\": \"Execute the same query locally on the DB host to see if latency persists without network hop.\", \"N3:6:58e29d8d\": \"Temporarily SSH into the DB server and run the query; fast results indicate network as the cause.\", \"N3:7:252dc72c\": \"Quick network fix: restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers.\", \"N4:0:181302fb\": \"OUT_OF_SCOPE: The question pertains to system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:40b51595\": \"UNKNOWN: Unable to determine a solution within the math_logic scope.\", \"N5:0:88201ee1\": \"OUT_OF_SCOPE: The request asks about performance isolation between DB and network, which is outside defensive security scope.\", \"N5:1:7217c67e\": \"UNKNOWN: No security-relevant information is provided to evaluate authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are accurately reflected in the draft.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft correctly incorporates each used point.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\",\"N1:5:29f1704c\",\"N1:6:44da40ab\",\"N1:7:2f99837b\",\"N2:0:3575e928\",\"N2:1:65106529\",\"N2:2:7ac28b9f\",\"N3:7:252dc72c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All used points are present and correctly applied.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\",\"N1:5:29f1704c\",\"N1:6:44da40ab\",\"N1:7:2f99837b\",\"N2:4:5bc7bf7b\",\"N3:7:252dc72c\"],\"reject_points\":[],\"unknown_points\":[\"N2:5:6882b2ca\"],\"note\":\"All points align except N2:5, which is referenced without the specific actions described in the point; marked UNKNOWN.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-f7f53996-0c8b-4584-861e-1b2b47e2efb3",
+      "object": "chat.completion",
+      "created": 1772962201,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are accurately reflected in the draft.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft correctly incorporates each used point.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\",\"N1:5:29f1704c\",\"N1:6:44da40ab\",\"N1:7:2f99837b\",\"N2:0:3575e928\",\"N2:1:65106529\",\"N2:2:7ac28b9f\",\"N3:7:252dc72c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All used points are present and correctly applied.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:e504efc8\",\"N1:1:77a4e562\",\"N1:2:46926cba\",\"N1:3:8ead2c21\",\"N1:4:840d81ac\",\"N1:5:29f1704c\",\"N1:6:44da40ab\",\"N1:7:2f99837b\",\"N2:4:5bc7bf7b\",\"N3:7:252dc72c\"],\"reject_points\":[],\"unknown_points\":[\"N2:5:6882b2ca\"],\"note\":\"All points align except N2:5, which is referenced without the specific actions described in the point; marked UNKNOWN.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 3148,
+        "completion_tokens": 2783,
+        "total_tokens": 5931
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 50 seconds.\",\"retryAfter\":50,\"limit\":10,\"remaining\":0,\"reset\":1772962200}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 30 seconds.\",\"retryAfter\":30,\"limit\":10,\"remaining\":0,\"reset\":1772962200}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 9 seconds.\",\"retryAfter\":9,\"limit\":10,\"remaining\":0,\"reset\":1772962200}"
+      }
+    ],
+    "error": null
+  }
+]

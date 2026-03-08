@@ -1,0 +1,139 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:aa62cf33",
+        "text": "Map current session cookie usage and identify all authentication entry points."
+      },
+      {
+        "point_id": "N1:1:22779c08",
+        "text": "Introduce JWT issuance behind a feature flag while keeping session fallback active."
+      },
+      {
+        "point_id": "N1:2:34c27d77",
+        "text": "Use short-lived access tokens (e.g., 15 min) and store refresh tokens securely (httpOnly, sameSite)."
+      },
+      {
+        "point_id": "N1:3:87bb9186",
+        "text": "Sign JWTs with a strong algorithm like RS256 and set up regular key rotation."
+      },
+      {
+        "point_id": "N1:4:6ec4ebc2",
+        "text": "Validate JWT signature and expiration on every request; reject invalid or expired tokens."
+      },
+      {
+        "point_id": "N1:5:3dea4545",
+        "text": "Include only minimal, non‑sensitive claims in JWTs; never embed passwords or PII."
+      },
+      {
+        "point_id": "N1:6:5a2a506a",
+        "text": "Enforce HTTPS everywhere to protect JWTs in transit and prevent token leakage."
+      },
+      {
+        "point_id": "N1:7:f6731d2b",
+        "text": "Add rate limiting and circuit breakers to absorb 5xx spikes during the migration rollout."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:31d16e8c",
+        "text": "OUT_OF_SCOPE: The request concerns JWT authentication migration, which is outside the databases_sql domain."
+      },
+      {
+        "point_id": "N2:1:1f27afb3",
+        "text": "UNKNOWN: Detailed migration plan and security pitfalls cannot be addressed within this scope."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": [
+      {
+        "point_id": "N3:0:f06a8a31",
+        "text": "Deploy JWT validation as middleware behind a load balancer and run a canary release before full rollout."
+      },
+      {
+        "point_id": "N3:1:e9ffec53",
+        "text": "During migration, support both session cookies and JWTs so existing clients continue working."
+      },
+      {
+        "point_id": "N3:2:c9ba328f",
+        "text": "Issue short‑lived JWTs (e.g., 15 min) with refresh tokens to limit exposure if a token is stolen."
+      },
+      {
+        "point_id": "N3:3:b631372e",
+        "text": "Sign JWTs with a strong algorithm (e.g., RS256) and rotate signing keys regularly."
+      },
+      {
+        "point_id": "N3:4:6112ccd9",
+        "text": "Never store sensitive data (passwords, PII) in JWT payloads; keep claims minimal."
+      },
+      {
+        "point_id": "N3:5:d39adde2",
+        "text": "Validate token expiration, audience, and issuer on every request to prevent replay attacks."
+      },
+      {
+        "point_id": "N3:6:53ec0380",
+        "text": "Monitor 5xx spikes; use a circuit‑breaker pattern to isolate failing services and protect the DB."
+      },
+      {
+        "point_id": "N3:7:2c7d9a5b",
+        "text": "Before migration, tune DB connection pools and optimize hot queries to reduce contention."
+      }
+    ]
+  },
+  {
+    "node_id": "N4",
+    "points": [
+      {
+        "point_id": "N4:0:783ee299",
+        "text": "OUT_OF_SCOPE: Query about JWT migration and security is outside math_logic domain."
+      },
+      {
+        "point_id": "N4:1:9646b153",
+        "text": "UNKNOWN: No relevant answer can be generated within the domain."
+      }
+    ]
+  },
+  {
+    "node_id": "N5",
+    "points": [
+      {
+        "point_id": "N5:0:a96ecbc3",
+        "text": "Deploy JWTs alongside session cookies using a feature flag for gradual rollout."
+      },
+      {
+        "point_id": "N5:1:6ab9bd9f",
+        "text": "Issue short‑lived JWTs (e.g., 5‑15 min) and rotate signing keys regularly."
+      },
+      {
+        "point_id": "N5:2:5e6dd455",
+        "text": "Store JWT signing keys in a secure vault or HSM; never hard‑code them."
+      },
+      {
+        "point_id": "N5:3:89f05d5a",
+        "text": "Validate JWT signature, issuer, audience, expiration, and required claims on every request."
+      },
+      {
+        "point_id": "N5:4:c25de584",
+        "text": "Serve all auth traffic over HTTPS; set Secure and HttpOnly on fallback cookies."
+      },
+      {
+        "point_id": "N5:5:27827c41",
+        "text": "Do not embed sensitive PII in JWT payloads; use opaque user IDs instead."
+      },
+      {
+        "point_id": "N5:6:acae2619",
+        "text": "Implement revocation via a token blacklist or by using very short TTLs."
+      },
+      {
+        "point_id": "N5:7:33ab6335",
+        "text": "Cache public keys and perform async token generation to reduce DB load."
+      }
+    ]
+  }
+]

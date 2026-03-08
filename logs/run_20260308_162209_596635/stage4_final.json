@@ -1,0 +1,45 @@
+{
+  "winner": "N5",
+  "final_answer": "Assign each webhook a globally unique identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated idempotency table (N1:0:dc4855ad). Define a UNIQUE constraint on this idempotency_key (N2:1:c98e2afe) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2:a9c1dfd2) so a duplicate receipt is ignored. When a webhook arrives, first attempt the insert; if it fails, the event has already been handled and you can return success without re‑applying business logic (N1:1:b4e4f3c9, N5:1:16d8f729). Wrap the insert of the idempotency record and the payment state change in a single SERIALIZABLE transaction (N2:3:47ad0397, N1:2:f7fb95d1) to guarantee atomicity and prevent partial updates. Make the payment update itself idempotent – e.g., increment only if the event has not been applied, using conditional upserts or version checks (N1:3:c3132779, N5:3:b45c76a2). Acknowledge the webhook to the sender immediately (HTTP 200/202) after persisting the idempotency record, then continue the charge processing asynchronously (N1:4:3fd7a028, N3:4:b6bf9b3c). Set a short request timeout (5‑10 s) so the sender will retry on timeout, relying on the idempotency checks to avoid double‑charging (N1:5:99392cbd, N3:5:220c1a3b). Show the user a pending status and update the UI once the async processing completes (N1:6:d8a420f0). Implement exponential backoff for provider retries and route permanently failing events to a dead‑letter queue for manual review (N1:7:8f632d80). This combination of unique keys, database constraints, transactional processing, immediate acknowledgment, and sensible timeouts ensures no double‑charges while keeping the system responsive.",
+  "metrics": {
+    "pass": {
+      "N1": 4,
+      "N2": 3,
+      "N3": 3,
+      "N4": 4,
+      "N5": 4
+    },
+    "fail": {
+      "N1": 0,
+      "N2": 1,
+      "N3": 1,
+      "N4": 0,
+      "N5": 0
+    },
+    "agree": {
+      "N1": 20,
+      "N2": 19,
+      "N3": 47,
+      "N4": 20,
+      "N5": 48
+    },
+    "reject": {
+      "N1": 0,
+      "N2": 1,
+      "N3": 1,
+      "N4": 0,
+      "N5": 0
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N5": 5.0
+    },
+    "point_rep_delta": {
+      "N1": 112.0,
+      "N2": 24.0,
+      "N3": 12.0,
+      "N5": 4.0
+    }
+  }
+}

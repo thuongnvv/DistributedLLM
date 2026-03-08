@@ -1,0 +1,821 @@
+[
+  {
+    "timestamp": "2026-03-08T09:11:08.601792+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"Collect recent metrics: cache hit/miss rates, DB query count, CPU usage, and latency per endpoint.\"},{\"text\":\"Compare these metrics before and after the feature release to pinpoint affected endpoints.\"},{\"text\":\"Enable detailed query logging to capture full parameter sets and execution plans for each query.\"},{\"text\":\"Review cache key generation; ensure new parameters are incorporated correctly and not causing key fragmentation.\"},{\"text\":\"Check for changes in cache TTL or eviction spikes that could be lowering the hit rate.\"},{\"text\":\"Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool.\"},{\"text\":\"Run EXPLAIN on frequent queries to detect missing indexes or full table scans introduced by new parameters.\"},{\"text\":\"Conduct load testing with representative parameter combinations to reproduce cache miss patterns.\"},{\"text\":\"If cache misses stem from key variance, consider normalizing parameters or using a hashed composite key.\"},{\"text\":\"Apply mitigations: add missing indexes, adjust cache TTL, pre‑warm cache, or batch similar queries to reduce load.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-950bca2b-27dd-47fe-8513-d7bf01b132ab",
+      "object": "chat.completion",
+      "created": 1772961065,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"Collect recent metrics: cache hit/miss rates, DB query count, CPU usage, and latency per endpoint.\"},{\"text\":\"Compare these metrics before and after the feature release to pinpoint affected endpoints.\"},{\"text\":\"Enable detailed query logging to capture full parameter sets and execution plans for each query.\"},{\"text\":\"Review cache key generation; ensure new parameters are incorporated correctly and not causing key fragmentation.\"},{\"text\":\"Check for changes in cache TTL or eviction spikes that could be lowering the hit rate.\"},{\"text\":\"Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool.\"},{\"text\":\"Run EXPLAIN on frequent queries to detect missing indexes or full table scans introduced by new parameters.\"},{\"text\":\"Conduct load testing with representative parameter combinations to reproduce cache miss patterns.\"},{\"text\":\"If cache misses stem from key variance, consider normalizing parameters or using a hashed composite key.\"},{\"text\":\"Apply mitigations: add missing indexes, adjust cache TTL, pre‑warm cache, or batch similar queries to reduce load.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 319,
+        "completion_tokens": 543,
+        "total_tokens": 862
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:11:10.026211+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N2"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"Collect baseline metrics: cache hit rate, query latency, CPU, I/O, and read counts before the feature change.\"},{\"text\":\"Identify queries with increased execution count or duration using slow‑query logs or DMVs.\"},{\"text\":\"Compare execution plans of affected queries pre‑ and post‑change to spot regressions.\"},{\"text\":\"Check for parameter sniffing; new parameters may cause suboptimal plans—consider RECOMPILE or OPTIMIZE FOR.\"},{\"text\":\"Verify index usage: look for missing indexes, index scans, or outdated statistics causing full scans.\"},{\"text\":\"Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection.\"},{\"text\":\"Assess cacheability: new parameters may reduce plan reuse; enforce consistent parameterization or prepared statements.\"},{\"text\":\"Refactor queries: simplify predicates, remove unnecessary joins, and limit result sets where possible.\"},{\"text\":\"Test changes in a staging environment with realistic load; measure cache hit rate and DB reads.\"},{\"text\":\"Deploy fixes incrementally, monitor key metrics, and roll back any change that worsens performance.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-6f59c1b8-2e7f-4efb-bbf0-fc7465187af1",
+      "object": "chat.completion",
+      "created": 1772961066,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"Collect baseline metrics: cache hit rate, query latency, CPU, I/O, and read counts before the feature change.\"},{\"text\":\"Identify queries with increased execution count or duration using slow‑query logs or DMVs.\"},{\"text\":\"Compare execution plans of affected queries pre‑ and post‑change to spot regressions.\"},{\"text\":\"Check for parameter sniffing; new parameters may cause suboptimal plans—consider RECOMPILE or OPTIMIZE FOR.\"},{\"text\":\"Verify index usage: look for missing indexes, index scans, or outdated statistics causing full scans.\"},{\"text\":\"Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection.\"},{\"text\":\"Assess cacheability: new parameters may reduce plan reuse; enforce consistent parameterization or prepared statements.\"},{\"text\":\"Refactor queries: simplify predicates, remove unnecessary joins, and limit result sets where possible.\"},{\"text\":\"Test changes in a staging environment with realistic load; measure cache hit rate and DB reads.\"},{\"text\":\"Deploy fixes incrementally, monitor key metrics, and roll back any change that worsens performance.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 315,
+        "completion_tokens": 566,
+        "total_tokens": 881
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:12:01.888828+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The question focuses on application caching, DB load, and CPU usage, which are beyond the networking_systems domain scope.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-ad413427-5aa8-4ec8-9726-1f108a4563a9",
+      "object": "chat.completion",
+      "created": 1772961118,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The question focuses on application caching, DB load, and CPU usage, which are beyond the networking_systems domain scope.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 322,
+        "completion_tokens": 348,
+        "total_tokens": 670
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 50 seconds.\",\"retryAfter\":50,\"limit\":10,\"remaining\":0,\"reset\":1772961120}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 30 seconds.\",\"retryAfter\":30,\"limit\":10,\"remaining\":0,\"reset\":1772961120}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 9 seconds.\",\"retryAfter\":9,\"limit\":10,\"remaining\":0,\"reset\":1772961120}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:12:03.379206+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N4"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The request concerns system performance troubleshooting, which is outside the math_logic domain.\"},{\"text\":\"UNKNOWN: Without detailed metrics and code, the exact root cause cannot be identified.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-e22d3fe1-3932-4c27-b6c5-1cbceba26c5d",
+      "object": "chat.completion",
+      "created": 1772961122,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The request concerns system performance troubleshooting, which is outside the math_logic domain.\"},{\"text\":\"UNKNOWN: Without detailed metrics and code, the exact root cause cannot be identified.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 317,
+        "completion_tokens": 323,
+        "total_tokens": 640
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:12:04.521119+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The question asks for performance troubleshooting, which is outside the defensive security domain.\"},{\"text\":\"UNKNOWN: No security-related information is provided to assess authentication, session safety, or secure coding aspects.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-def9ad1e-134c-4c88-95ef-20c8dd2940c2",
+      "object": "chat.completion",
+      "created": 1772961124,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The question asks for performance troubleshooting, which is outside the defensive security domain.\"},{\"text\":\"UNKNOWN: No security-related information is provided to assess authentication, session safety, or secure coding aspects.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 315,
+        "completion_tokens": 253,
+        "total_tokens": 568
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:12:05.937795+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\", \"points_map\": {\"N1:0:54f6d4b0\": \"Collect recent metrics: cache hit/miss rates, DB query count, CPU usage, and latency per endpoint.\", \"N1:1:00fd2b41\": \"Compare these metrics before and after the feature release to pinpoint affected endpoints.\", \"N1:2:e91ca1c1\": \"Enable detailed query logging to capture full parameter sets and execution plans for each query.\", \"N1:3:eb7fa5a7\": \"Review cache key generation; ensure new parameters are incorporated correctly and not causing key fragmentation.\", \"N1:4:6107aeb3\": \"Check for changes in cache TTL or eviction spikes that could be lowering the hit rate.\", \"N1:5:42f99f48\": \"Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool.\", \"N1:6:25b5b7c0\": \"Run EXPLAIN on frequent queries to detect missing indexes or full table scans introduced by new parameters.\", \"N1:7:96874d2c\": \"Conduct load testing with representative parameter combinations to reproduce cache miss patterns.\", \"N2:0:05ac5284\": \"Collect baseline metrics: cache hit rate, query latency, CPU, I/O, and read counts before the feature change.\", \"N2:1:95f72b8b\": \"Identify queries with increased execution count or duration using slow‑query logs or DMVs.\", \"N2:2:96d864e7\": \"Compare execution plans of affected queries pre‑ and post‑change to spot regressions.\", \"N2:3:8b01b2e6\": \"Check for parameter sniffing; new parameters may cause suboptimal plans—consider RECOMPILE or OPTIMIZE FOR.\", \"N2:4:f2aca71c\": \"Verify index usage: look for missing indexes, index scans, or outdated statistics causing full scans.\", \"N2:5:ba4c7fdb\": \"Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection.\", \"N2:6:7dc0dd51\": \"Assess cacheability: new parameters may reduce plan reuse; enforce consistent parameterization or prepared statements.\", \"N2:7:959800bf\": \"Refactor queries: simplify predicates, remove unnecessary joins, and limit result sets where possible.\", \"N3:0:16593d8c\": \"OUT_OF_SCOPE: The question focuses on application caching, DB load, and CPU usage, which are beyond the networking_systems domain scope.\", \"N4:0:14c7182d\": \"OUT_OF_SCOPE: The request concerns system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:ac97b9c6\": \"UNKNOWN: Without detailed metrics and code, the exact root cause cannot be identified.\", \"N5:0:2867db94\": \"OUT_OF_SCOPE: The question asks for performance troubleshooting, which is outside the defensive security domain.\", \"N5:1:7ecc21c9\": \"UNKNOWN: No security-related information is provided to assess authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"1. Collect recent and baseline metrics (cache hit/miss rates, DB query counts, CPU usage, latency per endpoint) to establish a before‑and‑after view (N1:0, N2:0).\\\\n2. Compare these metrics across the feature release to spot which endpoints show degraded hit rates or doubled reads (N1:1, N2:1).\\\\n3. Enable detailed query logging to capture full parameter sets and execution plans for the affected queries (N1:2).\\\\n4. Review cache‑key generation logic to ensure new parameters are incorporated correctly and not causing key fragmentation or excessive key space (N1:3).\\\\n5. Check cache TTL settings and eviction spikes that might be lowering hit rates (N1:4).\\\\n6. Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool (N1:5).\\\\n7. Run EXPLAIN on the frequent queries to detect missing indexes or full table scans introduced by the new parameters (N1:6).\\\\n8. Identify queries with increased execution count or duration via slow‑query logs or DMVs (N2:1).\\\\n9. Compare execution plans of those queries pre‑ and post‑change to spot regressions (N2:2).\\\\n10. Look for parameter‑sniffing issues; consider RECOMPILE hints or OPTIMIZE FOR to stabilize plans (N2:3).\\\\n11. Verify index usage and update statistics; rebuild or reorganize indexes if scans are observed (N2:4, N2:5).\\\\n12. Based on findings, adjust cache key strategy, tune TTL/eviction, add or fix indexes, and optimize query predicates to restore cache hit rate and reduce DB load.\",\n  \"used_points\": [\n    \"N1:0\",\n    \"N1:1\",\n    \"N1:2\",\n    \"N1:3\",\n    \"N1:4\",\n    \"N1:5\",\n    \"N1:6\",\n    \"N2:0\",\n    \"N2:1\",\n    \"N2:2\",\n    \"N2:3\",\n    \"N2:4\",\n    \"N2:5\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-4ede7ef4-a9a0-4941-acbc-1a468c54d7ff",
+      "object": "chat.completion",
+      "created": 1772961122,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"1. Collect recent and baseline metrics (cache hit/miss rates, DB query counts, CPU usage, latency per endpoint) to establish a before‑and‑after view (N1:0, N2:0).\\\\n2. Compare these metrics across the feature release to spot which endpoints show degraded hit rates or doubled reads (N1:1, N2:1).\\\\n3. Enable detailed query logging to capture full parameter sets and execution plans for the affected queries (N1:2).\\\\n4. Review cache‑key generation logic to ensure new parameters are incorporated correctly and not causing key fragmentation or excessive key space (N1:3).\\\\n5. Check cache TTL settings and eviction spikes that might be lowering hit rates (N1:4).\\\\n6. Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool (N1:5).\\\\n7. Run EXPLAIN on the frequent queries to detect missing indexes or full table scans introduced by the new parameters (N1:6).\\\\n8. Identify queries with increased execution count or duration via slow‑query logs or DMVs (N2:1).\\\\n9. Compare execution plans of those queries pre‑ and post‑change to spot regressions (N2:2).\\\\n10. Look for parameter‑sniffing issues; consider RECOMPILE hints or OPTIMIZE FOR to stabilize plans (N2:3).\\\\n11. Verify index usage and update statistics; rebuild or reorganize indexes if scans are observed (N2:4, N2:5).\\\\n12. Based on findings, adjust cache key strategy, tune TTL/eviction, add or fix indexes, and optimize query predicates to restore cache hit rate and reduce DB load.\",\n  \"used_points\": [\n    \"N1:0\",\n    \"N1:1\",\n    \"N1:2\",\n    \"N1:3\",\n    \"N1:4\",\n    \"N1:5\",\n    \"N1:6\",\n    \"N2:0\",\n    \"N2:1\",\n    \"N2:2\",\n    \"N2:3\",\n    \"N2:4\",\n    \"N2:5\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1012,
+        "completion_tokens": 755,
+        "total_tokens": 1767
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:13:02.464918+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N2"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\", \"points_map\": {\"N1:0:54f6d4b0\": \"Collect recent metrics: cache hit/miss rates, DB query count, CPU usage, and latency per endpoint.\", \"N1:1:00fd2b41\": \"Compare these metrics before and after the feature release to pinpoint affected endpoints.\", \"N1:2:e91ca1c1\": \"Enable detailed query logging to capture full parameter sets and execution plans for each query.\", \"N1:3:eb7fa5a7\": \"Review cache key generation; ensure new parameters are incorporated correctly and not causing key fragmentation.\", \"N1:4:6107aeb3\": \"Check for changes in cache TTL or eviction spikes that could be lowering the hit rate.\", \"N1:5:42f99f48\": \"Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool.\", \"N1:6:25b5b7c0\": \"Run EXPLAIN on frequent queries to detect missing indexes or full table scans introduced by new parameters.\", \"N1:7:96874d2c\": \"Conduct load testing with representative parameter combinations to reproduce cache miss patterns.\", \"N2:0:05ac5284\": \"Collect baseline metrics: cache hit rate, query latency, CPU, I/O, and read counts before the feature change.\", \"N2:1:95f72b8b\": \"Identify queries with increased execution count or duration using slow‑query logs or DMVs.\", \"N2:2:96d864e7\": \"Compare execution plans of affected queries pre‑ and post‑change to spot regressions.\", \"N2:3:8b01b2e6\": \"Check for parameter sniffing; new parameters may cause suboptimal plans—consider RECOMPILE or OPTIMIZE FOR.\", \"N2:4:f2aca71c\": \"Verify index usage: look for missing indexes, index scans, or outdated statistics causing full scans.\", \"N2:5:ba4c7fdb\": \"Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection.\", \"N2:6:7dc0dd51\": \"Assess cacheability: new parameters may reduce plan reuse; enforce consistent parameterization or prepared statements.\", \"N2:7:959800bf\": \"Refactor queries: simplify predicates, remove unnecessary joins, and limit result sets where possible.\", \"N3:0:16593d8c\": \"OUT_OF_SCOPE: The question focuses on application caching, DB load, and CPU usage, which are beyond the networking_systems domain scope.\", \"N4:0:14c7182d\": \"OUT_OF_SCOPE: The request concerns system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:ac97b9c6\": \"UNKNOWN: Without detailed metrics and code, the exact root cause cannot be identified.\", \"N5:0:2867db94\": \"OUT_OF_SCOPE: The question asks for performance troubleshooting, which is outside the defensive security domain.\", \"N5:1:7ecc21c9\": \"UNKNOWN: No security-related information is provided to assess authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"1. Gather recent baseline metrics (cache hit/miss rates, DB query count, CPU usage, latency per endpoint) and compare them to pre‑release values (N1:0, N1:1, N2:0). 2. Enable detailed query logging to capture full parameter sets and execution plans (N1:2). 3. Review cache key generation to ensure new parameters are incorporated correctly and not causing key fragmentation; also check TTL or eviction spikes that could lower hit rate (N1:3, N1:4). 4. Profile the application code to locate hot paths where CPU increased (N1:5). 5. Run EXPLAIN on the most frequent queries to detect missing indexes or full table scans introduced by the new parameters (N1:6). 6. Identify queries with increased execution count or duration using slow‑query logs or DMVs (N2:1). 7. Compare execution plans of affected queries before and after the change to spot regressions (N2:2). 8. Check for parameter sniffing issues; consider RECOMPILE or OPTIMIZE FOR hints if new parameters cause suboptimal plans (N2:3). 9. Verify index usage, look for missing indexes, index scans, or outdated statistics causing full scans (N2:4). 10. Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection (N2:5). 11. Refactor problematic queries to simplify predicates, remove unnecessary joins, and limit result sets where possible (N2:7). 12. Iterate: after each change, re‑measure metrics to confirm cache hit rate improves, DB reads drop, and CPU usage stabilizes.\",\n  \"used_points\": [\"N1:0\", \"N1:1\", \"N1:2\", \"N1:3\", \"N1:4\", \"N1:5\", \"N1:6\", \"N2:0\", \"N2:1\", \"N2:2\", \"N2:3\", \"N2:4\"]\n}",
+    "response_json": {
+      "id": "chatcmpl-f21d1232-9dfb-49a1-8f01-673e4c7531ec",
+      "object": "chat.completion",
+      "created": 1772961179,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"1. Gather recent baseline metrics (cache hit/miss rates, DB query count, CPU usage, latency per endpoint) and compare them to pre‑release values (N1:0, N1:1, N2:0). 2. Enable detailed query logging to capture full parameter sets and execution plans (N1:2). 3. Review cache key generation to ensure new parameters are incorporated correctly and not causing key fragmentation; also check TTL or eviction spikes that could lower hit rate (N1:3, N1:4). 4. Profile the application code to locate hot paths where CPU increased (N1:5). 5. Run EXPLAIN on the most frequent queries to detect missing indexes or full table scans introduced by the new parameters (N1:6). 6. Identify queries with increased execution count or duration using slow‑query logs or DMVs (N2:1). 7. Compare execution plans of affected queries before and after the change to spot regressions (N2:2). 8. Check for parameter sniffing issues; consider RECOMPILE or OPTIMIZE FOR hints if new parameters cause suboptimal plans (N2:3). 9. Verify index usage, look for missing indexes, index scans, or outdated statistics causing full scans (N2:4). 10. Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection (N2:5). 11. Refactor problematic queries to simplify predicates, remove unnecessary joins, and limit result sets where possible (N2:7). 12. Iterate: after each change, re‑measure metrics to confirm cache hit rate improves, DB reads drop, and CPU usage stabilizes.\",\n  \"used_points\": [\"N1:0\", \"N1:1\", \"N1:2\", \"N1:3\", \"N1:4\", \"N1:5\", \"N1:6\", \"N2:0\", \"N2:1\", \"N2:2\", \"N2:3\", \"N2:4\"]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1008,
+        "completion_tokens": 737,
+        "total_tokens": 1745
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 54 seconds.\",\"retryAfter\":54,\"limit\":10,\"remaining\":0,\"reset\":1772961180}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 34 seconds.\",\"retryAfter\":34,\"limit\":10,\"remaining\":0,\"reset\":1772961180}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 13 seconds.\",\"retryAfter\":13,\"limit\":10,\"remaining\":0,\"reset\":1772961180}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:13:04.473302+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\", \"points_map\": {\"N1:0:54f6d4b0\": \"Collect recent metrics: cache hit/miss rates, DB query count, CPU usage, and latency per endpoint.\", \"N1:1:00fd2b41\": \"Compare these metrics before and after the feature release to pinpoint affected endpoints.\", \"N1:2:e91ca1c1\": \"Enable detailed query logging to capture full parameter sets and execution plans for each query.\", \"N1:3:eb7fa5a7\": \"Review cache key generation; ensure new parameters are incorporated correctly and not causing key fragmentation.\", \"N1:4:6107aeb3\": \"Check for changes in cache TTL or eviction spikes that could be lowering the hit rate.\", \"N1:5:42f99f48\": \"Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool.\", \"N1:6:25b5b7c0\": \"Run EXPLAIN on frequent queries to detect missing indexes or full table scans introduced by new parameters.\", \"N1:7:96874d2c\": \"Conduct load testing with representative parameter combinations to reproduce cache miss patterns.\", \"N2:0:05ac5284\": \"Collect baseline metrics: cache hit rate, query latency, CPU, I/O, and read counts before the feature change.\", \"N2:1:95f72b8b\": \"Identify queries with increased execution count or duration using slow‑query logs or DMVs.\", \"N2:2:96d864e7\": \"Compare execution plans of affected queries pre‑ and post‑change to spot regressions.\", \"N2:3:8b01b2e6\": \"Check for parameter sniffing; new parameters may cause suboptimal plans—consider RECOMPILE or OPTIMIZE FOR.\", \"N2:4:f2aca71c\": \"Verify index usage: look for missing indexes, index scans, or outdated statistics causing full scans.\", \"N2:5:ba4c7fdb\": \"Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection.\", \"N2:6:7dc0dd51\": \"Assess cacheability: new parameters may reduce plan reuse; enforce consistent parameterization or prepared statements.\", \"N2:7:959800bf\": \"Refactor queries: simplify predicates, remove unnecessary joins, and limit result sets where possible.\", \"N3:0:16593d8c\": \"OUT_OF_SCOPE: The question focuses on application caching, DB load, and CPU usage, which are beyond the networking_systems domain scope.\", \"N4:0:14c7182d\": \"OUT_OF_SCOPE: The request concerns system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:ac97b9c6\": \"UNKNOWN: Without detailed metrics and code, the exact root cause cannot be identified.\", \"N5:0:2867db94\": \"OUT_OF_SCOPE: The question asks for performance troubleshooting, which is outside the defensive security domain.\", \"N5:1:7ecc21c9\": \"UNKNOWN: No security-related information is provided to assess authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"1. Collect recent baseline metrics (cache hit/miss, DB query count, CPU, latency) and compare them to pre‑release values (N1:0, N2:0, N1:1, N2:1). 2. Enable detailed query logging to capture full parameter sets and execution plans (N1:2). 3. Review cache key generation to ensure new parameters are incorporated correctly and not fragmenting keys (N1:3); also verify cache TTL and eviction patterns for spikes (N1:4). 4. Profile the application code to locate hot paths where CPU increased (N1:5). 5. Run EXPLAIN on the most frequent queries to detect missing indexes or full scans introduced by new parameters (N1:6). 6. Check for parameter sniffing and suboptimal plans; consider RECOMPILE or OPTIMIZE FOR hints (N2:3). 7. Verify index usage and update statistics; rebuild/reorganize indexes if needed (N2:4, N2:5). 8. Assess query cacheability and enforce consistent parameterization or prepared statements (N2:6). 9. Refactor complex queries to simplify predicates, remove unnecessary joins, and limit result sets (N2:7). 10. Conduct load testing with representative parameter combinations to reproduce cache miss patterns and validate mitigations (N1:7).\",\n  \"used_points\": [\n    \"N1:0\",\n    \"N2:0\",\n    \"N1:1\",\n    \"N2:1\",\n    \"N1:2\",\n    \"N1:3\",\n    \"N1:4\",\n    \"N1:5\",\n    \"N1:6\",\n    \"N2:3\",\n    \"N2:4\",\n    \"N2:5\",\n    \"N2:6\",\n    \"N2:7\",\n    \"N1:7\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-ebfe1154-819d-4119-a717-6e6321249109",
+      "object": "chat.completion",
+      "created": 1772961180,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"1. Collect recent baseline metrics (cache hit/miss, DB query count, CPU, latency) and compare them to pre‑release values (N1:0, N2:0, N1:1, N2:1). 2. Enable detailed query logging to capture full parameter sets and execution plans (N1:2). 3. Review cache key generation to ensure new parameters are incorporated correctly and not fragmenting keys (N1:3); also verify cache TTL and eviction patterns for spikes (N1:4). 4. Profile the application code to locate hot paths where CPU increased (N1:5). 5. Run EXPLAIN on the most frequent queries to detect missing indexes or full scans introduced by new parameters (N1:6). 6. Check for parameter sniffing and suboptimal plans; consider RECOMPILE or OPTIMIZE FOR hints (N2:3). 7. Verify index usage and update statistics; rebuild/reorganize indexes if needed (N2:4, N2:5). 8. Assess query cacheability and enforce consistent parameterization or prepared statements (N2:6). 9. Refactor complex queries to simplify predicates, remove unnecessary joins, and limit result sets (N2:7). 10. Conduct load testing with representative parameter combinations to reproduce cache miss patterns and validate mitigations (N1:7).\",\n  \"used_points\": [\n    \"N1:0\",\n    \"N2:0\",\n    \"N1:1\",\n    \"N2:1\",\n    \"N1:2\",\n    \"N1:3\",\n    \"N1:4\",\n    \"N1:5\",\n    \"N1:6\",\n    \"N2:3\",\n    \"N2:4\",\n    \"N2:5\",\n    \"N2:6\",\n    \"N2:7\",\n    \"N1:7\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1015,
+        "completion_tokens": 693,
+        "total_tokens": 1708
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:13:05.818924+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N4"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\", \"points_map\": {\"N1:0:54f6d4b0\": \"Collect recent metrics: cache hit/miss rates, DB query count, CPU usage, and latency per endpoint.\", \"N1:1:00fd2b41\": \"Compare these metrics before and after the feature release to pinpoint affected endpoints.\", \"N1:2:e91ca1c1\": \"Enable detailed query logging to capture full parameter sets and execution plans for each query.\", \"N1:3:eb7fa5a7\": \"Review cache key generation; ensure new parameters are incorporated correctly and not causing key fragmentation.\", \"N1:4:6107aeb3\": \"Check for changes in cache TTL or eviction spikes that could be lowering the hit rate.\", \"N1:5:42f99f48\": \"Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool.\", \"N1:6:25b5b7c0\": \"Run EXPLAIN on frequent queries to detect missing indexes or full table scans introduced by new parameters.\", \"N1:7:96874d2c\": \"Conduct load testing with representative parameter combinations to reproduce cache miss patterns.\", \"N2:0:05ac5284\": \"Collect baseline metrics: cache hit rate, query latency, CPU, I/O, and read counts before the feature change.\", \"N2:1:95f72b8b\": \"Identify queries with increased execution count or duration using slow‑query logs or DMVs.\", \"N2:2:96d864e7\": \"Compare execution plans of affected queries pre‑ and post‑change to spot regressions.\", \"N2:3:8b01b2e6\": \"Check for parameter sniffing; new parameters may cause suboptimal plans—consider RECOMPILE or OPTIMIZE FOR.\", \"N2:4:f2aca71c\": \"Verify index usage: look for missing indexes, index scans, or outdated statistics causing full scans.\", \"N2:5:ba4c7fdb\": \"Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection.\", \"N2:6:7dc0dd51\": \"Assess cacheability: new parameters may reduce plan reuse; enforce consistent parameterization or prepared statements.\", \"N2:7:959800bf\": \"Refactor queries: simplify predicates, remove unnecessary joins, and limit result sets where possible.\", \"N3:0:16593d8c\": \"OUT_OF_SCOPE: The question focuses on application caching, DB load, and CPU usage, which are beyond the networking_systems domain scope.\", \"N4:0:14c7182d\": \"OUT_OF_SCOPE: The request concerns system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:ac97b9c6\": \"UNKNOWN: Without detailed metrics and code, the exact root cause cannot be identified.\", \"N5:0:2867db94\": \"OUT_OF_SCOPE: The question asks for performance troubleshooting, which is outside the defensive security domain.\", \"N5:1:7ecc21c9\": \"UNKNOWN: No security-related information is provided to assess authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"1. Collect recent metrics (cache hit/miss rates, DB query count, CPU usage, latency per endpoint) and baseline metrics from before the feature release. (N1:0, N2:0)\\\\n2. Compare these metrics pre‑ and post‑release to identify which endpoints or queries show degraded hit rates, doubled reads, or higher CPU. (N1:1, N2:1)\\\\n3. Enable detailed query logging to capture full parameter sets and execution plans for the affected queries. (N1:2)\\\\n4. Review cache key generation to ensure new parameters are incorporated correctly and not causing key fragmentation or excessive TTL/eviction spikes. (N1:3, N1:4)\\\\n5. Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool. (N1:5)\\\\n6. Run EXPLAIN on the frequent queries to detect missing indexes, full table scans, or sub‑optimal plans introduced by the new parameters. (N2:2, N2:4)\\\\n7. Check for parameter sniffing and consider RECOMPILE or OPTIMIZE FOR to obtain stable execution plans. (N2:3)\\\\n8. Update statistics and rebuild/reorganize indexes if needed to improve plan selection. (N2:5)\\\\n9. Assess query cacheability; enforce consistent parameterization or prepared statements to improve plan reuse. (N2:6)\\\\n10. Refactor problematic queries: simplify predicates, remove unnecessary joins, and limit result sets to reduce load. (N2:7)\",\n  \"used_points\": [\"N1:0\", \"N1:1\", \"N1:2\", \"N1:3\", \"N1:4\", \"N1:5\", \"N2:0\", \"N2:1\", \"N2:2\", \"N2:3\", \"N2:4\", \"N2:5\", \"N2:6\", \"N2:7\"]\n}",
+    "response_json": {
+      "id": "chatcmpl-ad67be04-a62e-4230-9e31-2640b7ee0363",
+      "object": "chat.completion",
+      "created": 1772961182,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"1. Collect recent metrics (cache hit/miss rates, DB query count, CPU usage, latency per endpoint) and baseline metrics from before the feature release. (N1:0, N2:0)\\\\n2. Compare these metrics pre‑ and post‑release to identify which endpoints or queries show degraded hit rates, doubled reads, or higher CPU. (N1:1, N2:1)\\\\n3. Enable detailed query logging to capture full parameter sets and execution plans for the affected queries. (N1:2)\\\\n4. Review cache key generation to ensure new parameters are incorporated correctly and not causing key fragmentation or excessive TTL/eviction spikes. (N1:3, N1:4)\\\\n5. Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool. (N1:5)\\\\n6. Run EXPLAIN on the frequent queries to detect missing indexes, full table scans, or sub‑optimal plans introduced by the new parameters. (N2:2, N2:4)\\\\n7. Check for parameter sniffing and consider RECOMPILE or OPTIMIZE FOR to obtain stable execution plans. (N2:3)\\\\n8. Update statistics and rebuild/reorganize indexes if needed to improve plan selection. (N2:5)\\\\n9. Assess query cacheability; enforce consistent parameterization or prepared statements to improve plan reuse. (N2:6)\\\\n10. Refactor problematic queries: simplify predicates, remove unnecessary joins, and limit result sets to reduce load. (N2:7)\",\n  \"used_points\": [\"N1:0\", \"N1:1\", \"N1:2\", \"N1:3\", \"N1:4\", \"N1:5\", \"N2:0\", \"N2:1\", \"N2:2\", \"N2:3\", \"N2:4\", \"N2:5\", \"N2:6\", \"N2:7\"]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1010,
+        "completion_tokens": 606,
+        "total_tokens": 1616
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:13:07.277542+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\", \"points_map\": {\"N1:0:54f6d4b0\": \"Collect recent metrics: cache hit/miss rates, DB query count, CPU usage, and latency per endpoint.\", \"N1:1:00fd2b41\": \"Compare these metrics before and after the feature release to pinpoint affected endpoints.\", \"N1:2:e91ca1c1\": \"Enable detailed query logging to capture full parameter sets and execution plans for each query.\", \"N1:3:eb7fa5a7\": \"Review cache key generation; ensure new parameters are incorporated correctly and not causing key fragmentation.\", \"N1:4:6107aeb3\": \"Check for changes in cache TTL or eviction spikes that could be lowering the hit rate.\", \"N1:5:42f99f48\": \"Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool.\", \"N1:6:25b5b7c0\": \"Run EXPLAIN on frequent queries to detect missing indexes or full table scans introduced by new parameters.\", \"N1:7:96874d2c\": \"Conduct load testing with representative parameter combinations to reproduce cache miss patterns.\", \"N2:0:05ac5284\": \"Collect baseline metrics: cache hit rate, query latency, CPU, I/O, and read counts before the feature change.\", \"N2:1:95f72b8b\": \"Identify queries with increased execution count or duration using slow‑query logs or DMVs.\", \"N2:2:96d864e7\": \"Compare execution plans of affected queries pre‑ and post‑change to spot regressions.\", \"N2:3:8b01b2e6\": \"Check for parameter sniffing; new parameters may cause suboptimal plans—consider RECOMPILE or OPTIMIZE FOR.\", \"N2:4:f2aca71c\": \"Verify index usage: look for missing indexes, index scans, or outdated statistics causing full scans.\", \"N2:5:ba4c7fdb\": \"Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection.\", \"N2:6:7dc0dd51\": \"Assess cacheability: new parameters may reduce plan reuse; enforce consistent parameterization or prepared statements.\", \"N2:7:959800bf\": \"Refactor queries: simplify predicates, remove unnecessary joins, and limit result sets where possible.\", \"N3:0:16593d8c\": \"OUT_OF_SCOPE: The question focuses on application caching, DB load, and CPU usage, which are beyond the networking_systems domain scope.\", \"N4:0:14c7182d\": \"OUT_OF_SCOPE: The request concerns system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:ac97b9c6\": \"UNKNOWN: Without detailed metrics and code, the exact root cause cannot be identified.\", \"N5:0:2867db94\": \"OUT_OF_SCOPE: The question asks for performance troubleshooting, which is outside the defensive security domain.\", \"N5:1:7ecc21c9\": \"UNKNOWN: No security-related information is provided to assess authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"OUT_OF_SCOPE: The question concerns system performance troubleshooting, which is outside the defensive security domain.\",\"used_points\":[\"N5:0:2867db94\"]}",
+    "response_json": {
+      "id": "chatcmpl-b0ac08ec-23d9-4e8c-9cec-c17f74eaa402",
+      "object": "chat.completion",
+      "created": 1772961184,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"OUT_OF_SCOPE: The question concerns system performance troubleshooting, which is outside the defensive security domain.\",\"used_points\":[\"N5:0:2867db94\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1008,
+        "completion_tokens": 431,
+        "total_tokens": 1439
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:14:02.574032+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N1",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N2\", \"target_draft\": \"1. Gather recent baseline metrics (cache hit/miss rates, DB query count, CPU usage, latency per endpoint) and compare them to pre‑release values (N1:0, N1:1, N2:0). 2. Enable detailed query logging to capture full parameter sets and execution plans (N1:2). 3. Review cache key generation to ensure new parameters are incorporated correctly and not causing key fragmentation; also check TTL or eviction spikes that could lower hit rate (N1:3, N1:4). 4. Profile the application code to locate hot paths where CPU increased (N1:5). 5. Run EXPLAIN on the most frequent queries to detect missing indexes or full table scans introduced by the new parameters (N1:6). 6. Identify queries with increased execution count or duration using slow‑query logs or DMVs (N2:1). 7. Compare execution plans of affected queries before and after the change to spot regressions (N2:2). 8. Check for parameter sniffing issues; consider RECOMPILE or OPTIMIZE FOR hints if new parameters cause suboptimal plans (N2:3). 9. Verify index usage, look for missing indexes, index scans, or outdated statistics causing full scans (N2:4). 10. Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection (N2:5). 11. Refactor problematic queries to simplify predicates, remove unnecessary joins, and limit result sets where possible (N2:7). 12. Iterate: after each change, re‑measure metrics to confirm cache hit rate improves, DB reads drop, and CPU usage stabilizes.\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N3\", \"target_draft\": \"1. Collect recent baseline metrics (cache hit/miss, DB query count, CPU, latency) and compare them to pre‑release values (N1:0, N2:0, N1:1, N2:1). 2. Enable detailed query logging to capture full parameter sets and execution plans (N1:2). 3. Review cache key generation to ensure new parameters are incorporated correctly and not fragmenting keys (N1:3); also verify cache TTL and eviction patterns for spikes (N1:4). 4. Profile the application code to locate hot paths where CPU increased (N1:5). 5. Run EXPLAIN on the most frequent queries to detect missing indexes or full scans introduced by new parameters (N1:6). 6. Check for parameter sniffing and suboptimal plans; consider RECOMPILE or OPTIMIZE FOR hints (N2:3). 7. Verify index usage and update statistics; rebuild/reorganize indexes if needed (N2:4, N2:5). 8. Assess query cacheability and enforce consistent parameterization or prepared statements (N2:6). 9. Refactor complex queries to simplify predicates, remove unnecessary joins, and limit result sets (N2:7). 10. Conduct load testing with representative parameter combinations to reproduce cache miss patterns and validate mitigations (N1:7).\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N4\", \"target_draft\": \"1. Collect recent metrics (cache hit/miss rates, DB query count, CPU usage, latency per endpoint) and baseline metrics from before the feature release. (N1:0, N2:0)\\\\n2. Compare these metrics pre‑ and post‑release to identify which endpoints or queries show degraded hit rates, doubled reads, or higher CPU. (N1:1, N2:1)\\\\n3. Enable detailed query logging to capture full parameter sets and execution plans for the affected queries. (N1:2)\\\\n4. Review cache key generation to ensure new parameters are incorporated correctly and not causing key fragmentation or excessive TTL/eviction spikes. (N1:3, N1:4)\\\\n5. Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool. (N1:5)\\\\n6. Run EXPLAIN on the frequent queries to detect missing indexes, full table scans, or sub‑optimal plans introduced by the new parameters. (N2:2, N2:4)\\\\n7. Check for parameter sniffing and consider RECOMPILE or OPTIMIZE FOR to obtain stable execution plans. (N2:3)\\\\n8. Update statistics and rebuild/reorganize indexes if needed to improve plan selection. (N2:5)\\\\n9. Assess query cacheability; enforce consistent parameterization or prepared statements to improve plan reuse. (N2:6)\\\\n10. Refactor problematic queries: simplify predicates, remove unnecessary joins, and limit result sets to reduce load. (N2:7)\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N5\", \"target_draft\": \"OUT_OF_SCOPE: The question concerns system performance troubleshooting, which is outside the defensive security domain.\", \"target_used_points\": [\"N5:0:2867db94\"]}], \"points_map\": {\"N1:0:54f6d4b0\": \"Collect recent metrics: cache hit/miss rates, DB query count, CPU usage, and latency per endpoint.\", \"N1:1:00fd2b41\": \"Compare these metrics before and after the feature release to pinpoint affected endpoints.\", \"N1:2:e91ca1c1\": \"Enable detailed query logging to capture full parameter sets and execution plans for each query.\", \"N1:3:eb7fa5a7\": \"Review cache key generation; ensure new parameters are incorporated correctly and not causing key fragmentation.\", \"N1:4:6107aeb3\": \"Check for changes in cache TTL or eviction spikes that could be lowering the hit rate.\", \"N1:5:42f99f48\": \"Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool.\", \"N1:6:25b5b7c0\": \"Run EXPLAIN on frequent queries to detect missing indexes or full table scans introduced by new parameters.\", \"N1:7:96874d2c\": \"Conduct load testing with representative parameter combinations to reproduce cache miss patterns.\", \"N2:0:05ac5284\": \"Collect baseline metrics: cache hit rate, query latency, CPU, I/O, and read counts before the feature change.\", \"N2:1:95f72b8b\": \"Identify queries with increased execution count or duration using slow‑query logs or DMVs.\", \"N2:2:96d864e7\": \"Compare execution plans of affected queries pre‑ and post‑change to spot regressions.\", \"N2:3:8b01b2e6\": \"Check for parameter sniffing; new parameters may cause suboptimal plans—consider RECOMPILE or OPTIMIZE FOR.\", \"N2:4:f2aca71c\": \"Verify index usage: look for missing indexes, index scans, or outdated statistics causing full scans.\", \"N2:5:ba4c7fdb\": \"Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection.\", \"N2:6:7dc0dd51\": \"Assess cacheability: new parameters may reduce plan reuse; enforce consistent parameterization or prepared statements.\", \"N2:7:959800bf\": \"Refactor queries: simplify predicates, remove unnecessary joins, and limit result sets where possible.\", \"N3:0:16593d8c\": \"OUT_OF_SCOPE: The question focuses on application caching, DB load, and CPU usage, which are beyond the networking_systems domain scope.\", \"N4:0:14c7182d\": \"OUT_OF_SCOPE: The request concerns system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:ac97b9c6\": \"UNKNOWN: Without detailed metrics and code, the exact root cause cannot be identified.\", \"N5:0:2867db94\": \"OUT_OF_SCOPE: The question asks for performance troubleshooting, which is outside the defensive security domain.\", \"N5:1:7ecc21c9\": \"UNKNOWN: No security-related information is provided to assess authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are present and correctly applied.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are present and correctly applied.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are present and correctly applied.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N5:0:2867db94\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"OUT_OF_SCOPE point correctly used.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-f779708a-5042-476f-90e2-f1778d6e81ad",
+      "object": "chat.completion",
+      "created": 1772961241,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are present and correctly applied.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are present and correctly applied.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are present and correctly applied.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N5:0:2867db94\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"OUT_OF_SCOPE point correctly used.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2362,
+        "completion_tokens": 939,
+        "total_tokens": 3301
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 53 seconds.\",\"retryAfter\":53,\"limit\":10,\"remaining\":0,\"reset\":1772961240}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 32 seconds.\",\"retryAfter\":32,\"limit\":10,\"remaining\":0,\"reset\":1772961240}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 12 seconds.\",\"retryAfter\":12,\"limit\":10,\"remaining\":0,\"reset\":1772961240}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:14:04.223509+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N2",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"1. Collect recent and baseline metrics (cache hit/miss rates, DB query counts, CPU usage, latency per endpoint) to establish a before‑and‑after view (N1:0, N2:0).\\\\n2. Compare these metrics across the feature release to spot which endpoints show degraded hit rates or doubled reads (N1:1, N2:1).\\\\n3. Enable detailed query logging to capture full parameter sets and execution plans for the affected queries (N1:2).\\\\n4. Review cache‑key generation logic to ensure new parameters are incorporated correctly and not causing key fragmentation or excessive key space (N1:3).\\\\n5. Check cache TTL settings and eviction spikes that might be lowering hit rates (N1:4).\\\\n6. Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool (N1:5).\\\\n7. Run EXPLAIN on the frequent queries to detect missing indexes or full table scans introduced by the new parameters (N1:6).\\\\n8. Identify queries with increased execution count or duration via slow‑query logs or DMVs (N2:1).\\\\n9. Compare execution plans of those queries pre‑ and post‑change to spot regressions (N2:2).\\\\n10. Look for parameter‑sniffing issues; consider RECOMPILE hints or OPTIMIZE FOR to stabilize plans (N2:3).\\\\n11. Verify index usage and update statistics; rebuild or reorganize indexes if scans are observed (N2:4, N2:5).\\\\n12. Based on findings, adjust cache key strategy, tune TTL/eviction, add or fix indexes, and optimize query predicates to restore cache hit rate and reduce DB load.\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N3\", \"target_draft\": \"1. Collect recent baseline metrics (cache hit/miss, DB query count, CPU, latency) and compare them to pre‑release values (N1:0, N2:0, N1:1, N2:1). 2. Enable detailed query logging to capture full parameter sets and execution plans (N1:2). 3. Review cache key generation to ensure new parameters are incorporated correctly and not fragmenting keys (N1:3); also verify cache TTL and eviction patterns for spikes (N1:4). 4. Profile the application code to locate hot paths where CPU increased (N1:5). 5. Run EXPLAIN on the most frequent queries to detect missing indexes or full scans introduced by new parameters (N1:6). 6. Check for parameter sniffing and suboptimal plans; consider RECOMPILE or OPTIMIZE FOR hints (N2:3). 7. Verify index usage and update statistics; rebuild/reorganize indexes if needed (N2:4, N2:5). 8. Assess query cacheability and enforce consistent parameterization or prepared statements (N2:6). 9. Refactor complex queries to simplify predicates, remove unnecessary joins, and limit result sets (N2:7). 10. Conduct load testing with representative parameter combinations to reproduce cache miss patterns and validate mitigations (N1:7).\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N4\", \"target_draft\": \"1. Collect recent metrics (cache hit/miss rates, DB query count, CPU usage, latency per endpoint) and baseline metrics from before the feature release. (N1:0, N2:0)\\\\n2. Compare these metrics pre‑ and post‑release to identify which endpoints or queries show degraded hit rates, doubled reads, or higher CPU. (N1:1, N2:1)\\\\n3. Enable detailed query logging to capture full parameter sets and execution plans for the affected queries. (N1:2)\\\\n4. Review cache key generation to ensure new parameters are incorporated correctly and not causing key fragmentation or excessive TTL/eviction spikes. (N1:3, N1:4)\\\\n5. Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool. (N1:5)\\\\n6. Run EXPLAIN on the frequent queries to detect missing indexes, full table scans, or sub‑optimal plans introduced by the new parameters. (N2:2, N2:4)\\\\n7. Check for parameter sniffing and consider RECOMPILE or OPTIMIZE FOR to obtain stable execution plans. (N2:3)\\\\n8. Update statistics and rebuild/reorganize indexes if needed to improve plan selection. (N2:5)\\\\n9. Assess query cacheability; enforce consistent parameterization or prepared statements to improve plan reuse. (N2:6)\\\\n10. Refactor problematic queries: simplify predicates, remove unnecessary joins, and limit result sets to reduce load. (N2:7)\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N5\", \"target_draft\": \"OUT_OF_SCOPE: The question concerns system performance troubleshooting, which is outside the defensive security domain.\", \"target_used_points\": [\"N5:0:2867db94\"]}], \"points_map\": {\"N1:0:54f6d4b0\": \"Collect recent metrics: cache hit/miss rates, DB query count, CPU usage, and latency per endpoint.\", \"N1:1:00fd2b41\": \"Compare these metrics before and after the feature release to pinpoint affected endpoints.\", \"N1:2:e91ca1c1\": \"Enable detailed query logging to capture full parameter sets and execution plans for each query.\", \"N1:3:eb7fa5a7\": \"Review cache key generation; ensure new parameters are incorporated correctly and not causing key fragmentation.\", \"N1:4:6107aeb3\": \"Check for changes in cache TTL or eviction spikes that could be lowering the hit rate.\", \"N1:5:42f99f48\": \"Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool.\", \"N1:6:25b5b7c0\": \"Run EXPLAIN on frequent queries to detect missing indexes or full table scans introduced by new parameters.\", \"N1:7:96874d2c\": \"Conduct load testing with representative parameter combinations to reproduce cache miss patterns.\", \"N2:0:05ac5284\": \"Collect baseline metrics: cache hit rate, query latency, CPU, I/O, and read counts before the feature change.\", \"N2:1:95f72b8b\": \"Identify queries with increased execution count or duration using slow‑query logs or DMVs.\", \"N2:2:96d864e7\": \"Compare execution plans of affected queries pre‑ and post‑change to spot regressions.\", \"N2:3:8b01b2e6\": \"Check for parameter sniffing; new parameters may cause suboptimal plans—consider RECOMPILE or OPTIMIZE FOR.\", \"N2:4:f2aca71c\": \"Verify index usage: look for missing indexes, index scans, or outdated statistics causing full scans.\", \"N2:5:ba4c7fdb\": \"Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection.\", \"N2:6:7dc0dd51\": \"Assess cacheability: new parameters may reduce plan reuse; enforce consistent parameterization or prepared statements.\", \"N2:7:959800bf\": \"Refactor queries: simplify predicates, remove unnecessary joins, and limit result sets where possible.\", \"N3:0:16593d8c\": \"OUT_OF_SCOPE: The question focuses on application caching, DB load, and CPU usage, which are beyond the networking_systems domain scope.\", \"N4:0:14c7182d\": \"OUT_OF_SCOPE: The request concerns system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:ac97b9c6\": \"UNKNOWN: Without detailed metrics and code, the exact root cause cannot be identified.\", \"N5:0:2867db94\": \"OUT_OF_SCOPE: The question asks for performance troubleshooting, which is outside the defensive security domain.\", \"N5:1:7ecc21c9\": \"UNKNOWN: No security-related information is provided to assess authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"All referenced points are correctly incorporated in the draft.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"Draft includes all specified points accurately.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"All required points are present and correctly used.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N5:0:2867db94\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"OUT_OF_SCOPE point correctly reflected in draft.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-f54bc664-69a5-414a-9448-0d25c317bf6b",
+      "object": "chat.completion",
+      "created": 1772961243,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"All referenced points are correctly incorporated in the draft.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"Draft includes all specified points accurately.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"All required points are present and correctly used.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N5:0:2867db94\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"OUT_OF_SCOPE point correctly reflected in draft.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2376,
+        "completion_tokens": 1090,
+        "total_tokens": 3466
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:14:05.954195+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N3",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"1. Collect recent and baseline metrics (cache hit/miss rates, DB query counts, CPU usage, latency per endpoint) to establish a before‑and‑after view (N1:0, N2:0).\\\\n2. Compare these metrics across the feature release to spot which endpoints show degraded hit rates or doubled reads (N1:1, N2:1).\\\\n3. Enable detailed query logging to capture full parameter sets and execution plans for the affected queries (N1:2).\\\\n4. Review cache‑key generation logic to ensure new parameters are incorporated correctly and not causing key fragmentation or excessive key space (N1:3).\\\\n5. Check cache TTL settings and eviction spikes that might be lowering hit rates (N1:4).\\\\n6. Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool (N1:5).\\\\n7. Run EXPLAIN on the frequent queries to detect missing indexes or full table scans introduced by the new parameters (N1:6).\\\\n8. Identify queries with increased execution count or duration via slow‑query logs or DMVs (N2:1).\\\\n9. Compare execution plans of those queries pre‑ and post‑change to spot regressions (N2:2).\\\\n10. Look for parameter‑sniffing issues; consider RECOMPILE hints or OPTIMIZE FOR to stabilize plans (N2:3).\\\\n11. Verify index usage and update statistics; rebuild or reorganize indexes if scans are observed (N2:4, N2:5).\\\\n12. Based on findings, adjust cache key strategy, tune TTL/eviction, add or fix indexes, and optimize query predicates to restore cache hit rate and reduce DB load.\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N2\", \"target_draft\": \"1. Gather recent baseline metrics (cache hit/miss rates, DB query count, CPU usage, latency per endpoint) and compare them to pre‑release values (N1:0, N1:1, N2:0). 2. Enable detailed query logging to capture full parameter sets and execution plans (N1:2). 3. Review cache key generation to ensure new parameters are incorporated correctly and not causing key fragmentation; also check TTL or eviction spikes that could lower hit rate (N1:3, N1:4). 4. Profile the application code to locate hot paths where CPU increased (N1:5). 5. Run EXPLAIN on the most frequent queries to detect missing indexes or full table scans introduced by the new parameters (N1:6). 6. Identify queries with increased execution count or duration using slow‑query logs or DMVs (N2:1). 7. Compare execution plans of affected queries before and after the change to spot regressions (N2:2). 8. Check for parameter sniffing issues; consider RECOMPILE or OPTIMIZE FOR hints if new parameters cause suboptimal plans (N2:3). 9. Verify index usage, look for missing indexes, index scans, or outdated statistics causing full scans (N2:4). 10. Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection (N2:5). 11. Refactor problematic queries to simplify predicates, remove unnecessary joins, and limit result sets where possible (N2:7). 12. Iterate: after each change, re‑measure metrics to confirm cache hit rate improves, DB reads drop, and CPU usage stabilizes.\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N4\", \"target_draft\": \"1. Collect recent metrics (cache hit/miss rates, DB query count, CPU usage, latency per endpoint) and baseline metrics from before the feature release. (N1:0, N2:0)\\\\n2. Compare these metrics pre‑ and post‑release to identify which endpoints or queries show degraded hit rates, doubled reads, or higher CPU. (N1:1, N2:1)\\\\n3. Enable detailed query logging to capture full parameter sets and execution plans for the affected queries. (N1:2)\\\\n4. Review cache key generation to ensure new parameters are incorporated correctly and not causing key fragmentation or excessive TTL/eviction spikes. (N1:3, N1:4)\\\\n5. Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool. (N1:5)\\\\n6. Run EXPLAIN on the frequent queries to detect missing indexes, full table scans, or sub‑optimal plans introduced by the new parameters. (N2:2, N2:4)\\\\n7. Check for parameter sniffing and consider RECOMPILE or OPTIMIZE FOR to obtain stable execution plans. (N2:3)\\\\n8. Update statistics and rebuild/reorganize indexes if needed to improve plan selection. (N2:5)\\\\n9. Assess query cacheability; enforce consistent parameterization or prepared statements to improve plan reuse. (N2:6)\\\\n10. Refactor problematic queries: simplify predicates, remove unnecessary joins, and limit result sets to reduce load. (N2:7)\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N5\", \"target_draft\": \"OUT_OF_SCOPE: The question concerns system performance troubleshooting, which is outside the defensive security domain.\", \"target_used_points\": [\"N5:0:2867db94\"]}], \"points_map\": {\"N1:0:54f6d4b0\": \"Collect recent metrics: cache hit/miss rates, DB query count, CPU usage, and latency per endpoint.\", \"N1:1:00fd2b41\": \"Compare these metrics before and after the feature release to pinpoint affected endpoints.\", \"N1:2:e91ca1c1\": \"Enable detailed query logging to capture full parameter sets and execution plans for each query.\", \"N1:3:eb7fa5a7\": \"Review cache key generation; ensure new parameters are incorporated correctly and not causing key fragmentation.\", \"N1:4:6107aeb3\": \"Check for changes in cache TTL or eviction spikes that could be lowering the hit rate.\", \"N1:5:42f99f48\": \"Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool.\", \"N1:6:25b5b7c0\": \"Run EXPLAIN on frequent queries to detect missing indexes or full table scans introduced by new parameters.\", \"N1:7:96874d2c\": \"Conduct load testing with representative parameter combinations to reproduce cache miss patterns.\", \"N2:0:05ac5284\": \"Collect baseline metrics: cache hit rate, query latency, CPU, I/O, and read counts before the feature change.\", \"N2:1:95f72b8b\": \"Identify queries with increased execution count or duration using slow‑query logs or DMVs.\", \"N2:2:96d864e7\": \"Compare execution plans of affected queries pre‑ and post‑change to spot regressions.\", \"N2:3:8b01b2e6\": \"Check for parameter sniffing; new parameters may cause suboptimal plans—consider RECOMPILE or OPTIMIZE FOR.\", \"N2:4:f2aca71c\": \"Verify index usage: look for missing indexes, index scans, or outdated statistics causing full scans.\", \"N2:5:ba4c7fdb\": \"Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection.\", \"N2:6:7dc0dd51\": \"Assess cacheability: new parameters may reduce plan reuse; enforce consistent parameterization or prepared statements.\", \"N2:7:959800bf\": \"Refactor queries: simplify predicates, remove unnecessary joins, and limit result sets where possible.\", \"N3:0:16593d8c\": \"OUT_OF_SCOPE: The question focuses on application caching, DB load, and CPU usage, which are beyond the networking_systems domain scope.\", \"N4:0:14c7182d\": \"OUT_OF_SCOPE: The request concerns system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:ac97b9c6\": \"UNKNOWN: Without detailed metrics and code, the exact root cause cannot be identified.\", \"N5:0:2867db94\": \"OUT_OF_SCOPE: The question asks for performance troubleshooting, which is outside the defensive security domain.\", \"N5:1:7ecc21c9\": \"UNKNOWN: No security-related information is provided to assess authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft aligns with the required structured troubleshooting steps and uses all referenced points correctly.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft correctly incorporates the referenced points and provides a coherent approach.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft uses the cited points appropriately and offers a valid troubleshooting workflow.\"},{\"target_id\":\"N5\",\"valid\":\"FAIL\",\"agree_points\":[],\"reject_points\":[\"N5:0:2867db94\"],\"unknown_points\":[],\"note\":\"Draft declares the task out of scope and does not address the performance‑troubleshooting question.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-ace46e02-2933-4c2e-8cc0-95e5f2d9ee84",
+      "object": "chat.completion",
+      "created": 1772961242,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft aligns with the required structured troubleshooting steps and uses all referenced points correctly.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft correctly incorporates the referenced points and provides a coherent approach.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft uses the cited points appropriately and offers a valid troubleshooting workflow.\"},{\"target_id\":\"N5\",\"valid\":\"FAIL\",\"agree_points\":[],\"reject_points\":[\"N5:0:2867db94\"],\"unknown_points\":[],\"note\":\"Draft declares the task out of scope and does not address the performance‑troubleshooting question.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2448,
+        "completion_tokens": 944,
+        "total_tokens": 3392
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:14:07.593753+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N4",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"1. Collect recent and baseline metrics (cache hit/miss rates, DB query counts, CPU usage, latency per endpoint) to establish a before‑and‑after view (N1:0, N2:0).\\\\n2. Compare these metrics across the feature release to spot which endpoints show degraded hit rates or doubled reads (N1:1, N2:1).\\\\n3. Enable detailed query logging to capture full parameter sets and execution plans for the affected queries (N1:2).\\\\n4. Review cache‑key generation logic to ensure new parameters are incorporated correctly and not causing key fragmentation or excessive key space (N1:3).\\\\n5. Check cache TTL settings and eviction spikes that might be lowering hit rates (N1:4).\\\\n6. Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool (N1:5).\\\\n7. Run EXPLAIN on the frequent queries to detect missing indexes or full table scans introduced by the new parameters (N1:6).\\\\n8. Identify queries with increased execution count or duration via slow‑query logs or DMVs (N2:1).\\\\n9. Compare execution plans of those queries pre‑ and post‑change to spot regressions (N2:2).\\\\n10. Look for parameter‑sniffing issues; consider RECOMPILE hints or OPTIMIZE FOR to stabilize plans (N2:3).\\\\n11. Verify index usage and update statistics; rebuild or reorganize indexes if scans are observed (N2:4, N2:5).\\\\n12. Based on findings, adjust cache key strategy, tune TTL/eviction, add or fix indexes, and optimize query predicates to restore cache hit rate and reduce DB load.\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N2\", \"target_draft\": \"1. Gather recent baseline metrics (cache hit/miss rates, DB query count, CPU usage, latency per endpoint) and compare them to pre‑release values (N1:0, N1:1, N2:0). 2. Enable detailed query logging to capture full parameter sets and execution plans (N1:2). 3. Review cache key generation to ensure new parameters are incorporated correctly and not causing key fragmentation; also check TTL or eviction spikes that could lower hit rate (N1:3, N1:4). 4. Profile the application code to locate hot paths where CPU increased (N1:5). 5. Run EXPLAIN on the most frequent queries to detect missing indexes or full table scans introduced by the new parameters (N1:6). 6. Identify queries with increased execution count or duration using slow‑query logs or DMVs (N2:1). 7. Compare execution plans of affected queries before and after the change to spot regressions (N2:2). 8. Check for parameter sniffing issues; consider RECOMPILE or OPTIMIZE FOR hints if new parameters cause suboptimal plans (N2:3). 9. Verify index usage, look for missing indexes, index scans, or outdated statistics causing full scans (N2:4). 10. Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection (N2:5). 11. Refactor problematic queries to simplify predicates, remove unnecessary joins, and limit result sets where possible (N2:7). 12. Iterate: after each change, re‑measure metrics to confirm cache hit rate improves, DB reads drop, and CPU usage stabilizes.\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N3\", \"target_draft\": \"1. Collect recent baseline metrics (cache hit/miss, DB query count, CPU, latency) and compare them to pre‑release values (N1:0, N2:0, N1:1, N2:1). 2. Enable detailed query logging to capture full parameter sets and execution plans (N1:2). 3. Review cache key generation to ensure new parameters are incorporated correctly and not fragmenting keys (N1:3); also verify cache TTL and eviction patterns for spikes (N1:4). 4. Profile the application code to locate hot paths where CPU increased (N1:5). 5. Run EXPLAIN on the most frequent queries to detect missing indexes or full scans introduced by new parameters (N1:6). 6. Check for parameter sniffing and suboptimal plans; consider RECOMPILE or OPTIMIZE FOR hints (N2:3). 7. Verify index usage and update statistics; rebuild/reorganize indexes if needed (N2:4, N2:5). 8. Assess query cacheability and enforce consistent parameterization or prepared statements (N2:6). 9. Refactor complex queries to simplify predicates, remove unnecessary joins, and limit result sets (N2:7). 10. Conduct load testing with representative parameter combinations to reproduce cache miss patterns and validate mitigations (N1:7).\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N5\", \"target_draft\": \"OUT_OF_SCOPE: The question concerns system performance troubleshooting, which is outside the defensive security domain.\", \"target_used_points\": [\"N5:0:2867db94\"]}], \"points_map\": {\"N1:0:54f6d4b0\": \"Collect recent metrics: cache hit/miss rates, DB query count, CPU usage, and latency per endpoint.\", \"N1:1:00fd2b41\": \"Compare these metrics before and after the feature release to pinpoint affected endpoints.\", \"N1:2:e91ca1c1\": \"Enable detailed query logging to capture full parameter sets and execution plans for each query.\", \"N1:3:eb7fa5a7\": \"Review cache key generation; ensure new parameters are incorporated correctly and not causing key fragmentation.\", \"N1:4:6107aeb3\": \"Check for changes in cache TTL or eviction spikes that could be lowering the hit rate.\", \"N1:5:42f99f48\": \"Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool.\", \"N1:6:25b5b7c0\": \"Run EXPLAIN on frequent queries to detect missing indexes or full table scans introduced by new parameters.\", \"N1:7:96874d2c\": \"Conduct load testing with representative parameter combinations to reproduce cache miss patterns.\", \"N2:0:05ac5284\": \"Collect baseline metrics: cache hit rate, query latency, CPU, I/O, and read counts before the feature change.\", \"N2:1:95f72b8b\": \"Identify queries with increased execution count or duration using slow‑query logs or DMVs.\", \"N2:2:96d864e7\": \"Compare execution plans of affected queries pre‑ and post‑change to spot regressions.\", \"N2:3:8b01b2e6\": \"Check for parameter sniffing; new parameters may cause suboptimal plans—consider RECOMPILE or OPTIMIZE FOR.\", \"N2:4:f2aca71c\": \"Verify index usage: look for missing indexes, index scans, or outdated statistics causing full scans.\", \"N2:5:ba4c7fdb\": \"Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection.\", \"N2:6:7dc0dd51\": \"Assess cacheability: new parameters may reduce plan reuse; enforce consistent parameterization or prepared statements.\", \"N2:7:959800bf\": \"Refactor queries: simplify predicates, remove unnecessary joins, and limit result sets where possible.\", \"N3:0:16593d8c\": \"OUT_OF_SCOPE: The question focuses on application caching, DB load, and CPU usage, which are beyond the networking_systems domain scope.\", \"N4:0:14c7182d\": \"OUT_OF_SCOPE: The request concerns system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:ac97b9c6\": \"UNKNOWN: Without detailed metrics and code, the exact root cause cannot be identified.\", \"N5:0:2867db94\": \"OUT_OF_SCOPE: The question asks for performance troubleshooting, which is outside the defensive security domain.\", \"N5:1:7ecc21c9\": \"UNKNOWN: No security-related information is provided to assess authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N5:0:2867db94\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Out‑of‑scope statement matches the point definition.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-18cbb608-bf9b-47ac-b045-a7ac35ab92cd",
+      "object": "chat.completion",
+      "created": 1772961244,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N5:0:2867db94\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Out‑of‑scope statement matches the point definition.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2395,
+        "completion_tokens": 1292,
+        "total_tokens": 3687
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:15:01.867027+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N5",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"1. Collect recent and baseline metrics (cache hit/miss rates, DB query counts, CPU usage, latency per endpoint) to establish a before‑and‑after view (N1:0, N2:0).\\\\n2. Compare these metrics across the feature release to spot which endpoints show degraded hit rates or doubled reads (N1:1, N2:1).\\\\n3. Enable detailed query logging to capture full parameter sets and execution plans for the affected queries (N1:2).\\\\n4. Review cache‑key generation logic to ensure new parameters are incorporated correctly and not causing key fragmentation or excessive key space (N1:3).\\\\n5. Check cache TTL settings and eviction spikes that might be lowering hit rates (N1:4).\\\\n6. Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool (N1:5).\\\\n7. Run EXPLAIN on the frequent queries to detect missing indexes or full table scans introduced by the new parameters (N1:6).\\\\n8. Identify queries with increased execution count or duration via slow‑query logs or DMVs (N2:1).\\\\n9. Compare execution plans of those queries pre‑ and post‑change to spot regressions (N2:2).\\\\n10. Look for parameter‑sniffing issues; consider RECOMPILE hints or OPTIMIZE FOR to stabilize plans (N2:3).\\\\n11. Verify index usage and update statistics; rebuild or reorganize indexes if scans are observed (N2:4, N2:5).\\\\n12. Based on findings, adjust cache key strategy, tune TTL/eviction, add or fix indexes, and optimize query predicates to restore cache hit rate and reduce DB load.\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N2\", \"target_draft\": \"1. Gather recent baseline metrics (cache hit/miss rates, DB query count, CPU usage, latency per endpoint) and compare them to pre‑release values (N1:0, N1:1, N2:0). 2. Enable detailed query logging to capture full parameter sets and execution plans (N1:2). 3. Review cache key generation to ensure new parameters are incorporated correctly and not causing key fragmentation; also check TTL or eviction spikes that could lower hit rate (N1:3, N1:4). 4. Profile the application code to locate hot paths where CPU increased (N1:5). 5. Run EXPLAIN on the most frequent queries to detect missing indexes or full table scans introduced by the new parameters (N1:6). 6. Identify queries with increased execution count or duration using slow‑query logs or DMVs (N2:1). 7. Compare execution plans of affected queries before and after the change to spot regressions (N2:2). 8. Check for parameter sniffing issues; consider RECOMPILE or OPTIMIZE FOR hints if new parameters cause suboptimal plans (N2:3). 9. Verify index usage, look for missing indexes, index scans, or outdated statistics causing full scans (N2:4). 10. Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection (N2:5). 11. Refactor problematic queries to simplify predicates, remove unnecessary joins, and limit result sets where possible (N2:7). 12. Iterate: after each change, re‑measure metrics to confirm cache hit rate improves, DB reads drop, and CPU usage stabilizes.\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N3\", \"target_draft\": \"1. Collect recent baseline metrics (cache hit/miss, DB query count, CPU, latency) and compare them to pre‑release values (N1:0, N2:0, N1:1, N2:1). 2. Enable detailed query logging to capture full parameter sets and execution plans (N1:2). 3. Review cache key generation to ensure new parameters are incorporated correctly and not fragmenting keys (N1:3); also verify cache TTL and eviction patterns for spikes (N1:4). 4. Profile the application code to locate hot paths where CPU increased (N1:5). 5. Run EXPLAIN on the most frequent queries to detect missing indexes or full scans introduced by new parameters (N1:6). 6. Check for parameter sniffing and suboptimal plans; consider RECOMPILE or OPTIMIZE FOR hints (N2:3). 7. Verify index usage and update statistics; rebuild/reorganize indexes if needed (N2:4, N2:5). 8. Assess query cacheability and enforce consistent parameterization or prepared statements (N2:6). 9. Refactor complex queries to simplify predicates, remove unnecessary joins, and limit result sets (N2:7). 10. Conduct load testing with representative parameter combinations to reproduce cache miss patterns and validate mitigations (N1:7).\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}, {\"target_id\": \"N4\", \"target_draft\": \"1. Collect recent metrics (cache hit/miss rates, DB query count, CPU usage, latency per endpoint) and baseline metrics from before the feature release. (N1:0, N2:0)\\\\n2. Compare these metrics pre‑ and post‑release to identify which endpoints or queries show degraded hit rates, doubled reads, or higher CPU. (N1:1, N2:1)\\\\n3. Enable detailed query logging to capture full parameter sets and execution plans for the affected queries. (N1:2)\\\\n4. Review cache key generation to ensure new parameters are incorporated correctly and not causing key fragmentation or excessive TTL/eviction spikes. (N1:3, N1:4)\\\\n5. Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool. (N1:5)\\\\n6. Run EXPLAIN on the frequent queries to detect missing indexes, full table scans, or sub‑optimal plans introduced by the new parameters. (N2:2, N2:4)\\\\n7. Check for parameter sniffing and consider RECOMPILE or OPTIMIZE FOR to obtain stable execution plans. (N2:3)\\\\n8. Update statistics and rebuild/reorganize indexes if needed to improve plan selection. (N2:5)\\\\n9. Assess query cacheability; enforce consistent parameterization or prepared statements to improve plan reuse. (N2:6)\\\\n10. Refactor problematic queries: simplify predicates, remove unnecessary joins, and limit result sets to reduce load. (N2:7)\", \"target_used_points\": [\"N1:0:54f6d4b0\", \"N1:1:00fd2b41\", \"N1:2:e91ca1c1\", \"N1:3:eb7fa5a7\", \"N1:4:6107aeb3\"]}], \"points_map\": {\"N1:0:54f6d4b0\": \"Collect recent metrics: cache hit/miss rates, DB query count, CPU usage, and latency per endpoint.\", \"N1:1:00fd2b41\": \"Compare these metrics before and after the feature release to pinpoint affected endpoints.\", \"N1:2:e91ca1c1\": \"Enable detailed query logging to capture full parameter sets and execution plans for each query.\", \"N1:3:eb7fa5a7\": \"Review cache key generation; ensure new parameters are incorporated correctly and not causing key fragmentation.\", \"N1:4:6107aeb3\": \"Check for changes in cache TTL or eviction spikes that could be lowering the hit rate.\", \"N1:5:42f99f48\": \"Profile the application code to locate hot paths where CPU increased, using a profiler or sampling tool.\", \"N1:6:25b5b7c0\": \"Run EXPLAIN on frequent queries to detect missing indexes or full table scans introduced by new parameters.\", \"N1:7:96874d2c\": \"Conduct load testing with representative parameter combinations to reproduce cache miss patterns.\", \"N2:0:05ac5284\": \"Collect baseline metrics: cache hit rate, query latency, CPU, I/O, and read counts before the feature change.\", \"N2:1:95f72b8b\": \"Identify queries with increased execution count or duration using slow‑query logs or DMVs.\", \"N2:2:96d864e7\": \"Compare execution plans of affected queries pre‑ and post‑change to spot regressions.\", \"N2:3:8b01b2e6\": \"Check for parameter sniffing; new parameters may cause suboptimal plans—consider RECOMPILE or OPTIMIZE FOR.\", \"N2:4:f2aca71c\": \"Verify index usage: look for missing indexes, index scans, or outdated statistics causing full scans.\", \"N2:5:ba4c7fdb\": \"Update statistics and, if needed, rebuild/reorganize indexes to improve plan selection.\", \"N2:6:7dc0dd51\": \"Assess cacheability: new parameters may reduce plan reuse; enforce consistent parameterization or prepared statements.\", \"N2:7:959800bf\": \"Refactor queries: simplify predicates, remove unnecessary joins, and limit result sets where possible.\", \"N3:0:16593d8c\": \"OUT_OF_SCOPE: The question focuses on application caching, DB load, and CPU usage, which are beyond the networking_systems domain scope.\", \"N4:0:14c7182d\": \"OUT_OF_SCOPE: The request concerns system performance troubleshooting, which is outside the math_logic domain.\", \"N4:1:ac97b9c6\": \"UNKNOWN: Without detailed metrics and code, the exact root cause cannot be identified.\", \"N5:0:2867db94\": \"OUT_OF_SCOPE: The question asks for performance troubleshooting, which is outside the defensive security domain.\", \"N5:1:7ecc21c9\": \"UNKNOWN: No security-related information is provided to assess authentication, session safety, or secure coding aspects.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated in the draft.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated in the draft.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated in the draft.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated in the draft.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-65499c1d-82ba-4b88-aa54-a8a05b989989",
+      "object": "chat.completion",
+      "created": 1772961301,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated in the draft.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated in the draft.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated in the draft.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:54f6d4b0\",\"N1:1:00fd2b41\",\"N1:2:e91ca1c1\",\"N1:3:eb7fa5a7\",\"N1:4:6107aeb3\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated in the draft.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2763,
+        "completion_tokens": 810,
+        "total_tokens": 3573
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 52 seconds.\",\"retryAfter\":52,\"limit\":10,\"remaining\":0,\"reset\":1772961300}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 32 seconds.\",\"retryAfter\":32,\"limit\":10,\"remaining\":0,\"reset\":1772961300}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 11 seconds.\",\"retryAfter\":11,\"limit\":10,\"remaining\":0,\"reset\":1772961300}"
+      }
+    ],
+    "error": null
+  }
+]

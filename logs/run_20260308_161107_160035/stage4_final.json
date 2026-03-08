@@ -1,0 +1,45 @@
+{
+  "winner": "N4",
+  "final_answer": "First profile the endpoint to log start/end times of each sequential call (N1:0:01150402) and identify the longest‑running step. Convert independent calls to run concurrently using async/await or Promise.all (N1:1:2b824d64, N2:0:ed6cf74b) to cut overall latency. Rewrite the heavy SQL to select only required columns (N1:2:317706df) and consider moving complex joins into a materialized view or CTE (N1:2:317706df). Create composite and covering indexes on all columns used in JOIN and WHERE clauses (N1:3:d47e3c45, N2:3:4b2ed81c) and run EXPLAIN ANALYZE to verify plan improvements (N1:4:f860723c). Apply early WHERE predicates and LIMIT/OFFSET to bound result size (N2:5:7723b526, N1:4:f860723c). Cache query results for a short TTL when data is read‑only (N1:7:7dd30943). Set a client‑side timeout (e.g., 30 s) and a server‑side timeout (e.g., 60 s) with PostgreSQL statement_timeout (N1:5:72f2cd80, N2:7:fadbc18e). Add a circuit‑breaker or retry policy that aborts the request after the timeout budget is hit, returning a clear error (N1:6:d8a3d4f8). This combined refactoring, SQL optimization, and timeout budgeting should eliminate the endpoint timeout.",
+  "metrics": {
+    "pass": {
+      "N1": 1,
+      "N2": 2,
+      "N3": 4,
+      "N4": 4,
+      "N5": 2
+    },
+    "fail": {
+      "N1": 1,
+      "N2": 1,
+      "N3": 0,
+      "N4": 0,
+      "N5": 1
+    },
+    "agree": {
+      "N1": 43,
+      "N2": 45,
+      "N3": 44,
+      "N4": 48,
+      "N5": 45
+    },
+    "reject": {
+      "N1": 1,
+      "N2": 1,
+      "N3": 0,
+      "N4": 0,
+      "N5": 1
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N4": 5.0
+    },
+    "point_rep_delta": {
+      "N1": 148.0,
+      "N2": 56.0,
+      "N3": 10.0,
+      "N5": 8.0
+    }
+  }
+}

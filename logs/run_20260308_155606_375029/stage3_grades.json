@@ -1,0 +1,325 @@
+[
+  {
+    "grader_id": "N1",
+    "target_id": "N2",
+    "valid": "FAIL",
+    "agree_points": [
+      "N1:4:08b73e77"
+    ],
+    "reject_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:3:0dffb18d"
+    ],
+    "unknown_points": [],
+    "note": "Several referenced points are mismatched or missing in the draft (gateway logs, tracing, metrics)."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N3",
+    "valid": "FAIL",
+    "agree_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:4:08b73e77",
+      "N1:6:6a5851d4",
+      "N1:7:f5b43d01",
+      "N2:2:0402f5b3",
+      "N2:3:cb4fa8ed",
+      "N3:3:5f7c7aa6",
+      "N3:4:0d031d2d"
+    ],
+    "reject_points": [
+      "N3:7:c1497392"
+    ],
+    "unknown_points": [
+      "N1:3:0dffb18d"
+    ],
+    "note": "All used points are correctly applied except N3:7, which is not referenced in the draft."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N4",
+    "valid": "FAIL",
+    "agree_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:4:08b73e77"
+    ],
+    "reject_points": [
+      "N1:3:0dffb18d"
+    ],
+    "unknown_points": [],
+    "note": "Point N1:3 (profile database queries) is absent despite being listed as used."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [
+      "N5:0:e37bafbe",
+      "N5:1:e675c0eb"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Draft correctly states the request is out of scope, matching both point descriptions."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:3:0dffb18d",
+      "N1:4:08b73e77"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:3:0dffb18d",
+      "N1:4:08b73e77",
+      "N1:6:6a5851d4",
+      "N1:7:f5b43d01",
+      "N2:2:0402f5b3",
+      "N2:3:cb4fa8ed",
+      "N3:3:5f7c7aa6",
+      "N3:4:0d031d2d",
+      "N3:7:c1497392"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N4",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:3:0dffb18d",
+      "N1:4:08b73e77"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [
+      "N5:0:e37bafbe",
+      "N5:1:e675c0eb"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Points correctly reflect out‑of‑scope and unknown status."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:3:0dffb18d",
+      "N1:4:08b73e77"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly applied."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N2",
+    "valid": "FAIL",
+    "agree_points": [
+      "N1:4:08b73e77"
+    ],
+    "reject_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:3:0dffb18d"
+    ],
+    "unknown_points": [],
+    "note": "Several points are missing or misapplied."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N4",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:3:0dffb18d",
+      "N1:4:08b73e77"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All required points are correctly referenced."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [
+      "N5:0:e37bafbe",
+      "N5:1:e675c0eb"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Draft aligns with out‑of‑scope and unknown classifications."
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:3:0dffb18d",
+      "N1:4:08b73e77"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly reflected in draft."
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N2",
+    "valid": "FAIL",
+    "agree_points": [],
+    "reject_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:3:0dffb18d",
+      "N1:4:08b73e77"
+    ],
+    "unknown_points": [],
+    "note": "Draft misuses point IDs and omits several referenced points."
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N3",
+    "valid": "FAIL",
+    "agree_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:3:0dffb18d",
+      "N1:4:08b73e77",
+      "N1:6:6a5851d4",
+      "N1:7:f5b43d01",
+      "N2:2:0402f5b3",
+      "N2:3:cb4fa8ed",
+      "N3:3:5f7c7aa6",
+      "N3:4:0d031d2d"
+    ],
+    "reject_points": [
+      "N3:7:c1497392"
+    ],
+    "unknown_points": [],
+    "note": "All points except N3:7 are correctly used; N3:7 is missing."
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [
+      "N5:0:e37bafbe",
+      "N5:1:e675c0eb"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Draft appropriately marks out‑of‑scope and unknown status."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:3:0dffb18d",
+      "N1:4:08b73e77"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly applied."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N2",
+    "valid": "FAIL",
+    "agree_points": [
+      "N1:4:08b73e77"
+    ],
+    "reject_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:3:0dffb18d"
+    ],
+    "unknown_points": [],
+    "note": "Points N1:0, N1:1, N1:2, N1:3 are misused or omitted."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:3:0dffb18d",
+      "N1:4:08b73e77",
+      "N1:6:6a5851d4",
+      "N1:7:f5b43d01",
+      "N2:2:0402f5b3",
+      "N2:3:cb4fa8ed",
+      "N3:3:5f7c7aa6",
+      "N3:4:0d031d2d",
+      "N3:7:c1497392"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly applied."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N4",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:6a0603af",
+      "N1:1:ff8f6c2a",
+      "N1:2:66bcdc5f",
+      "N1:3:0dffb18d",
+      "N1:4:08b73e77"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly applied."
+  }
+]

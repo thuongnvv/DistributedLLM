@@ -1,0 +1,91 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:9930e58c",
+        "text": "OUT_OF_SCOPE: The request concerns capacity planning and latency metrics, which falls outside the coding_debugging domain."
+      },
+      {
+        "point_id": "N1:1:ef050c2a",
+        "text": "UNKNOWN: Precise limits and timeout values cannot be determined without details of the system architecture and workload characteristics."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:3735a6e2",
+        "text": "OUT_OF_SCOPE: The request concerns capacity planning and latency limits, which is outside the SQL optimization domain."
+      },
+      {
+        "point_id": "N2:1:d74292a9",
+        "text": "UNKNOWN: Appropriate measurement metrics and timeout values depend on your specific workload and infrastructure details."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": [
+      {
+        "point_id": "N3:0:4943cc8f",
+        "text": "Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint."
+      },
+      {
+        "point_id": "N3:1:c32da46e",
+        "text": "Track TCP metrics: retransmission count, RTT, and socket buffer utilization."
+      },
+      {
+        "point_id": "N3:2:6e016fd2",
+        "text": "Monitor server queue lengths and thread pool occupancy to detect backpressure."
+      },
+      {
+        "point_id": "N3:3:c6b2203b",
+        "text": "Set a connection pool max size based on CPU cores and memory, leaving ~20% headroom."
+      },
+      {
+        "point_id": "N3:4:30e9f0a7",
+        "text": "Configure client connect timeout ~2× typical RTT (e.g., 200 ms) and read timeout ~2× p95 latency."
+      },
+      {
+        "point_id": "N3:5:7ea8f8c8",
+        "text": "Implement exponential backoff with jitter for retries; start at 100 ms, double each attempt."
+      },
+      {
+        "point_id": "N3:6:edee4c6d",
+        "text": "Limit max retries to 3–5 to prevent retry storms while allowing transient recovery."
+      },
+      {
+        "point_id": "N3:7:a76dfb7c",
+        "text": "Use a circuit‑breaker: open if error rate >5% over 30 s, stay open for 60 s before probing."
+      }
+    ]
+  },
+  {
+    "node_id": "N4",
+    "points": [
+      {
+        "point_id": "N4:0:24013dd5",
+        "text": "OUT_OF_SCOPE: The question concerns capacity planning and latency, which is outside the math_logic domain."
+      },
+      {
+        "point_id": "N4:1:8e3fe262",
+        "text": "UNKNOWN: Unable to provide a precise answer within the given scope."
+      }
+    ]
+  },
+  {
+    "node_id": "N5",
+    "points": [
+      {
+        "point_id": "N5:0:554218e5",
+        "text": "OUT_OF_SCOPE: The request concerns capacity planning, retry storms, and latency, which are outside the security_defensive domain."
+      },
+      {
+        "point_id": "N5:1:43e0afba",
+        "text": "UNKNOWN: Precise metrics, limits, and timeout values cannot be provided without detailed knowledge of the application and infrastructure."
+      }
+    ]
+  }
+]

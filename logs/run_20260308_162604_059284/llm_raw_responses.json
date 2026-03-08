@@ -1,0 +1,821 @@
+[
+  {
+    "timestamp": "2026-03-08T09:22:10.838817+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The request concerns capacity planning and latency metrics, which falls outside the coding_debugging domain.\"},{\"text\":\"UNKNOWN: Precise limits and timeout values cannot be determined without details of the system architecture and workload characteristics.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-a9a85e80-61ac-4ae3-8b63-8aad571bbd31",
+      "object": "chat.completion",
+      "created": 1772961727,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The request concerns capacity planning and latency metrics, which falls outside the coding_debugging domain.\"},{\"text\":\"UNKNOWN: Precise limits and timeout values cannot be determined without details of the system architecture and workload characteristics.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 314,
+        "completion_tokens": 266,
+        "total_tokens": 580
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:23:02.305803+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N2"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\": [{\"text\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency limits, which is outside the SQL optimization domain.\"}, {\"text\": \"UNKNOWN: Appropriate measurement metrics and timeout values depend on your specific workload and infrastructure details.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-1e76ed15-c974-42b9-9d10-3597f23805d4",
+      "object": "chat.completion",
+      "created": 1772961779,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\": [{\"text\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency limits, which is outside the SQL optimization domain.\"}, {\"text\": \"UNKNOWN: Appropriate measurement metrics and timeout values depend on your specific workload and infrastructure details.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 310,
+        "completion_tokens": 341,
+        "total_tokens": 651
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 49 seconds.\",\"retryAfter\":49,\"limit\":10,\"remaining\":0,\"reset\":1772961780}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 29 seconds.\",\"retryAfter\":29,\"limit\":10,\"remaining\":0,\"reset\":1772961780}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 8 seconds.\",\"retryAfter\":8,\"limit\":10,\"remaining\":0,\"reset\":1772961780}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:23:03.607485+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint.\"},{\"text\":\"Track TCP metrics: retransmission count, RTT, and socket buffer utilization.\"},{\"text\":\"Monitor server queue lengths and thread pool occupancy to detect backpressure.\"},{\"text\":\"Set a connection pool max size based on CPU cores and memory, leaving ~20% headroom.\"},{\"text\":\"Configure client connect timeout ~2× typical RTT (e.g., 200 ms) and read timeout ~2× p95 latency.\"},{\"text\":\"Implement exponential backoff with jitter for retries; start at 100 ms, double each attempt.\"},{\"text\":\"Limit max retries to 3–5 to prevent retry storms while allowing transient recovery.\"},{\"text\":\"Use a circuit‑breaker: open if error rate >5% over 30 s, stay open for 60 s before probing.\"},{\"text\":\"Set server keep‑alive timeout ~30 s to free idle sockets without harming long‑polling.\"},{\"text\":\"Alert when p95 latency exceeds 80% of SLA target or when queue depth >80% capacity.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-c457cf7c-ea8b-419a-af86-f9c824309137",
+      "object": "chat.completion",
+      "created": 1772961783,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint.\"},{\"text\":\"Track TCP metrics: retransmission count, RTT, and socket buffer utilization.\"},{\"text\":\"Monitor server queue lengths and thread pool occupancy to detect backpressure.\"},{\"text\":\"Set a connection pool max size based on CPU cores and memory, leaving ~20% headroom.\"},{\"text\":\"Configure client connect timeout ~2× typical RTT (e.g., 200 ms) and read timeout ~2× p95 latency.\"},{\"text\":\"Implement exponential backoff with jitter for retries; start at 100 ms, double each attempt.\"},{\"text\":\"Limit max retries to 3–5 to prevent retry storms while allowing transient recovery.\"},{\"text\":\"Use a circuit‑breaker: open if error rate >5% over 30 s, stay open for 60 s before probing.\"},{\"text\":\"Set server keep‑alive timeout ~30 s to free idle sockets without harming long‑polling.\"},{\"text\":\"Alert when p95 latency exceeds 80% of SLA target or when queue depth >80% capacity.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 317,
+        "completion_tokens": 446,
+        "total_tokens": 763
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:23:04.880559+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N4"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The question concerns capacity planning and latency, which is outside the math_logic domain.\"},{\"text\":\"UNKNOWN: Unable to provide a precise answer within the given scope.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-424bfb92-4181-4232-a3cf-9917b4f4656c",
+      "object": "chat.completion",
+      "created": 1772961782,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The question concerns capacity planning and latency, which is outside the math_logic domain.\"},{\"text\":\"UNKNOWN: Unable to provide a precise answer within the given scope.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 312,
+        "completion_tokens": 318,
+        "total_tokens": 630
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:23:06.094227+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The request concerns capacity planning, retry storms, and latency, which are outside the security_defensive domain.\"},{\"text\":\"UNKNOWN: Precise metrics, limits, and timeout values cannot be provided without detailed knowledge of the application and infrastructure.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-049f89bf-b1bc-4499-ad04-07ff10684cc5",
+      "object": "chat.completion",
+      "created": 1772961783,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The request concerns capacity planning, retry storms, and latency, which are outside the security_defensive domain.\"},{\"text\":\"UNKNOWN: Precise metrics, limits, and timeout values cannot be provided without detailed knowledge of the application and infrastructure.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 310,
+        "completion_tokens": 344,
+        "total_tokens": 654
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:24:02.625332+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\", \"points_map\": {\"N1:0:9930e58c\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency metrics, which falls outside the coding_debugging domain.\", \"N1:1:ef050c2a\": \"UNKNOWN: Precise limits and timeout values cannot be determined without details of the system architecture and workload characteristics.\", \"N2:0:3735a6e2\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency limits, which is outside the SQL optimization domain.\", \"N2:1:d74292a9\": \"UNKNOWN: Appropriate measurement metrics and timeout values depend on your specific workload and infrastructure details.\", \"N3:0:4943cc8f\": \"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint.\", \"N3:1:c32da46e\": \"Track TCP metrics: retransmission count, RTT, and socket buffer utilization.\", \"N3:2:6e016fd2\": \"Monitor server queue lengths and thread pool occupancy to detect backpressure.\", \"N3:3:c6b2203b\": \"Set a connection pool max size based on CPU cores and memory, leaving ~20% headroom.\", \"N3:4:30e9f0a7\": \"Configure client connect timeout ~2× typical RTT (e.g., 200 ms) and read timeout ~2× p95 latency.\", \"N3:5:7ea8f8c8\": \"Implement exponential backoff with jitter for retries; start at 100 ms, double each attempt.\", \"N3:6:edee4c6d\": \"Limit max retries to 3–5 to prevent retry storms while allowing transient recovery.\", \"N3:7:a76dfb7c\": \"Use a circuit‑breaker: open if error rate >5% over 30 s, stay open for 60 s before probing.\", \"N4:0:24013dd5\": \"OUT_OF_SCOPE: The question concerns capacity planning and latency, which is outside the math_logic domain.\", \"N4:1:8e3fe262\": \"UNKNOWN: Unable to provide a precise answer within the given scope.\", \"N5:0:554218e5\": \"OUT_OF_SCOPE: The request concerns capacity planning, retry storms, and latency, which are outside the security_defensive domain.\", \"N5:1:43e0afba\": \"UNKNOWN: Precise metrics, limits, and timeout values cannot be provided without detailed knowledge of the application and infrastructure.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"To handle a traffic increase, measure: incoming request rate (RPS), error rate, and p95 latency per service endpoint (N3:0); TCP retransmission count, round‑trip time, and socket buffer utilization (N3:1); server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). Set limits: size the connection pool to CPU cores and memory with ~20% headroom (N3:3); configure client connect timeout to roughly twice the typical RTT (e.g., 200 ms) and read timeout to twice the observed p95 latency (N3:4). Use exponential backoff with jitter starting at 100 ms and doubling each attempt (N3:5), and cap retries to 3‑5 attempts (N3:6) to avoid retry storms. Deploy a circuit‑breaker that opens when error rate >5 % over 30 s and stays open for 60 s before probing (N3:7).\",\"used_points\":[\"N3:0\",\"N3:1\",\"N3:2\",\"N3:3\",\"N3:4\",\"N3:5\",\"N3:6\",\"N3:7\"]}",
+    "response_json": {
+      "id": "chatcmpl-8c3599e1-96ca-4ffc-b04f-7399538e4d61",
+      "object": "chat.completion",
+      "created": 1772961839,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"To handle a traffic increase, measure: incoming request rate (RPS), error rate, and p95 latency per service endpoint (N3:0); TCP retransmission count, round‑trip time, and socket buffer utilization (N3:1); server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). Set limits: size the connection pool to CPU cores and memory with ~20% headroom (N3:3); configure client connect timeout to roughly twice the typical RTT (e.g., 200 ms) and read timeout to twice the observed p95 latency (N3:4). Use exponential backoff with jitter starting at 100 ms and doubling each attempt (N3:5), and cap retries to 3‑5 attempts (N3:6) to avoid retry storms. Deploy a circuit‑breaker that opens when error rate >5 % over 30 s and stays open for 60 s before probing (N3:7).\",\"used_points\":[\"N3:0\",\"N3:1\",\"N3:2\",\"N3:3\",\"N3:4\",\"N3:5\",\"N3:6\",\"N3:7\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 866,
+        "completion_tokens": 670,
+        "total_tokens": 1536
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 54 seconds.\",\"retryAfter\":54,\"limit\":10,\"remaining\":0,\"reset\":1772961840}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 34 seconds.\",\"retryAfter\":34,\"limit\":10,\"remaining\":0,\"reset\":1772961840}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 13 seconds.\",\"retryAfter\":13,\"limit\":10,\"remaining\":0,\"reset\":1772961840}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:24:04.285085+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N2"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\", \"points_map\": {\"N1:0:9930e58c\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency metrics, which falls outside the coding_debugging domain.\", \"N1:1:ef050c2a\": \"UNKNOWN: Precise limits and timeout values cannot be determined without details of the system architecture and workload characteristics.\", \"N2:0:3735a6e2\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency limits, which is outside the SQL optimization domain.\", \"N2:1:d74292a9\": \"UNKNOWN: Appropriate measurement metrics and timeout values depend on your specific workload and infrastructure details.\", \"N3:0:4943cc8f\": \"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint.\", \"N3:1:c32da46e\": \"Track TCP metrics: retransmission count, RTT, and socket buffer utilization.\", \"N3:2:6e016fd2\": \"Monitor server queue lengths and thread pool occupancy to detect backpressure.\", \"N3:3:c6b2203b\": \"Set a connection pool max size based on CPU cores and memory, leaving ~20% headroom.\", \"N3:4:30e9f0a7\": \"Configure client connect timeout ~2× typical RTT (e.g., 200 ms) and read timeout ~2× p95 latency.\", \"N3:5:7ea8f8c8\": \"Implement exponential backoff with jitter for retries; start at 100 ms, double each attempt.\", \"N3:6:edee4c6d\": \"Limit max retries to 3–5 to prevent retry storms while allowing transient recovery.\", \"N3:7:a76dfb7c\": \"Use a circuit‑breaker: open if error rate >5% over 30 s, stay open for 60 s before probing.\", \"N4:0:24013dd5\": \"OUT_OF_SCOPE: The question concerns capacity planning and latency, which is outside the math_logic domain.\", \"N4:1:8e3fe262\": \"UNKNOWN: Unable to provide a precise answer within the given scope.\", \"N5:0:554218e5\": \"OUT_OF_SCOPE: The request concerns capacity planning, retry storms, and latency, which are outside the security_defensive domain.\", \"N5:1:43e0afba\": \"UNKNOWN: Precise metrics, limits, and timeout values cannot be provided without detailed knowledge of the application and infrastructure.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"To keep p95 latency stable as traffic grows, monitor the key load and health signals and apply conservative limits. Measure incoming request rate (RPS), error rate, and p95 latency per endpoint (N3:0); track TCP retransmission count, round‑trip time and socket buffer utilization (N3:1); and watch server queue lengths and thread‑pool occupancy for back‑pressure (N3:2). Size the connection pool to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). Set client‑side timeouts to about twice the typical RTT (e.g., 200 ms) for connect and twice the observed p95 latency for reads (N3:4). Use exponential back‑off with jitter for retries, starting at 100 ms and doubling each attempt (N3:5), and cap retries at 3–5 attempts (N3:6) to avoid retry storms. Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).\",\"used_points\":[\"N3:0\",\"N3:1\",\"N3:2\",\"N3:3\",\"N3:4\",\"N3:5\",\"N3:6\",\"N3:7\"]}",
+    "response_json": {
+      "id": "chatcmpl-842b3f45-838c-4290-aa4a-8793b7495d4c",
+      "object": "chat.completion",
+      "created": 1772961841,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"To keep p95 latency stable as traffic grows, monitor the key load and health signals and apply conservative limits. Measure incoming request rate (RPS), error rate, and p95 latency per endpoint (N3:0); track TCP retransmission count, round‑trip time and socket buffer utilization (N3:1); and watch server queue lengths and thread‑pool occupancy for back‑pressure (N3:2). Size the connection pool to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). Set client‑side timeouts to about twice the typical RTT (e.g., 200 ms) for connect and twice the observed p95 latency for reads (N3:4). Use exponential back‑off with jitter for retries, starting at 100 ms and doubling each attempt (N3:5), and cap retries at 3–5 attempts (N3:6) to avoid retry storms. Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).\",\"used_points\":[\"N3:0\",\"N3:1\",\"N3:2\",\"N3:3\",\"N3:4\",\"N3:5\",\"N3:6\",\"N3:7\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 862,
+        "completion_tokens": 611,
+        "total_tokens": 1473
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:24:05.820661+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\", \"points_map\": {\"N1:0:9930e58c\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency metrics, which falls outside the coding_debugging domain.\", \"N1:1:ef050c2a\": \"UNKNOWN: Precise limits and timeout values cannot be determined without details of the system architecture and workload characteristics.\", \"N2:0:3735a6e2\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency limits, which is outside the SQL optimization domain.\", \"N2:1:d74292a9\": \"UNKNOWN: Appropriate measurement metrics and timeout values depend on your specific workload and infrastructure details.\", \"N3:0:4943cc8f\": \"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint.\", \"N3:1:c32da46e\": \"Track TCP metrics: retransmission count, RTT, and socket buffer utilization.\", \"N3:2:6e016fd2\": \"Monitor server queue lengths and thread pool occupancy to detect backpressure.\", \"N3:3:c6b2203b\": \"Set a connection pool max size based on CPU cores and memory, leaving ~20% headroom.\", \"N3:4:30e9f0a7\": \"Configure client connect timeout ~2× typical RTT (e.g., 200 ms) and read timeout ~2× p95 latency.\", \"N3:5:7ea8f8c8\": \"Implement exponential backoff with jitter for retries; start at 100 ms, double each attempt.\", \"N3:6:edee4c6d\": \"Limit max retries to 3–5 to prevent retry storms while allowing transient recovery.\", \"N3:7:a76dfb7c\": \"Use a circuit‑breaker: open if error rate >5% over 30 s, stay open for 60 s before probing.\", \"N4:0:24013dd5\": \"OUT_OF_SCOPE: The question concerns capacity planning and latency, which is outside the math_logic domain.\", \"N4:1:8e3fe262\": \"UNKNOWN: Unable to provide a precise answer within the given scope.\", \"N5:0:554218e5\": \"OUT_OF_SCOPE: The request concerns capacity planning, retry storms, and latency, which are outside the security_defensive domain.\", \"N5:1:43e0afba\": \"UNKNOWN: Precise metrics, limits, and timeout values cannot be provided without detailed knowledge of the application and infrastructure.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint. Track TCP retransmission count, RTT, and socket buffer utilization. Monitor server queue lengths and thread‑pool occupancy to detect back‑pressure. Size connection pools based on CPU cores and memory, leaving ~20% headroom. Set client connect timeout to roughly twice the typical RTT (e.g., 200 ms) and read timeout to about twice the observed p95 latency. Apply exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt, and cap retries at 3‑5 to avoid retry storms. Use a circuit‑breaker that opens when error rate exceeds 5% over a 30‑second window and remains open for 60 seconds before probing.\",\"used_points\":[\"N3:0\",\"N3:1\",\"N3:2\",\"N3:3\",\"N3:4\",\"N3:5\",\"N3:6\",\"N3:7\"]}",
+    "response_json": {
+      "id": "chatcmpl-8f995acf-722e-40a5-b5a2-75f5d16fd23a",
+      "object": "chat.completion",
+      "created": 1772961845,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint. Track TCP retransmission count, RTT, and socket buffer utilization. Monitor server queue lengths and thread‑pool occupancy to detect back‑pressure. Size connection pools based on CPU cores and memory, leaving ~20% headroom. Set client connect timeout to roughly twice the typical RTT (e.g., 200 ms) and read timeout to about twice the observed p95 latency. Apply exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt, and cap retries at 3‑5 to avoid retry storms. Use a circuit‑breaker that opens when error rate exceeds 5% over a 30‑second window and remains open for 60 seconds before probing.\",\"used_points\":[\"N3:0\",\"N3:1\",\"N3:2\",\"N3:3\",\"N3:4\",\"N3:5\",\"N3:6\",\"N3:7\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 869,
+        "completion_tokens": 534,
+        "total_tokens": 1403
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:24:07.460647+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N4"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\", \"points_map\": {\"N1:0:9930e58c\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency metrics, which falls outside the coding_debugging domain.\", \"N1:1:ef050c2a\": \"UNKNOWN: Precise limits and timeout values cannot be determined without details of the system architecture and workload characteristics.\", \"N2:0:3735a6e2\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency limits, which is outside the SQL optimization domain.\", \"N2:1:d74292a9\": \"UNKNOWN: Appropriate measurement metrics and timeout values depend on your specific workload and infrastructure details.\", \"N3:0:4943cc8f\": \"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint.\", \"N3:1:c32da46e\": \"Track TCP metrics: retransmission count, RTT, and socket buffer utilization.\", \"N3:2:6e016fd2\": \"Monitor server queue lengths and thread pool occupancy to detect backpressure.\", \"N3:3:c6b2203b\": \"Set a connection pool max size based on CPU cores and memory, leaving ~20% headroom.\", \"N3:4:30e9f0a7\": \"Configure client connect timeout ~2× typical RTT (e.g., 200 ms) and read timeout ~2× p95 latency.\", \"N3:5:7ea8f8c8\": \"Implement exponential backoff with jitter for retries; start at 100 ms, double each attempt.\", \"N3:6:edee4c6d\": \"Limit max retries to 3–5 to prevent retry storms while allowing transient recovery.\", \"N3:7:a76dfb7c\": \"Use a circuit‑breaker: open if error rate >5% over 30 s, stay open for 60 s before probing.\", \"N4:0:24013dd5\": \"OUT_OF_SCOPE: The question concerns capacity planning and latency, which is outside the math_logic domain.\", \"N4:1:8e3fe262\": \"UNKNOWN: Unable to provide a precise answer within the given scope.\", \"N5:0:554218e5\": \"OUT_OF_SCOPE: The request concerns capacity planning, retry storms, and latency, which are outside the security_defensive domain.\", \"N5:1:43e0afba\": \"UNKNOWN: Precise metrics, limits, and timeout values cannot be provided without detailed knowledge of the application and infrastructure.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"To stay safe as traffic triples, measure key load and latency signals and apply conservative limits. Measure incoming request rate (RPS), error rate, and p95 latency per endpoint (N3:0). Track TCP‑level health – retransmission count, round‑trip time, and socket buffer utilization (N3:1). Monitor server‑side back‑pressure indicators such as queue lengths and thread‑pool occupancy (N3:2). Set a connection‑pool maximum based on CPU cores and memory, leaving roughly 20 % headroom (N3:3). Configure client‑side timeouts using the observed RTT and latency: connect timeout ≈ 2 × typical RTT (e.g., 200 ms) and read timeout ≈ 2 × p95 latency (N3:4). Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5), and cap retries to 3–5 attempts to avoid retry storms (N3:6). Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and remains open for 60 seconds before probing (N3:7).\",\"used_points\":[\"N3:0\",\"N3:1\",\"N3:2\",\"N3:3\",\"N3:4\",\"N3:5\",\"N3:6\",\"N3:7\"]}",
+    "response_json": {
+      "id": "chatcmpl-665530d0-b7e9-464e-9c31-123f59c865af",
+      "object": "chat.completion",
+      "created": 1772961846,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"To stay safe as traffic triples, measure key load and latency signals and apply conservative limits. Measure incoming request rate (RPS), error rate, and p95 latency per endpoint (N3:0). Track TCP‑level health – retransmission count, round‑trip time, and socket buffer utilization (N3:1). Monitor server‑side back‑pressure indicators such as queue lengths and thread‑pool occupancy (N3:2). Set a connection‑pool maximum based on CPU cores and memory, leaving roughly 20 % headroom (N3:3). Configure client‑side timeouts using the observed RTT and latency: connect timeout ≈ 2 × typical RTT (e.g., 200 ms) and read timeout ≈ 2 × p95 latency (N3:4). Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5), and cap retries to 3–5 attempts to avoid retry storms (N3:6). Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and remains open for 60 seconds before probing (N3:7).\",\"used_points\":[\"N3:0\",\"N3:1\",\"N3:2\",\"N3:3\",\"N3:4\",\"N3:5\",\"N3:6\",\"N3:7\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 864,
+        "completion_tokens": 605,
+        "total_tokens": 1469
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:25:02.553232+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\", \"points_map\": {\"N1:0:9930e58c\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency metrics, which falls outside the coding_debugging domain.\", \"N1:1:ef050c2a\": \"UNKNOWN: Precise limits and timeout values cannot be determined without details of the system architecture and workload characteristics.\", \"N2:0:3735a6e2\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency limits, which is outside the SQL optimization domain.\", \"N2:1:d74292a9\": \"UNKNOWN: Appropriate measurement metrics and timeout values depend on your specific workload and infrastructure details.\", \"N3:0:4943cc8f\": \"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint.\", \"N3:1:c32da46e\": \"Track TCP metrics: retransmission count, RTT, and socket buffer utilization.\", \"N3:2:6e016fd2\": \"Monitor server queue lengths and thread pool occupancy to detect backpressure.\", \"N3:3:c6b2203b\": \"Set a connection pool max size based on CPU cores and memory, leaving ~20% headroom.\", \"N3:4:30e9f0a7\": \"Configure client connect timeout ~2× typical RTT (e.g., 200 ms) and read timeout ~2× p95 latency.\", \"N3:5:7ea8f8c8\": \"Implement exponential backoff with jitter for retries; start at 100 ms, double each attempt.\", \"N3:6:edee4c6d\": \"Limit max retries to 3–5 to prevent retry storms while allowing transient recovery.\", \"N3:7:a76dfb7c\": \"Use a circuit‑breaker: open if error rate >5% over 30 s, stay open for 60 s before probing.\", \"N4:0:24013dd5\": \"OUT_OF_SCOPE: The question concerns capacity planning and latency, which is outside the math_logic domain.\", \"N4:1:8e3fe262\": \"UNKNOWN: Unable to provide a precise answer within the given scope.\", \"N5:0:554218e5\": \"OUT_OF_SCOPE: The request concerns capacity planning, retry storms, and latency, which are outside the security_defensive domain.\", \"N5:1:43e0afba\": \"UNKNOWN: Precise metrics, limits, and timeout values cannot be provided without detailed knowledge of the application and infrastructure.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"To keep latency under control while traffic grows, measure key load and health signals and apply conservative limits. \\n- Track incoming request rate (RPS), error rate and p95 latency per service endpoint (N3:0). \\n- Monitor TCP‑level metrics such as retransmission count, round‑trip time and socket buffer utilization (N3:1). \\n- Observe server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). \\n- Size connection pools to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). \\n- Set client connect timeout to about twice the typical RTT (e.g., ~200 ms) and read timeout to about twice the observed p95 latency (N3:4). \\n- Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5). \\n- Cap retries to 3–5 attempts to avoid retry storms (N3:6). \\n- Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).\",\"used_points\":[\"N3:0\",\"N3:1\",\"N3:2\",\"N3:3\",\"N3:4\",\"N3:5\",\"N3:6\",\"N3:7\"]}",
+    "response_json": {
+      "id": "chatcmpl-435444af-3897-4a1b-bc0b-597efbd6055b",
+      "object": "chat.completion",
+      "created": 1772961899,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"To keep latency under control while traffic grows, measure key load and health signals and apply conservative limits. \\n- Track incoming request rate (RPS), error rate and p95 latency per service endpoint (N3:0). \\n- Monitor TCP‑level metrics such as retransmission count, round‑trip time and socket buffer utilization (N3:1). \\n- Observe server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). \\n- Size connection pools to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). \\n- Set client connect timeout to about twice the typical RTT (e.g., ~200 ms) and read timeout to about twice the observed p95 latency (N3:4). \\n- Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5). \\n- Cap retries to 3–5 attempts to avoid retry storms (N3:6). \\n- Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).\",\"used_points\":[\"N3:0\",\"N3:1\",\"N3:2\",\"N3:3\",\"N3:4\",\"N3:5\",\"N3:6\",\"N3:7\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 862,
+        "completion_tokens": 663,
+        "total_tokens": 1525
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 53 seconds.\",\"retryAfter\":53,\"limit\":10,\"remaining\":0,\"reset\":1772961900}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 32 seconds.\",\"retryAfter\":32,\"limit\":10,\"remaining\":0,\"reset\":1772961900}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 12 seconds.\",\"retryAfter\":12,\"limit\":10,\"remaining\":0,\"reset\":1772961900}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:25:04.261694+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N1",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N2\", \"target_draft\": \"To keep p95 latency stable as traffic grows, monitor the key load and health signals and apply conservative limits. Measure incoming request rate (RPS), error rate, and p95 latency per endpoint (N3:0); track TCP retransmission count, round‑trip time and socket buffer utilization (N3:1); and watch server queue lengths and thread‑pool occupancy for back‑pressure (N3:2). Size the connection pool to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). Set client‑side timeouts to about twice the typical RTT (e.g., 200 ms) for connect and twice the observed p95 latency for reads (N3:4). Use exponential back‑off with jitter for retries, starting at 100 ms and doubling each attempt (N3:5), and cap retries at 3–5 attempts (N3:6) to avoid retry storms. Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N3\", \"target_draft\": \"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint. Track TCP retransmission count, RTT, and socket buffer utilization. Monitor server queue lengths and thread‑pool occupancy to detect back‑pressure. Size connection pools based on CPU cores and memory, leaving ~20% headroom. Set client connect timeout to roughly twice the typical RTT (e.g., 200 ms) and read timeout to about twice the observed p95 latency. Apply exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt, and cap retries at 3‑5 to avoid retry storms. Use a circuit‑breaker that opens when error rate exceeds 5% over a 30‑second window and remains open for 60 seconds before probing.\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N4\", \"target_draft\": \"To stay safe as traffic triples, measure key load and latency signals and apply conservative limits. Measure incoming request rate (RPS), error rate, and p95 latency per endpoint (N3:0). Track TCP‑level health – retransmission count, round‑trip time, and socket buffer utilization (N3:1). Monitor server‑side back‑pressure indicators such as queue lengths and thread‑pool occupancy (N3:2). Set a connection‑pool maximum based on CPU cores and memory, leaving roughly 20 % headroom (N3:3). Configure client‑side timeouts using the observed RTT and latency: connect timeout ≈ 2 × typical RTT (e.g., 200 ms) and read timeout ≈ 2 × p95 latency (N3:4). Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5), and cap retries to 3–5 attempts to avoid retry storms (N3:6). Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and remains open for 60 seconds before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N5\", \"target_draft\": \"To keep latency under control while traffic grows, measure key load and health signals and apply conservative limits. \\n- Track incoming request rate (RPS), error rate and p95 latency per service endpoint (N3:0). \\n- Monitor TCP‑level metrics such as retransmission count, round‑trip time and socket buffer utilization (N3:1). \\n- Observe server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). \\n- Size connection pools to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). \\n- Set client connect timeout to about twice the typical RTT (e.g., ~200 ms) and read timeout to about twice the observed p95 latency (N3:4). \\n- Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5). \\n- Cap retries to 3–5 attempts to avoid retry storms (N3:6). \\n- Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}], \"points_map\": {\"N1:0:9930e58c\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency metrics, which falls outside the coding_debugging domain.\", \"N1:1:ef050c2a\": \"UNKNOWN: Precise limits and timeout values cannot be determined without details of the system architecture and workload characteristics.\", \"N2:0:3735a6e2\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency limits, which is outside the SQL optimization domain.\", \"N2:1:d74292a9\": \"UNKNOWN: Appropriate measurement metrics and timeout values depend on your specific workload and infrastructure details.\", \"N3:0:4943cc8f\": \"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint.\", \"N3:1:c32da46e\": \"Track TCP metrics: retransmission count, RTT, and socket buffer utilization.\", \"N3:2:6e016fd2\": \"Monitor server queue lengths and thread pool occupancy to detect backpressure.\", \"N3:3:c6b2203b\": \"Set a connection pool max size based on CPU cores and memory, leaving ~20% headroom.\", \"N3:4:30e9f0a7\": \"Configure client connect timeout ~2× typical RTT (e.g., 200 ms) and read timeout ~2× p95 latency.\", \"N3:5:7ea8f8c8\": \"Implement exponential backoff with jitter for retries; start at 100 ms, double each attempt.\", \"N3:6:edee4c6d\": \"Limit max retries to 3–5 to prevent retry storms while allowing transient recovery.\", \"N3:7:a76dfb7c\": \"Use a circuit‑breaker: open if error rate >5% over 30 s, stay open for 60 s before probing.\", \"N4:0:24013dd5\": \"OUT_OF_SCOPE: The question concerns capacity planning and latency, which is outside the math_logic domain.\", \"N4:1:8e3fe262\": \"UNKNOWN: Unable to provide a precise answer within the given scope.\", \"N5:0:554218e5\": \"OUT_OF_SCOPE: The request concerns capacity planning, retry storms, and latency, which are outside the security_defensive domain.\", \"N5:1:43e0afba\": \"UNKNOWN: Precise metrics, limits, and timeout values cannot be provided without detailed knowledge of the application and infrastructure.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes the required measurement (N3:0) but also contains out‑of‑scope points and unspecified limits.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft matches the measurement point and otherwise repeats out‑of‑scope or unknown details.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft aligns with measurement point N3:0; other points are out‑of‑scope or lack precise data.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes the required measurement and repeats out‑of‑scope/unknown aspects.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-042c2eae-9659-4761-bcb0-083674692251",
+      "object": "chat.completion",
+      "created": 1772961900,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes the required measurement (N3:0) but also contains out‑of‑scope points and unspecified limits.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft matches the measurement point and otherwise repeats out‑of‑scope or unknown details.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft aligns with measurement point N3:0; other points are out‑of‑scope or lack precise data.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes the required measurement and repeats out‑of‑scope/unknown aspects.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2161,
+        "completion_tokens": 1154,
+        "total_tokens": 3315
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:25:06.237889+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N2",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"To handle a traffic increase, measure: incoming request rate (RPS), error rate, and p95 latency per service endpoint (N3:0); TCP retransmission count, round‑trip time, and socket buffer utilization (N3:1); server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). Set limits: size the connection pool to CPU cores and memory with ~20% headroom (N3:3); configure client connect timeout to roughly twice the typical RTT (e.g., 200 ms) and read timeout to twice the observed p95 latency (N3:4). Use exponential backoff with jitter starting at 100 ms and doubling each attempt (N3:5), and cap retries to 3‑5 attempts (N3:6) to avoid retry storms. Deploy a circuit‑breaker that opens when error rate >5 % over 30 s and stays open for 60 s before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N3\", \"target_draft\": \"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint. Track TCP retransmission count, RTT, and socket buffer utilization. Monitor server queue lengths and thread‑pool occupancy to detect back‑pressure. Size connection pools based on CPU cores and memory, leaving ~20% headroom. Set client connect timeout to roughly twice the typical RTT (e.g., 200 ms) and read timeout to about twice the observed p95 latency. Apply exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt, and cap retries at 3‑5 to avoid retry storms. Use a circuit‑breaker that opens when error rate exceeds 5% over a 30‑second window and remains open for 60 seconds before probing.\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N4\", \"target_draft\": \"To stay safe as traffic triples, measure key load and latency signals and apply conservative limits. Measure incoming request rate (RPS), error rate, and p95 latency per endpoint (N3:0). Track TCP‑level health – retransmission count, round‑trip time, and socket buffer utilization (N3:1). Monitor server‑side back‑pressure indicators such as queue lengths and thread‑pool occupancy (N3:2). Set a connection‑pool maximum based on CPU cores and memory, leaving roughly 20 % headroom (N3:3). Configure client‑side timeouts using the observed RTT and latency: connect timeout ≈ 2 × typical RTT (e.g., 200 ms) and read timeout ≈ 2 × p95 latency (N3:4). Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5), and cap retries to 3–5 attempts to avoid retry storms (N3:6). Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and remains open for 60 seconds before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N5\", \"target_draft\": \"To keep latency under control while traffic grows, measure key load and health signals and apply conservative limits. \\n- Track incoming request rate (RPS), error rate and p95 latency per service endpoint (N3:0). \\n- Monitor TCP‑level metrics such as retransmission count, round‑trip time and socket buffer utilization (N3:1). \\n- Observe server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). \\n- Size connection pools to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). \\n- Set client connect timeout to about twice the typical RTT (e.g., ~200 ms) and read timeout to about twice the observed p95 latency (N3:4). \\n- Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5). \\n- Cap retries to 3–5 attempts to avoid retry storms (N3:6). \\n- Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}], \"points_map\": {\"N1:0:9930e58c\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency metrics, which falls outside the coding_debugging domain.\", \"N1:1:ef050c2a\": \"UNKNOWN: Precise limits and timeout values cannot be determined without details of the system architecture and workload characteristics.\", \"N2:0:3735a6e2\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency limits, which is outside the SQL optimization domain.\", \"N2:1:d74292a9\": \"UNKNOWN: Appropriate measurement metrics and timeout values depend on your specific workload and infrastructure details.\", \"N3:0:4943cc8f\": \"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint.\", \"N3:1:c32da46e\": \"Track TCP metrics: retransmission count, RTT, and socket buffer utilization.\", \"N3:2:6e016fd2\": \"Monitor server queue lengths and thread pool occupancy to detect backpressure.\", \"N3:3:c6b2203b\": \"Set a connection pool max size based on CPU cores and memory, leaving ~20% headroom.\", \"N3:4:30e9f0a7\": \"Configure client connect timeout ~2× typical RTT (e.g., 200 ms) and read timeout ~2× p95 latency.\", \"N3:5:7ea8f8c8\": \"Implement exponential backoff with jitter for retries; start at 100 ms, double each attempt.\", \"N3:6:edee4c6d\": \"Limit max retries to 3–5 to prevent retry storms while allowing transient recovery.\", \"N3:7:a76dfb7c\": \"Use a circuit‑breaker: open if error rate >5% over 30 s, stay open for 60 s before probing.\", \"N4:0:24013dd5\": \"OUT_OF_SCOPE: The question concerns capacity planning and latency, which is outside the math_logic domain.\", \"N4:1:8e3fe262\": \"UNKNOWN: Unable to provide a precise answer within the given scope.\", \"N5:0:554218e5\": \"OUT_OF_SCOPE: The request concerns capacity planning, retry storms, and latency, which are outside the security_defensive domain.\", \"N5:1:43e0afba\": \"UNKNOWN: Precise metrics, limits, and timeout values cannot be provided without detailed knowledge of the application and infrastructure.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes out-of-scope points for the SQL domain; therefore it fails validation.\"},{\"target_id\":\"N3\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes out-of-scope points for the SQL domain; therefore it fails validation.\"},{\"target_id\":\"N4\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes out-of-scope points for the SQL domain; therefore it fails validation.\"},{\"target_id\":\"N5\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes out-of-scope points for the SQL domain; therefore it fails validation.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-bd1a7262-3732-4187-a6c7-8d2a4613dc67",
+      "object": "chat.completion",
+      "created": 1772961902,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes out-of-scope points for the SQL domain; therefore it fails validation.\"},{\"target_id\":\"N3\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes out-of-scope points for the SQL domain; therefore it fails validation.\"},{\"target_id\":\"N4\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes out-of-scope points for the SQL domain; therefore it fails validation.\"},{\"target_id\":\"N5\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes out-of-scope points for the SQL domain; therefore it fails validation.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2129,
+        "completion_tokens": 1274,
+        "total_tokens": 3403
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:25:07.776193+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N3",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"To handle a traffic increase, measure: incoming request rate (RPS), error rate, and p95 latency per service endpoint (N3:0); TCP retransmission count, round‑trip time, and socket buffer utilization (N3:1); server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). Set limits: size the connection pool to CPU cores and memory with ~20% headroom (N3:3); configure client connect timeout to roughly twice the typical RTT (e.g., 200 ms) and read timeout to twice the observed p95 latency (N3:4). Use exponential backoff with jitter starting at 100 ms and doubling each attempt (N3:5), and cap retries to 3‑5 attempts (N3:6) to avoid retry storms. Deploy a circuit‑breaker that opens when error rate >5 % over 30 s and stays open for 60 s before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N2\", \"target_draft\": \"To keep p95 latency stable as traffic grows, monitor the key load and health signals and apply conservative limits. Measure incoming request rate (RPS), error rate, and p95 latency per endpoint (N3:0); track TCP retransmission count, round‑trip time and socket buffer utilization (N3:1); and watch server queue lengths and thread‑pool occupancy for back‑pressure (N3:2). Size the connection pool to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). Set client‑side timeouts to about twice the typical RTT (e.g., 200 ms) for connect and twice the observed p95 latency for reads (N3:4). Use exponential back‑off with jitter for retries, starting at 100 ms and doubling each attempt (N3:5), and cap retries at 3–5 attempts (N3:6) to avoid retry storms. Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N4\", \"target_draft\": \"To stay safe as traffic triples, measure key load and latency signals and apply conservative limits. Measure incoming request rate (RPS), error rate, and p95 latency per endpoint (N3:0). Track TCP‑level health – retransmission count, round‑trip time, and socket buffer utilization (N3:1). Monitor server‑side back‑pressure indicators such as queue lengths and thread‑pool occupancy (N3:2). Set a connection‑pool maximum based on CPU cores and memory, leaving roughly 20 % headroom (N3:3). Configure client‑side timeouts using the observed RTT and latency: connect timeout ≈ 2 × typical RTT (e.g., 200 ms) and read timeout ≈ 2 × p95 latency (N3:4). Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5), and cap retries to 3–5 attempts to avoid retry storms (N3:6). Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and remains open for 60 seconds before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N5\", \"target_draft\": \"To keep latency under control while traffic grows, measure key load and health signals and apply conservative limits. \\n- Track incoming request rate (RPS), error rate and p95 latency per service endpoint (N3:0). \\n- Monitor TCP‑level metrics such as retransmission count, round‑trip time and socket buffer utilization (N3:1). \\n- Observe server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). \\n- Size connection pools to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). \\n- Set client connect timeout to about twice the typical RTT (e.g., ~200 ms) and read timeout to about twice the observed p95 latency (N3:4). \\n- Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5). \\n- Cap retries to 3–5 attempts to avoid retry storms (N3:6). \\n- Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}], \"points_map\": {\"N1:0:9930e58c\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency metrics, which falls outside the coding_debugging domain.\", \"N1:1:ef050c2a\": \"UNKNOWN: Precise limits and timeout values cannot be determined without details of the system architecture and workload characteristics.\", \"N2:0:3735a6e2\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency limits, which is outside the SQL optimization domain.\", \"N2:1:d74292a9\": \"UNKNOWN: Appropriate measurement metrics and timeout values depend on your specific workload and infrastructure details.\", \"N3:0:4943cc8f\": \"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint.\", \"N3:1:c32da46e\": \"Track TCP metrics: retransmission count, RTT, and socket buffer utilization.\", \"N3:2:6e016fd2\": \"Monitor server queue lengths and thread pool occupancy to detect backpressure.\", \"N3:3:c6b2203b\": \"Set a connection pool max size based on CPU cores and memory, leaving ~20% headroom.\", \"N3:4:30e9f0a7\": \"Configure client connect timeout ~2× typical RTT (e.g., 200 ms) and read timeout ~2× p95 latency.\", \"N3:5:7ea8f8c8\": \"Implement exponential backoff with jitter for retries; start at 100 ms, double each attempt.\", \"N3:6:edee4c6d\": \"Limit max retries to 3–5 to prevent retry storms while allowing transient recovery.\", \"N3:7:a76dfb7c\": \"Use a circuit‑breaker: open if error rate >5% over 30 s, stay open for 60 s before probing.\", \"N4:0:24013dd5\": \"OUT_OF_SCOPE: The question concerns capacity planning and latency, which is outside the math_logic domain.\", \"N4:1:8e3fe262\": \"UNKNOWN: Unable to provide a precise answer within the given scope.\", \"N5:0:554218e5\": \"OUT_OF_SCOPE: The request concerns capacity planning, retry storms, and latency, which are outside the security_defensive domain.\", \"N5:1:43e0afba\": \"UNKNOWN: Precise metrics, limits, and timeout values cannot be provided without detailed knowledge of the application and infrastructure.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft uses points marked OUT_OF_SCOPE (N1:0, N2:0) which are inappropriate for the networking_systems domain; other points are either agreed or unknown.\"},{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes OUT_OF_SCOPE points (N1:0, N2:0); classification leads to failure.\"},{\"target_id\":\"N4\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Uses OUT_OF_SCOPE points; therefore FAIL.\"},{\"target_id\":\"N5\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Contains OUT_OF_SCOPE points, resulting in FAIL.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-d4d5df83-21c2-43a2-8dd9-15cf0a706e10",
+      "object": "chat.completion",
+      "created": 1772961907,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft uses points marked OUT_OF_SCOPE (N1:0, N2:0) which are inappropriate for the networking_systems domain; other points are either agreed or unknown.\"},{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes OUT_OF_SCOPE points (N1:0, N2:0); classification leads to failure.\"},{\"target_id\":\"N4\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Uses OUT_OF_SCOPE points; therefore FAIL.\"},{\"target_id\":\"N5\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Contains OUT_OF_SCOPE points, resulting in FAIL.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2211,
+        "completion_tokens": 1000,
+        "total_tokens": 3211
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:26:02.422374+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N4",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"To handle a traffic increase, measure: incoming request rate (RPS), error rate, and p95 latency per service endpoint (N3:0); TCP retransmission count, round‑trip time, and socket buffer utilization (N3:1); server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). Set limits: size the connection pool to CPU cores and memory with ~20% headroom (N3:3); configure client connect timeout to roughly twice the typical RTT (e.g., 200 ms) and read timeout to twice the observed p95 latency (N3:4). Use exponential backoff with jitter starting at 100 ms and doubling each attempt (N3:5), and cap retries to 3‑5 attempts (N3:6) to avoid retry storms. Deploy a circuit‑breaker that opens when error rate >5 % over 30 s and stays open for 60 s before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N2\", \"target_draft\": \"To keep p95 latency stable as traffic grows, monitor the key load and health signals and apply conservative limits. Measure incoming request rate (RPS), error rate, and p95 latency per endpoint (N3:0); track TCP retransmission count, round‑trip time and socket buffer utilization (N3:1); and watch server queue lengths and thread‑pool occupancy for back‑pressure (N3:2). Size the connection pool to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). Set client‑side timeouts to about twice the typical RTT (e.g., 200 ms) for connect and twice the observed p95 latency for reads (N3:4). Use exponential back‑off with jitter for retries, starting at 100 ms and doubling each attempt (N3:5), and cap retries at 3–5 attempts (N3:6) to avoid retry storms. Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N3\", \"target_draft\": \"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint. Track TCP retransmission count, RTT, and socket buffer utilization. Monitor server queue lengths and thread‑pool occupancy to detect back‑pressure. Size connection pools based on CPU cores and memory, leaving ~20% headroom. Set client connect timeout to roughly twice the typical RTT (e.g., 200 ms) and read timeout to about twice the observed p95 latency. Apply exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt, and cap retries at 3‑5 to avoid retry storms. Use a circuit‑breaker that opens when error rate exceeds 5% over a 30‑second window and remains open for 60 seconds before probing.\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N5\", \"target_draft\": \"To keep latency under control while traffic grows, measure key load and health signals and apply conservative limits. \\n- Track incoming request rate (RPS), error rate and p95 latency per service endpoint (N3:0). \\n- Monitor TCP‑level metrics such as retransmission count, round‑trip time and socket buffer utilization (N3:1). \\n- Observe server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). \\n- Size connection pools to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). \\n- Set client connect timeout to about twice the typical RTT (e.g., ~200 ms) and read timeout to about twice the observed p95 latency (N3:4). \\n- Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5). \\n- Cap retries to 3–5 attempts to avoid retry storms (N3:6). \\n- Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}], \"points_map\": {\"N1:0:9930e58c\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency metrics, which falls outside the coding_debugging domain.\", \"N1:1:ef050c2a\": \"UNKNOWN: Precise limits and timeout values cannot be determined without details of the system architecture and workload characteristics.\", \"N2:0:3735a6e2\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency limits, which is outside the SQL optimization domain.\", \"N2:1:d74292a9\": \"UNKNOWN: Appropriate measurement metrics and timeout values depend on your specific workload and infrastructure details.\", \"N3:0:4943cc8f\": \"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint.\", \"N3:1:c32da46e\": \"Track TCP metrics: retransmission count, RTT, and socket buffer utilization.\", \"N3:2:6e016fd2\": \"Monitor server queue lengths and thread pool occupancy to detect backpressure.\", \"N3:3:c6b2203b\": \"Set a connection pool max size based on CPU cores and memory, leaving ~20% headroom.\", \"N3:4:30e9f0a7\": \"Configure client connect timeout ~2× typical RTT (e.g., 200 ms) and read timeout ~2× p95 latency.\", \"N3:5:7ea8f8c8\": \"Implement exponential backoff with jitter for retries; start at 100 ms, double each attempt.\", \"N3:6:edee4c6d\": \"Limit max retries to 3–5 to prevent retry storms while allowing transient recovery.\", \"N3:7:a76dfb7c\": \"Use a circuit‑breaker: open if error rate >5% over 30 s, stay open for 60 s before probing.\", \"N4:0:24013dd5\": \"OUT_OF_SCOPE: The question concerns capacity planning and latency, which is outside the math_logic domain.\", \"N4:1:8e3fe262\": \"UNKNOWN: Unable to provide a precise answer within the given scope.\", \"N5:0:554218e5\": \"OUT_OF_SCOPE: The request concerns capacity planning, retry storms, and latency, which are outside the security_defensive domain.\", \"N5:1:43e0afba\": \"UNKNOWN: Precise metrics, limits, and timeout values cannot be provided without detailed knowledge of the application and infrastructure.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Target uses out-of-scope points (N1:0, N2:0) which are clear errors; other points are unknown or agree.\"},{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Target includes out-of-scope points leading to failure; remaining points classified accordingly.\"},{\"target_id\":\"N3\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Use of out-of-scope points constitutes a clear error; other points handled as agree/unknown.\"},{\"target_id\":\"N5\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Target incorrectly incorporates out-of-scope points; thus fails validation.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-4f5afc38-538d-49c4-a992-0192201fbe76",
+      "object": "chat.completion",
+      "created": 1772961959,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Target uses out-of-scope points (N1:0, N2:0) which are clear errors; other points are unknown or agree.\"},{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Target includes out-of-scope points leading to failure; remaining points classified accordingly.\"},{\"target_id\":\"N3\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Use of out-of-scope points constitutes a clear error; other points handled as agree/unknown.\"},{\"target_id\":\"N5\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Target incorrectly incorporates out-of-scope points; thus fails validation.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2113,
+        "completion_tokens": 1075,
+        "total_tokens": 3188
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 52 seconds.\",\"retryAfter\":52,\"limit\":10,\"remaining\":0,\"reset\":1772961960}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 32 seconds.\",\"retryAfter\":32,\"limit\":10,\"remaining\":0,\"reset\":1772961960}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 11 seconds.\",\"retryAfter\":11,\"limit\":10,\"remaining\":0,\"reset\":1772961960}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:26:04.058457+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N5",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"To handle a traffic increase, measure: incoming request rate (RPS), error rate, and p95 latency per service endpoint (N3:0); TCP retransmission count, round‑trip time, and socket buffer utilization (N3:1); server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). Set limits: size the connection pool to CPU cores and memory with ~20% headroom (N3:3); configure client connect timeout to roughly twice the typical RTT (e.g., 200 ms) and read timeout to twice the observed p95 latency (N3:4). Use exponential backoff with jitter starting at 100 ms and doubling each attempt (N3:5), and cap retries to 3‑5 attempts (N3:6) to avoid retry storms. Deploy a circuit‑breaker that opens when error rate >5 % over 30 s and stays open for 60 s before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N2\", \"target_draft\": \"To keep p95 latency stable as traffic grows, monitor the key load and health signals and apply conservative limits. Measure incoming request rate (RPS), error rate, and p95 latency per endpoint (N3:0); track TCP retransmission count, round‑trip time and socket buffer utilization (N3:1); and watch server queue lengths and thread‑pool occupancy for back‑pressure (N3:2). Size the connection pool to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). Set client‑side timeouts to about twice the typical RTT (e.g., 200 ms) for connect and twice the observed p95 latency for reads (N3:4). Use exponential back‑off with jitter for retries, starting at 100 ms and doubling each attempt (N3:5), and cap retries at 3–5 attempts (N3:6) to avoid retry storms. Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N3\", \"target_draft\": \"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint. Track TCP retransmission count, RTT, and socket buffer utilization. Monitor server queue lengths and thread‑pool occupancy to detect back‑pressure. Size connection pools based on CPU cores and memory, leaving ~20% headroom. Set client connect timeout to roughly twice the typical RTT (e.g., 200 ms) and read timeout to about twice the observed p95 latency. Apply exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt, and cap retries at 3‑5 to avoid retry storms. Use a circuit‑breaker that opens when error rate exceeds 5% over a 30‑second window and remains open for 60 seconds before probing.\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}, {\"target_id\": \"N4\", \"target_draft\": \"To stay safe as traffic triples, measure key load and latency signals and apply conservative limits. Measure incoming request rate (RPS), error rate, and p95 latency per endpoint (N3:0). Track TCP‑level health – retransmission count, round‑trip time, and socket buffer utilization (N3:1). Monitor server‑side back‑pressure indicators such as queue lengths and thread‑pool occupancy (N3:2). Set a connection‑pool maximum based on CPU cores and memory, leaving roughly 20 % headroom (N3:3). Configure client‑side timeouts using the observed RTT and latency: connect timeout ≈ 2 × typical RTT (e.g., 200 ms) and read timeout ≈ 2 × p95 latency (N3:4). Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5), and cap retries to 3–5 attempts to avoid retry storms (N3:6). Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and remains open for 60 seconds before probing (N3:7).\", \"target_used_points\": [\"N1:0:9930e58c\", \"N1:1:ef050c2a\", \"N2:0:3735a6e2\", \"N2:1:d74292a9\", \"N3:0:4943cc8f\"]}], \"points_map\": {\"N1:0:9930e58c\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency metrics, which falls outside the coding_debugging domain.\", \"N1:1:ef050c2a\": \"UNKNOWN: Precise limits and timeout values cannot be determined without details of the system architecture and workload characteristics.\", \"N2:0:3735a6e2\": \"OUT_OF_SCOPE: The request concerns capacity planning and latency limits, which is outside the SQL optimization domain.\", \"N2:1:d74292a9\": \"UNKNOWN: Appropriate measurement metrics and timeout values depend on your specific workload and infrastructure details.\", \"N3:0:4943cc8f\": \"Measure incoming request rate (RPS), error rate, and p95 latency per service endpoint.\", \"N3:1:c32da46e\": \"Track TCP metrics: retransmission count, RTT, and socket buffer utilization.\", \"N3:2:6e016fd2\": \"Monitor server queue lengths and thread pool occupancy to detect backpressure.\", \"N3:3:c6b2203b\": \"Set a connection pool max size based on CPU cores and memory, leaving ~20% headroom.\", \"N3:4:30e9f0a7\": \"Configure client connect timeout ~2× typical RTT (e.g., 200 ms) and read timeout ~2× p95 latency.\", \"N3:5:7ea8f8c8\": \"Implement exponential backoff with jitter for retries; start at 100 ms, double each attempt.\", \"N3:6:edee4c6d\": \"Limit max retries to 3–5 to prevent retry storms while allowing transient recovery.\", \"N3:7:a76dfb7c\": \"Use a circuit‑breaker: open if error rate >5% over 30 s, stay open for 60 s before probing.\", \"N4:0:24013dd5\": \"OUT_OF_SCOPE: The question concerns capacity planning and latency, which is outside the math_logic domain.\", \"N4:1:8e3fe262\": \"UNKNOWN: Unable to provide a precise answer within the given scope.\", \"N5:0:554218e5\": \"OUT_OF_SCOPE: The request concerns capacity planning, retry storms, and latency, which are outside the security_defensive domain.\", \"N5:1:43e0afba\": \"UNKNOWN: Precise metrics, limits, and timeout values cannot be provided without detailed knowledge of the application and infrastructure.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft uses points that are out of scope for the security_defensive domain.\"},{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes out-of-scope points for the security_defensive domain.\"},{\"target_id\":\"N3\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Contains out-of-scope points for the security_defensive domain.\"},{\"target_id\":\"N4\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Uses out-of-scope points for the security_defensive domain.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-231b8f98-2d76-4c67-b86e-7b54a5ca7268",
+      "object": "chat.completion",
+      "created": 1772961963,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft uses points that are out of scope for the security_defensive domain.\"},{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Draft includes out-of-scope points for the security_defensive domain.\"},{\"target_id\":\"N3\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Contains out-of-scope points for the security_defensive domain.\"},{\"target_id\":\"N4\",\"valid\":\"FAIL\",\"agree_points\":[\"N3:0:4943cc8f\"],\"reject_points\":[\"N1:0:9930e58c\",\"N2:0:3735a6e2\"],\"unknown_points\":[\"N1:1:ef050c2a\",\"N2:1:d74292a9\"],\"note\":\"Uses out-of-scope points for the security_defensive domain.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2108,
+        "completion_tokens": 1199,
+        "total_tokens": 3307
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  }
+]

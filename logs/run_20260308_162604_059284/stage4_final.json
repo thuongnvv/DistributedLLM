@@ -1,0 +1,48 @@
+{
+  "winner": "N5",
+  "final_answer": "To keep latency under control while traffic grows, measure key load and health signals and apply conservative limits. \n- Track incoming request rate (RPS), error rate and p95 latency per service endpoint (N3:0). \n- Monitor TCP‑level metrics such as retransmission count, round‑trip time and socket buffer utilization (N3:1). \n- Observe server queue lengths and thread‑pool occupancy to detect back‑pressure (N3:2). \n- Size connection pools to the number of CPU cores and memory, leaving roughly 20 % headroom (N3:3). \n- Set client connect timeout to about twice the typical RTT (e.g., ~200 ms) and read timeout to about twice the observed p95 latency (N3:4). \n- Use exponential backoff with jitter for retries, starting at 100 ms and doubling each attempt (N3:5). \n- Cap retries to 3–5 attempts to avoid retry storms (N3:6). \n- Deploy a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window and stays open for 60 seconds before probing (N3:7).",
+  "metrics": {
+    "pass": {
+      "N1": 0,
+      "N2": 1,
+      "N3": 1,
+      "N4": 1,
+      "N5": 1
+    },
+    "fail": {
+      "N1": 4,
+      "N2": 3,
+      "N3": 3,
+      "N4": 3,
+      "N5": 3
+    },
+    "agree": {
+      "N1": 4,
+      "N2": 4,
+      "N3": 4,
+      "N4": 4,
+      "N5": 4
+    },
+    "reject": {
+      "N1": 8,
+      "N2": 8,
+      "N3": 8,
+      "N4": 8,
+      "N5": 8
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N1": -2.0,
+      "N2": -2.0,
+      "N3": -2.0,
+      "N4": -2.0,
+      "N5": 3.0
+    },
+    "point_rep_delta": {
+      "N1": -20.0,
+      "N2": -20.0,
+      "N3": 20.0
+    }
+  }
+}

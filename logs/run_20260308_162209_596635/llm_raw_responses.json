@@ -1,0 +1,821 @@
+[
+  {
+    "timestamp": "2026-03-08T09:19:02.133370+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"Assign each webhook a unique id (e.g., provider's event_id) and store it with status in DB.\"},{\"text\":\"On receipt, check if event_id already processed; if so, return success without reapplying.\"},{\"text\":\"Use a DB transaction: read order state, apply changes, and mark event_id processed atomically.\"},{\"text\":\"Make updates idempotent: increment only if not already applied, use upsert with conditional logic.\"},{\"text\":\"Respond to webhook quickly (e.g., 200 OK) after persisting the event, then run async business logic if needed.\"},{\"text\":\"Set webhook timeout (5‑10 s); if it expires, let provider retry. Ensure retries are safe via idempotency checks.\"},{\"text\":\"Show users a pending status and poll or push confirmation after the webhook is processed, not after the request.\"},{\"text\":\"Implement exponential backoff for retries and a dead‑letter queue for events that repeatedly fail.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-254e0d68-97b1-4766-b279-11914946eb00",
+      "object": "chat.completion",
+      "created": 1772961539,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"Assign each webhook a unique id (e.g., provider's event_id) and store it with status in DB.\"},{\"text\":\"On receipt, check if event_id already processed; if so, return success without reapplying.\"},{\"text\":\"Use a DB transaction: read order state, apply changes, and mark event_id processed atomically.\"},{\"text\":\"Make updates idempotent: increment only if not already applied, use upsert with conditional logic.\"},{\"text\":\"Respond to webhook quickly (e.g., 200 OK) after persisting the event, then run async business logic if needed.\"},{\"text\":\"Set webhook timeout (5‑10 s); if it expires, let provider retry. Ensure retries are safe via idempotency checks.\"},{\"text\":\"Show users a pending status and poll or push confirmation after the webhook is processed, not after the request.\"},{\"text\":\"Implement exponential backoff for retries and a dead‑letter queue for events that repeatedly fail.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 322,
+        "completion_tokens": 757,
+        "total_tokens": 1079
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 51 seconds.\",\"retryAfter\":51,\"limit\":10,\"remaining\":0,\"reset\":1772961540}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 31 seconds.\",\"retryAfter\":31,\"limit\":10,\"remaining\":0,\"reset\":1772961540}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 10 seconds.\",\"retryAfter\":10,\"limit\":10,\"remaining\":0,\"reset\":1772961540}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:19:03.634558+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N2"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"Store each webhook event with a unique idempotency_key and a status column.\"},{\"text\":\"Define a UNIQUE constraint on idempotency_key to prevent duplicate inserts.\"},{\"text\":\"Use INSERT ... ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) to make the operation idempotent.\"},{\"text\":\"Wrap the payment charge and event record in a single SERIALIZABLE transaction to guarantee atomicity.\"},{\"text\":\"If the transaction times out, return a 202 Accepted and let the client poll for status.\"},{\"text\":\"Use a separate \\\"processing\\\" flag and a CHECK constraint to avoid race conditions on retries.\"},{\"text\":\"Index idempotency_key and order_id for fast lookup and conflict detection.\"},{\"text\":\"Log the webhook receipt timestamp; if later than expected, still process but mark as out‑of‑order for audit.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-da2ea3cd-3aba-43a1-8de6-8275b47b0114",
+      "object": "chat.completion",
+      "created": 1772961542,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"Store each webhook event with a unique idempotency_key and a status column.\"},{\"text\":\"Define a UNIQUE constraint on idempotency_key to prevent duplicate inserts.\"},{\"text\":\"Use INSERT ... ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) to make the operation idempotent.\"},{\"text\":\"Wrap the payment charge and event record in a single SERIALIZABLE transaction to guarantee atomicity.\"},{\"text\":\"If the transaction times out, return a 202 Accepted and let the client poll for status.\"},{\"text\":\"Use a separate \\\"processing\\\" flag and a CHECK constraint to avoid race conditions on retries.\"},{\"text\":\"Index idempotency_key and order_id for fast lookup and conflict detection.\"},{\"text\":\"Log the webhook receipt timestamp; if later than expected, still process but mark as out‑of‑order for audit.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 318,
+        "completion_tokens": 752,
+        "total_tokens": 1070
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:19:05.325249+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"Assign each webhook a unique idempotency key (e.g., provider transaction ID) and store it with the payment record.\"},{\"text\":\"Before processing, check the key table; if the key exists, skip business logic and return the previous response.\"},{\"text\":\"Wrap payment charge and key insertion in a single DB transaction to guarantee atomicity and prevent partial writes.\"},{\"text\":\"Use optimistic locking (version column) on the account balance row to avoid race conditions when concurrent retries occur.\"},{\"text\":\"Acknowledge receipt to the webhook sender immediately (e.g., HTTP 202) and process the charge asynchronously to keep latency low.\"},{\"text\":\"Set webhook request timeout to a few seconds (e.g., 5 s); if the sender times out, it will retry, but idempotency key ensures no double charge.\"},{\"text\":\"Log each attempt with timestamps and outcome; monitor for out‑of‑order arrivals and implement a replay queue if needed.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-e1633c7f-6c36-41bc-b62a-f8d482aa696c",
+      "object": "chat.completion",
+      "created": 1772961542,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"Assign each webhook a unique idempotency key (e.g., provider transaction ID) and store it with the payment record.\"},{\"text\":\"Before processing, check the key table; if the key exists, skip business logic and return the previous response.\"},{\"text\":\"Wrap payment charge and key insertion in a single DB transaction to guarantee atomicity and prevent partial writes.\"},{\"text\":\"Use optimistic locking (version column) on the account balance row to avoid race conditions when concurrent retries occur.\"},{\"text\":\"Acknowledge receipt to the webhook sender immediately (e.g., HTTP 202) and process the charge asynchronously to keep latency low.\"},{\"text\":\"Set webhook request timeout to a few seconds (e.g., 5 s); if the sender times out, it will retry, but idempotency key ensures no double charge.\"},{\"text\":\"Log each attempt with timestamps and outcome; monitor for out‑of‑order arrivals and implement a replay queue if needed.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 325,
+        "completion_tokens": 638,
+        "total_tokens": 963
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:19:06.567343+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N4"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE\"},{\"text\":\"UNKNOWN\"}]}",
+    "response_json": {
+      "id": "chatcmpl-462994d5-7eaf-4e71-a256-1d4b3540e519",
+      "object": "chat.completion",
+      "created": 1772961543,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE\"},{\"text\":\"UNKNOWN\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 320,
+        "completion_tokens": 231,
+        "total_tokens": 551
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:20:02.720850+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"Assign each webhook a unique, immutable idempotency key (e.g., webhook event ID) and store it with processing status.\"},{\"text\":\"Before processing, attempt to insert the key with a unique constraint; if insert fails, skip processing as already handled.\"},{\"text\":\"Perform DB updates within a single transaction that includes the idempotency record and payment state change to ensure atomicity.\"},{\"text\":\"Use optimistic locking or version columns on payment rows to detect concurrent updates and abort duplicates.\"},{\"text\":\"Respond to the webhook source quickly (e.g., 200 OK) after persisting the idempotency record, then continue async processing if needed.\"},{\"text\":\"Set a reasonable timeout (e.g., 2–5 seconds) for webhook handling; if timeout occurs, rely on source retries and idempotency key to prevent double charge.\"},{\"text\":\"Log each webhook receipt with timestamps and outcome for audit and replay analysis.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-79fe2d4c-a066-434d-9681-e9464695b635",
+      "object": "chat.completion",
+      "created": 1772961599,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"Assign each webhook a unique, immutable idempotency key (e.g., webhook event ID) and store it with processing status.\"},{\"text\":\"Before processing, attempt to insert the key with a unique constraint; if insert fails, skip processing as already handled.\"},{\"text\":\"Perform DB updates within a single transaction that includes the idempotency record and payment state change to ensure atomicity.\"},{\"text\":\"Use optimistic locking or version columns on payment rows to detect concurrent updates and abort duplicates.\"},{\"text\":\"Respond to the webhook source quickly (e.g., 200 OK) after persisting the idempotency record, then continue async processing if needed.\"},{\"text\":\"Set a reasonable timeout (e.g., 2–5 seconds) for webhook handling; if timeout occurs, rely on source retries and idempotency key to prevent double charge.\"},{\"text\":\"Log each webhook receipt with timestamps and outcome for audit and replay analysis.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 318,
+        "completion_tokens": 739,
+        "total_tokens": 1057
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 53 seconds.\",\"retryAfter\":53,\"limit\":10,\"remaining\":0,\"reset\":1772961600}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 33 seconds.\",\"retryAfter\":33,\"limit\":10,\"remaining\":0,\"reset\":1772961600}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 13 seconds.\",\"retryAfter\":13,\"limit\":10,\"remaining\":0,\"reset\":1772961600}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:20:04.309628+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\", \"points_map\": {\"N1:0:dc4855ad\": \"Assign each webhook a unique id (e.g., provider's event_id) and store it with status in DB.\", \"N1:1:b4e4f3c9\": \"On receipt, check if event_id already processed; if so, return success without reapplying.\", \"N1:2:f7fb95d1\": \"Use a DB transaction: read order state, apply changes, and mark event_id processed atomically.\", \"N1:3:c3132779\": \"Make updates idempotent: increment only if not already applied, use upsert with conditional logic.\", \"N1:4:3fd7a028\": \"Respond to webhook quickly (e.g., 200 OK) after persisting the event, then run async business logic if needed.\", \"N1:5:99392cbd\": \"Set webhook timeout (5‑10 s); if it expires, let provider retry. Ensure retries are safe via idempotency checks.\", \"N1:6:d8a420f0\": \"Show users a pending status and poll or push confirmation after the webhook is processed, not after the request.\", \"N1:7:8f632d80\": \"Implement exponential backoff for retries and a dead‑letter queue for events that repeatedly fail.\", \"N2:0:6e22a887\": \"Store each webhook event with a unique idempotency_key and a status column.\", \"N2:1:c98e2afe\": \"Define a UNIQUE constraint on idempotency_key to prevent duplicate inserts.\", \"N2:2:a9c1dfd2\": \"Use INSERT ... ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) to make the operation idempotent.\", \"N2:3:47ad0397\": \"Wrap the payment charge and event record in a single SERIALIZABLE transaction to guarantee atomicity.\", \"N2:4:cc38b8db\": \"If the transaction times out, return a 202 Accepted and let the client poll for status.\", \"N2:5:199a06ff\": \"Use a separate \\\"processing\\\" flag and a CHECK constraint to avoid race conditions on retries.\", \"N2:6:0a6a79ca\": \"Index idempotency_key and order_id for fast lookup and conflict detection.\", \"N2:7:2ac15b33\": \"Log the webhook receipt timestamp; if later than expected, still process but mark as out‑of‑order for audit.\", \"N3:0:7e9d2d1f\": \"Assign each webhook a unique idempotency key (e.g., provider transaction ID) and store it with the payment record.\", \"N3:1:70302c09\": \"Before processing, check the key table; if the key exists, skip business logic and return the previous response.\", \"N3:2:f39cde0c\": \"Wrap payment charge and key insertion in a single DB transaction to guarantee atomicity and prevent partial writes.\", \"N3:3:1ed95cbf\": \"Use optimistic locking (version column) on the account balance row to avoid race conditions when concurrent retries occur.\", \"N3:4:b6bf9b3c\": \"Acknowledge receipt to the webhook sender immediately (e.g., HTTP 202) and process the charge asynchronously to keep latency low.\", \"N3:5:220c1a3b\": \"Set webhook request timeout to a few seconds (e.g., 5 s); if the sender times out, it will retry, but idempotency key ensures no double charge.\", \"N3:6:5a9379c1\": \"Log each attempt with timestamps and outcome; monitor for out‑of‑order arrivals and implement a replay queue if needed.\", \"N4:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N4:1:23759997\": \"UNKNOWN\", \"N5:0:3bea9af8\": \"Assign each webhook a unique, immutable idempotency key (e.g., webhook event ID) and store it with processing status.\", \"N5:1:16d8f729\": \"Before processing, attempt to insert the key with a unique constraint; if insert fails, skip processing as already handled.\", \"N5:2:aa8f5597\": \"Perform DB updates within a single transaction that includes the idempotency record and payment state change to ensure atomicity.\", \"N5:3:b45c76a2\": \"Use optimistic locking or version columns on payment rows to detect concurrent updates and abort duplicates.\", \"N5:4:94005de2\": \"Respond to the webhook source quickly (e.g., 200 OK) after persisting the idempotency record, then continue async processing if needed.\", \"N5:5:54ebf6a2\": \"Set a reasonable timeout (e.g., 2–5 seconds) for webhook handling; if timeout occurs, rely on source retries and idempotency key to prevent double charge.\", \"N5:6:eb4560ec\": \"Log each webhook receipt with timestamps and outcome for audit and replay analysis.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"Assign each incoming webhook a provider‑generated unique event_id and treat it as an idempotency key. Persist the key together with a processing status (e.g., pending, completed) in a dedicated table that has a UNIQUE constraint on the key (N1:0, N2:1, N5:0). On receipt, immediately attempt to insert the key; if the insert fails because the key already exists, skip business logic and return success (N1:1, N5:1). If the insert succeeds, respond to the webhook sender quickly (200 OK or 202 Accepted) after the record is stored (N1:4, N5:4) and then run the payment logic asynchronously.\\n\\nWrap the payment charge and the idempotency record update in a single database transaction so that both either commit or roll back together (N1:2, N2:3, N5:2). Use an upsert/ON CONFLICT pattern to make the insert idempotent (N2:2). Within the transaction, read the current order/payment state, apply the charge only if not already applied, and update the status to completed (N1:3). Optionally employ optimistic locking or a version column on the payment row to guard against concurrent retries (N3:3, N5:3).\\n\\nSet the webhook handling timeout to a few seconds (5‑10 s) so that the provider will retry on timeout (N1:5, N3:5). Because retries are safe via the idempotency check, duplicate charges are prevented. Show the user a pending status and update the UI once the async processing finishes (N1:6). Implement exponential backoff and a dead‑letter queue for events that repeatedly fail (N1:7).\",\n  \"used_points\": [\n    \"N1:0\",\n    \"N1:1\",\n    \"N1:2\",\n    \"N1:4\",\n    \"N1:5\",\n    \"N1:6\",\n    \"N1:7\",\n    \"N2:1\",\n    \"N2:2\",\n    \"N2:3\",\n    \"N3:3\",\n    \"N3:5\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-edd5c91d-3075-4dda-8907-1cb814583eaf",
+      "object": "chat.completion",
+      "created": 1772961601,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"Assign each incoming webhook a provider‑generated unique event_id and treat it as an idempotency key. Persist the key together with a processing status (e.g., pending, completed) in a dedicated table that has a UNIQUE constraint on the key (N1:0, N2:1, N5:0). On receipt, immediately attempt to insert the key; if the insert fails because the key already exists, skip business logic and return success (N1:1, N5:1). If the insert succeeds, respond to the webhook sender quickly (200 OK or 202 Accepted) after the record is stored (N1:4, N5:4) and then run the payment logic asynchronously.\\n\\nWrap the payment charge and the idempotency record update in a single database transaction so that both either commit or roll back together (N1:2, N2:3, N5:2). Use an upsert/ON CONFLICT pattern to make the insert idempotent (N2:2). Within the transaction, read the current order/payment state, apply the charge only if not already applied, and update the status to completed (N1:3). Optionally employ optimistic locking or a version column on the payment row to guard against concurrent retries (N3:3, N5:3).\\n\\nSet the webhook handling timeout to a few seconds (5‑10 s) so that the provider will retry on timeout (N1:5, N3:5). Because retries are safe via the idempotency check, duplicate charges are prevented. Show the user a pending status and update the UI once the async processing finishes (N1:6). Implement exponential backoff and a dead‑letter queue for events that repeatedly fail (N1:7).\",\n  \"used_points\": [\n    \"N1:0\",\n    \"N1:1\",\n    \"N1:2\",\n    \"N1:4\",\n    \"N1:5\",\n    \"N1:6\",\n    \"N1:7\",\n    \"N2:1\",\n    \"N2:2\",\n    \"N2:3\",\n    \"N3:3\",\n    \"N3:5\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1435,
+        "completion_tokens": 729,
+        "total_tokens": 2164
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:20:05.734331+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N2"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\", \"points_map\": {\"N1:0:dc4855ad\": \"Assign each webhook a unique id (e.g., provider's event_id) and store it with status in DB.\", \"N1:1:b4e4f3c9\": \"On receipt, check if event_id already processed; if so, return success without reapplying.\", \"N1:2:f7fb95d1\": \"Use a DB transaction: read order state, apply changes, and mark event_id processed atomically.\", \"N1:3:c3132779\": \"Make updates idempotent: increment only if not already applied, use upsert with conditional logic.\", \"N1:4:3fd7a028\": \"Respond to webhook quickly (e.g., 200 OK) after persisting the event, then run async business logic if needed.\", \"N1:5:99392cbd\": \"Set webhook timeout (5‑10 s); if it expires, let provider retry. Ensure retries are safe via idempotency checks.\", \"N1:6:d8a420f0\": \"Show users a pending status and poll or push confirmation after the webhook is processed, not after the request.\", \"N1:7:8f632d80\": \"Implement exponential backoff for retries and a dead‑letter queue for events that repeatedly fail.\", \"N2:0:6e22a887\": \"Store each webhook event with a unique idempotency_key and a status column.\", \"N2:1:c98e2afe\": \"Define a UNIQUE constraint on idempotency_key to prevent duplicate inserts.\", \"N2:2:a9c1dfd2\": \"Use INSERT ... ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) to make the operation idempotent.\", \"N2:3:47ad0397\": \"Wrap the payment charge and event record in a single SERIALIZABLE transaction to guarantee atomicity.\", \"N2:4:cc38b8db\": \"If the transaction times out, return a 202 Accepted and let the client poll for status.\", \"N2:5:199a06ff\": \"Use a separate \\\"processing\\\" flag and a CHECK constraint to avoid race conditions on retries.\", \"N2:6:0a6a79ca\": \"Index idempotency_key and order_id for fast lookup and conflict detection.\", \"N2:7:2ac15b33\": \"Log the webhook receipt timestamp; if later than expected, still process but mark as out‑of‑order for audit.\", \"N3:0:7e9d2d1f\": \"Assign each webhook a unique idempotency key (e.g., provider transaction ID) and store it with the payment record.\", \"N3:1:70302c09\": \"Before processing, check the key table; if the key exists, skip business logic and return the previous response.\", \"N3:2:f39cde0c\": \"Wrap payment charge and key insertion in a single DB transaction to guarantee atomicity and prevent partial writes.\", \"N3:3:1ed95cbf\": \"Use optimistic locking (version column) on the account balance row to avoid race conditions when concurrent retries occur.\", \"N3:4:b6bf9b3c\": \"Acknowledge receipt to the webhook sender immediately (e.g., HTTP 202) and process the charge asynchronously to keep latency low.\", \"N3:5:220c1a3b\": \"Set webhook request timeout to a few seconds (e.g., 5 s); if the sender times out, it will retry, but idempotency key ensures no double charge.\", \"N3:6:5a9379c1\": \"Log each attempt with timestamps and outcome; monitor for out‑of‑order arrivals and implement a replay queue if needed.\", \"N4:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N4:1:23759997\": \"UNKNOWN\", \"N5:0:3bea9af8\": \"Assign each webhook a unique, immutable idempotency key (e.g., webhook event ID) and store it with processing status.\", \"N5:1:16d8f729\": \"Before processing, attempt to insert the key with a unique constraint; if insert fails, skip processing as already handled.\", \"N5:2:aa8f5597\": \"Perform DB updates within a single transaction that includes the idempotency record and payment state change to ensure atomicity.\", \"N5:3:b45c76a2\": \"Use optimistic locking or version columns on payment rows to detect concurrent updates and abort duplicates.\", \"N5:4:94005de2\": \"Respond to the webhook source quickly (e.g., 200 OK) after persisting the idempotency record, then continue async processing if needed.\", \"N5:5:54ebf6a2\": \"Set a reasonable timeout (e.g., 2–5 seconds) for webhook handling; if timeout occurs, rely on source retries and idempotency key to prevent double charge.\", \"N5:6:eb4560ec\": \"Log each webhook receipt with timestamps and outcome for audit and replay analysis.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"Assign each incoming webhook a provider‑generated unique event_id (or idempotency_key) and store it together with a processing status column. Define a UNIQUE constraint (or PRIMARY KEY) on this key and index it for fast lookup (N2:6). On receipt, immediately attempt to INSERT the key; use INSERT … ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) so that a duplicate insert is ignored (N2:2). If the insert succeeds, start a SERIALIZABLE transaction that reads the current order/payment state, applies the charge, updates the payment record, and marks the event as processed atomically (N1:2, N2:3). This guarantees that the charge and idempotency record are committed together and prevents partial updates. Respond to the webhook sender quickly (200 OK or 202 Accepted) after the key is persisted, then continue the business logic asynchronously (N1:4, N3:4). Set the HTTP request timeout to a few seconds (5‑10 s) so the provider will retry on timeout; the idempotency check ensures retries are safe (N1:5, N3:5). If the transaction times out or fails, return a 202 and let the client poll or receive a push notification once processing completes (N2:4). Use optimistic locking (a version column) on the payment row to detect concurrent retries and abort duplicate charges (N5:2). Log each receipt with timestamps for audit and out‑of‑order detection (N1:0, N3:6). This combination of unique keys, database‑level constraints, atomic transactions, fast acknowledgment, and reasonable timeouts provides idempotent, race‑free updates while keeping the user experience responsive.\",\n  \"used_points\": [\n    \"N1:0\",\n    \"N1:1\",\n    \"N1:2\",\n    \"N1:4\",\n    \"N1:5\",\n    \"N2:1\",\n    \"N2:2\",\n    \"N2:3\",\n    \"N2:6\",\n    \"N3:4\",\n    \"N3:5\",\n    \"N5:2\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-e4b3e7ee-3a97-4571-86ae-d206627a6397",
+      "object": "chat.completion",
+      "created": 1772961602,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"Assign each incoming webhook a provider‑generated unique event_id (or idempotency_key) and store it together with a processing status column. Define a UNIQUE constraint (or PRIMARY KEY) on this key and index it for fast lookup (N2:6). On receipt, immediately attempt to INSERT the key; use INSERT … ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) so that a duplicate insert is ignored (N2:2). If the insert succeeds, start a SERIALIZABLE transaction that reads the current order/payment state, applies the charge, updates the payment record, and marks the event as processed atomically (N1:2, N2:3). This guarantees that the charge and idempotency record are committed together and prevents partial updates. Respond to the webhook sender quickly (200 OK or 202 Accepted) after the key is persisted, then continue the business logic asynchronously (N1:4, N3:4). Set the HTTP request timeout to a few seconds (5‑10 s) so the provider will retry on timeout; the idempotency check ensures retries are safe (N1:5, N3:5). If the transaction times out or fails, return a 202 and let the client poll or receive a push notification once processing completes (N2:4). Use optimistic locking (a version column) on the payment row to detect concurrent retries and abort duplicate charges (N5:2). Log each receipt with timestamps for audit and out‑of‑order detection (N1:0, N3:6). This combination of unique keys, database‑level constraints, atomic transactions, fast acknowledgment, and reasonable timeouts provides idempotent, race‑free updates while keeping the user experience responsive.\",\n  \"used_points\": [\n    \"N1:0\",\n    \"N1:1\",\n    \"N1:2\",\n    \"N1:4\",\n    \"N1:5\",\n    \"N2:1\",\n    \"N2:2\",\n    \"N2:3\",\n    \"N2:6\",\n    \"N3:4\",\n    \"N3:5\",\n    \"N5:2\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1431,
+        "completion_tokens": 785,
+        "total_tokens": 2216
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:20:07.635643+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\", \"points_map\": {\"N1:0:dc4855ad\": \"Assign each webhook a unique id (e.g., provider's event_id) and store it with status in DB.\", \"N1:1:b4e4f3c9\": \"On receipt, check if event_id already processed; if so, return success without reapplying.\", \"N1:2:f7fb95d1\": \"Use a DB transaction: read order state, apply changes, and mark event_id processed atomically.\", \"N1:3:c3132779\": \"Make updates idempotent: increment only if not already applied, use upsert with conditional logic.\", \"N1:4:3fd7a028\": \"Respond to webhook quickly (e.g., 200 OK) after persisting the event, then run async business logic if needed.\", \"N1:5:99392cbd\": \"Set webhook timeout (5‑10 s); if it expires, let provider retry. Ensure retries are safe via idempotency checks.\", \"N1:6:d8a420f0\": \"Show users a pending status and poll or push confirmation after the webhook is processed, not after the request.\", \"N1:7:8f632d80\": \"Implement exponential backoff for retries and a dead‑letter queue for events that repeatedly fail.\", \"N2:0:6e22a887\": \"Store each webhook event with a unique idempotency_key and a status column.\", \"N2:1:c98e2afe\": \"Define a UNIQUE constraint on idempotency_key to prevent duplicate inserts.\", \"N2:2:a9c1dfd2\": \"Use INSERT ... ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) to make the operation idempotent.\", \"N2:3:47ad0397\": \"Wrap the payment charge and event record in a single SERIALIZABLE transaction to guarantee atomicity.\", \"N2:4:cc38b8db\": \"If the transaction times out, return a 202 Accepted and let the client poll for status.\", \"N2:5:199a06ff\": \"Use a separate \\\"processing\\\" flag and a CHECK constraint to avoid race conditions on retries.\", \"N2:6:0a6a79ca\": \"Index idempotency_key and order_id for fast lookup and conflict detection.\", \"N2:7:2ac15b33\": \"Log the webhook receipt timestamp; if later than expected, still process but mark as out‑of‑order for audit.\", \"N3:0:7e9d2d1f\": \"Assign each webhook a unique idempotency key (e.g., provider transaction ID) and store it with the payment record.\", \"N3:1:70302c09\": \"Before processing, check the key table; if the key exists, skip business logic and return the previous response.\", \"N3:2:f39cde0c\": \"Wrap payment charge and key insertion in a single DB transaction to guarantee atomicity and prevent partial writes.\", \"N3:3:1ed95cbf\": \"Use optimistic locking (version column) on the account balance row to avoid race conditions when concurrent retries occur.\", \"N3:4:b6bf9b3c\": \"Acknowledge receipt to the webhook sender immediately (e.g., HTTP 202) and process the charge asynchronously to keep latency low.\", \"N3:5:220c1a3b\": \"Set webhook request timeout to a few seconds (e.g., 5 s); if the sender times out, it will retry, but idempotency key ensures no double charge.\", \"N3:6:5a9379c1\": \"Log each attempt with timestamps and outcome; monitor for out‑of‑order arrivals and implement a replay queue if needed.\", \"N4:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N4:1:23759997\": \"UNKNOWN\", \"N5:0:3bea9af8\": \"Assign each webhook a unique, immutable idempotency key (e.g., webhook event ID) and store it with processing status.\", \"N5:1:16d8f729\": \"Before processing, attempt to insert the key with a unique constraint; if insert fails, skip processing as already handled.\", \"N5:2:aa8f5597\": \"Perform DB updates within a single transaction that includes the idempotency record and payment state change to ensure atomicity.\", \"N5:3:b45c76a2\": \"Use optimistic locking or version columns on payment rows to detect concurrent updates and abort duplicates.\", \"N5:4:94005de2\": \"Respond to the webhook source quickly (e.g., 200 OK) after persisting the idempotency record, then continue async processing if needed.\", \"N5:5:54ebf6a2\": \"Set a reasonable timeout (e.g., 2–5 seconds) for webhook handling; if timeout occurs, rely on source retries and idempotency key to prevent double charge.\", \"N5:6:eb4560ec\": \"Log each webhook receipt with timestamps and outcome for audit and replay analysis.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"Assign each incoming webhook a globally unique idempotency key (e.g., the provider’s event_id) and store it with a processing status (N1:0). On receipt, attempt to insert the key with a UNIQUE constraint (N2:1) using an upsert/INSERT … ON CONFLICT DO NOTHING (N2:2); if the insert fails the event was already handled, so return success without re‑applying (N1:1). Wrap the payment charge and the idempotency record in a single SERIALIZABLE DB transaction (N2:3) or a standard transaction (N1:2) so the state change is atomic. Apply optimistic locking (version column) on the payment row to guard against concurrent retries (N3:3). Persist the event first, then acknowledge the webhook immediately with HTTP 200/202 (N1:4, N3:4) and continue the business logic asynchronously, keeping latency low. Set the webhook handler timeout to 5‑10 seconds (N1:5); if the sender times out it will retry, but the idempotency check prevents double‑charging. Show the user a pending status while the async job completes (N1:6).\",\"used_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:3:1ed95cbf\",\"N3:4:b6bf9b3c\"]}",
+    "response_json": {
+      "id": "chatcmpl-ac8128ae-a315-4ebe-9fdc-e07f583dc2ab",
+      "object": "chat.completion",
+      "created": 1772961604,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"Assign each incoming webhook a globally unique idempotency key (e.g., the provider’s event_id) and store it with a processing status (N1:0). On receipt, attempt to insert the key with a UNIQUE constraint (N2:1) using an upsert/INSERT … ON CONFLICT DO NOTHING (N2:2); if the insert fails the event was already handled, so return success without re‑applying (N1:1). Wrap the payment charge and the idempotency record in a single SERIALIZABLE DB transaction (N2:3) or a standard transaction (N1:2) so the state change is atomic. Apply optimistic locking (version column) on the payment row to guard against concurrent retries (N3:3). Persist the event first, then acknowledge the webhook immediately with HTTP 200/202 (N1:4, N3:4) and continue the business logic asynchronously, keeping latency low. Set the webhook handler timeout to 5‑10 seconds (N1:5); if the sender times out it will retry, but the idempotency check prevents double‑charging. Show the user a pending status while the async job completes (N1:6).\",\"used_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:3:1ed95cbf\",\"N3:4:b6bf9b3c\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1438,
+        "completion_tokens": 1444,
+        "total_tokens": 2882
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:21:01.856009+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N4"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\", \"points_map\": {\"N1:0:dc4855ad\": \"Assign each webhook a unique id (e.g., provider's event_id) and store it with status in DB.\", \"N1:1:b4e4f3c9\": \"On receipt, check if event_id already processed; if so, return success without reapplying.\", \"N1:2:f7fb95d1\": \"Use a DB transaction: read order state, apply changes, and mark event_id processed atomically.\", \"N1:3:c3132779\": \"Make updates idempotent: increment only if not already applied, use upsert with conditional logic.\", \"N1:4:3fd7a028\": \"Respond to webhook quickly (e.g., 200 OK) after persisting the event, then run async business logic if needed.\", \"N1:5:99392cbd\": \"Set webhook timeout (5‑10 s); if it expires, let provider retry. Ensure retries are safe via idempotency checks.\", \"N1:6:d8a420f0\": \"Show users a pending status and poll or push confirmation after the webhook is processed, not after the request.\", \"N1:7:8f632d80\": \"Implement exponential backoff for retries and a dead‑letter queue for events that repeatedly fail.\", \"N2:0:6e22a887\": \"Store each webhook event with a unique idempotency_key and a status column.\", \"N2:1:c98e2afe\": \"Define a UNIQUE constraint on idempotency_key to prevent duplicate inserts.\", \"N2:2:a9c1dfd2\": \"Use INSERT ... ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) to make the operation idempotent.\", \"N2:3:47ad0397\": \"Wrap the payment charge and event record in a single SERIALIZABLE transaction to guarantee atomicity.\", \"N2:4:cc38b8db\": \"If the transaction times out, return a 202 Accepted and let the client poll for status.\", \"N2:5:199a06ff\": \"Use a separate \\\"processing\\\" flag and a CHECK constraint to avoid race conditions on retries.\", \"N2:6:0a6a79ca\": \"Index idempotency_key and order_id for fast lookup and conflict detection.\", \"N2:7:2ac15b33\": \"Log the webhook receipt timestamp; if later than expected, still process but mark as out‑of‑order for audit.\", \"N3:0:7e9d2d1f\": \"Assign each webhook a unique idempotency key (e.g., provider transaction ID) and store it with the payment record.\", \"N3:1:70302c09\": \"Before processing, check the key table; if the key exists, skip business logic and return the previous response.\", \"N3:2:f39cde0c\": \"Wrap payment charge and key insertion in a single DB transaction to guarantee atomicity and prevent partial writes.\", \"N3:3:1ed95cbf\": \"Use optimistic locking (version column) on the account balance row to avoid race conditions when concurrent retries occur.\", \"N3:4:b6bf9b3c\": \"Acknowledge receipt to the webhook sender immediately (e.g., HTTP 202) and process the charge asynchronously to keep latency low.\", \"N3:5:220c1a3b\": \"Set webhook request timeout to a few seconds (e.g., 5 s); if the sender times out, it will retry, but idempotency key ensures no double charge.\", \"N3:6:5a9379c1\": \"Log each attempt with timestamps and outcome; monitor for out‑of‑order arrivals and implement a replay queue if needed.\", \"N4:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N4:1:23759997\": \"UNKNOWN\", \"N5:0:3bea9af8\": \"Assign each webhook a unique, immutable idempotency key (e.g., webhook event ID) and store it with processing status.\", \"N5:1:16d8f729\": \"Before processing, attempt to insert the key with a unique constraint; if insert fails, skip processing as already handled.\", \"N5:2:aa8f5597\": \"Perform DB updates within a single transaction that includes the idempotency record and payment state change to ensure atomicity.\", \"N5:3:b45c76a2\": \"Use optimistic locking or version columns on payment rows to detect concurrent updates and abort duplicates.\", \"N5:4:94005de2\": \"Respond to the webhook source quickly (e.g., 200 OK) after persisting the idempotency record, then continue async processing if needed.\", \"N5:5:54ebf6a2\": \"Set a reasonable timeout (e.g., 2–5 seconds) for webhook handling; if timeout occurs, rely on source retries and idempotency key to prevent double charge.\", \"N5:6:eb4560ec\": \"Log each webhook receipt with timestamps and outcome for audit and replay analysis.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"Assign each incoming webhook a unique immutable identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated table. Define a UNIQUE constraint on this idempotency_key (N2:1) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2) so that a duplicate receipt is ignored. On receipt, first attempt the insert; if it fails because the key already exists, skip business logic and return success (N1:1). If the insert succeeds, start a SERIALIZABLE transaction that reads the current order/payment state, applies the charge, updates the order, and marks the event_id as processed atomically (N1:2, N2:3). Make the update logic itself idempotent – e.g., increment balances only when a flag shows the event has not been applied (N1:3). Persist the event record and commit the transaction before sending any HTTP response. Respond to the webhook source quickly (200 OK or 202 Accepted) after the record is stored, then continue any longer‑running business work asynchronously (N1:4). Set a short request timeout (5‑10 s) so that the provider will retry on timeout; retries are safe because of the idempotency checks (N1:5). For the user experience, show a pending status immediately after the request and update the UI once the asynchronous processing completes (N1:6). This combination guarantees no double‑charge, handles out‑of‑order or delayed events, and keeps the system responsive.\",\n  \"used_points\": [\n    \"N1:0\",\n    \"N1:1\",\n    \"N1:2\",\n    \"N1:3\",\n    \"N1:4\",\n    \"N1:5\",\n    \"N1:6\",\n    \"N2:1\",\n    \"N2:2\",\n    \"N2:3\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-23f744d2-9b94-4842-b6db-abdea3e0d266",
+      "object": "chat.completion",
+      "created": 1772961658,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"Assign each incoming webhook a unique immutable identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated table. Define a UNIQUE constraint on this idempotency_key (N2:1) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2) so that a duplicate receipt is ignored. On receipt, first attempt the insert; if it fails because the key already exists, skip business logic and return success (N1:1). If the insert succeeds, start a SERIALIZABLE transaction that reads the current order/payment state, applies the charge, updates the order, and marks the event_id as processed atomically (N1:2, N2:3). Make the update logic itself idempotent – e.g., increment balances only when a flag shows the event has not been applied (N1:3). Persist the event record and commit the transaction before sending any HTTP response. Respond to the webhook source quickly (200 OK or 202 Accepted) after the record is stored, then continue any longer‑running business work asynchronously (N1:4). Set a short request timeout (5‑10 s) so that the provider will retry on timeout; retries are safe because of the idempotency checks (N1:5). For the user experience, show a pending status immediately after the request and update the UI once the asynchronous processing completes (N1:6). This combination guarantees no double‑charge, handles out‑of‑order or delayed events, and keeps the system responsive.\",\n  \"used_points\": [\n    \"N1:0\",\n    \"N1:1\",\n    \"N1:2\",\n    \"N1:3\",\n    \"N1:4\",\n    \"N1:5\",\n    \"N1:6\",\n    \"N2:1\",\n    \"N2:2\",\n    \"N2:3\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1433,
+        "completion_tokens": 765,
+        "total_tokens": 2198
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 52 seconds.\",\"retryAfter\":52,\"limit\":10,\"remaining\":0,\"reset\":1772961660}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 32 seconds.\",\"retryAfter\":32,\"limit\":10,\"remaining\":0,\"reset\":1772961660}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 11 seconds.\",\"retryAfter\":11,\"limit\":10,\"remaining\":0,\"reset\":1772961660}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:21:03.649350+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\", \"points_map\": {\"N1:0:dc4855ad\": \"Assign each webhook a unique id (e.g., provider's event_id) and store it with status in DB.\", \"N1:1:b4e4f3c9\": \"On receipt, check if event_id already processed; if so, return success without reapplying.\", \"N1:2:f7fb95d1\": \"Use a DB transaction: read order state, apply changes, and mark event_id processed atomically.\", \"N1:3:c3132779\": \"Make updates idempotent: increment only if not already applied, use upsert with conditional logic.\", \"N1:4:3fd7a028\": \"Respond to webhook quickly (e.g., 200 OK) after persisting the event, then run async business logic if needed.\", \"N1:5:99392cbd\": \"Set webhook timeout (5‑10 s); if it expires, let provider retry. Ensure retries are safe via idempotency checks.\", \"N1:6:d8a420f0\": \"Show users a pending status and poll or push confirmation after the webhook is processed, not after the request.\", \"N1:7:8f632d80\": \"Implement exponential backoff for retries and a dead‑letter queue for events that repeatedly fail.\", \"N2:0:6e22a887\": \"Store each webhook event with a unique idempotency_key and a status column.\", \"N2:1:c98e2afe\": \"Define a UNIQUE constraint on idempotency_key to prevent duplicate inserts.\", \"N2:2:a9c1dfd2\": \"Use INSERT ... ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) to make the operation idempotent.\", \"N2:3:47ad0397\": \"Wrap the payment charge and event record in a single SERIALIZABLE transaction to guarantee atomicity.\", \"N2:4:cc38b8db\": \"If the transaction times out, return a 202 Accepted and let the client poll for status.\", \"N2:5:199a06ff\": \"Use a separate \\\"processing\\\" flag and a CHECK constraint to avoid race conditions on retries.\", \"N2:6:0a6a79ca\": \"Index idempotency_key and order_id for fast lookup and conflict detection.\", \"N2:7:2ac15b33\": \"Log the webhook receipt timestamp; if later than expected, still process but mark as out‑of‑order for audit.\", \"N3:0:7e9d2d1f\": \"Assign each webhook a unique idempotency key (e.g., provider transaction ID) and store it with the payment record.\", \"N3:1:70302c09\": \"Before processing, check the key table; if the key exists, skip business logic and return the previous response.\", \"N3:2:f39cde0c\": \"Wrap payment charge and key insertion in a single DB transaction to guarantee atomicity and prevent partial writes.\", \"N3:3:1ed95cbf\": \"Use optimistic locking (version column) on the account balance row to avoid race conditions when concurrent retries occur.\", \"N3:4:b6bf9b3c\": \"Acknowledge receipt to the webhook sender immediately (e.g., HTTP 202) and process the charge asynchronously to keep latency low.\", \"N3:5:220c1a3b\": \"Set webhook request timeout to a few seconds (e.g., 5 s); if the sender times out, it will retry, but idempotency key ensures no double charge.\", \"N3:6:5a9379c1\": \"Log each attempt with timestamps and outcome; monitor for out‑of‑order arrivals and implement a replay queue if needed.\", \"N4:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N4:1:23759997\": \"UNKNOWN\", \"N5:0:3bea9af8\": \"Assign each webhook a unique, immutable idempotency key (e.g., webhook event ID) and store it with processing status.\", \"N5:1:16d8f729\": \"Before processing, attempt to insert the key with a unique constraint; if insert fails, skip processing as already handled.\", \"N5:2:aa8f5597\": \"Perform DB updates within a single transaction that includes the idempotency record and payment state change to ensure atomicity.\", \"N5:3:b45c76a2\": \"Use optimistic locking or version columns on payment rows to detect concurrent updates and abort duplicates.\", \"N5:4:94005de2\": \"Respond to the webhook source quickly (e.g., 200 OK) after persisting the idempotency record, then continue async processing if needed.\", \"N5:5:54ebf6a2\": \"Set a reasonable timeout (e.g., 2–5 seconds) for webhook handling; if timeout occurs, rely on source retries and idempotency key to prevent double charge.\", \"N5:6:eb4560ec\": \"Log each webhook receipt with timestamps and outcome for audit and replay analysis.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"Assign each webhook a globally unique identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated idempotency table (N1:0:dc4855ad). Define a UNIQUE constraint on this idempotency_key (N2:1:c98e2afe) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2:a9c1dfd2) so a duplicate receipt is ignored. When a webhook arrives, first attempt the insert; if it fails, the event has already been handled and you can return success without re‑applying business logic (N1:1:b4e4f3c9, N5:1:16d8f729). Wrap the insert of the idempotency record and the payment state change in a single SERIALIZABLE transaction (N2:3:47ad0397, N1:2:f7fb95d1) to guarantee atomicity and prevent partial updates. Make the payment update itself idempotent – e.g., increment only if the event has not been applied, using conditional upserts or version checks (N1:3:c3132779, N5:3:b45c76a2). Acknowledge the webhook to the sender immediately (HTTP 200/202) after persisting the idempotency record, then continue the charge processing asynchronously (N1:4:3fd7a028, N3:4:b6bf9b3c). Set a short request timeout (5‑10 s) so the sender will retry on timeout, relying on the idempotency checks to avoid double‑charging (N1:5:99392cbd, N3:5:220c1a3b). Show the user a pending status and update the UI once the async processing completes (N1:6:d8a420f0). Implement exponential backoff for provider retries and route permanently failing events to a dead‑letter queue for manual review (N1:7:8f632d80). This combination of unique keys, database constraints, transactional processing, immediate acknowledgment, and sensible timeouts ensures no double‑charges while keeping the system responsive.\",\"used_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:5:220c1a3b\",\"N5:1:16d8f729\"]}",
+    "response_json": {
+      "id": "chatcmpl-c04969b3-a6db-4c9d-9a29-8461f23adde1",
+      "object": "chat.completion",
+      "created": 1772961660,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"Assign each webhook a globally unique identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated idempotency table (N1:0:dc4855ad). Define a UNIQUE constraint on this idempotency_key (N2:1:c98e2afe) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2:a9c1dfd2) so a duplicate receipt is ignored. When a webhook arrives, first attempt the insert; if it fails, the event has already been handled and you can return success without re‑applying business logic (N1:1:b4e4f3c9, N5:1:16d8f729). Wrap the insert of the idempotency record and the payment state change in a single SERIALIZABLE transaction (N2:3:47ad0397, N1:2:f7fb95d1) to guarantee atomicity and prevent partial updates. Make the payment update itself idempotent – e.g., increment only if the event has not been applied, using conditional upserts or version checks (N1:3:c3132779, N5:3:b45c76a2). Acknowledge the webhook to the sender immediately (HTTP 200/202) after persisting the idempotency record, then continue the charge processing asynchronously (N1:4:3fd7a028, N3:4:b6bf9b3c). Set a short request timeout (5‑10 s) so the sender will retry on timeout, relying on the idempotency checks to avoid double‑charging (N1:5:99392cbd, N3:5:220c1a3b). Show the user a pending status and update the UI once the async processing completes (N1:6:d8a420f0). Implement exponential backoff for provider retries and route permanently failing events to a dead‑letter queue for manual review (N1:7:8f632d80). This combination of unique keys, database constraints, transactional processing, immediate acknowledgment, and sensible timeouts ensures no double‑charges while keeping the system responsive.\",\"used_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:5:220c1a3b\",\"N5:1:16d8f729\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1431,
+        "completion_tokens": 980,
+        "total_tokens": 2411
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:21:06.366751+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N1",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N2\", \"target_draft\": \"Assign each incoming webhook a provider‑generated unique event_id (or idempotency_key) and store it together with a processing status column. Define a UNIQUE constraint (or PRIMARY KEY) on this key and index it for fast lookup (N2:6). On receipt, immediately attempt to INSERT the key; use INSERT … ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) so that a duplicate insert is ignored (N2:2). If the insert succeeds, start a SERIALIZABLE transaction that reads the current order/payment state, applies the charge, updates the payment record, and marks the event as processed atomically (N1:2, N2:3). This guarantees that the charge and idempotency record are committed together and prevents partial updates. Respond to the webhook sender quickly (200 OK or 202 Accepted) after the key is persisted, then continue the business logic asynchronously (N1:4, N3:4). Set the HTTP request timeout to a few seconds (5‑10 s) so the provider will retry on timeout; the idempotency check ensures retries are safe (N1:5, N3:5). If the transaction times out or fails, return a 202 and let the client poll or receive a push notification once processing completes (N2:4). Use optimistic locking (a version column) on the payment row to detect concurrent retries and abort duplicate charges (N5:2). Log each receipt with timestamps for audit and out‑of‑order detection (N1:0, N3:6). This combination of unique keys, database‑level constraints, atomic transactions, fast acknowledgment, and reasonable timeouts provides idempotent, race‑free updates while keeping the user experience responsive.\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\"]}, {\"target_id\": \"N3\", \"target_draft\": \"Assign each incoming webhook a globally unique idempotency key (e.g., the provider’s event_id) and store it with a processing status (N1:0). On receipt, attempt to insert the key with a UNIQUE constraint (N2:1) using an upsert/INSERT … ON CONFLICT DO NOTHING (N2:2); if the insert fails the event was already handled, so return success without re‑applying (N1:1). Wrap the payment charge and the idempotency record in a single SERIALIZABLE DB transaction (N2:3) or a standard transaction (N1:2) so the state change is atomic. Apply optimistic locking (version column) on the payment row to guard against concurrent retries (N3:3). Persist the event first, then acknowledge the webhook immediately with HTTP 200/202 (N1:4, N3:4) and continue the business logic asynchronously, keeping latency low. Set the webhook handler timeout to 5‑10 seconds (N1:5); if the sender times out it will retry, but the idempotency check prevents double‑charging. Show the user a pending status while the async job completes (N1:6).\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\", \"N1:5:99392cbd\", \"N1:6:d8a420f0\", \"N2:1:c98e2afe\", \"N2:2:a9c1dfd2\", \"N2:3:47ad0397\", \"N3:3:1ed95cbf\", \"N3:4:b6bf9b3c\"]}, {\"target_id\": \"N4\", \"target_draft\": \"Assign each incoming webhook a unique immutable identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated table. Define a UNIQUE constraint on this idempotency_key (N2:1) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2) so that a duplicate receipt is ignored. On receipt, first attempt the insert; if it fails because the key already exists, skip business logic and return success (N1:1). If the insert succeeds, start a SERIALIZABLE transaction that reads the current order/payment state, applies the charge, updates the order, and marks the event_id as processed atomically (N1:2, N2:3). Make the update logic itself idempotent – e.g., increment balances only when a flag shows the event has not been applied (N1:3). Persist the event record and commit the transaction before sending any HTTP response. Respond to the webhook source quickly (200 OK or 202 Accepted) after the record is stored, then continue any longer‑running business work asynchronously (N1:4). Set a short request timeout (5‑10 s) so that the provider will retry on timeout; retries are safe because of the idempotency checks (N1:5). For the user experience, show a pending status immediately after the request and update the UI once the asynchronous processing completes (N1:6). This combination guarantees no double‑charge, handles out‑of‑order or delayed events, and keeps the system responsive.\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\"]}, {\"target_id\": \"N5\", \"target_draft\": \"Assign each webhook a globally unique identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated idempotency table (N1:0:dc4855ad). Define a UNIQUE constraint on this idempotency_key (N2:1:c98e2afe) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2:a9c1dfd2) so a duplicate receipt is ignored. When a webhook arrives, first attempt the insert; if it fails, the event has already been handled and you can return success without re‑applying business logic (N1:1:b4e4f3c9, N5:1:16d8f729). Wrap the insert of the idempotency record and the payment state change in a single SERIALIZABLE transaction (N2:3:47ad0397, N1:2:f7fb95d1) to guarantee atomicity and prevent partial updates. Make the payment update itself idempotent – e.g., increment only if the event has not been applied, using conditional upserts or version checks (N1:3:c3132779, N5:3:b45c76a2). Acknowledge the webhook to the sender immediately (HTTP 200/202) after persisting the idempotency record, then continue the charge processing asynchronously (N1:4:3fd7a028, N3:4:b6bf9b3c). Set a short request timeout (5‑10 s) so the sender will retry on timeout, relying on the idempotency checks to avoid double‑charging (N1:5:99392cbd, N3:5:220c1a3b). Show the user a pending status and update the UI once the async processing completes (N1:6:d8a420f0). Implement exponential backoff for provider retries and route permanently failing events to a dead‑letter queue for manual review (N1:7:8f632d80). This combination of unique keys, database constraints, transactional processing, immediate acknowledgment, and sensible timeouts ensures no double‑charges while keeping the system responsive.\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\", \"N1:5:99392cbd\", \"N1:6:d8a420f0\", \"N2:1:c98e2afe\", \"N2:2:a9c1dfd2\", \"N2:3:47ad0397\", \"N3:5:220c1a3b\", \"N5:1:16d8f729\"]}], \"points_map\": {\"N1:0:dc4855ad\": \"Assign each webhook a unique id (e.g., provider's event_id) and store it with status in DB.\", \"N1:1:b4e4f3c9\": \"On receipt, check if event_id already processed; if so, return success without reapplying.\", \"N1:2:f7fb95d1\": \"Use a DB transaction: read order state, apply changes, and mark event_id processed atomically.\", \"N1:3:c3132779\": \"Make updates idempotent: increment only if not already applied, use upsert with conditional logic.\", \"N1:4:3fd7a028\": \"Respond to webhook quickly (e.g., 200 OK) after persisting the event, then run async business logic if needed.\", \"N1:5:99392cbd\": \"Set webhook timeout (5‑10 s); if it expires, let provider retry. Ensure retries are safe via idempotency checks.\", \"N1:6:d8a420f0\": \"Show users a pending status and poll or push confirmation after the webhook is processed, not after the request.\", \"N1:7:8f632d80\": \"Implement exponential backoff for retries and a dead‑letter queue for events that repeatedly fail.\", \"N2:0:6e22a887\": \"Store each webhook event with a unique idempotency_key and a status column.\", \"N2:1:c98e2afe\": \"Define a UNIQUE constraint on idempotency_key to prevent duplicate inserts.\", \"N2:2:a9c1dfd2\": \"Use INSERT ... ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) to make the operation idempotent.\", \"N2:3:47ad0397\": \"Wrap the payment charge and event record in a single SERIALIZABLE transaction to guarantee atomicity.\", \"N2:4:cc38b8db\": \"If the transaction times out, return a 202 Accepted and let the client poll for status.\", \"N2:5:199a06ff\": \"Use a separate \\\"processing\\\" flag and a CHECK constraint to avoid race conditions on retries.\", \"N2:6:0a6a79ca\": \"Index idempotency_key and order_id for fast lookup and conflict detection.\", \"N2:7:2ac15b33\": \"Log the webhook receipt timestamp; if later than expected, still process but mark as out‑of‑order for audit.\", \"N3:0:7e9d2d1f\": \"Assign each webhook a unique idempotency key (e.g., provider transaction ID) and store it with the payment record.\", \"N3:1:70302c09\": \"Before processing, check the key table; if the key exists, skip business logic and return the previous response.\", \"N3:2:f39cde0c\": \"Wrap payment charge and key insertion in a single DB transaction to guarantee atomicity and prevent partial writes.\", \"N3:3:1ed95cbf\": \"Use optimistic locking (version column) on the account balance row to avoid race conditions when concurrent retries occur.\", \"N3:4:b6bf9b3c\": \"Acknowledge receipt to the webhook sender immediately (e.g., HTTP 202) and process the charge asynchronously to keep latency low.\", \"N3:5:220c1a3b\": \"Set webhook request timeout to a few seconds (e.g., 5 s); if the sender times out, it will retry, but idempotency key ensures no double charge.\", \"N3:6:5a9379c1\": \"Log each attempt with timestamps and outcome; monitor for out‑of‑order arrivals and implement a replay queue if needed.\", \"N4:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N4:1:23759997\": \"UNKNOWN\", \"N5:0:3bea9af8\": \"Assign each webhook a unique, immutable idempotency key (e.g., webhook event ID) and store it with processing status.\", \"N5:1:16d8f729\": \"Before processing, attempt to insert the key with a unique constraint; if insert fails, skip processing as already handled.\", \"N5:2:aa8f5597\": \"Perform DB updates within a single transaction that includes the idempotency record and payment state change to ensure atomicity.\", \"N5:3:b45c76a2\": \"Use optimistic locking or version columns on payment rows to detect concurrent updates and abort duplicates.\", \"N5:4:94005de2\": \"Respond to the webhook source quickly (e.g., 200 OK) after persisting the idempotency record, then continue async processing if needed.\", \"N5:5:54ebf6a2\": \"Set a reasonable timeout (e.g., 2–5 seconds) for webhook handling; if timeout occurs, rely on source retries and idempotency key to prevent double charge.\", \"N5:6:eb4560ec\": \"Log each webhook receipt with timestamps and outcome for audit and replay analysis.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:4:3fd7a028\"],\"reject_points\":[\"N1:3:c3132779\"],\"unknown_points\":[],\"note\":\"Missing explicit idempotent update logic (N1:3) in draft.\"},{\"target_id\":\"N3\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:3:1ed95cbf\",\"N3:4:b6bf9b3c\"],\"reject_points\":[\"N1:3:c3132779\"],\"unknown_points\":[],\"note\":\"Draft does not cover idempotent update rule (N1:3).\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly reflected.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:5:220c1a3b\",\"N5:1:16d8f729\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All used points are accurately represented.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-9897cec6-2be2-4309-9cd9-0cec7bc9969c",
+      "object": "chat.completion",
+      "created": 1772961664,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:4:3fd7a028\"],\"reject_points\":[\"N1:3:c3132779\"],\"unknown_points\":[],\"note\":\"Missing explicit idempotent update logic (N1:3) in draft.\"},{\"target_id\":\"N3\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:3:1ed95cbf\",\"N3:4:b6bf9b3c\"],\"reject_points\":[\"N1:3:c3132779\"],\"unknown_points\":[],\"note\":\"Draft does not cover idempotent update rule (N1:3).\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly reflected.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:5:220c1a3b\",\"N5:1:16d8f729\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All used points are accurately represented.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 3383,
+        "completion_tokens": 3663,
+        "total_tokens": 7046
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:21:09.179357+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N2",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"Assign each incoming webhook a provider‑generated unique event_id and treat it as an idempotency key. Persist the key together with a processing status (e.g., pending, completed) in a dedicated table that has a UNIQUE constraint on the key (N1:0, N2:1, N5:0). On receipt, immediately attempt to insert the key; if the insert fails because the key already exists, skip business logic and return success (N1:1, N5:1). If the insert succeeds, respond to the webhook sender quickly (200 OK or 202 Accepted) after the record is stored (N1:4, N5:4) and then run the payment logic asynchronously.\\n\\nWrap the payment charge and the idempotency record update in a single database transaction so that both either commit or roll back together (N1:2, N2:3, N5:2). Use an upsert/ON CONFLICT pattern to make the insert idempotent (N2:2). Within the transaction, read the current order/payment state, apply the charge only if not already applied, and update the status to completed (N1:3). Optionally employ optimistic locking or a version column on the payment row to guard against concurrent retries (N3:3, N5:3).\\n\\nSet the webhook handling timeout to a few seconds (5‑10 s) so that the provider will retry on timeout (N1:5, N3:5). Because retries are safe via the idempotency check, duplicate charges are prevented. Show the user a pending status and update the UI once the async processing finishes (N1:6). Implement exponential backoff and a dead‑letter queue for events that repeatedly fail (N1:7).\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\"]}, {\"target_id\": \"N3\", \"target_draft\": \"Assign each incoming webhook a globally unique idempotency key (e.g., the provider’s event_id) and store it with a processing status (N1:0). On receipt, attempt to insert the key with a UNIQUE constraint (N2:1) using an upsert/INSERT … ON CONFLICT DO NOTHING (N2:2); if the insert fails the event was already handled, so return success without re‑applying (N1:1). Wrap the payment charge and the idempotency record in a single SERIALIZABLE DB transaction (N2:3) or a standard transaction (N1:2) so the state change is atomic. Apply optimistic locking (version column) on the payment row to guard against concurrent retries (N3:3). Persist the event first, then acknowledge the webhook immediately with HTTP 200/202 (N1:4, N3:4) and continue the business logic asynchronously, keeping latency low. Set the webhook handler timeout to 5‑10 seconds (N1:5); if the sender times out it will retry, but the idempotency check prevents double‑charging. Show the user a pending status while the async job completes (N1:6).\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\", \"N1:5:99392cbd\", \"N1:6:d8a420f0\", \"N2:1:c98e2afe\", \"N2:2:a9c1dfd2\", \"N2:3:47ad0397\", \"N3:3:1ed95cbf\", \"N3:4:b6bf9b3c\"]}, {\"target_id\": \"N4\", \"target_draft\": \"Assign each incoming webhook a unique immutable identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated table. Define a UNIQUE constraint on this idempotency_key (N2:1) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2) so that a duplicate receipt is ignored. On receipt, first attempt the insert; if it fails because the key already exists, skip business logic and return success (N1:1). If the insert succeeds, start a SERIALIZABLE transaction that reads the current order/payment state, applies the charge, updates the order, and marks the event_id as processed atomically (N1:2, N2:3). Make the update logic itself idempotent – e.g., increment balances only when a flag shows the event has not been applied (N1:3). Persist the event record and commit the transaction before sending any HTTP response. Respond to the webhook source quickly (200 OK or 202 Accepted) after the record is stored, then continue any longer‑running business work asynchronously (N1:4). Set a short request timeout (5‑10 s) so that the provider will retry on timeout; retries are safe because of the idempotency checks (N1:5). For the user experience, show a pending status immediately after the request and update the UI once the asynchronous processing completes (N1:6). This combination guarantees no double‑charge, handles out‑of‑order or delayed events, and keeps the system responsive.\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\"]}, {\"target_id\": \"N5\", \"target_draft\": \"Assign each webhook a globally unique identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated idempotency table (N1:0:dc4855ad). Define a UNIQUE constraint on this idempotency_key (N2:1:c98e2afe) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2:a9c1dfd2) so a duplicate receipt is ignored. When a webhook arrives, first attempt the insert; if it fails, the event has already been handled and you can return success without re‑applying business logic (N1:1:b4e4f3c9, N5:1:16d8f729). Wrap the insert of the idempotency record and the payment state change in a single SERIALIZABLE transaction (N2:3:47ad0397, N1:2:f7fb95d1) to guarantee atomicity and prevent partial updates. Make the payment update itself idempotent – e.g., increment only if the event has not been applied, using conditional upserts or version checks (N1:3:c3132779, N5:3:b45c76a2). Acknowledge the webhook to the sender immediately (HTTP 200/202) after persisting the idempotency record, then continue the charge processing asynchronously (N1:4:3fd7a028, N3:4:b6bf9b3c). Set a short request timeout (5‑10 s) so the sender will retry on timeout, relying on the idempotency checks to avoid double‑charging (N1:5:99392cbd, N3:5:220c1a3b). Show the user a pending status and update the UI once the async processing completes (N1:6:d8a420f0). Implement exponential backoff for provider retries and route permanently failing events to a dead‑letter queue for manual review (N1:7:8f632d80). This combination of unique keys, database constraints, transactional processing, immediate acknowledgment, and sensible timeouts ensures no double‑charges while keeping the system responsive.\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\", \"N1:5:99392cbd\", \"N1:6:d8a420f0\", \"N2:1:c98e2afe\", \"N2:2:a9c1dfd2\", \"N2:3:47ad0397\", \"N3:5:220c1a3b\", \"N5:1:16d8f729\"]}], \"points_map\": {\"N1:0:dc4855ad\": \"Assign each webhook a unique id (e.g., provider's event_id) and store it with status in DB.\", \"N1:1:b4e4f3c9\": \"On receipt, check if event_id already processed; if so, return success without reapplying.\", \"N1:2:f7fb95d1\": \"Use a DB transaction: read order state, apply changes, and mark event_id processed atomically.\", \"N1:3:c3132779\": \"Make updates idempotent: increment only if not already applied, use upsert with conditional logic.\", \"N1:4:3fd7a028\": \"Respond to webhook quickly (e.g., 200 OK) after persisting the event, then run async business logic if needed.\", \"N1:5:99392cbd\": \"Set webhook timeout (5‑10 s); if it expires, let provider retry. Ensure retries are safe via idempotency checks.\", \"N1:6:d8a420f0\": \"Show users a pending status and poll or push confirmation after the webhook is processed, not after the request.\", \"N1:7:8f632d80\": \"Implement exponential backoff for retries and a dead‑letter queue for events that repeatedly fail.\", \"N2:0:6e22a887\": \"Store each webhook event with a unique idempotency_key and a status column.\", \"N2:1:c98e2afe\": \"Define a UNIQUE constraint on idempotency_key to prevent duplicate inserts.\", \"N2:2:a9c1dfd2\": \"Use INSERT ... ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) to make the operation idempotent.\", \"N2:3:47ad0397\": \"Wrap the payment charge and event record in a single SERIALIZABLE transaction to guarantee atomicity.\", \"N2:4:cc38b8db\": \"If the transaction times out, return a 202 Accepted and let the client poll for status.\", \"N2:5:199a06ff\": \"Use a separate \\\"processing\\\" flag and a CHECK constraint to avoid race conditions on retries.\", \"N2:6:0a6a79ca\": \"Index idempotency_key and order_id for fast lookup and conflict detection.\", \"N2:7:2ac15b33\": \"Log the webhook receipt timestamp; if later than expected, still process but mark as out‑of‑order for audit.\", \"N3:0:7e9d2d1f\": \"Assign each webhook a unique idempotency key (e.g., provider transaction ID) and store it with the payment record.\", \"N3:1:70302c09\": \"Before processing, check the key table; if the key exists, skip business logic and return the previous response.\", \"N3:2:f39cde0c\": \"Wrap payment charge and key insertion in a single DB transaction to guarantee atomicity and prevent partial writes.\", \"N3:3:1ed95cbf\": \"Use optimistic locking (version column) on the account balance row to avoid race conditions when concurrent retries occur.\", \"N3:4:b6bf9b3c\": \"Acknowledge receipt to the webhook sender immediately (e.g., HTTP 202) and process the charge asynchronously to keep latency low.\", \"N3:5:220c1a3b\": \"Set webhook request timeout to a few seconds (e.g., 5 s); if the sender times out, it will retry, but idempotency key ensures no double charge.\", \"N3:6:5a9379c1\": \"Log each attempt with timestamps and outcome; monitor for out‑of‑order arrivals and implement a replay queue if needed.\", \"N4:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N4:1:23759997\": \"UNKNOWN\", \"N5:0:3bea9af8\": \"Assign each webhook a unique, immutable idempotency key (e.g., webhook event ID) and store it with processing status.\", \"N5:1:16d8f729\": \"Before processing, attempt to insert the key with a unique constraint; if insert fails, skip processing as already handled.\", \"N5:2:aa8f5597\": \"Perform DB updates within a single transaction that includes the idempotency record and payment state change to ensure atomicity.\", \"N5:3:b45c76a2\": \"Use optimistic locking or version columns on payment rows to detect concurrent updates and abort duplicates.\", \"N5:4:94005de2\": \"Respond to the webhook source quickly (e.g., 200 OK) after persisting the idempotency record, then continue async processing if needed.\", \"N5:5:54ebf6a2\": \"Set a reasonable timeout (e.g., 2–5 seconds) for webhook handling; if timeout occurs, rely on source retries and idempotency key to prevent double charge.\", \"N5:6:eb4560ec\": \"Log each webhook receipt with timestamps and outcome for audit and replay analysis.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:3:1ed95cbf\",\"N3:4:b6bf9b3c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:5:220c1a3b\",\"N5:1:16d8f729\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-9af49a15-6ecb-4f4c-8e56-b165d865c55e",
+      "object": "chat.completion",
+      "created": 1772961667,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:3:1ed95cbf\",\"N3:4:b6bf9b3c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:5:220c1a3b\",\"N5:1:16d8f729\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 3386,
+        "completion_tokens": 4313,
+        "total_tokens": 7699
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:22:03.963898+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N3",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"Assign each incoming webhook a provider‑generated unique event_id and treat it as an idempotency key. Persist the key together with a processing status (e.g., pending, completed) in a dedicated table that has a UNIQUE constraint on the key (N1:0, N2:1, N5:0). On receipt, immediately attempt to insert the key; if the insert fails because the key already exists, skip business logic and return success (N1:1, N5:1). If the insert succeeds, respond to the webhook sender quickly (200 OK or 202 Accepted) after the record is stored (N1:4, N5:4) and then run the payment logic asynchronously.\\n\\nWrap the payment charge and the idempotency record update in a single database transaction so that both either commit or roll back together (N1:2, N2:3, N5:2). Use an upsert/ON CONFLICT pattern to make the insert idempotent (N2:2). Within the transaction, read the current order/payment state, apply the charge only if not already applied, and update the status to completed (N1:3). Optionally employ optimistic locking or a version column on the payment row to guard against concurrent retries (N3:3, N5:3).\\n\\nSet the webhook handling timeout to a few seconds (5‑10 s) so that the provider will retry on timeout (N1:5, N3:5). Because retries are safe via the idempotency check, duplicate charges are prevented. Show the user a pending status and update the UI once the async processing finishes (N1:6). Implement exponential backoff and a dead‑letter queue for events that repeatedly fail (N1:7).\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\"]}, {\"target_id\": \"N2\", \"target_draft\": \"Assign each incoming webhook a provider‑generated unique event_id (or idempotency_key) and store it together with a processing status column. Define a UNIQUE constraint (or PRIMARY KEY) on this key and index it for fast lookup (N2:6). On receipt, immediately attempt to INSERT the key; use INSERT … ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) so that a duplicate insert is ignored (N2:2). If the insert succeeds, start a SERIALIZABLE transaction that reads the current order/payment state, applies the charge, updates the payment record, and marks the event as processed atomically (N1:2, N2:3). This guarantees that the charge and idempotency record are committed together and prevents partial updates. Respond to the webhook sender quickly (200 OK or 202 Accepted) after the key is persisted, then continue the business logic asynchronously (N1:4, N3:4). Set the HTTP request timeout to a few seconds (5‑10 s) so the provider will retry on timeout; the idempotency check ensures retries are safe (N1:5, N3:5). If the transaction times out or fails, return a 202 and let the client poll or receive a push notification once processing completes (N2:4). Use optimistic locking (a version column) on the payment row to detect concurrent retries and abort duplicate charges (N5:2). Log each receipt with timestamps for audit and out‑of‑order detection (N1:0, N3:6). This combination of unique keys, database‑level constraints, atomic transactions, fast acknowledgment, and reasonable timeouts provides idempotent, race‑free updates while keeping the user experience responsive.\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\"]}, {\"target_id\": \"N4\", \"target_draft\": \"Assign each incoming webhook a unique immutable identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated table. Define a UNIQUE constraint on this idempotency_key (N2:1) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2) so that a duplicate receipt is ignored. On receipt, first attempt the insert; if it fails because the key already exists, skip business logic and return success (N1:1). If the insert succeeds, start a SERIALIZABLE transaction that reads the current order/payment state, applies the charge, updates the order, and marks the event_id as processed atomically (N1:2, N2:3). Make the update logic itself idempotent – e.g., increment balances only when a flag shows the event has not been applied (N1:3). Persist the event record and commit the transaction before sending any HTTP response. Respond to the webhook source quickly (200 OK or 202 Accepted) after the record is stored, then continue any longer‑running business work asynchronously (N1:4). Set a short request timeout (5‑10 s) so that the provider will retry on timeout; retries are safe because of the idempotency checks (N1:5). For the user experience, show a pending status immediately after the request and update the UI once the asynchronous processing completes (N1:6). This combination guarantees no double‑charge, handles out‑of‑order or delayed events, and keeps the system responsive.\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\"]}, {\"target_id\": \"N5\", \"target_draft\": \"Assign each webhook a globally unique identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated idempotency table (N1:0:dc4855ad). Define a UNIQUE constraint on this idempotency_key (N2:1:c98e2afe) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2:a9c1dfd2) so a duplicate receipt is ignored. When a webhook arrives, first attempt the insert; if it fails, the event has already been handled and you can return success without re‑applying business logic (N1:1:b4e4f3c9, N5:1:16d8f729). Wrap the insert of the idempotency record and the payment state change in a single SERIALIZABLE transaction (N2:3:47ad0397, N1:2:f7fb95d1) to guarantee atomicity and prevent partial updates. Make the payment update itself idempotent – e.g., increment only if the event has not been applied, using conditional upserts or version checks (N1:3:c3132779, N5:3:b45c76a2). Acknowledge the webhook to the sender immediately (HTTP 200/202) after persisting the idempotency record, then continue the charge processing asynchronously (N1:4:3fd7a028, N3:4:b6bf9b3c). Set a short request timeout (5‑10 s) so the sender will retry on timeout, relying on the idempotency checks to avoid double‑charging (N1:5:99392cbd, N3:5:220c1a3b). Show the user a pending status and update the UI once the async processing completes (N1:6:d8a420f0). Implement exponential backoff for provider retries and route permanently failing events to a dead‑letter queue for manual review (N1:7:8f632d80). This combination of unique keys, database constraints, transactional processing, immediate acknowledgment, and sensible timeouts ensures no double‑charges while keeping the system responsive.\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\", \"N1:5:99392cbd\", \"N1:6:d8a420f0\", \"N2:1:c98e2afe\", \"N2:2:a9c1dfd2\", \"N2:3:47ad0397\", \"N3:5:220c1a3b\", \"N5:1:16d8f729\"]}], \"points_map\": {\"N1:0:dc4855ad\": \"Assign each webhook a unique id (e.g., provider's event_id) and store it with status in DB.\", \"N1:1:b4e4f3c9\": \"On receipt, check if event_id already processed; if so, return success without reapplying.\", \"N1:2:f7fb95d1\": \"Use a DB transaction: read order state, apply changes, and mark event_id processed atomically.\", \"N1:3:c3132779\": \"Make updates idempotent: increment only if not already applied, use upsert with conditional logic.\", \"N1:4:3fd7a028\": \"Respond to webhook quickly (e.g., 200 OK) after persisting the event, then run async business logic if needed.\", \"N1:5:99392cbd\": \"Set webhook timeout (5‑10 s); if it expires, let provider retry. Ensure retries are safe via idempotency checks.\", \"N1:6:d8a420f0\": \"Show users a pending status and poll or push confirmation after the webhook is processed, not after the request.\", \"N1:7:8f632d80\": \"Implement exponential backoff for retries and a dead‑letter queue for events that repeatedly fail.\", \"N2:0:6e22a887\": \"Store each webhook event with a unique idempotency_key and a status column.\", \"N2:1:c98e2afe\": \"Define a UNIQUE constraint on idempotency_key to prevent duplicate inserts.\", \"N2:2:a9c1dfd2\": \"Use INSERT ... ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) to make the operation idempotent.\", \"N2:3:47ad0397\": \"Wrap the payment charge and event record in a single SERIALIZABLE transaction to guarantee atomicity.\", \"N2:4:cc38b8db\": \"If the transaction times out, return a 202 Accepted and let the client poll for status.\", \"N2:5:199a06ff\": \"Use a separate \\\"processing\\\" flag and a CHECK constraint to avoid race conditions on retries.\", \"N2:6:0a6a79ca\": \"Index idempotency_key and order_id for fast lookup and conflict detection.\", \"N2:7:2ac15b33\": \"Log the webhook receipt timestamp; if later than expected, still process but mark as out‑of‑order for audit.\", \"N3:0:7e9d2d1f\": \"Assign each webhook a unique idempotency key (e.g., provider transaction ID) and store it with the payment record.\", \"N3:1:70302c09\": \"Before processing, check the key table; if the key exists, skip business logic and return the previous response.\", \"N3:2:f39cde0c\": \"Wrap payment charge and key insertion in a single DB transaction to guarantee atomicity and prevent partial writes.\", \"N3:3:1ed95cbf\": \"Use optimistic locking (version column) on the account balance row to avoid race conditions when concurrent retries occur.\", \"N3:4:b6bf9b3c\": \"Acknowledge receipt to the webhook sender immediately (e.g., HTTP 202) and process the charge asynchronously to keep latency low.\", \"N3:5:220c1a3b\": \"Set webhook request timeout to a few seconds (e.g., 5 s); if the sender times out, it will retry, but idempotency key ensures no double charge.\", \"N3:6:5a9379c1\": \"Log each attempt with timestamps and outcome; monitor for out‑of‑order arrivals and implement a replay queue if needed.\", \"N4:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N4:1:23759997\": \"UNKNOWN\", \"N5:0:3bea9af8\": \"Assign each webhook a unique, immutable idempotency key (e.g., webhook event ID) and store it with processing status.\", \"N5:1:16d8f729\": \"Before processing, attempt to insert the key with a unique constraint; if insert fails, skip processing as already handled.\", \"N5:2:aa8f5597\": \"Perform DB updates within a single transaction that includes the idempotency record and payment state change to ensure atomicity.\", \"N5:3:b45c76a2\": \"Use optimistic locking or version columns on payment rows to detect concurrent updates and abort duplicates.\", \"N5:4:94005de2\": \"Respond to the webhook source quickly (e.g., 200 OK) after persisting the idempotency record, then continue async processing if needed.\", \"N5:5:54ebf6a2\": \"Set a reasonable timeout (e.g., 2–5 seconds) for webhook handling; if timeout occurs, rely on source retries and idempotency key to prevent double charge.\", \"N5:6:eb4560ec\": \"Log each webhook receipt with timestamps and outcome for audit and replay analysis.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:5:220c1a3b\",\"N5:1:16d8f729\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-d614f593-92b9-4737-89b0-7b8357207243",
+      "object": "chat.completion",
+      "created": 1772961719,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:5:220c1a3b\",\"N5:1:16d8f729\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 3706,
+        "total_tokens": 7124
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 51 seconds.\",\"retryAfter\":51,\"limit\":10,\"remaining\":0,\"reset\":1772961720}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 30 seconds.\",\"retryAfter\":30,\"limit\":10,\"remaining\":0,\"reset\":1772961720}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 10 seconds.\",\"retryAfter\":10,\"limit\":10,\"remaining\":0,\"reset\":1772961720}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:22:07.119437+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N4",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"Assign each incoming webhook a provider‑generated unique event_id and treat it as an idempotency key. Persist the key together with a processing status (e.g., pending, completed) in a dedicated table that has a UNIQUE constraint on the key (N1:0, N2:1, N5:0). On receipt, immediately attempt to insert the key; if the insert fails because the key already exists, skip business logic and return success (N1:1, N5:1). If the insert succeeds, respond to the webhook sender quickly (200 OK or 202 Accepted) after the record is stored (N1:4, N5:4) and then run the payment logic asynchronously.\\n\\nWrap the payment charge and the idempotency record update in a single database transaction so that both either commit or roll back together (N1:2, N2:3, N5:2). Use an upsert/ON CONFLICT pattern to make the insert idempotent (N2:2). Within the transaction, read the current order/payment state, apply the charge only if not already applied, and update the status to completed (N1:3). Optionally employ optimistic locking or a version column on the payment row to guard against concurrent retries (N3:3, N5:3).\\n\\nSet the webhook handling timeout to a few seconds (5‑10 s) so that the provider will retry on timeout (N1:5, N3:5). Because retries are safe via the idempotency check, duplicate charges are prevented. Show the user a pending status and update the UI once the async processing finishes (N1:6). Implement exponential backoff and a dead‑letter queue for events that repeatedly fail (N1:7).\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\"]}, {\"target_id\": \"N2\", \"target_draft\": \"Assign each incoming webhook a provider‑generated unique event_id (or idempotency_key) and store it together with a processing status column. Define a UNIQUE constraint (or PRIMARY KEY) on this key and index it for fast lookup (N2:6). On receipt, immediately attempt to INSERT the key; use INSERT … ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) so that a duplicate insert is ignored (N2:2). If the insert succeeds, start a SERIALIZABLE transaction that reads the current order/payment state, applies the charge, updates the payment record, and marks the event as processed atomically (N1:2, N2:3). This guarantees that the charge and idempotency record are committed together and prevents partial updates. Respond to the webhook sender quickly (200 OK or 202 Accepted) after the key is persisted, then continue the business logic asynchronously (N1:4, N3:4). Set the HTTP request timeout to a few seconds (5‑10 s) so the provider will retry on timeout; the idempotency check ensures retries are safe (N1:5, N3:5). If the transaction times out or fails, return a 202 and let the client poll or receive a push notification once processing completes (N2:4). Use optimistic locking (a version column) on the payment row to detect concurrent retries and abort duplicate charges (N5:2). Log each receipt with timestamps for audit and out‑of‑order detection (N1:0, N3:6). This combination of unique keys, database‑level constraints, atomic transactions, fast acknowledgment, and reasonable timeouts provides idempotent, race‑free updates while keeping the user experience responsive.\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\"]}, {\"target_id\": \"N3\", \"target_draft\": \"Assign each incoming webhook a globally unique idempotency key (e.g., the provider’s event_id) and store it with a processing status (N1:0). On receipt, attempt to insert the key with a UNIQUE constraint (N2:1) using an upsert/INSERT … ON CONFLICT DO NOTHING (N2:2); if the insert fails the event was already handled, so return success without re‑applying (N1:1). Wrap the payment charge and the idempotency record in a single SERIALIZABLE DB transaction (N2:3) or a standard transaction (N1:2) so the state change is atomic. Apply optimistic locking (version column) on the payment row to guard against concurrent retries (N3:3). Persist the event first, then acknowledge the webhook immediately with HTTP 200/202 (N1:4, N3:4) and continue the business logic asynchronously, keeping latency low. Set the webhook handler timeout to 5‑10 seconds (N1:5); if the sender times out it will retry, but the idempotency check prevents double‑charging. Show the user a pending status while the async job completes (N1:6).\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\", \"N1:5:99392cbd\", \"N1:6:d8a420f0\", \"N2:1:c98e2afe\", \"N2:2:a9c1dfd2\", \"N2:3:47ad0397\", \"N3:3:1ed95cbf\", \"N3:4:b6bf9b3c\"]}, {\"target_id\": \"N5\", \"target_draft\": \"Assign each webhook a globally unique identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated idempotency table (N1:0:dc4855ad). Define a UNIQUE constraint on this idempotency_key (N2:1:c98e2afe) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2:a9c1dfd2) so a duplicate receipt is ignored. When a webhook arrives, first attempt the insert; if it fails, the event has already been handled and you can return success without re‑applying business logic (N1:1:b4e4f3c9, N5:1:16d8f729). Wrap the insert of the idempotency record and the payment state change in a single SERIALIZABLE transaction (N2:3:47ad0397, N1:2:f7fb95d1) to guarantee atomicity and prevent partial updates. Make the payment update itself idempotent – e.g., increment only if the event has not been applied, using conditional upserts or version checks (N1:3:c3132779, N5:3:b45c76a2). Acknowledge the webhook to the sender immediately (HTTP 200/202) after persisting the idempotency record, then continue the charge processing asynchronously (N1:4:3fd7a028, N3:4:b6bf9b3c). Set a short request timeout (5‑10 s) so the sender will retry on timeout, relying on the idempotency checks to avoid double‑charging (N1:5:99392cbd, N3:5:220c1a3b). Show the user a pending status and update the UI once the async processing completes (N1:6:d8a420f0). Implement exponential backoff for provider retries and route permanently failing events to a dead‑letter queue for manual review (N1:7:8f632d80). This combination of unique keys, database constraints, transactional processing, immediate acknowledgment, and sensible timeouts ensures no double‑charges while keeping the system responsive.\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\", \"N1:5:99392cbd\", \"N1:6:d8a420f0\", \"N2:1:c98e2afe\", \"N2:2:a9c1dfd2\", \"N2:3:47ad0397\", \"N3:5:220c1a3b\", \"N5:1:16d8f729\"]}], \"points_map\": {\"N1:0:dc4855ad\": \"Assign each webhook a unique id (e.g., provider's event_id) and store it with status in DB.\", \"N1:1:b4e4f3c9\": \"On receipt, check if event_id already processed; if so, return success without reapplying.\", \"N1:2:f7fb95d1\": \"Use a DB transaction: read order state, apply changes, and mark event_id processed atomically.\", \"N1:3:c3132779\": \"Make updates idempotent: increment only if not already applied, use upsert with conditional logic.\", \"N1:4:3fd7a028\": \"Respond to webhook quickly (e.g., 200 OK) after persisting the event, then run async business logic if needed.\", \"N1:5:99392cbd\": \"Set webhook timeout (5‑10 s); if it expires, let provider retry. Ensure retries are safe via idempotency checks.\", \"N1:6:d8a420f0\": \"Show users a pending status and poll or push confirmation after the webhook is processed, not after the request.\", \"N1:7:8f632d80\": \"Implement exponential backoff for retries and a dead‑letter queue for events that repeatedly fail.\", \"N2:0:6e22a887\": \"Store each webhook event with a unique idempotency_key and a status column.\", \"N2:1:c98e2afe\": \"Define a UNIQUE constraint on idempotency_key to prevent duplicate inserts.\", \"N2:2:a9c1dfd2\": \"Use INSERT ... ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) to make the operation idempotent.\", \"N2:3:47ad0397\": \"Wrap the payment charge and event record in a single SERIALIZABLE transaction to guarantee atomicity.\", \"N2:4:cc38b8db\": \"If the transaction times out, return a 202 Accepted and let the client poll for status.\", \"N2:5:199a06ff\": \"Use a separate \\\"processing\\\" flag and a CHECK constraint to avoid race conditions on retries.\", \"N2:6:0a6a79ca\": \"Index idempotency_key and order_id for fast lookup and conflict detection.\", \"N2:7:2ac15b33\": \"Log the webhook receipt timestamp; if later than expected, still process but mark as out‑of‑order for audit.\", \"N3:0:7e9d2d1f\": \"Assign each webhook a unique idempotency key (e.g., provider transaction ID) and store it with the payment record.\", \"N3:1:70302c09\": \"Before processing, check the key table; if the key exists, skip business logic and return the previous response.\", \"N3:2:f39cde0c\": \"Wrap payment charge and key insertion in a single DB transaction to guarantee atomicity and prevent partial writes.\", \"N3:3:1ed95cbf\": \"Use optimistic locking (version column) on the account balance row to avoid race conditions when concurrent retries occur.\", \"N3:4:b6bf9b3c\": \"Acknowledge receipt to the webhook sender immediately (e.g., HTTP 202) and process the charge asynchronously to keep latency low.\", \"N3:5:220c1a3b\": \"Set webhook request timeout to a few seconds (e.g., 5 s); if the sender times out, it will retry, but idempotency key ensures no double charge.\", \"N3:6:5a9379c1\": \"Log each attempt with timestamps and outcome; monitor for out‑of‑order arrivals and implement a replay queue if needed.\", \"N4:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N4:1:23759997\": \"UNKNOWN\", \"N5:0:3bea9af8\": \"Assign each webhook a unique, immutable idempotency key (e.g., webhook event ID) and store it with processing status.\", \"N5:1:16d8f729\": \"Before processing, attempt to insert the key with a unique constraint; if insert fails, skip processing as already handled.\", \"N5:2:aa8f5597\": \"Perform DB updates within a single transaction that includes the idempotency record and payment state change to ensure atomicity.\", \"N5:3:b45c76a2\": \"Use optimistic locking or version columns on payment rows to detect concurrent updates and abort duplicates.\", \"N5:4:94005de2\": \"Respond to the webhook source quickly (e.g., 200 OK) after persisting the idempotency record, then continue async processing if needed.\", \"N5:5:54ebf6a2\": \"Set a reasonable timeout (e.g., 2–5 seconds) for webhook handling; if timeout occurs, rely on source retries and idempotency key to prevent double charge.\", \"N5:6:eb4560ec\": \"Log each webhook receipt with timestamps and outcome for audit and replay analysis.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly applied.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly applied.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:3:1ed95cbf\",\"N3:4:b6bf9b3c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly applied.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:5:220c1a3b\",\"N5:1:16d8f729\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly applied.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-9c49cbb1-b1df-47f2-bd2c-f2a1e8118707",
+      "object": "chat.completion",
+      "created": 1772961722,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly applied.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly applied.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:3:1ed95cbf\",\"N3:4:b6bf9b3c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly applied.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:5:220c1a3b\",\"N5:1:16d8f729\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly applied.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 3430,
+        "completion_tokens": 4925,
+        "total_tokens": 8355
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:22:09.595725+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N5",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"Assign each incoming webhook a provider‑generated unique event_id and treat it as an idempotency key. Persist the key together with a processing status (e.g., pending, completed) in a dedicated table that has a UNIQUE constraint on the key (N1:0, N2:1, N5:0). On receipt, immediately attempt to insert the key; if the insert fails because the key already exists, skip business logic and return success (N1:1, N5:1). If the insert succeeds, respond to the webhook sender quickly (200 OK or 202 Accepted) after the record is stored (N1:4, N5:4) and then run the payment logic asynchronously.\\n\\nWrap the payment charge and the idempotency record update in a single database transaction so that both either commit or roll back together (N1:2, N2:3, N5:2). Use an upsert/ON CONFLICT pattern to make the insert idempotent (N2:2). Within the transaction, read the current order/payment state, apply the charge only if not already applied, and update the status to completed (N1:3). Optionally employ optimistic locking or a version column on the payment row to guard against concurrent retries (N3:3, N5:3).\\n\\nSet the webhook handling timeout to a few seconds (5‑10 s) so that the provider will retry on timeout (N1:5, N3:5). Because retries are safe via the idempotency check, duplicate charges are prevented. Show the user a pending status and update the UI once the async processing finishes (N1:6). Implement exponential backoff and a dead‑letter queue for events that repeatedly fail (N1:7).\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\"]}, {\"target_id\": \"N2\", \"target_draft\": \"Assign each incoming webhook a provider‑generated unique event_id (or idempotency_key) and store it together with a processing status column. Define a UNIQUE constraint (or PRIMARY KEY) on this key and index it for fast lookup (N2:6). On receipt, immediately attempt to INSERT the key; use INSERT … ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) so that a duplicate insert is ignored (N2:2). If the insert succeeds, start a SERIALIZABLE transaction that reads the current order/payment state, applies the charge, updates the payment record, and marks the event as processed atomically (N1:2, N2:3). This guarantees that the charge and idempotency record are committed together and prevents partial updates. Respond to the webhook sender quickly (200 OK or 202 Accepted) after the key is persisted, then continue the business logic asynchronously (N1:4, N3:4). Set the HTTP request timeout to a few seconds (5‑10 s) so the provider will retry on timeout; the idempotency check ensures retries are safe (N1:5, N3:5). If the transaction times out or fails, return a 202 and let the client poll or receive a push notification once processing completes (N2:4). Use optimistic locking (a version column) on the payment row to detect concurrent retries and abort duplicate charges (N5:2). Log each receipt with timestamps for audit and out‑of‑order detection (N1:0, N3:6). This combination of unique keys, database‑level constraints, atomic transactions, fast acknowledgment, and reasonable timeouts provides idempotent, race‑free updates while keeping the user experience responsive.\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\"]}, {\"target_id\": \"N3\", \"target_draft\": \"Assign each incoming webhook a globally unique idempotency key (e.g., the provider’s event_id) and store it with a processing status (N1:0). On receipt, attempt to insert the key with a UNIQUE constraint (N2:1) using an upsert/INSERT … ON CONFLICT DO NOTHING (N2:2); if the insert fails the event was already handled, so return success without re‑applying (N1:1). Wrap the payment charge and the idempotency record in a single SERIALIZABLE DB transaction (N2:3) or a standard transaction (N1:2) so the state change is atomic. Apply optimistic locking (version column) on the payment row to guard against concurrent retries (N3:3). Persist the event first, then acknowledge the webhook immediately with HTTP 200/202 (N1:4, N3:4) and continue the business logic asynchronously, keeping latency low. Set the webhook handler timeout to 5‑10 seconds (N1:5); if the sender times out it will retry, but the idempotency check prevents double‑charging. Show the user a pending status while the async job completes (N1:6).\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\", \"N1:5:99392cbd\", \"N1:6:d8a420f0\", \"N2:1:c98e2afe\", \"N2:2:a9c1dfd2\", \"N2:3:47ad0397\", \"N3:3:1ed95cbf\", \"N3:4:b6bf9b3c\"]}, {\"target_id\": \"N4\", \"target_draft\": \"Assign each incoming webhook a unique immutable identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated table. Define a UNIQUE constraint on this idempotency_key (N2:1) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2) so that a duplicate receipt is ignored. On receipt, first attempt the insert; if it fails because the key already exists, skip business logic and return success (N1:1). If the insert succeeds, start a SERIALIZABLE transaction that reads the current order/payment state, applies the charge, updates the order, and marks the event_id as processed atomically (N1:2, N2:3). Make the update logic itself idempotent – e.g., increment balances only when a flag shows the event has not been applied (N1:3). Persist the event record and commit the transaction before sending any HTTP response. Respond to the webhook source quickly (200 OK or 202 Accepted) after the record is stored, then continue any longer‑running business work asynchronously (N1:4). Set a short request timeout (5‑10 s) so that the provider will retry on timeout; retries are safe because of the idempotency checks (N1:5). For the user experience, show a pending status immediately after the request and update the UI once the asynchronous processing completes (N1:6). This combination guarantees no double‑charge, handles out‑of‑order or delayed events, and keeps the system responsive.\", \"target_used_points\": [\"N1:0:dc4855ad\", \"N1:1:b4e4f3c9\", \"N1:2:f7fb95d1\", \"N1:3:c3132779\", \"N1:4:3fd7a028\"]}], \"points_map\": {\"N1:0:dc4855ad\": \"Assign each webhook a unique id (e.g., provider's event_id) and store it with status in DB.\", \"N1:1:b4e4f3c9\": \"On receipt, check if event_id already processed; if so, return success without reapplying.\", \"N1:2:f7fb95d1\": \"Use a DB transaction: read order state, apply changes, and mark event_id processed atomically.\", \"N1:3:c3132779\": \"Make updates idempotent: increment only if not already applied, use upsert with conditional logic.\", \"N1:4:3fd7a028\": \"Respond to webhook quickly (e.g., 200 OK) after persisting the event, then run async business logic if needed.\", \"N1:5:99392cbd\": \"Set webhook timeout (5‑10 s); if it expires, let provider retry. Ensure retries are safe via idempotency checks.\", \"N1:6:d8a420f0\": \"Show users a pending status and poll or push confirmation after the webhook is processed, not after the request.\", \"N1:7:8f632d80\": \"Implement exponential backoff for retries and a dead‑letter queue for events that repeatedly fail.\", \"N2:0:6e22a887\": \"Store each webhook event with a unique idempotency_key and a status column.\", \"N2:1:c98e2afe\": \"Define a UNIQUE constraint on idempotency_key to prevent duplicate inserts.\", \"N2:2:a9c1dfd2\": \"Use INSERT ... ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) to make the operation idempotent.\", \"N2:3:47ad0397\": \"Wrap the payment charge and event record in a single SERIALIZABLE transaction to guarantee atomicity.\", \"N2:4:cc38b8db\": \"If the transaction times out, return a 202 Accepted and let the client poll for status.\", \"N2:5:199a06ff\": \"Use a separate \\\"processing\\\" flag and a CHECK constraint to avoid race conditions on retries.\", \"N2:6:0a6a79ca\": \"Index idempotency_key and order_id for fast lookup and conflict detection.\", \"N2:7:2ac15b33\": \"Log the webhook receipt timestamp; if later than expected, still process but mark as out‑of‑order for audit.\", \"N3:0:7e9d2d1f\": \"Assign each webhook a unique idempotency key (e.g., provider transaction ID) and store it with the payment record.\", \"N3:1:70302c09\": \"Before processing, check the key table; if the key exists, skip business logic and return the previous response.\", \"N3:2:f39cde0c\": \"Wrap payment charge and key insertion in a single DB transaction to guarantee atomicity and prevent partial writes.\", \"N3:3:1ed95cbf\": \"Use optimistic locking (version column) on the account balance row to avoid race conditions when concurrent retries occur.\", \"N3:4:b6bf9b3c\": \"Acknowledge receipt to the webhook sender immediately (e.g., HTTP 202) and process the charge asynchronously to keep latency low.\", \"N3:5:220c1a3b\": \"Set webhook request timeout to a few seconds (e.g., 5 s); if the sender times out, it will retry, but idempotency key ensures no double charge.\", \"N3:6:5a9379c1\": \"Log each attempt with timestamps and outcome; monitor for out‑of‑order arrivals and implement a replay queue if needed.\", \"N4:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N4:1:23759997\": \"UNKNOWN\", \"N5:0:3bea9af8\": \"Assign each webhook a unique, immutable idempotency key (e.g., webhook event ID) and store it with processing status.\", \"N5:1:16d8f729\": \"Before processing, attempt to insert the key with a unique constraint; if insert fails, skip processing as already handled.\", \"N5:2:aa8f5597\": \"Perform DB updates within a single transaction that includes the idempotency record and payment state change to ensure atomicity.\", \"N5:3:b45c76a2\": \"Use optimistic locking or version columns on payment rows to detect concurrent updates and abort duplicates.\", \"N5:4:94005de2\": \"Respond to the webhook source quickly (e.g., 200 OK) after persisting the idempotency record, then continue async processing if needed.\", \"N5:5:54ebf6a2\": \"Set a reasonable timeout (e.g., 2–5 seconds) for webhook handling; if timeout occurs, rely on source retries and idempotency key to prevent double charge.\", \"N5:6:eb4560ec\": \"Log each webhook receipt with timestamps and outcome for audit and replay analysis.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:3:1ed95cbf\",\"N3:4:b6bf9b3c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-cb12c0df-00fa-45ec-9f1f-726c596421c9",
+      "object": "chat.completion",
+      "created": 1772961725,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\",\"N1:5:99392cbd\",\"N1:6:d8a420f0\",\"N2:1:c98e2afe\",\"N2:2:a9c1dfd2\",\"N2:3:47ad0397\",\"N3:3:1ed95cbf\",\"N3:4:b6bf9b3c\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:dc4855ad\",\"N1:1:b4e4f3c9\",\"N1:2:f7fb95d1\",\"N1:3:c3132779\",\"N1:4:3fd7a028\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 3206,
+        "completion_tokens": 2816,
+        "total_tokens": 6022
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  }
+]

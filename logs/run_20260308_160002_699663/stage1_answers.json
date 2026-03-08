@@ -1,0 +1,115 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:aa8cb934",
+        "text": "Analyze and reduce the duration of DB transactions causing lock contention (e.g., shorten critical sections)."
+      },
+      {
+        "point_id": "N1:1:1235ed7f",
+        "text": "Add or tune indexes on login‑related tables to speed up SELECT/UPDATE queries and lower lock time."
+      },
+      {
+        "point_id": "N1:2:efb469cf",
+        "text": "Implement connection pooling to limit concurrent DB connections and avoid overload spikes."
+      },
+      {
+        "point_id": "N1:3:54fbea3f",
+        "text": "Introduce rate limiting or exponential back‑off on login endpoints to mitigate brute‑force attempts."
+      },
+      {
+        "point_id": "N1:4:76f2419c",
+        "text": "Deploy CAPTCHA or multi‑factor authentication for repeated failed logins from the same IP range."
+      },
+      {
+        "point_id": "N1:5:214eb18c",
+        "text": "Monitor DB lock metrics and login failure rates after each change to validate stability and security improvements."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:52ef8913",
+        "text": "Add indexes on login query columns (e.g., username, email) to cut row scans and shorten lock duration."
+      },
+      {
+        "point_id": "N2:1:a488b1a3",
+        "text": "Switch authentication queries to READ COMMITTED SNAPSHOT or lower isolation to avoid shared locks."
+      },
+      {
+        "point_id": "N2:2:f02ba297",
+        "text": "Offload authentication reads to a replica or cache (e.g., Redis) to reduce primary DB contention."
+      },
+      {
+        "point_id": "N2:3:cba56233",
+        "text": "Implement rate limiting / IP throttling for failed logins to curb brute‑force traffic."
+      },
+      {
+        "point_id": "N2:4:d4f3a7fd",
+        "text": "Enable account lockout after a configurable number of failed attempts to improve security."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": [
+      {
+        "point_id": "N3:0:3f54a1bd",
+        "text": "Add rate limiting (e.g., iptables, fail2ban, or web server) on login attempts per IP to reduce brute‑force load."
+      },
+      {
+        "point_id": "N3:1:514c0cc9",
+        "text": "Enable TCP SYN cookies and increase backlog queue (net.core.somaxconn) to handle burst of connections."
+      },
+      {
+        "point_id": "N3:2:3313acba",
+        "text": "Deploy a load balancer or reverse proxy to spread login traffic across multiple app servers, reducing DB contention."
+      },
+      {
+        "point_id": "N3:3:c4c0a67c",
+        "text": "OUT_OF_SCOPE: Investigate DB lock contention (e.g., query optimization, indexing, or adding read replicas)."
+      },
+      {
+        "point_id": "N3:4:c4e6b459",
+        "text": "Use Linux kernel tuning (e.g., net.ipv4.tcp_tw_reuse, net.core.somaxconn) to improve socket handling under high load."
+      }
+    ]
+  },
+  {
+    "node_id": "N4",
+    "points": [
+      {
+        "point_id": "N4:0:508f11b3",
+        "text": "OUT_OF_SCOPE: The question concerns database performance and security, which is outside the math_logic domain."
+      },
+      {
+        "point_id": "N4:1:f94ea361",
+        "text": "UNKNOWN: No applicable algebraic or logical reasoning can be provided for this query."
+      }
+    ]
+  },
+  {
+    "node_id": "N5",
+    "points": [
+      {
+        "point_id": "N5:0:e17ec966",
+        "text": "Add rate limiting/throttling on login attempts per IP or user to curb brute‑force traffic and reduce DB load."
+      },
+      {
+        "point_id": "N5:1:734d03a9",
+        "text": "Introduce a CAPTCHA or challenge after a few failed attempts to block automated attacks."
+      },
+      {
+        "point_id": "N5:2:7b9154c6",
+        "text": "Implement temporary account lockout after repeated failures to protect accounts and lower DB contention."
+      },
+      {
+        "point_id": "N5:3:67b07158",
+        "text": "Offload credential verification to a read‑replica or cache (e.g., Redis) to reduce write‑lock contention on the primary DB."
+      }
+    ]
+  }
+]

@@ -1,0 +1,448 @@
+[
+  {
+    "grader_id": "N1",
+    "target_id": "N2",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N2:0:ed6cf74b",
+      "N1:2:317706df",
+      "N2:2:d5bf93e9",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N1:4:f860723c",
+      "N2:4:557157ca",
+      "N3:5:0a3e8a41",
+      "N1:5:72f2cd80",
+      "N2:7:fadbc18e"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N1:2:317706df",
+      "N2:1:61a09a72",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N2:5:7723b526",
+      "N1:4:f860723c",
+      "N1:7:7dd30943",
+      "N1:5:72f2cd80",
+      "N1:6:d8a3d4f8"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N4",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N2:0:ed6cf74b",
+      "N1:2:317706df",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N1:4:f860723c",
+      "N2:5:7723b526",
+      "N1:7:7dd30943",
+      "N1:5:72f2cd80",
+      "N2:7:fadbc18e",
+      "N1:6:d8a3d4f8"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N1:2:317706df",
+      "N2:1:61a09a72",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N1:4:f860723c",
+      "N3:5:0a3e8a41",
+      "N1:5:72f2cd80",
+      "N3:7:b041a0fe",
+      "N1:6:d8a3d4f8",
+      "N1:7:7dd30943"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N1",
+    "valid": "UNKNOWN",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N1:2:317706df",
+      "N1:3:d47e3c45",
+      "N1:4:f860723c",
+      "N1:5:72f2cd80",
+      "N1:6:d8a3d4f8",
+      "N2:7:fadbc18e",
+      "N5:0:0472cb31",
+      "N5:5:9fc1e136"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "N3:7:b041a0fe",
+      "N3:0:2e4db7d7"
+    ],
+    "note": "All referenced points are correctly applied except N3:7, which is mentioned only as a total budget without the required per‑operation timeout details."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N1:2:317706df",
+      "N2:1:61a09a72",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N2:5:7723b526",
+      "N1:4:f860723c",
+      "N1:7:7dd30943",
+      "N1:5:72f2cd80",
+      "N1:6:d8a3d4f8"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All used points are accurately reflected in the draft."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N4",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N2:0:ed6cf74b",
+      "N1:2:317706df",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N1:4:f860723c",
+      "N2:5:7723b526",
+      "N1:7:7dd30943",
+      "N1:5:72f2cd80",
+      "N2:7:fadbc18e",
+      "N1:6:d8a3d4f8"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Draft correctly incorporates every referenced point."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N5",
+    "valid": "UNKNOWN",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N1:2:317706df",
+      "N2:1:61a09a72",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N1:4:f860723c",
+      "N3:5:0a3e8a41",
+      "N1:5:72f2cd80",
+      "N1:6:d8a3d4f8",
+      "N1:7:7dd30943"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "N3:7:b041a0fe"
+    ],
+    "note": "All points are used correctly except N3:7, which lacks the explicit per‑operation timeout guidance required by the point."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N1:2:317706df",
+      "N1:3:d47e3c45",
+      "N1:4:f860723c",
+      "N1:5:72f2cd80",
+      "N1:6:d8a3d4f8",
+      "N2:7:fadbc18e",
+      "N3:0:2e4db7d7",
+      "N5:0:0472cb31",
+      "N5:5:9fc1e136"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "N3:7:b041a0fe"
+    ],
+    "note": "All referenced points are correctly addressed; N3:7 lacks explicit per‑operation timeout details."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N2",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N2:0:ed6cf74b",
+      "N1:2:317706df",
+      "N2:2:d5bf93e9",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N1:4:f860723c",
+      "N3:5:0a3e8a41",
+      "N1:5:72f2cd80",
+      "N2:7:fadbc18e"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "N2:4:557157ca"
+    ],
+    "note": "All points align; N2:4 mentions join removal but not the specific EXISTS/IN rewrite."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N4",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N2:0:ed6cf74b",
+      "N1:2:317706df",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N1:4:f860723c",
+      "N2:5:7723b526",
+      "N1:7:7dd30943",
+      "N1:5:72f2cd80",
+      "N2:7:fadbc18e",
+      "N1:6:d8a3d4f8"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are accurately incorporated."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N1:2:317706df",
+      "N2:1:61a09a72",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N1:4:f860723c",
+      "N3:5:0a3e8a41",
+      "N1:5:72f2cd80",
+      "N1:6:d8a3d4f8",
+      "N1:7:7dd30943"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "N3:7:b041a0fe"
+    ],
+    "note": "All points addressed; N3:7 lacks explicit per‑operation timeout values."
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N1",
+    "valid": "FAIL",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N1:2:317706df",
+      "N1:3:d47e3c45",
+      "N1:4:f860723c",
+      "N1:5:72f2cd80",
+      "N1:6:d8a3d4f8",
+      "N2:7:fadbc18e",
+      "N3:0:2e4db7d7",
+      "N5:0:0472cb31",
+      "N5:5:9fc1e136"
+    ],
+    "reject_points": [
+      "N3:7:b041a0fe"
+    ],
+    "unknown_points": [],
+    "note": "Point N3:7 (per‑operation timeouts) is not addressed; all other points are correctly used."
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N2",
+    "valid": "FAIL",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N2:0:ed6cf74b",
+      "N1:2:317706df",
+      "N2:2:d5bf93e9",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N1:4:f860723c",
+      "N3:5:0a3e8a41",
+      "N1:5:72f2cd80",
+      "N2:7:fadbc18e"
+    ],
+    "reject_points": [
+      "N2:4:557157ca"
+    ],
+    "unknown_points": [],
+    "note": "Point N2:4 (rewrite joins using EXISTS/IN) is not reflected; other points are correctly applied."
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N1:2:317706df",
+      "N2:1:61a09a72",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N2:5:7723b526",
+      "N1:4:f860723c",
+      "N1:7:7dd30943",
+      "N1:5:72f2cd80",
+      "N1:6:d8a3d4f8"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are accurately incorporated."
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N5",
+    "valid": "FAIL",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N1:2:317706df",
+      "N2:1:61a09a72",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N1:4:f860723c",
+      "N3:5:0a3e8a41",
+      "N1:5:72f2cd80",
+      "N1:6:d8a3d4f8",
+      "N1:7:7dd30943"
+    ],
+    "reject_points": [
+      "N3:7:b041a0fe"
+    ],
+    "unknown_points": [],
+    "note": "Point N3:7 (per‑operation timeouts) is omitted; other points are correctly used."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N1",
+    "valid": "UNKNOWN",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N1:2:317706df",
+      "N1:3:d47e3c45",
+      "N1:4:f860723c",
+      "N1:5:72f2cd80",
+      "N1:6:d8a3d4f8",
+      "N2:7:fadbc18e",
+      "N3:0:2e4db7d7",
+      "N5:0:0472cb31",
+      "N5:5:9fc1e136"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "N3:7:b041a0fe"
+    ],
+    "note": "One point (N3:7) not addressed in draft, marked UNKNOWN."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N2",
+    "valid": "UNKNOWN",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N2:0:ed6cf74b",
+      "N1:2:317706df",
+      "N2:2:d5bf93e9",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N1:4:f860723c",
+      "N3:5:0a3e8a41",
+      "N1:5:72f2cd80",
+      "N2:7:fadbc18e"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "N2:4:557157ca"
+    ],
+    "note": "Point N2:4 not fully covered; marked UNKNOWN."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N1:2:317706df",
+      "N2:1:61a09a72",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N2:5:7723b526",
+      "N1:4:f860723c",
+      "N1:7:7dd30943",
+      "N1:5:72f2cd80",
+      "N1:6:d8a3d4f8"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly applied."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N4",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:01150402",
+      "N1:1:2b824d64",
+      "N2:0:ed6cf74b",
+      "N1:2:317706df",
+      "N1:3:d47e3c45",
+      "N2:3:4b2ed81c",
+      "N1:4:f860723c",
+      "N2:5:7723b526",
+      "N1:7:7dd30943",
+      "N1:5:72f2cd80",
+      "N2:7:fadbc18e",
+      "N1:6:d8a3d4f8"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly applied."
+  }
+]

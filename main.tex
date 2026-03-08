@@ -1,0 +1,341 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes}
+
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+
+\definecolor{codebg}{rgb}{0.97,0.97,0.97}
+\definecolor{codekw}{rgb}{0.20,0.20,0.60}
+\definecolor{codestr}{rgb}{0.60,0.20,0.20}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{codebg},
+  frame=single,
+  breaklines=true,
+  columns=fullflexible,
+  keywordstyle=\color{codekw}\bfseries,
+  stringstyle=\color{codestr},
+  showstringspaces=false
+}
+
+\title{Community-Driven Distributed LLM Network\\
+Peer-Review Consensus for Answer Finalization (MVP Spec)}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Motivation (Động cơ dự án)}
+We want a distributed ``LLM specialist network'' inspired by community systems (Linux/open-source):
+\begin{itemize}[leftmargin=1.2em]
+  \item Many independent providers host their own LLM nodes (possibly the same pretrained model at MVP).
+  \item Users ask questions as in a chat interface.
+  \item The network does \textbf{not trust a single node}. Multiple nodes answer, then nodes \textbf{cross-review} to select the best final response.
+  \item No mandatory payments in the first version. Incentives are \textbf{reputation} and optional \textbf{awards}.
+\end{itemize}
+
+\section{Non-goals (Không làm ở MVP)}
+\begin{itemize}[leftmargin=1.2em]
+  \item Adversarial security (Sybil, bribery, collusion, DDoS) is deferred.
+  \item Perfect semantic truth verification is not attempted. ``Correct'' means:
+  \begin{quote}
+    \textit{Not contradicted by the grader's own knowledge/data. Missing information is allowed.}
+  \end{quote}
+  \item Fully decentralized P2P transport is optional for MVP. We focus on an end-to-end pipeline that generates inspectable data at each stage.
+\end{itemize}
+
+\section{Core Idea (Ý tưởng cốt lõi)}
+Given a user query \(q\):
+\begin{enumerate}[leftmargin=1.2em]
+  \item Select \(k\) worker nodes to produce independent answers.
+  \item Each worker returns:
+  \begin{itemize}[leftmargin=1.2em]
+    \item a full answer text, and
+    \item a list of short \textbf{Points} (atomic ideas) with stable IDs.
+  \end{itemize}
+  \item After collecting all answers, send the entire bundle to all workers.
+  \item Each worker synthesizes a complete \textbf{Draft} using any subset of Points and declares which Points it used (\texttt{UsedPoints}).
+  \item Workers then \textbf{cross-grade} other drafts:
+  \begin{itemize}[leftmargin=1.2em]
+    \item vote \texttt{PASS/FAIL/UNKNOWN} at the draft level,
+    \item vote \texttt{agree/reject/unknown} for each used Point (multi-vote).
+  \end{itemize}
+  \item Client finalizes the winning draft using deterministic rules (threshold + ranking).
+  \item Reputation is updated:
+  \begin{itemize}[leftmargin=1.2em]
+    \item winner synthesizer gains reputation,
+    \item providers of Points that were widely agreed gain reputation,
+    \item nodes whose drafts receive many \texttt{FAIL} lose reputation.
+  \end{itemize}
+\end{enumerate}
+
+\section{System Roles (Các vai trò)}
+\begin{longtable}{@{}p{0.22\linewidth}p{0.72\linewidth}@{}}
+\toprule
+\textbf{Role} & \textbf{Responsibility} \\
+\midrule
+Client (User App) &
+Routing to pick workers, orchestration of phases, aggregation, finalization, logging. \\
+Worker Node (Provider Node) &
+LLM inference; outputs Answer+Points; synthesizes Draft+UsedPoints; grades other drafts. \\
+Registry Node (Discovery) &
+Stores node profiles/capabilities so clients can find workers. (May be co-located with workers.) \\
+Reputation Store &
+Stores reputation scores and updates. (For MVP, can be a simple append-only log + snapshot.) \\
+\bottomrule
+\end{longtable}
+
+\section{MVP Execution Flow (Luồng chạy MVP)}
+\subsection{Phase 0: Discovery and selection (Tìm node và chọn \(k\) workers)}
+\begin{enumerate}[leftmargin=1.2em]
+  \item Client estimates topic/language/constraints for query \(q\).
+  \item Client queries registry for candidate workers.
+  \item Client ranks candidates by \textit{match} + \textit{reputation} + \textit{availability}.
+  \item Client selects \(k\) workers by \textbf{weighted random} among top-\(N\) to reduce monopoly.
+\end{enumerate}
+
+\subsection{Phase 1: Worker answering (Trả lời độc lập)}
+Client sends the same query \(q\) to each worker \(W_i\).
+Each worker returns:
+\begin{itemize}[leftmargin=1.2em]
+  \item \texttt{answer\_text}: natural language answer
+  \item \texttt{points[]}: list of short atomic ideas, each with a \texttt{point\_id}
+\end{itemize}
+
+\subsection{Phase 2: Distributed synthesis (Mỗi node tự tổng hợp)}
+Client builds the bundle:
+\[
+Bundle = \{(answer\_text_i, points_i)\}_{i=1}^{k}
+\]
+Client sends \(Bundle\) to every worker. Each worker returns:
+\begin{itemize}[leftmargin=1.2em]
+  \item \texttt{synthesis\_text}: a complete final-style response
+  \item \texttt{used\_points[]}: list of \texttt{point\_id} used from the bundle
+\end{itemize}
+
+\subsection{Phase 3: Cross-grading (Chấm chéo)}
+For each pair \(i \neq j\), worker \(W_i\) grades draft \(D_j\) and returns:
+\begin{itemize}[leftmargin=1.2em]
+  \item \texttt{valid}: \texttt{PASS}/\texttt{FAIL}/\texttt{UNKNOWN}
+  \item \texttt{agree\_points[]}: point IDs judged correct/valuable by \(W_i\)
+  \item \texttt{reject\_points[]}: point IDs judged incorrect by \(W_i\)
+  \item \texttt{unknown\_points[]}: point IDs \(W_i\) cannot judge
+  \item \texttt{note}: short explanation (optional)
+\end{itemize}
+
+\subsection{Phase 4: Finalization (Chọn bản thắng cuộc)}
+Define for each draft \(D_j\):
+\[
+Pass(j) = \#\{i\neq j: valid_{i\rightarrow j}=PASS\}
+\]
+\[
+Fail(j) = \#\{i\neq j: valid_{i\rightarrow j}=FAIL\}
+\]
+\[
+Agree(j) = \sum_{i\neq j} |\texttt{agree\_points}_{i\rightarrow j}|
+\]
+\[
+Reject(j) = \sum_{i\neq j} |\texttt{reject\_points}_{i\rightarrow j}|
+\]
+
+\paragraph{Discard rule} discard drafts that have too many FAIL votes:
+\[
+Fail(j) \ge \tau_{fail} \Rightarrow D_j \text{ discarded}
+\]
+For MVP with \(k=5\), a typical choice is \(\tau_{fail}=2\).
+
+\paragraph{Winner selection rule} choose the remaining draft that maximizes:
+\[
+j^\star = \arg\max_j \left( Pass(j),\ Agree(j),\ -Reject(j) \right)
+\]
+(lexicographic: maximize \(Pass\), then \(Agree\), then minimize \(Reject\)).
+
+\paragraph{Output} final answer returned to user:
+\[
+A^\star = synthesis\_text_{j^\star}
+\]
+
+\subsection{Phase 5: Reputation update (Cập nhật uy tín)}
+Reputation updates are based on two contributions:
+\begin{enumerate}[leftmargin=1.2em]
+  \item \textbf{Synthesis contribution} (winner draft):
+  \begin{itemize}[leftmargin=1.2em]
+    \item winner node gains reputation (\(+\Delta_{win}\))
+    \item drafts with many FAIL votes lose reputation (\(-\Delta_{fail}\))
+  \end{itemize}
+  \item \textbf{Point contribution} (idea-level):
+  \begin{itemize}[leftmargin=1.2em]
+    \item each point \(p\) receives:
+    \[
+    score(p) = \#agree(p) - \#reject(p)
+    \]
+    \item the owner of point \(p\) gets reputation proportional to \(score(p)\)
+  \end{itemize}
+\end{enumerate}
+
+\section{Protocol Data Structures (Định dạng dữ liệu)}
+\subsection{Node Profile (Capability Card)}
+\begin{lstlisting}[language=json]
+{
+  "node_id": "W1",
+  "endpoints": {"infer": "https://...", "grade": "https://..."},
+  "domains": ["coding", "cpp"],
+  "description": "C++ debugging, performance, memory issues",
+  "languages": ["vi", "en"],
+  "reputation_snapshot": 12.5
+}
+\end{lstlisting}
+
+\subsection{Point ID generation}
+Point IDs must be stable and deterministic:
+\[
+point\_id = \texttt{hash(node\_id || index || point\_text)}
+\]
+\begin{lstlisting}[language=python]
+# Example: point_id = f"{node_id}:{idx}:{sha256(point_text)[:8]}"
+\end{lstlisting}
+
+\subsection{WorkerAnswer}
+\begin{lstlisting}[language=json]
+{
+  "node_id": "W1",
+  "query_id": "Q123",
+  "answer_text": "...",
+  "points": [
+    {"point_id": "W1:0:abcd1234", "text": "Point 1"},
+    {"point_id": "W1:1:ef901234", "text": "Point 2"}
+  ]
+}
+\end{lstlisting}
+
+\subsection{SynthesisDraft}
+\begin{lstlisting}[language=json]
+{
+  "node_id": "W1",
+  "query_id": "Q123",
+  "synthesis_text": "...final-style answer...",
+  "used_points": ["W2:0:aa11bb22", "W1:1:ef901234"]
+}
+\end{lstlisting}
+
+\subsection{GradeVote}
+\begin{lstlisting}[language=json]
+{
+  "grader_id": "W3",
+  "target_id": "W1",
+  "query_id": "Q123",
+  "valid": "PASS",
+  "agree_points": ["W2:0:aa11bb22"],
+  "reject_points": ["W4:2:cc33dd44"],
+  "unknown_points": ["W5:1:ee55ff66"],
+  "note": "Short reason"
+}
+\end{lstlisting}
+
+\subsection{Finalization Output}
+\begin{lstlisting}[language=json]
+{
+  "query_id": "Q123",
+  "winner": "W2",
+  "final_answer": "...",
+  "metrics": {
+    "pass": {"W1": 3, "W2": 4, "W3": 3, "W4": 2, "W5": 4},
+    "fail": {"W1": 0, "W2": 0, "W3": 1, "W4": 2, "W5": 0},
+    "agree": {"W1": 9, "W2": 14, "W3": 7, "W4": 4, "W5": 10},
+    "reject": {"W1": 2, "W2": 1, "W3": 3, "W4": 5, "W5": 2}
+  },
+  "reputation_updates": {
+    "node_rep_delta": {"W2": +5, "W4": -2},
+    "point_rep_delta": {"W1": +2, "W3": +1, "W4": -1}
+  }
+}
+\end{lstlisting}
+
+\section{LLM Prompt Contracts (Hợp đồng prompt để code đúng)}
+MVP can use the same pretrained LLM for all nodes but different system prompts to simulate specialization.
+The key is to enforce stable output formats.
+
+\subsection{Prompt A: Answer + Points}
+\begin{itemize}[leftmargin=1.2em]
+  \item Input: user query
+  \item Output: JSON with \texttt{answer\_text} and \texttt{points[]} (each point short)
+  \item Constraint: max points (e.g., 6--10), each point \(\le\) 200 chars
+\end{itemize}
+
+\subsection{Prompt B: Synthesize + UsedPoints}
+\begin{itemize}[leftmargin=1.2em]
+  \item Input: bundle of all answers and points
+  \item Output: \texttt{synthesis\_text} and \texttt{used\_points[]}
+  \item Constraint: \texttt{used\_points} must reference existing \texttt{point\_id}s from the bundle
+\end{itemize}
+
+\subsection{Prompt C: Grade Draft}
+\begin{itemize}[leftmargin=1.2em]
+  \item Input: query, target draft, and target \texttt{used\_points}
+  \item Output:
+  \begin{itemize}[leftmargin=1.2em]
+    \item \texttt{valid} = PASS/FAIL/UNKNOWN (FAIL only if clearly contradicted)
+    \item \texttt{agree\_points}, \texttt{reject\_points}, \texttt{unknown\_points}
+  \end{itemize}
+  \item Constraint: grader must only vote on point IDs in target's \texttt{used\_points}
+\end{itemize}
+
+\section{Implementation Plan (Kế hoạch code để người khác làm theo)}
+\subsection{Step 1: Local simulation (no networking)}
+\begin{itemize}[leftmargin=1.2em]
+  \item Run \(k\) workers in one process (or threads), each calling an LLM client.
+  \item Save stage outputs to JSON:
+  \begin{itemize}[leftmargin=1.2em]
+    \item Stage 1: \texttt{answers.json}
+    \item Stage 2: \texttt{drafts.json}
+    \item Stage 3: \texttt{grades.json}
+    \item Stage 4: \texttt{final.json}
+  \end{itemize}
+  \item Verify determinism: point IDs stable and used\_points always valid.
+\end{itemize}
+
+\subsection{Step 2: Add minimal API for provider nodes}
+\begin{itemize}[leftmargin=1.2em]
+  \item \texttt{POST /infer} \(\rightarrow\) Answer+Points
+  \item \texttt{POST /synthesize} \(\rightarrow\) Draft+UsedPoints
+  \item \texttt{POST /grade} \(\rightarrow\) GradeVote
+\end{itemize}
+
+\subsection{Step 3: Add registry + reputation store (optional for MVP)}
+\begin{itemize}[leftmargin=1.2em]
+  \item \texttt{POST /register\_node} (publish capability card)
+  \item \texttt{GET /nodes?topic=...} (fetch candidates)
+  \item \texttt{POST /rep\_update} (submit deltas)
+  \item \texttt{GET /rep\_snapshot} (read snapshot)
+\end{itemize}
+
+\section{Tunable Parameters (Thông số có thể chỉnh)}
+\begin{itemize}[leftmargin=1.2em]
+  \item \(k\): number of workers (default 5)
+  \item \(\tau_{fail}\): FAIL threshold to discard drafts (default 2 when \(k=5\))
+  \item max points per worker (default 8)
+  \item reputation deltas: \(\Delta_{win}, \Delta_{fail}, \Delta_{point}\)
+\end{itemize}
+
+\section{Expected Outputs (Dữ liệu sinh ra để kiểm tra)}
+For each query run, the system must generate:
+\begin{enumerate}[leftmargin=1.2em]
+  \item Worker answers + points (Stage 1)
+  \item Synthesis drafts + used points (Stage 2)
+  \item Cross-grade votes (Stage 3)
+  \item Final answer + metrics + reputation deltas (Stage 4)
+\end{enumerate}
+These artifacts allow debugging and research analysis of the pipeline.
+
+\end{document}

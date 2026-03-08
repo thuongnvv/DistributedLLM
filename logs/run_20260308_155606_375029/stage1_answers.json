@@ -1,0 +1,139 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:6a0603af",
+        "text": "Check gateway logs for error patterns and response times to identify failing requests."
+      },
+      {
+        "point_id": "N1:1:ff8f6c2a",
+        "text": "Enable distributed tracing (e.g., OpenTelemetry) to see latency across downstream calls."
+      },
+      {
+        "point_id": "N1:2:66bcdc5f",
+        "text": "Monitor per‑service metrics (CPU, memory, request rate) to spot spikes after the release."
+      },
+      {
+        "point_id": "N1:3:0dffb18d",
+        "text": "Profile database queries; look for slow or high‑cost statements causing CPU spikes."
+      },
+      {
+        "point_id": "N1:4:08b73e77",
+        "text": "Review recent code changes for added downstream calls or increased request concurrency."
+      },
+      {
+        "point_id": "N1:5:aff93f6f",
+        "text": "Temporarily increase DB connection pool size or add read replicas to relieve CPU pressure."
+      },
+      {
+        "point_id": "N1:6:6a5851d4",
+        "text": "Add circuit breakers around downstream services to prevent cascading failures."
+      },
+      {
+        "point_id": "N1:7:f5b43d01",
+        "text": "Implement request timeout and retry policies to avoid hanging calls that trigger 502/504."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:b58f8ea9",
+        "text": "OUT_OF_SCOPE: Full gateway/network analysis is beyond SQL domain."
+      },
+      {
+        "point_id": "N2:1:3d46df41",
+        "text": "Collect DB metrics: CPU usage, wait events, active sessions, query latency."
+      },
+      {
+        "point_id": "N2:2:0402f5b3",
+        "text": "Identify top CPU-consuming queries via pg_stat_statements or equivalent."
+      },
+      {
+        "point_id": "N2:3:cb4fa8ed",
+        "text": "Examine execution plans for missing indexes or inefficient joins."
+      },
+      {
+        "point_id": "N2:4:78861d91",
+        "text": "Check for lock contention: pg_locks, deadlocks, long-running transactions."
+      },
+      {
+        "point_id": "N2:5:af15dbc9",
+        "text": "Review isolation level; consider READ COMMITTED to reduce locking overhead."
+      },
+      {
+        "point_id": "N2:6:d5a433ae",
+        "text": "Enable connection pooling; ensure max connections do not exceed CPU capacity."
+      },
+      {
+        "point_id": "N2:7:f2bd596b",
+        "text": "Profile downstream service latency; add tracing to correlate DB spikes with calls."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": [
+      {
+        "point_id": "N3:0:8a04d970",
+        "text": "Check gateway logs for 502/504 patterns and timeout settings to confirm if errors stem from upstream latency."
+      },
+      {
+        "point_id": "N3:1:f6a92ba9",
+        "text": "Enable detailed tracing on the backend to measure latency of each downstream HTTP/TCP call."
+      },
+      {
+        "point_id": "N3:2:3487964a",
+        "text": "Correlate DB CPU spikes with specific query types; use EXPLAIN to identify slow queries."
+      },
+      {
+        "point_id": "N3:3:5f7c7aa6",
+        "text": "Monitor connection pool usage on the backend and DB to detect exhaustion or queuing."
+      },
+      {
+        "point_id": "N3:4:0d031d2d",
+        "text": "Temporarily increase gateway timeout thresholds to see if errors disappear, indicating latency issues."
+      },
+      {
+        "point_id": "N3:5:2573ca86",
+        "text": "Roll back the recent release to a known good version to isolate if code changes introduced bottlenecks."
+      },
+      {
+        "point_id": "N3:6:217c2d38",
+        "text": "Profile backend thread/CPU usage to see if high concurrency or blocking I/O is causing overload."
+      },
+      {
+        "point_id": "N3:7:c1497392",
+        "text": "Implement circuit breakers or retries with back‑off for downstream services to prevent cascading failures."
+      }
+    ]
+  },
+  {
+    "node_id": "N4",
+    "points": [
+      {
+        "point_id": "N4:0:4d23b291",
+        "text": "OUT_OF_SCOPE: The query pertains to system troubleshooting, not within the math_logic domain."
+      },
+      {
+        "point_id": "N4:1:119bb2e0",
+        "text": "UNKNOWN: Unable to provide a precise answer due to domain mismatch."
+      }
+    ]
+  },
+  {
+    "node_id": "N5",
+    "points": [
+      {
+        "point_id": "N5:0:e37bafbe",
+        "text": "OUT_OF_SCOPE"
+      },
+      {
+        "point_id": "N5:1:e675c0eb",
+        "text": "UNKNOWN: The request concerns performance troubleshooting, which is outside the security_defensive domain scope."
+      }
+    ]
+  }
+]

@@ -1,0 +1,69 @@
+[
+  {
+    "node_id": "N1",
+    "synthesis_text": "On day one, first block the abuse and relieve the database. Apply per‑IP and per‑account rate limiting on the password‑reset endpoint (N1:0) and enforce edge‑level limits via firewall or CDN (N3:0). Add a CAPTCHA to the reset form (N1:1) and configure the service to return HTTP 429 when limits are exceeded (N3:2) so clients back off. Encourage clients to use exponential back‑off with jitter (N1:2) to avoid a thundering herd. Decouple email/token generation from the HTTP request by queuing work to a background worker (N1:3). Cache recent reset tokens in Redis (N1:4) to cut duplicate DB writes. Speed up lookups by creating an index on the email/username column (N1:5) and add read replicas for the user table (N1:6). Increase the DB connection pool size (N1:7) and enable detailed logging/alerts for request spikes (N5:7). Finally, harden the network layer with SYN‑cookies (N3:6) and tune the TCP backlog (N3:5) to survive connection floods.",
+    "used_points": [
+      "N1:0:6654ca3c",
+      "N1:1:e212aed2",
+      "N1:2:78886728",
+      "N1:3:f16aef60",
+      "N1:4:f29b5c26"
+    ]
+  },
+  {
+    "node_id": "N2",
+    "synthesis_text": "Apply immediate rate limiting on the password‑reset endpoint per IP and per account (N1:0) and at the edge/CDN level (N3:0) to stop bulk abuse. Add a CAPTCHA challenge (N1:1) or similar verification step to block automated bots. Return HTTP 429 for excess requests and enforce client‑side exponential backoff with jitter (N1:2, N3:2) to dampen retry storms. Decouple token generation and email sending by queuing work in a short‑lived broker (N1:3) and cache recent reset tokens in Redis (N1:4) to avoid duplicate DB writes. Speed up lookup queries by creating an index on the email/username column (N1:5) and a composite index on password_reset_requests(user_id, request_time) (N2:0). Partition the password_reset_requests table by date (N2:1) and consider archiving old rows (N2:6) to keep the active set small. Scale the database quickly by adding read replicas and directing read‑heavy reset lookups to them (N2:0) and increase the connection pool size (N2:6). Finally, tune the OS network stack – raise the TCP backlog limits (N3:5) – to accept more concurrent connections during the spike.",
+    "used_points": [
+      "N1:0:6654ca3c",
+      "N1:1:e212aed2",
+      "N1:2:78886728",
+      "N1:3:f16aef60",
+      "N1:4:f29b5c26"
+    ]
+  },
+  {
+    "node_id": "N3",
+    "synthesis_text": "Day‑1 defenses: enable rate limiting on the password‑reset endpoint per IP and per account (N1:0) and deploy edge rate limiting (e.g., iptables or CDN) to cap POSTs per IP (N3:0). Add a CAPTCHA challenge (N1:1) or email‑verification step (N5:2) to block bots, and return HTTP 429 for excess requests (N3:2) so clients can apply exponential back‑off with jitter (N1:2). Mitigate SYN‑flood risk by tuning Linux TCP backlog (N3:5) and enabling SYN cookies (N3:6). Performance fixes: queue reset processing (e.g., RabbitMQ) to decouple from the HTTP response (N1:3) and cache recent reset tokens in Redis (N1:4) to avoid duplicate DB writes. Optimize the database by creating an index on the email/username lookup column (N1:5) and adding read replicas for reset lookups (N1:6). Finally, increase the connection pool size on the service and DB (implicit in N1:6) to handle burst traffic.",
+    "used_points": [
+      "N1:0:6654ca3c",
+      "N1:1:e212aed2",
+      "N1:2:78886728",
+      "N1:3:f16aef60",
+      "N1:4:f29b5c26"
+    ]
+  },
+  {
+    "node_id": "N4",
+    "synthesis_text": "Immediately mitigate the abuse and restore service stability by: (1) applying rate limiting on the password‑reset endpoint per IP and per account (N1:0:6654ca3c) and at the edge (N3:0:ec2481ec); (2) adding a CAPTCHA challenge to the reset form (N1:1:e212aed2); (3) returning HTTP 429 for excess requests and instructing clients to use exponential back‑off with jitter (N1:2:78886728, N3:2:e3314159); (4) decoupling token generation and email sending via a short‑lived queue (e.g., RabbitMQ) (N1:3:f16aef60); (5) caching recent reset tokens in Redis to avoid duplicate DB writes (N1:4:f29b5c26); (6) creating an index on the email/username column to speed lookups (N1:5:2b4a402d) and adding read replicas with increased connection pool size (N1:6:774e506d); (7) tuning the Linux TCP stack (increase backlog, enable SYN cookies) to handle connection bursts (N3:5:75a37a92, N3:6:bfc8f55f); (8) enabling detailed logging and alerts for reset‑request volume thresholds to detect further abuse (N5:7:c625aa49). These steps address both the security abuse vector and the immediate performance bottlenecks within the first day.",
+    "used_points": [
+      "N1:0:6654ca3c",
+      "N1:1:e212aed2",
+      "N1:2:78886728",
+      "N1:3:f16aef60",
+      "N1:4:f29b5c26",
+      "N1:5:2b4a402d",
+      "N1:6:774e506d",
+      "N3:2:e3314159",
+      "N3:5:75a37a92",
+      "N3:6:bfc8f55f",
+      "N5:7:c625aa49"
+    ]
+  },
+  {
+    "node_id": "N5",
+    "synthesis_text": "Immediately throttle the password‑reset endpoint: apply per‑IP and per‑account rate limits and return HTTP 429 when limits are exceeded. Add a CAPTCHA challenge to the reset form to stop automated abuse. Instruct clients to use exponential back‑off with jitter on retries to avoid a thundering herd. Decouple token generation and email delivery by queuing them to a background worker, and cache recent reset tokens in Redis to prevent duplicate DB writes. Optimize the database by adding an index on the email/username lookup column and scaling read capacity with additional read replicas and larger connection pools. Deploy edge‑level rate limiting (e.g., via CDN or firewall) to cap POSTs per IP, and configure the service to emit detailed alerts when request volume spikes, enabling rapid detection and response.",
+    "used_points": [
+      "N1:0:6654ca3c",
+      "N1:1:e212aed2",
+      "N1:2:78886728",
+      "N1:3:f16aef60",
+      "N1:4:f29b5c26",
+      "N1:5:2b4a402d",
+      "N1:6:774e506d",
+      "N3:2:e3314159",
+      "N3:3:004fdabc",
+      "N3:4:aa9a4fcf",
+      "N5:7:c625aa49"
+    ]
+  }
+]

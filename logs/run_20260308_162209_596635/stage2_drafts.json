@@ -1,0 +1,71 @@
+[
+  {
+    "node_id": "N1",
+    "synthesis_text": "Assign each incoming webhook a provider‑generated unique event_id and treat it as an idempotency key. Persist the key together with a processing status (e.g., pending, completed) in a dedicated table that has a UNIQUE constraint on the key (N1:0, N2:1, N5:0). On receipt, immediately attempt to insert the key; if the insert fails because the key already exists, skip business logic and return success (N1:1, N5:1). If the insert succeeds, respond to the webhook sender quickly (200 OK or 202 Accepted) after the record is stored (N1:4, N5:4) and then run the payment logic asynchronously.\n\nWrap the payment charge and the idempotency record update in a single database transaction so that both either commit or roll back together (N1:2, N2:3, N5:2). Use an upsert/ON CONFLICT pattern to make the insert idempotent (N2:2). Within the transaction, read the current order/payment state, apply the charge only if not already applied, and update the status to completed (N1:3). Optionally employ optimistic locking or a version column on the payment row to guard against concurrent retries (N3:3, N5:3).\n\nSet the webhook handling timeout to a few seconds (5‑10 s) so that the provider will retry on timeout (N1:5, N3:5). Because retries are safe via the idempotency check, duplicate charges are prevented. Show the user a pending status and update the UI once the async processing finishes (N1:6). Implement exponential backoff and a dead‑letter queue for events that repeatedly fail (N1:7).",
+    "used_points": [
+      "N1:0:dc4855ad",
+      "N1:1:b4e4f3c9",
+      "N1:2:f7fb95d1",
+      "N1:3:c3132779",
+      "N1:4:3fd7a028"
+    ]
+  },
+  {
+    "node_id": "N2",
+    "synthesis_text": "Assign each incoming webhook a provider‑generated unique event_id (or idempotency_key) and store it together with a processing status column. Define a UNIQUE constraint (or PRIMARY KEY) on this key and index it for fast lookup (N2:6). On receipt, immediately attempt to INSERT the key; use INSERT … ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) so that a duplicate insert is ignored (N2:2). If the insert succeeds, start a SERIALIZABLE transaction that reads the current order/payment state, applies the charge, updates the payment record, and marks the event as processed atomically (N1:2, N2:3). This guarantees that the charge and idempotency record are committed together and prevents partial updates. Respond to the webhook sender quickly (200 OK or 202 Accepted) after the key is persisted, then continue the business logic asynchronously (N1:4, N3:4). Set the HTTP request timeout to a few seconds (5‑10 s) so the provider will retry on timeout; the idempotency check ensures retries are safe (N1:5, N3:5). If the transaction times out or fails, return a 202 and let the client poll or receive a push notification once processing completes (N2:4). Use optimistic locking (a version column) on the payment row to detect concurrent retries and abort duplicate charges (N5:2). Log each receipt with timestamps for audit and out‑of‑order detection (N1:0, N3:6). This combination of unique keys, database‑level constraints, atomic transactions, fast acknowledgment, and reasonable timeouts provides idempotent, race‑free updates while keeping the user experience responsive.",
+    "used_points": [
+      "N1:0:dc4855ad",
+      "N1:1:b4e4f3c9",
+      "N1:2:f7fb95d1",
+      "N1:3:c3132779",
+      "N1:4:3fd7a028"
+    ]
+  },
+  {
+    "node_id": "N3",
+    "synthesis_text": "Assign each incoming webhook a globally unique idempotency key (e.g., the provider’s event_id) and store it with a processing status (N1:0). On receipt, attempt to insert the key with a UNIQUE constraint (N2:1) using an upsert/INSERT … ON CONFLICT DO NOTHING (N2:2); if the insert fails the event was already handled, so return success without re‑applying (N1:1). Wrap the payment charge and the idempotency record in a single SERIALIZABLE DB transaction (N2:3) or a standard transaction (N1:2) so the state change is atomic. Apply optimistic locking (version column) on the payment row to guard against concurrent retries (N3:3). Persist the event first, then acknowledge the webhook immediately with HTTP 200/202 (N1:4, N3:4) and continue the business logic asynchronously, keeping latency low. Set the webhook handler timeout to 5‑10 seconds (N1:5); if the sender times out it will retry, but the idempotency check prevents double‑charging. Show the user a pending status while the async job completes (N1:6).",
+    "used_points": [
+      "N1:0:dc4855ad",
+      "N1:1:b4e4f3c9",
+      "N1:2:f7fb95d1",
+      "N1:3:c3132779",
+      "N1:4:3fd7a028",
+      "N1:5:99392cbd",
+      "N1:6:d8a420f0",
+      "N2:1:c98e2afe",
+      "N2:2:a9c1dfd2",
+      "N2:3:47ad0397",
+      "N3:3:1ed95cbf",
+      "N3:4:b6bf9b3c"
+    ]
+  },
+  {
+    "node_id": "N4",
+    "synthesis_text": "Assign each incoming webhook a unique immutable identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated table. Define a UNIQUE constraint on this idempotency_key (N2:1) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2) so that a duplicate receipt is ignored. On receipt, first attempt the insert; if it fails because the key already exists, skip business logic and return success (N1:1). If the insert succeeds, start a SERIALIZABLE transaction that reads the current order/payment state, applies the charge, updates the order, and marks the event_id as processed atomically (N1:2, N2:3). Make the update logic itself idempotent – e.g., increment balances only when a flag shows the event has not been applied (N1:3). Persist the event record and commit the transaction before sending any HTTP response. Respond to the webhook source quickly (200 OK or 202 Accepted) after the record is stored, then continue any longer‑running business work asynchronously (N1:4). Set a short request timeout (5‑10 s) so that the provider will retry on timeout; retries are safe because of the idempotency checks (N1:5). For the user experience, show a pending status immediately after the request and update the UI once the asynchronous processing completes (N1:6). This combination guarantees no double‑charge, handles out‑of‑order or delayed events, and keeps the system responsive.",
+    "used_points": [
+      "N1:0:dc4855ad",
+      "N1:1:b4e4f3c9",
+      "N1:2:f7fb95d1",
+      "N1:3:c3132779",
+      "N1:4:3fd7a028"
+    ]
+  },
+  {
+    "node_id": "N5",
+    "synthesis_text": "Assign each webhook a globally unique identifier (e.g., the provider's event_id) and store it together with a processing status in a dedicated idempotency table (N1:0:dc4855ad). Define a UNIQUE constraint on this idempotency_key (N2:1:c98e2afe) and use an upsert such as INSERT … ON CONFLICT DO NOTHING (N2:2:a9c1dfd2) so a duplicate receipt is ignored. When a webhook arrives, first attempt the insert; if it fails, the event has already been handled and you can return success without re‑applying business logic (N1:1:b4e4f3c9, N5:1:16d8f729). Wrap the insert of the idempotency record and the payment state change in a single SERIALIZABLE transaction (N2:3:47ad0397, N1:2:f7fb95d1) to guarantee atomicity and prevent partial updates. Make the payment update itself idempotent – e.g., increment only if the event has not been applied, using conditional upserts or version checks (N1:3:c3132779, N5:3:b45c76a2). Acknowledge the webhook to the sender immediately (HTTP 200/202) after persisting the idempotency record, then continue the charge processing asynchronously (N1:4:3fd7a028, N3:4:b6bf9b3c). Set a short request timeout (5‑10 s) so the sender will retry on timeout, relying on the idempotency checks to avoid double‑charging (N1:5:99392cbd, N3:5:220c1a3b). Show the user a pending status and update the UI once the async processing completes (N1:6:d8a420f0). Implement exponential backoff for provider retries and route permanently failing events to a dead‑letter queue for manual review (N1:7:8f632d80). This combination of unique keys, database constraints, transactional processing, immediate acknowledgment, and sensible timeouts ensures no double‑charges while keeping the system responsive.",
+    "used_points": [
+      "N1:0:dc4855ad",
+      "N1:1:b4e4f3c9",
+      "N1:2:f7fb95d1",
+      "N1:3:c3132779",
+      "N1:4:3fd7a028",
+      "N1:5:99392cbd",
+      "N1:6:d8a420f0",
+      "N2:1:c98e2afe",
+      "N2:2:a9c1dfd2",
+      "N2:3:47ad0397",
+      "N3:5:220c1a3b",
+      "N5:1:16d8f729"
+    ]
+  }
+]

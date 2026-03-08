@@ -1,0 +1,139 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:e504efc8",
+        "text": "Collect timestamps for request start, DB query start/end, and response send to pinpoint where latency occurs."
+      },
+      {
+        "point_id": "N1:1:77a4e562",
+        "text": "Enable DB slow‑query logging (e.g., MySQL slow_query_log) to capture queries exceeding a threshold."
+      },
+      {
+        "point_id": "N1:2:46926cba",
+        "text": "Run network latency tests (ping, traceroute) from the app server to the DB server during slow periods."
+      },
+      {
+        "point_id": "N1:3:8ead2c21",
+        "text": "Capture packets (tcpdump/wireshark) on the DB connection to measure retransmissions or loss."
+      },
+      {
+        "point_id": "N1:4:840d81ac",
+        "text": "Compare average DB execution time vs. total request time; if DB time dominates, focus on database tuning."
+      },
+      {
+        "point_id": "N1:5:29f1704c",
+        "text": "If network RTT spikes align with slow requests, suspect network congestion or packet loss as the cause."
+      },
+      {
+        "point_id": "N1:6:44da40ab",
+        "text": "Quick fix: increase DB connection pool size or enable connection reuse to reduce handshake overhead."
+      },
+      {
+        "point_id": "N1:7:2f99837b",
+        "text": "Quick fix: add missing indexes or rewrite identified slow SQL queries to improve execution speed."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:3575e928",
+        "text": "Capture query latency with pg_stat_statements (or equivalent) to pinpoint which SQL statements are slow."
+      },
+      {
+        "point_id": "N2:1:65106529",
+        "text": "Run EXPLAIN ANALYZE on identified slow queries to detect missing indexes or suboptimal join order."
+      },
+      {
+        "point_id": "N2:2:7ac28b9f",
+        "text": "Monitor DB server CPU, memory, and disk I/O during performance spikes to rule out resource saturation."
+      },
+      {
+        "point_id": "N2:3:207e7273",
+        "text": "Check connection pool size and wait queue; adjust pool limits if connections are queuing."
+      },
+      {
+        "point_id": "N2:4:5bc7bf7b",
+        "text": "Ping and traceroute from the application host to the DB server to detect latency or packet loss."
+      },
+      {
+        "point_id": "N2:5:6882b2ca",
+        "text": "If packet loss is observed, inspect NICs, switches, or VPNs; consider relocating the DB closer to the app."
+      },
+      {
+        "point_id": "N2:6:9ef98ca2",
+        "text": "Quick DB fix: create or refine indexes suggested by the EXPLAIN output to speed up scans."
+      },
+      {
+        "point_id": "N2:7:afa77d1a",
+        "text": "Quick DB fix: tune work_mem, shared_buffers, or isolation level to reduce contention."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": [
+      {
+        "point_id": "N3:0:a0b33501",
+        "text": "Collect baseline latency: ping the endpoint and measure RTT and packet loss over a 5‑minute window."
+      },
+      {
+        "point_id": "N3:1:d675ebde",
+        "text": "Run a continuous TCP trace (tcpdump) on the server to observe retransmissions and high RTT spikes."
+      },
+      {
+        "point_id": "N3:2:9433a25a",
+        "text": "Check OS network stats (netstat -s, ss) for drops, errors, and TCP retransmit counters."
+      },
+      {
+        "point_id": "N3:3:7a914f7c",
+        "text": "Correlate timestamps: align periods of packet loss with entries in the DB slow‑query log."
+      },
+      {
+        "point_id": "N3:4:ef15d719",
+        "text": "Enable the DB slow‑query log; identify queries exceeding a latency threshold and examine their plans."
+      },
+      {
+        "point_id": "N3:5:7cd99109",
+        "text": "Execute the same query locally on the DB host to see if latency persists without network hop."
+      },
+      {
+        "point_id": "N3:6:58e29d8d",
+        "text": "Temporarily SSH into the DB server and run the query; fast results indicate network as the cause."
+      },
+      {
+        "point_id": "N3:7:252dc72c",
+        "text": "Quick network fix: restart the NIC, verify MTU, enable TCP window scaling, or increase socket buffers."
+      }
+    ]
+  },
+  {
+    "node_id": "N4",
+    "points": [
+      {
+        "point_id": "N4:0:181302fb",
+        "text": "OUT_OF_SCOPE: The question pertains to system performance troubleshooting, which is outside the math_logic domain."
+      },
+      {
+        "point_id": "N4:1:40b51595",
+        "text": "UNKNOWN: Unable to determine a solution within the math_logic scope."
+      }
+    ]
+  },
+  {
+    "node_id": "N5",
+    "points": [
+      {
+        "point_id": "N5:0:88201ee1",
+        "text": "OUT_OF_SCOPE: The request asks about performance isolation between DB and network, which is outside defensive security scope."
+      },
+      {
+        "point_id": "N5:1:7217c67e",
+        "text": "UNKNOWN: No security-relevant information is provided to evaluate authentication, session safety, or secure coding aspects."
+      }
+    ]
+  }
+]

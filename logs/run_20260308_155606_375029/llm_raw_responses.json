@@ -1,0 +1,821 @@
+[
+  {
+    "timestamp": "2026-03-08T08:52:09.179578+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"Check gateway logs for error patterns and response times to identify failing requests.\"},{\"text\":\"Enable distributed tracing (e.g., OpenTelemetry) to see latency across downstream calls.\"},{\"text\":\"Monitor per‑service metrics (CPU, memory, request rate) to spot spikes after the release.\"},{\"text\":\"Profile database queries; look for slow or high‑cost statements causing CPU spikes.\"},{\"text\":\"Review recent code changes for added downstream calls or increased request concurrency.\"},{\"text\":\"Temporarily increase DB connection pool size or add read replicas to relieve CPU pressure.\"},{\"text\":\"Add circuit breakers around downstream services to prevent cascading failures.\"},{\"text\":\"Implement request timeout and retry policies to avoid hanging calls that trigger 502/504.\"},{\"text\":\"Roll back the release to a known good version if bottleneck cannot be isolated quickly.\"},{\"text\":\"Introduce caching for frequently accessed data to reduce DB load and downstream latency.\"},{\"text\":\"Scale out the gateway or backend instances horizontally to distribute load.\"},{\"text\":\"Run load‑test simulations to reproduce the intermittent errors and validate fixes.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-efcca50b-f941-45e3-8da4-1c00ddce2162",
+      "object": "chat.completion",
+      "created": 1772959926,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"Check gateway logs for error patterns and response times to identify failing requests.\"},{\"text\":\"Enable distributed tracing (e.g., OpenTelemetry) to see latency across downstream calls.\"},{\"text\":\"Monitor per‑service metrics (CPU, memory, request rate) to spot spikes after the release.\"},{\"text\":\"Profile database queries; look for slow or high‑cost statements causing CPU spikes.\"},{\"text\":\"Review recent code changes for added downstream calls or increased request concurrency.\"},{\"text\":\"Temporarily increase DB connection pool size or add read replicas to relieve CPU pressure.\"},{\"text\":\"Add circuit breakers around downstream services to prevent cascading failures.\"},{\"text\":\"Implement request timeout and retry policies to avoid hanging calls that trigger 502/504.\"},{\"text\":\"Roll back the release to a known good version if bottleneck cannot be isolated quickly.\"},{\"text\":\"Introduce caching for frequently accessed data to reduce DB load and downstream latency.\"},{\"text\":\"Scale out the gateway or backend instances horizontally to distribute load.\"},{\"text\":\"Run load‑test simulations to reproduce the intermittent errors and validate fixes.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 318,
+        "completion_tokens": 356,
+        "total_tokens": 674
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T08:53:02.574138+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N2"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: Full gateway/network analysis is beyond SQL domain.\"},{\"text\":\"Collect DB metrics: CPU usage, wait events, active sessions, query latency.\"},{\"text\":\"Identify top CPU-consuming queries via pg_stat_statements or equivalent.\"},{\"text\":\"Examine execution plans for missing indexes or inefficient joins.\"},{\"text\":\"Check for lock contention: pg_locks, deadlocks, long-running transactions.\"},{\"text\":\"Review isolation level; consider READ COMMITTED to reduce locking overhead.\"},{\"text\":\"Enable connection pooling; ensure max connections do not exceed CPU capacity.\"},{\"text\":\"Profile downstream service latency; add tracing to correlate DB spikes with calls.\"},{\"text\":\"Implement circuit breaker or timeout for downstream calls to prevent gateway overload.\"},{\"text\":\"Tune DB configuration (work_mem, max_parallel_workers, CPU affinity) as needed.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-b08628d4-d4aa-4b0c-acaf-023e2bb9c6ff",
+      "object": "chat.completion",
+      "created": 1772959982,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: Full gateway/network analysis is beyond SQL domain.\"},{\"text\":\"Collect DB metrics: CPU usage, wait events, active sessions, query latency.\"},{\"text\":\"Identify top CPU-consuming queries via pg_stat_statements or equivalent.\"},{\"text\":\"Examine execution plans for missing indexes or inefficient joins.\"},{\"text\":\"Check for lock contention: pg_locks, deadlocks, long-running transactions.\"},{\"text\":\"Review isolation level; consider READ COMMITTED to reduce locking overhead.\"},{\"text\":\"Enable connection pooling; ensure max connections do not exceed CPU capacity.\"},{\"text\":\"Profile downstream service latency; add tracing to correlate DB spikes with calls.\"},{\"text\":\"Implement circuit breaker or timeout for downstream calls to prevent gateway overload.\"},{\"text\":\"Tune DB configuration (work_mem, max_parallel_workers, CPU affinity) as needed.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 314,
+        "completion_tokens": 577,
+        "total_tokens": 891
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 51 seconds.\",\"retryAfter\":51,\"limit\":10,\"remaining\":0,\"reset\":1772959980}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 30 seconds.\",\"retryAfter\":30,\"limit\":10,\"remaining\":0,\"reset\":1772959980}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 10 seconds.\",\"retryAfter\":10,\"limit\":10,\"remaining\":0,\"reset\":1772959980}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T08:53:04.152769+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"Check gateway logs for 502/504 patterns and timeout settings to confirm if errors stem from upstream latency.\"},{\"text\":\"Enable detailed tracing on the backend to measure latency of each downstream HTTP/TCP call.\"},{\"text\":\"Correlate DB CPU spikes with specific query types; use EXPLAIN to identify slow queries.\"},{\"text\":\"Monitor connection pool usage on the backend and DB to detect exhaustion or queuing.\"},{\"text\":\"Temporarily increase gateway timeout thresholds to see if errors disappear, indicating latency issues.\"},{\"text\":\"Roll back the recent release to a known good version to isolate if code changes introduced bottlenecks.\"},{\"text\":\"Profile backend thread/CPU usage to see if high concurrency or blocking I/O is causing overload.\"},{\"text\":\"Implement circuit breakers or retries with back‑off for downstream services to prevent cascading failures.\"},{\"text\":\"Scale the database vertically (more CPU) or horizontally (read replicas) if query load exceeds capacity.\"},{\"text\":\"Introduce caching for frequent read queries and consider async processing for non‑critical downstream calls.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-7fcc81dc-c404-4d6e-b201-f3e8208abd32",
+      "object": "chat.completion",
+      "created": 1772959983,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"Check gateway logs for 502/504 patterns and timeout settings to confirm if errors stem from upstream latency.\"},{\"text\":\"Enable detailed tracing on the backend to measure latency of each downstream HTTP/TCP call.\"},{\"text\":\"Correlate DB CPU spikes with specific query types; use EXPLAIN to identify slow queries.\"},{\"text\":\"Monitor connection pool usage on the backend and DB to detect exhaustion or queuing.\"},{\"text\":\"Temporarily increase gateway timeout thresholds to see if errors disappear, indicating latency issues.\"},{\"text\":\"Roll back the recent release to a known good version to isolate if code changes introduced bottlenecks.\"},{\"text\":\"Profile backend thread/CPU usage to see if high concurrency or blocking I/O is causing overload.\"},{\"text\":\"Implement circuit breakers or retries with back‑off for downstream services to prevent cascading failures.\"},{\"text\":\"Scale the database vertically (more CPU) or horizontally (read replicas) if query load exceeds capacity.\"},{\"text\":\"Introduce caching for frequent read queries and consider async processing for non‑critical downstream calls.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 321,
+        "completion_tokens": 369,
+        "total_tokens": 690
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T08:53:05.462342+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N4"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The query pertains to system troubleshooting, not within the math_logic domain.\"},{\"text\":\"UNKNOWN: Unable to provide a precise answer due to domain mismatch.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-0d127d87-132b-4239-951f-e2e2e2f48a41",
+      "object": "chat.completion",
+      "created": 1772959984,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The query pertains to system troubleshooting, not within the math_logic domain.\"},{\"text\":\"UNKNOWN: Unable to provide a precise answer due to domain mismatch.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 316,
+        "completion_tokens": 245,
+        "total_tokens": 561
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T08:53:06.713171+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE\"},{\"text\":\"UNKNOWN: The request concerns performance troubleshooting, which is outside the security_defensive domain scope.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-d40870e3-6467-4701-9510-126e8df87005",
+      "object": "chat.completion",
+      "created": 1772959983,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE\"},{\"text\":\"UNKNOWN: The request concerns performance troubleshooting, which is outside the security_defensive domain scope.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 314,
+        "completion_tokens": 305,
+        "total_tokens": 619
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T08:54:02.420119+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\", \"points_map\": {\"N1:0:6a0603af\": \"Check gateway logs for error patterns and response times to identify failing requests.\", \"N1:1:ff8f6c2a\": \"Enable distributed tracing (e.g., OpenTelemetry) to see latency across downstream calls.\", \"N1:2:66bcdc5f\": \"Monitor per‑service metrics (CPU, memory, request rate) to spot spikes after the release.\", \"N1:3:0dffb18d\": \"Profile database queries; look for slow or high‑cost statements causing CPU spikes.\", \"N1:4:08b73e77\": \"Review recent code changes for added downstream calls or increased request concurrency.\", \"N1:5:aff93f6f\": \"Temporarily increase DB connection pool size or add read replicas to relieve CPU pressure.\", \"N1:6:6a5851d4\": \"Add circuit breakers around downstream services to prevent cascading failures.\", \"N1:7:f5b43d01\": \"Implement request timeout and retry policies to avoid hanging calls that trigger 502/504.\", \"N2:0:b58f8ea9\": \"OUT_OF_SCOPE: Full gateway/network analysis is beyond SQL domain.\", \"N2:1:3d46df41\": \"Collect DB metrics: CPU usage, wait events, active sessions, query latency.\", \"N2:2:0402f5b3\": \"Identify top CPU-consuming queries via pg_stat_statements or equivalent.\", \"N2:3:cb4fa8ed\": \"Examine execution plans for missing indexes or inefficient joins.\", \"N2:4:78861d91\": \"Check for lock contention: pg_locks, deadlocks, long-running transactions.\", \"N2:5:af15dbc9\": \"Review isolation level; consider READ COMMITTED to reduce locking overhead.\", \"N2:6:d5a433ae\": \"Enable connection pooling; ensure max connections do not exceed CPU capacity.\", \"N2:7:f2bd596b\": \"Profile downstream service latency; add tracing to correlate DB spikes with calls.\", \"N3:0:8a04d970\": \"Check gateway logs for 502/504 patterns and timeout settings to confirm if errors stem from upstream latency.\", \"N3:1:f6a92ba9\": \"Enable detailed tracing on the backend to measure latency of each downstream HTTP/TCP call.\", \"N3:2:3487964a\": \"Correlate DB CPU spikes with specific query types; use EXPLAIN to identify slow queries.\", \"N3:3:5f7c7aa6\": \"Monitor connection pool usage on the backend and DB to detect exhaustion or queuing.\", \"N3:4:0d031d2d\": \"Temporarily increase gateway timeout thresholds to see if errors disappear, indicating latency issues.\", \"N3:5:2573ca86\": \"Roll back the recent release to a known good version to isolate if code changes introduced bottlenecks.\", \"N3:6:217c2d38\": \"Profile backend thread/CPU usage to see if high concurrency or blocking I/O is causing overload.\", \"N3:7:c1497392\": \"Implement circuit breakers or retries with back‑off for downstream services to prevent cascading failures.\", \"N4:0:4d23b291\": \"OUT_OF_SCOPE: The query pertains to system troubleshooting, not within the math_logic domain.\", \"N4:1:119bb2e0\": \"UNKNOWN: Unable to provide a precise answer due to domain mismatch.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:e675c0eb\": \"UNKNOWN: The request concerns performance troubleshooting, which is outside the security_defensive domain scope.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"1. Check gateway logs for 502/504 patterns and response times (N1:0) to see if errors correlate with specific request paths or latency spikes. 2. Enable distributed tracing (e.g., OpenTelemetry) on the backend (N1:1) to measure latency of each downstream HTTP/TCP call and pinpoint slow services. 3. Monitor per‑service metrics (CPU, memory, request rate) after the release (N1:2) to detect any service that suddenly spikes. 4. Profile database queries (N1:3) and collect DB‑level metrics such as CPU usage, wait events, active sessions (N2:1). 5. Identify the top CPU‑consuming queries via pg_stat_statements or equivalent (N2:2) and examine their execution plans for missing indexes or inefficient joins (N2:3). 6. Check for lock contention or long‑running transactions (N2:4) that could be driving CPU usage. 7. Review recent code changes (N1:4) for added downstream calls or increased concurrency that may overload the DB or services. 8. Add circuit breakers around downstream services (N1:6) and implement request timeout and retry policies with back‑off (N1:7) to prevent cascading failures. 9. Enable or tune connection pooling (N2:6) so that the number of DB connections stays within CPU capacity. Follow this sequence to isolate the bottleneck—gateway, downstream latency, or DB query load—and apply the appropriate mitigation to stabilize the system.\",\"used_points\":[\"N1:0\",\"N1:1\",\"N1:2\",\"N1:3\",\"N1:4\",\"N1:6\",\"N1:7\",\"N2:1\",\"N2:2\",\"N2:3\",\"N2:4\",\"N2:6\"]}",
+    "response_json": {
+      "id": "chatcmpl-f708b5d8-49a7-425e-a8c2-ea378fcc4cb0",
+      "object": "chat.completion",
+      "created": 1772960041,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"1. Check gateway logs for 502/504 patterns and response times (N1:0) to see if errors correlate with specific request paths or latency spikes. 2. Enable distributed tracing (e.g., OpenTelemetry) on the backend (N1:1) to measure latency of each downstream HTTP/TCP call and pinpoint slow services. 3. Monitor per‑service metrics (CPU, memory, request rate) after the release (N1:2) to detect any service that suddenly spikes. 4. Profile database queries (N1:3) and collect DB‑level metrics such as CPU usage, wait events, active sessions (N2:1). 5. Identify the top CPU‑consuming queries via pg_stat_statements or equivalent (N2:2) and examine their execution plans for missing indexes or inefficient joins (N2:3). 6. Check for lock contention or long‑running transactions (N2:4) that could be driving CPU usage. 7. Review recent code changes (N1:4) for added downstream calls or increased concurrency that may overload the DB or services. 8. Add circuit breakers around downstream services (N1:6) and implement request timeout and retry policies with back‑off (N1:7) to prevent cascading failures. 9. Enable or tune connection pooling (N2:6) so that the number of DB connections stays within CPU capacity. Follow this sequence to isolate the bottleneck—gateway, downstream latency, or DB query load—and apply the appropriate mitigation to stabilize the system.\",\"used_points\":[\"N1:0\",\"N1:1\",\"N1:2\",\"N1:3\",\"N1:4\",\"N1:6\",\"N1:7\",\"N2:1\",\"N2:2\",\"N2:3\",\"N2:4\",\"N2:6\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1133,
+        "completion_tokens": 831,
+        "total_tokens": 1964
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 53 seconds.\",\"retryAfter\":53,\"limit\":10,\"remaining\":0,\"reset\":1772960040}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 33 seconds.\",\"retryAfter\":33,\"limit\":10,\"remaining\":0,\"reset\":1772960040}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 12 seconds.\",\"retryAfter\":12,\"limit\":10,\"remaining\":0,\"reset\":1772960040}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T08:54:04.176515+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N2"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\", \"points_map\": {\"N1:0:6a0603af\": \"Check gateway logs for error patterns and response times to identify failing requests.\", \"N1:1:ff8f6c2a\": \"Enable distributed tracing (e.g., OpenTelemetry) to see latency across downstream calls.\", \"N1:2:66bcdc5f\": \"Monitor per‑service metrics (CPU, memory, request rate) to spot spikes after the release.\", \"N1:3:0dffb18d\": \"Profile database queries; look for slow or high‑cost statements causing CPU spikes.\", \"N1:4:08b73e77\": \"Review recent code changes for added downstream calls or increased request concurrency.\", \"N1:5:aff93f6f\": \"Temporarily increase DB connection pool size or add read replicas to relieve CPU pressure.\", \"N1:6:6a5851d4\": \"Add circuit breakers around downstream services to prevent cascading failures.\", \"N1:7:f5b43d01\": \"Implement request timeout and retry policies to avoid hanging calls that trigger 502/504.\", \"N2:0:b58f8ea9\": \"OUT_OF_SCOPE: Full gateway/network analysis is beyond SQL domain.\", \"N2:1:3d46df41\": \"Collect DB metrics: CPU usage, wait events, active sessions, query latency.\", \"N2:2:0402f5b3\": \"Identify top CPU-consuming queries via pg_stat_statements or equivalent.\", \"N2:3:cb4fa8ed\": \"Examine execution plans for missing indexes or inefficient joins.\", \"N2:4:78861d91\": \"Check for lock contention: pg_locks, deadlocks, long-running transactions.\", \"N2:5:af15dbc9\": \"Review isolation level; consider READ COMMITTED to reduce locking overhead.\", \"N2:6:d5a433ae\": \"Enable connection pooling; ensure max connections do not exceed CPU capacity.\", \"N2:7:f2bd596b\": \"Profile downstream service latency; add tracing to correlate DB spikes with calls.\", \"N3:0:8a04d970\": \"Check gateway logs for 502/504 patterns and timeout settings to confirm if errors stem from upstream latency.\", \"N3:1:f6a92ba9\": \"Enable detailed tracing on the backend to measure latency of each downstream HTTP/TCP call.\", \"N3:2:3487964a\": \"Correlate DB CPU spikes with specific query types; use EXPLAIN to identify slow queries.\", \"N3:3:5f7c7aa6\": \"Monitor connection pool usage on the backend and DB to detect exhaustion or queuing.\", \"N3:4:0d031d2d\": \"Temporarily increase gateway timeout thresholds to see if errors disappear, indicating latency issues.\", \"N3:5:2573ca86\": \"Roll back the recent release to a known good version to isolate if code changes introduced bottlenecks.\", \"N3:6:217c2d38\": \"Profile backend thread/CPU usage to see if high concurrency or blocking I/O is causing overload.\", \"N3:7:c1497392\": \"Implement circuit breakers or retries with back‑off for downstream services to prevent cascading failures.\", \"N4:0:4d23b291\": \"OUT_OF_SCOPE: The query pertains to system troubleshooting, not within the math_logic domain.\", \"N4:1:119bb2e0\": \"UNKNOWN: Unable to provide a precise answer due to domain mismatch.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:e675c0eb\": \"UNKNOWN: The request concerns performance troubleshooting, which is outside the security_defensive domain scope.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"Begin by checking gateway logs (N1:2) and enabling distributed tracing (N1:3) to pinpoint which requests trigger 502/504. Collect DB‑level metrics such as CPU, wait events, active sessions and query latency (N2:1) and use pg_stat_statements (or equivalent) to list the top CPU‑consuming statements (N2:2). Run EXPLAIN on those queries to spot missing indexes or inefficient joins (N2:3) and address them by adding appropriate indexes or rewriting the queries. Inspect pg_locks for lock contention or long‑running transactions (N2:4) and, if needed, lower the isolation level to READ COMMITTED to reduce locking overhead (N2:5). Verify that the connection pool size matches the DB’s CPU capacity and enable pooling if not already in place (N2:6). Correlate the timing of DB CPU spikes with specific downstream calls using tracing (N3:2) and monitor connection pool usage on both backend and DB (N3:3) to detect exhaustion. If the release introduced new calls or higher concurrency, review the recent code changes (N1:4) and consider temporarily adding read replicas or increasing the pool size to relieve pressure (N1:5). As a safety net, roll back the release to a known good version to confirm the source of the bottleneck (N3:5).\",\n  \"used_points\": [\n    \"N1:2\",\n    \"N1:3\",\n    \"N1:4\",\n    \"N2:1\",\n    \"N2:2\",\n    \"N2:3\",\n    \"N2:4\",\n    \"N2:5\",\n    \"N2:6\",\n    \"N3:2\",\n    \"N3:3\",\n    \"N3:5\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-f0d6ed4d-e3d2-4096-a13c-488e51cd6115",
+      "object": "chat.completion",
+      "created": 1772960043,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"Begin by checking gateway logs (N1:2) and enabling distributed tracing (N1:3) to pinpoint which requests trigger 502/504. Collect DB‑level metrics such as CPU, wait events, active sessions and query latency (N2:1) and use pg_stat_statements (or equivalent) to list the top CPU‑consuming statements (N2:2). Run EXPLAIN on those queries to spot missing indexes or inefficient joins (N2:3) and address them by adding appropriate indexes or rewriting the queries. Inspect pg_locks for lock contention or long‑running transactions (N2:4) and, if needed, lower the isolation level to READ COMMITTED to reduce locking overhead (N2:5). Verify that the connection pool size matches the DB’s CPU capacity and enable pooling if not already in place (N2:6). Correlate the timing of DB CPU spikes with specific downstream calls using tracing (N3:2) and monitor connection pool usage on both backend and DB (N3:3) to detect exhaustion. If the release introduced new calls or higher concurrency, review the recent code changes (N1:4) and consider temporarily adding read replicas or increasing the pool size to relieve pressure (N1:5). As a safety net, roll back the release to a known good version to confirm the source of the bottleneck (N3:5).\",\n  \"used_points\": [\n    \"N1:2\",\n    \"N1:3\",\n    \"N1:4\",\n    \"N2:1\",\n    \"N2:2\",\n    \"N2:3\",\n    \"N2:4\",\n    \"N2:5\",\n    \"N2:6\",\n    \"N3:2\",\n    \"N3:3\",\n    \"N3:5\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1129,
+        "completion_tokens": 854,
+        "total_tokens": 1983
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T08:54:06.212006+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\", \"points_map\": {\"N1:0:6a0603af\": \"Check gateway logs for error patterns and response times to identify failing requests.\", \"N1:1:ff8f6c2a\": \"Enable distributed tracing (e.g., OpenTelemetry) to see latency across downstream calls.\", \"N1:2:66bcdc5f\": \"Monitor per‑service metrics (CPU, memory, request rate) to spot spikes after the release.\", \"N1:3:0dffb18d\": \"Profile database queries; look for slow or high‑cost statements causing CPU spikes.\", \"N1:4:08b73e77\": \"Review recent code changes for added downstream calls or increased request concurrency.\", \"N1:5:aff93f6f\": \"Temporarily increase DB connection pool size or add read replicas to relieve CPU pressure.\", \"N1:6:6a5851d4\": \"Add circuit breakers around downstream services to prevent cascading failures.\", \"N1:7:f5b43d01\": \"Implement request timeout and retry policies to avoid hanging calls that trigger 502/504.\", \"N2:0:b58f8ea9\": \"OUT_OF_SCOPE: Full gateway/network analysis is beyond SQL domain.\", \"N2:1:3d46df41\": \"Collect DB metrics: CPU usage, wait events, active sessions, query latency.\", \"N2:2:0402f5b3\": \"Identify top CPU-consuming queries via pg_stat_statements or equivalent.\", \"N2:3:cb4fa8ed\": \"Examine execution plans for missing indexes or inefficient joins.\", \"N2:4:78861d91\": \"Check for lock contention: pg_locks, deadlocks, long-running transactions.\", \"N2:5:af15dbc9\": \"Review isolation level; consider READ COMMITTED to reduce locking overhead.\", \"N2:6:d5a433ae\": \"Enable connection pooling; ensure max connections do not exceed CPU capacity.\", \"N2:7:f2bd596b\": \"Profile downstream service latency; add tracing to correlate DB spikes with calls.\", \"N3:0:8a04d970\": \"Check gateway logs for 502/504 patterns and timeout settings to confirm if errors stem from upstream latency.\", \"N3:1:f6a92ba9\": \"Enable detailed tracing on the backend to measure latency of each downstream HTTP/TCP call.\", \"N3:2:3487964a\": \"Correlate DB CPU spikes with specific query types; use EXPLAIN to identify slow queries.\", \"N3:3:5f7c7aa6\": \"Monitor connection pool usage on the backend and DB to detect exhaustion or queuing.\", \"N3:4:0d031d2d\": \"Temporarily increase gateway timeout thresholds to see if errors disappear, indicating latency issues.\", \"N3:5:2573ca86\": \"Roll back the recent release to a known good version to isolate if code changes introduced bottlenecks.\", \"N3:6:217c2d38\": \"Profile backend thread/CPU usage to see if high concurrency or blocking I/O is causing overload.\", \"N3:7:c1497392\": \"Implement circuit breakers or retries with back‑off for downstream services to prevent cascading failures.\", \"N4:0:4d23b291\": \"OUT_OF_SCOPE: The query pertains to system troubleshooting, not within the math_logic domain.\", \"N4:1:119bb2e0\": \"UNKNOWN: Unable to provide a precise answer due to domain mismatch.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:e675c0eb\": \"UNKNOWN: The request concerns performance troubleshooting, which is outside the security_defensive domain scope.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"1. Inspect gateway logs (N1:0) for 502/504 patterns and timeout settings to see if errors correlate with specific request paths or latency spikes. 2. Deploy distributed tracing (e.g., OpenTelemetry) on the backend (N1:1) to measure latency of each downstream HTTP/TCP call and pinpoint slow services. 3. Collect per‑service metrics (CPU, memory, request rate) after the release (N1:2) to identify any component whose resource usage spikes. 4. Profile database activity: identify top CPU‑consuming queries (N2:2) and examine their execution plans for missing indexes or inefficient joins (N2:3). 5. Review recent code changes (N1:4) for added downstream calls or higher concurrency that could drive the DB load. 6. Verify backend and DB connection pool usage (N3:3); ensure pools are sized appropriately and not exhausted. 7. Add circuit breakers around downstream services (N1:6) and implement request timeout and retry policies with back‑off (N1:7) to prevent cascading failures. 8. Temporarily raise the gateway timeout threshold (N3:4); if errors disappear, the root cause is latency rather than outright failure. 9. After stabilizing, fine‑tune timeouts, pool sizes, and circuit‑breaker thresholds, and consider adding read replicas or query optimizations to keep DB CPU within normal bounds.\",\n  \"used_points\": [\n    \"N1:0:6a0603af\",\n    \"N1:1:ff8f6c2a\",\n    \"N1:2:66bcdc5f\",\n    \"N1:3:0dffb18d\",\n    \"N1:4:08b73e77\",\n    \"N1:6:6a5851d4\",\n    \"N1:7:f5b43d01\",\n    \"N2:2:0402f5b3\",\n    \"N2:3:cb4fa8ed\",\n    \"N3:3:5f7c7aa6\",\n    \"N3:4:0d031d2d\",\n    \"N3:7:c1497392\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-b7766c18-084a-4b64-9d95-83a145bb095a",
+      "object": "chat.completion",
+      "created": 1772960045,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"1. Inspect gateway logs (N1:0) for 502/504 patterns and timeout settings to see if errors correlate with specific request paths or latency spikes. 2. Deploy distributed tracing (e.g., OpenTelemetry) on the backend (N1:1) to measure latency of each downstream HTTP/TCP call and pinpoint slow services. 3. Collect per‑service metrics (CPU, memory, request rate) after the release (N1:2) to identify any component whose resource usage spikes. 4. Profile database activity: identify top CPU‑consuming queries (N2:2) and examine their execution plans for missing indexes or inefficient joins (N2:3). 5. Review recent code changes (N1:4) for added downstream calls or higher concurrency that could drive the DB load. 6. Verify backend and DB connection pool usage (N3:3); ensure pools are sized appropriately and not exhausted. 7. Add circuit breakers around downstream services (N1:6) and implement request timeout and retry policies with back‑off (N1:7) to prevent cascading failures. 8. Temporarily raise the gateway timeout threshold (N3:4); if errors disappear, the root cause is latency rather than outright failure. 9. After stabilizing, fine‑tune timeouts, pool sizes, and circuit‑breaker thresholds, and consider adding read replicas or query optimizations to keep DB CPU within normal bounds.\",\n  \"used_points\": [\n    \"N1:0:6a0603af\",\n    \"N1:1:ff8f6c2a\",\n    \"N1:2:66bcdc5f\",\n    \"N1:3:0dffb18d\",\n    \"N1:4:08b73e77\",\n    \"N1:6:6a5851d4\",\n    \"N1:7:f5b43d01\",\n    \"N2:2:0402f5b3\",\n    \"N2:3:cb4fa8ed\",\n    \"N3:3:5f7c7aa6\",\n    \"N3:4:0d031d2d\",\n    \"N3:7:c1497392\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1136,
+        "completion_tokens": 1011,
+        "total_tokens": 2147
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T08:54:07.950117+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N4"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\", \"points_map\": {\"N1:0:6a0603af\": \"Check gateway logs for error patterns and response times to identify failing requests.\", \"N1:1:ff8f6c2a\": \"Enable distributed tracing (e.g., OpenTelemetry) to see latency across downstream calls.\", \"N1:2:66bcdc5f\": \"Monitor per‑service metrics (CPU, memory, request rate) to spot spikes after the release.\", \"N1:3:0dffb18d\": \"Profile database queries; look for slow or high‑cost statements causing CPU spikes.\", \"N1:4:08b73e77\": \"Review recent code changes for added downstream calls or increased request concurrency.\", \"N1:5:aff93f6f\": \"Temporarily increase DB connection pool size or add read replicas to relieve CPU pressure.\", \"N1:6:6a5851d4\": \"Add circuit breakers around downstream services to prevent cascading failures.\", \"N1:7:f5b43d01\": \"Implement request timeout and retry policies to avoid hanging calls that trigger 502/504.\", \"N2:0:b58f8ea9\": \"OUT_OF_SCOPE: Full gateway/network analysis is beyond SQL domain.\", \"N2:1:3d46df41\": \"Collect DB metrics: CPU usage, wait events, active sessions, query latency.\", \"N2:2:0402f5b3\": \"Identify top CPU-consuming queries via pg_stat_statements or equivalent.\", \"N2:3:cb4fa8ed\": \"Examine execution plans for missing indexes or inefficient joins.\", \"N2:4:78861d91\": \"Check for lock contention: pg_locks, deadlocks, long-running transactions.\", \"N2:5:af15dbc9\": \"Review isolation level; consider READ COMMITTED to reduce locking overhead.\", \"N2:6:d5a433ae\": \"Enable connection pooling; ensure max connections do not exceed CPU capacity.\", \"N2:7:f2bd596b\": \"Profile downstream service latency; add tracing to correlate DB spikes with calls.\", \"N3:0:8a04d970\": \"Check gateway logs for 502/504 patterns and timeout settings to confirm if errors stem from upstream latency.\", \"N3:1:f6a92ba9\": \"Enable detailed tracing on the backend to measure latency of each downstream HTTP/TCP call.\", \"N3:2:3487964a\": \"Correlate DB CPU spikes with specific query types; use EXPLAIN to identify slow queries.\", \"N3:3:5f7c7aa6\": \"Monitor connection pool usage on the backend and DB to detect exhaustion or queuing.\", \"N3:4:0d031d2d\": \"Temporarily increase gateway timeout thresholds to see if errors disappear, indicating latency issues.\", \"N3:5:2573ca86\": \"Roll back the recent release to a known good version to isolate if code changes introduced bottlenecks.\", \"N3:6:217c2d38\": \"Profile backend thread/CPU usage to see if high concurrency or blocking I/O is causing overload.\", \"N3:7:c1497392\": \"Implement circuit breakers or retries with back‑off for downstream services to prevent cascading failures.\", \"N4:0:4d23b291\": \"OUT_OF_SCOPE: The query pertains to system troubleshooting, not within the math_logic domain.\", \"N4:1:119bb2e0\": \"UNKNOWN: Unable to provide a precise answer due to domain mismatch.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:e675c0eb\": \"UNKNOWN: The request concerns performance troubleshooting, which is outside the security_defensive domain scope.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"Begin by checking the gateway logs for 502/504 patterns (N1:0) and confirming timeout settings. Enable distributed tracing on the backend (N1:1) to measure latency of each downstream call and correlate it with observed errors. Monitor per‑service metrics such as CPU, memory, and request rates after the release (N1:2) to spot spikes. Profile the database: collect CPU, wait events, active sessions, and query latency (N2:1), identify the top CPU‑consuming queries (N2:2), and examine their execution plans for missing indexes or inefficient joins (N2:3). Check for lock contention or long‑running transactions (N2:4) and ensure connection pooling is properly configured and does not exceed CPU capacity (N2:6). Review recent code changes for added downstream calls or higher concurrency (N1:4); if the issue persists, roll back the release to a known good version (N3:5) to isolate the change. To stabilize the system, temporarily increase DB connection pool size or add read replicas (N1:5), and add circuit breakers and retry‑with‑back‑off around downstream services (N1:6).\",\n  \"used_points\": [\"N1:0\", \"N1:1\", \"N1:2\", \"N1:3\", \"N2:1\", \"N2:2\", \"N2:3\", \"N2:4\", \"N2:6\", \"N1:4\", \"N3:5\", \"N1:6\"]\n}",
+    "response_json": {
+      "id": "chatcmpl-bd8de6b6-5c00-4c8b-a909-dad122252ab6",
+      "object": "chat.completion",
+      "created": 1772960047,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"Begin by checking the gateway logs for 502/504 patterns (N1:0) and confirming timeout settings. Enable distributed tracing on the backend (N1:1) to measure latency of each downstream call and correlate it with observed errors. Monitor per‑service metrics such as CPU, memory, and request rates after the release (N1:2) to spot spikes. Profile the database: collect CPU, wait events, active sessions, and query latency (N2:1), identify the top CPU‑consuming queries (N2:2), and examine their execution plans for missing indexes or inefficient joins (N2:3). Check for lock contention or long‑running transactions (N2:4) and ensure connection pooling is properly configured and does not exceed CPU capacity (N2:6). Review recent code changes for added downstream calls or higher concurrency (N1:4); if the issue persists, roll back the release to a known good version (N3:5) to isolate the change. To stabilize the system, temporarily increase DB connection pool size or add read replicas (N1:5), and add circuit breakers and retry‑with‑back‑off around downstream services (N1:6).\",\n  \"used_points\": [\"N1:0\", \"N1:1\", \"N1:2\", \"N1:3\", \"N2:1\", \"N2:2\", \"N2:3\", \"N2:4\", \"N2:6\", \"N1:4\", \"N3:5\", \"N1:6\"]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1131,
+        "completion_tokens": 848,
+        "total_tokens": 1979
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T08:55:02.335796+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\", \"points_map\": {\"N1:0:6a0603af\": \"Check gateway logs for error patterns and response times to identify failing requests.\", \"N1:1:ff8f6c2a\": \"Enable distributed tracing (e.g., OpenTelemetry) to see latency across downstream calls.\", \"N1:2:66bcdc5f\": \"Monitor per‑service metrics (CPU, memory, request rate) to spot spikes after the release.\", \"N1:3:0dffb18d\": \"Profile database queries; look for slow or high‑cost statements causing CPU spikes.\", \"N1:4:08b73e77\": \"Review recent code changes for added downstream calls or increased request concurrency.\", \"N1:5:aff93f6f\": \"Temporarily increase DB connection pool size or add read replicas to relieve CPU pressure.\", \"N1:6:6a5851d4\": \"Add circuit breakers around downstream services to prevent cascading failures.\", \"N1:7:f5b43d01\": \"Implement request timeout and retry policies to avoid hanging calls that trigger 502/504.\", \"N2:0:b58f8ea9\": \"OUT_OF_SCOPE: Full gateway/network analysis is beyond SQL domain.\", \"N2:1:3d46df41\": \"Collect DB metrics: CPU usage, wait events, active sessions, query latency.\", \"N2:2:0402f5b3\": \"Identify top CPU-consuming queries via pg_stat_statements or equivalent.\", \"N2:3:cb4fa8ed\": \"Examine execution plans for missing indexes or inefficient joins.\", \"N2:4:78861d91\": \"Check for lock contention: pg_locks, deadlocks, long-running transactions.\", \"N2:5:af15dbc9\": \"Review isolation level; consider READ COMMITTED to reduce locking overhead.\", \"N2:6:d5a433ae\": \"Enable connection pooling; ensure max connections do not exceed CPU capacity.\", \"N2:7:f2bd596b\": \"Profile downstream service latency; add tracing to correlate DB spikes with calls.\", \"N3:0:8a04d970\": \"Check gateway logs for 502/504 patterns and timeout settings to confirm if errors stem from upstream latency.\", \"N3:1:f6a92ba9\": \"Enable detailed tracing on the backend to measure latency of each downstream HTTP/TCP call.\", \"N3:2:3487964a\": \"Correlate DB CPU spikes with specific query types; use EXPLAIN to identify slow queries.\", \"N3:3:5f7c7aa6\": \"Monitor connection pool usage on the backend and DB to detect exhaustion or queuing.\", \"N3:4:0d031d2d\": \"Temporarily increase gateway timeout thresholds to see if errors disappear, indicating latency issues.\", \"N3:5:2573ca86\": \"Roll back the recent release to a known good version to isolate if code changes introduced bottlenecks.\", \"N3:6:217c2d38\": \"Profile backend thread/CPU usage to see if high concurrency or blocking I/O is causing overload.\", \"N3:7:c1497392\": \"Implement circuit breakers or retries with back‑off for downstream services to prevent cascading failures.\", \"N4:0:4d23b291\": \"OUT_OF_SCOPE: The query pertains to system troubleshooting, not within the math_logic domain.\", \"N4:1:119bb2e0\": \"UNKNOWN: Unable to provide a precise answer due to domain mismatch.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:e675c0eb\": \"UNKNOWN: The request concerns performance troubleshooting, which is outside the security_defensive domain scope.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"The reported intermittent 502/504 errors and elevated database CPU after a release pertain to performance troubleshooting rather than security concerns. This falls outside the security_defensive domain scope, so a detailed security‑focused analysis cannot be provided here. Consider engaging performance‑engineering resources to investigate gateway logs, tracing, database query profiling, and resource scaling.\",\"used_points\":[\"N5:0:e37bafbe\",\"N5:1:e675c0eb\"]}",
+    "response_json": {
+      "id": "chatcmpl-13b5c93e-acb7-45b2-9264-c607868a6fec",
+      "object": "chat.completion",
+      "created": 1772960101,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"The reported intermittent 502/504 errors and elevated database CPU after a release pertain to performance troubleshooting rather than security concerns. This falls outside the security_defensive domain scope, so a detailed security‑focused analysis cannot be provided here. Consider engaging performance‑engineering resources to investigate gateway logs, tracing, database query profiling, and resource scaling.\",\"used_points\":[\"N5:0:e37bafbe\",\"N5:1:e675c0eb\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1129,
+        "completion_tokens": 448,
+        "total_tokens": 1577
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 52 seconds.\",\"retryAfter\":52,\"limit\":10,\"remaining\":0,\"reset\":1772960100}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 32 seconds.\",\"retryAfter\":32,\"limit\":10,\"remaining\":0,\"reset\":1772960100}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 11 seconds.\",\"retryAfter\":11,\"limit\":10,\"remaining\":0,\"reset\":1772960100}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T08:55:04.779522+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N1",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N2\", \"target_draft\": \"Begin by checking gateway logs (N1:2) and enabling distributed tracing (N1:3) to pinpoint which requests trigger 502/504. Collect DB‑level metrics such as CPU, wait events, active sessions and query latency (N2:1) and use pg_stat_statements (or equivalent) to list the top CPU‑consuming statements (N2:2). Run EXPLAIN on those queries to spot missing indexes or inefficient joins (N2:3) and address them by adding appropriate indexes or rewriting the queries. Inspect pg_locks for lock contention or long‑running transactions (N2:4) and, if needed, lower the isolation level to READ COMMITTED to reduce locking overhead (N2:5). Verify that the connection pool size matches the DB’s CPU capacity and enable pooling if not already in place (N2:6). Correlate the timing of DB CPU spikes with specific downstream calls using tracing (N3:2) and monitor connection pool usage on both backend and DB (N3:3) to detect exhaustion. If the release introduced new calls or higher concurrency, review the recent code changes (N1:4) and consider temporarily adding read replicas or increasing the pool size to relieve pressure (N1:5). As a safety net, roll back the release to a known good version to confirm the source of the bottleneck (N3:5).\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\"]}, {\"target_id\": \"N3\", \"target_draft\": \"1. Inspect gateway logs (N1:0) for 502/504 patterns and timeout settings to see if errors correlate with specific request paths or latency spikes. 2. Deploy distributed tracing (e.g., OpenTelemetry) on the backend (N1:1) to measure latency of each downstream HTTP/TCP call and pinpoint slow services. 3. Collect per‑service metrics (CPU, memory, request rate) after the release (N1:2) to identify any component whose resource usage spikes. 4. Profile database activity: identify top CPU‑consuming queries (N2:2) and examine their execution plans for missing indexes or inefficient joins (N2:3). 5. Review recent code changes (N1:4) for added downstream calls or higher concurrency that could drive the DB load. 6. Verify backend and DB connection pool usage (N3:3); ensure pools are sized appropriately and not exhausted. 7. Add circuit breakers around downstream services (N1:6) and implement request timeout and retry policies with back‑off (N1:7) to prevent cascading failures. 8. Temporarily raise the gateway timeout threshold (N3:4); if errors disappear, the root cause is latency rather than outright failure. 9. After stabilizing, fine‑tune timeouts, pool sizes, and circuit‑breaker thresholds, and consider adding read replicas or query optimizations to keep DB CPU within normal bounds.\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\", \"N1:6:6a5851d4\", \"N1:7:f5b43d01\", \"N2:2:0402f5b3\", \"N2:3:cb4fa8ed\", \"N3:3:5f7c7aa6\", \"N3:4:0d031d2d\", \"N3:7:c1497392\"]}, {\"target_id\": \"N4\", \"target_draft\": \"Begin by checking the gateway logs for 502/504 patterns (N1:0) and confirming timeout settings. Enable distributed tracing on the backend (N1:1) to measure latency of each downstream call and correlate it with observed errors. Monitor per‑service metrics such as CPU, memory, and request rates after the release (N1:2) to spot spikes. Profile the database: collect CPU, wait events, active sessions, and query latency (N2:1), identify the top CPU‑consuming queries (N2:2), and examine their execution plans for missing indexes or inefficient joins (N2:3). Check for lock contention or long‑running transactions (N2:4) and ensure connection pooling is properly configured and does not exceed CPU capacity (N2:6). Review recent code changes for added downstream calls or higher concurrency (N1:4); if the issue persists, roll back the release to a known good version (N3:5) to isolate the change. To stabilize the system, temporarily increase DB connection pool size or add read replicas (N1:5), and add circuit breakers and retry‑with‑back‑off around downstream services (N1:6).\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\"]}, {\"target_id\": \"N5\", \"target_draft\": \"The reported intermittent 502/504 errors and elevated database CPU after a release pertain to performance troubleshooting rather than security concerns. This falls outside the security_defensive domain scope, so a detailed security‑focused analysis cannot be provided here. Consider engaging performance‑engineering resources to investigate gateway logs, tracing, database query profiling, and resource scaling.\", \"target_used_points\": [\"N5:0:e37bafbe\", \"N5:1:e675c0eb\"]}], \"points_map\": {\"N1:0:6a0603af\": \"Check gateway logs for error patterns and response times to identify failing requests.\", \"N1:1:ff8f6c2a\": \"Enable distributed tracing (e.g., OpenTelemetry) to see latency across downstream calls.\", \"N1:2:66bcdc5f\": \"Monitor per‑service metrics (CPU, memory, request rate) to spot spikes after the release.\", \"N1:3:0dffb18d\": \"Profile database queries; look for slow or high‑cost statements causing CPU spikes.\", \"N1:4:08b73e77\": \"Review recent code changes for added downstream calls or increased request concurrency.\", \"N1:5:aff93f6f\": \"Temporarily increase DB connection pool size or add read replicas to relieve CPU pressure.\", \"N1:6:6a5851d4\": \"Add circuit breakers around downstream services to prevent cascading failures.\", \"N1:7:f5b43d01\": \"Implement request timeout and retry policies to avoid hanging calls that trigger 502/504.\", \"N2:0:b58f8ea9\": \"OUT_OF_SCOPE: Full gateway/network analysis is beyond SQL domain.\", \"N2:1:3d46df41\": \"Collect DB metrics: CPU usage, wait events, active sessions, query latency.\", \"N2:2:0402f5b3\": \"Identify top CPU-consuming queries via pg_stat_statements or equivalent.\", \"N2:3:cb4fa8ed\": \"Examine execution plans for missing indexes or inefficient joins.\", \"N2:4:78861d91\": \"Check for lock contention: pg_locks, deadlocks, long-running transactions.\", \"N2:5:af15dbc9\": \"Review isolation level; consider READ COMMITTED to reduce locking overhead.\", \"N2:6:d5a433ae\": \"Enable connection pooling; ensure max connections do not exceed CPU capacity.\", \"N2:7:f2bd596b\": \"Profile downstream service latency; add tracing to correlate DB spikes with calls.\", \"N3:0:8a04d970\": \"Check gateway logs for 502/504 patterns and timeout settings to confirm if errors stem from upstream latency.\", \"N3:1:f6a92ba9\": \"Enable detailed tracing on the backend to measure latency of each downstream HTTP/TCP call.\", \"N3:2:3487964a\": \"Correlate DB CPU spikes with specific query types; use EXPLAIN to identify slow queries.\", \"N3:3:5f7c7aa6\": \"Monitor connection pool usage on the backend and DB to detect exhaustion or queuing.\", \"N3:4:0d031d2d\": \"Temporarily increase gateway timeout thresholds to see if errors disappear, indicating latency issues.\", \"N3:5:2573ca86\": \"Roll back the recent release to a known good version to isolate if code changes introduced bottlenecks.\", \"N3:6:217c2d38\": \"Profile backend thread/CPU usage to see if high concurrency or blocking I/O is causing overload.\", \"N3:7:c1497392\": \"Implement circuit breakers or retries with back‑off for downstream services to prevent cascading failures.\", \"N4:0:4d23b291\": \"OUT_OF_SCOPE: The query pertains to system troubleshooting, not within the math_logic domain.\", \"N4:1:119bb2e0\": \"UNKNOWN: Unable to provide a precise answer due to domain mismatch.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:e675c0eb\": \"UNKNOWN: The request concerns performance troubleshooting, which is outside the security_defensive domain scope.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:4:08b73e77\"],\"reject_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\"],\"unknown_points\":[],\"note\":\"Several referenced points are mismatched or missing in the draft (gateway logs, tracing, metrics).\"},{\"target_id\":\"N3\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:4:08b73e77\",\"N1:6:6a5851d4\",\"N1:7:f5b43d01\",\"N2:2:0402f5b3\",\"N2:3:cb4fa8ed\",\"N3:3:5f7c7aa6\",\"N3:4:0d031d2d\"],\"reject_points\":[\"N3:7:c1497392\"],\"unknown_points\":[],\"note\":\"All used points are correctly applied except N3:7, which is not referenced in the draft.\"},{\"target_id\":\"N4\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:4:08b73e77\"],\"reject_points\":[\"N1:3:0dffb18d\"],\"unknown_points\":[],\"note\":\"Point N1:3 (profile database queries) is absent despite being listed as used.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N5:0:e37bafbe\",\"N5:1:e675c0eb\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft correctly states the request is out of scope, matching both point descriptions.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-04788967-789b-4ec8-91d8-1119f52e2f11",
+      "object": "chat.completion",
+      "created": 1772960100,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:4:08b73e77\"],\"reject_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\"],\"unknown_points\":[],\"note\":\"Several referenced points are mismatched or missing in the draft (gateway logs, tracing, metrics).\"},{\"target_id\":\"N3\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:4:08b73e77\",\"N1:6:6a5851d4\",\"N1:7:f5b43d01\",\"N2:2:0402f5b3\",\"N2:3:cb4fa8ed\",\"N3:3:5f7c7aa6\",\"N3:4:0d031d2d\"],\"reject_points\":[\"N3:7:c1497392\"],\"unknown_points\":[],\"note\":\"All used points are correctly applied except N3:7, which is not referenced in the draft.\"},{\"target_id\":\"N4\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:4:08b73e77\"],\"reject_points\":[\"N1:3:0dffb18d\"],\"unknown_points\":[],\"note\":\"Point N1:3 (profile database queries) is absent despite being listed as used.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N5:0:e37bafbe\",\"N5:1:e675c0eb\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft correctly states the request is out of scope, matching both point descriptions.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2487,
+        "completion_tokens": 2387,
+        "total_tokens": 4874
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T08:55:06.877716+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N2",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"1. Check gateway logs for 502/504 patterns and response times (N1:0) to see if errors correlate with specific request paths or latency spikes. 2. Enable distributed tracing (e.g., OpenTelemetry) on the backend (N1:1) to measure latency of each downstream HTTP/TCP call and pinpoint slow services. 3. Monitor per‑service metrics (CPU, memory, request rate) after the release (N1:2) to detect any service that suddenly spikes. 4. Profile database queries (N1:3) and collect DB‑level metrics such as CPU usage, wait events, active sessions (N2:1). 5. Identify the top CPU‑consuming queries via pg_stat_statements or equivalent (N2:2) and examine their execution plans for missing indexes or inefficient joins (N2:3). 6. Check for lock contention or long‑running transactions (N2:4) that could be driving CPU usage. 7. Review recent code changes (N1:4) for added downstream calls or increased concurrency that may overload the DB or services. 8. Add circuit breakers around downstream services (N1:6) and implement request timeout and retry policies with back‑off (N1:7) to prevent cascading failures. 9. Enable or tune connection pooling (N2:6) so that the number of DB connections stays within CPU capacity. Follow this sequence to isolate the bottleneck—gateway, downstream latency, or DB query load—and apply the appropriate mitigation to stabilize the system.\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\"]}, {\"target_id\": \"N3\", \"target_draft\": \"1. Inspect gateway logs (N1:0) for 502/504 patterns and timeout settings to see if errors correlate with specific request paths or latency spikes. 2. Deploy distributed tracing (e.g., OpenTelemetry) on the backend (N1:1) to measure latency of each downstream HTTP/TCP call and pinpoint slow services. 3. Collect per‑service metrics (CPU, memory, request rate) after the release (N1:2) to identify any component whose resource usage spikes. 4. Profile database activity: identify top CPU‑consuming queries (N2:2) and examine their execution plans for missing indexes or inefficient joins (N2:3). 5. Review recent code changes (N1:4) for added downstream calls or higher concurrency that could drive the DB load. 6. Verify backend and DB connection pool usage (N3:3); ensure pools are sized appropriately and not exhausted. 7. Add circuit breakers around downstream services (N1:6) and implement request timeout and retry policies with back‑off (N1:7) to prevent cascading failures. 8. Temporarily raise the gateway timeout threshold (N3:4); if errors disappear, the root cause is latency rather than outright failure. 9. After stabilizing, fine‑tune timeouts, pool sizes, and circuit‑breaker thresholds, and consider adding read replicas or query optimizations to keep DB CPU within normal bounds.\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\", \"N1:6:6a5851d4\", \"N1:7:f5b43d01\", \"N2:2:0402f5b3\", \"N2:3:cb4fa8ed\", \"N3:3:5f7c7aa6\", \"N3:4:0d031d2d\", \"N3:7:c1497392\"]}, {\"target_id\": \"N4\", \"target_draft\": \"Begin by checking the gateway logs for 502/504 patterns (N1:0) and confirming timeout settings. Enable distributed tracing on the backend (N1:1) to measure latency of each downstream call and correlate it with observed errors. Monitor per‑service metrics such as CPU, memory, and request rates after the release (N1:2) to spot spikes. Profile the database: collect CPU, wait events, active sessions, and query latency (N2:1), identify the top CPU‑consuming queries (N2:2), and examine their execution plans for missing indexes or inefficient joins (N2:3). Check for lock contention or long‑running transactions (N2:4) and ensure connection pooling is properly configured and does not exceed CPU capacity (N2:6). Review recent code changes for added downstream calls or higher concurrency (N1:4); if the issue persists, roll back the release to a known good version (N3:5) to isolate the change. To stabilize the system, temporarily increase DB connection pool size or add read replicas (N1:5), and add circuit breakers and retry‑with‑back‑off around downstream services (N1:6).\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\"]}, {\"target_id\": \"N5\", \"target_draft\": \"The reported intermittent 502/504 errors and elevated database CPU after a release pertain to performance troubleshooting rather than security concerns. This falls outside the security_defensive domain scope, so a detailed security‑focused analysis cannot be provided here. Consider engaging performance‑engineering resources to investigate gateway logs, tracing, database query profiling, and resource scaling.\", \"target_used_points\": [\"N5:0:e37bafbe\", \"N5:1:e675c0eb\"]}], \"points_map\": {\"N1:0:6a0603af\": \"Check gateway logs for error patterns and response times to identify failing requests.\", \"N1:1:ff8f6c2a\": \"Enable distributed tracing (e.g., OpenTelemetry) to see latency across downstream calls.\", \"N1:2:66bcdc5f\": \"Monitor per‑service metrics (CPU, memory, request rate) to spot spikes after the release.\", \"N1:3:0dffb18d\": \"Profile database queries; look for slow or high‑cost statements causing CPU spikes.\", \"N1:4:08b73e77\": \"Review recent code changes for added downstream calls or increased request concurrency.\", \"N1:5:aff93f6f\": \"Temporarily increase DB connection pool size or add read replicas to relieve CPU pressure.\", \"N1:6:6a5851d4\": \"Add circuit breakers around downstream services to prevent cascading failures.\", \"N1:7:f5b43d01\": \"Implement request timeout and retry policies to avoid hanging calls that trigger 502/504.\", \"N2:0:b58f8ea9\": \"OUT_OF_SCOPE: Full gateway/network analysis is beyond SQL domain.\", \"N2:1:3d46df41\": \"Collect DB metrics: CPU usage, wait events, active sessions, query latency.\", \"N2:2:0402f5b3\": \"Identify top CPU-consuming queries via pg_stat_statements or equivalent.\", \"N2:3:cb4fa8ed\": \"Examine execution plans for missing indexes or inefficient joins.\", \"N2:4:78861d91\": \"Check for lock contention: pg_locks, deadlocks, long-running transactions.\", \"N2:5:af15dbc9\": \"Review isolation level; consider READ COMMITTED to reduce locking overhead.\", \"N2:6:d5a433ae\": \"Enable connection pooling; ensure max connections do not exceed CPU capacity.\", \"N2:7:f2bd596b\": \"Profile downstream service latency; add tracing to correlate DB spikes with calls.\", \"N3:0:8a04d970\": \"Check gateway logs for 502/504 patterns and timeout settings to confirm if errors stem from upstream latency.\", \"N3:1:f6a92ba9\": \"Enable detailed tracing on the backend to measure latency of each downstream HTTP/TCP call.\", \"N3:2:3487964a\": \"Correlate DB CPU spikes with specific query types; use EXPLAIN to identify slow queries.\", \"N3:3:5f7c7aa6\": \"Monitor connection pool usage on the backend and DB to detect exhaustion or queuing.\", \"N3:4:0d031d2d\": \"Temporarily increase gateway timeout thresholds to see if errors disappear, indicating latency issues.\", \"N3:5:2573ca86\": \"Roll back the recent release to a known good version to isolate if code changes introduced bottlenecks.\", \"N3:6:217c2d38\": \"Profile backend thread/CPU usage to see if high concurrency or blocking I/O is causing overload.\", \"N3:7:c1497392\": \"Implement circuit breakers or retries with back‑off for downstream services to prevent cascading failures.\", \"N4:0:4d23b291\": \"OUT_OF_SCOPE: The query pertains to system troubleshooting, not within the math_logic domain.\", \"N4:1:119bb2e0\": \"UNKNOWN: Unable to provide a precise answer due to domain mismatch.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:e675c0eb\": \"UNKNOWN: The request concerns performance troubleshooting, which is outside the security_defensive domain scope.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\",\"N1:6:6a5851d4\",\"N1:7:f5b43d01\",\"N2:2:0402f5b3\",\"N2:3:cb4fa8ed\",\"N3:3:5f7c7aa6\",\"N3:4:0d031d2d\",\"N3:7:c1497392\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N5:0:e37bafbe\",\"N5:1:e675c0eb\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Points correctly reflect out‑of‑scope and unknown status.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-802becb5-6ffb-4cbb-9ca3-155b737781da",
+      "object": "chat.completion",
+      "created": 1772960105,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\",\"N1:6:6a5851d4\",\"N1:7:f5b43d01\",\"N2:2:0402f5b3\",\"N2:3:cb4fa8ed\",\"N3:3:5f7c7aa6\",\"N3:4:0d031d2d\",\"N3:7:c1497392\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N5:0:e37bafbe\",\"N5:1:e675c0eb\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Points correctly reflect out‑of‑scope and unknown status.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2516,
+        "completion_tokens": 1737,
+        "total_tokens": 4253
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T08:55:08.878442+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N3",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"1. Check gateway logs for 502/504 patterns and response times (N1:0) to see if errors correlate with specific request paths or latency spikes. 2. Enable distributed tracing (e.g., OpenTelemetry) on the backend (N1:1) to measure latency of each downstream HTTP/TCP call and pinpoint slow services. 3. Monitor per‑service metrics (CPU, memory, request rate) after the release (N1:2) to detect any service that suddenly spikes. 4. Profile database queries (N1:3) and collect DB‑level metrics such as CPU usage, wait events, active sessions (N2:1). 5. Identify the top CPU‑consuming queries via pg_stat_statements or equivalent (N2:2) and examine their execution plans for missing indexes or inefficient joins (N2:3). 6. Check for lock contention or long‑running transactions (N2:4) that could be driving CPU usage. 7. Review recent code changes (N1:4) for added downstream calls or increased concurrency that may overload the DB or services. 8. Add circuit breakers around downstream services (N1:6) and implement request timeout and retry policies with back‑off (N1:7) to prevent cascading failures. 9. Enable or tune connection pooling (N2:6) so that the number of DB connections stays within CPU capacity. Follow this sequence to isolate the bottleneck—gateway, downstream latency, or DB query load—and apply the appropriate mitigation to stabilize the system.\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\"]}, {\"target_id\": \"N2\", \"target_draft\": \"Begin by checking gateway logs (N1:2) and enabling distributed tracing (N1:3) to pinpoint which requests trigger 502/504. Collect DB‑level metrics such as CPU, wait events, active sessions and query latency (N2:1) and use pg_stat_statements (or equivalent) to list the top CPU‑consuming statements (N2:2). Run EXPLAIN on those queries to spot missing indexes or inefficient joins (N2:3) and address them by adding appropriate indexes or rewriting the queries. Inspect pg_locks for lock contention or long‑running transactions (N2:4) and, if needed, lower the isolation level to READ COMMITTED to reduce locking overhead (N2:5). Verify that the connection pool size matches the DB’s CPU capacity and enable pooling if not already in place (N2:6). Correlate the timing of DB CPU spikes with specific downstream calls using tracing (N3:2) and monitor connection pool usage on both backend and DB (N3:3) to detect exhaustion. If the release introduced new calls or higher concurrency, review the recent code changes (N1:4) and consider temporarily adding read replicas or increasing the pool size to relieve pressure (N1:5). As a safety net, roll back the release to a known good version to confirm the source of the bottleneck (N3:5).\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\"]}, {\"target_id\": \"N4\", \"target_draft\": \"Begin by checking the gateway logs for 502/504 patterns (N1:0) and confirming timeout settings. Enable distributed tracing on the backend (N1:1) to measure latency of each downstream call and correlate it with observed errors. Monitor per‑service metrics such as CPU, memory, and request rates after the release (N1:2) to spot spikes. Profile the database: collect CPU, wait events, active sessions, and query latency (N2:1), identify the top CPU‑consuming queries (N2:2), and examine their execution plans for missing indexes or inefficient joins (N2:3). Check for lock contention or long‑running transactions (N2:4) and ensure connection pooling is properly configured and does not exceed CPU capacity (N2:6). Review recent code changes for added downstream calls or higher concurrency (N1:4); if the issue persists, roll back the release to a known good version (N3:5) to isolate the change. To stabilize the system, temporarily increase DB connection pool size or add read replicas (N1:5), and add circuit breakers and retry‑with‑back‑off around downstream services (N1:6).\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\"]}, {\"target_id\": \"N5\", \"target_draft\": \"The reported intermittent 502/504 errors and elevated database CPU after a release pertain to performance troubleshooting rather than security concerns. This falls outside the security_defensive domain scope, so a detailed security‑focused analysis cannot be provided here. Consider engaging performance‑engineering resources to investigate gateway logs, tracing, database query profiling, and resource scaling.\", \"target_used_points\": [\"N5:0:e37bafbe\", \"N5:1:e675c0eb\"]}], \"points_map\": {\"N1:0:6a0603af\": \"Check gateway logs for error patterns and response times to identify failing requests.\", \"N1:1:ff8f6c2a\": \"Enable distributed tracing (e.g., OpenTelemetry) to see latency across downstream calls.\", \"N1:2:66bcdc5f\": \"Monitor per‑service metrics (CPU, memory, request rate) to spot spikes after the release.\", \"N1:3:0dffb18d\": \"Profile database queries; look for slow or high‑cost statements causing CPU spikes.\", \"N1:4:08b73e77\": \"Review recent code changes for added downstream calls or increased request concurrency.\", \"N1:5:aff93f6f\": \"Temporarily increase DB connection pool size or add read replicas to relieve CPU pressure.\", \"N1:6:6a5851d4\": \"Add circuit breakers around downstream services to prevent cascading failures.\", \"N1:7:f5b43d01\": \"Implement request timeout and retry policies to avoid hanging calls that trigger 502/504.\", \"N2:0:b58f8ea9\": \"OUT_OF_SCOPE: Full gateway/network analysis is beyond SQL domain.\", \"N2:1:3d46df41\": \"Collect DB metrics: CPU usage, wait events, active sessions, query latency.\", \"N2:2:0402f5b3\": \"Identify top CPU-consuming queries via pg_stat_statements or equivalent.\", \"N2:3:cb4fa8ed\": \"Examine execution plans for missing indexes or inefficient joins.\", \"N2:4:78861d91\": \"Check for lock contention: pg_locks, deadlocks, long-running transactions.\", \"N2:5:af15dbc9\": \"Review isolation level; consider READ COMMITTED to reduce locking overhead.\", \"N2:6:d5a433ae\": \"Enable connection pooling; ensure max connections do not exceed CPU capacity.\", \"N2:7:f2bd596b\": \"Profile downstream service latency; add tracing to correlate DB spikes with calls.\", \"N3:0:8a04d970\": \"Check gateway logs for 502/504 patterns and timeout settings to confirm if errors stem from upstream latency.\", \"N3:1:f6a92ba9\": \"Enable detailed tracing on the backend to measure latency of each downstream HTTP/TCP call.\", \"N3:2:3487964a\": \"Correlate DB CPU spikes with specific query types; use EXPLAIN to identify slow queries.\", \"N3:3:5f7c7aa6\": \"Monitor connection pool usage on the backend and DB to detect exhaustion or queuing.\", \"N3:4:0d031d2d\": \"Temporarily increase gateway timeout thresholds to see if errors disappear, indicating latency issues.\", \"N3:5:2573ca86\": \"Roll back the recent release to a known good version to isolate if code changes introduced bottlenecks.\", \"N3:6:217c2d38\": \"Profile backend thread/CPU usage to see if high concurrency or blocking I/O is causing overload.\", \"N3:7:c1497392\": \"Implement circuit breakers or retries with back‑off for downstream services to prevent cascading failures.\", \"N4:0:4d23b291\": \"OUT_OF_SCOPE: The query pertains to system troubleshooting, not within the math_logic domain.\", \"N4:1:119bb2e0\": \"UNKNOWN: Unable to provide a precise answer due to domain mismatch.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:e675c0eb\": \"UNKNOWN: The request concerns performance troubleshooting, which is outside the security_defensive domain scope.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly applied.\"},{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:4:08b73e77\"],\"reject_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\"],\"unknown_points[]\":[],\"note\":\"Several points are missing or misapplied.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All required points are correctly referenced.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N5:0:e37bafbe\",\"N5:1:e675c0eb\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft aligns with out‑of‑scope and unknown classifications.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-da55b668-16ed-40ae-833a-5af3df8c8f93",
+      "object": "chat.completion",
+      "created": 1772960107,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly applied.\"},{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:4:08b73e77\"],\"reject_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\"],\"unknown_points[]\":[],\"note\":\"Several points are missing or misapplied.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All required points are correctly referenced.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N5:0:e37bafbe\",\"N5:1:e675c0eb\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft aligns with out‑of‑scope and unknown classifications.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2425,
+        "completion_tokens": 1469,
+        "total_tokens": 3894
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T08:56:03.649392+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N4",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"1. Check gateway logs for 502/504 patterns and response times (N1:0) to see if errors correlate with specific request paths or latency spikes. 2. Enable distributed tracing (e.g., OpenTelemetry) on the backend (N1:1) to measure latency of each downstream HTTP/TCP call and pinpoint slow services. 3. Monitor per‑service metrics (CPU, memory, request rate) after the release (N1:2) to detect any service that suddenly spikes. 4. Profile database queries (N1:3) and collect DB‑level metrics such as CPU usage, wait events, active sessions (N2:1). 5. Identify the top CPU‑consuming queries via pg_stat_statements or equivalent (N2:2) and examine their execution plans for missing indexes or inefficient joins (N2:3). 6. Check for lock contention or long‑running transactions (N2:4) that could be driving CPU usage. 7. Review recent code changes (N1:4) for added downstream calls or increased concurrency that may overload the DB or services. 8. Add circuit breakers around downstream services (N1:6) and implement request timeout and retry policies with back‑off (N1:7) to prevent cascading failures. 9. Enable or tune connection pooling (N2:6) so that the number of DB connections stays within CPU capacity. Follow this sequence to isolate the bottleneck—gateway, downstream latency, or DB query load—and apply the appropriate mitigation to stabilize the system.\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\"]}, {\"target_id\": \"N2\", \"target_draft\": \"Begin by checking gateway logs (N1:2) and enabling distributed tracing (N1:3) to pinpoint which requests trigger 502/504. Collect DB‑level metrics such as CPU, wait events, active sessions and query latency (N2:1) and use pg_stat_statements (or equivalent) to list the top CPU‑consuming statements (N2:2). Run EXPLAIN on those queries to spot missing indexes or inefficient joins (N2:3) and address them by adding appropriate indexes or rewriting the queries. Inspect pg_locks for lock contention or long‑running transactions (N2:4) and, if needed, lower the isolation level to READ COMMITTED to reduce locking overhead (N2:5). Verify that the connection pool size matches the DB’s CPU capacity and enable pooling if not already in place (N2:6). Correlate the timing of DB CPU spikes with specific downstream calls using tracing (N3:2) and monitor connection pool usage on both backend and DB (N3:3) to detect exhaustion. If the release introduced new calls or higher concurrency, review the recent code changes (N1:4) and consider temporarily adding read replicas or increasing the pool size to relieve pressure (N1:5). As a safety net, roll back the release to a known good version to confirm the source of the bottleneck (N3:5).\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\"]}, {\"target_id\": \"N3\", \"target_draft\": \"1. Inspect gateway logs (N1:0) for 502/504 patterns and timeout settings to see if errors correlate with specific request paths or latency spikes. 2. Deploy distributed tracing (e.g., OpenTelemetry) on the backend (N1:1) to measure latency of each downstream HTTP/TCP call and pinpoint slow services. 3. Collect per‑service metrics (CPU, memory, request rate) after the release (N1:2) to identify any component whose resource usage spikes. 4. Profile database activity: identify top CPU‑consuming queries (N2:2) and examine their execution plans for missing indexes or inefficient joins (N2:3). 5. Review recent code changes (N1:4) for added downstream calls or higher concurrency that could drive the DB load. 6. Verify backend and DB connection pool usage (N3:3); ensure pools are sized appropriately and not exhausted. 7. Add circuit breakers around downstream services (N1:6) and implement request timeout and retry policies with back‑off (N1:7) to prevent cascading failures. 8. Temporarily raise the gateway timeout threshold (N3:4); if errors disappear, the root cause is latency rather than outright failure. 9. After stabilizing, fine‑tune timeouts, pool sizes, and circuit‑breaker thresholds, and consider adding read replicas or query optimizations to keep DB CPU within normal bounds.\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\", \"N1:6:6a5851d4\", \"N1:7:f5b43d01\", \"N2:2:0402f5b3\", \"N2:3:cb4fa8ed\", \"N3:3:5f7c7aa6\", \"N3:4:0d031d2d\", \"N3:7:c1497392\"]}, {\"target_id\": \"N5\", \"target_draft\": \"The reported intermittent 502/504 errors and elevated database CPU after a release pertain to performance troubleshooting rather than security concerns. This falls outside the security_defensive domain scope, so a detailed security‑focused analysis cannot be provided here. Consider engaging performance‑engineering resources to investigate gateway logs, tracing, database query profiling, and resource scaling.\", \"target_used_points\": [\"N5:0:e37bafbe\", \"N5:1:e675c0eb\"]}], \"points_map\": {\"N1:0:6a0603af\": \"Check gateway logs for error patterns and response times to identify failing requests.\", \"N1:1:ff8f6c2a\": \"Enable distributed tracing (e.g., OpenTelemetry) to see latency across downstream calls.\", \"N1:2:66bcdc5f\": \"Monitor per‑service metrics (CPU, memory, request rate) to spot spikes after the release.\", \"N1:3:0dffb18d\": \"Profile database queries; look for slow or high‑cost statements causing CPU spikes.\", \"N1:4:08b73e77\": \"Review recent code changes for added downstream calls or increased request concurrency.\", \"N1:5:aff93f6f\": \"Temporarily increase DB connection pool size or add read replicas to relieve CPU pressure.\", \"N1:6:6a5851d4\": \"Add circuit breakers around downstream services to prevent cascading failures.\", \"N1:7:f5b43d01\": \"Implement request timeout and retry policies to avoid hanging calls that trigger 502/504.\", \"N2:0:b58f8ea9\": \"OUT_OF_SCOPE: Full gateway/network analysis is beyond SQL domain.\", \"N2:1:3d46df41\": \"Collect DB metrics: CPU usage, wait events, active sessions, query latency.\", \"N2:2:0402f5b3\": \"Identify top CPU-consuming queries via pg_stat_statements or equivalent.\", \"N2:3:cb4fa8ed\": \"Examine execution plans for missing indexes or inefficient joins.\", \"N2:4:78861d91\": \"Check for lock contention: pg_locks, deadlocks, long-running transactions.\", \"N2:5:af15dbc9\": \"Review isolation level; consider READ COMMITTED to reduce locking overhead.\", \"N2:6:d5a433ae\": \"Enable connection pooling; ensure max connections do not exceed CPU capacity.\", \"N2:7:f2bd596b\": \"Profile downstream service latency; add tracing to correlate DB spikes with calls.\", \"N3:0:8a04d970\": \"Check gateway logs for 502/504 patterns and timeout settings to confirm if errors stem from upstream latency.\", \"N3:1:f6a92ba9\": \"Enable detailed tracing on the backend to measure latency of each downstream HTTP/TCP call.\", \"N3:2:3487964a\": \"Correlate DB CPU spikes with specific query types; use EXPLAIN to identify slow queries.\", \"N3:3:5f7c7aa6\": \"Monitor connection pool usage on the backend and DB to detect exhaustion or queuing.\", \"N3:4:0d031d2d\": \"Temporarily increase gateway timeout thresholds to see if errors disappear, indicating latency issues.\", \"N3:5:2573ca86\": \"Roll back the recent release to a known good version to isolate if code changes introduced bottlenecks.\", \"N3:6:217c2d38\": \"Profile backend thread/CPU usage to see if high concurrency or blocking I/O is causing overload.\", \"N3:7:c1497392\": \"Implement circuit breakers or retries with back‑off for downstream services to prevent cascading failures.\", \"N4:0:4d23b291\": \"OUT_OF_SCOPE: The query pertains to system troubleshooting, not within the math_logic domain.\", \"N4:1:119bb2e0\": \"UNKNOWN: Unable to provide a precise answer due to domain mismatch.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:e675c0eb\": \"UNKNOWN: The request concerns performance troubleshooting, which is outside the security_defensive domain scope.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly reflected in draft.\"},{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[],\"reject_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"unknown_points\":[],\"note\":\"Draft misuses point IDs and omits several referenced points.\"},{\"target_id\":\"N3\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\",\"N1:6:6a5851d4\",\"N1:7:f5b43d01\",\"N2:2:0402f5b3\",\"N2:3:cb4fa8ed\",\"N3:3:5f7c7aa6\",\"N3:4:0d031d2d\"],\"reject_points\":[\"N3:7:c1497392\"],\"unknown_points\":[],\"note\":\"All points except N3:7 are correctly used; N3:7 is missing.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N5:0:e37bafbe\",\"N5:1:e675c0eb\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft appropriately marks out‑of‑scope and unknown status.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-94a73192-f4be-4d45-88cc-ef357cd365aa",
+      "object": "chat.completion",
+      "created": 1772960159,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly reflected in draft.\"},{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[],\"reject_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"unknown_points\":[],\"note\":\"Draft misuses point IDs and omits several referenced points.\"},{\"target_id\":\"N3\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\",\"N1:6:6a5851d4\",\"N1:7:f5b43d01\",\"N2:2:0402f5b3\",\"N2:3:cb4fa8ed\",\"N3:3:5f7c7aa6\",\"N3:4:0d031d2d\"],\"reject_points\":[\"N3:7:c1497392\"],\"unknown_points\":[],\"note\":\"All points except N3:7 are correctly used; N3:7 is missing.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N5:0:e37bafbe\",\"N5:1:e675c0eb\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft appropriately marks out‑of‑scope and unknown status.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2559,
+        "completion_tokens": 2433,
+        "total_tokens": 4992
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 51 seconds.\",\"retryAfter\":51,\"limit\":10,\"remaining\":0,\"reset\":1772960160}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 31 seconds.\",\"retryAfter\":31,\"limit\":10,\"remaining\":0,\"reset\":1772960160}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 10 seconds.\",\"retryAfter\":10,\"limit\":10,\"remaining\":0,\"reset\":1772960160}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T08:56:06.374144+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N5",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"1. Check gateway logs for 502/504 patterns and response times (N1:0) to see if errors correlate with specific request paths or latency spikes. 2. Enable distributed tracing (e.g., OpenTelemetry) on the backend (N1:1) to measure latency of each downstream HTTP/TCP call and pinpoint slow services. 3. Monitor per‑service metrics (CPU, memory, request rate) after the release (N1:2) to detect any service that suddenly spikes. 4. Profile database queries (N1:3) and collect DB‑level metrics such as CPU usage, wait events, active sessions (N2:1). 5. Identify the top CPU‑consuming queries via pg_stat_statements or equivalent (N2:2) and examine their execution plans for missing indexes or inefficient joins (N2:3). 6. Check for lock contention or long‑running transactions (N2:4) that could be driving CPU usage. 7. Review recent code changes (N1:4) for added downstream calls or increased concurrency that may overload the DB or services. 8. Add circuit breakers around downstream services (N1:6) and implement request timeout and retry policies with back‑off (N1:7) to prevent cascading failures. 9. Enable or tune connection pooling (N2:6) so that the number of DB connections stays within CPU capacity. Follow this sequence to isolate the bottleneck—gateway, downstream latency, or DB query load—and apply the appropriate mitigation to stabilize the system.\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\"]}, {\"target_id\": \"N2\", \"target_draft\": \"Begin by checking gateway logs (N1:2) and enabling distributed tracing (N1:3) to pinpoint which requests trigger 502/504. Collect DB‑level metrics such as CPU, wait events, active sessions and query latency (N2:1) and use pg_stat_statements (or equivalent) to list the top CPU‑consuming statements (N2:2). Run EXPLAIN on those queries to spot missing indexes or inefficient joins (N2:3) and address them by adding appropriate indexes or rewriting the queries. Inspect pg_locks for lock contention or long‑running transactions (N2:4) and, if needed, lower the isolation level to READ COMMITTED to reduce locking overhead (N2:5). Verify that the connection pool size matches the DB’s CPU capacity and enable pooling if not already in place (N2:6). Correlate the timing of DB CPU spikes with specific downstream calls using tracing (N3:2) and monitor connection pool usage on both backend and DB (N3:3) to detect exhaustion. If the release introduced new calls or higher concurrency, review the recent code changes (N1:4) and consider temporarily adding read replicas or increasing the pool size to relieve pressure (N1:5). As a safety net, roll back the release to a known good version to confirm the source of the bottleneck (N3:5).\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\"]}, {\"target_id\": \"N3\", \"target_draft\": \"1. Inspect gateway logs (N1:0) for 502/504 patterns and timeout settings to see if errors correlate with specific request paths or latency spikes. 2. Deploy distributed tracing (e.g., OpenTelemetry) on the backend (N1:1) to measure latency of each downstream HTTP/TCP call and pinpoint slow services. 3. Collect per‑service metrics (CPU, memory, request rate) after the release (N1:2) to identify any component whose resource usage spikes. 4. Profile database activity: identify top CPU‑consuming queries (N2:2) and examine their execution plans for missing indexes or inefficient joins (N2:3). 5. Review recent code changes (N1:4) for added downstream calls or higher concurrency that could drive the DB load. 6. Verify backend and DB connection pool usage (N3:3); ensure pools are sized appropriately and not exhausted. 7. Add circuit breakers around downstream services (N1:6) and implement request timeout and retry policies with back‑off (N1:7) to prevent cascading failures. 8. Temporarily raise the gateway timeout threshold (N3:4); if errors disappear, the root cause is latency rather than outright failure. 9. After stabilizing, fine‑tune timeouts, pool sizes, and circuit‑breaker thresholds, and consider adding read replicas or query optimizations to keep DB CPU within normal bounds.\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\", \"N1:6:6a5851d4\", \"N1:7:f5b43d01\", \"N2:2:0402f5b3\", \"N2:3:cb4fa8ed\", \"N3:3:5f7c7aa6\", \"N3:4:0d031d2d\", \"N3:7:c1497392\"]}, {\"target_id\": \"N4\", \"target_draft\": \"Begin by checking the gateway logs for 502/504 patterns (N1:0) and confirming timeout settings. Enable distributed tracing on the backend (N1:1) to measure latency of each downstream call and correlate it with observed errors. Monitor per‑service metrics such as CPU, memory, and request rates after the release (N1:2) to spot spikes. Profile the database: collect CPU, wait events, active sessions, and query latency (N2:1), identify the top CPU‑consuming queries (N2:2), and examine their execution plans for missing indexes or inefficient joins (N2:3). Check for lock contention or long‑running transactions (N2:4) and ensure connection pooling is properly configured and does not exceed CPU capacity (N2:6). Review recent code changes for added downstream calls or higher concurrency (N1:4); if the issue persists, roll back the release to a known good version (N3:5) to isolate the change. To stabilize the system, temporarily increase DB connection pool size or add read replicas (N1:5), and add circuit breakers and retry‑with‑back‑off around downstream services (N1:6).\", \"target_used_points\": [\"N1:0:6a0603af\", \"N1:1:ff8f6c2a\", \"N1:2:66bcdc5f\", \"N1:3:0dffb18d\", \"N1:4:08b73e77\"]}], \"points_map\": {\"N1:0:6a0603af\": \"Check gateway logs for error patterns and response times to identify failing requests.\", \"N1:1:ff8f6c2a\": \"Enable distributed tracing (e.g., OpenTelemetry) to see latency across downstream calls.\", \"N1:2:66bcdc5f\": \"Monitor per‑service metrics (CPU, memory, request rate) to spot spikes after the release.\", \"N1:3:0dffb18d\": \"Profile database queries; look for slow or high‑cost statements causing CPU spikes.\", \"N1:4:08b73e77\": \"Review recent code changes for added downstream calls or increased request concurrency.\", \"N1:5:aff93f6f\": \"Temporarily increase DB connection pool size or add read replicas to relieve CPU pressure.\", \"N1:6:6a5851d4\": \"Add circuit breakers around downstream services to prevent cascading failures.\", \"N1:7:f5b43d01\": \"Implement request timeout and retry policies to avoid hanging calls that trigger 502/504.\", \"N2:0:b58f8ea9\": \"OUT_OF_SCOPE: Full gateway/network analysis is beyond SQL domain.\", \"N2:1:3d46df41\": \"Collect DB metrics: CPU usage, wait events, active sessions, query latency.\", \"N2:2:0402f5b3\": \"Identify top CPU-consuming queries via pg_stat_statements or equivalent.\", \"N2:3:cb4fa8ed\": \"Examine execution plans for missing indexes or inefficient joins.\", \"N2:4:78861d91\": \"Check for lock contention: pg_locks, deadlocks, long-running transactions.\", \"N2:5:af15dbc9\": \"Review isolation level; consider READ COMMITTED to reduce locking overhead.\", \"N2:6:d5a433ae\": \"Enable connection pooling; ensure max connections do not exceed CPU capacity.\", \"N2:7:f2bd596b\": \"Profile downstream service latency; add tracing to correlate DB spikes with calls.\", \"N3:0:8a04d970\": \"Check gateway logs for 502/504 patterns and timeout settings to confirm if errors stem from upstream latency.\", \"N3:1:f6a92ba9\": \"Enable detailed tracing on the backend to measure latency of each downstream HTTP/TCP call.\", \"N3:2:3487964a\": \"Correlate DB CPU spikes with specific query types; use EXPLAIN to identify slow queries.\", \"N3:3:5f7c7aa6\": \"Monitor connection pool usage on the backend and DB to detect exhaustion or queuing.\", \"N3:4:0d031d2d\": \"Temporarily increase gateway timeout thresholds to see if errors disappear, indicating latency issues.\", \"N3:5:2573ca86\": \"Roll back the recent release to a known good version to isolate if code changes introduced bottlenecks.\", \"N3:6:217c2d38\": \"Profile backend thread/CPU usage to see if high concurrency or blocking I/O is causing overload.\", \"N3:7:c1497392\": \"Implement circuit breakers or retries with back‑off for downstream services to prevent cascading failures.\", \"N4:0:4d23b291\": \"OUT_OF_SCOPE: The query pertains to system troubleshooting, not within the math_logic domain.\", \"N4:1:119bb2e0\": \"UNKNOWN: Unable to provide a precise answer due to domain mismatch.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:e675c0eb\": \"UNKNOWN: The request concerns performance troubleshooting, which is outside the security_defensive domain scope.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly applied.\"},{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:4:08b73e77\"],\"reject_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\"],\"unknown_points\":[],\"note\":\"Points N1:0, N1:1, N1:2, N1:3 are misused or omitted.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\",\"N1:6:6a5851d4\",\"N1:7:f5b43d01\",\"N2:2:0402f5b3\",\"N2:3:cb4fa8ed\",\"N3:3:5f7c7aa6\",\"N3:4:0d031d2d\",\"N3:7:c1497392\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly applied.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly applied.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-d944f531-af86-445d-8d4f-cc0543615901",
+      "object": "chat.completion",
+      "created": 1772960162,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly applied.\"},{\"target_id\":\"N2\",\"valid\":\"FAIL\",\"agree_points\":[\"N1:4:08b73e77\"],\"reject_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\"],\"unknown_points\":[],\"note\":\"Points N1:0, N1:1, N1:2, N1:3 are misused or omitted.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\",\"N1:6:6a5851d4\",\"N1:7:f5b43d01\",\"N2:2:0402f5b3\",\"N2:3:cb4fa8ed\",\"N3:3:5f7c7aa6\",\"N3:4:0d031d2d\",\"N3:7:c1497392\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly applied.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6a0603af\",\"N1:1:ff8f6c2a\",\"N1:2:66bcdc5f\",\"N1:3:0dffb18d\",\"N1:4:08b73e77\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly applied.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2778,
+        "completion_tokens": 3625,
+        "total_tokens": 6403
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  }
+]

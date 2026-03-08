@@ -1,0 +1,46 @@
+{
+  "query": "When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?",
+  "input_text": null,
+  "case_id": "md04_retries_make_outage_worse",
+  "mode": "mega",
+  "k": 5,
+  "tau_fail": 2,
+  "selection_strategy": "fixed_first_k",
+  "selected_nodes": [
+    {
+      "node_id": "N1",
+      "domain": "coding_debugging",
+      "style": "pragmatic bug-fixer with concrete implementation steps",
+      "scope": "Python, JavaScript, APIs, debugging workflow, edge-case analysis",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "N2",
+      "domain": "databases_sql",
+      "style": "query planner mindset with indexing and transaction rigor",
+      "scope": "SQL optimization, relational design, indexing, isolation levels",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "N3",
+      "domain": "networking_systems",
+      "style": "protocol-oriented systems explainer focused on operational correctness",
+      "scope": "HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "N4",
+      "domain": "math_logic",
+      "style": "formal reasoner with explicit assumptions and concise derivations",
+      "scope": "algebra, arithmetic, propositional logic, discrete reasoning",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "N5",
+      "domain": "security_defensive",
+      "style": "defensive security expert and conservative verifier",
+      "scope": "application security fundamentals, auth/session safety, secure coding practices",
+      "rep_snapshot": 10.0
+    }
+  ]
+}

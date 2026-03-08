@@ -1,0 +1,50 @@
+[
+  {
+    "id": "md01_checkout_slow_and_double_charge",
+    "query": "Our checkout sometimes takes 5–10 seconds and users occasionally get charged twice when they retry. We added a new SQL join last week and also increased client retries. What’s a practical plan to diagnose and fix this fast?"
+  },
+  {
+    "id": "md02_gateway_502_504_after_release",
+    "query": "After a release, we started seeing intermittent 502/504 at the gateway. The backend makes several downstream calls and the database CPU is higher than usual. How would you narrow down the bottleneck and stabilize it?"
+  },
+  {
+    "id": "md03_login_spike_lock_contention_security",
+    "query": "During peak login traffic, we see DB lock contention and higher latency. At the same time, there are lots of failed login attempts across many IPs. What should we change first to improve stability and security?"
+  },
+  {
+    "id": "md04_retries_make_outage_worse",
+    "query": "When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?"
+  },
+  {
+    "id": "md05_realtime_websocket_duplicates_replay",
+    "query": "We use WebSockets for real-time updates. Clients reconnect often and sometimes receive duplicate or out-of-order events. We also worry about replayed tokens. How should we design ordering/deduplication and secure the channel?"
+  },
+  {
+    "id": "md06_slow_report_endpoint_many_joins",
+    "query": "A reporting endpoint times out. The code does multiple sequential calls, and the SQL query joins many tables. How would you refactor the code path, optimize the SQL, and set a sane timeout budget?"
+  },
+  {
+    "id": "md07_cache_hit_drop_db_spike",
+    "query": "Cache hit rate dropped from ~90% to ~50% and DB reads doubled. The feature added more query parameters and the app CPU also increased. What is a structured approach to find the root cause and reduce load?"
+  },
+  {
+    "id": "md08_jwt_migration_incidents",
+    "query": "We plan to move from session cookies to JWTs, but we already have occasional 5xx spikes and DB contention during peak traffic. What migration plan reduces risk, and what security pitfalls should we avoid?"
+  },
+  {
+    "id": "md09_payment_webhook_out_of_order",
+    "query": "Payment webhooks sometimes arrive late or out of order, and users retry when they don’t see confirmation. How should we design idempotency, database updates, and request timeouts so we don’t double-charge and still feel responsive?"
+  },
+  {
+    "id": "md10_capacity_planning_with_retry_safety",
+    "query": "Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?"
+  },
+  {
+    "id": "md11_debug_sql_vs_network",
+    "query": "A single endpoint got slow. Some people think it’s the database, others think it’s the network. We see occasional slow SQL queries and also occasional packet loss. How would you isolate the cause and what quick fixes would you try?"
+  },
+  {
+    "id": "md12_password_reset_abuse_and_db_load",
+    "query": "Password reset requests spiked (possible abuse) and the database load increased. The service started timing out and clients retried more. What defenses and performance fixes would you apply in the first day?"
+  }
+]

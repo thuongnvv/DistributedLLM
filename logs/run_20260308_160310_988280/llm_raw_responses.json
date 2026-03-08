@@ -1,0 +1,805 @@
+[
+  {
+    "timestamp": "2026-03-08T09:00:04.059812+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"Use exponential backoff with jitter for retries to avoid thundering herd.\"},{\"text\":\"Set a client-side timeout slightly lower than the server's max processing time to fail fast.\"},{\"text\":\"Implement a circuit breaker that opens after N consecutive failures and pauses retries for a cool‑down period.\"},{\"text\":\"Make retries idempotent; ensure repeated requests do not cause duplicate side effects.\"},{\"text\":\"Cap the total retry duration (e.g., 30 s) to prevent unbounded latency during downstream slowness.\"},{\"text\":\"Instrument latency and error metrics per dependency; alert when 95th‑percentile latency exceeds a threshold.\"},{\"text\":\"On the network side, monitor TCP retransmission rates, RTT variance, and packet loss using tools like netstat or sFlow.\"},{\"text\":\"Check for congestion or bufferbloat on intermediate routers; adjust queue sizes or enable ECN if needed.\"},{\"text\":\"Verify that MTU settings are consistent across the path to avoid fragmentation that can increase retransmissions.\"},{\"text\":\"Use TCP keep‑alive and tune socket buffers to improve resilience to transient network stalls.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-a120db29-d251-443e-8ad6-9e038c630052",
+      "object": "chat.completion",
+      "created": 1772960401,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"Use exponential backoff with jitter for retries to avoid thundering herd.\"},{\"text\":\"Set a client-side timeout slightly lower than the server's max processing time to fail fast.\"},{\"text\":\"Implement a circuit breaker that opens after N consecutive failures and pauses retries for a cool‑down period.\"},{\"text\":\"Make retries idempotent; ensure repeated requests do not cause duplicate side effects.\"},{\"text\":\"Cap the total retry duration (e.g., 30 s) to prevent unbounded latency during downstream slowness.\"},{\"text\":\"Instrument latency and error metrics per dependency; alert when 95th‑percentile latency exceeds a threshold.\"},{\"text\":\"On the network side, monitor TCP retransmission rates, RTT variance, and packet loss using tools like netstat or sFlow.\"},{\"text\":\"Check for congestion or bufferbloat on intermediate routers; adjust queue sizes or enable ECN if needed.\"},{\"text\":\"Verify that MTU settings are consistent across the path to avoid fragmentation that can increase retransmissions.\"},{\"text\":\"Use TCP keep‑alive and tune socket buffers to improve resilience to transient network stalls.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 323,
+        "completion_tokens": 714,
+        "total_tokens": 1037
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:00:05.423463+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N2"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The question concerns service timeout/retry design and network diagnostics, not SQL optimization.\"},{\"text\":\"UNKNOWN: Specific recommendations require details of the application architecture and network topology.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-f2c066b5-fde6-4475-adb4-693dc7fc621e",
+      "object": "chat.completion",
+      "created": 1772960402,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The question concerns service timeout/retry design and network diagnostics, not SQL optimization.\"},{\"text\":\"UNKNOWN: Specific recommendations require details of the application architecture and network topology.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 319,
+        "completion_tokens": 242,
+        "total_tokens": 561
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:00:06.971761+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"Use exponential backoff with jitter for retries to avoid thundering herd and reduce retransmission spikes.\"},{\"text\":\"Implement a circuit breaker that opens after N failures, pausing retries until service health recovers.\"},{\"text\":\"Set client timeout slightly above the 99th‑percentile RTT plus processing time to avoid premature aborts.\"},{\"text\":\"Configure TCP keepalive and retransmission timers (RTO) based on measured RTT variance, not defaults.\"},{\"text\":\"Cap the maximum number of retries per request to limit load amplification during downstream slowness.\"},{\"text\":\"Monitor and limit concurrent connections per endpoint to prevent socket exhaustion on the service.\"},{\"text\":\"On the network side, measure round‑trip time, packet loss, and jitter to identify congestion sources.\"},{\"text\":\"Check for bufferbloat or overloaded queues on routers/switches that increase latency and cause TCP timeouts.\"},{\"text\":\"Verify path MTU and fragmentation behavior; mismatched MTU can trigger retransmissions.\"},{\"text\":\"Inspect SYN backlog and TCP SYN‑cookies on servers to ensure they handle bursty connection attempts.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-bf9b125a-64ed-496c-a57e-bf25624ecfc1",
+      "object": "chat.completion",
+      "created": 1772960403,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"Use exponential backoff with jitter for retries to avoid thundering herd and reduce retransmission spikes.\"},{\"text\":\"Implement a circuit breaker that opens after N failures, pausing retries until service health recovers.\"},{\"text\":\"Set client timeout slightly above the 99th‑percentile RTT plus processing time to avoid premature aborts.\"},{\"text\":\"Configure TCP keepalive and retransmission timers (RTO) based on measured RTT variance, not defaults.\"},{\"text\":\"Cap the maximum number of retries per request to limit load amplification during downstream slowness.\"},{\"text\":\"Monitor and limit concurrent connections per endpoint to prevent socket exhaustion on the service.\"},{\"text\":\"On the network side, measure round‑trip time, packet loss, and jitter to identify congestion sources.\"},{\"text\":\"Check for bufferbloat or overloaded queues on routers/switches that increase latency and cause TCP timeouts.\"},{\"text\":\"Verify path MTU and fragmentation behavior; mismatched MTU can trigger retransmissions.\"},{\"text\":\"Inspect SYN backlog and TCP SYN‑cookies on servers to ensure they handle bursty connection attempts.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 326,
+        "completion_tokens": 368,
+        "total_tokens": 694
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:01:02.272846+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N4"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The query concerns service timeout/retry design and network diagnostics, which is outside the math_logic domain.\"},{\"text\":\"UNKNOWN: Without domain-specific knowledge, I cannot provide concrete redesign or network checks.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-e56fa54f-9562-460e-91ae-d487313633b6",
+      "object": "chat.completion",
+      "created": 1772960459,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE: The query concerns service timeout/retry design and network diagnostics, which is outside the math_logic domain.\"},{\"text\":\"UNKNOWN: Without domain-specific knowledge, I cannot provide concrete redesign or network checks.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 321,
+        "completion_tokens": 333,
+        "total_tokens": 654
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 53 seconds.\",\"retryAfter\":53,\"limit\":10,\"remaining\":0,\"reset\":1772960460}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 33 seconds.\",\"retryAfter\":33,\"limit\":10,\"remaining\":0,\"reset\":1772960460}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 12 seconds.\",\"retryAfter\":12,\"limit\":10,\"remaining\":0,\"reset\":1772960460}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:01:03.790804+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"points\": [{\"text\": \"string\"}]\n}\nRules: points should be atomic; each <= 160 chars.\nIf query is outside your domain scope, include OUT_OF_SCOPE and UNKNOWN-oriented points.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE\"},{\"text\":\"UNKNOWN\"}]}",
+    "response_json": {
+      "id": "chatcmpl-3b5e53b5-13de-4b61-92b9-a75d6bca290f",
+      "object": "chat.completion",
+      "created": 1772960463,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"points\":[{\"text\":\"OUT_OF_SCOPE\"},{\"text\":\"UNKNOWN\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 319,
+        "completion_tokens": 301,
+        "total_tokens": 620
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:01:05.748232+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\", \"points_map\": {\"N1:0:8a154f44\": \"Use exponential backoff with jitter for retries to avoid thundering herd.\", \"N1:1:46ddc061\": \"Set a client-side timeout slightly lower than the server's max processing time to fail fast.\", \"N1:2:4ed8011d\": \"Implement a circuit breaker that opens after N consecutive failures and pauses retries for a cool‑down period.\", \"N1:3:bb278cf5\": \"Make retries idempotent; ensure repeated requests do not cause duplicate side effects.\", \"N1:4:e225f8d8\": \"Cap the total retry duration (e.g., 30 s) to prevent unbounded latency during downstream slowness.\", \"N1:5:24e604b3\": \"Instrument latency and error metrics per dependency; alert when 95th‑percentile latency exceeds a threshold.\", \"N1:6:e8c9c549\": \"On the network side, monitor TCP retransmission rates, RTT variance, and packet loss using tools like netstat or sFlow.\", \"N1:7:c6868a0e\": \"Check for congestion or bufferbloat on intermediate routers; adjust queue sizes or enable ECN if needed.\", \"N2:0:ad507a53\": \"OUT_OF_SCOPE: The question concerns service timeout/retry design and network diagnostics, not SQL optimization.\", \"N2:1:c2ed2570\": \"UNKNOWN: Specific recommendations require details of the application architecture and network topology.\", \"N3:0:6deac3ea\": \"Use exponential backoff with jitter for retries to avoid thundering herd and reduce retransmission spikes.\", \"N3:1:24f59d00\": \"Implement a circuit breaker that opens after N failures, pausing retries until service health recovers.\", \"N3:2:6016a6c2\": \"Set client timeout slightly above the 99th‑percentile RTT plus processing time to avoid premature aborts.\", \"N3:3:f744883a\": \"Configure TCP keepalive and retransmission timers (RTO) based on measured RTT variance, not defaults.\", \"N3:4:f107b50f\": \"Cap the maximum number of retries per request to limit load amplification during downstream slowness.\", \"N3:5:31a24f27\": \"Monitor and limit concurrent connections per endpoint to prevent socket exhaustion on the service.\", \"N3:6:43a91371\": \"On the network side, measure round‑trip time, packet loss, and jitter to identify congestion sources.\", \"N3:7:d7b28629\": \"Check for bufferbloat or overloaded queues on routers/switches that increase latency and cause TCP timeouts.\", \"N4:0:55cf6903\": \"OUT_OF_SCOPE: The query concerns service timeout/retry design and network diagnostics, which is outside the math_logic domain.\", \"N4:1:17b28d49\": \"UNKNOWN: Without domain-specific knowledge, I cannot provide concrete redesign or network checks.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:23759997\": \"UNKNOWN\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"Redesign the client‑side timeout to be slightly lower than the server’s maximum processing time so requests fail fast (N1:1). Use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes (N1:0). Limit retries by capping both the number of attempts and the total retry duration (e.g., 30 s) (N1:4, N3:4). Add a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period (N1:2). Ensure all retryable operations are idempotent so repeated calls do not cause duplicate side effects (N1:3). Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold (N1:5). On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss and jitter (N1:6, N3:6). Check for congestion or bufferbloat on intermediate routers, adjust queue sizes or enable ECN as needed (N1:7, N3:7). Tune TCP keepalive and retransmission timers based on observed RTT variance rather than defaults (N3:3).\",\"used_points\":[\"N1:0\",\"N1:1\",\"N1:2\",\"N1:3\",\"N1:4\",\"N1:5\",\"N1:6\",\"N1:7\",\"N3:3\",\"N3:4\",\"N3:6\",\"N3:7\"]}",
+    "response_json": {
+      "id": "chatcmpl-2f66e15d-1954-4f45-8656-4b43b9ddd251",
+      "object": "chat.completion",
+      "created": 1772960462,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"Redesign the client‑side timeout to be slightly lower than the server’s maximum processing time so requests fail fast (N1:1). Use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes (N1:0). Limit retries by capping both the number of attempts and the total retry duration (e.g., 30 s) (N1:4, N3:4). Add a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period (N1:2). Ensure all retryable operations are idempotent so repeated calls do not cause duplicate side effects (N1:3). Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold (N1:5). On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss and jitter (N1:6, N3:6). Check for congestion or bufferbloat on intermediate routers, adjust queue sizes or enable ECN as needed (N1:7, N3:7). Tune TCP keepalive and retransmission timers based on observed RTT variance rather than defaults (N3:3).\",\"used_points\":[\"N1:0\",\"N1:1\",\"N1:2\",\"N1:3\",\"N1:4\",\"N1:5\",\"N1:6\",\"N1:7\",\"N3:3\",\"N3:4\",\"N3:6\",\"N3:7\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1015,
+        "completion_tokens": 705,
+        "total_tokens": 1720
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:01:07.083202+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N2"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\", \"points_map\": {\"N1:0:8a154f44\": \"Use exponential backoff with jitter for retries to avoid thundering herd.\", \"N1:1:46ddc061\": \"Set a client-side timeout slightly lower than the server's max processing time to fail fast.\", \"N1:2:4ed8011d\": \"Implement a circuit breaker that opens after N consecutive failures and pauses retries for a cool‑down period.\", \"N1:3:bb278cf5\": \"Make retries idempotent; ensure repeated requests do not cause duplicate side effects.\", \"N1:4:e225f8d8\": \"Cap the total retry duration (e.g., 30 s) to prevent unbounded latency during downstream slowness.\", \"N1:5:24e604b3\": \"Instrument latency and error metrics per dependency; alert when 95th‑percentile latency exceeds a threshold.\", \"N1:6:e8c9c549\": \"On the network side, monitor TCP retransmission rates, RTT variance, and packet loss using tools like netstat or sFlow.\", \"N1:7:c6868a0e\": \"Check for congestion or bufferbloat on intermediate routers; adjust queue sizes or enable ECN if needed.\", \"N2:0:ad507a53\": \"OUT_OF_SCOPE: The question concerns service timeout/retry design and network diagnostics, not SQL optimization.\", \"N2:1:c2ed2570\": \"UNKNOWN: Specific recommendations require details of the application architecture and network topology.\", \"N3:0:6deac3ea\": \"Use exponential backoff with jitter for retries to avoid thundering herd and reduce retransmission spikes.\", \"N3:1:24f59d00\": \"Implement a circuit breaker that opens after N failures, pausing retries until service health recovers.\", \"N3:2:6016a6c2\": \"Set client timeout slightly above the 99th‑percentile RTT plus processing time to avoid premature aborts.\", \"N3:3:f744883a\": \"Configure TCP keepalive and retransmission timers (RTO) based on measured RTT variance, not defaults.\", \"N3:4:f107b50f\": \"Cap the maximum number of retries per request to limit load amplification during downstream slowness.\", \"N3:5:31a24f27\": \"Monitor and limit concurrent connections per endpoint to prevent socket exhaustion on the service.\", \"N3:6:43a91371\": \"On the network side, measure round‑trip time, packet loss, and jitter to identify congestion sources.\", \"N3:7:d7b28629\": \"Check for bufferbloat or overloaded queues on routers/switches that increase latency and cause TCP timeouts.\", \"N4:0:55cf6903\": \"OUT_OF_SCOPE: The query concerns service timeout/retry design and network diagnostics, which is outside the math_logic domain.\", \"N4:1:17b28d49\": \"UNKNOWN: Without domain-specific knowledge, I cannot provide concrete redesign or network checks.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:23759997\": \"UNKNOWN\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"Redesign the client‑side timeout and retry strategy as follows: set the request timeout just below the server’s maximum processing time (or slightly above the 99th‑percentile RTT plus processing time) so failures are detected quickly; use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes; enforce a circuit‑breaker that opens after a configurable number of consecutive failures and pauses further retries for a cool‑down period; ensure retries are idempotent and cap both the total retry duration and the maximum number of attempts to limit latency amplification; instrument latency and error metrics (e.g., 95th‑percentile latency) and alert on threshold breaches. On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss and jitter, and check for congestion or buffer‑bloat on intermediate routers/switches, adjusting queue sizes or enabling ECN as needed.\",\"used_points\":[\"N1:0\",\"N1:1\",\"N1:2\",\"N1:3\",\"N1:4\",\"N1:5\",\"N1:6\",\"N1:7\",\"N3:2\",\"N3:3\",\"N3:6\",\"N3:7\"]}",
+    "response_json": {
+      "id": "chatcmpl-858fe587-85d8-4c07-9c24-4e98f1752530",
+      "object": "chat.completion",
+      "created": 1772960466,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"Redesign the client‑side timeout and retry strategy as follows: set the request timeout just below the server’s maximum processing time (or slightly above the 99th‑percentile RTT plus processing time) so failures are detected quickly; use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes; enforce a circuit‑breaker that opens after a configurable number of consecutive failures and pauses further retries for a cool‑down period; ensure retries are idempotent and cap both the total retry duration and the maximum number of attempts to limit latency amplification; instrument latency and error metrics (e.g., 95th‑percentile latency) and alert on threshold breaches. On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss and jitter, and check for congestion or buffer‑bloat on intermediate routers/switches, adjusting queue sizes or enabling ECN as needed.\",\"used_points\":[\"N1:0\",\"N1:1\",\"N1:2\",\"N1:3\",\"N1:4\",\"N1:5\",\"N1:6\",\"N1:7\",\"N3:2\",\"N3:3\",\"N3:6\",\"N3:7\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1011,
+        "completion_tokens": 656,
+        "total_tokens": 1667
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:02:02.684823+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\", \"points_map\": {\"N1:0:8a154f44\": \"Use exponential backoff with jitter for retries to avoid thundering herd.\", \"N1:1:46ddc061\": \"Set a client-side timeout slightly lower than the server's max processing time to fail fast.\", \"N1:2:4ed8011d\": \"Implement a circuit breaker that opens after N consecutive failures and pauses retries for a cool‑down period.\", \"N1:3:bb278cf5\": \"Make retries idempotent; ensure repeated requests do not cause duplicate side effects.\", \"N1:4:e225f8d8\": \"Cap the total retry duration (e.g., 30 s) to prevent unbounded latency during downstream slowness.\", \"N1:5:24e604b3\": \"Instrument latency and error metrics per dependency; alert when 95th‑percentile latency exceeds a threshold.\", \"N1:6:e8c9c549\": \"On the network side, monitor TCP retransmission rates, RTT variance, and packet loss using tools like netstat or sFlow.\", \"N1:7:c6868a0e\": \"Check for congestion or bufferbloat on intermediate routers; adjust queue sizes or enable ECN if needed.\", \"N2:0:ad507a53\": \"OUT_OF_SCOPE: The question concerns service timeout/retry design and network diagnostics, not SQL optimization.\", \"N2:1:c2ed2570\": \"UNKNOWN: Specific recommendations require details of the application architecture and network topology.\", \"N3:0:6deac3ea\": \"Use exponential backoff with jitter for retries to avoid thundering herd and reduce retransmission spikes.\", \"N3:1:24f59d00\": \"Implement a circuit breaker that opens after N failures, pausing retries until service health recovers.\", \"N3:2:6016a6c2\": \"Set client timeout slightly above the 99th‑percentile RTT plus processing time to avoid premature aborts.\", \"N3:3:f744883a\": \"Configure TCP keepalive and retransmission timers (RTO) based on measured RTT variance, not defaults.\", \"N3:4:f107b50f\": \"Cap the maximum number of retries per request to limit load amplification during downstream slowness.\", \"N3:5:31a24f27\": \"Monitor and limit concurrent connections per endpoint to prevent socket exhaustion on the service.\", \"N3:6:43a91371\": \"On the network side, measure round‑trip time, packet loss, and jitter to identify congestion sources.\", \"N3:7:d7b28629\": \"Check for bufferbloat or overloaded queues on routers/switches that increase latency and cause TCP timeouts.\", \"N4:0:55cf6903\": \"OUT_OF_SCOPE: The query concerns service timeout/retry design and network diagnostics, which is outside the math_logic domain.\", \"N4:1:17b28d49\": \"UNKNOWN: Without domain-specific knowledge, I cannot provide concrete redesign or network checks.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:23759997\": \"UNKNOWN\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"To prevent cascading outages when a downstream dependency slows, redesign the timeout and retry strategy as follows: set the client‑side timeout just above the 99th‑percentile round‑trip time plus the service's processing budget so requests fail fast (N1:1, N3:2); apply exponential backoff with random jitter for each retry to spread load and avoid thundering‑herd spikes (N1:0, N3:0); cap the total retry window (e.g., 30 s) and limit the number of retry attempts to bound latency amplification (N1:4, N3:4); enforce idempotent request handling so repeated attempts do not cause duplicate side effects (N1:3); introduce a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period (N1:2, N3:1); instrument per‑dependency latency and error metrics and alert when the 95th‑percentile exceeds thresholds (N1:5). On the network side, continuously monitor TCP retransmission rates, RTT variance, packet loss, and jitter using tools such as netstat, sFlow, or custom exporters (N1:6, N3:6); investigate congestion or buffer‑bloat on intermediate routers, adjusting queue sizes or enabling ECN to reduce latency tails (N1:7, N3:7); tune TCP keepalive and retransmission timers (RTO) based on observed RTT variance rather than defaults (N3:3). Together, these controls limit retry‑induced load, ensure fast failure detection, and provide visibility into network conditions that cause retransmissions.\",\n  \"used_points\": [\n    \"N1:0\",\n    \"N1:1\",\n    \"N1:2\",\n    \"N1:3\",\n    \"N1:4\",\n    \"N1:5\",\n    \"N1:6\",\n    \"N1:7\",\n    \"N3:3\",\n    \"N3:7\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-ccbb32cd-3beb-4dd6-af5a-93edb22f75ba",
+      "object": "chat.completion",
+      "created": 1772960519,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"To prevent cascading outages when a downstream dependency slows, redesign the timeout and retry strategy as follows: set the client‑side timeout just above the 99th‑percentile round‑trip time plus the service's processing budget so requests fail fast (N1:1, N3:2); apply exponential backoff with random jitter for each retry to spread load and avoid thundering‑herd spikes (N1:0, N3:0); cap the total retry window (e.g., 30 s) and limit the number of retry attempts to bound latency amplification (N1:4, N3:4); enforce idempotent request handling so repeated attempts do not cause duplicate side effects (N1:3); introduce a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period (N1:2, N3:1); instrument per‑dependency latency and error metrics and alert when the 95th‑percentile exceeds thresholds (N1:5). On the network side, continuously monitor TCP retransmission rates, RTT variance, packet loss, and jitter using tools such as netstat, sFlow, or custom exporters (N1:6, N3:6); investigate congestion or buffer‑bloat on intermediate routers, adjusting queue sizes or enabling ECN to reduce latency tails (N1:7, N3:7); tune TCP keepalive and retransmission timers (RTO) based on observed RTT variance rather than defaults (N3:3). Together, these controls limit retry‑induced load, ensure fast failure detection, and provide visibility into network conditions that cause retransmissions.\",\n  \"used_points\": [\n    \"N1:0\",\n    \"N1:1\",\n    \"N1:2\",\n    \"N1:3\",\n    \"N1:4\",\n    \"N1:5\",\n    \"N1:6\",\n    \"N1:7\",\n    \"N3:3\",\n    \"N3:7\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1018,
+        "completion_tokens": 787,
+        "total_tokens": 1805
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 53 seconds.\",\"retryAfter\":53,\"limit\":10,\"remaining\":0,\"reset\":1772960520}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 32 seconds.\",\"retryAfter\":32,\"limit\":10,\"remaining\":0,\"reset\":1772960520}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 12 seconds.\",\"retryAfter\":12,\"limit\":10,\"remaining\":0,\"reset\":1772960520}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:02:04.527309+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N4"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\", \"points_map\": {\"N1:0:8a154f44\": \"Use exponential backoff with jitter for retries to avoid thundering herd.\", \"N1:1:46ddc061\": \"Set a client-side timeout slightly lower than the server's max processing time to fail fast.\", \"N1:2:4ed8011d\": \"Implement a circuit breaker that opens after N consecutive failures and pauses retries for a cool‑down period.\", \"N1:3:bb278cf5\": \"Make retries idempotent; ensure repeated requests do not cause duplicate side effects.\", \"N1:4:e225f8d8\": \"Cap the total retry duration (e.g., 30 s) to prevent unbounded latency during downstream slowness.\", \"N1:5:24e604b3\": \"Instrument latency and error metrics per dependency; alert when 95th‑percentile latency exceeds a threshold.\", \"N1:6:e8c9c549\": \"On the network side, monitor TCP retransmission rates, RTT variance, and packet loss using tools like netstat or sFlow.\", \"N1:7:c6868a0e\": \"Check for congestion or bufferbloat on intermediate routers; adjust queue sizes or enable ECN if needed.\", \"N2:0:ad507a53\": \"OUT_OF_SCOPE: The question concerns service timeout/retry design and network diagnostics, not SQL optimization.\", \"N2:1:c2ed2570\": \"UNKNOWN: Specific recommendations require details of the application architecture and network topology.\", \"N3:0:6deac3ea\": \"Use exponential backoff with jitter for retries to avoid thundering herd and reduce retransmission spikes.\", \"N3:1:24f59d00\": \"Implement a circuit breaker that opens after N failures, pausing retries until service health recovers.\", \"N3:2:6016a6c2\": \"Set client timeout slightly above the 99th‑percentile RTT plus processing time to avoid premature aborts.\", \"N3:3:f744883a\": \"Configure TCP keepalive and retransmission timers (RTO) based on measured RTT variance, not defaults.\", \"N3:4:f107b50f\": \"Cap the maximum number of retries per request to limit load amplification during downstream slowness.\", \"N3:5:31a24f27\": \"Monitor and limit concurrent connections per endpoint to prevent socket exhaustion on the service.\", \"N3:6:43a91371\": \"On the network side, measure round‑trip time, packet loss, and jitter to identify congestion sources.\", \"N3:7:d7b28629\": \"Check for bufferbloat or overloaded queues on routers/switches that increase latency and cause TCP timeouts.\", \"N4:0:55cf6903\": \"OUT_OF_SCOPE: The query concerns service timeout/retry design and network diagnostics, which is outside the math_logic domain.\", \"N4:1:17b28d49\": \"UNKNOWN: Without domain-specific knowledge, I cannot provide concrete redesign or network checks.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:23759997\": \"UNKNOWN\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"Redesign the client side to fail fast by setting a timeout just below the server's max processing time (or slightly above the 99th‑percentile RTT plus processing time). Use exponential backoff with jitter for retries, cap the number of attempts and total retry duration (e.g., 30 s), and ensure retries are idempotent. Add a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries during the cool‑down period. Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold. On the network side, continuously monitor TCP retransmission rates, RTT variance, and packet loss (using netstat, sFlow, etc.), and tune TCP keepalive and retransmission timers based on observed RTT variance. Check for congestion or buffer‑bloat on intermediate routers, adjust queue sizes, or enable ECN to reduce latency spikes that trigger timeouts and retransmissions.\",\n  \"used_points\": [\n    \"N1:0:8a154f44\",\n    \"N1:1:46ddc061\",\n    \"N1:2:4ed8011d\",\n    \"N1:3:bb278cf5\",\n    \"N1:4:e225f8d8\",\n    \"N1:5:24e604b3\",\n    \"N1:6:e8c9c549\",\n    \"N1:7:c6868a0e\",\n    \"N3:3:f744883a\",\n    \"N3:7:d7b28629\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-3c561bcc-499c-4102-be86-5558bc1724f7",
+      "object": "chat.completion",
+      "created": 1772960523,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"Redesign the client side to fail fast by setting a timeout just below the server's max processing time (or slightly above the 99th‑percentile RTT plus processing time). Use exponential backoff with jitter for retries, cap the number of attempts and total retry duration (e.g., 30 s), and ensure retries are idempotent. Add a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries during the cool‑down period. Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold. On the network side, continuously monitor TCP retransmission rates, RTT variance, and packet loss (using netstat, sFlow, etc.), and tune TCP keepalive and retransmission timers based on observed RTT variance. Check for congestion or buffer‑bloat on intermediate routers, adjust queue sizes, or enable ECN to reduce latency spikes that trigger timeouts and retransmissions.\",\n  \"used_points\": [\n    \"N1:0:8a154f44\",\n    \"N1:1:46ddc061\",\n    \"N1:2:4ed8011d\",\n    \"N1:3:bb278cf5\",\n    \"N1:4:e225f8d8\",\n    \"N1:5:24e604b3\",\n    \"N1:6:e8c9c549\",\n    \"N1:7:c6868a0e\",\n    \"N3:3:f744883a\",\n    \"N3:7:d7b28629\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1013,
+        "completion_tokens": 805,
+        "total_tokens": 1818
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:02:06.071610+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules: synthesis must be grounded in provided points_map; do not invent IDs; used_points must be subset of keys(points_map).\nSelect at most 12 point IDs.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\", \"points_map\": {\"N1:0:8a154f44\": \"Use exponential backoff with jitter for retries to avoid thundering herd.\", \"N1:1:46ddc061\": \"Set a client-side timeout slightly lower than the server's max processing time to fail fast.\", \"N1:2:4ed8011d\": \"Implement a circuit breaker that opens after N consecutive failures and pauses retries for a cool‑down period.\", \"N1:3:bb278cf5\": \"Make retries idempotent; ensure repeated requests do not cause duplicate side effects.\", \"N1:4:e225f8d8\": \"Cap the total retry duration (e.g., 30 s) to prevent unbounded latency during downstream slowness.\", \"N1:5:24e604b3\": \"Instrument latency and error metrics per dependency; alert when 95th‑percentile latency exceeds a threshold.\", \"N1:6:e8c9c549\": \"On the network side, monitor TCP retransmission rates, RTT variance, and packet loss using tools like netstat or sFlow.\", \"N1:7:c6868a0e\": \"Check for congestion or bufferbloat on intermediate routers; adjust queue sizes or enable ECN if needed.\", \"N2:0:ad507a53\": \"OUT_OF_SCOPE: The question concerns service timeout/retry design and network diagnostics, not SQL optimization.\", \"N2:1:c2ed2570\": \"UNKNOWN: Specific recommendations require details of the application architecture and network topology.\", \"N3:0:6deac3ea\": \"Use exponential backoff with jitter for retries to avoid thundering herd and reduce retransmission spikes.\", \"N3:1:24f59d00\": \"Implement a circuit breaker that opens after N failures, pausing retries until service health recovers.\", \"N3:2:6016a6c2\": \"Set client timeout slightly above the 99th‑percentile RTT plus processing time to avoid premature aborts.\", \"N3:3:f744883a\": \"Configure TCP keepalive and retransmission timers (RTO) based on measured RTT variance, not defaults.\", \"N3:4:f107b50f\": \"Cap the maximum number of retries per request to limit load amplification during downstream slowness.\", \"N3:5:31a24f27\": \"Monitor and limit concurrent connections per endpoint to prevent socket exhaustion on the service.\", \"N3:6:43a91371\": \"On the network side, measure round‑trip time, packet loss, and jitter to identify congestion sources.\", \"N3:7:d7b28629\": \"Check for bufferbloat or overloaded queues on routers/switches that increase latency and cause TCP timeouts.\", \"N4:0:55cf6903\": \"OUT_OF_SCOPE: The query concerns service timeout/retry design and network diagnostics, which is outside the math_logic domain.\", \"N4:1:17b28d49\": \"UNKNOWN: Without domain-specific knowledge, I cannot provide concrete redesign or network checks.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:23759997\": \"UNKNOWN\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"Redesign the client‑side timeout to be slightly lower than the server's maximum processing time (or just above the 99th‑percentile RTT plus processing time) so failures are detected quickly. Use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes. Limit the number of retries and cap the total retry duration (e.g., 30 s) to prevent unbounded latency, and ensure each retry is idempotent so duplicate requests do not cause side effects. Deploy a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period, allowing the downstream service to recover. Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold. On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss, and jitter using tools such as netstat or sFlow. Check for congestion or bufferbloat on intermediate routers, adjust queue sizes, or enable ECN to reduce latency spikes. Configure TCP keepalive and retransmission timers based on observed RTT variance rather than defaults, and limit concurrent connections per endpoint to avoid socket exhaustion.\",\n  \"used_points\": [\n    \"N1:0:8a154f44\",\n    \"N1:1:46ddc061\",\n    \"N1:2:4ed8011d\",\n    \"N1:3:bb278cf5\",\n    \"N1:4:e225f8d8\",\n    \"N1:5:24e604b3\",\n    \"N1:6:e8c9c549\",\n    \"N1:7:c6868a0e\",\n    \"N3:3:f744883a\",\n    \"N3:4:f107b50f\",\n    \"N3:6:43a91371\",\n    \"N3:5:31a24f27\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-f1d0528e-081e-4dc1-9512-201c3bb83879",
+      "object": "chat.completion",
+      "created": 1772960525,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"Redesign the client‑side timeout to be slightly lower than the server's maximum processing time (or just above the 99th‑percentile RTT plus processing time) so failures are detected quickly. Use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes. Limit the number of retries and cap the total retry duration (e.g., 30 s) to prevent unbounded latency, and ensure each retry is idempotent so duplicate requests do not cause side effects. Deploy a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period, allowing the downstream service to recover. Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold. On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss, and jitter using tools such as netstat or sFlow. Check for congestion or bufferbloat on intermediate routers, adjust queue sizes, or enable ECN to reduce latency spikes. Configure TCP keepalive and retransmission timers based on observed RTT variance rather than defaults, and limit concurrent connections per endpoint to avoid socket exhaustion.\",\n  \"used_points\": [\n    \"N1:0:8a154f44\",\n    \"N1:1:46ddc061\",\n    \"N1:2:4ed8011d\",\n    \"N1:3:bb278cf5\",\n    \"N1:4:e225f8d8\",\n    \"N1:5:24e604b3\",\n    \"N1:6:e8c9c549\",\n    \"N1:7:c6868a0e\",\n    \"N3:3:f744883a\",\n    \"N3:4:f107b50f\",\n    \"N3:6:43a91371\",\n    \"N3:5:31a24f27\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1011,
+        "completion_tokens": 709,
+        "total_tokens": 1720
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:02:08.304690+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N1",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N2\", \"target_draft\": \"Redesign the client‑side timeout and retry strategy as follows: set the request timeout just below the server’s maximum processing time (or slightly above the 99th‑percentile RTT plus processing time) so failures are detected quickly; use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes; enforce a circuit‑breaker that opens after a configurable number of consecutive failures and pauses further retries for a cool‑down period; ensure retries are idempotent and cap both the total retry duration and the maximum number of attempts to limit latency amplification; instrument latency and error metrics (e.g., 95th‑percentile latency) and alert on threshold breaches. On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss and jitter, and check for congestion or buffer‑bloat on intermediate routers/switches, adjusting queue sizes or enabling ECN as needed.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\"]}, {\"target_id\": \"N3\", \"target_draft\": \"To prevent cascading outages when a downstream dependency slows, redesign the timeout and retry strategy as follows: set the client‑side timeout just above the 99th‑percentile round‑trip time plus the service's processing budget so requests fail fast (N1:1, N3:2); apply exponential backoff with random jitter for each retry to spread load and avoid thundering‑herd spikes (N1:0, N3:0); cap the total retry window (e.g., 30 s) and limit the number of retry attempts to bound latency amplification (N1:4, N3:4); enforce idempotent request handling so repeated attempts do not cause duplicate side effects (N1:3); introduce a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period (N1:2, N3:1); instrument per‑dependency latency and error metrics and alert when the 95th‑percentile exceeds thresholds (N1:5). On the network side, continuously monitor TCP retransmission rates, RTT variance, packet loss, and jitter using tools such as netstat, sFlow, or custom exporters (N1:6, N3:6); investigate congestion or buffer‑bloat on intermediate routers, adjusting queue sizes or enabling ECN to reduce latency tails (N1:7, N3:7); tune TCP keepalive and retransmission timers (RTO) based on observed RTT variance rather than defaults (N3:3). Together, these controls limit retry‑induced load, ensure fast failure detection, and provide visibility into network conditions that cause retransmissions.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\"]}, {\"target_id\": \"N4\", \"target_draft\": \"Redesign the client side to fail fast by setting a timeout just below the server's max processing time (or slightly above the 99th‑percentile RTT plus processing time). Use exponential backoff with jitter for retries, cap the number of attempts and total retry duration (e.g., 30 s), and ensure retries are idempotent. Add a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries during the cool‑down period. Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold. On the network side, continuously monitor TCP retransmission rates, RTT variance, and packet loss (using netstat, sFlow, etc.), and tune TCP keepalive and retransmission timers based on observed RTT variance. Check for congestion or buffer‑bloat on intermediate routers, adjust queue sizes, or enable ECN to reduce latency spikes that trigger timeouts and retransmissions.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\", \"N1:5:24e604b3\", \"N1:6:e8c9c549\", \"N1:7:c6868a0e\", \"N3:3:f744883a\", \"N3:7:d7b28629\"]}, {\"target_id\": \"N5\", \"target_draft\": \"Redesign the client‑side timeout to be slightly lower than the server's maximum processing time (or just above the 99th‑percentile RTT plus processing time) so failures are detected quickly. Use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes. Limit the number of retries and cap the total retry duration (e.g., 30 s) to prevent unbounded latency, and ensure each retry is idempotent so duplicate requests do not cause side effects. Deploy a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period, allowing the downstream service to recover. Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold. On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss, and jitter using tools such as netstat or sFlow. Check for congestion or bufferbloat on intermediate routers, adjust queue sizes, or enable ECN to reduce latency spikes. Configure TCP keepalive and retransmission timers based on observed RTT variance rather than defaults, and limit concurrent connections per endpoint to avoid socket exhaustion.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\", \"N1:5:24e604b3\", \"N1:6:e8c9c549\", \"N1:7:c6868a0e\", \"N3:3:f744883a\", \"N3:4:f107b50f\", \"N3:6:43a91371\", \"N3:5:31a24f27\"]}], \"points_map\": {\"N1:0:8a154f44\": \"Use exponential backoff with jitter for retries to avoid thundering herd.\", \"N1:1:46ddc061\": \"Set a client-side timeout slightly lower than the server's max processing time to fail fast.\", \"N1:2:4ed8011d\": \"Implement a circuit breaker that opens after N consecutive failures and pauses retries for a cool‑down period.\", \"N1:3:bb278cf5\": \"Make retries idempotent; ensure repeated requests do not cause duplicate side effects.\", \"N1:4:e225f8d8\": \"Cap the total retry duration (e.g., 30 s) to prevent unbounded latency during downstream slowness.\", \"N1:5:24e604b3\": \"Instrument latency and error metrics per dependency; alert when 95th‑percentile latency exceeds a threshold.\", \"N1:6:e8c9c549\": \"On the network side, monitor TCP retransmission rates, RTT variance, and packet loss using tools like netstat or sFlow.\", \"N1:7:c6868a0e\": \"Check for congestion or bufferbloat on intermediate routers; adjust queue sizes or enable ECN if needed.\", \"N2:0:ad507a53\": \"OUT_OF_SCOPE: The question concerns service timeout/retry design and network diagnostics, not SQL optimization.\", \"N2:1:c2ed2570\": \"UNKNOWN: Specific recommendations require details of the application architecture and network topology.\", \"N3:0:6deac3ea\": \"Use exponential backoff with jitter for retries to avoid thundering herd and reduce retransmission spikes.\", \"N3:1:24f59d00\": \"Implement a circuit breaker that opens after N failures, pausing retries until service health recovers.\", \"N3:2:6016a6c2\": \"Set client timeout slightly above the 99th‑percentile RTT plus processing time to avoid premature aborts.\", \"N3:3:f744883a\": \"Configure TCP keepalive and retransmission timers (RTO) based on measured RTT variance, not defaults.\", \"N3:4:f107b50f\": \"Cap the maximum number of retries per request to limit load amplification during downstream slowness.\", \"N3:5:31a24f27\": \"Monitor and limit concurrent connections per endpoint to prevent socket exhaustion on the service.\", \"N3:6:43a91371\": \"On the network side, measure round‑trip time, packet loss, and jitter to identify congestion sources.\", \"N3:7:d7b28629\": \"Check for bufferbloat or overloaded queues on routers/switches that increase latency and cause TCP timeouts.\", \"N4:0:55cf6903\": \"OUT_OF_SCOPE: The query concerns service timeout/retry design and network diagnostics, which is outside the math_logic domain.\", \"N4:1:17b28d49\": \"UNKNOWN: Without domain-specific knowledge, I cannot provide concrete redesign or network checks.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:23759997\": \"UNKNOWN\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:7:d7b28629\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:4:f107b50f\",\"N3:6:43a91371\",\"N3:5:31a24f27\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"\"}]}",
+    "response_json": {
+      "id": "chatcmpl-f26c49fc-f6e5-4222-8f39-8468f729d181",
+      "object": "chat.completion",
+      "created": 1772960524,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:7:d7b28629\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:4:f107b50f\",\"N3:6:43a91371\",\"N3:5:31a24f27\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2499,
+        "completion_tokens": 2561,
+        "total_tokens": 5060
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:03:03.325379+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N2",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"Redesign the client‑side timeout to be slightly lower than the server’s maximum processing time so requests fail fast (N1:1). Use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes (N1:0). Limit retries by capping both the number of attempts and the total retry duration (e.g., 30 s) (N1:4, N3:4). Add a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period (N1:2). Ensure all retryable operations are idempotent so repeated calls do not cause duplicate side effects (N1:3). Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold (N1:5). On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss and jitter (N1:6, N3:6). Check for congestion or bufferbloat on intermediate routers, adjust queue sizes or enable ECN as needed (N1:7, N3:7). Tune TCP keepalive and retransmission timers based on observed RTT variance rather than defaults (N3:3).\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\"]}, {\"target_id\": \"N3\", \"target_draft\": \"To prevent cascading outages when a downstream dependency slows, redesign the timeout and retry strategy as follows: set the client‑side timeout just above the 99th‑percentile round‑trip time plus the service's processing budget so requests fail fast (N1:1, N3:2); apply exponential backoff with random jitter for each retry to spread load and avoid thundering‑herd spikes (N1:0, N3:0); cap the total retry window (e.g., 30 s) and limit the number of retry attempts to bound latency amplification (N1:4, N3:4); enforce idempotent request handling so repeated attempts do not cause duplicate side effects (N1:3); introduce a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period (N1:2, N3:1); instrument per‑dependency latency and error metrics and alert when the 95th‑percentile exceeds thresholds (N1:5). On the network side, continuously monitor TCP retransmission rates, RTT variance, packet loss, and jitter using tools such as netstat, sFlow, or custom exporters (N1:6, N3:6); investigate congestion or buffer‑bloat on intermediate routers, adjusting queue sizes or enabling ECN to reduce latency tails (N1:7, N3:7); tune TCP keepalive and retransmission timers (RTO) based on observed RTT variance rather than defaults (N3:3). Together, these controls limit retry‑induced load, ensure fast failure detection, and provide visibility into network conditions that cause retransmissions.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\"]}, {\"target_id\": \"N4\", \"target_draft\": \"Redesign the client side to fail fast by setting a timeout just below the server's max processing time (or slightly above the 99th‑percentile RTT plus processing time). Use exponential backoff with jitter for retries, cap the number of attempts and total retry duration (e.g., 30 s), and ensure retries are idempotent. Add a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries during the cool‑down period. Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold. On the network side, continuously monitor TCP retransmission rates, RTT variance, and packet loss (using netstat, sFlow, etc.), and tune TCP keepalive and retransmission timers based on observed RTT variance. Check for congestion or buffer‑bloat on intermediate routers, adjust queue sizes, or enable ECN to reduce latency spikes that trigger timeouts and retransmissions.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\", \"N1:5:24e604b3\", \"N1:6:e8c9c549\", \"N1:7:c6868a0e\", \"N3:3:f744883a\", \"N3:7:d7b28629\"]}, {\"target_id\": \"N5\", \"target_draft\": \"Redesign the client‑side timeout to be slightly lower than the server's maximum processing time (or just above the 99th‑percentile RTT plus processing time) so failures are detected quickly. Use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes. Limit the number of retries and cap the total retry duration (e.g., 30 s) to prevent unbounded latency, and ensure each retry is idempotent so duplicate requests do not cause side effects. Deploy a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period, allowing the downstream service to recover. Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold. On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss, and jitter using tools such as netstat or sFlow. Check for congestion or bufferbloat on intermediate routers, adjust queue sizes, or enable ECN to reduce latency spikes. Configure TCP keepalive and retransmission timers based on observed RTT variance rather than defaults, and limit concurrent connections per endpoint to avoid socket exhaustion.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\", \"N1:5:24e604b3\", \"N1:6:e8c9c549\", \"N1:7:c6868a0e\", \"N3:3:f744883a\", \"N3:4:f107b50f\", \"N3:6:43a91371\", \"N3:5:31a24f27\"]}], \"points_map\": {\"N1:0:8a154f44\": \"Use exponential backoff with jitter for retries to avoid thundering herd.\", \"N1:1:46ddc061\": \"Set a client-side timeout slightly lower than the server's max processing time to fail fast.\", \"N1:2:4ed8011d\": \"Implement a circuit breaker that opens after N consecutive failures and pauses retries for a cool‑down period.\", \"N1:3:bb278cf5\": \"Make retries idempotent; ensure repeated requests do not cause duplicate side effects.\", \"N1:4:e225f8d8\": \"Cap the total retry duration (e.g., 30 s) to prevent unbounded latency during downstream slowness.\", \"N1:5:24e604b3\": \"Instrument latency and error metrics per dependency; alert when 95th‑percentile latency exceeds a threshold.\", \"N1:6:e8c9c549\": \"On the network side, monitor TCP retransmission rates, RTT variance, and packet loss using tools like netstat or sFlow.\", \"N1:7:c6868a0e\": \"Check for congestion or bufferbloat on intermediate routers; adjust queue sizes or enable ECN if needed.\", \"N2:0:ad507a53\": \"OUT_OF_SCOPE: The question concerns service timeout/retry design and network diagnostics, not SQL optimization.\", \"N2:1:c2ed2570\": \"UNKNOWN: Specific recommendations require details of the application architecture and network topology.\", \"N3:0:6deac3ea\": \"Use exponential backoff with jitter for retries to avoid thundering herd and reduce retransmission spikes.\", \"N3:1:24f59d00\": \"Implement a circuit breaker that opens after N failures, pausing retries until service health recovers.\", \"N3:2:6016a6c2\": \"Set client timeout slightly above the 99th‑percentile RTT plus processing time to avoid premature aborts.\", \"N3:3:f744883a\": \"Configure TCP keepalive and retransmission timers (RTO) based on measured RTT variance, not defaults.\", \"N3:4:f107b50f\": \"Cap the maximum number of retries per request to limit load amplification during downstream slowness.\", \"N3:5:31a24f27\": \"Monitor and limit concurrent connections per endpoint to prevent socket exhaustion on the service.\", \"N3:6:43a91371\": \"On the network side, measure round‑trip time, packet loss, and jitter to identify congestion sources.\", \"N3:7:d7b28629\": \"Check for bufferbloat or overloaded queues on routers/switches that increase latency and cause TCP timeouts.\", \"N4:0:55cf6903\": \"OUT_OF_SCOPE: The query concerns service timeout/retry design and network diagnostics, which is outside the math_logic domain.\", \"N4:1:17b28d49\": \"UNKNOWN: Without domain-specific knowledge, I cannot provide concrete redesign or network checks.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:23759997\": \"UNKNOWN\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:7:d7b28629\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:4:f107b50f\",\"N3:6:43a91371\",\"N3:5:31a24f27\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-bd84cc45-86c2-4b89-85dc-91f9c0b7d4f9",
+      "object": "chat.completion",
+      "created": 1772960579,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:7:d7b28629\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:4:f107b50f\",\"N3:6:43a91371\",\"N3:5:31a24f27\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly addressed.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2562,
+        "completion_tokens": 3290,
+        "total_tokens": 5852
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 52 seconds.\",\"retryAfter\":52,\"limit\":10,\"remaining\":0,\"reset\":1772960580}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 31 seconds.\",\"retryAfter\":31,\"limit\":10,\"remaining\":0,\"reset\":1772960580}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 11 seconds.\",\"retryAfter\":11,\"limit\":10,\"remaining\":0,\"reset\":1772960580}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:03:05.277261+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N3",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"Redesign the client‑side timeout to be slightly lower than the server’s maximum processing time so requests fail fast (N1:1). Use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes (N1:0). Limit retries by capping both the number of attempts and the total retry duration (e.g., 30 s) (N1:4, N3:4). Add a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period (N1:2). Ensure all retryable operations are idempotent so repeated calls do not cause duplicate side effects (N1:3). Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold (N1:5). On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss and jitter (N1:6, N3:6). Check for congestion or bufferbloat on intermediate routers, adjust queue sizes or enable ECN as needed (N1:7, N3:7). Tune TCP keepalive and retransmission timers based on observed RTT variance rather than defaults (N3:3).\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\"]}, {\"target_id\": \"N2\", \"target_draft\": \"Redesign the client‑side timeout and retry strategy as follows: set the request timeout just below the server’s maximum processing time (or slightly above the 99th‑percentile RTT plus processing time) so failures are detected quickly; use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes; enforce a circuit‑breaker that opens after a configurable number of consecutive failures and pauses further retries for a cool‑down period; ensure retries are idempotent and cap both the total retry duration and the maximum number of attempts to limit latency amplification; instrument latency and error metrics (e.g., 95th‑percentile latency) and alert on threshold breaches. On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss and jitter, and check for congestion or buffer‑bloat on intermediate routers/switches, adjusting queue sizes or enabling ECN as needed.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\"]}, {\"target_id\": \"N4\", \"target_draft\": \"Redesign the client side to fail fast by setting a timeout just below the server's max processing time (or slightly above the 99th‑percentile RTT plus processing time). Use exponential backoff with jitter for retries, cap the number of attempts and total retry duration (e.g., 30 s), and ensure retries are idempotent. Add a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries during the cool‑down period. Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold. On the network side, continuously monitor TCP retransmission rates, RTT variance, and packet loss (using netstat, sFlow, etc.), and tune TCP keepalive and retransmission timers based on observed RTT variance. Check for congestion or buffer‑bloat on intermediate routers, adjust queue sizes, or enable ECN to reduce latency spikes that trigger timeouts and retransmissions.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\", \"N1:5:24e604b3\", \"N1:6:e8c9c549\", \"N1:7:c6868a0e\", \"N3:3:f744883a\", \"N3:7:d7b28629\"]}, {\"target_id\": \"N5\", \"target_draft\": \"Redesign the client‑side timeout to be slightly lower than the server's maximum processing time (or just above the 99th‑percentile RTT plus processing time) so failures are detected quickly. Use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes. Limit the number of retries and cap the total retry duration (e.g., 30 s) to prevent unbounded latency, and ensure each retry is idempotent so duplicate requests do not cause side effects. Deploy a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period, allowing the downstream service to recover. Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold. On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss, and jitter using tools such as netstat or sFlow. Check for congestion or bufferbloat on intermediate routers, adjust queue sizes, or enable ECN to reduce latency spikes. Configure TCP keepalive and retransmission timers based on observed RTT variance rather than defaults, and limit concurrent connections per endpoint to avoid socket exhaustion.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\", \"N1:5:24e604b3\", \"N1:6:e8c9c549\", \"N1:7:c6868a0e\", \"N3:3:f744883a\", \"N3:4:f107b50f\", \"N3:6:43a91371\", \"N3:5:31a24f27\"]}], \"points_map\": {\"N1:0:8a154f44\": \"Use exponential backoff with jitter for retries to avoid thundering herd.\", \"N1:1:46ddc061\": \"Set a client-side timeout slightly lower than the server's max processing time to fail fast.\", \"N1:2:4ed8011d\": \"Implement a circuit breaker that opens after N consecutive failures and pauses retries for a cool‑down period.\", \"N1:3:bb278cf5\": \"Make retries idempotent; ensure repeated requests do not cause duplicate side effects.\", \"N1:4:e225f8d8\": \"Cap the total retry duration (e.g., 30 s) to prevent unbounded latency during downstream slowness.\", \"N1:5:24e604b3\": \"Instrument latency and error metrics per dependency; alert when 95th‑percentile latency exceeds a threshold.\", \"N1:6:e8c9c549\": \"On the network side, monitor TCP retransmission rates, RTT variance, and packet loss using tools like netstat or sFlow.\", \"N1:7:c6868a0e\": \"Check for congestion or bufferbloat on intermediate routers; adjust queue sizes or enable ECN if needed.\", \"N2:0:ad507a53\": \"OUT_OF_SCOPE: The question concerns service timeout/retry design and network diagnostics, not SQL optimization.\", \"N2:1:c2ed2570\": \"UNKNOWN: Specific recommendations require details of the application architecture and network topology.\", \"N3:0:6deac3ea\": \"Use exponential backoff with jitter for retries to avoid thundering herd and reduce retransmission spikes.\", \"N3:1:24f59d00\": \"Implement a circuit breaker that opens after N failures, pausing retries until service health recovers.\", \"N3:2:6016a6c2\": \"Set client timeout slightly above the 99th‑percentile RTT plus processing time to avoid premature aborts.\", \"N3:3:f744883a\": \"Configure TCP keepalive and retransmission timers (RTO) based on measured RTT variance, not defaults.\", \"N3:4:f107b50f\": \"Cap the maximum number of retries per request to limit load amplification during downstream slowness.\", \"N3:5:31a24f27\": \"Monitor and limit concurrent connections per endpoint to prevent socket exhaustion on the service.\", \"N3:6:43a91371\": \"On the network side, measure round‑trip time, packet loss, and jitter to identify congestion sources.\", \"N3:7:d7b28629\": \"Check for bufferbloat or overloaded queues on routers/switches that increase latency and cause TCP timeouts.\", \"N4:0:55cf6903\": \"OUT_OF_SCOPE: The query concerns service timeout/retry design and network diagnostics, which is outside the math_logic domain.\", \"N4:1:17b28d49\": \"UNKNOWN: Without domain-specific knowledge, I cannot provide concrete redesign or network checks.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:23759997\": \"UNKNOWN\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly incorporated.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly incorporated.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:7:d7b28629\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly incorporated.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:4:f107b50f\",\"N3:6:43a91371\",\"N3:5:31a24f27\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly incorporated.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-5d85dd95-425e-414c-9312-a6f29e9c8c11",
+      "object": "chat.completion",
+      "created": 1772960581,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly incorporated.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly incorporated.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:7:d7b28629\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly incorporated.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:4:f107b50f\",\"N3:6:43a91371\",\"N3:5:31a24f27\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly incorporated.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2420,
+        "completion_tokens": 1783,
+        "total_tokens": 4203
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:03:07.402933+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N4",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"Redesign the client‑side timeout to be slightly lower than the server’s maximum processing time so requests fail fast (N1:1). Use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes (N1:0). Limit retries by capping both the number of attempts and the total retry duration (e.g., 30 s) (N1:4, N3:4). Add a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period (N1:2). Ensure all retryable operations are idempotent so repeated calls do not cause duplicate side effects (N1:3). Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold (N1:5). On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss and jitter (N1:6, N3:6). Check for congestion or bufferbloat on intermediate routers, adjust queue sizes or enable ECN as needed (N1:7, N3:7). Tune TCP keepalive and retransmission timers based on observed RTT variance rather than defaults (N3:3).\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\"]}, {\"target_id\": \"N2\", \"target_draft\": \"Redesign the client‑side timeout and retry strategy as follows: set the request timeout just below the server’s maximum processing time (or slightly above the 99th‑percentile RTT plus processing time) so failures are detected quickly; use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes; enforce a circuit‑breaker that opens after a configurable number of consecutive failures and pauses further retries for a cool‑down period; ensure retries are idempotent and cap both the total retry duration and the maximum number of attempts to limit latency amplification; instrument latency and error metrics (e.g., 95th‑percentile latency) and alert on threshold breaches. On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss and jitter, and check for congestion or buffer‑bloat on intermediate routers/switches, adjusting queue sizes or enabling ECN as needed.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\"]}, {\"target_id\": \"N3\", \"target_draft\": \"To prevent cascading outages when a downstream dependency slows, redesign the timeout and retry strategy as follows: set the client‑side timeout just above the 99th‑percentile round‑trip time plus the service's processing budget so requests fail fast (N1:1, N3:2); apply exponential backoff with random jitter for each retry to spread load and avoid thundering‑herd spikes (N1:0, N3:0); cap the total retry window (e.g., 30 s) and limit the number of retry attempts to bound latency amplification (N1:4, N3:4); enforce idempotent request handling so repeated attempts do not cause duplicate side effects (N1:3); introduce a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period (N1:2, N3:1); instrument per‑dependency latency and error metrics and alert when the 95th‑percentile exceeds thresholds (N1:5). On the network side, continuously monitor TCP retransmission rates, RTT variance, packet loss, and jitter using tools such as netstat, sFlow, or custom exporters (N1:6, N3:6); investigate congestion or buffer‑bloat on intermediate routers, adjusting queue sizes or enabling ECN to reduce latency tails (N1:7, N3:7); tune TCP keepalive and retransmission timers (RTO) based on observed RTT variance rather than defaults (N3:3). Together, these controls limit retry‑induced load, ensure fast failure detection, and provide visibility into network conditions that cause retransmissions.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\"]}, {\"target_id\": \"N5\", \"target_draft\": \"Redesign the client‑side timeout to be slightly lower than the server's maximum processing time (or just above the 99th‑percentile RTT plus processing time) so failures are detected quickly. Use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes. Limit the number of retries and cap the total retry duration (e.g., 30 s) to prevent unbounded latency, and ensure each retry is idempotent so duplicate requests do not cause side effects. Deploy a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period, allowing the downstream service to recover. Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold. On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss, and jitter using tools such as netstat or sFlow. Check for congestion or bufferbloat on intermediate routers, adjust queue sizes, or enable ECN to reduce latency spikes. Configure TCP keepalive and retransmission timers based on observed RTT variance rather than defaults, and limit concurrent connections per endpoint to avoid socket exhaustion.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\", \"N1:5:24e604b3\", \"N1:6:e8c9c549\", \"N1:7:c6868a0e\", \"N3:3:f744883a\", \"N3:4:f107b50f\", \"N3:6:43a91371\", \"N3:5:31a24f27\"]}], \"points_map\": {\"N1:0:8a154f44\": \"Use exponential backoff with jitter for retries to avoid thundering herd.\", \"N1:1:46ddc061\": \"Set a client-side timeout slightly lower than the server's max processing time to fail fast.\", \"N1:2:4ed8011d\": \"Implement a circuit breaker that opens after N consecutive failures and pauses retries for a cool‑down period.\", \"N1:3:bb278cf5\": \"Make retries idempotent; ensure repeated requests do not cause duplicate side effects.\", \"N1:4:e225f8d8\": \"Cap the total retry duration (e.g., 30 s) to prevent unbounded latency during downstream slowness.\", \"N1:5:24e604b3\": \"Instrument latency and error metrics per dependency; alert when 95th‑percentile latency exceeds a threshold.\", \"N1:6:e8c9c549\": \"On the network side, monitor TCP retransmission rates, RTT variance, and packet loss using tools like netstat or sFlow.\", \"N1:7:c6868a0e\": \"Check for congestion or bufferbloat on intermediate routers; adjust queue sizes or enable ECN if needed.\", \"N2:0:ad507a53\": \"OUT_OF_SCOPE: The question concerns service timeout/retry design and network diagnostics, not SQL optimization.\", \"N2:1:c2ed2570\": \"UNKNOWN: Specific recommendations require details of the application architecture and network topology.\", \"N3:0:6deac3ea\": \"Use exponential backoff with jitter for retries to avoid thundering herd and reduce retransmission spikes.\", \"N3:1:24f59d00\": \"Implement a circuit breaker that opens after N failures, pausing retries until service health recovers.\", \"N3:2:6016a6c2\": \"Set client timeout slightly above the 99th‑percentile RTT plus processing time to avoid premature aborts.\", \"N3:3:f744883a\": \"Configure TCP keepalive and retransmission timers (RTO) based on measured RTT variance, not defaults.\", \"N3:4:f107b50f\": \"Cap the maximum number of retries per request to limit load amplification during downstream slowness.\", \"N3:5:31a24f27\": \"Monitor and limit concurrent connections per endpoint to prevent socket exhaustion on the service.\", \"N3:6:43a91371\": \"On the network side, measure round‑trip time, packet loss, and jitter to identify congestion sources.\", \"N3:7:d7b28629\": \"Check for bufferbloat or overloaded queues on routers/switches that increase latency and cause TCP timeouts.\", \"N4:0:55cf6903\": \"OUT_OF_SCOPE: The query concerns service timeout/retry design and network diagnostics, which is outside the math_logic domain.\", \"N4:1:17b28d49\": \"UNKNOWN: Without domain-specific knowledge, I cannot provide concrete redesign or network checks.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:23759997\": \"UNKNOWN\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:4:f107b50f\",\"N3:6:43a91371\",\"N3:5:31a24f27\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-3b01577b-4fac-4b46-a5ef-edb09ab88ae1",
+      "object": "chat.completion",
+      "created": 1772960583,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:4:f107b50f\",\"N3:6:43a91371\",\"N3:5:31a24f27\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2505,
+        "completion_tokens": 2581,
+        "total_tokens": 5086
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-08T09:03:10.987376+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N5",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"When a dependency slows down, our service times out and retries, which causes a bigger outage. We also see more TCP retransmissions during these incidents. How should we redesign timeouts/retries and what would you check on the network side?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"Redesign the client‑side timeout to be slightly lower than the server’s maximum processing time so requests fail fast (N1:1). Use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes (N1:0). Limit retries by capping both the number of attempts and the total retry duration (e.g., 30 s) (N1:4, N3:4). Add a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period (N1:2). Ensure all retryable operations are idempotent so repeated calls do not cause duplicate side effects (N1:3). Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold (N1:5). On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss and jitter (N1:6, N3:6). Check for congestion or bufferbloat on intermediate routers, adjust queue sizes or enable ECN as needed (N1:7, N3:7). Tune TCP keepalive and retransmission timers based on observed RTT variance rather than defaults (N3:3).\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\"]}, {\"target_id\": \"N2\", \"target_draft\": \"Redesign the client‑side timeout and retry strategy as follows: set the request timeout just below the server’s maximum processing time (or slightly above the 99th‑percentile RTT plus processing time) so failures are detected quickly; use exponential backoff with jitter for retries to spread load and avoid thundering‑herd spikes; enforce a circuit‑breaker that opens after a configurable number of consecutive failures and pauses further retries for a cool‑down period; ensure retries are idempotent and cap both the total retry duration and the maximum number of attempts to limit latency amplification; instrument latency and error metrics (e.g., 95th‑percentile latency) and alert on threshold breaches. On the network side, continuously monitor TCP retransmission rates, round‑trip‑time variance, packet loss and jitter, and check for congestion or buffer‑bloat on intermediate routers/switches, adjusting queue sizes or enabling ECN as needed.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\"]}, {\"target_id\": \"N3\", \"target_draft\": \"To prevent cascading outages when a downstream dependency slows, redesign the timeout and retry strategy as follows: set the client‑side timeout just above the 99th‑percentile round‑trip time plus the service's processing budget so requests fail fast (N1:1, N3:2); apply exponential backoff with random jitter for each retry to spread load and avoid thundering‑herd spikes (N1:0, N3:0); cap the total retry window (e.g., 30 s) and limit the number of retry attempts to bound latency amplification (N1:4, N3:4); enforce idempotent request handling so repeated attempts do not cause duplicate side effects (N1:3); introduce a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries for a cool‑down period (N1:2, N3:1); instrument per‑dependency latency and error metrics and alert when the 95th‑percentile exceeds thresholds (N1:5). On the network side, continuously monitor TCP retransmission rates, RTT variance, packet loss, and jitter using tools such as netstat, sFlow, or custom exporters (N1:6, N3:6); investigate congestion or buffer‑bloat on intermediate routers, adjusting queue sizes or enabling ECN to reduce latency tails (N1:7, N3:7); tune TCP keepalive and retransmission timers (RTO) based on observed RTT variance rather than defaults (N3:3). Together, these controls limit retry‑induced load, ensure fast failure detection, and provide visibility into network conditions that cause retransmissions.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\"]}, {\"target_id\": \"N4\", \"target_draft\": \"Redesign the client side to fail fast by setting a timeout just below the server's max processing time (or slightly above the 99th‑percentile RTT plus processing time). Use exponential backoff with jitter for retries, cap the number of attempts and total retry duration (e.g., 30 s), and ensure retries are idempotent. Add a circuit‑breaker that opens after a configurable number of consecutive failures and pauses retries during the cool‑down period. Instrument latency and error metrics per dependency and alert when the 95th‑percentile latency exceeds a threshold. On the network side, continuously monitor TCP retransmission rates, RTT variance, and packet loss (using netstat, sFlow, etc.), and tune TCP keepalive and retransmission timers based on observed RTT variance. Check for congestion or buffer‑bloat on intermediate routers, adjust queue sizes, or enable ECN to reduce latency spikes that trigger timeouts and retransmissions.\", \"target_used_points\": [\"N1:0:8a154f44\", \"N1:1:46ddc061\", \"N1:2:4ed8011d\", \"N1:3:bb278cf5\", \"N1:4:e225f8d8\", \"N1:5:24e604b3\", \"N1:6:e8c9c549\", \"N1:7:c6868a0e\", \"N3:3:f744883a\", \"N3:7:d7b28629\"]}], \"points_map\": {\"N1:0:8a154f44\": \"Use exponential backoff with jitter for retries to avoid thundering herd.\", \"N1:1:46ddc061\": \"Set a client-side timeout slightly lower than the server's max processing time to fail fast.\", \"N1:2:4ed8011d\": \"Implement a circuit breaker that opens after N consecutive failures and pauses retries for a cool‑down period.\", \"N1:3:bb278cf5\": \"Make retries idempotent; ensure repeated requests do not cause duplicate side effects.\", \"N1:4:e225f8d8\": \"Cap the total retry duration (e.g., 30 s) to prevent unbounded latency during downstream slowness.\", \"N1:5:24e604b3\": \"Instrument latency and error metrics per dependency; alert when 95th‑percentile latency exceeds a threshold.\", \"N1:6:e8c9c549\": \"On the network side, monitor TCP retransmission rates, RTT variance, and packet loss using tools like netstat or sFlow.\", \"N1:7:c6868a0e\": \"Check for congestion or bufferbloat on intermediate routers; adjust queue sizes or enable ECN if needed.\", \"N2:0:ad507a53\": \"OUT_OF_SCOPE: The question concerns service timeout/retry design and network diagnostics, not SQL optimization.\", \"N2:1:c2ed2570\": \"UNKNOWN: Specific recommendations require details of the application architecture and network topology.\", \"N3:0:6deac3ea\": \"Use exponential backoff with jitter for retries to avoid thundering herd and reduce retransmission spikes.\", \"N3:1:24f59d00\": \"Implement a circuit breaker that opens after N failures, pausing retries until service health recovers.\", \"N3:2:6016a6c2\": \"Set client timeout slightly above the 99th‑percentile RTT plus processing time to avoid premature aborts.\", \"N3:3:f744883a\": \"Configure TCP keepalive and retransmission timers (RTO) based on measured RTT variance, not defaults.\", \"N3:4:f107b50f\": \"Cap the maximum number of retries per request to limit load amplification during downstream slowness.\", \"N3:5:31a24f27\": \"Monitor and limit concurrent connections per endpoint to prevent socket exhaustion on the service.\", \"N3:6:43a91371\": \"On the network side, measure round‑trip time, packet loss, and jitter to identify congestion sources.\", \"N3:7:d7b28629\": \"Check for bufferbloat or overloaded queues on routers/switches that increase latency and cause TCP timeouts.\", \"N4:0:55cf6903\": \"OUT_OF_SCOPE: The query concerns service timeout/retry design and network diagnostics, which is outside the math_logic domain.\", \"N4:1:17b28d49\": \"UNKNOWN: Without domain-specific knowledge, I cannot provide concrete redesign or network checks.\", \"N5:0:e37bafbe\": \"OUT_OF_SCOPE\", \"N5:1:23759997\": \"UNKNOWN\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly addressed.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly addressed.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly addressed.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:7:d7b28629\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly addressed.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-0def0928-0b5d-401e-b137-6e71b5b88c5e",
+      "object": "chat.completion",
+      "created": 1772960588,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly addressed.\"},{\"target_id\":\"N2\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly addressed.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly addressed.\"},{\"target_id\":\"N4\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:8a154f44\",\"N1:1:46ddc061\",\"N1:2:4ed8011d\",\"N1:3:bb278cf5\",\"N1:4:e225f8d8\",\"N1:5:24e604b3\",\"N1:6:e8c9c549\",\"N1:7:c6868a0e\",\"N3:3:f744883a\",\"N3:7:d7b28629\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly addressed.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2429,
+        "completion_tokens": 2428,
+        "total_tokens": 4857
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  }
+]

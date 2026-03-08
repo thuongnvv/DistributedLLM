@@ -1,0 +1,155 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:dc4855ad",
+        "text": "Assign each webhook a unique id (e.g., provider's event_id) and store it with status in DB."
+      },
+      {
+        "point_id": "N1:1:b4e4f3c9",
+        "text": "On receipt, check if event_id already processed; if so, return success without reapplying."
+      },
+      {
+        "point_id": "N1:2:f7fb95d1",
+        "text": "Use a DB transaction: read order state, apply changes, and mark event_id processed atomically."
+      },
+      {
+        "point_id": "N1:3:c3132779",
+        "text": "Make updates idempotent: increment only if not already applied, use upsert with conditional logic."
+      },
+      {
+        "point_id": "N1:4:3fd7a028",
+        "text": "Respond to webhook quickly (e.g., 200 OK) after persisting the event, then run async business logic if needed."
+      },
+      {
+        "point_id": "N1:5:99392cbd",
+        "text": "Set webhook timeout (5‑10 s); if it expires, let provider retry. Ensure retries are safe via idempotency checks."
+      },
+      {
+        "point_id": "N1:6:d8a420f0",
+        "text": "Show users a pending status and poll or push confirmation after the webhook is processed, not after the request."
+      },
+      {
+        "point_id": "N1:7:8f632d80",
+        "text": "Implement exponential backoff for retries and a dead‑letter queue for events that repeatedly fail."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:6e22a887",
+        "text": "Store each webhook event with a unique idempotency_key and a status column."
+      },
+      {
+        "point_id": "N2:1:c98e2afe",
+        "text": "Define a UNIQUE constraint on idempotency_key to prevent duplicate inserts."
+      },
+      {
+        "point_id": "N2:2:a9c1dfd2",
+        "text": "Use INSERT ... ON CONFLICT DO NOTHING (PostgreSQL) or MERGE (SQL Server) to make the operation idempotent."
+      },
+      {
+        "point_id": "N2:3:47ad0397",
+        "text": "Wrap the payment charge and event record in a single SERIALIZABLE transaction to guarantee atomicity."
+      },
+      {
+        "point_id": "N2:4:cc38b8db",
+        "text": "If the transaction times out, return a 202 Accepted and let the client poll for status."
+      },
+      {
+        "point_id": "N2:5:199a06ff",
+        "text": "Use a separate \"processing\" flag and a CHECK constraint to avoid race conditions on retries."
+      },
+      {
+        "point_id": "N2:6:0a6a79ca",
+        "text": "Index idempotency_key and order_id for fast lookup and conflict detection."
+      },
+      {
+        "point_id": "N2:7:2ac15b33",
+        "text": "Log the webhook receipt timestamp; if later than expected, still process but mark as out‑of‑order for audit."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": [
+      {
+        "point_id": "N3:0:7e9d2d1f",
+        "text": "Assign each webhook a unique idempotency key (e.g., provider transaction ID) and store it with the payment record."
+      },
+      {
+        "point_id": "N3:1:70302c09",
+        "text": "Before processing, check the key table; if the key exists, skip business logic and return the previous response."
+      },
+      {
+        "point_id": "N3:2:f39cde0c",
+        "text": "Wrap payment charge and key insertion in a single DB transaction to guarantee atomicity and prevent partial writes."
+      },
+      {
+        "point_id": "N3:3:1ed95cbf",
+        "text": "Use optimistic locking (version column) on the account balance row to avoid race conditions when concurrent retries occur."
+      },
+      {
+        "point_id": "N3:4:b6bf9b3c",
+        "text": "Acknowledge receipt to the webhook sender immediately (e.g., HTTP 202) and process the charge asynchronously to keep latency low."
+      },
+      {
+        "point_id": "N3:5:220c1a3b",
+        "text": "Set webhook request timeout to a few seconds (e.g., 5 s); if the sender times out, it will retry, but idempotency key ensures no double charge."
+      },
+      {
+        "point_id": "N3:6:5a9379c1",
+        "text": "Log each attempt with timestamps and outcome; monitor for out‑of‑order arrivals and implement a replay queue if needed."
+      }
+    ]
+  },
+  {
+    "node_id": "N4",
+    "points": [
+      {
+        "point_id": "N4:0:e37bafbe",
+        "text": "OUT_OF_SCOPE"
+      },
+      {
+        "point_id": "N4:1:23759997",
+        "text": "UNKNOWN"
+      }
+    ]
+  },
+  {
+    "node_id": "N5",
+    "points": [
+      {
+        "point_id": "N5:0:3bea9af8",
+        "text": "Assign each webhook a unique, immutable idempotency key (e.g., webhook event ID) and store it with processing status."
+      },
+      {
+        "point_id": "N5:1:16d8f729",
+        "text": "Before processing, attempt to insert the key with a unique constraint; if insert fails, skip processing as already handled."
+      },
+      {
+        "point_id": "N5:2:aa8f5597",
+        "text": "Perform DB updates within a single transaction that includes the idempotency record and payment state change to ensure atomicity."
+      },
+      {
+        "point_id": "N5:3:b45c76a2",
+        "text": "Use optimistic locking or version columns on payment rows to detect concurrent updates and abort duplicates."
+      },
+      {
+        "point_id": "N5:4:94005de2",
+        "text": "Respond to the webhook source quickly (e.g., 200 OK) after persisting the idempotency record, then continue async processing if needed."
+      },
+      {
+        "point_id": "N5:5:54ebf6a2",
+        "text": "Set a reasonable timeout (e.g., 2–5 seconds) for webhook handling; if timeout occurs, rely on source retries and idempotency key to prevent double charge."
+      },
+      {
+        "point_id": "N5:6:eb4560ec",
+        "text": "Log each webhook receipt with timestamps and outcome for audit and replay analysis."
+      }
+    ]
+  }
+]
