@@ -1,0 +1,87 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:31ae2815",
+        "text": "Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi"
+      },
+      {
+        "point_id": "N1:1:71e1f6a6",
+        "text": "Reproduce issue with minimal failing test"
+      },
+      {
+        "point_id": "N1:2:f4ac2679",
+        "text": "Inspect stack trace and failing branch"
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:31ae2815",
+        "text": "Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi"
+      },
+      {
+        "point_id": "N2:1:eb53c302",
+        "text": "Inspect query plan before and after changes"
+      },
+      {
+        "point_id": "N2:2:fa325895",
+        "text": "Add selective index for WHERE/JOIN predicates"
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": [
+      {
+        "point_id": "N3:0:31ae2815",
+        "text": "Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi"
+      },
+      {
+        "point_id": "N3:1:b0e0e432",
+        "text": "Map requirement to transport reliability needs"
+      },
+      {
+        "point_id": "N3:2:733c33cf",
+        "text": "Differentiate latency versus throughput bottlenecks"
+      }
+    ]
+  },
+  {
+    "node_id": "N4",
+    "points": [
+      {
+        "point_id": "N4:0:31ae2815",
+        "text": "Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi"
+      },
+      {
+        "point_id": "N4:1:b4305316",
+        "text": "State assumptions before derivation"
+      },
+      {
+        "point_id": "N4:2:b41189cb",
+        "text": "Transform expression using valid algebraic rules"
+      }
+    ]
+  },
+  {
+    "node_id": "N5",
+    "points": [
+      {
+        "point_id": "N5:0:31ae2815",
+        "text": "Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi"
+      },
+      {
+        "point_id": "N5:1:4b6c8f5b",
+        "text": "Prefer parameterized queries over string concatenation"
+      },
+      {
+        "point_id": "N5:2:e0669c39",
+        "text": "Validate and sanitize untrusted input paths"
+      }
+    ]
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "node_id": "N1",
+    "synthesis_text": "1. Assign each incoming webhook a globally unique event ID and treat it as an idempotency key (N1:0, N2:0, N5:0). Store this key in a dedicated table with a UNIQUE constraint (N2:0) so duplicate deliveries are rejected at the DB level.\\n2. When a webhook is received, first insert the idempotency record using INSERT … ON CONFLICT DO NOTHING (or MERGE) to guarantee the event is recorded only once (N2:1).\\n3. Wrap the payment creation, balance update, and idempotency‑record insertion in a single ACID transaction with appropriate isolation (e.g., SERIALIZABLE) and row‑level locking (N1:1, N2:2, N5:3). This ensures that only one charge is applied per key.\\n4. Commit the transaction before sending any HTTP response. Return HTTP 200 only after the commit succeeds; on any failure return a 5xx so the sender retries (N1:2, N3:3).\\n5. Keep the webhook handler fast: set a short endpoint timeout (≈5 s) (N1:3, N5:5). If processing cannot finish within this window, respond with 202 Accepted (N2:5) and let a background worker complete the transaction.\\n6. Show the user a provisional “processing” UI while the backend works, and update the UI via polling or a follow‑up webhook once the payment status changes (N1:4).\\n7. To preserve ordering and avoid double‑charge when events arrive out of order, record each event’s timestamp or sequence number and process it only if it is newer than the last‑processed timestamp (N3:5, N5:7).\\n8. Optionally, route webhook events through a deduplication queue or message broker that serializes events per account, guaranteeing ordered processing (N5:6).",
+    "used_points": []
+  },
+  {
+    "node_id": "N2",
+    "synthesis_text": "Assign each webhook a globally unique event ID and store it as an idempotency_key with a UNIQUE constraint and index. When a webhook arrives, start a SERIALIZABLE transaction that first attempts to INSERT the idempotency record (using INSERT … ON CONFLICT DO NOTHING). If the key already exists, skip the charge and return success. Within the same transaction, create the payment row and update the account balance with row‑level locking, then commit. Only after the commit send HTTP 200; on any failure return a 5xx so the sender retries. Keep the handler timeout short (2‑5 seconds). If processing cannot finish within the timeout, respond 202 Accepted and let a background worker complete the work asynchronously. Show users a provisional “processing” UI and update the status via polling or a follow‑up webhook. Use exponential backoff for retrying failed webhook deliveries.",
+    "used_points": [
+      "N1:0:54c12235",
+      "N1:1:ba0bd840",
+      "N1:2:ef1cd64b",
+      "N1:3:b778bfa3",
+      "N1:4:e82a44f9",
+      "N2:0:a0eba3a3",
+      "N2:1:32534dd7",
+      "N2:2:8bf2c4b7",
+      "N2:4:cc38b3b8",
+      "N2:5:eee5a2e6",
+      "N5:0:356f161a",
+      "N5:3:ab05c556",
+      "N5:4:6276ddb0",
+      "N5:5:f24b1738"
+    ]
+  },
+  {
+    "node_id": "N3",
+    "synthesis_text": "Assign each webhook a globally unique event ID and treat it as an idempotency key (N1:0:54c12235, N3:0:c893ba2d, N5:0:356f161a). Store the key in a dedicated table with a UNIQUE constraint and index (N1:0:54c12235, N2:0:a0eba3a3) and persist the record before any business logic (N5:1:faaf2b48) to prevent race conditions. When a webhook arrives, first check the key; if a record already exists, return success without re‑applying the charge (N1:1:ba0bd840, N3:1:31b403a4, N5:2:1db9197c). Insert the payment row atomically using INSERT … ON CONFLICT DO NOTHING or MERGE (N2:1:32534dd7). Wrap the payment insert, balance update, and idempotency record insertion in a single ACID transaction with row‑level locking or SERIALIZABLE isolation to guarantee exactly‑once charging (N2:2:8bf2c4b7, N3:2:3eb04586, N5:3:ab05c556). Only send HTTP 200 after the transaction commits; on failure return a 5xx so the sender retries, or if processing exceeds the short handler timeout, respond 202 Accepted and let a background worker finish the work (N1:2:ef1cd64b, N2:5:eee5a2e6). Set a short endpoint timeout (≈5 s) and use exponential backoff for retries (N1:3:b778bfa3, N5:5:f24b1738). Show users a provisional “processing” UI while the backend works, updating the status via polling or a follow‑up webhook (N1:4:e82a44f9, N3:4:18528314). To preserve ordering, record timestamps or sequence numbers and process events only if they are newer than the last‑processed record, or serialize events per account using a deduplication queue/message broker (N3:5:ce0a029b, N5:6:3a313742, N5:7:756a7ec9). This combination ensures idempotent, atomic updates, avoids double‑charging, and keeps the client experience responsive.",
+    "used_points": [
+      "N1:0:54c12235",
+      "N1:1:ba0bd840",
+      "N1:2:ef1cd64b",
+      "N1:3:b778bfa3",
+      "N1:4:e82a44f9",
+      "N2:0:a0eba3a3",
+      "N2:1:32534dd7",
+      "N2:2:8bf2c4b7",
+      "N2:5:eee5a2e6",
+      "N3:0:c893ba2d",
+      "N3:1:31b403a4",
+      "N3:2:3eb04586",
+      "N3:3:7282a066",
+      "N3:4:18528314",
+      "N3:5:ce0a029b",
+      "N5:0:356f161a",
+      "N5:1:faaf2b48",
+      "N5:2:1db9197c",
+      "N5:3:ab05c556",
+      "N5:5:f24b1738",
+      "N5:6:3a313742",
+      "N5:7:756a7ec9"
+    ]
+  },
+  {
+    "node_id": "N4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N5",
+    "synthesis_text": "Assign each webhook a globally unique event ID and store it as an idempotency_key with a UNIQUE constraint (N1:0, N2:0, N5:0).  Before any business logic, persist the key and a processing status record so duplicate deliveries are detected early (N5:1).  Perform the charge and related state updates (e.g., balance, payment row) inside a single ACID transaction that also inserts the idempotency record, using INSERT … ON CONFLICT DO NOTHING or MERGE to guarantee the payment row is created only once (N1:1, N2:1, N2:2, N5:3).  Return HTTP 200 only after the transaction commits; on failure return a 5xx so the sender retries (N1:2, N3:3).  Keep the webhook handler fast by setting a short timeout (≈5 s) and, if processing cannot finish within that window, respond with 202 Accepted and hand off the work to a background worker (N1:3, N2:4, N2:5, N5:5).  Show users a provisional “processing” UI while the async job completes (N1:4).  To handle out‑of‑order deliveries, record the event timestamp or sequence number and process an event only if it is newer than the last‑processed one (N3:5, N5:7).  Optionally, route events through a deduplication queue or per‑account serialized broker to preserve order and avoid race conditions (N5:6).",
+    "used_points": []
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "grader_id": "N1",
+    "target_id": "N2",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "No draft provided for this target."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N3",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "No draft provided for this target."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N4",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "No draft provided for this target."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Comprehensive phased migration plan that addresses risk reduction and key JWT security pitfalls."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N1",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N3",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N4",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N5",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N1",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N2",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N4",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N5",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N1",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N2",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N3",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N5",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Draft presents a solid, phased migration plan with appropriate JWT security controls and DB load mitigation."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N2",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "No draft content provided for evaluation."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N3",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "No draft content provided for evaluation."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N4",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "No draft content provided for evaluation."
+  }
+]

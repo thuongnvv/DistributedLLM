@@ -1,0 +1,62 @@
+[
+  {
+    "node_id": "N1",
+    "synthesis_text": "[coding_debugging] Consolidated answer for 'Our checkout sometimes takes 5–10 seconds and users occasionally get charged twice when th': Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi; Reproduce issue with minimal failing test; Inspect stack trace and failing branch; Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi",
+    "used_points": [
+      "N1:0:31ae2815",
+      "N1:1:71e1f6a6",
+      "N1:2:f4ac2679",
+      "N2:0:31ae2815",
+      "N2:1:eb53c302",
+      "N2:2:fa325895"
+    ]
+  },
+  {
+    "node_id": "N2",
+    "synthesis_text": "[databases_sql] Consolidated answer for 'Our checkout sometimes takes 5–10 seconds and users occasionally get charged twice when th': Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi; Reproduce issue with minimal failing test; Inspect stack trace and failing branch; Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi",
+    "used_points": [
+      "N1:0:31ae2815",
+      "N1:1:71e1f6a6",
+      "N1:2:f4ac2679",
+      "N2:0:31ae2815",
+      "N2:1:eb53c302",
+      "N2:2:fa325895"
+    ]
+  },
+  {
+    "node_id": "N3",
+    "synthesis_text": "[networking_systems] Consolidated answer for 'Our checkout sometimes takes 5–10 seconds and users occasionally get charged twice when th': Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi; Reproduce issue with minimal failing test; Inspect stack trace and failing branch; Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi",
+    "used_points": [
+      "N1:0:31ae2815",
+      "N1:1:71e1f6a6",
+      "N1:2:f4ac2679",
+      "N2:0:31ae2815",
+      "N2:1:eb53c302",
+      "N2:2:fa325895"
+    ]
+  },
+  {
+    "node_id": "N4",
+    "synthesis_text": "[math_logic] Consolidated answer for 'Our checkout sometimes takes 5–10 seconds and users occasionally get charged twice when th': Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi; Reproduce issue with minimal failing test; Inspect stack trace and failing branch; Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi",
+    "used_points": [
+      "N1:0:31ae2815",
+      "N1:1:71e1f6a6",
+      "N1:2:f4ac2679",
+      "N2:0:31ae2815",
+      "N2:1:eb53c302",
+      "N2:2:fa325895"
+    ]
+  },
+  {
+    "node_id": "N5",
+    "synthesis_text": "[security_defensive] Consolidated answer for 'Our checkout sometimes takes 5–10 seconds and users occasionally get charged twice when th': Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi; Reproduce issue with minimal failing test; Inspect stack trace and failing branch; Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi",
+    "used_points": [
+      "N1:0:31ae2815",
+      "N1:1:71e1f6a6",
+      "N1:2:f4ac2679",
+      "N2:0:31ae2815",
+      "N2:1:eb53c302",
+      "N2:2:fa325895"
+    ]
+  }
+]

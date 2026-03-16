@@ -1,0 +1,156 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:02fd1e9a",
+        "text": "Add rate limiting/IP throttling on the login endpoint to curb brute‑force attempts and reduce DB load."
+      },
+      {
+        "point_id": "N1:1:1275bb32",
+        "text": "Implement exponential backoff and retry for transient DB lock errors in the authentication flow."
+      },
+      {
+        "point_id": "N1:2:c00ce32b",
+        "text": "Optimize the DB: add indexes on user lookup fields, shorten transaction scope, and consider read replicas for login reads."
+      },
+      {
+        "point_id": "N1:3:fea667d4",
+        "text": "Enable account lockout after N failed attempts and deploy CAPTCHA to improve security."
+      }
+    ]
+  },
+  {
+    "node_id": "N6",
+    "points": [
+      {
+        "point_id": "N6:0:0f256623",
+        "text": "Optimize the login DB path: add appropriate indexes, switch to row‑level or optimistic locking, and batch writes to reduce lock duration."
+      },
+      {
+        "point_id": "N6:1:9b1939e4",
+        "text": "Add IP‑based rate limiting and exponential back‑off on failed logins to curb brute‑force attempts and lower load spikes."
+      },
+      {
+        "point_id": "N6:2:7b2b42e5",
+        "text": "Wrap the authentication service in a circuit breaker with a short timeout to isolate overload and protect downstream services."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:39d8853a",
+        "text": "Add an index on the column(s) used to check login credentials (e.g., username/email) to reduce lock time."
+      },
+      {
+        "point_id": "N2:1:518b5687",
+        "text": "Move failed login attempts to a separate table and index by IP and timestamp to avoid contention on the main users table."
+      },
+      {
+        "point_id": "N2:2:2ffc298b",
+        "text": "Use SELECT ... FOR UPDATE only when necessary; prefer read‑only queries for authentication checks."
+      },
+      {
+        "point_id": "N2:3:674e6372",
+        "text": "Reduce transaction scope around login logic; commit quickly to free locks."
+      },
+      {
+        "point_id": "N2:4:c449b26f",
+        "text": "Enable connection pooling (e.g., PgBouncer) to limit concurrent sessions during peaks."
+      },
+      {
+        "point_id": "N2:5:765f2ab1",
+        "text": "Implement rate limiting or account lockout per IP to cut down malicious attempts."
+      },
+      {
+        "point_id": "N2:6:23ab52f5",
+        "text": "Consider using READ COMMITTED isolation for login queries to avoid unnecessary row locks."
+      }
+    ]
+  },
+  {
+    "node_id": "N7",
+    "points": [
+      {
+        "point_id": "N7:0:0cd2f977",
+        "text": "Add a covering index on the login identifier (e.g., username/email) to eliminate full‑table scans and shorten row locks during peak logins."
+      },
+      {
+        "point_id": "N7:1:36f4f6a4",
+        "text": "Limit each login transaction to the minimal reads/writes (fetch user, verify password) and commit immediately to reduce lock duration."
+      },
+      {
+        "point_id": "N7:2:4bd05626",
+        "text": "Use READ COMMITTED (or snapshot) isolation for login queries; avoid SELECT … FOR UPDATE unless truly needed."
+      },
+      {
+        "point_id": "N7:3:c6e61ab0",
+        "text": "Implement a lightweight login‑attempt counter (per IP or user) with an atomic UPDATE that increments a column and expires rows, enabling throttling without heav"
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": []
+  },
+  {
+    "node_id": "N8",
+    "points": []
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N10",
+    "points": []
+  },
+  {
+    "node_id": "N5",
+    "points": [
+      {
+        "point_id": "N5:0:d1eedbe4",
+        "text": "Add rate limiting or login throttling per IP/account to curb brute‑force attempts and reduce DB load."
+      },
+      {
+        "point_id": "N5:1:4ba869db",
+        "text": "Implement exponential back‑off or temporary account lockout after repeated failed logins."
+      },
+      {
+        "point_id": "N5:2:10c0a1d2",
+        "text": "Introduce CAPTCHA after a few failed attempts to block automated attacks."
+      },
+      {
+        "point_id": "N5:3:3c6b1a5e",
+        "text": "Cache password hash verification or switch to stateless JWT validation to minimize DB reads during login."
+      },
+      {
+        "point_id": "N5:4:f0e2cc17",
+        "text": "Use read‑replicas or a dedicated authentication database to alleviate lock contention under peak traffic."
+      }
+    ]
+  },
+  {
+    "node_id": "N9",
+    "points": [
+      {
+        "point_id": "N9:0:3f716229",
+        "text": "Deploy adaptive rate limiting on login attempts per IP/user to cap bursts during peaks."
+      },
+      {
+        "point_id": "N9:1:b8bc85fb",
+        "text": "Detect credential stuffing by monitoring high failure rates across IPs and trigger step‑up verification (CAPTCHA or MFA)."
+      },
+      {
+        "point_id": "N9:2:2ff8a974",
+        "text": "Apply exponential backoff or progressive delays for repeated failed logins to lower DB lock contention."
+      },
+      {
+        "point_id": "N9:3:3a2e5cb5",
+        "text": "Move authentication checks to a lightweight cache or dedicated auth service to reduce DB load during traffic spikes."
+      }
+    ]
+  }
+]

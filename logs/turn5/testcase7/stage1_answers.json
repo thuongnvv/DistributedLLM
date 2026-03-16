@@ -1,0 +1,215 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:4ff59df8",
+        "text": "Collect time‑series metrics for cache hit/miss, DB query count, CPU, and latency per endpoint."
+      },
+      {
+        "point_id": "N1:1:27eb0696",
+        "text": "Correlate the deployment timestamp of the new feature with observed metric changes."
+      },
+      {
+        "point_id": "N1:2:4d257d0a",
+        "text": "Inspect new query parameters: are they added to cache keys, causing key fragmentation?"
+      },
+      {
+        "point_id": "N1:3:bb1144e9",
+        "text": "Profile the request path to see if extra processing or larger result sets raise CPU and DB load."
+      },
+      {
+        "point_id": "N1:4:ca1189ad",
+        "text": "Run EXPLAIN on the most frequent queries to detect missing indexes or full table scans."
+      },
+      {
+        "point_id": "N1:5:792ee108",
+        "text": "Reproduce the issue in a staging environment with realistic traffic to confirm the hit‑rate drop."
+      },
+      {
+        "point_id": "N1:6:4a249272",
+        "text": "If cache keys are too granular, consolidate parameters or hash a stable subset to improve hit rate."
+      },
+      {
+        "point_id": "N1:7:bb082407",
+        "text": "Adjust cache TTL, pre‑warm hot keys, and add read‑through fallback to reduce DB reads."
+      }
+    ]
+  },
+  {
+    "node_id": "N6",
+    "points": [
+      {
+        "point_id": "N6:0:7c211e73",
+        "text": "Collect cache metrics (hit/miss, key patterns) before and after the change to quantify the hit‑rate drop."
+      },
+      {
+        "point_id": "N6:1:394c9854",
+        "text": "Audit new query parameters: ensure they are included in cache keys consistently and deterministically."
+      },
+      {
+        "point_id": "N6:2:d6d83e2a",
+        "text": "Profile CPU usage to locate hot functions; high CPU may indicate expensive serialization or key generation."
+      },
+      {
+        "point_id": "N6:3:5395d5dc",
+        "text": "Examine generated SQL for the new parameters; look for missing indexes or broader scans causing DB load."
+      },
+      {
+        "point_id": "N6:4:029bedde",
+        "text": "Run an explain plan on representative queries to verify that index usage hasn’t regressed."
+      },
+      {
+        "point_id": "N6:5:e9517b81",
+        "text": "Implement cache‑key normalization (e.g., sort parameters) to increase cacheability of equivalent requests."
+      },
+      {
+        "point_id": "N6:6:e1386637",
+        "text": "Consider batching similar DB reads or using read‑through cache to reduce per‑request DB round‑trips."
+      },
+      {
+        "point_id": "N6:7:396412e7",
+        "text": "Add circuit‑breaker limits on DB calls to prevent overload while you investigate the root cause."
+      },
+      {
+        "point_id": "N6:8:e6ad852c",
+        "text": "After each mitigation, re‑measure cache hit rate, DB read count, and CPU to confirm load reduction."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:f31c0a4d",
+        "text": "Check pg_stat_database.cache_hits vs cache_misses to confirm cache drop and quantify hit rate change."
+      },
+      {
+        "point_id": "N2:1:70f4e11b",
+        "text": "Run pg_stat_statements to identify top‑CPU and top‑I/O queries after the feature launch."
+      },
+      {
+        "point_id": "N2:2:d70bb1d0",
+        "text": "EXPLAIN (ANALYZE, BUFFERS) the identified queries to see plan changes, row estimates, and buffer usage."
+      },
+      {
+        "point_id": "N2:3:1bf48a58",
+        "text": "Compare query plans before/after adding parameters; look for generic plans replacing custom ones."
+      },
+      {
+        "point_id": "N2:4:94aaabda",
+        "text": "Verify that new parameter values cause index scans to become seq scans; add or adjust indexes accordingly."
+      },
+      {
+        "point_id": "N2:5:b6a47a47",
+        "text": "Ensure statistics are up‑to‑date (ANALYZE) so the planner can choose optimal plans for varied parameters."
+      },
+      {
+        "point_id": "N2:6:f3f42104",
+        "text": "Check for parameter‑sniffing issues; consider using plan_cache_mode = force_custom_plan for problematic queries."
+      },
+      {
+        "point_id": "N2:7:58f27045",
+        "text": "Review work_mem, effective_cache_size, and shared_buffers settings; increase if memory allows to improve caching."
+      },
+      {
+        "point_id": "N2:8:dbb84265",
+        "text": "Inspect connection pool size and idle connections; excessive connections can increase CPU and I/O."
+      },
+      {
+        "point_id": "N2:9:190ebb67",
+        "text": "If reads remain high, consider adding a materialized view or query cache for expensive aggregations."
+      }
+    ]
+  },
+  {
+    "node_id": "N7",
+    "points": [
+      {
+        "point_id": "N7:0:d704d969",
+        "text": "Collect cache metrics (hit/miss, latency) and DB query logs to correlate the timing of the hit‑rate drop with new queries."
+      },
+      {
+        "point_id": "N7:1:042dd685",
+        "text": "Identify the new query parameters and examine their execution plans for full scans or missing indexes."
+      },
+      {
+        "point_id": "N7:2:59fd5488",
+        "text": "Compare plan hashes before and after the change; look for parameter sniffing causing suboptimal plans."
+      },
+      {
+        "point_id": "N7:3:94b15aa8",
+        "text": "Add or adjust indexes to cover the new filter columns, reducing row reads and CPU usage."
+      },
+      {
+        "point_id": "N7:4:a8583cce",
+        "text": "Implement query caching or materialized views for frequently accessed result sets impacted by the new parameters."
+      },
+      {
+        "point_id": "N7:5:6d95d599",
+        "text": "If load remains high, consider scaling read replicas or sharding to distribute the increased read traffic."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": []
+  },
+  {
+    "node_id": "N8",
+    "points": []
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N10",
+    "points": [
+      {
+        "point_id": "N10:0:6f6cc0e7",
+        "text": "Collect time‑series metrics: cache hit/miss, DB read QPS, CPU%, latency per endpoint."
+      },
+      {
+        "point_id": "N10:1:7bcb6c9c",
+        "text": "Correlate spikes: map when hit rate fell to DB read increase and CPU rise."
+      },
+      {
+        "point_id": "N10:2:83ad2969",
+        "text": "Identify new query parameters: check if they bypass cache keys or cause cache key explosion."
+      },
+      {
+        "point_id": "N10:3:60583527",
+        "text": "Profile request paths: find hot endpoints where cache misses dominate latency."
+      },
+      {
+        "point_id": "N10:4:cbdbc34e",
+        "text": "Examine cache eviction policy and size: ensure increased key space isn’t evicting needed entries."
+      },
+      {
+        "point_id": "N10:5:835b96b0",
+        "text": "Validate DB query plans for new parameters; add indexes or rewrite queries to reduce CPU."
+      },
+      {
+        "point_id": "N10:6:deafe812",
+        "text": "Run controlled A/B or canary: revert cache key change or disable new params to measure impact."
+      },
+      {
+        "point_id": "N10:7:063f1fdc",
+        "text": "Implement mitigation: broaden cache key granularity, add secondary cache, or introduce read replicas."
+      },
+      {
+        "point_id": "N10:8:753be227",
+        "text": "Re‑measure metrics after changes; ensure hit rate returns >80% and DB reads drop below baseline."
+      }
+    ]
+  },
+  {
+    "node_id": "N5",
+    "points": []
+  },
+  {
+    "node_id": "N9",
+    "points": []
+  }
+]

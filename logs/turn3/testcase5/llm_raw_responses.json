@@ -1,0 +1,603 @@
+[
+  {
+    "timestamp": "2026-03-12T04:37:05.339242+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"abstain\": true|false,\n  \"points\": [{\"text\": \"string\"}]\n}\nRules:\n- Return ONLY high-confidence points inside your declared domain scope.\n- If the query is mostly outside your scope, set abstain=true and return {\"points\": []}.\n- If abstain=true, points must be empty.\n- Each point must be atomic and <= 160 chars.\n- Do not add generic cross-domain filler.\nInput JSON:\n{\"query\": \"We use WebSockets for real-time updates. Clients reconnect often and sometimes receive duplicate or out-of-order events. We also worry about replayed tokens. How should we design ordering/deduplication and secure the channel?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"abstain\":false,\"points\":[{\"text\":\"Assign a monotonically increasing sequence number to each event per client; drop any received with a lower or duplicate number.\"},{\"text\":\"Include a per‑connection token (e.g., JWT with short TTL) in every WebSocket frame and verify it server‑side to prevent replay.\"},{\"text\":\"On reconnect, have the client send the last sequence it processed; the server resumes from the next number, avoiding gaps.\"},{\"text\":\"Use idempotency keys (e.g., event UUID) and a short‑term cache to discard duplicate events arriving out of order.\"},{\"text\":\"Implement ACK/NACK flow: client acknowledges received seq numbers; server can retransmit missing ranges on request.\"},{\"text\":\"Protect tokens with HMAC‑signed timestamps; reject messages with timestamps outside an acceptable window to stop replay attacks.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-8468f19b-cdd0-4a2d-a895-2a33efffafc6",
+      "object": "chat.completion",
+      "created": 1773290224,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"abstain\":false,\"points\":[{\"text\":\"Assign a monotonically increasing sequence number to each event per client; drop any received with a lower or duplicate number.\"},{\"text\":\"Include a per‑connection token (e.g., JWT with short TTL) in every WebSocket frame and verify it server‑side to prevent replay.\"},{\"text\":\"On reconnect, have the client send the last sequence it processed; the server resumes from the next number, avoiding gaps.\"},{\"text\":\"Use idempotency keys (e.g., event UUID) and a short‑term cache to discard duplicate events arriving out of order.\"},{\"text\":\"Implement ACK/NACK flow: client acknowledges received seq numbers; server can retransmit missing ranges on request.\"},{\"text\":\"Protect tokens with HMAC‑signed timestamps; reject messages with timestamps outside an acceptable window to stop replay attacks.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 394,
+        "completion_tokens": 393,
+        "total_tokens": 787
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:37:06.452134+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N2"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"abstain\": true|false,\n  \"points\": [{\"text\": \"string\"}]\n}\nRules:\n- Return ONLY high-confidence points inside your declared domain scope.\n- If the query is mostly outside your scope, set abstain=true and return {\"points\": []}.\n- If abstain=true, points must be empty.\n- Each point must be atomic and <= 160 chars.\n- Do not add generic cross-domain filler.\nInput JSON:\n{\"query\": \"We use WebSockets for real-time updates. Clients reconnect often and sometimes receive duplicate or out-of-order events. We also worry about replayed tokens. How should we design ordering/deduplication and secure the channel?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"abstain\":true,\"points\":[]}",
+    "response_json": {
+      "id": "chatcmpl-732ec969-7376-4bb7-8388-b85ae856893a",
+      "object": "chat.completion",
+      "created": 1773290223,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"abstain\":true,\"points\":[]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 390,
+        "completion_tokens": 91,
+        "total_tokens": 481
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:38:03.431444+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"abstain\": true|false,\n  \"points\": [{\"text\": \"string\"}]\n}\nRules:\n- Return ONLY high-confidence points inside your declared domain scope.\n- If the query is mostly outside your scope, set abstain=true and return {\"points\": []}.\n- If abstain=true, points must be empty.\n- Each point must be atomic and <= 160 chars.\n- Do not add generic cross-domain filler.\nInput JSON:\n{\"query\": \"We use WebSockets for real-time updates. Clients reconnect often and sometimes receive duplicate or out-of-order events. We also worry about replayed tokens. How should we design ordering/deduplication and secure the channel?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"abstain\":false,\"points\":[{\"text\":\"Assign each event a monotonically increasing sequence number per client session.\"},{\"text\":\"Store the last processed sequence number on client and server; drop any event with a lower or equal number.\"},{\"text\":\"When a client reconnects, include its last processed sequence number so the server can resend missing events.\"},{\"text\":\"Use a short‑lived signed token (e.g., JWT) with a nonce and expiration; verify it on each WebSocket upgrade.\"},{\"text\":\"Bind the token to the client’s IP or TLS session (token binding) to prevent replay from other hosts.\"},{\"text\":\"Enable TLS (wss://) to protect confidentiality and integrity of the WebSocket frames.\"},{\"text\":\"Optionally add a per‑message HMAC using a shared secret to detect tampering if TLS termination is off‑loaded.\"},{\"text\":\"Implement a server‑side deduplication cache keyed by (client_id, sequence_id) for a limited window to handle duplicates.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-37c6fb2c-2334-4b33-94b7-6a3e774cd171",
+      "object": "chat.completion",
+      "created": 1773290281,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"abstain\":false,\"points\":[{\"text\":\"Assign each event a monotonically increasing sequence number per client session.\"},{\"text\":\"Store the last processed sequence number on client and server; drop any event with a lower or equal number.\"},{\"text\":\"When a client reconnects, include its last processed sequence number so the server can resend missing events.\"},{\"text\":\"Use a short‑lived signed token (e.g., JWT) with a nonce and expiration; verify it on each WebSocket upgrade.\"},{\"text\":\"Bind the token to the client’s IP or TLS session (token binding) to prevent replay from other hosts.\"},{\"text\":\"Enable TLS (wss://) to protect confidentiality and integrity of the WebSocket frames.\"},{\"text\":\"Optionally add a per‑message HMAC using a shared secret to detect tampering if TLS termination is off‑loaded.\"},{\"text\":\"Implement a server‑side deduplication cache keyed by (client_id, sequence_id) for a limited window to handle duplicates.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 397,
+        "completion_tokens": 648,
+        "total_tokens": 1045
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 54 seconds.\",\"retryAfter\":54,\"limit\":10,\"remaining\":0,\"reset\":1773290280}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 33 seconds.\",\"retryAfter\":33,\"limit\":10,\"remaining\":0,\"reset\":1773290280}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 13 seconds.\",\"retryAfter\":13,\"limit\":10,\"remaining\":0,\"reset\":1773290280}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:38:04.542369+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N4"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"abstain\": true|false,\n  \"points\": [{\"text\": \"string\"}]\n}\nRules:\n- Return ONLY high-confidence points inside your declared domain scope.\n- If the query is mostly outside your scope, set abstain=true and return {\"points\": []}.\n- If abstain=true, points must be empty.\n- Each point must be atomic and <= 160 chars.\n- Do not add generic cross-domain filler.\nInput JSON:\n{\"query\": \"We use WebSockets for real-time updates. Clients reconnect often and sometimes receive duplicate or out-of-order events. We also worry about replayed tokens. How should we design ordering/deduplication and secure the channel?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"abstain\": true, \"points\": []}",
+    "response_json": {
+      "id": "chatcmpl-543a4eca-13b5-4c2f-8984-68ea347191ea",
+      "object": "chat.completion",
+      "created": 1773290281,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"abstain\": true, \"points\": []}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 392,
+        "completion_tokens": 91,
+        "total_tokens": 483
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:38:05.892997+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"abstain\": true|false,\n  \"points\": [{\"text\": \"string\"}]\n}\nRules:\n- Return ONLY high-confidence points inside your declared domain scope.\n- If the query is mostly outside your scope, set abstain=true and return {\"points\": []}.\n- If abstain=true, points must be empty.\n- Each point must be atomic and <= 160 chars.\n- Do not add generic cross-domain filler.\nInput JSON:\n{\"query\": \"We use WebSockets for real-time updates. Clients reconnect often and sometimes receive duplicate or out-of-order events. We also worry about replayed tokens. How should we design ordering/deduplication and secure the channel?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"abstain\":false,\"points\":[{\"text\":\"Assign each message a monotonically increasing sequence number per client and drop any message with a lower number.\"},{\"text\":\"Include a server‑generated unique message ID and keep a short‑term cache to discard duplicates.\"},{\"text\":\"Use a signed token (e.g., JWT) with a short expiration and a per‑connection nonce to prevent replay.\"},{\"text\":\"Require TLS (wss://) for all WebSocket traffic and verify the Origin header to restrict hosts.\"},{\"text\":\"Validate the token on every new WebSocket upgrade and reject connections with missing or expired tokens.\"},{\"text\":\"Implement a sliding window of acceptable sequence numbers to tolerate out‑of‑order delivery while still detecting gaps.\"},{\"text\":\"Make message handling idempotent so that processing a duplicate does not cause side effects.\"},{\"text\":\"Rotate signing keys regularly and revoke compromised tokens via a revocation list checked on each message.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-7099e201-6b6e-4c68-9ddc-3074c9f6d35c",
+      "object": "chat.completion",
+      "created": 1773290282,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"abstain\":false,\"points\":[{\"text\":\"Assign each message a monotonically increasing sequence number per client and drop any message with a lower number.\"},{\"text\":\"Include a server‑generated unique message ID and keep a short‑term cache to discard duplicates.\"},{\"text\":\"Use a signed token (e.g., JWT) with a short expiration and a per‑connection nonce to prevent replay.\"},{\"text\":\"Require TLS (wss://) for all WebSocket traffic and verify the Origin header to restrict hosts.\"},{\"text\":\"Validate the token on every new WebSocket upgrade and reject connections with missing or expired tokens.\"},{\"text\":\"Implement a sliding window of acceptable sequence numbers to tolerate out‑of‑order delivery while still detecting gaps.\"},{\"text\":\"Make message handling idempotent so that processing a duplicate does not cause side effects.\"},{\"text\":\"Rotate signing keys regularly and revoke compromised tokens via a revocation list checked on each message.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 390,
+        "completion_tokens": 608,
+        "total_tokens": 998
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:38:07.425330+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules:\n- Synthesis must be grounded in provided points_map.\n- Do not invent IDs; used_points must be subset of keys(points_map).\n- Use only points you can justify with high confidence from your domain knowledge.\n- If you cannot synthesize confidently, return synthesis_text='UNKNOWN' and used_points=[].\nInput JSON:\n{\"query\": \"We use WebSockets for real-time updates. Clients reconnect often and sometimes receive duplicate or out-of-order events. We also worry about replayed tokens. How should we design ordering/deduplication and secure the channel?\", \"input_text\": \"\", \"points_map\": {\"N1:0:6128c764\": \"Assign a monotonically increasing sequence number to each event per client; drop any received with a lower or duplicate number.\", \"N1:1:b40c465a\": \"Include a per‑connection token (e.g., JWT with short TTL) in every WebSocket frame and verify it server‑side to prevent replay.\", \"N1:2:f3cfd0b6\": \"On reconnect, have the client send the last sequence it processed; the server resumes from the next number, avoiding gaps.\", \"N1:3:838ad943\": \"Use idempotency keys (e.g., event UUID) and a short‑term cache to discard duplicate events arriving out of order.\", \"N1:4:152de33d\": \"Implement ACK/NACK flow: client acknowledges received seq numbers; server can retransmit missing ranges on request.\", \"N1:5:a51a77bf\": \"Protect tokens with HMAC‑signed timestamps; reject messages with timestamps outside an acceptable window to stop replay attacks.\", \"N3:0:c1ed6f60\": \"Assign each event a monotonically increasing sequence number per client session.\", \"N3:1:8943c261\": \"Store the last processed sequence number on client and server; drop any event with a lower or equal number.\", \"N3:2:b982cee3\": \"When a client reconnects, include its last processed sequence number so the server can resend missing events.\", \"N3:3:7d28f2f1\": \"Use a short‑lived signed token (e.g., JWT) with a nonce and expiration; verify it on each WebSocket upgrade.\", \"N3:4:bcdb1541\": \"Bind the token to the client’s IP or TLS session (token binding) to prevent replay from other hosts.\", \"N3:5:bcb721ee\": \"Enable TLS (wss://) to protect confidentiality and integrity of the WebSocket frames.\", \"N3:6:8156ab8a\": \"Optionally add a per‑message HMAC using a shared secret to detect tampering if TLS termination is off‑loaded.\", \"N3:7:bff92265\": \"Implement a server‑side deduplication cache keyed by (client_id, sequence_id) for a limited window to handle duplicates.\", \"N5:0:e3a92266\": \"Assign each message a monotonically increasing sequence number per client and drop any message with a lower number.\", \"N5:1:eaa8318b\": \"Include a server‑generated unique message ID and keep a short‑term cache to discard duplicates.\", \"N5:2:57555f13\": \"Use a signed token (e.g., JWT) with a short expiration and a per‑connection nonce to prevent replay.\", \"N5:3:95f3e195\": \"Require TLS (wss://) for all WebSocket traffic and verify the Origin header to restrict hosts.\", \"N5:4:ca686e53\": \"Validate the token on every new WebSocket upgrade and reject connections with missing or expired tokens.\", \"N5:5:ba3baea6\": \"Implement a sliding window of acceptable sequence numbers to tolerate out‑of‑order delivery while still detecting gaps.\", \"N5:6:e8196072\": \"Make message handling idempotent so that processing a duplicate does not cause side effects.\", \"N5:7:a164bc30\": \"Rotate signing keys regularly and revoke compromised tokens via a revocation list checked on each message.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"Design the WebSocket protocol with a per‑client monotonically increasing sequence number (N1:0, N3:0). The client stores the last processed sequence and includes it on reconnect so the server can resume from the next number (N1:2, N3:2). Both sides acknowledge received ranges; the client sends ACKs and can request NACKs for missing gaps, allowing the server to retransmit (N1:4). To handle out‑of‑order or duplicate frames, keep a short‑term deduplication cache keyed by (client_id, sequence_id) and discard any event with a lower or equal sequence number (N1:0, N3:1, N3:7). Additionally, attach an idempotency key such as a UUID to each event and drop duplicates using the same cache (N1:3). Secure the channel by requiring TLS (wss://) (N3:5) and using a short‑lived signed token (e.g., JWT) with a per‑connection nonce and timestamp on every frame (N1:1, N5:2). Verify the token on each upgrade and on every message, rejecting those with missing, expired, or out‑of‑window timestamps (N1:5). Bind the token to the client’s IP or TLS session to prevent replay from other hosts (N3:4). Optionally add a per‑message HMAC using a shared secret for extra integrity if TLS termination is off‑loaded (N3:6). This combination ensures ordered delivery, deduplication of duplicates/out‑of‑order events, reliable reconnection, and protection against token replay attacks.\",\n  \"used_points\": [\n    \"N1:0\",\n    \"N1:1\",\n    \"N1:2\",\n    \"N1:3\",\n    \"N1:4\",\n    \"N1:5\",\n    \"N3:0\",\n    \"N3:1\",\n    \"N3:2\",\n    \"N3:3\",\n    \"N3:4\",\n    \"N3:5\",\n    \"N3:7\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-a44583fd-9880-40b6-a459-fd6a87aceb73",
+      "object": "chat.completion",
+      "created": 1773290286,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"Design the WebSocket protocol with a per‑client monotonically increasing sequence number (N1:0, N3:0). The client stores the last processed sequence and includes it on reconnect so the server can resume from the next number (N1:2, N3:2). Both sides acknowledge received ranges; the client sends ACKs and can request NACKs for missing gaps, allowing the server to retransmit (N1:4). To handle out‑of‑order or duplicate frames, keep a short‑term deduplication cache keyed by (client_id, sequence_id) and discard any event with a lower or equal sequence number (N1:0, N3:1, N3:7). Additionally, attach an idempotency key such as a UUID to each event and drop duplicates using the same cache (N1:3). Secure the channel by requiring TLS (wss://) (N3:5) and using a short‑lived signed token (e.g., JWT) with a per‑connection nonce and timestamp on every frame (N1:1, N5:2). Verify the token on each upgrade and on every message, rejecting those with missing, expired, or out‑of‑window timestamps (N1:5). Bind the token to the client’s IP or TLS session to prevent replay from other hosts (N3:4). Optionally add a per‑message HMAC using a shared secret for extra integrity if TLS termination is off‑loaded (N3:6). This combination ensures ordered delivery, deduplication of duplicates/out‑of‑order events, reliable reconnection, and protection against token replay attacks.\",\n  \"used_points\": [\n    \"N1:0\",\n    \"N1:1\",\n    \"N1:2\",\n    \"N1:3\",\n    \"N1:4\",\n    \"N1:5\",\n    \"N3:0\",\n    \"N3:1\",\n    \"N3:2\",\n    \"N3:3\",\n    \"N3:4\",\n    \"N3:5\",\n    \"N3:7\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1140,
+        "completion_tokens": 828,
+        "total_tokens": 1968
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:39:02.522426+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules:\n- Synthesis must be grounded in provided points_map.\n- Do not invent IDs; used_points must be subset of keys(points_map).\n- Use only points you can justify with high confidence from your domain knowledge.\n- If you cannot synthesize confidently, return synthesis_text='UNKNOWN' and used_points=[].\nInput JSON:\n{\"query\": \"We use WebSockets for real-time updates. Clients reconnect often and sometimes receive duplicate or out-of-order events. We also worry about replayed tokens. How should we design ordering/deduplication and secure the channel?\", \"input_text\": \"\", \"points_map\": {\"N1:0:6128c764\": \"Assign a monotonically increasing sequence number to each event per client; drop any received with a lower or duplicate number.\", \"N1:1:b40c465a\": \"Include a per‑connection token (e.g., JWT with short TTL) in every WebSocket frame and verify it server‑side to prevent replay.\", \"N1:2:f3cfd0b6\": \"On reconnect, have the client send the last sequence it processed; the server resumes from the next number, avoiding gaps.\", \"N1:3:838ad943\": \"Use idempotency keys (e.g., event UUID) and a short‑term cache to discard duplicate events arriving out of order.\", \"N1:4:152de33d\": \"Implement ACK/NACK flow: client acknowledges received seq numbers; server can retransmit missing ranges on request.\", \"N1:5:a51a77bf\": \"Protect tokens with HMAC‑signed timestamps; reject messages with timestamps outside an acceptable window to stop replay attacks.\", \"N3:0:c1ed6f60\": \"Assign each event a monotonically increasing sequence number per client session.\", \"N3:1:8943c261\": \"Store the last processed sequence number on client and server; drop any event with a lower or equal number.\", \"N3:2:b982cee3\": \"When a client reconnects, include its last processed sequence number so the server can resend missing events.\", \"N3:3:7d28f2f1\": \"Use a short‑lived signed token (e.g., JWT) with a nonce and expiration; verify it on each WebSocket upgrade.\", \"N3:4:bcdb1541\": \"Bind the token to the client’s IP or TLS session (token binding) to prevent replay from other hosts.\", \"N3:5:bcb721ee\": \"Enable TLS (wss://) to protect confidentiality and integrity of the WebSocket frames.\", \"N3:6:8156ab8a\": \"Optionally add a per‑message HMAC using a shared secret to detect tampering if TLS termination is off‑loaded.\", \"N3:7:bff92265\": \"Implement a server‑side deduplication cache keyed by (client_id, sequence_id) for a limited window to handle duplicates.\", \"N5:0:e3a92266\": \"Assign each message a monotonically increasing sequence number per client and drop any message with a lower number.\", \"N5:1:eaa8318b\": \"Include a server‑generated unique message ID and keep a short‑term cache to discard duplicates.\", \"N5:2:57555f13\": \"Use a signed token (e.g., JWT) with a short expiration and a per‑connection nonce to prevent replay.\", \"N5:3:95f3e195\": \"Require TLS (wss://) for all WebSocket traffic and verify the Origin header to restrict hosts.\", \"N5:4:ca686e53\": \"Validate the token on every new WebSocket upgrade and reject connections with missing or expired tokens.\", \"N5:5:ba3baea6\": \"Implement a sliding window of acceptable sequence numbers to tolerate out‑of‑order delivery while still detecting gaps.\", \"N5:6:e8196072\": \"Make message handling idempotent so that processing a duplicate does not cause side effects.\", \"N5:7:a164bc30\": \"Rotate signing keys regularly and revoke compromised tokens via a revocation list checked on each message.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"Use a per‑client monotonically increasing sequence number for each event (N1:0:6128c764) and have the client include the last processed sequence on reconnect so the server can resume from the next number (N1:2:f3cfd0b6). The server should keep the last acknowledged sequence and drop any event with a lower or duplicate number (N1:0:6128c764, N1:4:152de33d). Implement an ACK/NACK flow where the client acknowledges received ranges, allowing the server to retransmit missing gaps (N1:4:152de33d). To handle out‑of‑order duplicates, attach an idempotency key or UUID to each event and cache recent keys for a short window to discard repeats (N1:3:838ad943, N3:7:bff92265). Secure the channel by requiring TLS (wss://) (N3:5:bcb721ee) and using a short‑lived signed token (e.g., JWT) with a per‑connection nonce on every frame (N1:1:b40c465a). Verify the token on each upgrade, bind it to the client’s IP or TLS session to prevent replay from other hosts (N3:4:bcdb1541), and protect it with HMAC‑signed timestamps, rejecting messages outside an acceptable time window (N1:5:a51a77bf).\",\n  \"used_points\": [\n    \"N1:0:6128c764\",\n    \"N1:1:b40c465a\",\n    \"N1:2:f3cfd0b6\",\n    \"N1:3:838ad943\",\n    \"N1:4:152de33d\",\n    \"N1:5:a51a77bf\",\n    \"N3:4:bcdb1541\",\n    \"N3:5:bcb721ee\",\n    \"N3:7:bff92265\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-2832e332-1ede-486c-a024-e9744fb57d67",
+      "object": "chat.completion",
+      "created": 1773290339,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"Use a per‑client monotonically increasing sequence number for each event (N1:0:6128c764) and have the client include the last processed sequence on reconnect so the server can resume from the next number (N1:2:f3cfd0b6). The server should keep the last acknowledged sequence and drop any event with a lower or duplicate number (N1:0:6128c764, N1:4:152de33d). Implement an ACK/NACK flow where the client acknowledges received ranges, allowing the server to retransmit missing gaps (N1:4:152de33d). To handle out‑of‑order duplicates, attach an idempotency key or UUID to each event and cache recent keys for a short window to discard repeats (N1:3:838ad943, N3:7:bff92265). Secure the channel by requiring TLS (wss://) (N3:5:bcb721ee) and using a short‑lived signed token (e.g., JWT) with a per‑connection nonce on every frame (N1:1:b40c465a). Verify the token on each upgrade, bind it to the client’s IP or TLS session to prevent replay from other hosts (N3:4:bcdb1541), and protect it with HMAC‑signed timestamps, rejecting messages outside an acceptable time window (N1:5:a51a77bf).\",\n  \"used_points\": [\n    \"N1:0:6128c764\",\n    \"N1:1:b40c465a\",\n    \"N1:2:f3cfd0b6\",\n    \"N1:3:838ad943\",\n    \"N1:4:152de33d\",\n    \"N1:5:a51a77bf\",\n    \"N3:4:bcdb1541\",\n    \"N3:5:bcb721ee\",\n    \"N3:7:bff92265\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1143,
+        "completion_tokens": 689,
+        "total_tokens": 1832
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 53 seconds.\",\"retryAfter\":53,\"limit\":10,\"remaining\":0,\"reset\":1773290340}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 32 seconds.\",\"retryAfter\":32,\"limit\":10,\"remaining\":0,\"reset\":1773290340}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 12 seconds.\",\"retryAfter\":12,\"limit\":10,\"remaining\":0,\"reset\":1773290340}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:39:04.057083+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules:\n- Synthesis must be grounded in provided points_map.\n- Do not invent IDs; used_points must be subset of keys(points_map).\n- Use only points you can justify with high confidence from your domain knowledge.\n- If you cannot synthesize confidently, return synthesis_text='UNKNOWN' and used_points=[].\nInput JSON:\n{\"query\": \"We use WebSockets for real-time updates. Clients reconnect often and sometimes receive duplicate or out-of-order events. We also worry about replayed tokens. How should we design ordering/deduplication and secure the channel?\", \"input_text\": \"\", \"points_map\": {\"N1:0:6128c764\": \"Assign a monotonically increasing sequence number to each event per client; drop any received with a lower or duplicate number.\", \"N1:1:b40c465a\": \"Include a per‑connection token (e.g., JWT with short TTL) in every WebSocket frame and verify it server‑side to prevent replay.\", \"N1:2:f3cfd0b6\": \"On reconnect, have the client send the last sequence it processed; the server resumes from the next number, avoiding gaps.\", \"N1:3:838ad943\": \"Use idempotency keys (e.g., event UUID) and a short‑term cache to discard duplicate events arriving out of order.\", \"N1:4:152de33d\": \"Implement ACK/NACK flow: client acknowledges received seq numbers; server can retransmit missing ranges on request.\", \"N1:5:a51a77bf\": \"Protect tokens with HMAC‑signed timestamps; reject messages with timestamps outside an acceptable window to stop replay attacks.\", \"N3:0:c1ed6f60\": \"Assign each event a monotonically increasing sequence number per client session.\", \"N3:1:8943c261\": \"Store the last processed sequence number on client and server; drop any event with a lower or equal number.\", \"N3:2:b982cee3\": \"When a client reconnects, include its last processed sequence number so the server can resend missing events.\", \"N3:3:7d28f2f1\": \"Use a short‑lived signed token (e.g., JWT) with a nonce and expiration; verify it on each WebSocket upgrade.\", \"N3:4:bcdb1541\": \"Bind the token to the client’s IP or TLS session (token binding) to prevent replay from other hosts.\", \"N3:5:bcb721ee\": \"Enable TLS (wss://) to protect confidentiality and integrity of the WebSocket frames.\", \"N3:6:8156ab8a\": \"Optionally add a per‑message HMAC using a shared secret to detect tampering if TLS termination is off‑loaded.\", \"N3:7:bff92265\": \"Implement a server‑side deduplication cache keyed by (client_id, sequence_id) for a limited window to handle duplicates.\", \"N5:0:e3a92266\": \"Assign each message a monotonically increasing sequence number per client and drop any message with a lower number.\", \"N5:1:eaa8318b\": \"Include a server‑generated unique message ID and keep a short‑term cache to discard duplicates.\", \"N5:2:57555f13\": \"Use a signed token (e.g., JWT) with a short expiration and a per‑connection nonce to prevent replay.\", \"N5:3:95f3e195\": \"Require TLS (wss://) for all WebSocket traffic and verify the Origin header to restrict hosts.\", \"N5:4:ca686e53\": \"Validate the token on every new WebSocket upgrade and reject connections with missing or expired tokens.\", \"N5:5:ba3baea6\": \"Implement a sliding window of acceptable sequence numbers to tolerate out‑of‑order delivery while still detecting gaps.\", \"N5:6:e8196072\": \"Make message handling idempotent so that processing a duplicate does not cause side effects.\", \"N5:7:a164bc30\": \"Rotate signing keys regularly and revoke compromised tokens via a revocation list checked on each message.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"Use a per‑client monotonically increasing sequence number for every event (N1:0:6128c764). The client stores the last sequence it processed and includes it on reconnect so the server can resume from the next number (N1:2:f3cfd0b6). The server acknowledges received sequences; missing ranges can be requested via ACK/NACK (N1:4:152de33d). To tolerate out‑of‑order delivery, keep a short sliding window and drop any event with a lower or duplicate sequence (N5:5:ba3baea6). Additionally, attach an idempotency key or UUID to each event and cache recent keys to discard duplicates arriving out of order (N1:3:838ad943). Secure the WebSocket channel with TLS (wss://) (N3:5:bcb721ee) and require a short‑lived, HMAC‑signed JWT that includes a nonce and timestamp on every frame (N1:1:b40c465a, N1:5:a51a77bf). Verify the token on each upgrade, bind it to the client’s IP or TLS session, and reject messages with timestamps outside an acceptable window to prevent replay (N1:5:a51a77bf). Rotate signing keys regularly and check a revocation list on each message (N5:7:a164bc30).\",\n  \"used_points\": [\n    \"N1:0:6128c764\",\n    \"N1:1:b40c465a\",\n    \"N1:2:f3cfd0b6\",\n    \"N1:3:838ad943\",\n    \"N1:4:152de33d\",\n    \"N1:5:a51a77bf\",\n    \"N3:5:bcb721ee\",\n    \"N5:5:ba3baea6\",\n    \"N5:7:a164bc30\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-c5121ef9-8e9a-4804-a908-d05922f35918",
+      "object": "chat.completion",
+      "created": 1773290340,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"Use a per‑client monotonically increasing sequence number for every event (N1:0:6128c764). The client stores the last sequence it processed and includes it on reconnect so the server can resume from the next number (N1:2:f3cfd0b6). The server acknowledges received sequences; missing ranges can be requested via ACK/NACK (N1:4:152de33d). To tolerate out‑of‑order delivery, keep a short sliding window and drop any event with a lower or duplicate sequence (N5:5:ba3baea6). Additionally, attach an idempotency key or UUID to each event and cache recent keys to discard duplicates arriving out of order (N1:3:838ad943). Secure the WebSocket channel with TLS (wss://) (N3:5:bcb721ee) and require a short‑lived, HMAC‑signed JWT that includes a nonce and timestamp on every frame (N1:1:b40c465a, N1:5:a51a77bf). Verify the token on each upgrade, bind it to the client’s IP or TLS session, and reject messages with timestamps outside an acceptable window to prevent replay (N1:5:a51a77bf). Rotate signing keys regularly and check a revocation list on each message (N5:7:a164bc30).\",\n  \"used_points\": [\n    \"N1:0:6128c764\",\n    \"N1:1:b40c465a\",\n    \"N1:2:f3cfd0b6\",\n    \"N1:3:838ad943\",\n    \"N1:4:152de33d\",\n    \"N1:5:a51a77bf\",\n    \"N3:5:bcb721ee\",\n    \"N5:5:ba3baea6\",\n    \"N5:7:a164bc30\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1136,
+        "completion_tokens": 777,
+        "total_tokens": 1913
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:39:06.053930+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N1",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information or outside your scope.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"We use WebSockets for real-time updates. Clients reconnect often and sometimes receive duplicate or out-of-order events. We also worry about replayed tokens. How should we design ordering/deduplication and secure the channel?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N2\", \"target_draft\": \"UNKNOWN\", \"target_used_points\": []}, {\"target_id\": \"N3\", \"target_draft\": \"Use a per‑client monotonically increasing sequence number for each event (N1:0:6128c764) and have the client include the last processed sequence on reconnect so the server can resume from the next number (N1:2:f3cfd0b6). The server should keep the last acknowledged sequence and drop any event with a lower or duplicate number (N1:0:6128c764, N1:4:152de33d). Implement an ACK/NACK flow where the client acknowledges received ranges, allowing the server to retransmit missing gaps (N1:4:152de33d). To handle out‑of‑order duplicates, attach an idempotency key or UUID to each event and cache recent keys for a short window to discard repeats (N1:3:838ad943, N3:7:bff92265). Secure the channel by requiring TLS (wss://) (N3:5:bcb721ee) and using a short‑lived signed token (e.g., JWT) with a per‑connection nonce on every frame (N1:1:b40c465a). Verify the token on each upgrade, bind it to the client’s IP or TLS session to prevent replay from other hosts (N3:4:bcdb1541), and protect it with HMAC‑signed timestamps, rejecting messages outside an acceptable time window (N1:5:a51a77bf).\", \"target_used_points\": [\"N1:0:6128c764\", \"N1:1:b40c465a\", \"N1:2:f3cfd0b6\", \"N1:3:838ad943\", \"N1:4:152de33d\", \"N1:5:a51a77bf\", \"N3:4:bcdb1541\", \"N3:5:bcb721ee\", \"N3:7:bff92265\"]}, {\"target_id\": \"N4\", \"target_draft\": \"UNKNOWN\", \"target_used_points\": []}, {\"target_id\": \"N5\", \"target_draft\": \"Use a per‑client monotonically increasing sequence number for every event (N1:0:6128c764). The client stores the last sequence it processed and includes it on reconnect so the server can resume from the next number (N1:2:f3cfd0b6). The server acknowledges received sequences; missing ranges can be requested via ACK/NACK (N1:4:152de33d). To tolerate out‑of‑order delivery, keep a short sliding window and drop any event with a lower or duplicate sequence (N5:5:ba3baea6). Additionally, attach an idempotency key or UUID to each event and cache recent keys to discard duplicates arriving out of order (N1:3:838ad943). Secure the WebSocket channel with TLS (wss://) (N3:5:bcb721ee) and require a short‑lived, HMAC‑signed JWT that includes a nonce and timestamp on every frame (N1:1:b40c465a, N1:5:a51a77bf). Verify the token on each upgrade, bind it to the client’s IP or TLS session, and reject messages with timestamps outside an acceptable window to prevent replay (N1:5:a51a77bf). Rotate signing keys regularly and check a revocation list on each message (N5:7:a164bc30).\", \"target_used_points\": [\"N1:0:6128c764\", \"N1:1:b40c465a\", \"N1:2:f3cfd0b6\", \"N1:3:838ad943\", \"N1:4:152de33d\", \"N1:5:a51a77bf\", \"N3:5:bcb721ee\", \"N5:5:ba3baea6\", \"N5:7:a164bc30\"]}], \"points_map\": {\"N1:0:6128c764\": \"Assign a monotonically increasing sequence number to each event per client; drop any received with a lower or duplicate number.\", \"N1:1:b40c465a\": \"Include a per‑connection token (e.g., JWT with short TTL) in every WebSocket frame and verify it server‑side to prevent replay.\", \"N1:2:f3cfd0b6\": \"On reconnect, have the client send the last sequence it processed; the server resumes from the next number, avoiding gaps.\", \"N1:3:838ad943\": \"Use idempotency keys (e.g., event UUID) and a short‑term cache to discard duplicate events arriving out of order.\", \"N1:4:152de33d\": \"Implement ACK/NACK flow: client acknowledges received seq numbers; server can retransmit missing ranges on request.\", \"N1:5:a51a77bf\": \"Protect tokens with HMAC‑signed timestamps; reject messages with timestamps outside an acceptable window to stop replay attacks.\", \"N3:0:c1ed6f60\": \"Assign each event a monotonically increasing sequence number per client session.\", \"N3:1:8943c261\": \"Store the last processed sequence number on client and server; drop any event with a lower or equal number.\", \"N3:2:b982cee3\": \"When a client reconnects, include its last processed sequence number so the server can resend missing events.\", \"N3:3:7d28f2f1\": \"Use a short‑lived signed token (e.g., JWT) with a nonce and expiration; verify it on each WebSocket upgrade.\", \"N3:4:bcdb1541\": \"Bind the token to the client’s IP or TLS session (token binding) to prevent replay from other hosts.\", \"N3:5:bcb721ee\": \"Enable TLS (wss://) to protect confidentiality and integrity of the WebSocket frames.\", \"N3:6:8156ab8a\": \"Optionally add a per‑message HMAC using a shared secret to detect tampering if TLS termination is off‑loaded.\", \"N3:7:bff92265\": \"Implement a server‑side deduplication cache keyed by (client_id, sequence_id) for a limited window to handle duplicates.\", \"N5:0:e3a92266\": \"Assign each message a monotonically increasing sequence number per client and drop any message with a lower number.\", \"N5:1:eaa8318b\": \"Include a server‑generated unique message ID and keep a short‑term cache to discard duplicates.\", \"N5:2:57555f13\": \"Use a signed token (e.g., JWT) with a short expiration and a per‑connection nonce to prevent replay.\", \"N5:3:95f3e195\": \"Require TLS (wss://) for all WebSocket traffic and verify the Origin header to restrict hosts.\", \"N5:4:ca686e53\": \"Validate the token on every new WebSocket upgrade and reject connections with missing or expired tokens.\", \"N5:5:ba3baea6\": \"Implement a sliding window of acceptable sequence numbers to tolerate out‑of‑order delivery while still detecting gaps.\", \"N5:6:e8196072\": \"Make message handling idempotent so that processing a duplicate does not cause side effects.\", \"N5:7:a164bc30\": \"Rotate signing keys regularly and revoke compromised tokens via a revocation list checked on each message.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N2\",\"valid\":\"UNKNOWN\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"No draft content and no points to evaluate.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6128c764\",\"N1:1:b40c465a\",\"N1:2:f3cfd0b6\",\"N1:3:838ad943\",\"N1:4:152de33d\",\"N1:5:a51a77bf\",\"N3:4:bcdb1541\",\"N3:5:bcb721ee\",\"N3:7:bff92265\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"},{\"target_id\":\"N4\",\"valid\":\"UNKNOWN\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"No draft content and no points to evaluate.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6128c764\",\"N1:1:b40c465a\",\"N1:2:f3cfd0b6\",\"N1:3:838ad943\",\"N1:4:152de33d\",\"N1:5:a51a77bf\",\"N3:5:bcb721ee\",\"N5:5:ba3baea6\",\"N5:7:a164bc30\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-38170ccb-1eba-4397-b923-69fdb4357831",
+      "object": "chat.completion",
+      "created": 1773290342,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N2\",\"valid\":\"UNKNOWN\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"No draft content and no points to evaluate.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6128c764\",\"N1:1:b40c465a\",\"N1:2:f3cfd0b6\",\"N1:3:838ad943\",\"N1:4:152de33d\",\"N1:5:a51a77bf\",\"N3:4:bcdb1541\",\"N3:5:bcb721ee\",\"N3:7:bff92265\"],\"reject_points\":[],\"unknown_points[]\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"},{\"target_id\":\"N4\",\"valid\":\"UNKNOWN\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"No draft content and no points to evaluate.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6128c764\",\"N1:1:b40c465a\",\"N1:2:f3cfd0b6\",\"N1:3:838ad943\",\"N1:4:152de33d\",\"N1:5:a51a77bf\",\"N3:5:bcb721ee\",\"N5:5:ba3baea6\",\"N5:7:a164bc30\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly reflected in the draft.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2051,
+        "completion_tokens": 1898,
+        "total_tokens": 3949
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:39:07.772166+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N3",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information or outside your scope.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"We use WebSockets for real-time updates. Clients reconnect often and sometimes receive duplicate or out-of-order events. We also worry about replayed tokens. How should we design ordering/deduplication and secure the channel?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"Design the WebSocket protocol with a per‑client monotonically increasing sequence number (N1:0, N3:0). The client stores the last processed sequence and includes it on reconnect so the server can resume from the next number (N1:2, N3:2). Both sides acknowledge received ranges; the client sends ACKs and can request NACKs for missing gaps, allowing the server to retransmit (N1:4). To handle out‑of‑order or duplicate frames, keep a short‑term deduplication cache keyed by (client_id, sequence_id) and discard any event with a lower or equal sequence number (N1:0, N3:1, N3:7). Additionally, attach an idempotency key such as a UUID to each event and drop duplicates using the same cache (N1:3). Secure the channel by requiring TLS (wss://) (N3:5) and using a short‑lived signed token (e.g., JWT) with a per‑connection nonce and timestamp on every frame (N1:1, N5:2). Verify the token on each upgrade and on every message, rejecting those with missing, expired, or out‑of‑window timestamps (N1:5). Bind the token to the client’s IP or TLS session to prevent replay from other hosts (N3:4). Optionally add a per‑message HMAC using a shared secret for extra integrity if TLS termination is off‑loaded (N3:6). This combination ensures ordered delivery, deduplication of duplicates/out‑of‑order events, reliable reconnection, and protection against token replay attacks.\", \"target_used_points\": []}, {\"target_id\": \"N2\", \"target_draft\": \"UNKNOWN\", \"target_used_points\": []}, {\"target_id\": \"N4\", \"target_draft\": \"UNKNOWN\", \"target_used_points\": []}, {\"target_id\": \"N5\", \"target_draft\": \"Use a per‑client monotonically increasing sequence number for every event (N1:0:6128c764). The client stores the last sequence it processed and includes it on reconnect so the server can resume from the next number (N1:2:f3cfd0b6). The server acknowledges received sequences; missing ranges can be requested via ACK/NACK (N1:4:152de33d). To tolerate out‑of‑order delivery, keep a short sliding window and drop any event with a lower or duplicate sequence (N5:5:ba3baea6). Additionally, attach an idempotency key or UUID to each event and cache recent keys to discard duplicates arriving out of order (N1:3:838ad943). Secure the WebSocket channel with TLS (wss://) (N3:5:bcb721ee) and require a short‑lived, HMAC‑signed JWT that includes a nonce and timestamp on every frame (N1:1:b40c465a, N1:5:a51a77bf). Verify the token on each upgrade, bind it to the client’s IP or TLS session, and reject messages with timestamps outside an acceptable window to prevent replay (N1:5:a51a77bf). Rotate signing keys regularly and check a revocation list on each message (N5:7:a164bc30).\", \"target_used_points\": [\"N1:0:6128c764\", \"N1:1:b40c465a\", \"N1:2:f3cfd0b6\", \"N1:3:838ad943\", \"N1:4:152de33d\", \"N1:5:a51a77bf\", \"N3:5:bcb721ee\", \"N5:5:ba3baea6\", \"N5:7:a164bc30\"]}], \"points_map\": {\"N1:0:6128c764\": \"Assign a monotonically increasing sequence number to each event per client; drop any received with a lower or duplicate number.\", \"N1:1:b40c465a\": \"Include a per‑connection token (e.g., JWT with short TTL) in every WebSocket frame and verify it server‑side to prevent replay.\", \"N1:2:f3cfd0b6\": \"On reconnect, have the client send the last sequence it processed; the server resumes from the next number, avoiding gaps.\", \"N1:3:838ad943\": \"Use idempotency keys (e.g., event UUID) and a short‑term cache to discard duplicate events arriving out of order.\", \"N1:4:152de33d\": \"Implement ACK/NACK flow: client acknowledges received seq numbers; server can retransmit missing ranges on request.\", \"N1:5:a51a77bf\": \"Protect tokens with HMAC‑signed timestamps; reject messages with timestamps outside an acceptable window to stop replay attacks.\", \"N3:0:c1ed6f60\": \"Assign each event a monotonically increasing sequence number per client session.\", \"N3:1:8943c261\": \"Store the last processed sequence number on client and server; drop any event with a lower or equal number.\", \"N3:2:b982cee3\": \"When a client reconnects, include its last processed sequence number so the server can resend missing events.\", \"N3:3:7d28f2f1\": \"Use a short‑lived signed token (e.g., JWT) with a nonce and expiration; verify it on each WebSocket upgrade.\", \"N3:4:bcdb1541\": \"Bind the token to the client’s IP or TLS session (token binding) to prevent replay from other hosts.\", \"N3:5:bcb721ee\": \"Enable TLS (wss://) to protect confidentiality and integrity of the WebSocket frames.\", \"N3:6:8156ab8a\": \"Optionally add a per‑message HMAC using a shared secret to detect tampering if TLS termination is off‑loaded.\", \"N3:7:bff92265\": \"Implement a server‑side deduplication cache keyed by (client_id, sequence_id) for a limited window to handle duplicates.\", \"N5:0:e3a92266\": \"Assign each message a monotonically increasing sequence number per client and drop any message with a lower number.\", \"N5:1:eaa8318b\": \"Include a server‑generated unique message ID and keep a short‑term cache to discard duplicates.\", \"N5:2:57555f13\": \"Use a signed token (e.g., JWT) with a short expiration and a per‑connection nonce to prevent replay.\", \"N5:3:95f3e195\": \"Require TLS (wss://) for all WebSocket traffic and verify the Origin header to restrict hosts.\", \"N5:4:ca686e53\": \"Validate the token on every new WebSocket upgrade and reject connections with missing or expired tokens.\", \"N5:5:ba3baea6\": \"Implement a sliding window of acceptable sequence numbers to tolerate out‑of‑order delivery while still detecting gaps.\", \"N5:6:e8196072\": \"Make message handling idempotent so that processing a duplicate does not cause side effects.\", \"N5:7:a164bc30\": \"Rotate signing keys regularly and revoke compromised tokens via a revocation list checked on each message.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft aligns with design principles; no used points to evaluate.\"},{\"target_id\":\"N2\",\"valid\":\"UNKNOWN\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft is UNKNOWN; insufficient information.\"},{\"target_id\":\"N4\",\"valid\":\"UNKNOWN\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft is UNKNOWN; insufficient information.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6128c764\",\"N1:1:b40c465a\",\"N1:2:f3cfd0b6\",\"N1:3:838ad943\",\"N1:4:152de33d\",\"N1:5:a51a77bf\",\"N3:5:bcb721ee\",\"N5:5:ba3baea6\",\"N5:7:a164bc30\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly incorporated.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-501e72cc-a188-4fb3-8f80-9697cfe4adf9",
+      "object": "chat.completion",
+      "created": 1773290344,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft aligns with design principles; no used points to evaluate.\"},{\"target_id\":\"N2\",\"valid\":\"UNKNOWN\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft is UNKNOWN; insufficient information.\"},{\"target_id\":\"N4\",\"valid\":\"UNKNOWN\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft is UNKNOWN; insufficient information.\"},{\"target_id\":\"N5\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6128c764\",\"N1:1:b40c465a\",\"N1:2:f3cfd0b6\",\"N1:3:838ad943\",\"N1:4:152de33d\",\"N1:5:a51a77bf\",\"N3:5:bcb721ee\",\"N5:5:ba3baea6\",\"N5:7:a164bc30\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points correctly incorporated.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2001,
+        "completion_tokens": 1897,
+        "total_tokens": 3898
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:40:02.432676+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N5",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information or outside your scope.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"We use WebSockets for real-time updates. Clients reconnect often and sometimes receive duplicate or out-of-order events. We also worry about replayed tokens. How should we design ordering/deduplication and secure the channel?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"Design the WebSocket protocol with a per‑client monotonically increasing sequence number (N1:0, N3:0). The client stores the last processed sequence and includes it on reconnect so the server can resume from the next number (N1:2, N3:2). Both sides acknowledge received ranges; the client sends ACKs and can request NACKs for missing gaps, allowing the server to retransmit (N1:4). To handle out‑of‑order or duplicate frames, keep a short‑term deduplication cache keyed by (client_id, sequence_id) and discard any event with a lower or equal sequence number (N1:0, N3:1, N3:7). Additionally, attach an idempotency key such as a UUID to each event and drop duplicates using the same cache (N1:3). Secure the channel by requiring TLS (wss://) (N3:5) and using a short‑lived signed token (e.g., JWT) with a per‑connection nonce and timestamp on every frame (N1:1, N5:2). Verify the token on each upgrade and on every message, rejecting those with missing, expired, or out‑of‑window timestamps (N1:5). Bind the token to the client’s IP or TLS session to prevent replay from other hosts (N3:4). Optionally add a per‑message HMAC using a shared secret for extra integrity if TLS termination is off‑loaded (N3:6). This combination ensures ordered delivery, deduplication of duplicates/out‑of‑order events, reliable reconnection, and protection against token replay attacks.\", \"target_used_points\": []}, {\"target_id\": \"N2\", \"target_draft\": \"UNKNOWN\", \"target_used_points\": []}, {\"target_id\": \"N3\", \"target_draft\": \"Use a per‑client monotonically increasing sequence number for each event (N1:0:6128c764) and have the client include the last processed sequence on reconnect so the server can resume from the next number (N1:2:f3cfd0b6). The server should keep the last acknowledged sequence and drop any event with a lower or duplicate number (N1:0:6128c764, N1:4:152de33d). Implement an ACK/NACK flow where the client acknowledges received ranges, allowing the server to retransmit missing gaps (N1:4:152de33d). To handle out‑of‑order duplicates, attach an idempotency key or UUID to each event and cache recent keys for a short window to discard repeats (N1:3:838ad943, N3:7:bff92265). Secure the channel by requiring TLS (wss://) (N3:5:bcb721ee) and using a short‑lived signed token (e.g., JWT) with a per‑connection nonce on every frame (N1:1:b40c465a). Verify the token on each upgrade, bind it to the client’s IP or TLS session to prevent replay from other hosts (N3:4:bcdb1541), and protect it with HMAC‑signed timestamps, rejecting messages outside an acceptable time window (N1:5:a51a77bf).\", \"target_used_points\": [\"N1:0:6128c764\", \"N1:1:b40c465a\", \"N1:2:f3cfd0b6\", \"N1:3:838ad943\", \"N1:4:152de33d\", \"N1:5:a51a77bf\", \"N3:4:bcdb1541\", \"N3:5:bcb721ee\", \"N3:7:bff92265\"]}, {\"target_id\": \"N4\", \"target_draft\": \"UNKNOWN\", \"target_used_points\": []}], \"points_map\": {\"N1:0:6128c764\": \"Assign a monotonically increasing sequence number to each event per client; drop any received with a lower or duplicate number.\", \"N1:1:b40c465a\": \"Include a per‑connection token (e.g., JWT with short TTL) in every WebSocket frame and verify it server‑side to prevent replay.\", \"N1:2:f3cfd0b6\": \"On reconnect, have the client send the last sequence it processed; the server resumes from the next number, avoiding gaps.\", \"N1:3:838ad943\": \"Use idempotency keys (e.g., event UUID) and a short‑term cache to discard duplicate events arriving out of order.\", \"N1:4:152de33d\": \"Implement ACK/NACK flow: client acknowledges received seq numbers; server can retransmit missing ranges on request.\", \"N1:5:a51a77bf\": \"Protect tokens with HMAC‑signed timestamps; reject messages with timestamps outside an acceptable window to stop replay attacks.\", \"N3:0:c1ed6f60\": \"Assign each event a monotonically increasing sequence number per client session.\", \"N3:1:8943c261\": \"Store the last processed sequence number on client and server; drop any event with a lower or equal number.\", \"N3:2:b982cee3\": \"When a client reconnects, include its last processed sequence number so the server can resend missing events.\", \"N3:3:7d28f2f1\": \"Use a short‑lived signed token (e.g., JWT) with a nonce and expiration; verify it on each WebSocket upgrade.\", \"N3:4:bcdb1541\": \"Bind the token to the client’s IP or TLS session (token binding) to prevent replay from other hosts.\", \"N3:5:bcb721ee\": \"Enable TLS (wss://) to protect confidentiality and integrity of the WebSocket frames.\", \"N3:6:8156ab8a\": \"Optionally add a per‑message HMAC using a shared secret to detect tampering if TLS termination is off‑loaded.\", \"N3:7:bff92265\": \"Implement a server‑side deduplication cache keyed by (client_id, sequence_id) for a limited window to handle duplicates.\", \"N5:0:e3a92266\": \"Assign each message a monotonically increasing sequence number per client and drop any message with a lower number.\", \"N5:1:eaa8318b\": \"Include a server‑generated unique message ID and keep a short‑term cache to discard duplicates.\", \"N5:2:57555f13\": \"Use a signed token (e.g., JWT) with a short expiration and a per‑connection nonce to prevent replay.\", \"N5:3:95f3e195\": \"Require TLS (wss://) for all WebSocket traffic and verify the Origin header to restrict hosts.\", \"N5:4:ca686e53\": \"Validate the token on every new WebSocket upgrade and reject connections with missing or expired tokens.\", \"N5:5:ba3baea6\": \"Implement a sliding window of acceptable sequence numbers to tolerate out‑of‑order delivery while still detecting gaps.\", \"N5:6:e8196072\": \"Make message handling idempotent so that processing a duplicate does not cause side effects.\", \"N5:7:a164bc30\": \"Rotate signing keys regularly and revoke compromised tokens via a revocation list checked on each message.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft aligns with defensive security best practices for ordering, deduplication, and token replay protection.\"},{\"target_id\":\"N2\",\"valid\":\"UNKNOWN\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft is marked UNKNOWN; insufficient information to evaluate.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6128c764\",\"N1:1:b40c465a\",\"N1:2:f3cfd0b6\",\"N1:3:838ad943\",\"N1:4:152de33d\",\"N1:5:a51a77bf\",\"N3:4:bcdb1541\",\"N3:5:bcb721ee\",\"N3:7:bff92265\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated in the draft.\"},{\"target_id\":\"N4\",\"valid\":\"UNKNOWN\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft is marked UNKNOWN; insufficient information to evaluate.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-9f941a5d-bd4f-43c2-be70-4fb2606d933a",
+      "object": "chat.completion",
+      "created": 1773290401,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"votes\":[{\"target_id\":\"N1\",\"valid\":\"PASS\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft aligns with defensive security best practices for ordering, deduplication, and token replay protection.\"},{\"target_id\":\"N2\",\"valid\":\"UNKNOWN\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft is marked UNKNOWN; insufficient information to evaluate.\"},{\"target_id\":\"N3\",\"valid\":\"PASS\",\"agree_points\":[\"N1:0:6128c764\",\"N1:1:b40c465a\",\"N1:2:f3cfd0b6\",\"N1:3:838ad943\",\"N1:4:152de33d\",\"N1:5:a51a77bf\",\"N3:4:bcdb1541\",\"N3:5:bcb721ee\",\"N3:7:bff92265\"],\"reject_points\":[],\"unknown_points\":[],\"note\":\"All referenced points are correctly incorporated in the draft.\"},{\"target_id\":\"N4\",\"valid\":\"UNKNOWN\",\"agree_points\":[],\"reject_points\":[],\"unknown_points\":[],\"note\":\"Draft is marked UNKNOWN; insufficient information to evaluate.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2005,
+        "completion_tokens": 1196,
+        "total_tokens": 3201
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 52 seconds.\",\"retryAfter\":52,\"limit\":10,\"remaining\":0,\"reset\":1773290400}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 32 seconds.\",\"retryAfter\":32,\"limit\":10,\"remaining\":0,\"reset\":1773290400}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 11 seconds.\",\"retryAfter\":11,\"limit\":10,\"remaining\":0,\"reset\":1773290400}"
+      }
+    ],
+    "error": null
+  }
+]

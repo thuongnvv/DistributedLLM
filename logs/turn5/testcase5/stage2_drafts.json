@@ -1,0 +1,109 @@
+[
+  {
+    "node_id": "N1",
+    "synthesis_text": "Use a monotonically increasing sequence number in each WebSocket payload (N1:0:435159b0) and have the client persist the highest sequence it has processed (N1:1:a9d540d7). Discard any incoming message with a sequence ≤ the stored value. If messages arrive out of order, buffer them until the missing sequence arrives or request a resend (N1:2:b873883d). Attach a unique message ID (e.g., UUID) to each event (N1:3:7f60c57e) and keep a short‑TTL cache of recent IDs on both client and server to filter duplicates; make server‑side handling idempotent by checking this ID before applying business logic (N1:4:b0820e8e). Secure the channel with TLS (wss://) and authenticate each connection using short‑lived signed JWTs (N1:5:72d12b73). Include a nonce (jti) claim in the JWT and track used nonces to prevent token replay (N1:6:3a62c0e8); rotate tokens on every reconnect and require re‑authentication (N1:7:49580906). Optionally sign each message with an HMAC using a shared secret to verify integrity (N1:8:ee4049e2). Implement exponential backoff for client reconnection attempts to avoid thundering‑herd effects (N1:9:d156f025).",
+    "used_points": [
+      "N1:0:435159b0",
+      "N1:1:a9d540d7",
+      "N1:2:b873883d",
+      "N1:3:7f60c57e",
+      "N1:4:b0820e8e",
+      "N1:5:72d12b73",
+      "N1:6:3a62c0e8",
+      "N1:7:49580906",
+      "N1:8:ee4049e2",
+      "N1:9:d156f025"
+    ]
+  },
+  {
+    "node_id": "N6",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N2",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N7",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N3",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N8",
+    "synthesis_text": "Secure the WebSocket channel with TLS (wss://) and authenticate each connection using short‑lived signed JWTs that contain a unique jti/nonce claim; rotate and re‑authenticate tokens on every reconnect to prevent replay. For ordering, embed a monotonically increasing sequence number in every message and have the client retain the highest sequence it has processed, discarding any message with a sequence ≤ that value. If messages arrive out of order, buffer them until the missing sequence arrives or request a resend from the server. Attach a unique message ID (e.g., UUID) to each payload and keep a short‑TTL cache of recent IDs on both client and server to filter duplicates; make server‑side processing idempotent by checking this ID before applying business logic. Optionally sign each message with an HMAC using a per‑connection secret to verify integrity. Implement exponential backoff for client reconnection attempts and use WebSocket ping/pong keep‑alive frames to detect dead connections promptly. For strict ordering guarantees, route events through an ordered backend queue (e.g., Kafka) before sending them over the WebSocket.",
+    "used_points": [
+      "N1:0:435159b0",
+      "N1:1:a9d540d7",
+      "N1:2:b873883d",
+      "N1:3:7f60c57e",
+      "N1:4:b0820e8e",
+      "N1:5:72d12b73",
+      "N1:6:3a62c0e8",
+      "N1:7:49580906",
+      "N1:8:ee4049e2",
+      "N1:9:d156f025",
+      "N8:7:cc471a56",
+      "N8:8:f0105705",
+      "N5:0:7d8fde6f",
+      "N5:1:e3749ed3",
+      "N5:2:2adf50bc",
+      "N5:3:ae310ab2",
+      "N5:4:6dd328e5",
+      "N5:5:b6a246f7",
+      "N9:2:32250d7b",
+      "N9:3:371ba8ae"
+    ]
+  },
+  {
+    "node_id": "N4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N10",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N5",
+    "synthesis_text": "Use TLS (wss://) for all WebSocket traffic and authenticate each connection with a short‑lived signed JWT (N1:5:72d12b73). Include a unique jti claim or nonce in the JWT and track used nonces to block token replay (N1:6:3a62c0e8). Rotate the token on every reconnect and require re‑authentication (N1:7:49580906). For ordering, attach a monotonically increasing sequence number to every message (N1:0:435159b0) and have the client store the highest sequence it has processed, discarding any message with a lower or equal number (N1:1:a9d540d7). If messages arrive out of order, buffer them until the missing sequence arrives or request a resend (N1:2:b873883d). To deduplicate, also include a unique message ID (e.g., UUID) and keep a short‑TTL cache of recent IDs on the server (N1:3:7f60c57e); make processing idempotent by checking this ID before applying business logic (N1:4:b0820e8e). Optionally sign each payload with an HMAC using a per‑connection secret (N1:8:ee4049e2, N5:2:2adf50bc, N9:2:32250d7b) and verify the signature on receipt, which also helps detect duplicates and out‑of‑order messages beyond an allowed window. Maintain a server‑side replay cache keyed by token + nonce (or message ID) to reject any repeated payloads within the cache window (N9:4:bdeb1b3f).",
+    "used_points": [
+      "N1:0:435159b0",
+      "N1:1:a9d540d7",
+      "N1:2:b873883d",
+      "N1:3:7f60c57e",
+      "N1:4:b0820e8e",
+      "N1:5:72d12b73",
+      "N1:6:3a62c0e8",
+      "N1:7:49580906",
+      "N1:8:ee4049e2",
+      "N5:2:2adf50bc",
+      "N5:3:ae310ab2",
+      "N9:2:32250d7b",
+      "N9:4:bdeb1b3f"
+    ]
+  },
+  {
+    "node_id": "N9",
+    "synthesis_text": "Use TLS (wss://) for all WebSocket traffic and authenticate each connection with a short‑lived signed JWT (N1:5). Include a per‑connection nonce (jti) in the JWT and track used nonces to block token replay (N1:6); rotate the token on every reconnect and force re‑authentication (N1:7). For ordering, attach a monotonically increasing sequence number to every message (N1:0) and have the client keep the highest sequence seen, discarding any message with a lower or equal number (N1:1). If messages arrive out of order, buffer them until the missing sequence arrives or request a resend (N1:2). Add a unique message ID (e.g., UUID) to each payload and keep a short‑TTL cache of recent IDs for deduplication (N1:3). Make server‑side handling idempotent by checking the message ID before applying business logic (N1:4). Optionally sign each message with an HMAC using a shared secret to verify integrity (N1:8). Implement exponential backoff for client reconnection attempts to avoid thundering‑herd effects (N1:9).",
+    "used_points": [
+      "N1:0:435159b0",
+      "N1:1:a9d540d7",
+      "N1:2:b873883d",
+      "N1:3:7f60c57e",
+      "N1:4:b0820e8e",
+      "N1:5:72d12b73",
+      "N1:6:3a62c0e8",
+      "N1:7:49580906",
+      "N1:8:ee4049e2",
+      "N1:9:d156f025"
+    ]
+  }
+]

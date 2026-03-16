@@ -1,0 +1,44 @@
+{
+  "winner": "N5",
+  "final_answer": "Use a per‑client monotonically increasing sequence number for every event (N1:0:6128c764). The client stores the last sequence it processed and includes it on reconnect so the server can resume from the next number (N1:2:f3cfd0b6). The server acknowledges received sequences; missing ranges can be requested via ACK/NACK (N1:4:152de33d). To tolerate out‑of‑order delivery, keep a short sliding window and drop any event with a lower or duplicate sequence (N5:5:ba3baea6). Additionally, attach an idempotency key or UUID to each event and cache recent keys to discard duplicates arriving out of order (N1:3:838ad943). Secure the WebSocket channel with TLS (wss://) (N3:5:bcb721ee) and require a short‑lived, HMAC‑signed JWT that includes a nonce and timestamp on every frame (N1:1:b40c465a, N1:5:a51a77bf). Verify the token on each upgrade, bind it to the client’s IP or TLS session, and reject messages with timestamps outside an acceptable window to prevent replay (N1:5:a51a77bf). Rotate signing keys regularly and check a revocation list on each message (N5:7:a164bc30).",
+  "metrics": {
+    "pass": {
+      "N1": 2,
+      "N2": 0,
+      "N3": 2,
+      "N4": 0,
+      "N5": 2
+    },
+    "fail": {
+      "N1": 0,
+      "N2": 0,
+      "N3": 0,
+      "N4": 0,
+      "N5": 0
+    },
+    "agree": {
+      "N1": 0,
+      "N2": 0,
+      "N3": 18,
+      "N4": 0,
+      "N5": 18
+    },
+    "reject": {
+      "N1": 0,
+      "N2": 0,
+      "N3": 0,
+      "N4": 0,
+      "N5": 0
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N5": 5.0
+    },
+    "point_rep_delta": {
+      "N1": 24.0,
+      "N3": 8.0,
+      "N5": 4.0
+    }
+  }
+}

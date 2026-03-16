@@ -1,0 +1,69 @@
+[
+  {
+    "node_id": "N1",
+    "synthesis_text": "Implement IP‑based rate limiting/throttling (and optional exponential back‑off) on the login endpoint. This curbs brute‑force attempts, immediately reduces the volume of concurrent login requests, lowers DB lock contention, and strengthens security.",
+    "used_points": [
+      "N1:0:02fd1e9a",
+      "N5:0:d1eedbe4",
+      "N6:1:9b1939e4",
+      "N9:0:3f716229"
+    ]
+  },
+  {
+    "node_id": "N6",
+    "synthesis_text": "Add rate limiting/IP throttling on the login endpoint to curb brute‑force attempts, which will immediately reduce the volume of failed login requests hitting the database and thus lower lock contention and latency, improving both stability and security.",
+    "used_points": [
+      "N1:0:02fd1e9a"
+    ]
+  },
+  {
+    "node_id": "N2",
+    "synthesis_text": "Implement rate limiting / IP throttling on the login endpoint as the first change. This curbs brute‑force attempts, immediately reduces the number of concurrent login requests, and lowers DB lock contention, improving both stability and security.",
+    "used_points": [
+      "N1:0:02fd1e9a"
+    ]
+  },
+  {
+    "node_id": "N7",
+    "synthesis_text": "First add IP‑based rate limiting/throttling on the login endpoint to curb brute‑force attempts; this immediately reduces malicious traffic and DB load, improving both stability and security. After that, add an index on the login identifier (e.g., username/email) and shorten the transaction scope around authentication to further lower lock duration.",
+    "used_points": [
+      "N1:0:02fd1e9a",
+      "N2:0:39d8853a"
+    ]
+  },
+  {
+    "node_id": "N3",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N8",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N10",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N5",
+    "synthesis_text": "Implement rate limiting and IP‑based throttling on the login endpoint as the first change. This directly curbs the flood of failed login attempts, reducing malicious load, and immediately lowers the number of concurrent authentication queries that cause DB lock contention, improving both stability and security.",
+    "used_points": [
+      "N1:0:02fd1e9a"
+    ]
+  },
+  {
+    "node_id": "N9",
+    "synthesis_text": "Implement rate limiting or IP‑based throttling on the login endpoint as the first change.  By capping the number of attempts per IP (or per account) you immediately cut the burst of failed logins that is driving DB lock contention, lower overall load, and add a security barrier against credential‑stuffing attacks.  This mitigation is fast to deploy and addresses both stability and security concerns before deeper DB optimizations are applied.",
+    "used_points": [
+      "N1:0:02fd1e9a",
+      "N5:0:d1eedbe4"
+    ]
+  }
+]

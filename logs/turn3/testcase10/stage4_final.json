@@ -1,0 +1,43 @@
+{
+  "winner": "N3",
+  "final_answer": "Measure per‑endpoint request rate (including 95th‑percentile burst), p95 latency, error rate, CPU/memory usage, queue depth and thread‑pool saturation, TCP retransmission count and SYN backlog. Correlate latency with resource usage to spot saturation early. Reserve 30‑40 % headroom in CPU and connections. Set client timeout to about 1.5 × current p95 latency with an absolute upper bound (e.g., ≤2 s). Limit retries to 2‑3 attempts with exponential backoff starting at 100‑200 ms. Use a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window (or when concurrent connections reach ~80 % of the observed max). Configure connection timeout 2 s, read timeout 5 s, and keep‑alive idle timeout ~30 s.",
+  "metrics": {
+    "pass": {
+      "N1": 1,
+      "N2": 0,
+      "N3": 1,
+      "N4": 0,
+      "N5": 0
+    },
+    "fail": {
+      "N1": 0,
+      "N2": 0,
+      "N3": 0,
+      "N4": 0,
+      "N5": 0
+    },
+    "agree": {
+      "N1": 12,
+      "N2": 0,
+      "N3": 12,
+      "N4": 0,
+      "N5": 0
+    },
+    "reject": {
+      "N1": 0,
+      "N2": 0,
+      "N3": 0,
+      "N4": 0,
+      "N5": 0
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N3": 5.0
+    },
+    "point_rep_delta": {
+      "N1": 12.0,
+      "N3": 12.0
+    }
+  }
+}

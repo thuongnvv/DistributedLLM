@@ -1,0 +1,61 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:e674a73f",
+        "text": "Enable detailed timing logs around checkout API and DB query; capture start/end timestamps and query execution plan."
+      },
+      {
+        "point_id": "N1:1:8ce71d00",
+        "text": "Run EXPLAIN on the new join, add missing indexes or rewrite the query (or split into multiple queries) to reduce execution time."
+      },
+      {
+        "point_id": "N1:2:f214dbc7",
+        "text": "Make the payment step idempotent by using a unique transaction token or DB lock so retries cannot create duplicate charges."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:04cff05b",
+        "text": "Run EXPLAIN ANALYZE on the new join query; identify missing indexes or costly scans causing 5‑10 s latency."
+      },
+      {
+        "point_id": "N2:1:00a1012d",
+        "text": "Check transaction isolation (e.g., REPEATABLE READ) and lock ordering to prevent race conditions that lead to double charges."
+      },
+      {
+        "point_id": "N2:2:86712ffd",
+        "text": "Add a unique constraint or idempotency key on payments and implement exponential back‑off retries to avoid duplicate inserts."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": []
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N5",
+    "points": [
+      {
+        "point_id": "N5:0:2b4b4160",
+        "text": "Add a unique, database‑enforced transaction identifier and reject duplicate submissions to prevent double charges."
+      },
+      {
+        "point_id": "N5:1:33af8d75",
+        "text": "Profile the new join query; check execution plan and add needed indexes to reduce lock time and eliminate contention."
+      },
+      {
+        "point_id": "N5:2:c66534c8",
+        "text": "Replace blind client retries with exponential back‑off and server‑side idempotency token so retries don’t create extra orders."
+      }
+    ]
+  }
+]

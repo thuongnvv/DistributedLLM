@@ -1,0 +1,109 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:9b936697",
+        "text": "Enable detailed request tracing (timestamp start/end) for checkout API to measure where latency spikes."
+      },
+      {
+        "point_id": "N1:1:81a4654f",
+        "text": "Log SQL query execution time and row count for the new join; compare before/after performance."
+      },
+      {
+        "point_id": "N1:2:82893040",
+        "text": "Add idempotency keys to checkout requests so retries don’t create duplicate charges."
+      },
+      {
+        "point_id": "N1:3:5a3d13c9",
+        "text": "Temporarily revert or disable the new join in a staging environment to isolate its impact on latency."
+      },
+      {
+        "point_id": "N1:4:ff737190",
+        "text": "Monitor database lock/wait stats; look for deadlocks or table scans caused by the join."
+      },
+      {
+        "point_id": "N1:5:d0051d9d",
+        "text": "Implement exponential backoff on client retries and cap max attempts to reduce duplicate submissions."
+      },
+      {
+        "point_id": "N1:6:88b34a0c",
+        "text": "Run load tests simulating concurrent checkouts to reproduce the 5–10 s delay and double‑charge scenario."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:55a275e1",
+        "text": "Run EXPLAIN (ANALYZE, BUFFERS) on the new join query to see actual row counts, index usage, and I/O cost."
+      },
+      {
+        "point_id": "N2:1:50d3eb39",
+        "text": "Check that all join columns have matching indexes (e.g., foreign key columns) to avoid full table scans."
+      },
+      {
+        "point_id": "N2:2:39137090",
+        "text": "Add covering indexes on columns used in SELECT, WHERE, and ORDER BY of the checkout query to reduce lookups."
+      },
+      {
+        "point_id": "N2:3:959d9827",
+        "text": "Verify the transaction isolation level; use REPEATABLE READ or SERIALIZABLE to prevent lost updates during retries."
+      },
+      {
+        "point_id": "N2:4:c73b5b4d",
+        "text": "Implement a unique constraint or idempotency key on the order/payment table to block duplicate charges on retry."
+      },
+      {
+        "point_id": "N2:5:f008551b",
+        "text": "Wrap the entire checkout logic in a single atomic transaction; commit only after all steps succeed."
+      },
+      {
+        "point_id": "N2:6:ca4fbd0a",
+        "text": "Monitor the slow‑query log and DB metrics (locks, deadlocks, CPU) during peak checkout to spot bottlenecks."
+      },
+      {
+        "point_id": "N2:7:10f9cc92",
+        "text": "If the join pulls large tables, consider materializing a summary view or denormalizing frequently accessed fields."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": []
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N5",
+    "points": [
+      {
+        "point_id": "N5:0:747fa9e6",
+        "text": "Enable DB query logging and capture execution time for the new join to identify latency spikes."
+      },
+      {
+        "point_id": "N5:1:54e3fae1",
+        "text": "Wrap the checkout operation in a single DB transaction with appropriate isolation (e.g., SERIALIZABLE)."
+      },
+      {
+        "point_id": "N5:2:41e3aa63",
+        "text": "Add a unique constraint or idempotency key on orders/payments to reject duplicate submissions."
+      },
+      {
+        "point_id": "N5:3:36b5ac1d",
+        "text": "Replace client‑side retries with server‑side retry logic using exponential backoff after confirming no pending transaction."
+      },
+      {
+        "point_id": "N5:4:afb0c211",
+        "text": "Run EXPLAIN on the new join query; add missing indexes to ensure the join is efficient."
+      },
+      {
+        "point_id": "N5:5:e0bd1739",
+        "text": "Set up monitoring/alerts for duplicate order amounts or timestamps to detect double‑charge events promptly."
+      }
+    ]
+  }
+]

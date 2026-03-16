@@ -1,0 +1,43 @@
+{
+  "winner": "N3",
+  "final_answer": "[networking_systems] Consolidated answer for 'Our checkout sometimes takes 5–10 seconds and users occasionally get charged twice when th': Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi; Reproduce issue with minimal failing test; Inspect stack trace and failing branch; Address query objective: Our checkout sometimes takes 5–10 seconds and users occasionally get charged twi",
+  "metrics": {
+    "pass": {
+      "N1": 3,
+      "N2": 3,
+      "N3": 4,
+      "N4": 2,
+      "N5": 3
+    },
+    "fail": {
+      "N1": 0,
+      "N2": 0,
+      "N3": 0,
+      "N4": 1,
+      "N5": 1
+    },
+    "agree": {
+      "N1": 18,
+      "N2": 18,
+      "N3": 20,
+      "N4": 11,
+      "N5": 13
+    },
+    "reject": {
+      "N1": 0,
+      "N2": 1,
+      "N3": 1,
+      "N4": 6,
+      "N5": 6
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N3": 5.0
+    },
+    "point_rep_delta": {
+      "N1": 36.0,
+      "N2": 30.0
+    }
+  }
+}

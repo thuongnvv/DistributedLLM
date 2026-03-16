@@ -1,0 +1,486 @@
+[
+  {
+    "timestamp": "2026-03-12T04:50:09.319994+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"abstain\": true|false,\n  \"points\": [{\"text\": \"string\"}]\n}\nRules:\n- Return ONLY high-confidence points inside your declared domain scope.\n- If the query is mostly outside your scope, set abstain=true and return {\"points\": []}.\n- If abstain=true, points must be empty.\n- Each point must be atomic and <= 160 chars.\n- Do not add generic cross-domain filler.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"abstain\":false,\"points\":[{\"text\":\"Measure per‑endpoint request rate, p95 latency, error rate, and CPU/memory usage.\"},{\"text\":\"Track queue depth and thread‑pool saturation to detect back‑pressure.\"},{\"text\":\"Set client timeout ~1.5× current p95 latency with an absolute upper bound.\"},{\"text\":\"Limit retries to 2‑3 attempts with exponential backoff starting at 100‑200 ms.\"},{\"text\":\"Use a circuit breaker that opens when error rate >5% over a 30‑second window.\"},{\"text\":\"Reserve 30‑40% headroom in capacity (CPU, connections) to handle a 3× traffic surge.\"}]}",
+    "response_json": {
+      "id": "chatcmpl-9419e341-911a-4ca3-b897-9f7765343143",
+      "object": "chat.completion",
+      "created": 1773291008,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"abstain\":false,\"points\":[{\"text\":\"Measure per‑endpoint request rate, p95 latency, error rate, and CPU/memory usage.\"},{\"text\":\"Track queue depth and thread‑pool saturation to detect back‑pressure.\"},{\"text\":\"Set client timeout ~1.5× current p95 latency with an absolute upper bound.\"},{\"text\":\"Limit retries to 2‑3 attempts with exponential backoff starting at 100‑200 ms.\"},{\"text\":\"Use a circuit breaker that opens when error rate >5% over a 30‑second window.\"},{\"text\":\"Reserve 30‑40% headroom in capacity (CPU, connections) to handle a 3× traffic surge.\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 389,
+        "completion_tokens": 630,
+        "total_tokens": 1019
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:51:02.703064+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N2"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: databases_sql.\nScope: SQL optimization, relational design, indexing, isolation levels.\nWorking style: query planner mindset with indexing and transaction rigor."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"abstain\": true|false,\n  \"points\": [{\"text\": \"string\"}]\n}\nRules:\n- Return ONLY high-confidence points inside your declared domain scope.\n- If the query is mostly outside your scope, set abstain=true and return {\"points\": []}.\n- If abstain=true, points must be empty.\n- Each point must be atomic and <= 160 chars.\n- Do not add generic cross-domain filler.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"abstain\": true, \"points\": []}",
+    "response_json": {
+      "id": "chatcmpl-e70bd3a2-1ec3-4a7c-acbe-25aa898c035a",
+      "object": "chat.completion",
+      "created": 1773291062,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"abstain\": true, \"points\": []}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 385,
+        "completion_tokens": 93,
+        "total_tokens": 478
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 51 seconds.\",\"retryAfter\":51,\"limit\":10,\"remaining\":0,\"reset\":1773291060}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 30 seconds.\",\"retryAfter\":30,\"limit\":10,\"remaining\":0,\"reset\":1773291060}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 10 seconds.\",\"retryAfter\":10,\"limit\":10,\"remaining\":0,\"reset\":1773291060}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:51:04.588984+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"abstain\": true|false,\n  \"points\": [{\"text\": \"string\"}]\n}\nRules:\n- Return ONLY high-confidence points inside your declared domain scope.\n- If the query is mostly outside your scope, set abstain=true and return {\"points\": []}.\n- If abstain=true, points must be empty.\n- Each point must be atomic and <= 160 chars.\n- Do not add generic cross-domain filler.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"abstain\": false,\n  \"points\": [\n    {\"text\": \"Measure incoming request rate (RPS) and its 95th percentile burst to size thread pools and socket buffers.\"},\n    {\"text\": \"Track p95 latency per endpoint and correlate with CPU, memory, and queue length to spot saturation early.\"},\n    {\"text\": \"Monitor TCP retransmission count and SYN backlog; high values indicate network congestion or insufficient listen queue.\"},\n    {\"text\": \"Set a circuit‑breaker threshold at ~80% of observed max concurrent connections to stop new traffic before overload.\"},\n    {\"text\": \"Limit client retries: max 2 retries with exponential backoff, and enforce a minimum backoff of 100 ms.\"},\n    {\"text\": \"Configure connection timeout to 2 s and read timeout to 5 s; adjust down if p95 latency budget is <200 ms.\"},\n    {\"text\": \"Enable keep‑alive with idle timeout ~30 s to recycle idle sockets and avoid resource exhaustion.\"}\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-7f73923f-5bb3-454d-943b-0a443856c89a",
+      "object": "chat.completion",
+      "created": 1773291063,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"abstain\": false,\n  \"points\": [\n    {\"text\": \"Measure incoming request rate (RPS) and its 95th percentile burst to size thread pools and socket buffers.\"},\n    {\"text\": \"Track p95 latency per endpoint and correlate with CPU, memory, and queue length to spot saturation early.\"},\n    {\"text\": \"Monitor TCP retransmission count and SYN backlog; high values indicate network congestion or insufficient listen queue.\"},\n    {\"text\": \"Set a circuit‑breaker threshold at ~80% of observed max concurrent connections to stop new traffic before overload.\"},\n    {\"text\": \"Limit client retries: max 2 retries with exponential backoff, and enforce a minimum backoff of 100 ms.\"},\n    {\"text\": \"Configure connection timeout to 2 s and read timeout to 5 s; adjust down if p95 latency budget is <200 ms.\"},\n    {\"text\": \"Enable keep‑alive with idle timeout ~30 s to recycle idle sockets and avoid resource exhaustion.\"}\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 392,
+        "completion_tokens": 374,
+        "total_tokens": 766
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:51:05.706613+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N4"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: math_logic.\nScope: algebra, arithmetic, propositional logic, discrete reasoning.\nWorking style: formal reasoner with explicit assumptions and concise derivations."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"abstain\": true|false,\n  \"points\": [{\"text\": \"string\"}]\n}\nRules:\n- Return ONLY high-confidence points inside your declared domain scope.\n- If the query is mostly outside your scope, set abstain=true and return {\"points\": []}.\n- If abstain=true, points must be empty.\n- Each point must be atomic and <= 160 chars.\n- Do not add generic cross-domain filler.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"abstain\": true, \"points\": []}",
+    "response_json": {
+      "id": "chatcmpl-3f81b9c5-079a-4647-8c12-269513d77016",
+      "object": "chat.completion",
+      "created": 1773291065,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"abstain\": true, \"points\": []}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 387,
+        "completion_tokens": 88,
+        "total_tokens": 475
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:51:07.896254+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer",
+      "node_id": "N5"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: security_defensive.\nScope: application security fundamentals, auth/session safety, secure coding practices.\nWorking style: defensive security expert and conservative verifier."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"abstain\": true|false,\n  \"points\": [{\"text\": \"string\"}]\n}\nRules:\n- Return ONLY high-confidence points inside your declared domain scope.\n- If the query is mostly outside your scope, set abstain=true and return {\"points\": []}.\n- If abstain=true, points must be empty.\n- Each point must be atomic and <= 160 chars.\n- Do not add generic cross-domain filler.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"abstain\": true, \"points\": []}",
+    "response_json": {
+      "id": "chatcmpl-64583692-ba6e-40c8-ab76-15d17352bcae",
+      "object": "chat.completion",
+      "created": 1773291066,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"abstain\": true, \"points\": []}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 385,
+        "completion_tokens": 119,
+        "total_tokens": 504
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:52:02.000421+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N1"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules:\n- Synthesis must be grounded in provided points_map.\n- Do not invent IDs; used_points must be subset of keys(points_map).\n- Use only points you can justify with high confidence from your domain knowledge.\n- If you cannot synthesize confidently, return synthesis_text='UNKNOWN' and used_points=[].\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\", \"points_map\": {\"N1:0:e6fa4f0e\": \"Measure per‑endpoint request rate, p95 latency, error rate, and CPU/memory usage.\", \"N1:1:5ad4042e\": \"Track queue depth and thread‑pool saturation to detect back‑pressure.\", \"N1:2:a6c29fe0\": \"Set client timeout ~1.5× current p95 latency with an absolute upper bound.\", \"N1:3:d7d0cb8a\": \"Limit retries to 2‑3 attempts with exponential backoff starting at 100‑200 ms.\", \"N1:4:c0ef47ec\": \"Use a circuit breaker that opens when error rate >5% over a 30‑second window.\", \"N1:5:8c3df2c6\": \"Reserve 30‑40% headroom in capacity (CPU, connections) to handle a 3× traffic surge.\", \"N3:0:7bc89abe\": \"Measure incoming request rate (RPS) and its 95th percentile burst to size thread pools and socket buffers.\", \"N3:1:b4d6259c\": \"Track p95 latency per endpoint and correlate with CPU, memory, and queue length to spot saturation early.\", \"N3:2:9dfeafc1\": \"Monitor TCP retransmission count and SYN backlog; high values indicate network congestion or insufficient listen queue.\", \"N3:3:775f2888\": \"Set a circuit‑breaker threshold at ~80% of observed max concurrent connections to stop new traffic before overload.\", \"N3:4:7f8a4068\": \"Limit client retries: max 2 retries with exponential backoff, and enforce a minimum backoff of 100 ms.\", \"N3:5:65414229\": \"Configure connection timeout to 2 s and read timeout to 5 s; adjust down if p95 latency budget is <200 ms.\", \"N3:6:46f6619a\": \"Enable keep‑alive with idle timeout ~30 s to recycle idle sockets and avoid resource exhaustion.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"To handle a potential 3× traffic surge while avoiding retry storms and keeping p95 latency in check, measure: per‑endpoint request rate, overall RPS and 95th‑percentile burst, p95 latency per endpoint, error rate, CPU/memory usage, queue depth, thread‑pool saturation, TCP retransmission count and SYN backlog. Reserve 30‑40% headroom in CPU and connection capacity, and size thread pools and socket buffers based on the measured burst. Set limits: client timeout at ~1.5× current p95 latency with an absolute upper bound; connection timeout 2 s and read timeout 5 s (tighten if latency budget <200 ms). Restrict retries to 2‑3 attempts with exponential backoff starting at 100‑200 ms. Deploy circuit breakers that trigger when error rate exceeds 5% over a 30‑second window and when concurrent connections reach ~80% of the observed maximum. Enable keep‑alive with an idle timeout around 30 s to recycle idle sockets.\",\n  \"used_points\": [\n    \"N1:0:e6fa4f0e\",\n    \"N1:1:5ad4042e\",\n    \"N1:2:a6c29fe0\",\n    \"N1:3:d7d0cb8a\",\n    \"N1:4:c0ef47ec\",\n    \"N1:5:8c3df2c6\",\n    \"N3:0:7bc89abe\",\n    \"N3:1:b4d6259c\",\n    \"N3:2:9dfeafc1\",\n    \"N3:3:775f2888\",\n    \"N3:5:65414229\",\n    \"N3:6:46f6619a\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-6e61c02e-8fee-470e-b76f-dac728a6099e",
+      "object": "chat.completion",
+      "created": 1773291118,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"To handle a potential 3× traffic surge while avoiding retry storms and keeping p95 latency in check, measure: per‑endpoint request rate, overall RPS and 95th‑percentile burst, p95 latency per endpoint, error rate, CPU/memory usage, queue depth, thread‑pool saturation, TCP retransmission count and SYN backlog. Reserve 30‑40% headroom in CPU and connection capacity, and size thread pools and socket buffers based on the measured burst. Set limits: client timeout at ~1.5× current p95 latency with an absolute upper bound; connection timeout 2 s and read timeout 5 s (tighten if latency budget <200 ms). Restrict retries to 2‑3 attempts with exponential backoff starting at 100‑200 ms. Deploy circuit breakers that trigger when error rate exceeds 5% over a 30‑second window and when concurrent connections reach ~80% of the observed maximum. Enable keep‑alive with an idle timeout around 30 s to recycle idle sockets.\",\n  \"used_points\": [\n    \"N1:0:e6fa4f0e\",\n    \"N1:1:5ad4042e\",\n    \"N1:2:a6c29fe0\",\n    \"N1:3:d7d0cb8a\",\n    \"N1:4:c0ef47ec\",\n    \"N1:5:8c3df2c6\",\n    \"N3:0:7bc89abe\",\n    \"N3:1:b4d6259c\",\n    \"N3:2:9dfeafc1\",\n    \"N3:3:775f2888\",\n    \"N3:5:65414229\",\n    \"N3:6:46f6619a\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 837,
+        "completion_tokens": 1123,
+        "total_tokens": 1960
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 52 seconds.\",\"retryAfter\":52,\"limit\":10,\"remaining\":0,\"reset\":1773291120}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 32 seconds.\",\"retryAfter\":32,\"limit\":10,\"remaining\":0,\"reset\":1773291120}"
+      },
+      {
+        "attempt": 3,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 11 seconds.\",\"retryAfter\":11,\"limit\":10,\"remaining\":0,\"reset\":1773291120}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:52:03.476714+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize",
+      "node_id": "N3"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules:\n- Synthesis must be grounded in provided points_map.\n- Do not invent IDs; used_points must be subset of keys(points_map).\n- Use only points you can justify with high confidence from your domain knowledge.\n- If you cannot synthesize confidently, return synthesis_text='UNKNOWN' and used_points=[].\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\", \"points_map\": {\"N1:0:e6fa4f0e\": \"Measure per‑endpoint request rate, p95 latency, error rate, and CPU/memory usage.\", \"N1:1:5ad4042e\": \"Track queue depth and thread‑pool saturation to detect back‑pressure.\", \"N1:2:a6c29fe0\": \"Set client timeout ~1.5× current p95 latency with an absolute upper bound.\", \"N1:3:d7d0cb8a\": \"Limit retries to 2‑3 attempts with exponential backoff starting at 100‑200 ms.\", \"N1:4:c0ef47ec\": \"Use a circuit breaker that opens when error rate >5% over a 30‑second window.\", \"N1:5:8c3df2c6\": \"Reserve 30‑40% headroom in capacity (CPU, connections) to handle a 3× traffic surge.\", \"N3:0:7bc89abe\": \"Measure incoming request rate (RPS) and its 95th percentile burst to size thread pools and socket buffers.\", \"N3:1:b4d6259c\": \"Track p95 latency per endpoint and correlate with CPU, memory, and queue length to spot saturation early.\", \"N3:2:9dfeafc1\": \"Monitor TCP retransmission count and SYN backlog; high values indicate network congestion or insufficient listen queue.\", \"N3:3:775f2888\": \"Set a circuit‑breaker threshold at ~80% of observed max concurrent connections to stop new traffic before overload.\", \"N3:4:7f8a4068\": \"Limit client retries: max 2 retries with exponential backoff, and enforce a minimum backoff of 100 ms.\", \"N3:5:65414229\": \"Configure connection timeout to 2 s and read timeout to 5 s; adjust down if p95 latency budget is <200 ms.\", \"N3:6:46f6619a\": \"Enable keep‑alive with idle timeout ~30 s to recycle idle sockets and avoid resource exhaustion.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"synthesis_text\": \"Measure per‑endpoint request rate (including 95th‑percentile burst), p95 latency, error rate, CPU/memory usage, queue depth and thread‑pool saturation, TCP retransmission count and SYN backlog. Correlate latency with resource usage to spot saturation early. Reserve 30‑40 % headroom in CPU and connections. Set client timeout to about 1.5 × current p95 latency with an absolute upper bound (e.g., ≤2 s). Limit retries to 2‑3 attempts with exponential backoff starting at 100‑200 ms. Use a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window (or when concurrent connections reach ~80 % of the observed max). Configure connection timeout 2 s, read timeout 5 s, and keep‑alive idle timeout ~30 s.\",\n  \"used_points\": [\n    \"N1:0:e6fa4f0e\",\n    \"N1:1:5ad4042e\",\n    \"N1:2:a6c29fe0\",\n    \"N1:3:d7d0cb8a\",\n    \"N1:4:c0ef47ec\",\n    \"N1:5:8c3df2c6\",\n    \"N3:0:7bc89abe\",\n    \"N3:1:b4d6259c\",\n    \"N3:2:9dfeafc1\",\n    \"N3:3:775f2888\",\n    \"N3:5:65414229\",\n    \"N3:6:46f6619a\"\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-3e6ea27f-7bf8-44ca-9bb4-7e457df04f45",
+      "object": "chat.completion",
+      "created": 1773291120,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"synthesis_text\": \"Measure per‑endpoint request rate (including 95th‑percentile burst), p95 latency, error rate, CPU/memory usage, queue depth and thread‑pool saturation, TCP retransmission count and SYN backlog. Correlate latency with resource usage to spot saturation early. Reserve 30‑40 % headroom in CPU and connections. Set client timeout to about 1.5 × current p95 latency with an absolute upper bound (e.g., ≤2 s). Limit retries to 2‑3 attempts with exponential backoff starting at 100‑200 ms. Use a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window (or when concurrent connections reach ~80 % of the observed max). Configure connection timeout 2 s, read timeout 5 s, and keep‑alive idle timeout ~30 s.\",\n  \"used_points\": [\n    \"N1:0:e6fa4f0e\",\n    \"N1:1:5ad4042e\",\n    \"N1:2:a6c29fe0\",\n    \"N1:3:d7d0cb8a\",\n    \"N1:4:c0ef47ec\",\n    \"N1:5:8c3df2c6\",\n    \"N3:0:7bc89abe\",\n    \"N3:1:b4d6259c\",\n    \"N3:2:9dfeafc1\",\n    \"N3:3:775f2888\",\n    \"N3:5:65414229\",\n    \"N3:6:46f6619a\"\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 840,
+        "completion_tokens": 982,
+        "total_tokens": 1822
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:52:05.421640+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N1",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: coding_debugging.\nScope: Python, JavaScript, APIs, debugging workflow, edge-case analysis.\nWorking style: pragmatic bug-fixer with concrete implementation steps."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information or outside your scope.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N2\", \"target_draft\": \"UNKNOWN\", \"target_used_points\": []}, {\"target_id\": \"N3\", \"target_draft\": \"Measure per‑endpoint request rate (including 95th‑percentile burst), p95 latency, error rate, CPU/memory usage, queue depth and thread‑pool saturation, TCP retransmission count and SYN backlog. Correlate latency with resource usage to spot saturation early. Reserve 30‑40 % headroom in CPU and connections. Set client timeout to about 1.5 × current p95 latency with an absolute upper bound (e.g., ≤2 s). Limit retries to 2‑3 attempts with exponential backoff starting at 100‑200 ms. Use a circuit‑breaker that opens when error rate exceeds 5 % over a 30‑second window (or when concurrent connections reach ~80 % of the observed max). Configure connection timeout 2 s, read timeout 5 s, and keep‑alive idle timeout ~30 s.\", \"target_used_points\": [\"N1:0:e6fa4f0e\", \"N1:1:5ad4042e\", \"N1:2:a6c29fe0\", \"N1:3:d7d0cb8a\", \"N1:4:c0ef47ec\", \"N1:5:8c3df2c6\", \"N3:0:7bc89abe\", \"N3:1:b4d6259c\", \"N3:2:9dfeafc1\", \"N3:3:775f2888\", \"N3:5:65414229\", \"N3:6:46f6619a\"]}, {\"target_id\": \"N4\", \"target_draft\": \"UNKNOWN\", \"target_used_points\": []}, {\"target_id\": \"N5\", \"target_draft\": \"UNKNOWN\", \"target_used_points\": []}], \"points_map\": {\"N1:0:e6fa4f0e\": \"Measure per‑endpoint request rate, p95 latency, error rate, and CPU/memory usage.\", \"N1:1:5ad4042e\": \"Track queue depth and thread‑pool saturation to detect back‑pressure.\", \"N1:2:a6c29fe0\": \"Set client timeout ~1.5× current p95 latency with an absolute upper bound.\", \"N1:3:d7d0cb8a\": \"Limit retries to 2‑3 attempts with exponential backoff starting at 100‑200 ms.\", \"N1:4:c0ef47ec\": \"Use a circuit breaker that opens when error rate >5% over a 30‑second window.\", \"N1:5:8c3df2c6\": \"Reserve 30‑40% headroom in capacity (CPU, connections) to handle a 3× traffic surge.\", \"N3:0:7bc89abe\": \"Measure incoming request rate (RPS) and its 95th percentile burst to size thread pools and socket buffers.\", \"N3:1:b4d6259c\": \"Track p95 latency per endpoint and correlate with CPU, memory, and queue length to spot saturation early.\", \"N3:2:9dfeafc1\": \"Monitor TCP retransmission count and SYN backlog; high values indicate network congestion or insufficient listen queue.\", \"N3:3:775f2888\": \"Set a circuit‑breaker threshold at ~80% of observed max concurrent connections to stop new traffic before overload.\", \"N3:4:7f8a4068\": \"Limit client retries: max 2 retries with exponential backoff, and enforce a minimum backoff of 100 ms.\", \"N3:5:65414229\": \"Configure connection timeout to 2 s and read timeout to 5 s; adjust down if p95 latency budget is <200 ms.\", \"N3:6:46f6619a\": \"Enable keep‑alive with idle timeout ~30 s to recycle idle sockets and avoid resource exhaustion.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"votes\": [\n    {\n      \"target_id\": \"N2\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"No draft content or used points to evaluate.\"\n    },\n    {\n      \"target_id\": \"N3\",\n      \"valid\": \"PASS\",\n      \"agree_points\": [\n        \"N1:0:e6fa4f0e\",\n        \"N1:1:5ad4042e\",\n        \"N1:2:a6c29fe0\",\n        \"N1:3:d7d0cb8a\",\n        \"N1:4:c0ef47ec\",\n        \"N1:5:8c3df2c6\",\n        \"N3:0:7bc89abe\",\n        \"N3:1:b4d6259c\",\n        \"N3:2:9dfeafc1\",\n        \"N3:3:775f2888\",\n        \"N3:5:65414229\",\n        \"N3:6:46f6619a\"\n      ],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"Draft accurately incorporates all referenced points.\"\n    },\n    {\n      \"target_id\": \"N4\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"No draft content or used points to evaluate.\"\n    },\n    {\n      \"target_id\": \"N5\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"No draft content or used points to evaluate.\"\n    }\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-7f42b8af-af03-4673-b078-1824e9640f5e",
+      "object": "chat.completion",
+      "created": 1773291121,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"votes\": [\n    {\n      \"target_id\": \"N2\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"No draft content or used points to evaluate.\"\n    },\n    {\n      \"target_id\": \"N3\",\n      \"valid\": \"PASS\",\n      \"agree_points\": [\n        \"N1:0:e6fa4f0e\",\n        \"N1:1:5ad4042e\",\n        \"N1:2:a6c29fe0\",\n        \"N1:3:d7d0cb8a\",\n        \"N1:4:c0ef47ec\",\n        \"N1:5:8c3df2c6\",\n        \"N3:0:7bc89abe\",\n        \"N3:1:b4d6259c\",\n        \"N3:2:9dfeafc1\",\n        \"N3:3:775f2888\",\n        \"N3:5:65414229\",\n        \"N3:6:46f6619a\"\n      ],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"Draft accurately incorporates all referenced points.\"\n    },\n    {\n      \"target_id\": \"N4\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"No draft content or used points to evaluate.\"\n    },\n    {\n      \"target_id\": \"N5\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"No draft content or used points to evaluate.\"\n    }\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1300,
+        "completion_tokens": 1540,
+        "total_tokens": 2840
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-12T04:52:07.097183+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch",
+      "node_id": "N3",
+      "target_count": 4
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- If a request is outside your scope, abstain instead of improvising.\n- Prefer a few high-confidence facts over many weak claims.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\nDomain: networking_systems.\nScope: HTTP/TCP/UDP, Linux systems behavior, reliability and latency trade-offs.\nWorking style: protocol-oriented systems explainer focused on operational correctness."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Include exactly one vote per target in targets list.\n- FAIL only on clear errors/contradictions.\n- UNKNOWN if insufficient information or outside your scope.\n- Only classify IDs present in each target_used_points.\n- For each target, every target_used_points ID must appear in exactly one list.\nInput JSON:\n{\"query\": \"Traffic may triple next quarter. We want capacity planning that avoids retry storms and keeps p95 latency under control. What should we measure, and what limits/timeouts should we set to stay safe?\", \"input_text\": \"\", \"targets\": [{\"target_id\": \"N1\", \"target_draft\": \"To handle a potential 3× traffic surge while avoiding retry storms and keeping p95 latency in check, measure: per‑endpoint request rate, overall RPS and 95th‑percentile burst, p95 latency per endpoint, error rate, CPU/memory usage, queue depth, thread‑pool saturation, TCP retransmission count and SYN backlog. Reserve 30‑40% headroom in CPU and connection capacity, and size thread pools and socket buffers based on the measured burst. Set limits: client timeout at ~1.5× current p95 latency with an absolute upper bound; connection timeout 2 s and read timeout 5 s (tighten if latency budget <200 ms). Restrict retries to 2‑3 attempts with exponential backoff starting at 100‑200 ms. Deploy circuit breakers that trigger when error rate exceeds 5% over a 30‑second window and when concurrent connections reach ~80% of the observed maximum. Enable keep‑alive with an idle timeout around 30 s to recycle idle sockets.\", \"target_used_points\": [\"N1:0:e6fa4f0e\", \"N1:1:5ad4042e\", \"N1:2:a6c29fe0\", \"N1:3:d7d0cb8a\", \"N1:4:c0ef47ec\", \"N1:5:8c3df2c6\", \"N3:0:7bc89abe\", \"N3:1:b4d6259c\", \"N3:2:9dfeafc1\", \"N3:3:775f2888\", \"N3:5:65414229\", \"N3:6:46f6619a\"]}, {\"target_id\": \"N2\", \"target_draft\": \"UNKNOWN\", \"target_used_points\": []}, {\"target_id\": \"N4\", \"target_draft\": \"UNKNOWN\", \"target_used_points\": []}, {\"target_id\": \"N5\", \"target_draft\": \"UNKNOWN\", \"target_used_points\": []}], \"points_map\": {\"N1:0:e6fa4f0e\": \"Measure per‑endpoint request rate, p95 latency, error rate, and CPU/memory usage.\", \"N1:1:5ad4042e\": \"Track queue depth and thread‑pool saturation to detect back‑pressure.\", \"N1:2:a6c29fe0\": \"Set client timeout ~1.5× current p95 latency with an absolute upper bound.\", \"N1:3:d7d0cb8a\": \"Limit retries to 2‑3 attempts with exponential backoff starting at 100‑200 ms.\", \"N1:4:c0ef47ec\": \"Use a circuit breaker that opens when error rate >5% over a 30‑second window.\", \"N1:5:8c3df2c6\": \"Reserve 30‑40% headroom in capacity (CPU, connections) to handle a 3× traffic surge.\", \"N3:0:7bc89abe\": \"Measure incoming request rate (RPS) and its 95th percentile burst to size thread pools and socket buffers.\", \"N3:1:b4d6259c\": \"Track p95 latency per endpoint and correlate with CPU, memory, and queue length to spot saturation early.\", \"N3:2:9dfeafc1\": \"Monitor TCP retransmission count and SYN backlog; high values indicate network congestion or insufficient listen queue.\", \"N3:3:775f2888\": \"Set a circuit‑breaker threshold at ~80% of observed max concurrent connections to stop new traffic before overload.\", \"N3:4:7f8a4068\": \"Limit client retries: max 2 retries with exponential backoff, and enforce a minimum backoff of 100 ms.\", \"N3:5:65414229\": \"Configure connection timeout to 2 s and read timeout to 5 s; adjust down if p95 latency budget is <200 ms.\", \"N3:6:46f6619a\": \"Enable keep‑alive with idle timeout ~30 s to recycle idle sockets and avoid resource exhaustion.\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"votes\": [\n    {\n      \"target_id\": \"N1\",\n      \"valid\": \"PASS\",\n      \"agree_points\": [\n        \"N1:0:e6fa4f0e\",\n        \"N1:1:5ad4042e\",\n        \"N1:2:a6c29fe0\",\n        \"N1:3:d7d0cb8a\",\n        \"N1:4:c0ef47ec\",\n        \"N1:5:8c3df2c6\",\n        \"N3:0:7bc89abe\",\n        \"N3:1:b4d6259c\",\n        \"N3:2:9dfeafc1\",\n        \"N3:3:775f2888\",\n        \"N3:5:65414229\",\n        \"N3:6:46f6619a\"\n      ],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"All referenced points are satisfied by the draft.\"\n    },\n    {\n      \"target_id\": \"N2\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"Draft is UNKNOWN and no points are referenced.\"\n    },\n    {\n      \"target_id\": \"N4\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"Draft is UNKNOWN and no points are referenced.\"\n    },\n    {\n      \"target_id\": \"N5\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"Draft is UNKNOWN and no points are referenced.\"\n    }\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-08cb0c16-e700-4507-b07c-fe09fdf3e050",
+      "object": "chat.completion",
+      "created": 1773291126,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"votes\": [\n    {\n      \"target_id\": \"N1\",\n      \"valid\": \"PASS\",\n      \"agree_points\": [\n        \"N1:0:e6fa4f0e\",\n        \"N1:1:5ad4042e\",\n        \"N1:2:a6c29fe0\",\n        \"N1:3:d7d0cb8a\",\n        \"N1:4:c0ef47ec\",\n        \"N1:5:8c3df2c6\",\n        \"N3:0:7bc89abe\",\n        \"N3:1:b4d6259c\",\n        \"N3:2:9dfeafc1\",\n        \"N3:3:775f2888\",\n        \"N3:5:65414229\",\n        \"N3:6:46f6619a\"\n      ],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"All referenced points are satisfied by the draft.\"\n    },\n    {\n      \"target_id\": \"N2\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"Draft is UNKNOWN and no points are referenced.\"\n    },\n    {\n      \"target_id\": \"N4\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"Draft is UNKNOWN and no points are referenced.\"\n    },\n    {\n      \"target_id\": \"N5\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [],\n      \"note\": \"Draft is UNKNOWN and no points are referenced.\"\n    }\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1334,
+        "completion_tokens": 1437,
+        "total_tokens": 2771
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  }
+]

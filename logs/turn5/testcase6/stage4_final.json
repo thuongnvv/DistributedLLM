@@ -1,0 +1,66 @@
+{
+  "winner": "N7",
+  "final_answer": "Refactor the endpoint by extracting the sequential external calls and executing them concurrently with async/await or a thread pool (N1:0:e9706726). Profile the reporting query with EXPLAIN ANALYZE (N1:1:3dce1d87) to pinpoint slow joins, then add b‑tree indexes on the foreign‑key columns used in those joins (N1:2:d34735d7) and consider covering indexes for filter and order‑by columns. Reduce I/O by selecting only the columns required for the report instead of SELECT * (N1:3:0daa7d5f). Where the join depth is high, rewrite the query using CTEs or pre‑aggregated materialized views to avoid repeated heavy joins (N1:4:71e157d7). Limit the result set with pagination or a LIMIT clause to keep execution time bounded (N1:5:f7df59ea). Set a sane timeout budget by measuring the 95th‑percentile query latency in production and configuring the endpoint timeout to roughly 2–3× that value (N7:6:679852c6), while also defining a total timeout (e.g., 2 s) and allocating per‑step budgets such as 500 ms for external services and 500 ms for the database (N6:4:180e79d8). Additionally, enforce a PostgreSQL statement_timeout (e.g., 2000 ms) and an application‑level timeout of 3–5 s to guard against runaway queries (N2:7:141357ff). Finally, document the timeout allocation (e.g., DB 1 s, network 0.3 s, processing 0.5 s, headroom 0.2 s) to guide future performance tuning (N10:4:9c4717fb).",
+  "metrics": {
+    "pass": {
+      "N1": 4,
+      "N6": 4,
+      "N2": 4,
+      "N7": 4,
+      "N3": 3,
+      "N8": 3,
+      "N4": 3,
+      "N10": 4,
+      "N5": 3,
+      "N9": 3
+    },
+    "fail": {
+      "N1": 0,
+      "N6": 0,
+      "N2": 0,
+      "N7": 0,
+      "N3": 0,
+      "N8": 0,
+      "N4": 0,
+      "N10": 0,
+      "N5": 0,
+      "N9": 0
+    },
+    "agree": {
+      "N1": 28,
+      "N6": 28,
+      "N2": 28,
+      "N7": 40,
+      "N3": 0,
+      "N8": 0,
+      "N4": 0,
+      "N10": 32,
+      "N5": 0,
+      "N9": 0
+    },
+    "reject": {
+      "N1": 0,
+      "N6": 0,
+      "N2": 0,
+      "N7": 0,
+      "N3": 0,
+      "N8": 0,
+      "N4": 0,
+      "N10": 0,
+      "N5": 0,
+      "N9": 0
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N7": 5.0
+    },
+    "point_rep_delta": {
+      "N1": 132.0,
+      "N6": 12.0,
+      "N2": 4.0,
+      "N7": 4.0,
+      "N10": 4.0
+    }
+  }
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:96459efe",
+        "text": "Use a short client timeout (e.g., 1‑2 s) and let the server enforce its own longer timeout to avoid cascading retries."
+      },
+      {
+        "point_id": "N1:1:2ab2838d",
+        "text": "Implement exponential backoff with random jitter for retries, and cap the max retry attempts (e.g., 3‑5)."
+      },
+      {
+        "point_id": "N1:2:538fce70",
+        "text": "Add a circuit‑breaker that opens after N consecutive failures to stop further calls until health recovers."
+      },
+      {
+        "point_id": "N1:3:9a70acd9",
+        "text": "Make retries idempotent or use request IDs so duplicate processing does not cause side effects."
+      },
+      {
+        "point_id": "N1:4:1457fd5f",
+        "text": "Monitor end‑to‑end latency and set timeout values based on the 95th‑percentile of observed response times."
+      },
+      {
+        "point_id": "N1:5:20f3b408",
+        "text": "On the network side, check TCP retransmission rates, packet loss, and queue depth on switches/routers during incidents."
+      },
+      {
+        "point_id": "N1:6:9659f1b5",
+        "text": "Verify TCP keepalive and retransmission timeout (RTO) settings; tune RTO if the network shows high latency spikes."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": []
+  },
+  {
+    "node_id": "N3",
+    "points": [
+      {
+        "point_id": "N3:0:7a925a13",
+        "text": "Use exponential backoff with jitter for retries to avoid thundering‑herd load spikes."
+      },
+      {
+        "point_id": "N3:1:d8c9bff0",
+        "text": "Implement a circuit‑breaker that stops retries after a configurable failure threshold."
+      },
+      {
+        "point_id": "N3:2:082d432e",
+        "text": "Set client‑side request timeout shorter than the service’s maximum processing time plus network latency margin."
+      },
+      {
+        "point_id": "N3:3:814148d7",
+        "text": "Limit the maximum number of retries per request to prevent unbounded traffic amplification."
+      },
+      {
+        "point_id": "N3:4:50112062",
+        "text": "Configure TCP_USER_TIMEOUT (or SO_RCVTIMEO) to bound how long a TCP socket can remain in retransmission before aborting."
+      },
+      {
+        "point_id": "N3:5:55692fbf",
+        "text": "Monitor RTT and variance (e.g., via TCP_INFO) to adapt timeout values dynamically to current network conditions."
+      },
+      {
+        "point_id": "N3:6:6c3c31b1",
+        "text": "Check for elevated packet loss or congestion using netstat -s, ss -i, or tcpdump to correlate retransmissions with network health."
+      },
+      {
+        "point_id": "N3:7:679b9e03",
+        "text": "Inspect switch/router queue lengths and bufferbloat; use tools like mtr or ping‑pong latency to detect queuing delays."
+      },
+      {
+        "point_id": "N3:8:d3cb64a3",
+        "text": "Verify NIC duplex and speed settings; mismatches cause retransmissions and latency spikes."
+      },
+      {
+        "point_id": "N3:9:9dc5fcb8",
+        "text": "Ensure firewalls or load balancers have appropriate idle‑timeout settings that match application timeout expectations."
+      }
+    ]
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N5",
+    "points": []
+  }
+]

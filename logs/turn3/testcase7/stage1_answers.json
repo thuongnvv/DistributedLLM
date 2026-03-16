@@ -1,0 +1,133 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:efcf2b4c",
+        "text": "Gather baseline metrics: cache hit/miss rates, DB query counts, CPU usage, latency before and after the change."
+      },
+      {
+        "point_id": "N1:1:3756b2c1",
+        "text": "Identify new query parameters and examine how they affect cache key generation; ensure keys remain consistent."
+      },
+      {
+        "point_id": "N1:2:d8b42588",
+        "text": "Check for cache key explosion: many unique keys reduce hit rate; consider normalizing or hashing parameters."
+      },
+      {
+        "point_id": "N1:3:f1c5264b",
+        "text": "Review cache eviction policies and TTL; verify that added parameters aren't causing premature expiration."
+      },
+      {
+        "point_id": "N1:4:d0694390",
+        "text": "Profile the application to locate CPU hotspots; determine if extra parameter handling or serialization is costly."
+      },
+      {
+        "point_id": "N1:5:926bc253",
+        "text": "Analyze DB query plans for the new parameter combinations; add indexes or rewrite queries to reduce reads."
+      },
+      {
+        "point_id": "N1:6:f5103614",
+        "text": "Run a controlled A/B test disabling the new parameters to confirm impact on cache and DB load."
+      },
+      {
+        "point_id": "N1:7:742a7c4b",
+        "text": "Implement cache warm‑up or pre‑populate common key patterns to improve hit rate after deployment."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:ef04ad9c",
+        "text": "Collect baseline metrics: cache hit rate, DB reads, CPU, and query latency before and after the feature rollout."
+      },
+      {
+        "point_id": "N2:1:6459d49a",
+        "text": "Log all SQL statements executed by the new feature, including parameter values, to identify new or changed queries."
+      },
+      {
+        "point_id": "N2:2:23025eb5",
+        "text": "Compare execution plans of affected queries to detect scans, missing indexes, or parameter sniffing issues."
+      },
+      {
+        "point_id": "N2:3:aad05865",
+        "text": "Check that statistics are up‑to‑date; run UPDATE STATISTICS if plan choices have degraded."
+      },
+      {
+        "point_id": "N2:4:31ba808a",
+        "text": "Add or adjust indexes on columns introduced as query parameters to support selective filtering."
+      },
+      {
+        "point_id": "N2:5:fd9fe31b",
+        "text": "If parameter sniffing causes suboptimal plans, use OPTION (RECOMPILE) or OPTIMIZE FOR UNKNOWN for those queries."
+      },
+      {
+        "point_id": "N2:6:6747765e",
+        "text": "Monitor cache eviction and memory pressure; ensure cache size is sufficient for increased workload."
+      },
+      {
+        "point_id": "N2:7:83105d6a",
+        "text": "Profile CPU usage per query to pinpoint hot queries that are driving the CPU increase."
+      },
+      {
+        "point_id": "N2:8:5fa000ae",
+        "text": "Consider query result caching or materialized views for frequently accessed, read‑only result sets."
+      },
+      {
+        "point_id": "N2:9:1e3e48e0",
+        "text": "Iteratively test each change in a staging environment, measuring cache hit rate and DB read reductions."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": [
+      {
+        "point_id": "N3:0:8609ca61",
+        "text": "Collect time‑series metrics for cache hit/miss, DB query count, CPU, latency from monitoring (e.g., Prometheus)."
+      },
+      {
+        "point_id": "N3:1:9c61f8f8",
+        "text": "Correlate the deployment timestamp of the new feature with the metric shift to confirm causality."
+      },
+      {
+        "point_id": "N3:2:c4418255",
+        "text": "Inspect the new query parameters: determine if they alter cache keys or bypass the cache layer."
+      },
+      {
+        "point_id": "N3:3:936b0317",
+        "text": "Review cache key generation logic; ensure optional parameters are normalized or excluded to maintain hits."
+      },
+      {
+        "point_id": "N3:4:8324c098",
+        "text": "Check cache eviction settings (size, TTL) for increased churn caused by higher request diversity."
+      },
+      {
+        "point_id": "N3:5:6d76d02b",
+        "text": "Profile the application (e.g., perf, eBPF) to locate CPU hotspots introduced by parsing or processing new params."
+      },
+      {
+        "point_id": "N3:6:c428bb47",
+        "text": "Analyze DB query plans for the new requests; add indexes or rewrite queries to reduce per‑request cost."
+      },
+      {
+        "point_id": "N3:7:1a85614a",
+        "text": "Run a controlled load test with and without the new parameters to quantify impact and validate mitigations."
+      },
+      {
+        "point_id": "N3:8:4a0f10e2",
+        "text": "Iteratively apply mitigations (key normalization, cache size increase, index addition) and monitor hit rate and DB load."
+      }
+    ]
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N5",
+    "points": []
+  }
+]

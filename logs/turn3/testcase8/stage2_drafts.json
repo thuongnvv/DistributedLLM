@@ -1,0 +1,27 @@
+[
+  {
+    "node_id": "N1",
+    "synthesis_text": "Begin by issuing JWTs alongside the existing session‑cookie flow (N1:0, N5:0) and keep both mechanisms enabled. Generate short‑lived access tokens (15‑30 min) that contain only minimal, non‑sensitive claims such as user_id and roles (N1:1, N5:3) and issue long‑lived refresh tokens stored in HttpOnly, Secure SameSite=Strict cookies (N5:1, N5:5). Sign JWTs with a strong algorithm (HS256 or RS256) and include a kid header to allow key rotation (N1:3, N5:4). Validate signature, exp, nbf, iss, aud on every request before any DB access (N1:4, N5:2) and reject invalid tokens to reduce DB load. Add rate‑limiting and circuit‑breaker logic around DB calls (N1:5, N5:8) and use connection pooling/async queries to alleviate contention (N5:9). Continuously monitor error rates, latency, and token validation failures; be prepared to roll back to cookie‑only auth if thresholds are exceeded (N1:6, N5:7). Avoid storing JWTs in insecure client storage; prefer delivery via HttpOnly cookies (N1:7). Implement a revocation strategy such as short TTLs, token blacklist, or key rotation (N1:8, N5:6). Maintain CSRF protections for the remaining cookie‑based auth, noting that JWTs in Authorization headers are not CSRF‑vulnerable (N1:9). This phased, monitored rollout minimizes risk of 5xx spikes and ensures robust security during migration.",
+    "used_points": []
+  },
+  {
+    "node_id": "N2",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N3",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N5",
+    "synthesis_text": "Begin a phased migration by keeping the existing session‑cookie authentication as a fallback while introducing JWT generation (N1:0, N5:0). Issue short‑lived access JWTs (15‑30 min, or 5‑15 min) that contain only minimal, non‑sensitive claims such as user_id and roles (N1:1, N5:1, N5:3). Store long‑lived refresh tokens in HttpOnly, Secure, SameSite=Strict cookies (N5:1, N5:5) and never expose JWTs in insecure client storage (N1:7). Sign JWTs with a strong algorithm (HS256 or RS256) and rotate signing keys regularly, including a kid header for seamless transition (N1:3, N5:4). Validate the signature and all standard claims (exp, nbf, iss, aud) on every request before any DB access, rejecting invalid or expired tokens to reduce DB load (N1:4, N5:2). Implement a revocation strategy such as short TTLs, token blacklist, or key rotation (N1:8, N5:6). Add rate‑limiting and circuit‑breaker logic around database calls, and use connection pooling/async queries to mitigate contention during peak traffic (N1:5, N5:8, N5:9). Deploy canary releases, monitor error rates, latency, and token validation failures, and be prepared to roll back to cookie‑based auth if 5xx spikes exceed thresholds (N1:6, N5:7). Maintain CSRF protections for any cookie‑based flows, noting that JWTs sent in Authorization headers are not CSRF‑vulnerable (N1:9). This staged approach limits risk, controls load, and addresses common JWT security pitfalls.",
+    "used_points": []
+  }
+]

@@ -1,0 +1,277 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:a7301cc4",
+        "text": "Enable request tracing (e.g., X‑Request‑ID) and correlate gateway 502/504 logs with backend logs to locate failing calls."
+      },
+      {
+        "point_id": "N1:1:f63c10b4",
+        "text": "Collect latency histograms for each downstream service call; identify outliers that exceed SLA thresholds."
+      },
+      {
+        "point_id": "N1:2:97cafaf5",
+        "text": "Profile database CPU usage; examine slow query logs and execution plans for queries that spike during the issue."
+      },
+      {
+        "point_id": "N1:3:e69be5a1",
+        "text": "Check connection pool saturation in the backend; increase pool size or implement back‑pressure if connections are exhausted."
+      },
+      {
+        "point_id": "N1:4:53d7feb3",
+        "text": "Verify circuit‑breaker settings; ensure they open on repeated downstream failures to prevent cascading errors."
+      },
+      {
+        "point_id": "N1:5:19b7ba4f",
+        "text": "Add exponential backoff retries for transient downstream calls, limiting max attempts to avoid overload."
+      },
+      {
+        "point_id": "N1:6:97c6003c",
+        "text": "Monitor system metrics (CPU, memory, network) on both gateway and backend; correlate spikes with error timestamps."
+      },
+      {
+        "point_id": "N1:7:819c486b",
+        "text": "Run load tests replicating post‑release traffic to reproduce the bottleneck and measure resource utilization."
+      },
+      {
+        "point_id": "N1:8:e31cdb95",
+        "text": "If DB CPU remains high, consider query indexing, read replicas, or caching to offload frequent reads."
+      },
+      {
+        "point_id": "N1:9:eb1a2a44",
+        "text": "Deploy temporary rate limiting at the gateway to smooth traffic bursts while investigating root cause."
+      }
+    ]
+  },
+  {
+    "node_id": "N6",
+    "points": [
+      {
+        "point_id": "N6:0:9c8f589f",
+        "text": "Enable distributed tracing to measure latency of each downstream call and identify slow services."
+      },
+      {
+        "point_id": "N6:1:2d22aabe",
+        "text": "Collect metrics on request latency, error rates, DB CPU, thread pool usage, and compare pre‑release baselines."
+      },
+      {
+        "point_id": "N6:2:34d88b57",
+        "text": "Verify gateway timeout settings exceed the sum of downstream call timeouts; adjust budgets if needed."
+      },
+      {
+        "point_id": "N6:3:b2879880",
+        "text": "Profile the backend to find hot DB queries; add indexes or rewrite queries to reduce CPU load."
+      },
+      {
+        "point_id": "N6:4:2d7ffbfc",
+        "text": "Introduce circuit breakers around downstream services to fail fast and prevent cascading 502/504 errors."
+      },
+      {
+        "point_id": "N6:5:313c96df",
+        "text": "Ensure connection pools and concurrency limits for the database are sized appropriately to avoid saturation."
+      },
+      {
+        "point_id": "N6:6:25a86943",
+        "text": "Temporarily roll back the recent release or disable new features to isolate the change causing the issue."
+      },
+      {
+        "point_id": "N6:7:742172bb",
+        "text": "Consider batching or parallelizing independent downstream calls to improve overall response time."
+      },
+      {
+        "point_id": "N6:8:affd810f",
+        "text": "Implement rate limiting or load shedding at the gateway to protect downstream services during spikes."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:6df4055d",
+        "text": "Enable pg_stat_statements and identify the top‑CPU queries during the error spikes."
+      },
+      {
+        "point_id": "N2:1:69ee3d2d",
+        "text": "Run EXPLAIN (ANALYZE, BUFFERS) on those queries to spot sequential scans or high row estimates."
+      },
+      {
+        "point_id": "N2:2:af9dee13",
+        "text": "Check for missing indexes on filter/join columns and create covering indexes where appropriate."
+      },
+      {
+        "point_id": "N2:3:3b74ce80",
+        "text": "Inspect pg_locks and pg_stat_activity for lock contention or long‑running transactions."
+      },
+      {
+        "point_id": "N2:4:97205414",
+        "text": "Monitor wait_event_type (e.g., IO, lock) to see if CPU is spent on disk reads or lock waits."
+      },
+      {
+        "point_id": "N2:5:bb21fcd4",
+        "text": "Review connection pool settings (max connections, pool size) to avoid saturation of DB resources."
+      },
+      {
+        "point_id": "N2:6:15535652",
+        "text": "Correlate DB latency with downstream service timings using tracing to ensure the bottleneck is not external."
+      }
+    ]
+  },
+  {
+    "node_id": "N7",
+    "points": [
+      {
+        "point_id": "N7:0:48ae2046",
+        "text": "Enable DB monitoring (e.g., pg_stat_activity, wait events) to spot long‑running queries and high CPU usage."
+      },
+      {
+        "point_id": "N7:1:e6df0bb3",
+        "text": "Inspect lock contention: query pg_locks or equivalent to find sessions waiting on rows or tables."
+      },
+      {
+        "point_id": "N7:2:b1636994",
+        "text": "Analyze execution plans of new queries; add missing indexes or rewrite inefficient joins."
+      },
+      {
+        "point_id": "N7:3:fac1eb26",
+        "text": "Verify isolation levels; a higher level (SERIALIZABLE) can cause extra locking and CPU load."
+      },
+      {
+        "point_id": "N7:4:48a654fc",
+        "text": "Add circuit‑breaker/retry logic for downstream calls to prevent cascading load on the database."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": [
+      {
+        "point_id": "N3:0:535149f8",
+        "text": "Check load balancer health‑check failures and error rates to see if backends are being marked unhealthy."
+      },
+      {
+        "point_id": "N3:1:cbf5acbb",
+        "text": "Monitor LB request queue depth; a growing queue indicates saturation and can cause 502/504."
+      },
+      {
+        "point_id": "N3:2:0c881d28",
+        "text": "Measure per‑endpoint latency of each downstream call from the backend to locate slow services."
+      },
+      {
+        "point_id": "N3:3:e877f581",
+        "text": "Enable DB slow‑query logging and correlate CPU spikes with specific query patterns or load spikes."
+      },
+      {
+        "point_id": "N3:4:54a76113",
+        "text": "Inspect backend connection‑pool metrics for exhaustion or long wait times that could time out requests."
+      },
+      {
+        "point_id": "N3:5:a10a3365",
+        "text": "Verify that timeout values are consistent across LB, API gateway, backend HTTP client, and DB driver."
+      },
+      {
+        "point_id": "N3:6:89a59ea5",
+        "text": "Enable distributed tracing (e.g., OpenTelemetry) to pinpoint the hop where latency exceeds timeouts."
+      },
+      {
+        "point_id": "N3:7:16913dad",
+        "text": "Review recent release changes for added downstream calls, increased parallelism, or config changes."
+      },
+      {
+        "point_id": "N3:8:cf368318",
+        "text": "If DB CPU is the bottleneck, consider scaling vertically, adding read replicas, or query optimization."
+      },
+      {
+        "point_id": "N3:9:40f62c80",
+        "text": "Implement circuit‑breaker or retry‑with‑backoff on downstream calls to prevent cascading 502/504 errors."
+      }
+    ]
+  },
+  {
+    "node_id": "N8",
+    "points": [
+      {
+        "point_id": "N8:0:d3c039b3",
+        "text": "Enable TCP metrics (netstat -s, ss) on gateway and backend to detect retransmissions and packet loss."
+      },
+      {
+        "point_id": "N8:1:eb7a4388",
+        "text": "Capture packet traces (tcpdump) to measure RTT, SYN retries, and identify congestion episodes."
+      },
+      {
+        "point_id": "N8:2:e441eb44",
+        "text": "Verify keepalive and timeout settings on load balancer and backend to prevent premature 502/504."
+      },
+      {
+        "point_id": "N8:3:30dcb608",
+        "text": "Check connection pool sizes and socket reuse; pool exhaustion can cause delays and gateway timeouts."
+      },
+      {
+        "point_id": "N8:4:7d6b63fe",
+        "text": "Correlate database CPU spikes with increased TCP SYN backlog or slow ACKs from the DB server."
+      },
+      {
+        "point_id": "N8:5:3315c729",
+        "text": "Use latency histograms of downstream calls to isolate which service is adding most delay."
+      },
+      {
+        "point_id": "N8:6:b0f6c27d",
+        "text": "If high retransmission rate, tune TCP window scaling or switch congestion control algorithm."
+      },
+      {
+        "point_id": "N8:7:7bb7d8b1",
+        "text": "Ensure proper HTTP keepalive headers to reduce connection churn and improve throughput."
+      },
+      {
+        "point_id": "N8:8:ad917f2d",
+        "text": "Review gateway timeout thresholds; increase them if backend processing legitimately exceeds defaults."
+      },
+      {
+        "point_id": "N8:9:a6762d76",
+        "text": "Isolate or roll back recent code changes to differentiate application bugs from network issues."
+      }
+    ]
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N10",
+    "points": [
+      {
+        "point_id": "N10:0:149d8db2",
+        "text": "Capture per‑endpoint latency histograms (p95/p99) at the gateway and each downstream service to locate slow paths."
+      },
+      {
+        "point_id": "N10:1:05a52560",
+        "text": "Apply Little’s Law: concurrency = throughput × average latency; compare required concurrency to DB CPU‑limited capacity."
+      },
+      {
+        "point_id": "N10:2:b29d716a",
+        "text": "Budget total request timeout (e.g., 2 s) and allocate time slices to each downstream call, leaving headroom for retries."
+      },
+      {
+        "point_id": "N10:3:58598316",
+        "text": "Measure current RPS and DB CPU; if CPU >80 %, estimate max sustainable RPS = current RPS × (80 %/CPU) to avoid overload."
+      },
+      {
+        "point_id": "N10:4:5d74faea",
+        "text": "Introduce circuit breakers and exponential back‑off for downstream calls to prevent cascading 502/504 errors."
+      },
+      {
+        "point_id": "N10:5:94004e82",
+        "text": "If a recent release introduced changes, roll back or feature‑flag them and run a load test to confirm the bottleneck is removed."
+      }
+    ]
+  },
+  {
+    "node_id": "N5",
+    "points": []
+  },
+  {
+    "node_id": "N9",
+    "points": []
+  }
+]

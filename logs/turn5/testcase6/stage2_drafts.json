@@ -1,0 +1,96 @@
+[
+  {
+    "node_id": "N1",
+    "synthesis_text": "Refactor the endpoint by converting the sequential external calls into parallel async tasks (e.g., async/await or a thread pool) to cut overall latency. Profile the SQL with EXPLAIN ANALYZE to pinpoint slow joins, then add appropriate indexes on foreign‑key and filter columns and create covering indexes where beneficial. Rewrite the query to select only the required columns, move predicates as early as possible, and consider materialized views or denormalized tables for frequently joined data. Apply pagination or LIMIT clauses to bound result‑set size and avoid full scans. Finally, set the endpoint timeout to the measured 95th‑percentile response time plus a safety buffer (e.g., +20%) or allocate explicit per‑step budgets (e.g., DB 1 s, network 0.3 s, processing 0.5 s, headroom 0.2 s).",
+    "used_points": [
+      "N1:0:e9706726",
+      "N1:1:3dce1d87",
+      "N1:2:d34735d7",
+      "N1:3:0daa7d5f",
+      "N1:4:71e157d7",
+      "N1:5:f7df59ea",
+      "N1:6:8c9c98b8"
+    ]
+  },
+  {
+    "node_id": "N6",
+    "synthesis_text": "Refactor the reporting endpoint by converting the sequential external service calls into parallel asynchronous tasks (or using a thread pool) to cut overall latency. Optimize the SQL query by running EXPLAIN ANALYZE to pinpoint slow joins, adding indexes on foreign‑key and filter columns, selecting only the required columns instead of SELECT *, and applying pagination or LIMIT to bound the result set size. Set a sane timeout budget by measuring the 95th‑percentile response time, adding a safety buffer (e.g., +20%), and allocating per‑step budgets (e.g., 500 ms for each external call, 500 ms for the database) within a total endpoint timeout.",
+    "used_points": [
+      "N1:0:e9706726",
+      "N1:1:3dce1d87",
+      "N1:2:d34735d7",
+      "N1:3:0daa7d5f",
+      "N1:5:f7df59ea",
+      "N1:6:8c9c98b8",
+      "N6:4:180e79d8"
+    ]
+  },
+  {
+    "node_id": "N2",
+    "synthesis_text": "Refactor the endpoint by extracting the independent external calls and running them in parallel (e.g., async/await or a thread pool) to eliminate sequential latency. Split the reporting work into smaller sub‑calls if possible. For the SQL, first run EXPLAIN ANALYZE to pinpoint slow joins, then add btree indexes on the foreign‑key columns used in JOIN and WHERE clauses and consider covering indexes to avoid extra lookups. Rewrite the query to select only the required columns, push predicates as early as possible, and, where the join depth is high, replace it with pre‑aggregated materialized views or CTEs. Apply pagination or LIMIT to bound result‑set size. Finally, measure the 95th‑percentile response time in production, set PostgreSQL's statement_timeout slightly above the DB budget, and allocate a total endpoint timeout (e.g., 2 s) with per‑step buffers (e.g., 500 ms for external services, 1 s for the database, plus headroom).",
+    "used_points": [
+      "N1:0:e9706726",
+      "N1:1:3dce1d87",
+      "N1:2:d34735d7",
+      "N1:3:0daa7d5f",
+      "N1:4:71e157d7",
+      "N1:5:f7df59ea",
+      "N1:6:8c9c98b8"
+    ]
+  },
+  {
+    "node_id": "N7",
+    "synthesis_text": "Refactor the endpoint by extracting the sequential external calls and executing them concurrently with async/await or a thread pool (N1:0:e9706726). Profile the reporting query with EXPLAIN ANALYZE (N1:1:3dce1d87) to pinpoint slow joins, then add b‑tree indexes on the foreign‑key columns used in those joins (N1:2:d34735d7) and consider covering indexes for filter and order‑by columns. Reduce I/O by selecting only the columns required for the report instead of SELECT * (N1:3:0daa7d5f). Where the join depth is high, rewrite the query using CTEs or pre‑aggregated materialized views to avoid repeated heavy joins (N1:4:71e157d7). Limit the result set with pagination or a LIMIT clause to keep execution time bounded (N1:5:f7df59ea). Set a sane timeout budget by measuring the 95th‑percentile query latency in production and configuring the endpoint timeout to roughly 2–3× that value (N7:6:679852c6), while also defining a total timeout (e.g., 2 s) and allocating per‑step budgets such as 500 ms for external services and 500 ms for the database (N6:4:180e79d8). Additionally, enforce a PostgreSQL statement_timeout (e.g., 2000 ms) and an application‑level timeout of 3–5 s to guard against runaway queries (N2:7:141357ff). Finally, document the timeout allocation (e.g., DB 1 s, network 0.3 s, processing 0.5 s, headroom 0.2 s) to guide future performance tuning (N10:4:9c4717fb).",
+    "used_points": [
+      "N1:0:e9706726",
+      "N1:1:3dce1d87",
+      "N1:2:d34735d7",
+      "N1:3:0daa7d5f",
+      "N1:4:71e157d7",
+      "N1:5:f7df59ea",
+      "N6:4:180e79d8",
+      "N2:7:141357ff",
+      "N7:6:679852c6",
+      "N10:4:9c4717fb"
+    ]
+  },
+  {
+    "node_id": "N3",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N8",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N10",
+    "synthesis_text": "Refactor the endpoint by breaking the sequential external calls into parallel asynchronous tasks (e.g., async/await or a thread pool) to cut overall latency.  Profile the SQL with EXPLAIN ANALYZE to pinpoint slow joins and missing indexes, then add indexes on foreign‑key columns used in JOIN and WHERE clauses and consider covering indexes to avoid extra lookups.  Reduce the data volume by selecting only the required columns instead of SELECT *, and push predicates as early as possible in the join order.  For frequently accessed reporting data, use materialized views or denormalized tables to avoid repeated heavy joins.  Apply pagination or LIMIT clauses to bound result‑set size and prevent full‑table scans.  Finally, set a total endpoint timeout based on the 95th‑percentile observed response time plus a safety buffer (e.g., +20%), and allocate per‑step budgets (e.g., 500 ms for each external service, 500 ms for the database) within an overall budget such as 2 s, leaving headroom for retries.",
+    "used_points": [
+      "N1:0:e9706726",
+      "N1:1:3dce1d87",
+      "N1:2:d34735d7",
+      "N1:3:0daa7d5f",
+      "N1:4:71e157d7",
+      "N1:5:f7df59ea",
+      "N1:6:8c9c98b8",
+      "N6:4:180e79d8"
+    ]
+  },
+  {
+    "node_id": "N5",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N9",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  }
+]

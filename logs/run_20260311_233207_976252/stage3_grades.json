@@ -1,0 +1,321 @@
+[
+  {
+    "grader_id": "N1",
+    "target_id": "N2",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N2:0:18ff8809",
+      "N2:2:e3e6a6de",
+      "N1:2:babf23f5",
+      "N2:1:aeb9796a",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N3",
+    "valid": "FAIL",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N2:2:e3e6a6de",
+      "N1:2:babf23f5",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [
+      "N5:1:5242f631"
+    ],
+    "unknown_points": [],
+    "note": "Missing idempotency‑key detail required by point N5:1."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N4",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N1:2:babf23f5",
+      "N2:1:aeb9796a",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N1:2:babf23f5",
+      "N2:0:18ff8809",
+      "N2:1:aeb9796a",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N1:2:babf23f5",
+      "N2:2:e3e6a6de",
+      "N5:1:5242f631",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N2:2:e3e6a6de",
+      "N1:2:babf23f5",
+      "N5:1:5242f631",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N4",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N1:2:babf23f5",
+      "N2:1:aeb9796a",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N1:2:babf23f5",
+      "N2:0:18ff8809",
+      "N2:1:aeb9796a",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N1:2:babf23f5",
+      "N2:2:e3e6a6de",
+      "N5:1:5242f631",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly addressed in the draft."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N2",
+    "valid": "FAIL",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N2:0:18ff8809",
+      "N2:2:e3e6a6de",
+      "N1:2:babf23f5",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [
+      "N2:1:aeb9796a"
+    ],
+    "unknown_points": [],
+    "note": "Draft omits wrapping the entire checkout in a single ACID transaction as required by point N2:1:aeb9796a."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N4",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N1:2:babf23f5",
+      "N2:1:aeb9796a",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are accurately reflected."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N1:2:babf23f5",
+      "N2:0:18ff8809",
+      "N2:1:aeb9796a",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Draft explicitly covers each listed point."
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N2:2:e3e6a6de",
+      "N5:1:5242f631",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "N1:2:babf23f5"
+    ],
+    "note": "All referenced points are correctly addressed."
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N2",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N2:0:18ff8809",
+      "N2:2:e3e6a6de",
+      "N1:2:babf23f5",
+      "N2:1:aeb9796a",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly addressed."
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N2:2:e3e6a6de",
+      "N1:2:babf23f5",
+      "N5:1:5242f631",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly addressed."
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N1:2:babf23f5",
+      "N2:0:18ff8809",
+      "N2:1:aeb9796a",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly addressed."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N1:2:babf23f5",
+      "N2:2:e3e6a6de",
+      "N5:1:5242f631",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly addressed."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N2",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N2:0:18ff8809",
+      "N2:2:e3e6a6de",
+      "N1:2:babf23f5",
+      "N2:1:aeb9796a",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly addressed."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N2:2:e3e6a6de",
+      "N1:2:babf23f5",
+      "N5:1:5242f631",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly addressed."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N4",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:7baade37",
+      "N1:1:08fa5c20",
+      "N1:2:babf23f5",
+      "N2:1:aeb9796a",
+      "N5:2:6a2eb228"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly addressed."
+  }
+]

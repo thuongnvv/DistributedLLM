@@ -1,0 +1,166 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:435159b0",
+        "text": "Include a monotonically increasing sequence number in each WebSocket message per client or channel."
+      },
+      {
+        "point_id": "N1:1:a9d540d7",
+        "text": "Client stores last processed seq; discard any incoming message with seq <= stored value."
+      },
+      {
+        "point_id": "N1:2:b873883d",
+        "text": "If messages arrive out of order, buffer them until missing seq arrives or request a resend."
+      },
+      {
+        "point_id": "N1:3:7f60c57e",
+        "text": "Attach a unique message ID (e.g., UUID) and keep recent IDs in a short‑TTL cache for deduplication."
+      },
+      {
+        "point_id": "N1:4:b0820e8e",
+        "text": "Make server-side processing idempotent by checking the message ID before applying business logic."
+      },
+      {
+        "point_id": "N1:5:72d12b73",
+        "text": "Secure the channel with TLS (wss://) and authenticate using short‑lived signed JWTs."
+      },
+      {
+        "point_id": "N1:6:3a62c0e8",
+        "text": "Include a nonce (jti) claim in JWTs and track used nonces to prevent token replay attacks."
+      },
+      {
+        "point_id": "N1:7:49580906",
+        "text": "Rotate tokens on reconnect and enforce re‑authentication for new WebSocket connections."
+      },
+      {
+        "point_id": "N1:8:ee4049e2",
+        "text": "Optionally sign each message with an HMAC using a shared secret to verify integrity."
+      },
+      {
+        "point_id": "N1:9:d156f025",
+        "text": "Implement exponential backoff for client reconnection attempts to avoid thundering herd."
+      }
+    ]
+  },
+  {
+    "node_id": "N6",
+    "points": []
+  },
+  {
+    "node_id": "N2",
+    "points": []
+  },
+  {
+    "node_id": "N7",
+    "points": []
+  },
+  {
+    "node_id": "N3",
+    "points": []
+  },
+  {
+    "node_id": "N8",
+    "points": [
+      {
+        "point_id": "N8:0:181fab3d",
+        "text": "Include a monotonically increasing sequence number in each WebSocket message payload."
+      },
+      {
+        "point_id": "N8:1:ebbb2d20",
+        "text": "Client stores the highest sequence number received and discards any message with a lower or equal number."
+      },
+      {
+        "point_id": "N8:2:fd99fd26",
+        "text": "On reconnect, client sends its last received sequence; server resumes sending from the next number."
+      },
+      {
+        "point_id": "N8:3:4482d34b",
+        "text": "Use TLS (wss://) to encrypt the channel and protect tokens from interception."
+      },
+      {
+        "point_id": "N8:4:5c7d6104",
+        "text": "Issue short‑lived JWTs with a unique jti claim and timestamp; server rejects reused jti values."
+      },
+      {
+        "point_id": "N8:5:4bf91850",
+        "text": "Include a nonce in the authentication token and validate its freshness on each connection."
+      },
+      {
+        "point_id": "N8:6:abc0b863",
+        "text": "Maintain a short‑term server cache of recent sequence numbers or token IDs to detect duplicates."
+      },
+      {
+        "point_id": "N8:7:cc471a56",
+        "text": "Enable WebSocket ping/pong keep‑alive frames to detect dead connections promptly."
+      },
+      {
+        "point_id": "N8:8:f0105705",
+        "text": "If ordering is critical, route events through an ordered backend queue (e.g., Kafka) before sending."
+      }
+    ]
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N10",
+    "points": []
+  },
+  {
+    "node_id": "N5",
+    "points": [
+      {
+        "point_id": "N5:0:7d8fde6f",
+        "text": "Use TLS (wss://) for all WebSocket traffic to protect confidentiality and integrity."
+      },
+      {
+        "point_id": "N5:1:e3749ed3",
+        "text": "Authenticate each connection with a short‑lived signed token (e.g., JWT) bound to client ID, verify on upgrade."
+      },
+      {
+        "point_id": "N5:2:2adf50bc",
+        "text": "Include a per‑message nonce or monotonically increasing sequence number signed with HMAC; reject duplicates or out‑of‑order beyond allowed window."
+      },
+      {
+        "point_id": "N5:3:ae310ab2",
+        "text": "Maintain server‑side last‑seen sequence per client and drop any message with sequence ≤ last seen to prevent replay."
+      },
+      {
+        "point_id": "N5:4:6dd328e5",
+        "text": "Embed a timestamp in each message and reject those older than a few seconds, limiting replay time‑window."
+      },
+      {
+        "point_id": "N5:5:b6a246f7",
+        "text": "Rotate tokens frequently, require re‑auth on reconnection, and provide immediate revocation for compromised tokens."
+      }
+    ]
+  },
+  {
+    "node_id": "N9",
+    "points": [
+      {
+        "point_id": "N9:0:a504f59e",
+        "text": "Assign a monotonically increasing sequence number per client session and discard messages with old or duplicate numbers."
+      },
+      {
+        "point_id": "N9:1:20d98fd3",
+        "text": "Include a unique message ID and keep a short‑TTL cache of recent IDs to filter duplicate events."
+      },
+      {
+        "point_id": "N9:2:32250d7b",
+        "text": "Sign each WebSocket payload with an HMAC using a per‑connection secret; verify on receipt to ensure integrity."
+      },
+      {
+        "point_id": "N9:3:371ba8ae",
+        "text": "Use short‑lived, connection‑bound tokens (e.g., JWT or opaque token) and rotate them on each reconnect."
+      },
+      {
+        "point_id": "N9:4:bdeb1b3f",
+        "text": "Maintain a replay‑cache keyed by token + nonce and reject any payload that repeats within the cache window."
+      }
+    ]
+  }
+]

@@ -1,0 +1,339 @@
+[
+  {
+    "grader_id": "N1",
+    "target_id": "N2",
+    "valid": "FAIL",
+    "agree_points": [
+      "N1:0:54c12235",
+      "N1:1:ba0bd840",
+      "N1:2:ef1cd64b",
+      "N1:3:b778bfa3",
+      "N1:4:e82a44f9",
+      "N2:0:a0eba3a3",
+      "N2:1:32534dd7",
+      "N2:2:8bf2c4b7",
+      "N2:4:cc38b3b8",
+      "N2:5:eee5a2e6",
+      "N5:0:356f161a",
+      "N5:3:ab05c556",
+      "N5:5:f24b1738"
+    ],
+    "reject_points": [
+      "N5:4:6276ddb0"
+    ],
+    "unknown_points": [],
+    "note": "Draft omits the point about responding 200 OK immediately after storing the event and doing the charge asynchronously (N5:4)."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:54c12235",
+      "N1:1:ba0bd840",
+      "N1:2:ef1cd64b",
+      "N1:3:b778bfa3",
+      "N1:4:e82a44f9",
+      "N2:0:a0eba3a3",
+      "N2:1:32534dd7",
+      "N2:2:8bf2c4b7",
+      "N2:5:eee5a2e6",
+      "N3:0:c893ba2d",
+      "N3:1:31b403a4",
+      "N3:2:3eb04586",
+      "N3:3:7282a066",
+      "N3:4:18528314",
+      "N3:5:ce0a029b",
+      "N5:0:356f161a",
+      "N5:1:faaf2b48",
+      "N5:2:1db9197c",
+      "N5:3:ab05c556",
+      "N5:5:f24b1738",
+      "N5:6:3a313742",
+      "N5:7:756a7ec9"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly reflected in the draft."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N4",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Draft is UNKNOWN and no points are cited for evaluation."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N5",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "No points are cited for this target; draft cannot be assessed against specific points."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Draft aligns with best practices."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:54c12235",
+      "N1:1:ba0bd840",
+      "N1:2:ef1cd64b",
+      "N1:3:b778bfa3",
+      "N1:4:e82a44f9",
+      "N2:0:a0eba3a3",
+      "N2:1:32534dd7",
+      "N2:2:8bf2c4b7",
+      "N2:5:eee5a2e6",
+      "N3:0:c893ba2d",
+      "N3:1:31b403a4",
+      "N3:2:3eb04586",
+      "N3:3:7282a066",
+      "N3:4:18528314",
+      "N3:5:ce0a029b",
+      "N5:0:356f161a",
+      "N5:1:faaf2b48",
+      "N5:2:1db9197c",
+      "N5:3:ab05c556",
+      "N5:5:f24b1738",
+      "N5:6:3a313742",
+      "N5:7:756a7ec9"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly incorporated."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N4",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Draft is unspecified."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Draft provides a reasonable design."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Draft correctly addresses idempotency, transactionality, timeout and UI considerations."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N2",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:54c12235",
+      "N1:1:ba0bd840",
+      "N1:2:ef1cd64b",
+      "N1:3:b778bfa3",
+      "N1:4:e82a44f9",
+      "N2:0:a0eba3a3",
+      "N2:2:8bf2c4b7",
+      "N2:4:cc38b3b8",
+      "N2:5:eee5a2e6",
+      "N5:3:ab05c556",
+      "N5:5:f24b1738"
+    ],
+    "reject_points": [
+      "N2:1:32534dd7",
+      "N5:4:6276ddb0"
+    ],
+    "unknown_points": [
+      "N5:0:356f161a"
+    ],
+    "note": "Most points align; missing ON CONFLICT for payment row and immediate async response cause two rejections, one unknown."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N4",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Draft is marked UNKNOWN; insufficient information to assess."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Draft provides a sound idempotent design with proper transaction handling and timeout strategy."
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N1",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N2",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "N1:0:54c12235",
+      "N1:1:ba0bd840",
+      "N1:2:ef1cd64b",
+      "N1:3:b778bfa3",
+      "N1:4:e82a44f9",
+      "N2:0:a0eba3a3",
+      "N2:1:32534dd7",
+      "N2:2:8bf2c4b7",
+      "N2:4:cc38b3b8",
+      "N2:5:eee5a2e6",
+      "N5:0:356f161a",
+      "N5:3:ab05c556",
+      "N5:4:6276ddb0",
+      "N5:5:f24b1738"
+    ],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N3",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "N1:0:54c12235",
+      "N1:1:ba0bd840",
+      "N1:2:ef1cd64b",
+      "N1:3:b778bfa3",
+      "N1:4:e82a44f9",
+      "N2:0:a0eba3a3",
+      "N2:1:32534dd7",
+      "N2:2:8bf2c4b7",
+      "N2:5:eee5a2e6",
+      "N3:0:c893ba2d",
+      "N3:1:31b403a4",
+      "N3:2:3eb04586",
+      "N3:3:7282a066",
+      "N3:4:18528314",
+      "N3:5:ce0a029b",
+      "N5:0:356f161a",
+      "N5:1:faaf2b48",
+      "N5:2:1db9197c",
+      "N5:3:ab05c556",
+      "N5:5:f24b1738",
+      "N5:6:3a313742",
+      "N5:7:756a7ec9"
+    ],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N4",
+    "target_id": "N5",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Grader abstained: no in-scope points in stage1"
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "No points to evaluate."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N2",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:54c12235",
+      "N1:1:ba0bd840",
+      "N1:2:ef1cd64b",
+      "N1:3:b778bfa3",
+      "N1:4:e82a44f9",
+      "N2:0:a0eba3a3",
+      "N2:1:32534dd7",
+      "N2:2:8bf2c4b7",
+      "N2:5:eee5a2e6",
+      "N5:0:356f161a",
+      "N5:3:ab05c556",
+      "N5:5:f24b1738"
+    ],
+    "reject_points": [
+      "N5:4:6276ddb0"
+    ],
+    "unknown_points": [
+      "N2:4:cc38b3b8"
+    ],
+    "note": "Mixed agreement; one point contradicts draft and one point unclear."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:54c12235",
+      "N1:1:ba0bd840",
+      "N1:2:ef1cd64b",
+      "N1:3:b778bfa3",
+      "N1:4:e82a44f9",
+      "N2:0:a0eba3a3",
+      "N2:1:32534dd7",
+      "N2:2:8bf2c4b7",
+      "N2:5:eee5a2e6",
+      "N3:0:c893ba2d",
+      "N3:1:31b403a4",
+      "N3:2:3eb04586",
+      "N3:3:7282a066",
+      "N3:4:18528314",
+      "N3:5:ce0a029b",
+      "N5:0:356f161a",
+      "N5:1:faaf2b48",
+      "N5:2:1db9197c",
+      "N5:3:ab05c556",
+      "N5:5:f24b1738",
+      "N5:6:3a313742",
+      "N5:7:756a7ec9"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly addressed."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N4",
+    "valid": "PASS",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "No points to evaluate."
+  }
+]

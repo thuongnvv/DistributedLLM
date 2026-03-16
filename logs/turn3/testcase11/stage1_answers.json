@@ -1,0 +1,113 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:79c9cbab",
+        "text": "Instrument the endpoint with distributed tracing (e.g., OpenTelemetry) to separate request‑processing time, DB time, and network latency."
+      },
+      {
+        "point_id": "N1:1:e592366e",
+        "text": "Enable slow‑query logging on the database and capture query execution times for the affected endpoint."
+      },
+      {
+        "point_id": "N1:2:823b71cd",
+        "text": "Run continuous network monitoring (ping, traceroute, packet capture) to log latency spikes and packet loss rates."
+      },
+      {
+        "point_id": "N1:3:b8a7dcfb",
+        "text": "Correlate timestamps of slow endpoint responses with DB slow‑query logs and network loss events to find overlap."
+      },
+      {
+        "point_id": "N1:4:2309e5fc",
+        "text": "If DB time dominates, add missing indexes, rewrite inefficient queries, or increase connection pool size as a quick fix."
+      },
+      {
+        "point_id": "N1:5:e6f56076",
+        "text": "If network latency spikes dominate, check for congested links, adjust TCP retransmission settings, or route traffic via a faster path."
+      },
+      {
+        "point_id": "N1:6:c9e6373f",
+        "text": "Temporarily enable caching (in‑memory or CDN) for the endpoint to reduce load while root cause is investigated."
+      },
+      {
+        "point_id": "N1:7:a127b563",
+        "text": "Run a baseline benchmark with DB calls mocked out; if latency remains high, focus on network or application code."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:64da0c54",
+        "text": "Enable the DB slow‑query log and capture execution plans for the intermittent slow queries."
+      },
+      {
+        "point_id": "N2:1:4cd0399d",
+        "text": "Run EXPLAIN on those queries to spot missing indexes or costly joins."
+      },
+      {
+        "point_id": "N2:2:8d6b30c3",
+        "text": "Measure query latency from a client on the DB host versus a remote client to separate network delay."
+      },
+      {
+        "point_id": "N2:3:423fb757",
+        "text": "Use ping, traceroute or iPerf between app server and DB to detect packet loss and RTT spikes."
+      },
+      {
+        "point_id": "N2:4:8c9846ec",
+        "text": "Check OS/network stats (netstat, TCP retransmits) for congestion during slow periods."
+      },
+      {
+        "point_id": "N2:5:60db2dd8",
+        "text": "Quick fixes: add missing indexes, rewrite inefficient queries, increase connection pool size, enable caching."
+      },
+      {
+        "point_id": "N2:6:6dcf53d6",
+        "text": "If packet loss remains, consider moving the DB closer to the app server or using a more reliable network path."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": [
+      {
+        "point_id": "N3:0:c778ba84",
+        "text": "Capture TCP dumps on the affected host; look for retransmissions, duplicate ACKs, or high RTT spikes."
+      },
+      {
+        "point_id": "N3:1:10879030",
+        "text": "Measure baseline network latency with ping or traceroute to the DB server to detect packet loss or routing issues."
+      },
+      {
+        "point_id": "N3:2:f6fa177d",
+        "text": "Run a continuous DB query benchmark (e.g., sysbench) locally on the DB server to see if slow queries persist without network."
+      },
+      {
+        "point_id": "N3:3:aff41696",
+        "text": "Check OS network queues (netstat -s, ss -s) for drops or errors that correlate with the slow periods."
+      },
+      {
+        "point_id": "N3:4:a54bf708",
+        "text": "Enable MySQL slow query log with a low threshold; compare timestamps of slow queries to network loss events."
+      },
+      {
+        "point_id": "N3:5:34b3a5c5",
+        "text": "Temporarily switch the client to a different network path or VPN; if performance improves, suspect the original path."
+      },
+      {
+        "point_id": "N3:6:76737491",
+        "text": "Quick fix: increase TCP retransmission timeout (sysctl net.ipv4.tcp_retries2) or enable TCP selective ACKs to mitigate loss."
+      }
+    ]
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N5",
+    "points": []
+  }
+]

@@ -1,0 +1,76 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:e6fa4f0e",
+        "text": "Measure per‑endpoint request rate, p95 latency, error rate, and CPU/memory usage."
+      },
+      {
+        "point_id": "N1:1:5ad4042e",
+        "text": "Track queue depth and thread‑pool saturation to detect back‑pressure."
+      },
+      {
+        "point_id": "N1:2:a6c29fe0",
+        "text": "Set client timeout ~1.5× current p95 latency with an absolute upper bound."
+      },
+      {
+        "point_id": "N1:3:d7d0cb8a",
+        "text": "Limit retries to 2‑3 attempts with exponential backoff starting at 100‑200 ms."
+      },
+      {
+        "point_id": "N1:4:c0ef47ec",
+        "text": "Use a circuit breaker that opens when error rate >5% over a 30‑second window."
+      },
+      {
+        "point_id": "N1:5:8c3df2c6",
+        "text": "Reserve 30‑40% headroom in capacity (CPU, connections) to handle a 3× traffic surge."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": []
+  },
+  {
+    "node_id": "N3",
+    "points": [
+      {
+        "point_id": "N3:0:7bc89abe",
+        "text": "Measure incoming request rate (RPS) and its 95th percentile burst to size thread pools and socket buffers."
+      },
+      {
+        "point_id": "N3:1:b4d6259c",
+        "text": "Track p95 latency per endpoint and correlate with CPU, memory, and queue length to spot saturation early."
+      },
+      {
+        "point_id": "N3:2:9dfeafc1",
+        "text": "Monitor TCP retransmission count and SYN backlog; high values indicate network congestion or insufficient listen queue."
+      },
+      {
+        "point_id": "N3:3:775f2888",
+        "text": "Set a circuit‑breaker threshold at ~80% of observed max concurrent connections to stop new traffic before overload."
+      },
+      {
+        "point_id": "N3:4:7f8a4068",
+        "text": "Limit client retries: max 2 retries with exponential backoff, and enforce a minimum backoff of 100 ms."
+      },
+      {
+        "point_id": "N3:5:65414229",
+        "text": "Configure connection timeout to 2 s and read timeout to 5 s; adjust down if p95 latency budget is <200 ms."
+      },
+      {
+        "point_id": "N3:6:46f6619a",
+        "text": "Enable keep‑alive with idle timeout ~30 s to recycle idle sockets and avoid resource exhaustion."
+      }
+    ]
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N5",
+    "points": []
+  }
+]
