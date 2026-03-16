@@ -67,17 +67,19 @@ class LLMClient:
         persona: Persona,
         query: str,
         input_text: str | None = None,
-        max_points: int = MAX_POINTS_PER_ANSWER,
+        max_points: int | None = MAX_POINTS_PER_ANSWER,
     ) -> WorkerAnswer:
         if self.mode == "mock":
-            point_texts = self._mock_answer(persona, query, input_text)
+            point_texts = self._mock_answer(persona, query, input_text, max_points=max_points)
         else:
             point_texts = self._openai_answer(persona, query, input_text, max_points)
 
         point_texts = [pt[:160].strip() for pt in point_texts if pt and pt.strip()]
+        point_texts = [pt for pt in point_texts if not self._is_abstain_point(pt)]
         point_texts = dedupe_keep_order(point_texts)
 
-        point_texts = point_texts[:max_points]
+        if max_points is not None and max_points > 0:
+            point_texts = point_texts[:max_points]
         points: list[Point] = []
         for idx, text in enumerate(point_texts):
             pid = generate_point_id(persona.node_id, idx, text)
@@ -91,11 +93,16 @@ class LLMClient:
         bundle: list[WorkerAnswer],
         query: str,
         input_text: str | None = None,
-        max_used_points: int = MAX_USED_POINTS,
+        max_used_points: int | None = MAX_USED_POINTS,
     ) -> SynthesisDraft:
         points_map = self._bundle_points_map(bundle)
         if self.mode == "mock":
-            synthesis_text, used_points = self._mock_synthesis(persona, query, points_map)
+            synthesis_text, used_points = self._mock_synthesis(
+                persona,
+                query,
+                points_map,
+                max_used_points=max_used_points,
+            )
         else:
             synthesis_text, used_points = self._openai_synthesis(
                 persona=persona,
@@ -106,7 +113,8 @@ class LLMClient:
             )
 
         used_points = [pid for pid in dedupe_keep_order(used_points) if pid in points_map]
-        used_points = used_points[:max_used_points]
+        if max_used_points is not None and max_used_points > 0:
+            used_points = used_points[:max_used_points]
 
         if not synthesis_text.strip():
             synthesis_text = "UNKNOWN"
@@ -210,7 +218,13 @@ class LLMClient:
         return normalized_votes
 
     # ---------------- Mock mode ----------------
-    def _mock_answer(self, persona: Persona, query: str, input_text: str | None) -> list[str]:
+    def _mock_answer(
+        self,
+        persona: Persona,
+        query: str,
+        input_text: str | None,
+        max_points: int | None,
+    ) -> list[str]:
         query_short = query.strip().replace("\n", " ")[:220]
 
         domain_templates: dict[str, list[str]] = {
@@ -271,19 +285,23 @@ class LLMClient:
             points.insert(0, f"Address query objective: {query_short[:80]}")
         if input_text:
             points.append(f"Ground in provided input_text (len={len(input_text)})")
-        return points[: min(MAX_POINTS_PER_ANSWER, len(points))]
+        if max_points is not None and max_points > 0:
+            return points[: min(max_points, len(points))]
+        return points
 
     def _mock_synthesis(
         self,
         persona: Persona,
         query: str,
         points_map: dict[str, str],
+        max_used_points: int | None,
     ) -> tuple[str, list[str]]:
         if not points_map:
             return "UNKNOWN", []
 
         ordered_ids = sorted(points_map.keys())
-        top = ordered_ids[:8]
+        limit = max_used_points if max_used_points is not None and max_used_points > 0 else len(ordered_ids)
+        top = ordered_ids[:limit]
         if not top:
             top = list(points_map.keys())[:5]
 
@@ -396,7 +414,7 @@ class LLMClient:
         persona: Persona,
         query: str,
         input_text: str | None,
-        max_points: int,
+        max_points: int | None,
     ) -> list[str]:
         response_text = self._chat_completion(
             system_prompt=persona.system_prompt,
@@ -407,6 +425,14 @@ class LLMClient:
             },
         )
         obj = extract_first_json_object(response_text)
+        abstain_raw = obj.get("abstain", False)
+        abstain = False
+        if isinstance(abstain_raw, bool):
+            abstain = abstain_raw
+        elif isinstance(abstain_raw, str):
+            abstain = abstain_raw.strip().lower() in {"true", "1", "yes"}
+        if abstain:
+            return []
 
         points_field = obj.get("points", [])
         point_texts = self._normalize_point_texts(points_field, max_points=max_points)
@@ -418,7 +444,7 @@ class LLMClient:
         query: str,
         input_text: str | None,
         points_map: dict[str, str],
-        max_used_points: int,
+        max_used_points: int | None,
     ) -> tuple[str, list[str]]:
         response_text = self._chat_completion(
             system_prompt=persona.system_prompt,
@@ -440,10 +466,10 @@ class LLMClient:
         if not isinstance(used_points_raw, list):
             used_points_raw = []
         used_points = [pid for pid in dedupe_keep_order(str(x) for x in used_points_raw) if pid in points_map]
-        if not used_points and points_map:
-            used_points = list(points_map.keys())[: min(5, len(points_map))]
 
-        return synthesis_text, used_points[:max_used_points]
+        if max_used_points is not None and max_used_points > 0:
+            used_points = used_points[:max_used_points]
+        return synthesis_text, used_points
 
     def _openai_grade(
         self,
@@ -717,10 +743,25 @@ class LLMClient:
         ]
         return any(p in lowered for p in patterns)
 
+    def _is_abstain_point(self, text: str) -> bool:
+        lowered = text.strip().lower()
+        markers = {
+            "out_of_scope",
+            "unknown",
+            "i don't know",
+            "cannot determine",
+            "not enough information",
+        }
+        if lowered in markers:
+            return True
+        if lowered.startswith("out_of_scope"):
+            return True
+        return False
+
     def _normalize_point_texts(
         self,
         points_field: Any,
-        max_points: int,
+        max_points: int | None,
     ) -> list[str]:
         texts: list[str] = []
         if isinstance(points_field, list):
@@ -733,4 +774,6 @@ class LLMClient:
                     texts.append(entry.strip())
 
         texts = dedupe_keep_order(t[:160] for t in texts if t and t.strip())
-        return texts[:max_points]
+        if max_points is not None and max_points > 0:
+            return texts[:max_points]
+        return texts

@@ -102,12 +102,12 @@ def _require_nonempty_str(value: Any, field_name: str) -> str:
     return cleaned
 
 
-def validate_worker_answer(answer: WorkerAnswer, max_points: int = 8) -> None:
+def validate_worker_answer(answer: WorkerAnswer, max_points: int | None = None) -> None:
     answer.node_id = _require_nonempty_str(answer.node_id, "WorkerAnswer.node_id")
 
     if not isinstance(answer.points, list):
         raise ValueError("WorkerAnswer.points must be a list")
-    if len(answer.points) > max_points:
+    if max_points is not None and max_points > 0 and len(answer.points) > max_points:
         raise ValueError(f"WorkerAnswer.points exceeds max_points={max_points}")
 
     ids = set()

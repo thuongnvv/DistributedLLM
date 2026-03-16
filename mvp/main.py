@@ -2,15 +2,16 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 import sys
 from pathlib import Path
 from typing import Any
 
-from config import DEFAULT_K, DEFAULT_LOG_ROOT, DEFAULT_MODE, DEFAULT_SEED, DEFAULT_TAU_FAIL, SUPPORTED_MODES
+from config import DEFAULT_LOG_ROOT, DEFAULT_MODE, DEFAULT_SEED, DEFAULT_TAU_FAIL, SUPPORTED_MODES
 from llm_client import LLMClient
 from orchestrator import MVPOrchestrator
 from prompts import default_personas
-from utils import load_json
+from utils import ensure_dir, load_json
 
 
 def parse_args() -> argparse.Namespace:
@@ -18,7 +19,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--query", type=str, default=None, help="Single query string")
     parser.add_argument("--input-text", type=str, default=None, help="Optional grounded input text")
     parser.add_argument("--mode", type=str, default=DEFAULT_MODE, choices=SUPPORTED_MODES)
-    parser.add_argument("--k", type=int, default=DEFAULT_K, help="Number of worker nodes")
+    parser.add_argument("--k", type=int, default=None, help="Number of worker nodes (default: all personas)")
     parser.add_argument("--tau-fail", type=int, default=DEFAULT_TAU_FAIL, help="FAIL threshold for discard")
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED)
     parser.add_argument("--logs-root", type=str, default=DEFAULT_LOG_ROOT)
@@ -70,6 +71,22 @@ def resolve_testcases_path(path_arg: str | None) -> Path | None:
     if default_path.exists():
         return default_path
     return None
+
+
+def allocate_turn_dir(logs_root: str) -> Path:
+    root = ensure_dir(logs_root)
+    max_turn = 0
+    pattern = re.compile(r"^turn(\d+)$")
+    for child in root.iterdir():
+        if not child.is_dir():
+            continue
+        match = pattern.match(child.name)
+        if not match:
+            continue
+        value = int(match.group(1))
+        if value > max_turn:
+            max_turn = value
+    return ensure_dir(root / f"turn{max_turn + 1}")
 
 
 def load_env_if_exists(path: Path) -> None:
@@ -142,12 +159,13 @@ def main() -> int:
         return 0
 
     personas = default_personas()
+    k = args.k if args.k is not None else len(personas)
     llm_client = LLMClient(mode=args.mode, seed=args.seed)
 
     orchestrator = MVPOrchestrator(
         personas=personas,
         llm_client=llm_client,
-        k=args.k,
+        k=k,
         tau_fail=args.tau_fail,
         seed=args.seed,
         logs_root=args.logs_root,
@@ -156,6 +174,9 @@ def main() -> int:
     def progress(msg: str) -> None:
         print(msg, file=sys.stderr, flush=True)
 
+    turn_dir = allocate_turn_dir(args.logs_root)
+    print(f"[logs] turn_dir={turn_dir}", file=sys.stderr, flush=True)
+
     if query_arg is not None and query_arg.strip():
         print("[ad-hoc] start", file=sys.stderr, flush=True)
         final_output, log_dir = orchestrator.run(
@@ -163,6 +184,7 @@ def main() -> int:
             input_text=args.input_text,
             case_id=None,
             progress=progress,
+            log_dir_override=turn_dir / "testcase1",
         )
         print(final_output.final_answer)
         print(str(log_dir))
@@ -187,6 +209,7 @@ def main() -> int:
             input_text=input_text,
             case_id=case_id,
             progress=progress,
+            log_dir_override=turn_dir / f"testcase{selected_index}",
         )
         print(final_output.final_answer)
         print(str(log_dir))
@@ -206,6 +229,7 @@ def main() -> int:
             input_text=input_text,
             case_id=case_id,
             progress=progress,
+            log_dir_override=turn_dir / f"testcase{idx}",
         )
         print(f"=== [{idx}/{total}] {case_id} ===")
         print(final_output.final_answer)

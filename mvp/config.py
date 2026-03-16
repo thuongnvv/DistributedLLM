@@ -10,8 +10,23 @@ DEFAULT_TAU_FAIL = 2
 DEFAULT_SEED = int(os.getenv("MVP_SEED", "42"))
 DEFAULT_LOG_ROOT = "logs"
 
-MAX_POINTS_PER_ANSWER = 8
-MAX_USED_POINTS = 12
+
+def _optional_positive_int(name: str) -> int | None:
+    raw = os.getenv(name)
+    if raw is None:
+        return None
+    value = raw.strip()
+    if not value:
+        return None
+
+    parsed = int(value)
+    if parsed <= 0:
+        return None
+    return parsed
+
+
+MAX_POINTS_PER_ANSWER = _optional_positive_int("MAX_POINTS_PER_ANSWER")
+MAX_USED_POINTS = _optional_positive_int("MAX_USED_POINTS")
 
 WIN_BONUS = 5.0
 FAIL_PENALTY = 2.0

@@ -36,8 +36,8 @@ class MVPOrchestrator:
         tau_fail: int,
         seed: int = 42,
         logs_root: str = "logs",
-        max_points_per_answer: int = MAX_POINTS_PER_ANSWER,
-        max_used_points: int = MAX_USED_POINTS,
+        max_points_per_answer: int | None = MAX_POINTS_PER_ANSWER,
+        max_used_points: int | None = MAX_USED_POINTS,
         win_bonus: float = WIN_BONUS,
         fail_penalty: float = FAIL_PENALTY,
         point_score_weight: float = POINT_SCORE_WEIGHT,
@@ -67,6 +67,7 @@ class MVPOrchestrator:
         input_text: str | None = None,
         case_id: str | None = None,
         progress: Callable[[str], None] | None = None,
+        log_dir_override: Path | None = None,
     ) -> tuple[FinalizationOutput, Path]:
         if not query.strip():
             raise ValueError("Query must be non-empty")
@@ -97,6 +98,10 @@ class MVPOrchestrator:
             for point in ans.points:
                 points_map[point.point_id] = point.text
                 point_owner_map[point.point_id] = ans.node_id
+        active_nodes = {ans.node_id for ans in answers if ans.points}
+        abstain_nodes = [p.node_id for p in selected if p.node_id not in active_nodes]
+        if abstain_nodes:
+            self._emit_progress(progress, f"[{case_label}] abstain_nodes_stage1={','.join(abstain_nodes)}")
 
         known_point_ids = set(points_map.keys())
 
@@ -104,6 +109,20 @@ class MVPOrchestrator:
         self._emit_progress(progress, f"[{case_label}] stage=2/4 phase=synthesize start")
         drafts: list[SynthesisDraft] = []
         for persona in selected:
+            if persona.node_id not in active_nodes:
+                self._emit_progress(
+                    progress,
+                    f"[{case_label}] stage=2/4 node={persona.node_id} abstain_synthesis(no in-scope points)",
+                )
+                draft = SynthesisDraft(
+                    node_id=persona.node_id,
+                    synthesis_text="UNKNOWN",
+                    used_points=[],
+                )
+                validate_synthesis_draft(draft, known_point_ids)
+                drafts.append(draft)
+                continue
+
             self._emit_progress(progress, f"[{case_label}] stage=2/4 node={persona.node_id} synthesizing")
             draft = self.llm_client.synthesize(
                 persona=persona,
@@ -122,8 +141,27 @@ class MVPOrchestrator:
         grades: list[GradeVote] = []
         draft_by_node = {d.node_id: d for d in drafts}
         for grader in selected:
-            self._emit_progress(progress, f"[{case_label}] stage=3/4 grader={grader.node_id} grading_batch")
             target_drafts = [draft_by_node[node.node_id] for node in selected if node.node_id != grader.node_id]
+            if grader.node_id not in active_nodes:
+                self._emit_progress(
+                    progress,
+                    f"[{case_label}] stage=3/4 grader={grader.node_id} abstain_grade(no in-scope points)",
+                )
+                for target_draft in target_drafts:
+                    vote = GradeVote(
+                        grader_id=grader.node_id,
+                        target_id=target_draft.node_id,
+                        valid="UNKNOWN",
+                        agree_points=[],
+                        reject_points=[],
+                        unknown_points=list(target_draft.used_points),
+                        note="Grader abstained: no in-scope points in stage1",
+                    )
+                    validate_grade_vote(vote, target_draft.used_points)
+                    grades.append(vote)
+                continue
+
+            self._emit_progress(progress, f"[{case_label}] stage=3/4 grader={grader.node_id} grading_batch")
             batch_votes = self.llm_client.grade_batch(
                 persona=grader,
                 query=query,
@@ -181,6 +219,7 @@ class MVPOrchestrator:
             drafts=drafts,
             grades=grades,
             final_output=final_output,
+            log_dir_override=log_dir_override,
         )
 
         return final_output, log_dir
@@ -195,8 +234,12 @@ class MVPOrchestrator:
         drafts: list[SynthesisDraft],
         grades: list[GradeVote],
         final_output: FinalizationOutput,
+        log_dir_override: Path | None = None,
     ) -> Path:
-        run_dir = ensure_dir(Path(self.logs_root) / f"run_{run_timestamp()}")
+        if log_dir_override is not None:
+            run_dir = ensure_dir(log_dir_override)
+        else:
+            run_dir = ensure_dir(Path(self.logs_root) / f"run_{run_timestamp()}")
 
         save_json(run_dir / "stage1_answers.json", [a.to_dict() for a in answers])
         save_json(run_dir / "stage2_drafts.json", [d.to_dict() for d in drafts])
