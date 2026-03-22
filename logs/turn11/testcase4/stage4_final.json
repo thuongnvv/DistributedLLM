@@ -1,0 +1,102 @@
+{
+  "winner": "N8",
+  "final_answer": "Set a short connection timeout (e.g., 2‑3 s) and separate read/write deadlines so slow downstream calls fail fast (N1:0:fcb413b8). Compute client‑side timeouts slightly above the 95th‑percentile RTT plus processing latency to avoid premature aborts (N8:2:e89efd64). Apply exponential backoff with random jitter to retry intervals and cap retries to 1‑2 attempts, preventing retry storms and thundering‑herd effects (N6:0:5517ac4b, N10:2:0449a53d). Ensure retries are idempotent by using safe HTTP methods or unique request IDs (N1:3:7f8b43a9). Introduce a circuit‑breaker that opens after a configurable number of failures to halt further retries during an outage (N3:2:599b1c43). Use connection pooling with TCP keep‑alive sockets to reduce handshake overhead and limit new SYN traffic under load (N8:3:6ec85ad5). Continuously monitor TCP retransmission counts, RTT variance, and duplicate ACKs to detect congestion or packet loss early (N8:4:6ecd05fd). Check for bufferbloat on NICs and switches by measuring queueing delay, as high buffering can inflate RTT and trigger unnecessary timeouts (N10:6:e3569ea6). Inspect NIC and OS TCP parameters (e.g., rto_min, rto_max, tcp_retries2) to ensure retransmission timers match observed latency characteristics (N8:7:6b4bb789).",
+  "metrics": {
+    "pass": {
+      "N1": 2,
+      "N6": 4,
+      "N2": 2,
+      "N7": 2,
+      "N3": 2,
+      "N8": 4,
+      "N4": 2,
+      "N10": 4,
+      "N5": 2,
+      "N9": 2
+    },
+    "fail": {
+      "N1": 0,
+      "N6": 0,
+      "N2": 0,
+      "N7": 0,
+      "N3": 0,
+      "N8": 0,
+      "N4": 0,
+      "N10": 0,
+      "N5": 0,
+      "N9": 0
+    },
+    "agree": {
+      "N1": 0,
+      "N6": 40,
+      "N2": 0,
+      "N7": 0,
+      "N3": 0,
+      "N8": 40,
+      "N4": 0,
+      "N10": 40,
+      "N5": 0,
+      "N9": 0
+    },
+    "reject": {
+      "N1": 0,
+      "N6": 0,
+      "N2": 0,
+      "N7": 0,
+      "N3": 0,
+      "N8": 0,
+      "N4": 0,
+      "N10": 0,
+      "N5": 0,
+      "N9": 0
+    },
+    "eligible_reviews": {
+      "N1": 9,
+      "N6": 9,
+      "N2": 9,
+      "N7": 9,
+      "N3": 9,
+      "N8": 9,
+      "N4": 9,
+      "N10": 9,
+      "N5": 9,
+      "N9": 9
+    },
+    "used_points": {
+      "N1": 0,
+      "N6": 10,
+      "N2": 0,
+      "N7": 0,
+      "N3": 0,
+      "N8": 10,
+      "N4": 0,
+      "N10": 10,
+      "N5": 0,
+      "N9": 0
+    },
+    "agree_rate": {
+      "N1": 0.0,
+      "N6": 0.4444444444444444,
+      "N2": 0.0,
+      "N7": 0.0,
+      "N3": 0.0,
+      "N8": 0.4444444444444444,
+      "N4": 0.0,
+      "N10": 0.4444444444444444,
+      "N5": 0.0,
+      "N9": 0.0
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N8": 5.0
+    },
+    "point_rep_delta": {
+      "N1": 12.0,
+      "N6": 16.0,
+      "N3": 28.0,
+      "N8": 28.0,
+      "N10": 36.0
+    }
+  }
+}

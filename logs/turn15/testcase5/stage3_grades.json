@@ -1,0 +1,125 @@
+[
+  {
+    "grader_id": "N1",
+    "target_id": "N8",
+    "valid": "PASS",
+    "agree_points": [
+      "N8:3:9a4f1bd4",
+      "N8:4:6aced31c",
+      "N5:4:b8a1d3d5",
+      "N1:0:5f087a3d",
+      "N1:1:db770d6b",
+      "N8:2:2a55e671",
+      "N8:6:1b0068fe",
+      "N8:7:c7fa53d0",
+      "N5:6:9083ce5a",
+      "N1:3:18b857db"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are accurately reflected in the draft."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [
+      "N5:0:e69b5017",
+      "N1:1:db770d6b",
+      "N5:6:9083ce5a",
+      "N8:2:2a55e671",
+      "N1:2:6cd7ec92",
+      "N5:3:b4db48aa",
+      "N5:4:b8a1d3d5",
+      "N8:5:41690530",
+      "N5:5:4509bbb5"
+    ],
+    "reject_points": [
+      "N5:1:b8de628a"
+    ],
+    "unknown_points": [],
+    "note": "Point N5:1:b8de628a is misrepresented; draft describes client discarding out‑of‑order events, whereas the point specifies server‑side discarding."
+  },
+  {
+    "grader_id": "N8",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:5:698fc4b2",
+      "N1:0:5f087a3d",
+      "N1:1:db770d6b",
+      "N5:1:b8de628a",
+      "N8:6:1b0068fe",
+      "N1:3:18b857db",
+      "N8:2:2a55e671",
+      "N5:5:4509bbb5",
+      "N5:3:b4db48aa"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "N5:2:a5fdc5be"
+    ],
+    "note": "All referenced points are correctly reflected in the draft."
+  },
+  {
+    "grader_id": "N8",
+    "target_id": "N5",
+    "valid": "PASS",
+    "agree_points": [
+      "N5:0:e69b5017",
+      "N1:1:db770d6b",
+      "N5:6:9083ce5a",
+      "N8:2:2a55e671",
+      "N1:2:6cd7ec92",
+      "N5:3:b4db48aa",
+      "N5:4:b8a1d3d5",
+      "N8:5:41690530",
+      "N5:5:4509bbb5"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "N5:1:b8de628a"
+    ],
+    "note": "All points are addressed except N5:1:b8de628a, which mentions server‑side duplicate/out‑of‑order handling not covered in the draft."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N1",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:5:698fc4b2",
+      "N1:0:5f087a3d",
+      "N1:1:db770d6b",
+      "N5:1:b8de628a",
+      "N8:6:1b0068fe",
+      "N1:3:18b857db",
+      "N8:2:2a55e671",
+      "N5:5:4509bbb5",
+      "N5:3:b4db48aa",
+      "N5:2:a5fdc5be"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly applied."
+  },
+  {
+    "grader_id": "N5",
+    "target_id": "N8",
+    "valid": "PASS",
+    "agree_points": [
+      "N8:3:9a4f1bd4",
+      "N8:4:6aced31c",
+      "N5:4:b8a1d3d5",
+      "N1:0:5f087a3d",
+      "N1:1:db770d6b",
+      "N8:2:2a55e671",
+      "N8:6:1b0068fe",
+      "N8:7:c7fa53d0",
+      "N5:6:9083ce5a",
+      "N1:3:18b857db"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly applied."
+  }
+]

@@ -1,0 +1,111 @@
+{
+  "winner": "N2",
+  "final_answer": "[databases_sql] Consolidated answer for 'A single endpoint got slow. Some people think it’s the database, others think it’s the net': Apply least privilege for services and accounts; State assumptions before derivation; Address query objective: A single endpoint got slow. Some people think it’s the database, others think it; Inspect query plan before and after changes",
+  "metrics": {
+    "pass": {
+      "N1": 7,
+      "N6": 5,
+      "N2": 9,
+      "N7": 6,
+      "N3": 7,
+      "N8": 7,
+      "N4": 6,
+      "N10": 5,
+      "N5": 8,
+      "N9": 8
+    },
+    "fail": {
+      "N1": 2,
+      "N6": 2,
+      "N2": 0,
+      "N7": 2,
+      "N3": 1,
+      "N8": 1,
+      "N4": 3,
+      "N10": 1,
+      "N5": 0,
+      "N9": 0
+    },
+    "agree": {
+      "N1": 57,
+      "N6": 47,
+      "N2": 69,
+      "N7": 46,
+      "N3": 56,
+      "N8": 56,
+      "N4": 51,
+      "N10": 42,
+      "N5": 64,
+      "N9": 68
+    },
+    "reject": {
+      "N1": 12,
+      "N6": 17,
+      "N2": 5,
+      "N7": 16,
+      "N3": 14,
+      "N8": 15,
+      "N4": 16,
+      "N10": 11,
+      "N5": 4,
+      "N9": 8
+    },
+    "eligible_reviews": {
+      "N1": 9,
+      "N6": 9,
+      "N2": 9,
+      "N7": 9,
+      "N3": 9,
+      "N8": 9,
+      "N4": 9,
+      "N10": 9,
+      "N5": 9,
+      "N9": 9
+    },
+    "used_points": {
+      "N1": 10,
+      "N6": 10,
+      "N2": 10,
+      "N7": 10,
+      "N3": 10,
+      "N8": 10,
+      "N4": 10,
+      "N10": 10,
+      "N5": 10,
+      "N9": 10
+    },
+    "agree_rate": {
+      "N1": 0.6333333333333333,
+      "N6": 0.5222222222222223,
+      "N2": 0.7666666666666667,
+      "N7": 0.5111111111111111,
+      "N3": 0.6222222222222222,
+      "N8": 0.6222222222222222,
+      "N4": 0.5666666666666667,
+      "N10": 0.4666666666666667,
+      "N5": 0.7111111111111111,
+      "N9": 0.7555555555555555
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N1": -2.0,
+      "N6": -2.0,
+      "N2": 5.0,
+      "N7": -2.0,
+      "N4": -2.0
+    },
+    "point_rep_delta": {
+      "N1": 64.0,
+      "N6": 44.0,
+      "N2": 58.0,
+      "N7": 50.0,
+      "N3": 40.0,
+      "N8": 14.0,
+      "N4": 34.0,
+      "N10": 35.0,
+      "N5": 48.0,
+      "N9": 51.0
+    }
+  }
+}

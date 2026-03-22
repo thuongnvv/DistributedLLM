@@ -95,7 +95,10 @@ class LLMClient:
         input_text: str | None = None,
         max_used_points: int | None = MAX_USED_POINTS,
     ) -> SynthesisDraft:
-        points_map = self._bundle_points_map(bundle)
+        points_map = self._bundle_points_map(
+            bundle,
+            shuffle_seed=f"{persona.node_id}|{query}|{input_text or ''}",
+        )
         if self.mode == "mock":
             synthesis_text, used_points = self._mock_synthesis(
                 persona,
@@ -117,6 +120,9 @@ class LLMClient:
             used_points = used_points[:max_used_points]
 
         if not synthesis_text.strip():
+            synthesis_text = "UNKNOWN"
+
+        if synthesis_text.strip().upper() != "UNKNOWN" and not used_points:
             synthesis_text = "UNKNOWN"
 
         return SynthesisDraft(
@@ -299,7 +305,7 @@ class LLMClient:
         if not points_map:
             return "UNKNOWN", []
 
-        ordered_ids = sorted(points_map.keys())
+        ordered_ids = list(points_map.keys())
         limit = max_used_points if max_used_points is not None and max_used_points > 0 else len(ordered_ids)
         top = ordered_ids[:limit]
         if not top:
@@ -446,29 +452,32 @@ class LLMClient:
         points_map: dict[str, str],
         max_used_points: int | None,
     ) -> tuple[str, list[str]]:
-        response_text = self._chat_completion(
-            system_prompt=persona.system_prompt,
-            user_prompt=build_synthesize_prompt(
+        synthesis_text, used_points = self._run_openai_synthesis_attempt(
+            persona=persona,
+            query=query,
+            input_text=input_text,
+            points_map=points_map,
+            max_used_points=max_used_points,
+            repair_feedback=None,
+            trace_phase="stage2_synthesize",
+        )
+        if synthesis_text.upper() != "UNKNOWN" and not used_points:
+            synthesis_text, used_points = self._run_openai_synthesis_attempt(
+                persona=persona,
                 query=query,
                 input_text=input_text,
                 points_map=points_map,
                 max_used_points=max_used_points,
-            ),
-            trace={
-                "phase": "stage2_synthesize",
-                "node_id": persona.node_id,
-            },
-        )
-        obj = extract_first_json_object(response_text)
+                repair_feedback=(
+                    "Your previous output violated the contract: synthesis_text was not UNKNOWN "
+                    "but used_points was empty or invalid. Return corrected JSON. If you cannot "
+                    "support the answer with valid point_ids, return synthesis_text='UNKNOWN' and used_points=[]."
+                ),
+                trace_phase="stage2_synthesize_retry",
+            )
 
-        synthesis_text = str(obj.get("synthesis_text", "UNKNOWN")).strip() or "UNKNOWN"
-        used_points_raw = obj.get("used_points", [])
-        if not isinstance(used_points_raw, list):
-            used_points_raw = []
-        used_points = [pid for pid in dedupe_keep_order(str(x) for x in used_points_raw) if pid in points_map]
-
-        if max_used_points is not None and max_used_points > 0:
-            used_points = used_points[:max_used_points]
+        if synthesis_text.upper() != "UNKNOWN" and not used_points:
+            return "UNKNOWN", []
         return synthesis_text, used_points
 
     def _openai_grade(
@@ -724,12 +733,59 @@ class LLMClient:
         self._raw_events.append(event)
 
     # ---------------- Helpers ----------------
-    def _bundle_points_map(self, bundle: list[WorkerAnswer]) -> dict[str, str]:
-        points_map: dict[str, str] = {}
+    def _bundle_points_map(
+        self,
+        bundle: list[WorkerAnswer],
+        shuffle_seed: str | None = None,
+    ) -> dict[str, str]:
+        items: list[tuple[str, str]] = []
         for answer in bundle:
             for p in answer.points:
-                points_map[p.point_id] = p.text
+                items.append((p.point_id, p.text))
+
+        if shuffle_seed:
+            rng = random.Random(self._stable_seed(shuffle_seed))
+            rng.shuffle(items)
+
+        points_map: dict[str, str] = {}
+        for point_id, text in items:
+            points_map[point_id] = text
         return points_map
+
+    def _run_openai_synthesis_attempt(
+        self,
+        persona: Persona,
+        query: str,
+        input_text: str | None,
+        points_map: dict[str, str],
+        max_used_points: int | None,
+        repair_feedback: str | None,
+        trace_phase: str,
+    ) -> tuple[str, list[str]]:
+        response_text = self._chat_completion(
+            system_prompt=persona.system_prompt,
+            user_prompt=build_synthesize_prompt(
+                query=query,
+                input_text=input_text,
+                points_map=points_map,
+                max_used_points=max_used_points,
+                repair_feedback=repair_feedback,
+            ),
+            trace={
+                "phase": trace_phase,
+                "node_id": persona.node_id,
+            },
+        )
+        obj = extract_first_json_object(response_text)
+
+        synthesis_text = str(obj.get("synthesis_text", "UNKNOWN")).strip() or "UNKNOWN"
+        used_points_raw = obj.get("used_points", [])
+        if not isinstance(used_points_raw, list):
+            used_points_raw = []
+        used_points = [pid for pid in dedupe_keep_order(str(x) for x in used_points_raw) if pid in points_map]
+        if max_used_points is not None and max_used_points > 0:
+            used_points = used_points[:max_used_points]
+        return synthesis_text, used_points
 
     def _contains_clear_error(self, text: str) -> bool:
         lowered = text.lower()
@@ -757,6 +813,9 @@ class LLMClient:
         if lowered.startswith("out_of_scope"):
             return True
         return False
+
+    def _stable_seed(self, seed_material: str) -> int:
+        return int(sha256_short(seed_material), 16)
 
     def _normalize_point_texts(
         self,

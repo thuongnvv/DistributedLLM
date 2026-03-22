@@ -1,0 +1,227 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:fcb413b8",
+        "text": "Set a short connection timeout (e.g., 2‑3 s) and separate read/write timeouts to fail fast on slow dependencies."
+      },
+      {
+        "point_id": "N1:1:b74f85a1",
+        "text": "Implement exponential backoff with jitter for retries and cap the maximum retry count."
+      },
+      {
+        "point_id": "N1:2:5e875b07",
+        "text": "Add a circuit‑breaker that opens after a latency or error threshold, halting further retries temporarily."
+      },
+      {
+        "point_id": "N1:3:7f8b43a9",
+        "text": "Make retries idempotent by using safe HTTP methods or attaching unique request IDs to avoid duplicate effects."
+      },
+      {
+        "point_id": "N1:4:cf616965",
+        "text": "Collect TCP retransmission metrics (e.g., via netstat/ss or Prometheus) to detect packet loss during incidents."
+      },
+      {
+        "point_id": "N1:5:3003f08c",
+        "text": "Run latency, packet loss, and path checks (ping, traceroute, BPF) to identify network congestion or MTU issues."
+      },
+      {
+        "point_id": "N1:6:0c50abea",
+        "text": "Verify load‑balancer health‑check intervals and keep‑alive settings to prevent half‑open connections and timeouts."
+      }
+    ]
+  },
+  {
+    "node_id": "N6",
+    "points": [
+      {
+        "point_id": "N6:0:5517ac4b",
+        "text": "Apply exponential backoff with jitter for retries to avoid thundering herd effects."
+      },
+      {
+        "point_id": "N6:1:aae479ab",
+        "text": "Set client timeout shorter than server's max processing time and propagate a deadline via context."
+      },
+      {
+        "point_id": "N6:2:fe807f3c",
+        "text": "Introduce a circuit breaker that opens after a failure threshold to stop further retries."
+      },
+      {
+        "point_id": "N6:3:77295ca4",
+        "text": "Use bulkhead isolation to limit concurrent outbound calls and prevent resource exhaustion."
+      },
+      {
+        "point_id": "N6:4:3bb78d00",
+        "text": "Tune TCP keepalive and retransmission timeout (RTO) settings to detect dead peers faster."
+      },
+      {
+        "point_id": "N6:5:a470c13d",
+        "text": "Instrument latency and queue length metrics on both client and server to spot bottlenecks."
+      },
+      {
+        "point_id": "N6:6:f080f883",
+        "text": "Propagate request-level deadlines across service boundaries to keep overall latency bounded."
+      },
+      {
+        "point_id": "N6:7:f7c240ac",
+        "text": "Profile code paths for blocking I/O or lock contention that may inflate service response time."
+      },
+      {
+        "point_id": "N6:8:8e241baf",
+        "text": "Check network for congestion, packet loss, and MTU mismatches that cause retransmissions."
+      },
+      {
+        "point_id": "N6:9:2a088c15",
+        "text": "Leverage connection pooling or HTTP/2 multiplexing to reduce handshake overhead and latency."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": []
+  },
+  {
+    "node_id": "N7",
+    "points": []
+  },
+  {
+    "node_id": "N3",
+    "points": [
+      {
+        "point_id": "N3:0:f3035b79",
+        "text": "Set client timeout < upstream timeout to avoid cascading retries when downstream slows."
+      },
+      {
+        "point_id": "N3:1:e40d2370",
+        "text": "Implement exponential backoff with jitter for retries to spread load and prevent thundering herd."
+      },
+      {
+        "point_id": "N3:2:599b1c43",
+        "text": "Add a circuit‑breaker that opens after N failures and backs off for a cool‑down period."
+      },
+      {
+        "point_id": "N3:3:aa5da28d",
+        "text": "Limit max concurrent retries per instance to bound request amplification."
+      },
+      {
+        "point_id": "N3:4:f742bb54",
+        "text": "Configure load balancer idle‑timeout and max‑queue‑size to drop excess requests early."
+      },
+      {
+        "point_id": "N3:5:79a07b8a",
+        "text": "Enable TCP keepalive and tune net.ipv4.tcp_keepalive_time to detect dead peers faster."
+      },
+      {
+        "point_id": "N3:6:133e40ae",
+        "text": "Monitor kernel TCP retransmission counters (netstat -s, /proc/net/snmp) for spikes."
+      },
+      {
+        "point_id": "N3:7:42740156",
+        "text": "Tune net.ipv4.tcp_retries2 and tcp_retries1 to control how long TCP retries before giving up."
+      },
+      {
+        "point_id": "N3:8:d2c9c54c",
+        "text": "Check for packet loss or latency spikes with continuous ping/tracepath to the dependency."
+      },
+      {
+        "point_id": "N3:9:c48de5dd",
+        "text": "Inspect load‑balancer health‑check intervals and timeouts to ensure they match service expectations."
+      }
+    ]
+  },
+  {
+    "node_id": "N8",
+    "points": [
+      {
+        "point_id": "N8:0:b604af40",
+        "text": "Apply exponential backoff with random jitter to retry intervals to prevent retry storms during dependency slowdowns."
+      },
+      {
+        "point_id": "N8:1:24b7d615",
+        "text": "Implement a circuit breaker that opens after a configurable failure threshold to stop further retries until the dependency recovers."
+      },
+      {
+        "point_id": "N8:2:e89efd64",
+        "text": "Set client-side timeouts slightly above the 95th‑percentile RTT plus processing latency to avoid premature aborts."
+      },
+      {
+        "point_id": "N8:3:6ec85ad5",
+        "text": "Use connection pooling with keep‑alive sockets to reduce TCP handshake overhead and limit new SYN floods under load."
+      },
+      {
+        "point_id": "N8:4:6ecd05fd",
+        "text": "Monitor TCP retransmission counts, RTT variance, and duplicate ACKs to detect congestion or packet loss early."
+      },
+      {
+        "point_id": "N8:5:33a87e26",
+        "text": "Check for bufferbloat on network paths; high queueing delays can inflate RTT and trigger unnecessary timeouts."
+      },
+      {
+        "point_id": "N8:6:8b4fb9e1",
+        "text": "Verify that ECN (Explicit Congestion Notification) is enabled and that routers propagate congestion signals to TCP."
+      },
+      {
+        "point_id": "N8:7:6b4bb789",
+        "text": "Inspect NIC and OS TCP settings (e.g., rto_min, rto_max, tcp_retries2) to ensure retransmission timers are appropriate for your latency."
+      },
+      {
+        "point_id": "N8:8:62f4af27",
+        "text": "Enable TCP keep‑alive probes on idle connections to detect silent failures without impacting active traffic."
+      },
+      {
+        "point_id": "N8:9:e245886e",
+        "text": "Collect per‑dependency metrics (latency, error rates) and correlate with network loss events to isolate root causes."
+      }
+    ]
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N10",
+    "points": [
+      {
+        "point_id": "N10:0:e68e1996",
+        "text": "Allocate a tail‑latency budget (e.g., p95) for each downstream call and subtract it from the overall request deadline."
+      },
+      {
+        "point_id": "N10:1:4b72b840",
+        "text": "Set the client timeout slightly above the sum of downstream budgets plus a safety margin (e.g., 10‑20% extra)."
+      },
+      {
+        "point_id": "N10:2:0449a53d",
+        "text": "Limit retries to 1‑2 attempts and use exponential backoff with jitter to avoid thundering‑herd effects."
+      },
+      {
+        "point_id": "N10:3:83e614ce",
+        "text": "Implement a circuit breaker that opens after a configurable error rate, preventing further retries during an outage."
+      },
+      {
+        "point_id": "N10:4:abf15c5e",
+        "text": "Use Little's Law (L = λ·W) to size request queues; ensure service concurrency does not exceed capacity under peak λ."
+      },
+      {
+        "point_id": "N10:5:6ba4694a",
+        "text": "Monitor TCP RTT, loss, and retransmission counts; spikes indicate network congestion that can inflate effective latency."
+      },
+      {
+        "point_id": "N10:6:e3569ea6",
+        "text": "Check for bufferbloat by measuring queueing delay on NICs and switches; high queuing can cause retransmissions and timeouts."
+      },
+      {
+        "point_id": "N10:7:5361e82b",
+        "text": "Validate that TCP window scaling and receive buffers are sized for expected bandwidth‑delay product to avoid unnecessary retransmits."
+      }
+    ]
+  },
+  {
+    "node_id": "N5",
+    "points": []
+  },
+  {
+    "node_id": "N9",
+    "points": []
+  }
+]

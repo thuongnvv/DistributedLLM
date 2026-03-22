@@ -1,0 +1,85 @@
+[
+  {
+    "node_id": "N1",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N6",
+    "synthesis_text": "Redesign the call chain by (1) configuring a short connection timeout (e.g., 2‑3 s) and separate read/write limits so slow downstream services fail fast (N1:0:fcb413b8); (2) setting the client‑side timeout lower than the upstream timeout to prevent cascading retries (N3:0:f3035b79) and reserving a tail‑latency budget (e.g., p95) for each downstream call (N10:0:e68e1996).  Apply exponential backoff with random jitter for retries and cap the retry count to keep load from exploding (N6:0:5517ac4b, N8:0:b604af40).  Limit the maximum concurrent retries per instance to bound request amplification (N3:3:aa5da28d).  Protect the system with a circuit breaker that opens after a configurable error or latency threshold (N10:3:83e614ce) and use bulkhead isolation to restrict outbound call concurrency (N6:3:77295ca4).  On the network side, continuously monitor TCP retransmission counters for spikes (N3:6:133e40ae) and probe for bufferbloat or excessive queueing that can inflate RTT and trigger unnecessary timeouts (N8:5:33a87e26).",
+    "used_points": [
+      "N1:0:fcb413b8",
+      "N3:0:f3035b79",
+      "N10:0:e68e1996",
+      "N6:0:5517ac4b",
+      "N8:0:b604af40",
+      "N3:3:aa5da28d",
+      "N10:3:83e614ce",
+      "N6:3:77295ca4",
+      "N3:6:133e40ae",
+      "N8:5:33a87e26"
+    ]
+  },
+  {
+    "node_id": "N2",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N7",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N3",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N8",
+    "synthesis_text": "Set a short connection timeout (e.g., 2‑3 s) and separate read/write deadlines so slow downstream calls fail fast (N1:0:fcb413b8). Compute client‑side timeouts slightly above the 95th‑percentile RTT plus processing latency to avoid premature aborts (N8:2:e89efd64). Apply exponential backoff with random jitter to retry intervals and cap retries to 1‑2 attempts, preventing retry storms and thundering‑herd effects (N6:0:5517ac4b, N10:2:0449a53d). Ensure retries are idempotent by using safe HTTP methods or unique request IDs (N1:3:7f8b43a9). Introduce a circuit‑breaker that opens after a configurable number of failures to halt further retries during an outage (N3:2:599b1c43). Use connection pooling with TCP keep‑alive sockets to reduce handshake overhead and limit new SYN traffic under load (N8:3:6ec85ad5). Continuously monitor TCP retransmission counts, RTT variance, and duplicate ACKs to detect congestion or packet loss early (N8:4:6ecd05fd). Check for bufferbloat on NICs and switches by measuring queueing delay, as high buffering can inflate RTT and trigger unnecessary timeouts (N10:6:e3569ea6). Inspect NIC and OS TCP parameters (e.g., rto_min, rto_max, tcp_retries2) to ensure retransmission timers match observed latency characteristics (N8:7:6b4bb789).",
+    "used_points": [
+      "N1:0:fcb413b8",
+      "N8:2:e89efd64",
+      "N6:0:5517ac4b",
+      "N10:2:0449a53d",
+      "N1:3:7f8b43a9",
+      "N3:2:599b1c43",
+      "N8:3:6ec85ad5",
+      "N8:4:6ecd05fd",
+      "N10:6:e3569ea6",
+      "N8:7:6b4bb789"
+    ]
+  },
+  {
+    "node_id": "N4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N10",
+    "synthesis_text": "To prevent cascading timeouts, set the client‑side deadline slightly below the upstream service deadline, adding a modest safety margin (N3:0:f3035b79, N10:1:4b72b840). Allocate a tail‑latency budget (e.g., p95) for each downstream call and subtract it from the overall request deadline (N10:0:e68e1996). Limit retries to one or two attempts and use exponential backoff with random jitter to avoid retry storms (N10:2:0449a53d, N8:0:b604af40). Guard the retry loop with a circuit‑breaker that opens after a configurable number of failures (N3:2:599b1c43) and cap the number of concurrent retries per instance (N3:3:aa5da28d). On the network side, tune TCP keep‑alive and retransmission‑timeout parameters (N6:4:3bb78d00) and continuously monitor RTT, loss and retransmission counters to spot congestion early (N10:5:6ba4694a). Finally, check for bufferbloat and excessive queueing delay on NICs and switches, which can inflate RTT and trigger unnecessary timeouts (N10:6:e3569ea6).",
+    "used_points": [
+      "N3:0:f3035b79",
+      "N10:1:4b72b840",
+      "N10:0:e68e1996",
+      "N10:2:0449a53d",
+      "N8:0:b604af40",
+      "N3:2:599b1c43",
+      "N3:3:aa5da28d",
+      "N6:4:3bb78d00",
+      "N10:5:6ba4694a",
+      "N10:6:e3569ea6"
+    ]
+  },
+  {
+    "node_id": "N5",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N9",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  }
+]

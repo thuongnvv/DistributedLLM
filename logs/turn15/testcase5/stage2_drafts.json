@@ -1,0 +1,85 @@
+[
+  {
+    "node_id": "N1",
+    "synthesis_text": "Secure the WebSocket channel with TLS (wss://) and optionally sign each message with an HMAC to detect tampering. Assign a monotonically increasing sequence number to every event on the server and include it in the payload; clients keep the last sequence they processed and ignore any event with a lower or equal number. The server also discards duplicates or out‑of‑order messages based on the sequence. Maintain a short‑term deduplication cache keyed by event ID to drop repeats that may arrive after reconnection. Implement idempotent handlers so that accidental re‑processing has no side effects. On reconnect the client sends its last processed sequence number, allowing the server to resend any missed events. Require a fresh short‑lived signed token (e.g., JWT) bound to the connection ID for each reconnect and invalidate the previous token; include a per‑connection nonce (jti) and reject any reused nonce to prevent replay attacks.",
+    "used_points": [
+      "N1:5:698fc4b2",
+      "N1:0:5f087a3d",
+      "N1:1:db770d6b",
+      "N5:1:b8de628a",
+      "N8:6:1b0068fe",
+      "N1:3:18b857db",
+      "N8:2:2a55e671",
+      "N5:5:4509bbb5",
+      "N5:3:b4db48aa",
+      "N5:2:a5fdc5be"
+    ]
+  },
+  {
+    "node_id": "N6",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N2",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N7",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N3",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N8",
+    "synthesis_text": "Secure the WebSocket channel with TLS (wss://) to protect tokens and message integrity (N8:3:9a4f1bd4). Issue short‑lived JWT or opaque tokens bound to the client session and store recent token IDs (jti) in a cache to enforce one‑time use, rejecting reused tokens (N8:4:6aced31c, N5:4:b8a1d3d5). Attach a monotonically increasing sequence number to each event (N1:0:5f087a3d) and have clients track the last sequence they processed, discarding any event with a lower or equal number (N1:1:db770d6b). On reconnect, the client sends its last processed sequence number; the server resends any missed events starting from the next number (N8:2:2a55e671). Maintain a short‑term server‑side deduplication cache keyed by event ID to drop duplicate messages that may arrive due to reconnection or network reordering (N8:6:1b0068fe). Use WebSocket ping/pong keep‑alives to detect dead connections promptly and trigger reconnection (N8:7:c7fa53d0). Implement application‑level ACK/NACK so the client can acknowledge received events and request retransmission of gaps (N5:6:9083ce5a). Finally, design event handlers to be idempotent so that any accidental duplicate processing has no side effects (N1:3:18b857db).",
+    "used_points": [
+      "N8:3:9a4f1bd4",
+      "N8:4:6aced31c",
+      "N5:4:b8a1d3d5",
+      "N1:0:5f087a3d",
+      "N1:1:db770d6b",
+      "N8:2:2a55e671",
+      "N8:6:1b0068fe",
+      "N8:7:c7fa53d0",
+      "N5:6:9083ce5a",
+      "N1:3:18b857db"
+    ]
+  },
+  {
+    "node_id": "N4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N10",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N5",
+    "synthesis_text": "Secure the WebSocket channel by running it over TLS (wss://). Assign each event a monotonically increasing sequence number on the server and have the client keep the last sequence it processed, discarding any event with a lower or equal number. Use application‑level ACK/NACK so the client can report missing messages; on reconnect the client sends its last processed sequence and the server resends any gaps. Maintain a short‑term deduplication cache (e.g., an LRU set) keyed by event ID to drop duplicate deliveries. Issue short‑lived signed JWTs (or opaque tokens) that are bound to the specific connection ID, include a nonce or timestamp, and validate signature, expiration, audience, and freshness on each reconnect. Store recent token identifiers (jti) in a cache with TTL and reject any token that has been seen before, and invalidate the previous token when a new one is issued after reconnect to prevent replay.",
+    "used_points": [
+      "N5:0:e69b5017",
+      "N5:1:b8de628a",
+      "N1:1:db770d6b",
+      "N5:6:9083ce5a",
+      "N8:2:2a55e671",
+      "N1:2:6cd7ec92",
+      "N5:3:b4db48aa",
+      "N5:4:b8a1d3d5",
+      "N8:5:41690530",
+      "N5:5:4509bbb5"
+    ]
+  },
+  {
+    "node_id": "N9",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  }
+]

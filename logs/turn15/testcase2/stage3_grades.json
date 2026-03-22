@@ -1,0 +1,598 @@
+[
+  {
+    "grader_id": "N1",
+    "target_id": "N6",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N6:0:2112c43e",
+      "N1:0:159d53d6",
+      "N2:5:9a3b54f3",
+      "N6:4:fb74dce0",
+      "N2:4:5d799155",
+      "N2:0:c150fd92",
+      "N1:4:6fd99091",
+      "N6:7:4614df12",
+      "N8:5:6156d5c6"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly reflected."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N2",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N1:0:159d53d6",
+      "N6:0:2112c43e",
+      "N10:0:8f39f254",
+      "N10:3:96dfcfe9",
+      "N6:3:fb340960",
+      "N6:5:c924bd45",
+      "N6:6:22c72355",
+      "N2:0:c150fd92",
+      "N2:6:4d93c249"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly reflected."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N7",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N7:0:fbff1b27",
+      "N2:0:c150fd92",
+      "N7:1:50bc5ac4",
+      "N2:1:16f3035a",
+      "N2:2:6e9a3561",
+      "N7:2:4a44d277",
+      "N7:4:04a63f6a",
+      "N6:0:2112c43e",
+      "N6:7:4614df12"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly reflected."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:159d53d6",
+      "N1:1:758d9f92",
+      "N2:0:c150fd92",
+      "N1:4:6fd99091",
+      "N2:4:5d799155",
+      "N7:4:04a63f6a",
+      "N3:0:e6ac061a",
+      "N3:1:892cf3e2",
+      "N10:3:96dfcfe9",
+      "N6:7:4614df12"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly reflected."
+  },
+  {
+    "grader_id": "N1",
+    "target_id": "N8",
+    "valid": "PASS",
+    "agree_points": [
+      "N3:3:fe1d8bd1",
+      "N8:0:3dfac69c",
+      "N3:6:4f71dac8",
+      "N8:1:b9e78084",
+      "N2:4:5d799155",
+      "N2:2:6e9a3561",
+      "N1:4:6fd99091",
+      "N1:1:758d9f92",
+      "N10:4:9867a1fd",
+      "N3:8:76a23887"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly reflected."
+  },
+  {
+    "grader_id": "N6",
+    "target_id": "N2",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N1:0:159d53d6",
+      "N6:0:2112c43e",
+      "N10:0:8f39f254",
+      "N10:3:96dfcfe9",
+      "N6:3:fb340960",
+      "N6:5:c924bd45",
+      "N6:6:22c72355",
+      "N2:0:c150fd92",
+      "N2:6:4d93c249"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly reflected."
+  },
+  {
+    "grader_id": "N6",
+    "target_id": "N7",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N7:0:fbff1b27",
+      "N2:0:c150fd92",
+      "N7:1:50bc5ac4",
+      "N2:1:16f3035a",
+      "N2:2:6e9a3561",
+      "N7:2:4a44d277",
+      "N7:4:04a63f6a",
+      "N6:0:2112c43e",
+      "N6:7:4614df12"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly reflected."
+  },
+  {
+    "grader_id": "N6",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:159d53d6",
+      "N1:1:758d9f92",
+      "N2:0:c150fd92",
+      "N1:4:6fd99091",
+      "N2:4:5d799155",
+      "N7:4:04a63f6a",
+      "N3:0:e6ac061a",
+      "N3:1:892cf3e2",
+      "N10:3:96dfcfe9",
+      "N6:7:4614df12"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly reflected."
+  },
+  {
+    "grader_id": "N6",
+    "target_id": "N8",
+    "valid": "PASS",
+    "agree_points": [
+      "N3:3:fe1d8bd1",
+      "N8:0:3dfac69c",
+      "N3:6:4f71dac8",
+      "N8:1:b9e78084",
+      "N2:4:5d799155",
+      "N2:2:6e9a3561",
+      "N1:4:6fd99091",
+      "N1:1:758d9f92",
+      "N10:4:9867a1fd",
+      "N3:8:76a23887"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points correctly reflected."
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N6",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N6:0:2112c43e",
+      "N1:0:159d53d6",
+      "N2:5:9a3b54f3",
+      "N6:4:fb74dce0",
+      "N2:4:5d799155",
+      "N2:0:c150fd92",
+      "N1:4:6fd99091",
+      "N6:7:4614df12",
+      "N8:5:6156d5c6"
+    ],
+    "reject_points": [],
+    "unknown_points": []
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N7",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N7:0:fbff1b27",
+      "N2:0:c150fd92",
+      "N7:1:50bc5ac4",
+      "N2:1:16f3035a",
+      "N2:2:6e9a3561",
+      "N7:2:4a44d277",
+      "N7:4:04a63f6a",
+      "N6:0:2112c43e",
+      "N6:7:4614df12"
+    ],
+    "reject_points": [],
+    "unknown_points": []
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:159d53d6",
+      "N1:1:758d9f92",
+      "N2:0:c150fd92",
+      "N1:4:6fd99091",
+      "N2:4:5d799155",
+      "N7:4:04a63f6a",
+      "N3:0:e6ac061a",
+      "N3:1:892cf3e2",
+      "N10:3:96dfcfe9",
+      "N6:7:4614df12"
+    ],
+    "reject_points": [],
+    "unknown_points": []
+  },
+  {
+    "grader_id": "N2",
+    "target_id": "N8",
+    "valid": "PASS",
+    "agree_points": [
+      "N3:3:fe1d8bd1",
+      "N8:0:3dfac69c",
+      "N3:6:4f71dac8",
+      "N8:1:b9e78084",
+      "N2:4:5d799155",
+      "N2:2:6e9a3561",
+      "N1:4:6fd99091",
+      "N1:1:758d9f92",
+      "N10:4:9867a1fd",
+      "N3:8:76a23887"
+    ],
+    "reject_points": [],
+    "unknown_points": []
+  },
+  {
+    "grader_id": "N7",
+    "target_id": "N6",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N6:0:2112c43e",
+      "N1:0:159d53d6",
+      "N2:5:9a3b54f3",
+      "N6:4:fb74dce0",
+      "N2:4:5d799155",
+      "N2:0:c150fd92",
+      "N1:4:6fd99091",
+      "N6:7:4614df12",
+      "N8:5:6156d5c6"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly applied."
+  },
+  {
+    "grader_id": "N7",
+    "target_id": "N2",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N1:0:159d53d6",
+      "N6:0:2112c43e",
+      "N10:0:8f39f254",
+      "N10:3:96dfcfe9",
+      "N6:3:fb340960",
+      "N6:5:c924bd45",
+      "N6:6:22c72355",
+      "N2:0:c150fd92",
+      "N2:6:4d93c249"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly applied."
+  },
+  {
+    "grader_id": "N7",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:159d53d6",
+      "N1:1:758d9f92",
+      "N2:0:c150fd92",
+      "N1:4:6fd99091",
+      "N2:4:5d799155",
+      "N7:4:04a63f6a",
+      "N3:0:e6ac061a",
+      "N3:1:892cf3e2",
+      "N10:3:96dfcfe9",
+      "N6:7:4614df12"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly applied."
+  },
+  {
+    "grader_id": "N7",
+    "target_id": "N8",
+    "valid": "PASS",
+    "agree_points": [
+      "N3:3:fe1d8bd1",
+      "N8:0:3dfac69c",
+      "N3:6:4f71dac8",
+      "N8:1:b9e78084",
+      "N2:4:5d799155",
+      "N2:2:6e9a3561",
+      "N1:4:6fd99091",
+      "N1:1:758d9f92",
+      "N10:4:9867a1fd",
+      "N3:8:76a23887"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly applied."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N6",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N6:0:2112c43e",
+      "N1:0:159d53d6",
+      "N2:5:9a3b54f3",
+      "N6:4:fb74dce0",
+      "N2:4:5d799155",
+      "N2:0:c150fd92",
+      "N1:4:6fd99091",
+      "N6:7:4614df12",
+      "N8:5:6156d5c6"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly applied."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N2",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N1:0:159d53d6",
+      "N6:0:2112c43e",
+      "N10:0:8f39f254",
+      "N10:3:96dfcfe9",
+      "N6:3:fb340960",
+      "N6:5:c924bd45",
+      "N6:6:22c72355",
+      "N2:0:c150fd92",
+      "N2:6:4d93c249"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly applied."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N7",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N7:0:fbff1b27",
+      "N2:0:c150fd92",
+      "N7:1:50bc5ac4",
+      "N2:1:16f3035a",
+      "N2:2:6e9a3561",
+      "N7:2:4a44d277",
+      "N7:4:04a63f6a",
+      "N6:0:2112c43e",
+      "N6:7:4614df12"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly applied."
+  },
+  {
+    "grader_id": "N3",
+    "target_id": "N8",
+    "valid": "PASS",
+    "agree_points": [
+      "N3:3:fe1d8bd1",
+      "N8:0:3dfac69c",
+      "N3:6:4f71dac8",
+      "N8:1:b9e78084",
+      "N2:4:5d799155",
+      "N2:2:6e9a3561",
+      "N1:4:6fd99091",
+      "N1:1:758d9f92",
+      "N10:4:9867a1fd",
+      "N3:8:76a23887"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly applied."
+  },
+  {
+    "grader_id": "N8",
+    "target_id": "N6",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "N1:1:758d9f92",
+      "N6:0:2112c43e",
+      "N1:0:159d53d6",
+      "N2:5:9a3b54f3",
+      "N6:4:fb74dce0",
+      "N2:4:5d799155",
+      "N2:0:c150fd92",
+      "N1:4:6fd99091",
+      "N6:7:4614df12",
+      "N8:5:6156d5c6"
+    ],
+    "note": "All referenced points pertain to database monitoring, tracing, and application-level circuit breakers, which are outside the networking_systems scope focused on TCP behavior."
+  },
+  {
+    "grader_id": "N8",
+    "target_id": "N2",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "N1:1:758d9f92",
+      "N1:0:159d53d6",
+      "N6:0:2112c43e",
+      "N10:0:8f39f254",
+      "N10:3:96dfcfe9",
+      "N6:3:fb340960",
+      "N6:5:c924bd45",
+      "N6:6:22c72355",
+      "N2:0:c150fd92",
+      "N2:6:4d93c249"
+    ],
+    "note": "Points focus on tracing, DB query analysis, and application-level timeouts, not on TCP retransmissions or congestion signals."
+  },
+  {
+    "grader_id": "N8",
+    "target_id": "N7",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "N1:1:758d9f92",
+      "N7:0:fbff1b27",
+      "N2:0:c150fd92",
+      "N7:1:50bc5ac4",
+      "N2:1:16f3035a",
+      "N2:2:6e9a3561",
+      "N7:2:4a44d277",
+      "N7:4:04a63f6a",
+      "N6:0:2112c43e",
+      "N6:7:4614df12"
+    ],
+    "note": "Content addresses DB monitoring and indexing, which are outside the TCP‑focused domain."
+  },
+  {
+    "grader_id": "N8",
+    "target_id": "N3",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "N1:0:159d53d6",
+      "N1:1:758d9f92",
+      "N2:0:c150fd92",
+      "N1:4:6fd99091",
+      "N2:4:5d799155",
+      "N7:4:04a63f6a",
+      "N3:0:e6ac061a",
+      "N3:1:892cf3e2",
+      "N10:3:96dfcfe9",
+      "N6:7:4614df12"
+    ],
+    "note": "Points involve load balancer health checks and DB query optimization, not TCP retransmission or congestion analysis."
+  },
+  {
+    "grader_id": "N10",
+    "target_id": "N6",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N6:0:2112c43e",
+      "N1:0:159d53d6",
+      "N2:5:9a3b54f3",
+      "N6:4:fb74dce0",
+      "N2:4:5d799155",
+      "N2:0:c150fd92",
+      "N1:4:6fd99091",
+      "N6:7:4614df12",
+      "N8:5:6156d5c6"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N10",
+    "target_id": "N2",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N1:0:159d53d6",
+      "N6:0:2112c43e",
+      "N10:0:8f39f254",
+      "N10:3:96dfcfe9",
+      "N6:3:fb340960",
+      "N6:5:c924bd45",
+      "N6:6:22c72355",
+      "N2:0:c150fd92",
+      "N2:6:4d93c249"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N10",
+    "target_id": "N7",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:1:758d9f92",
+      "N7:0:fbff1b27",
+      "N2:0:c150fd92",
+      "N7:1:50bc5ac4",
+      "N2:1:16f3035a",
+      "N2:2:6e9a3561",
+      "N7:2:4a44d277",
+      "N7:4:04a63f6a",
+      "N6:0:2112c43e",
+      "N6:7:4614df12"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N10",
+    "target_id": "N3",
+    "valid": "PASS",
+    "agree_points": [
+      "N1:0:159d53d6",
+      "N1:1:758d9f92",
+      "N2:0:c150fd92",
+      "N1:4:6fd99091",
+      "N2:4:5d799155",
+      "N7:4:04a63f6a",
+      "N3:0:e6ac061a",
+      "N3:1:892cf3e2",
+      "N10:3:96dfcfe9",
+      "N6:7:4614df12"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  },
+  {
+    "grader_id": "N10",
+    "target_id": "N8",
+    "valid": "PASS",
+    "agree_points": [
+      "N3:3:fe1d8bd1",
+      "N8:0:3dfac69c",
+      "N3:6:4f71dac8",
+      "N8:1:b9e78084",
+      "N2:4:5d799155",
+      "N2:2:6e9a3561",
+      "N1:4:6fd99091",
+      "N1:1:758d9f92",
+      "N10:4:9867a1fd",
+      "N3:8:76a23887"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All referenced points are correctly incorporated."
+  }
+]

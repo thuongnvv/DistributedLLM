@@ -1,0 +1,108 @@
+{
+  "winner": "N3",
+  "final_answer": "[networking_systems] Consolidated answer for 'We use WebSockets for real-time updates. Clients reconnect often and sometimes receive dup': Address query objective: We use WebSockets for real-time updates. Clients reconnect often and sometimes r; Validate cache semantics and freshness policy; Address query objective: We use WebSockets for real-time updates. Clients reconnect often and sometimes r; Separate proven facts from unknown claims",
+  "metrics": {
+    "pass": {
+      "N1": 9,
+      "N6": 7,
+      "N2": 8,
+      "N7": 8,
+      "N3": 9,
+      "N8": 6,
+      "N4": 7,
+      "N10": 7,
+      "N5": 6,
+      "N9": 8
+    },
+    "fail": {
+      "N1": 0,
+      "N6": 1,
+      "N2": 1,
+      "N7": 0,
+      "N3": 0,
+      "N8": 2,
+      "N4": 1,
+      "N10": 1,
+      "N5": 0,
+      "N9": 0
+    },
+    "agree": {
+      "N1": 73,
+      "N6": 59,
+      "N2": 64,
+      "N7": 68,
+      "N3": 74,
+      "N8": 47,
+      "N4": 57,
+      "N10": 53,
+      "N5": 50,
+      "N9": 64
+    },
+    "reject": {
+      "N1": 1,
+      "N6": 9,
+      "N2": 9,
+      "N7": 1,
+      "N3": 4,
+      "N8": 18,
+      "N4": 7,
+      "N10": 11,
+      "N5": 8,
+      "N9": 1
+    },
+    "eligible_reviews": {
+      "N1": 9,
+      "N6": 9,
+      "N2": 9,
+      "N7": 9,
+      "N3": 9,
+      "N8": 9,
+      "N4": 9,
+      "N10": 9,
+      "N5": 9,
+      "N9": 9
+    },
+    "used_points": {
+      "N1": 10,
+      "N6": 10,
+      "N2": 10,
+      "N7": 10,
+      "N3": 10,
+      "N8": 10,
+      "N4": 10,
+      "N10": 10,
+      "N5": 10,
+      "N9": 10
+    },
+    "agree_rate": {
+      "N1": 0.8111111111111111,
+      "N6": 0.6555555555555556,
+      "N2": 0.7111111111111111,
+      "N7": 0.7555555555555555,
+      "N3": 0.8222222222222222,
+      "N8": 0.5222222222222223,
+      "N4": 0.6333333333333333,
+      "N10": 0.5888888888888889,
+      "N5": 0.5555555555555556,
+      "N9": 0.7111111111111111
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N3": 5.0,
+      "N8": -2.0
+    },
+    "point_rep_delta": {
+      "N1": 46.0,
+      "N6": 86.0,
+      "N2": 35.0,
+      "N7": 53.0,
+      "N3": 62.0,
+      "N8": 66.0,
+      "N4": 48.0,
+      "N10": 32.0,
+      "N5": 81.0,
+      "N9": 31.0
+    }
+  }
+}

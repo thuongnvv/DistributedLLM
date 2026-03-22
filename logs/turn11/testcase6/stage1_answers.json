@@ -1,0 +1,215 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:8862073d",
+        "text": "Profile the endpoint to measure each call's latency and identify the longest-running step."
+      },
+      {
+        "point_id": "N1:1:5954a9fe",
+        "text": "Combine independent sequential calls into a single batch query or use async parallelism."
+      },
+      {
+        "point_id": "N1:2:87b048ca",
+        "text": "Run EXPLAIN on the SQL, add indexes on foreign‑key columns used in joins."
+      },
+      {
+        "point_id": "N1:3:c0a2ffc6",
+        "text": "Remove unnecessary tables from the join and select only required columns."
+      },
+      {
+        "point_id": "N1:4:2812fd8d",
+        "text": "Rewrite complex joins using CTEs or subqueries to let the optimizer simplify execution."
+      },
+      {
+        "point_id": "N1:5:1e49fa88",
+        "text": "Apply pagination or filter criteria to limit result set size."
+      },
+      {
+        "point_id": "N1:6:9b912760",
+        "text": "Set a timeout budget based on the 95th‑percentile latency plus a safety margin (e.g., 2‑3×)."
+      },
+      {
+        "point_id": "N1:7:eec73942",
+        "text": "Implement retry with exponential backoff for transient DB timeouts."
+      },
+      {
+        "point_id": "N1:8:0cad53f3",
+        "text": "Cache stable report data in memory or a materialized view to avoid repeated heavy queries."
+      },
+      {
+        "point_id": "N1:9:ca3d59f9",
+        "text": "Tune the DB connection pool size and per‑connection timeout to match the new budget."
+      }
+    ]
+  },
+  {
+    "node_id": "N6",
+    "points": [
+      {
+        "point_id": "N6:0:6b3d9b40",
+        "text": "Identify and isolate each external service call; replace sequential calls with parallel async calls where dependencies allow."
+      },
+      {
+        "point_id": "N6:1:ffb54dd9",
+        "text": "Wrap each service call in a timeout (e.g., 2‑3 s) and use a circuit‑breaker to fail fast if a downstream is unhealthy."
+      },
+      {
+        "point_id": "N6:2:8b4153e7",
+        "text": "Profile the SQL with EXPLAIN ANALYZE; ensure join columns have appropriate indexes and avoid unnecessary tables."
+      },
+      {
+        "point_id": "N6:3:17e40974",
+        "text": "Select only needed columns and apply filters before joins; consider materialized views or denormalization for heavy reporting."
+      },
+      {
+        "point_id": "N6:4:4a5dfbb4",
+        "text": "Set the endpoint’s overall timeout budget to the SLA (e.g., 5 s) and allocate ~70 % to DB work, remaining to service calls."
+      },
+      {
+        "point_id": "N6:5:f50301e7",
+        "text": "Implement request‑level deadline propagation so downstream calls inherit the remaining time budget."
+      },
+      {
+        "point_id": "N6:6:47eb0dd6",
+        "text": "Cache stable report results or intermediate sub‑query results to reduce repeated heavy joins."
+      },
+      {
+        "point_id": "N6:7:9d969def",
+        "text": "If joins remain costly, split the query into smaller batches and aggregate in application code."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:57eaaa38",
+        "text": "Move sequential service calls into parallel async tasks to reduce overall latency."
+      },
+      {
+        "point_id": "N2:1:786a53da",
+        "text": "Profile the query with EXPLAIN (ANALYZE, BUFFERS) to identify slow joins and missing indexes."
+      },
+      {
+        "point_id": "N2:2:6e87ede3",
+        "text": "Add covering indexes on foreign key columns used in join predicates and filter conditions."
+      },
+      {
+        "point_id": "N2:3:4ff0881b",
+        "text": "Rewrite large joins using CTEs or subqueries to materialize filtered subsets before joining."
+      },
+      {
+        "point_id": "N2:4:4ad882c1",
+        "text": "Replace SELECT * with only needed columns; add LIMIT/OFFSET if pagination possible."
+      },
+      {
+        "point_id": "N2:5:fc59ec2f",
+        "text": "Set PostgreSQL statement_timeout to a fraction of the endpoint SLA (e.g., 2‑3 s) and handle timeout exceptions."
+      },
+      {
+        "point_id": "N2:6:4bbf2f18",
+        "text": "Consider denormalizing frequently accessed aggregates into a materialized view refreshed periodically."
+      }
+    ]
+  },
+  {
+    "node_id": "N7",
+    "points": [
+      {
+        "point_id": "N7:0:3ba27280",
+        "text": "Split the reporting logic into separate, parallelizable queries instead of one massive join."
+      },
+      {
+        "point_id": "N7:1:b8a076d8",
+        "text": "Add appropriate indexes on join and filter columns; verify using EXPLAIN ANALYZE."
+      },
+      {
+        "point_id": "N7:2:e70dac53",
+        "text": "Replace unnecessary columns with covering indexes to allow index‑only scans."
+      },
+      {
+        "point_id": "N7:3:69e2a4b3",
+        "text": "Materialize pre‑aggregated results in a summary table refreshed nightly or incrementally."
+      },
+      {
+        "point_id": "N7:4:4d86d1b9",
+        "text": "Set PostgreSQL's statement_timeout (or DB driver timeout) to a realistic budget, e.g., 5‑10 s."
+      },
+      {
+        "point_id": "N7:5:c98cf3ee",
+        "text": "Cache frequent report results in Redis or application layer to avoid repeated heavy queries."
+      },
+      {
+        "point_id": "N7:6:823b8330",
+        "text": "Use pagination or LIMIT/OFFSET to fetch data in chunks, reducing memory and lock time."
+      },
+      {
+        "point_id": "N7:7:9ea676b6",
+        "text": "Avoid SELECT *; fetch only needed columns to reduce I/O and CPU."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": []
+  },
+  {
+    "node_id": "N8",
+    "points": []
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N10",
+    "points": [
+      {
+        "point_id": "N10:0:de7879ae",
+        "text": "Split independent sequential calls into parallel async calls to reduce overall latency."
+      },
+      {
+        "point_id": "N10:1:6b48f198",
+        "text": "Cache immutable lookup data to avoid repeated DB hits in the reporting path."
+      },
+      {
+        "point_id": "N10:2:a34e0677",
+        "text": "Rewrite the SQL to select only needed columns and eliminate unnecessary table joins."
+      },
+      {
+        "point_id": "N10:3:1b5f9608",
+        "text": "Add indexes on join and filter columns; verify with EXPLAIN that index scans are used."
+      },
+      {
+        "point_id": "N10:4:b120f7d7",
+        "text": "Apply pagination or date range filters to limit rows processed by the query."
+      },
+      {
+        "point_id": "N10:5:8b766e95",
+        "text": "Set a timeout budget: e.g., 100 ms for DB, 30 ms for network, 20 ms for processing, total ≤150 ms."
+      },
+      {
+        "point_id": "N10:6:7dbca4a7",
+        "text": "Base timeout on p95 latency; choose timeout ≈ 2× p95 to cover tail without excessive wait."
+      },
+      {
+        "point_id": "N10:7:c0d1ab47",
+        "text": "Use Little’s Law (N = λ·W) to size thread pool: if target RPS λ=200 and avg latency W=0.15 s, need ≈30 workers."
+      },
+      {
+        "point_id": "N10:8:e9ee5af4",
+        "text": "Implement circuit breaker and exponential backoff for retries to avoid cascading timeouts."
+      }
+    ]
+  },
+  {
+    "node_id": "N5",
+    "points": []
+  },
+  {
+    "node_id": "N9",
+    "points": []
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "node_id": "N1",
+    "synthesis_text": "1. Gather baseline and time‑series metrics for cache hit/miss, DB query count, CPU, latency and request volume per endpoint (N1:0:8bdbd64a, N10:0:7bdc3143, N2:0:9eeffa2e). 2. Compare pre‑ and post‑release metrics to pinpoint which endpoints suffered the biggest hit‑rate drop (N1:1:fe23f78d). 3. Correlate the new query parameters with cache‑key generation; verify that key granularity or cardinality did not explode, causing fragmentation and misses (N6:1:b0545de6, N7:3:af63d832). 4. Run EXPLAIN on the affected SQL queries to detect missing indexes or full table scans introduced by the new filters (N1:5:c0221df6). 5. Check planner estimates for low selectivity due to added parameters and update statistics or raise default_statistics_target to improve plan accuracy (N2:3:de5fbe20, N2:6:d674fe8e). 6. If reads remain high after query tuning, evaluate scaling options such as read‑replica expansion or sharding to distribute load while preserving consistency (N7:5:6e8ebd64).",
+    "used_points": [
+      "N1:0:8bdbd64a",
+      "N10:0:7bdc3143",
+      "N2:0:9eeffa2e",
+      "N1:1:fe23f78d",
+      "N6:1:b0545de6",
+      "N7:3:af63d832",
+      "N1:5:c0221df6",
+      "N2:3:de5fbe20",
+      "N2:6:d674fe8e",
+      "N7:5:6e8ebd64"
+    ]
+  },
+  {
+    "node_id": "N6",
+    "synthesis_text": "1. Gather time‑series metrics for cache hit/miss, DB read count, CPU usage and request volume per endpoint (N1:0:8bdbd64a). 2. Compare these metrics before and after the feature release to identify which endpoints suffered the biggest hit‑rate drop and DB‑read increase (N1:1:fe23f78d). 3. Inspect how the new query parameters are incorporated into cache keys; map the parameters to keys and verify that key cardinality has not exploded (N10:1:2f649bb3, N6:1:b0545de6). 4. Review cache TTL and eviction policy and ensure the cache size can accommodate the larger key space (N10:3:d8d5edc6). 5. Profile the application code handling the new parameters to locate CPU hotspots in query construction or serialization (N6:3:17025a65). 6. Run EXPLAIN (ANALYZE) on the affected SQL statements to detect missing or suboptimal indexes and confirm that the planner still chooses efficient plans (N1:5:c0221df6, N2:4:25d92340). 7. If index or plan issues are found, create or tune multicolumn/covering indexes to match the new WHERE clauses (N2:4:25d92340). 8. As a short‑term mitigation, add back‑off or rate‑limiting on hot paths to reduce DB pressure while refactoring (N1:8:f575b514). 9. After each change, re‑measure the same metrics and repeat the cycle until cache hit rate and DB reads return to acceptable levels (N2:9:bab0286f).",
+    "used_points": [
+      "N1:0:8bdbd64a",
+      "N1:1:fe23f78d",
+      "N10:1:2f649bb3",
+      "N6:1:b0545de6",
+      "N10:3:d8d5edc6",
+      "N6:3:17025a65",
+      "N1:5:c0221df6",
+      "N2:4:25d92340",
+      "N1:8:f575b514",
+      "N2:9:bab0286f"
+    ]
+  },
+  {
+    "node_id": "N2",
+    "synthesis_text": "1. Gather baseline metrics before and after the feature release, including cache hit rate, DB read QPS, CPU usage and latency per endpoint (N7:0:eb8d72ea, N2:0:9eeffa2e).\\n2. Collect high‑resolution time‑series per endpoint of cache hit/miss, DB query count, and CPU to spot correlations (N10:0:7bdc3143).\\n3. Enable pg_stat_statements and a slow‑query log to surface statements whose execution count or total time grew after the change (N2:1:434721cd, N7:1:8a8f642d).\\n4. For the identified hot queries, run EXPLAIN (ANALYZE, BUFFERS) with the new parameters to see whether the planner chose sequential scans or other costly operations (N2:2:7778f7a7).\\n5. Verify that existing indexes still match the new WHERE clauses; create or adjust multicolumn/covering indexes if the new filters are not covered (N2:4:25d92340).\\n6. Inspect how the added query parameters are incorporated into cache keys; ensure they do not explode key cardinality or break hit patterns (N1:2:332df1be).\\n7. Map each new parameter to the cache‑key design and assess the resulting key space; if cardinality is high, consider normalising parameters or using a hashed composite key (N10:1:2f649bb3).\\n8. While refactoring, apply back‑off or rate‑limiting on the hottest paths to immediately reduce DB pressure and give time for the fixes to take effect (N1:8:f575b514).\\n9. After each change, re‑measure the same metrics to confirm that cache hit rate improves and DB reads drop, iterating until load returns to acceptable levels (implicit continuation of steps).",
+    "used_points": [
+      "N7:0:eb8d72ea",
+      "N2:0:9eeffa2e",
+      "N10:0:7bdc3143",
+      "N2:1:434721cd",
+      "N7:1:8a8f642d",
+      "N2:2:7778f7a7",
+      "N2:4:25d92340",
+      "N1:2:332df1be",
+      "N10:1:2f649bb3",
+      "N1:8:f575b514"
+    ]
+  },
+  {
+    "node_id": "N7",
+    "synthesis_text": "1. Gather baseline time‑series metrics for cache hit/miss, DB reads, CPU and latency per endpoint (N7:0:eb8d72ea). 2. Enable pg_stat_statements and query tracing to identify statements whose count or total time rose after the feature (N2:1:434721cd, N7:1:8a8f642d). 3. Compare pre‑ and post‑release metrics to pinpoint the endpoints with the biggest hit‑rate drop (N1:1:fe23f78d). 4. Run EXPLAIN (ANALYZE) on the affected queries to see if new parameters cause full scans or missing index usage (N1:5:c0221df6, N7:4:2c4e4308). 5. Check actual vs. estimated row counts; if mismatched, run ANALYZE or raise statistics target (N2:6:d674fe8e). 6. Verify that existing indexes still cover the new WHERE clauses and create/tune multicolumn or covering indexes as needed (N2:4:25d92340, N7:4:2c4e4308). 7. Inspect how the new parameters are incorporated into cache keys; ensure they do not explode cardinality or break hit patterns (N7:3:af63d832, N1:2:332df1be). 8. If key space exploded, add cache warm‑up or secondary index / result‑set caching for high‑cardinality queries (N10:5:0b59b15e). 9. Perform a controlled A/B test reverting the new parameters to measure impact on cache hit rate and DB load (N6:4:1c8654b0). 10. While fixing, apply back‑off or rate‑limiting on hot paths to prevent overload (N1:8:f575b514).",
+    "used_points": [
+      "N7:0:eb8d72ea",
+      "N2:1:434721cd",
+      "N7:1:8a8f642d",
+      "N1:1:fe23f78d",
+      "N1:5:c0221df6",
+      "N7:4:2c4e4308",
+      "N2:6:d674fe8e",
+      "N2:4:25d92340",
+      "N7:3:af63d832",
+      "N1:2:332df1be"
+    ]
+  },
+  {
+    "node_id": "N3",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N8",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N10",
+    "synthesis_text": "1. Establish a quantitative baseline by collecting pg_stat_database cache‑hit metrics, pg_stat_bgwriter, OS vmstat and per‑endpoint time‑series of cache hit/miss, DB read QPS, CPU and latency (N7:0, N2:0, N1:0). 2. Compare the before‑and‑after numbers to pinpoint which endpoints saw the largest hit‑rate drop (N1:1). 3. Enable query tracing or slow‑query logging and pg_stat_statements to list statements whose frequency or execution time grew (N1:8). 4. Run EXPLAIN (ANALYZE) on those statements to detect full table scans or missing index usage introduced by the new parameters (N7:2, N1:5, N2:4). 5. Inspect how the new query parameters are incorporated into cache keys; high‑cardinality keys can break hit patterns and cause more misses (N7:3, N1:2). 6. Verify that cache TTL and eviction policy have not changed and that cache size can accommodate the larger key space (N1:3, N1:4). 7. While refactoring, implement back‑off or rate‑limiting on hot paths to reduce immediate DB pressure (N1:8). 8. Adjust timeout budgets and circuit‑breaker thresholds to prevent cascading overload during the remediation process (N6:7).",
+    "used_points": [
+      "N7:0:eb8d72ea",
+      "N2:0:9eeffa2e",
+      "N1:0:8bdbd64a",
+      "N1:1:fe23f78d",
+      "N1:8:f575b514",
+      "N7:2:15208d54",
+      "N1:5:c0221df6",
+      "N2:4:25d92340",
+      "N7:3:af63d832",
+      "N1:2:332df1be"
+    ]
+  },
+  {
+    "node_id": "N5",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N9",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  }
+]

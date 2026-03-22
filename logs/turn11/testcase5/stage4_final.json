@@ -1,0 +1,100 @@
+{
+  "winner": "N8",
+  "final_answer": "Secure the WebSocket with wss (TLS) and authenticate the upgrade using short‑lived signed JWTs; rotate signing keys and keep a revocation list to prevent token replay. On each reconnect the client includes the last received sequence number so the server can resume from the next event. Assign a strictly increasing sequence number (or server‑issued nonce) to every event; clients drop messages with lower or duplicate numbers and the server stores the highest accepted sequence per client to reject replays. Optionally buffer out‑of‑order messages or use application ACKs to confirm processing. Enable TCP keepalive and use exponential backoff with rate limits on reconnections to avoid storms and duplicate deliveries. Protect payload integrity by signing each message with an HMAC derived from a connection‑specific secret.",
+  "metrics": {
+    "pass": {
+      "N1": 2,
+      "N6": 1,
+      "N2": 1,
+      "N7": 1,
+      "N3": 1,
+      "N8": 2,
+      "N4": 1,
+      "N10": 1,
+      "N5": 2,
+      "N9": 1
+    },
+    "fail": {
+      "N1": 0,
+      "N6": 0,
+      "N2": 0,
+      "N7": 0,
+      "N3": 0,
+      "N8": 0,
+      "N4": 0,
+      "N10": 0,
+      "N5": 0,
+      "N9": 0
+    },
+    "agree": {
+      "N1": 20,
+      "N6": 0,
+      "N2": 0,
+      "N7": 0,
+      "N3": 0,
+      "N8": 20,
+      "N4": 0,
+      "N10": 0,
+      "N5": 20,
+      "N9": 0
+    },
+    "reject": {
+      "N1": 0,
+      "N6": 0,
+      "N2": 0,
+      "N7": 0,
+      "N3": 0,
+      "N8": 0,
+      "N4": 0,
+      "N10": 0,
+      "N5": 0,
+      "N9": 0
+    },
+    "eligible_reviews": {
+      "N1": 9,
+      "N6": 9,
+      "N2": 9,
+      "N7": 9,
+      "N3": 9,
+      "N8": 9,
+      "N4": 9,
+      "N10": 9,
+      "N5": 9,
+      "N9": 9
+    },
+    "used_points": {
+      "N1": 10,
+      "N6": 0,
+      "N2": 0,
+      "N7": 0,
+      "N3": 0,
+      "N8": 10,
+      "N4": 0,
+      "N10": 0,
+      "N5": 10,
+      "N9": 0
+    },
+    "agree_rate": {
+      "N1": 0.2222222222222222,
+      "N6": 0.0,
+      "N2": 0.0,
+      "N7": 0.0,
+      "N3": 0.0,
+      "N8": 0.2222222222222222,
+      "N4": 0.0,
+      "N10": 0.0,
+      "N5": 0.2222222222222222,
+      "N9": 0.0
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N8": 5.0
+    },
+    "point_rep_delta": {
+      "N1": 20.0,
+      "N8": 14.0,
+      "N5": 26.0
+    }
+  }
+}

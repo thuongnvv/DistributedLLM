@@ -71,7 +71,7 @@ class GradeVote:
 class FinalizationOutput:
     winner: str
     final_answer: str
-    metrics: dict[str, dict[str, int]]
+    metrics: dict[str, dict[str, int | float]]
     reputation_updates: dict[str, dict[str, float]]
 
     def to_dict(self) -> dict[str, Any]:

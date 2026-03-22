@@ -1,0 +1,85 @@
+[
+  {
+    "node_id": "N1",
+    "synthesis_text": "To prevent cascading timeouts we first profile each downstream service’s latency distribution and set a global request‑budget (e.g., 500 ms) then allocate per‑dependency timeouts a little above the p95 latency (N6:4, N10:0). Propagate the overall deadline via context so in‑flight calls are cancelled when the budget expires (N6:3). Retries should use exponential backoff with random jitter and be limited to a small number of attempts; a circuit‑breaker that opens after a configurable failure count stops further retries (N6:0, N8:2, N3:1). On the network side, measure TCP RTT, loss and retransmission counts to detect congestion and enable TCP selective acknowledgments and tune the retransmission timeout (N10:4, N1:6). Verify path MTU and avoid fragmentation (N8:9). Inspect interface queues and bufferbloat, and monitor queue lengths to ensure latency spikes are not caused by saturated buffers (N8:8).",
+    "used_points": [
+      "N6:4:2155ee19",
+      "N10:0:dbeaaa0b",
+      "N6:3:931faa5f",
+      "N6:0:ef7a0c98",
+      "N8:2:34e90ed7",
+      "N3:1:e18b2680",
+      "N10:4:21603385",
+      "N1:6:bba50e48",
+      "N8:9:da982a47",
+      "N8:8:ba326e11"
+    ]
+  },
+  {
+    "node_id": "N6",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N2",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N7",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N3",
+    "synthesis_text": "Redesign timeouts by budgeting total request latency (e.g., 500 ms) and allocating per‑dependency timeouts a little above the p95 latency (p95 + 10 ms) for read and write paths, and set client‑side timeout shorter than upstream SLA to fail fast. Use exponential backoff with random jitter for retries and cap them to 1‑2 attempts. Add a circuit‑breaker that opens after a small number of consecutive failures to stop cascading retries. Employ connection pooling and keep‑alive sockets to reduce hand‑shakes during bursts. On the network side, monitor load‑balancer queue depth and increase capacity if queues regularly fill, watch TCP retransmission and loss counters for congestion, verify path MTU to avoid fragmentation, and inspect interface queues/bufferbloat (e.g., with fq_codel) that can inflate RTT and cause timeouts.",
+    "used_points": [
+      "N6:1:952b51e2",
+      "N10:0:dbeaaa0b",
+      "N10:1:c1122d45",
+      "N3:2:a365ee2e",
+      "N10:2:ac26a424",
+      "N6:2:3bef0486",
+      "N3:5:a927e1ef",
+      "N6:5:66bc94ff",
+      "N8:9:da982a47",
+      "N8:8:ba326e11"
+    ]
+  },
+  {
+    "node_id": "N8",
+    "synthesis_text": "Redesign the timeout and retry strategy by (1) budgeting overall request latency (e.g., 500 ms) and allocating per‑dependency timeouts based on the p95 latency of each downstream service (N10:0:dbeaaa0b) and setting the client timeout slightly lower than the downstream SLA to fail fast (N1:0:0e205513); (2) propagating a unified deadline via context so in‑flight calls are cancelled as soon as the overall timeout expires (N6:3:931faa5f); (3) limiting retries to 1–2 attempts, capping the maximum number of retries, and applying exponential backoff with random jitter to spread load (N8:1:ca3fed82, N8:2:34e90ed7); (4) installing a circuit‑breaker that opens after a configurable number of failures to stop cascading retries (N10:3:65470294); (5) enabling TCP keep‑alive on long‑lived connections to detect dead peers quickly (N3:7:772ec0fe). On the network side, monitor for packet loss, congestion, and spikes in TCP retransmissions (N1:5:5adfc7f1), inspect interface queue lengths and bufferbloat (e.g., using ping‑pong or fq_codel) that can inflate latency (N8:8:ba326e11), and tune the TCP retransmission timeout and enable selective acknowledgments to reduce unnecessary retransmissions on flaky links (N6:7:be35e76e).",
+    "used_points": [
+      "N10:0:dbeaaa0b",
+      "N1:0:0e205513",
+      "N6:3:931faa5f",
+      "N8:1:ca3fed82",
+      "N8:2:34e90ed7",
+      "N10:3:65470294",
+      "N3:7:772ec0fe",
+      "N1:5:5adfc7f1",
+      "N8:8:ba326e11",
+      "N6:7:be35e76e"
+    ]
+  },
+  {
+    "node_id": "N4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N10",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N5",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N9",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  }
+]

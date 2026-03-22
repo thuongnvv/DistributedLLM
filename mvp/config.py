@@ -27,6 +27,8 @@ def _optional_positive_int(name: str) -> int | None:
 
 MAX_POINTS_PER_ANSWER = _optional_positive_int("MAX_POINTS_PER_ANSWER")
 MAX_USED_POINTS = _optional_positive_int("MAX_USED_POINTS")
+if MAX_USED_POINTS is None:
+    MAX_USED_POINTS = 10
 
 WIN_BONUS = 5.0
 FAIL_PENALTY = 2.0

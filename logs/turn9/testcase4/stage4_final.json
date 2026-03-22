@@ -1,0 +1,110 @@
+{
+  "winner": "N9",
+  "final_answer": "[security_defensive] Consolidated answer for 'When a dependency slows down, our service times out and retries, which causes a bigger out': Address query objective: When a dependency slows down, our service times out and retries, which causes a; Inspect query plan before and after changes; State assumptions before derivation; Map requirement to transport reliability needs",
+  "metrics": {
+    "pass": {
+      "N1": 7,
+      "N6": 5,
+      "N2": 7,
+      "N7": 5,
+      "N3": 7,
+      "N8": 7,
+      "N4": 6,
+      "N10": 4,
+      "N5": 7,
+      "N9": 9
+    },
+    "fail": {
+      "N1": 0,
+      "N6": 1,
+      "N2": 0,
+      "N7": 2,
+      "N3": 1,
+      "N8": 0,
+      "N4": 0,
+      "N10": 2,
+      "N5": 2,
+      "N9": 0
+    },
+    "agree": {
+      "N1": 60,
+      "N6": 56,
+      "N2": 59,
+      "N7": 42,
+      "N3": 56,
+      "N8": 60,
+      "N4": 57,
+      "N10": 37,
+      "N5": 63,
+      "N9": 63
+    },
+    "reject": {
+      "N1": 7,
+      "N6": 6,
+      "N2": 6,
+      "N7": 20,
+      "N3": 11,
+      "N8": 7,
+      "N4": 8,
+      "N10": 20,
+      "N5": 15,
+      "N9": 6
+    },
+    "eligible_reviews": {
+      "N1": 9,
+      "N6": 9,
+      "N2": 9,
+      "N7": 9,
+      "N3": 9,
+      "N8": 9,
+      "N4": 9,
+      "N10": 9,
+      "N5": 9,
+      "N9": 9
+    },
+    "used_points": {
+      "N1": 10,
+      "N6": 10,
+      "N2": 10,
+      "N7": 10,
+      "N3": 10,
+      "N8": 10,
+      "N4": 10,
+      "N10": 10,
+      "N5": 10,
+      "N9": 10
+    },
+    "agree_rate": {
+      "N1": 0.6666666666666666,
+      "N6": 0.6222222222222222,
+      "N2": 0.6555555555555556,
+      "N7": 0.4666666666666667,
+      "N3": 0.6222222222222222,
+      "N8": 0.6666666666666666,
+      "N4": 0.6333333333333333,
+      "N10": 0.4111111111111111,
+      "N5": 0.7,
+      "N9": 0.7
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N7": -2.0,
+      "N10": -2.0,
+      "N5": -2.0,
+      "N9": 5.0
+    },
+    "point_rep_delta": {
+      "N1": 13.0,
+      "N6": 55.0,
+      "N2": 65.0,
+      "N7": 40.0,
+      "N3": 51.0,
+      "N8": 43.0,
+      "N4": 14.0,
+      "N10": 56.0,
+      "N5": 61.0,
+      "N9": 49.0
+    }
+  }
+}

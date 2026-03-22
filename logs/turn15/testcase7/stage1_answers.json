@@ -1,0 +1,219 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:0df2d917",
+        "text": "Collect baseline metrics: cache hit/miss, DB query count, CPU usage, latency before and after the change."
+      },
+      {
+        "point_id": "N1:1:134bfd74",
+        "text": "Identify new query parameters added and assess how they affect cache key composition."
+      },
+      {
+        "point_id": "N1:2:67daf936",
+        "text": "Review cache key generation to ensure only result‑affecting parameters are included."
+      },
+      {
+        "point_id": "N1:3:08ddf6d6",
+        "text": "Check for cache invalidation patterns triggered by new parameters causing frequent evictions."
+      },
+      {
+        "point_id": "N1:4:037b4c8e",
+        "text": "Profile hot code paths to determine if CPU rise is due to extra processing or serialization overhead."
+      },
+      {
+        "point_id": "N1:5:e8aa7a65",
+        "text": "Analyze database query plans for new queries; add indexes or rewrite queries to improve efficiency."
+      },
+      {
+        "point_id": "N1:6:98d5ce66",
+        "text": "Implement selective caching: cache only queries with stable parameter sets, bypass low‑benefit cases."
+      },
+      {
+        "point_id": "N1:7:8957e107",
+        "text": "Adjust cache TTLs or size to handle increased key space without excessive evictions."
+      },
+      {
+        "point_id": "N1:8:2128957e",
+        "text": "Set up monitoring alerts for cache miss spikes and DB read thresholds to catch regressions early."
+      },
+      {
+        "point_id": "N1:9:26b6999e",
+        "text": "Run load tests after each change to verify improvements in hit rate and reduced DB load."
+      }
+    ]
+  },
+  {
+    "node_id": "N6",
+    "points": [
+      {
+        "point_id": "N6:0:7f6fa6e7",
+        "text": "Collect detailed cache metrics (hit/miss, key distribution) before and after the change to quantify the drop."
+      },
+      {
+        "point_id": "N6:1:a3d139ec",
+        "text": "Examine new query parameters to see if they alter cache keys, causing key fragmentation and more DB reads."
+      },
+      {
+        "point_id": "N6:2:d03dbf28",
+        "text": "Profile CPU usage to identify hot code paths; increased CPU may indicate expensive serialization or cache lookup logic."
+      },
+      {
+        "point_id": "N6:3:0fa60f4a",
+        "text": "Run a query log analysis to detect patterns of cache misses, such as high‑cardinality parameters or missing indexes."
+      },
+      {
+        "point_id": "N6:4:52219e67",
+        "text": "Implement cache‑key normalization or hashing to reduce key variance and improve hit rate."
+      },
+      {
+        "point_id": "N6:5:816e4197",
+        "text": "Add a read‑through cache layer or batch DB reads for similar queries to lower DB load."
+      },
+      {
+        "point_id": "N6:6:8fe93ae8",
+        "text": "Set appropriate TTLs and monitor eviction rates to keep the cache warm without serving stale data."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:a066fdd9",
+        "text": "Check cache layer metrics (hit/miss, evictions, key patterns) to confirm the drop aligns with the new feature."
+      },
+      {
+        "point_id": "N2:1:1670d007",
+        "text": "Enable pg_stat_statements and identify queries whose call count or total time rose after the change."
+      },
+      {
+        "point_id": "N2:2:52b49fd8",
+        "text": "Compare the original and new query texts; see if added parameters prevent index usage or broaden result sets."
+      },
+      {
+        "point_id": "N2:3:6df87925",
+        "text": "Run EXPLAIN (ANALYZE, BUFFERS) on the identified queries to detect plan shifts, seq scans, or missing index scans."
+      },
+      {
+        "point_id": "N2:4:fc36387b",
+        "text": "Inspect plan caching: use plan_cache_mode=force_custom_plan or avoid generic prepared statements if parameters affect selectivity."
+      },
+      {
+        "point_id": "N2:5:2f82f344",
+        "text": "Create or adjust indexes on columns introduced by the new parameters; consider multi‑column or partial indexes for selective filters."
+      },
+      {
+        "point_id": "N2:6:22924fbb",
+        "text": "Review connection pooling and max_connections; high CPU may stem from contention or excessive parallel workers."
+      },
+      {
+        "point_id": "N2:7:347344cb",
+        "text": "Refactor queries: limit columns (avoid SELECT *), add WHERE clauses, batch reads, and use covering indexes to reduce I/O."
+      }
+    ]
+  },
+  {
+    "node_id": "N7",
+    "points": [
+      {
+        "point_id": "N7:0:37e6e7cf",
+        "text": "Collect baseline metrics: cache hit rate, DB query latency, CPU usage, and query volume per endpoint."
+      },
+      {
+        "point_id": "N7:1:8d95a424",
+        "text": "Instrument the app to log query parameters and capture the execution plan for each request."
+      },
+      {
+        "point_id": "N7:2:530c54bb",
+        "text": "Analyze if new parameters reduce predicate selectivity, causing full table scans instead of index seeks."
+      },
+      {
+        "point_id": "N7:3:35f2a30e",
+        "text": "Check for parameter sniffing: same prepared statement with varying values may select a suboptimal plan."
+      },
+      {
+        "point_id": "N7:4:97aa2321",
+        "text": "Add or adjust indexes to cover the new predicates and verify usage with EXPLAIN or query plan analysis."
+      },
+      {
+        "point_id": "N7:5:edacb5e9",
+        "text": "Ensure cache keys incorporate all query parameters; missing components cause cache misses and extra DB reads."
+      },
+      {
+        "point_id": "N7:6:e1168130",
+        "text": "Evaluate query result caching or materialized views for expensive aggregations introduced by the feature."
+      },
+      {
+        "point_id": "N7:7:465ef54b",
+        "text": "After indexing changes, monitor lock contention and deadlocks to confirm they do not increase."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": []
+  },
+  {
+    "node_id": "N8",
+    "points": []
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N10",
+    "points": [
+      {
+        "point_id": "N10:0:44102b45",
+        "text": "Collect time‑series metrics for cache hit/miss, DB read QPS, CPU usage, and request latency per endpoint."
+      },
+      {
+        "point_id": "N10:1:10ec6b0d",
+        "text": "Correlate the timing of the new feature rollout with the drop in hit rate to isolate affected endpoints."
+      },
+      {
+        "point_id": "N10:2:2ec084d0",
+        "text": "Inspect cache key generation; added query parameters may be causing key fragmentation and low reuse."
+      },
+      {
+        "point_id": "N10:3:5a5a6d9a",
+        "text": "Measure per‑key miss frequency; identify hot keys that now miss and cause DB spikes."
+      },
+      {
+        "point_id": "N10:4:2559da8f",
+        "text": "Profile the application to locate CPU hotspots introduced by extra parameter parsing or serialization."
+      },
+      {
+        "point_id": "N10:5:689c0db4",
+        "text": "Run A/B or canary tests disabling the new parameters to quantify their impact on cache and DB load."
+      },
+      {
+        "point_id": "N10:6:85bf5061",
+        "text": "If key granularity is the issue, redesign keys to group similar queries or introduce query‑parameter hashing."
+      },
+      {
+        "point_id": "N10:7:955a9f6d",
+        "text": "Consider increasing cache size, adjusting TTL, or adding a secondary read‑through layer to restore hit rate."
+      },
+      {
+        "point_id": "N10:8:2fe0521d",
+        "text": "Scale DB read capacity (read replicas, connection pool) while implementing query optimizations to reduce load."
+      },
+      {
+        "point_id": "N10:9:cf3e50d9",
+        "text": "Iterate: after each change, re‑measure hit rate, DB reads, and CPU to verify load reduction."
+      }
+    ]
+  },
+  {
+    "node_id": "N5",
+    "points": []
+  },
+  {
+    "node_id": "N9",
+    "points": []
+  }
+]

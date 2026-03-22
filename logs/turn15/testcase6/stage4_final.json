@@ -1,0 +1,61 @@
+{
+  "winner": "N7",
+  "final_answer": "Refactor the reporting path by first profiling the endpoint to measure each downstream latency (N1:0:2916a92a). Combine independent API/database calls into async parallel tasks (N10:0:b8d1be83, N1:1:2517cd2f) and batch sequential calls into a single request or stored procedure (N6:1:3f28cabf). Rewrite the SQL to select only required columns, drop SELECT *, and replace heavy joins with pre‑aggregated materialized views or summary tables (N10:1:52c10365, N10:3:7168c76e). Optimize join order by pushing predicates early, converting unnecessary outer joins to inner joins, and using CTEs for clarity (N7:2:edb7481b). Add covering indexes on foreign‑key and filter columns used in join predicates (N2:2:6e87ede3). Set a statement_timeout (e.g., 30 s) and a client‑side endpoint timeout based on the 95th‑percentile latencies of each component plus a safety margin (~10 %), using the summed budget approach (N2:6:c1262736, N10:5:8e0fc2f6).",
+  "metrics": {
+    "pass": {
+      "N1": 4,
+      "N2": 4,
+      "N7": 4,
+      "N10": 1
+    },
+    "fail": {
+      "N1": 0,
+      "N2": 0,
+      "N7": 0,
+      "N10": 3
+    },
+    "agree": {
+      "N1": 40,
+      "N2": 40,
+      "N7": 40,
+      "N10": 37
+    },
+    "reject": {
+      "N1": 0,
+      "N2": 0,
+      "N7": 0,
+      "N10": 3
+    },
+    "eligible_reviews": {
+      "N1": 4,
+      "N2": 4,
+      "N7": 4,
+      "N10": 4
+    },
+    "used_points": {
+      "N1": 10,
+      "N2": 10,
+      "N7": 10,
+      "N10": 10
+    },
+    "agree_rate": {
+      "N1": 1.0,
+      "N2": 1.0,
+      "N7": 1.0,
+      "N10": 0.925
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N7": 5.0,
+      "N10": -2.0
+    },
+    "point_rep_delta": {
+      "N1": 42.0,
+      "N10": 32.0,
+      "N2": 40.0,
+      "N6": 24.0,
+      "N7": 16.0
+    }
+  }
+}

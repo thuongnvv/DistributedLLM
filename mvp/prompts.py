@@ -203,6 +203,7 @@ def build_synthesize_prompt(
     input_text: str | None,
     points_map: dict[str, str],
     max_used_points: int | None,
+    repair_feedback: str | None = None,
 ) -> str:
     payload = {
         "query": query,
@@ -210,6 +211,7 @@ def build_synthesize_prompt(
         "points_map": points_map,
     }
     max_used_rule = f"- Select at most {max_used_points} point IDs.\n" if max_used_points is not None else ""
+    repair_rule = f"- Contract repair note: {repair_feedback}\n" if repair_feedback else ""
     return (
         "TASK: SYNTHESIZE\n"
         "Return EXACT JSON schema:\n"
@@ -221,8 +223,12 @@ def build_synthesize_prompt(
         "- Synthesis must be grounded in provided points_map.\n"
         "- Do not invent IDs; used_points must be subset of keys(points_map).\n"
         "- Use only points you can justify with high confidence from your domain knowledge.\n"
-        "- If you cannot synthesize confidently, return synthesis_text='UNKNOWN' and used_points=[].\n"
+        "- Avoid redundant points that repeat the same idea.\n"
+        "- If synthesis_text is not 'UNKNOWN', used_points must not be empty.\n"
+        "- Every major claim in synthesis_text must be traceable to at least one point_id in used_points.\n"
+        "- If you cannot support the answer with point IDs, return synthesis_text='UNKNOWN' and used_points=[].\n"
         f"{max_used_rule}"
+        f"{repair_rule}"
         f"Input JSON:\n{json.dumps(payload, ensure_ascii=False)}"
     )
 

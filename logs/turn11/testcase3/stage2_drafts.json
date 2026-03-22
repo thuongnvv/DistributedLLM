@@ -1,0 +1,85 @@
+[
+  {
+    "node_id": "N1",
+    "synthesis_text": "Add per‑IP login rate limiting/throttling (e.g., token‑bucket) to curb the massive failed‑login traffic; this immediately lowers the number of DB writes, reduces lock contention, and blocks brute‑force attacks. Pair it with exponential back‑off or temporary account lockout after a configurable number of failures to further protect the service.",
+    "used_points": [
+      "N5:0:4c9d5474",
+      "N1:0:57e65fac",
+      "N5:2:d31c3a25",
+      "N7:3:1cbf2df6"
+    ]
+  },
+  {
+    "node_id": "N6",
+    "synthesis_text": "Add per‑IP rate limiting/throttling (e.g., token‑bucket) on the login endpoint as the first step; this cuts the flood of failed attempts, immediately lowering write load and lock contention while also mitigating brute‑force attacks. Then enforce an account‑lockout after a configurable number of failures to harden security. After these are in place, switch login queries to READ COMMITTED isolation and shrink the transaction scope to further reduce lock duration.",
+    "used_points": [
+      "N1:0:57e65fac",
+      "N5:0:4c9d5474",
+      "N9:0:3e082cf3",
+      "N1:1:a6b2729d",
+      "N7:1:f70c46dd",
+      "N7:0:cc39e443"
+    ]
+  },
+  {
+    "node_id": "N2",
+    "synthesis_text": "Implement login throttling / per‑IP rate limiting (e.g., token‑bucket or exponential back‑off) at the application front‑end. This immediately curtails the flood of failed login attempts, cutting write traffic and lock duration, which lowers DB contention and latency, while also mitigating brute‑force attacks and improving overall security.",
+    "used_points": [
+      "N6:1:1586d8ac",
+      "N5:0:4c9d5474",
+      "N1:0:57e65fac"
+    ]
+  },
+  {
+    "node_id": "N7",
+    "synthesis_text": "First, add front‑end rate‑limiting or IP‑based throttling on the login endpoint (e.g., token‑bucket per IP/user) to cap the number of attempts; this immediately cuts the flood of failed‑login writes that drive lock contention and blocks brute‑force attacks. Next, shorten the authentication transaction scope and move credential reads to read‑replicas or add appropriate indexes so locks are held for the minimal time. Use READ COMMITTED isolation and avoid unnecessary row‑level locks. Finally, enforce an account lockout after a configurable number of failed attempts to improve security further.",
+    "used_points": [
+      "N9:0:3e082cf3",
+      "N5:0:4c9d5474",
+      "N2:2:2253dff2",
+      "N6:0:f7d70f09",
+      "N1:2:9247b091",
+      "N7:1:f70c46dd",
+      "N1:1:a6b2729d"
+    ]
+  },
+  {
+    "node_id": "N3",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N8",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N10",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "N5",
+    "synthesis_text": "Apply per‑IP login rate limiting/throttling as the first change; it immediately curtails the surge of failed attempts, lowers the number of authentication writes, and thus reduces database lock contention, improving both stability and security.",
+    "used_points": [
+      "N5:0:4c9d5474",
+      "N1:0:57e65fac"
+    ]
+  },
+  {
+    "node_id": "N9",
+    "synthesis_text": "First, add a front‑end rate‑limit (e.g., token‑bucket) per IP or user to cap login attempts during peaks; this immediately throttles the flood of failed attempts, cuts write load, and reduces DB lock contention. Combine this with credential‑stuffing detection that auto‑blocks offending IPs or forces a CAPTCHA. After rate‑limiting is in place, tighten the login query by adding appropriate indexes and shortening the transaction scope, and ensure the isolation level is READ COMMITTED to minimise lock duration. These steps address both stability (by lowering contention) and security (by blocking brute‑force traffic) with rate‑limiting as the highest‑impact first change.",
+    "used_points": [
+      "N9:0:3e082cf3",
+      "N6:1:1586d8ac",
+      "N9:1:9812556f",
+      "N1:2:9247b091",
+      "N2:5:10edc212"
+    ]
+  }
+]

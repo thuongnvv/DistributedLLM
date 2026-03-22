@@ -1,0 +1,111 @@
+{
+  "winner": "N2",
+  "final_answer": "[databases_sql] Consolidated answer for 'Traffic may triple next quarter. We want capacity planning that avoids retry storms and ke': Prefer observable and reversible config changes; Validate and sanitize untrusted input paths; Validate cache semantics and freshness policy; Differentiate latency versus throughput bottlenecks",
+  "metrics": {
+    "pass": {
+      "N1": 8,
+      "N6": 6,
+      "N2": 8,
+      "N7": 5,
+      "N3": 7,
+      "N8": 5,
+      "N4": 4,
+      "N10": 6,
+      "N5": 5,
+      "N9": 6
+    },
+    "fail": {
+      "N1": 0,
+      "N6": 2,
+      "N2": 1,
+      "N7": 0,
+      "N3": 0,
+      "N8": 2,
+      "N4": 1,
+      "N10": 2,
+      "N5": 1,
+      "N9": 3
+    },
+    "agree": {
+      "N1": 63,
+      "N6": 53,
+      "N2": 70,
+      "N7": 38,
+      "N3": 62,
+      "N8": 46,
+      "N4": 41,
+      "N10": 57,
+      "N5": 44,
+      "N9": 51
+    },
+    "reject": {
+      "N1": 10,
+      "N6": 15,
+      "N2": 6,
+      "N7": 9,
+      "N3": 6,
+      "N8": 14,
+      "N4": 13,
+      "N10": 15,
+      "N5": 13,
+      "N9": 23
+    },
+    "eligible_reviews": {
+      "N1": 9,
+      "N6": 9,
+      "N2": 9,
+      "N7": 9,
+      "N3": 9,
+      "N8": 9,
+      "N4": 9,
+      "N10": 9,
+      "N5": 9,
+      "N9": 9
+    },
+    "used_points": {
+      "N1": 10,
+      "N6": 10,
+      "N2": 10,
+      "N7": 10,
+      "N3": 10,
+      "N8": 10,
+      "N4": 10,
+      "N10": 10,
+      "N5": 10,
+      "N9": 10
+    },
+    "agree_rate": {
+      "N1": 0.7,
+      "N6": 0.5888888888888889,
+      "N2": 0.7777777777777778,
+      "N7": 0.4222222222222222,
+      "N3": 0.6888888888888889,
+      "N8": 0.5111111111111111,
+      "N4": 0.45555555555555555,
+      "N10": 0.6333333333333333,
+      "N5": 0.4888888888888889,
+      "N9": 0.5666666666666667
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N6": -2.0,
+      "N2": 5.0,
+      "N8": -2.0,
+      "N10": -2.0,
+      "N9": -2.0
+    },
+    "point_rep_delta": {
+      "N1": 30.0,
+      "N6": 51.0,
+      "N2": 47.0,
+      "N7": 55.0,
+      "N3": 40.0,
+      "N8": 45.0,
+      "N4": 41.0,
+      "N10": 40.0,
+      "N5": 28.0,
+      "N9": 24.0
+    }
+  }
+}

@@ -1,0 +1,179 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:2916a92a",
+        "text": "Profile the endpoint to measure each call's latency and identify which calls can be parallelized or batched."
+      },
+      {
+        "point_id": "N1:1:2517cd2f",
+        "text": "Combine independent sequential API/database calls into async/parallel tasks to reduce overall wall‑clock time."
+      },
+      {
+        "point_id": "N1:2:2c3c722f",
+        "text": "Analyze the SQL execution plan; add indexes on columns used in JOIN predicates and WHERE filters."
+      },
+      {
+        "point_id": "N1:3:bcd6a83c",
+        "text": "Rewrite the query to select only needed columns, replace SELECT * and eliminate unnecessary joins."
+      },
+      {
+        "point_id": "N1:4:0d9a17aa",
+        "text": "Apply early filtering (WHERE clauses) before joins or use CTEs to limit row sets early in the query."
+      },
+      {
+        "point_id": "N1:5:9d64ba20",
+        "text": "Consider materialized views or caching for static reference data that is joined frequently."
+      },
+      {
+        "point_id": "N1:6:e0ede3ef",
+        "text": "Set a realistic endpoint timeout (e.g., 5‑10 s) based on measured 95th‑percentile DB response plus buffer."
+      },
+      {
+        "point_id": "N1:7:d4a98b58",
+        "text": "Implement retry with exponential backoff for transient DB timeouts, respecting the overall timeout budget."
+      },
+      {
+        "point_id": "N1:8:d901bbb6",
+        "text": "Tune the DB connection pool size to match expected concurrency without exhausting resources."
+      }
+    ]
+  },
+  {
+    "node_id": "N6",
+    "points": [
+      {
+        "point_id": "N6:0:22eb9741",
+        "text": "Parallelize independent service calls using async/await or thread pools to reduce overall latency."
+      },
+      {
+        "point_id": "N6:1:3f28cabf",
+        "text": "Batch multiple calls into a single request when possible to cut round‑trip overhead."
+      },
+      {
+        "point_id": "N6:2:2c0c6d2f",
+        "text": "Rewrite the SQL join to fetch only needed columns and add indexes on join keys."
+      },
+      {
+        "point_id": "N6:3:badbb488",
+        "text": "Consider denormalizing or using materialized views for frequently accessed reporting data."
+      },
+      {
+        "point_id": "N6:4:86101a5a",
+        "text": "Set the endpoint timeout to the sum of 95th‑percentile latencies of each downstream call plus a safety margin (e.g., 20%)."
+      },
+      {
+        "point_id": "N6:5:c783f142",
+        "text": "Add a circuit breaker around each downstream call to fail fast and protect the reporting service."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:e13cc306",
+        "text": "Move sequential API calls into parallel async tasks to reduce overall latency."
+      },
+      {
+        "point_id": "N2:1:786a53da",
+        "text": "Profile the query with EXPLAIN (ANALYZE, BUFFERS) to identify slow joins and missing indexes."
+      },
+      {
+        "point_id": "N2:2:6e87ede3",
+        "text": "Add covering indexes on foreign key columns used in join predicates and filter conditions."
+      },
+      {
+        "point_id": "N2:3:c351017f",
+        "text": "Replace many-to-many joins with pre‑aggregated materialized view refreshed off‑peak."
+      },
+      {
+        "point_id": "N2:4:b8328d73",
+        "text": "Rewrite complex joins using explicit JOIN order or CTEs to let planner choose better plan."
+      },
+      {
+        "point_id": "N2:5:6ccf1ec2",
+        "text": "Limit result set with pagination or aggregate in DB instead of pulling full dataset."
+      },
+      {
+        "point_id": "N2:6:c1262736",
+        "text": "Set statement_timeout (e.g., 30s) and client‑side timeout budget (e.g., 60s) with fallback handling."
+      }
+    ]
+  },
+  {
+    "node_id": "N7",
+    "points": [
+      {
+        "point_id": "N7:0:b0c863c5",
+        "text": "Batch the sequential calls into a single request or use a stored procedure to reduce round‑trips."
+      },
+      {
+        "point_id": "N7:1:c6c511bd",
+        "text": "Add covering indexes on join/filter columns to avoid full table scans."
+      },
+      {
+        "point_id": "N7:2:edb7481b",
+        "text": "Rewrite the join query: push predicates early, replace unnecessary outer joins with inner joins, and consider CTEs for readability."
+      },
+      {
+        "point_id": "N7:3:4220d46e",
+        "text": "Profile the query plan; eliminate redundant tables or compute aggregates in a materialized view."
+      },
+      {
+        "point_id": "N7:4:70440a35",
+        "text": "Set the endpoint timeout to the 95th‑percentile query latency plus a safety margin (e.g., 2× typical execution time)."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": []
+  },
+  {
+    "node_id": "N8",
+    "points": []
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N10",
+    "points": [
+      {
+        "point_id": "N10:0:b8d1be83",
+        "text": "Parallelize independent service calls to shrink the end‑to‑end critical path latency."
+      },
+      {
+        "point_id": "N10:1:52c10365",
+        "text": "Rewrite the SQL to select only needed columns and replace heavy joins with pre‑aggregated materialized views."
+      },
+      {
+        "point_id": "N10:2:b7ad550d",
+        "text": "Create indexes on join and filter columns; avoid SELECT * to reduce I/O and improve join performance."
+      },
+      {
+        "point_id": "N10:3:7168c76e",
+        "text": "Introduce caching or summary tables for frequently requested report data, refreshed on a schedule."
+      },
+      {
+        "point_id": "N10:4:056aad2e",
+        "text": "Measure p95 latency of DB and each service; allocate timeout budget (e.g., 70% DB, 20% services, 10% network)."
+      },
+      {
+        "point_id": "N10:5:8e0fc2f6",
+        "text": "Set the endpoint timeout slightly above the summed component budgets (p95 + ~10% margin) to prevent premature timeouts."
+      }
+    ]
+  },
+  {
+    "node_id": "N5",
+    "points": []
+  },
+  {
+    "node_id": "N9",
+    "points": []
+  }
+]

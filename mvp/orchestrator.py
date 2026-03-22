@@ -135,32 +135,27 @@ class MVPOrchestrator:
             validate_synthesis_draft(draft, known_point_ids)
             drafts.append(draft)
         self._emit_progress(progress, f"[{case_label}] stage=2/4 phase=synthesize done")
+        active_drafts = [draft for draft in drafts if self._is_active_draft(draft)]
+        inactive_draft_nodes = [draft.node_id for draft in drafts if not self._is_active_draft(draft)]
+        if inactive_draft_nodes:
+            self._emit_progress(progress, f"[{case_label}] inactive_drafts_stage2={','.join(inactive_draft_nodes)}")
 
         # Stage 3: cross-grading
         self._emit_progress(progress, f"[{case_label}] stage=3/4 phase=grade start")
         grades: list[GradeVote] = []
         draft_by_node = {d.node_id: d for d in drafts}
         for grader in selected:
-            target_drafts = [draft_by_node[node.node_id] for node in selected if node.node_id != grader.node_id]
             if grader.node_id not in active_nodes:
                 self._emit_progress(
                     progress,
-                    f"[{case_label}] stage=3/4 grader={grader.node_id} abstain_grade(no in-scope points)",
+                    f"[{case_label}] stage=3/4 grader={grader.node_id} skip_grade(no in-scope points)",
                 )
-                for target_draft in target_drafts:
-                    vote = GradeVote(
-                        grader_id=grader.node_id,
-                        target_id=target_draft.node_id,
-                        valid="UNKNOWN",
-                        agree_points=[],
-                        reject_points=[],
-                        unknown_points=list(target_draft.used_points),
-                        note="Grader abstained: no in-scope points in stage1",
-                    )
-                    validate_grade_vote(vote, target_draft.used_points)
-                    grades.append(vote)
                 continue
 
+            target_drafts = [draft for draft in active_drafts if draft.node_id != grader.node_id]
+            if not target_drafts:
+                self._emit_progress(progress, f"[{case_label}] stage=3/4 grader={grader.node_id} skip_grade(no active targets)")
+                continue
             self._emit_progress(progress, f"[{case_label}] stage=3/4 grader={grader.node_id} grading_batch")
             batch_votes = self.llm_client.grade_batch(
                 persona=grader,
@@ -200,7 +195,7 @@ class MVPOrchestrator:
         # Stage 4: finalization + reputation updates
         self._emit_progress(progress, f"[{case_label}] stage=4/4 phase=finalize start")
         final_output = finalize_output(
-            drafts=drafts,
+            drafts=active_drafts,
             grades=grades,
             point_owner_map=point_owner_map,
             tau_fail=self.tau_fail,
@@ -254,6 +249,8 @@ class MVPOrchestrator:
             "mode": self.llm_client.mode,
             "k": self.k,
             "tau_fail": self.tau_fail,
+            "max_points_per_answer": self.max_points_per_answer,
+            "max_used_points": self.max_used_points,
             "selection_strategy": "fixed_first_k",
             "selected_nodes": [
                 {
@@ -277,3 +274,6 @@ class MVPOrchestrator:
     def _emit_progress(self, progress: Callable[[str], None] | None, message: str) -> None:
         if progress is not None:
             progress(message)
+
+    def _is_active_draft(self, draft: SynthesisDraft) -> bool:
+        return draft.synthesis_text.strip().upper() != "UNKNOWN" and bool(draft.used_points)

@@ -1,0 +1,215 @@
+[
+  {
+    "node_id": "N1",
+    "points": [
+      {
+        "point_id": "N1:0:8bdbd64a",
+        "text": "Collect time‑series metrics: cache hit/miss, DB query count, latency, CPU, and request volume per endpoint."
+      },
+      {
+        "point_id": "N1:1:fe23f78d",
+        "text": "Compare metrics before and after the feature release to pinpoint which endpoints saw the biggest hit‑rate drop."
+      },
+      {
+        "point_id": "N1:2:332df1be",
+        "text": "Inspect how the new query parameters are incorporated into cache keys; ensure they don’t create high‑cardinality keys."
+      },
+      {
+        "point_id": "N1:3:5684176f",
+        "text": "Verify that cache TTL and eviction policy haven’t changed, causing premature evictions."
+      },
+      {
+        "point_id": "N1:4:1c8d7dac",
+        "text": "Profile the application to locate CPU hotspots introduced by extra parameter handling or serialization."
+      },
+      {
+        "point_id": "N1:5:c0221df6",
+        "text": "Run EXPLAIN on the affected SQL queries to detect missing indexes or full table scans caused by new filters."
+      },
+      {
+        "point_id": "N1:6:4c76e546",
+        "text": "Add request‑level tracing to correlate specific parameter combos with cache misses and DB reads."
+      },
+      {
+        "point_id": "N1:7:26b7efb9",
+        "text": "If high cardinality is unavoidable, consider secondary indexes in cache (e.g., hash of parameters) or query result caching."
+      },
+      {
+        "point_id": "N1:8:f575b514",
+        "text": "Implement back‑off or rate‑limiting for hot paths while you refactor, to reduce DB pressure."
+      },
+      {
+        "point_id": "N1:9:00e876c8",
+        "text": "After changes, monitor hit‑rate, DB reads, and CPU to confirm load reduction; iterate as needed."
+      }
+    ]
+  },
+  {
+    "node_id": "N6",
+    "points": [
+      {
+        "point_id": "N6:0:0aead352",
+        "text": "Collect time‑series metrics for cache hit/miss, DB query count, and CPU usage per endpoint."
+      },
+      {
+        "point_id": "N6:1:b0545de6",
+        "text": "Correlate new query parameters with cache key generation; verify key granularity isn’t causing fragmentation."
+      },
+      {
+        "point_id": "N6:2:47003106",
+        "text": "Enable detailed tracing to see which service calls bypass cache and hit the DB after the change."
+      },
+      {
+        "point_id": "N6:3:17025a65",
+        "text": "Profile the code paths handling the new parameters to identify CPU hotspots and expensive serialization."
+      },
+      {
+        "point_id": "N6:4:1c8654b0",
+        "text": "Run a controlled A/B test: revert to old parameter set and measure cache hit rate and DB load."
+      },
+      {
+        "point_id": "N6:5:f6fd003b",
+        "text": "If cache key space exploded, consider normalizing parameters or using a composite key with hashing."
+      },
+      {
+        "point_id": "N6:6:9d72113e",
+        "text": "Evaluate batching of DB reads for high‑frequency queries; combine multiple requests into a single query."
+      },
+      {
+        "point_id": "N6:7:16e4c890",
+        "text": "Adjust timeout budgets and circuit‑breaker thresholds to prevent cascading overload while fixing root cause."
+      }
+    ]
+  },
+  {
+    "node_id": "N2",
+    "points": [
+      {
+        "point_id": "N2:0:9eeffa2e",
+        "text": "Collect baseline metrics: pg_stat_database cache hit, pg_stat_bgwriter, and OS vmstat to confirm cache drop and I/O increase."
+      },
+      {
+        "point_id": "N2:1:434721cd",
+        "text": "Enable pg_stat_statements and identify queries with the largest increase in execution count or total time since the change."
+      },
+      {
+        "point_id": "N2:2:7778f7a7",
+        "text": "For each hot query, run EXPLAIN (ANALYZE, BUFFERS) with current parameters to see plan changes and buffer usage."
+      },
+      {
+        "point_id": "N2:3:de5fbe20",
+        "text": "Check if added query parameters cause planner misestimation (low selectivity) leading to sequential scans."
+      },
+      {
+        "point_id": "N2:4:25d92340",
+        "text": "Verify that indexes used before still match the new WHERE clauses; create or adjust multicolumn indexes if needed."
+      },
+      {
+        "point_id": "N2:5:bb6a01a4",
+        "text": "Test parameter sniffing by forcing generic plans (plan_cache_mode = force_generic_plan) to see if prepared statements cause suboptimal plans."
+      },
+      {
+        "point_id": "N2:6:d674fe8e",
+        "text": "Compare actual vs. estimated rows; if mismatch is high, update statistics with ANALYZE or increase default_statistics_target."
+      },
+      {
+        "point_id": "N2:7:341b6412",
+        "text": "Monitor work_mem and maintenance_work_mem; insufficient memory can force disk‑based sorts, raising CPU and I/O."
+      },
+      {
+        "point_id": "N2:8:15f3d550",
+        "text": "If cache miss persists, consider increasing shared_buffers or using pg_prewarm to warm frequently accessed tables."
+      },
+      {
+        "point_id": "N2:9:bab0286f",
+        "text": "Iteratively apply the most impactful change, re‑measure metrics, and repeat until cache hit and read rates return to acceptable levels."
+      }
+    ]
+  },
+  {
+    "node_id": "N7",
+    "points": [
+      {
+        "point_id": "N7:0:eb8d72ea",
+        "text": "Gather baseline metrics: cache hit rate, DB read QPS, CPU, latency per endpoint before and after change."
+      },
+      {
+        "point_id": "N7:1:8a8f642d",
+        "text": "Enable query tracing or slow‑query log to list statements whose frequency or execution time grew."
+      },
+      {
+        "point_id": "N7:2:15208d54",
+        "text": "Compare execution plans pre‑ and post‑feature; look for full table scans or missing index usage caused by new parameters."
+      },
+      {
+        "point_id": "N7:3:af63d832",
+        "text": "Check cache key design; added parameters may break hit patterns—adjust keys or add result‑set caching for the new queries."
+      },
+      {
+        "point_id": "N7:4:2c4e4308",
+        "text": "Create or tune indexes that cover the new filter predicates; consider covering indexes to avoid extra lookups."
+      },
+      {
+        "point_id": "N7:5:6e8ebd64",
+        "text": "If reads stay high, evaluate read‑replica scaling or sharding to distribute load while keeping consistency guarantees."
+      }
+    ]
+  },
+  {
+    "node_id": "N3",
+    "points": []
+  },
+  {
+    "node_id": "N8",
+    "points": []
+  },
+  {
+    "node_id": "N4",
+    "points": []
+  },
+  {
+    "node_id": "N10",
+    "points": [
+      {
+        "point_id": "N10:0:7bdc3143",
+        "text": "Collect time‑series of cache hit/miss, DB read count, and CPU usage per endpoint to spot correlation."
+      },
+      {
+        "point_id": "N10:1:2f649bb3",
+        "text": "Map new query parameters to cache keys; assess if key cardinality exploded causing more misses."
+      },
+      {
+        "point_id": "N10:2:e2796e16",
+        "text": "Profile request handling to locate CPU hotspots in query construction or serialization."
+      },
+      {
+        "point_id": "N10:3:d8d5edc6",
+        "text": "Check cache TTL and eviction policy; ensure cache size can accommodate the larger key space."
+      },
+      {
+        "point_id": "N10:4:2cf4a155",
+        "text": "Run an A/B test disabling the new parameters to quantify their impact on hit rate and DB load."
+      },
+      {
+        "point_id": "N10:5:0b59b15e",
+        "text": "Add cache warm‑up or secondary index for high‑cardinality queries to improve hit probability."
+      },
+      {
+        "point_id": "N10:6:00fb3ca0",
+        "text": "Introduce read‑through caching or materialized views to offload frequent DB reads."
+      },
+      {
+        "point_id": "N10:7:287e9db2",
+        "text": "Tune autoscaling thresholds and SLO budgets based on the observed load increase."
+      }
+    ]
+  },
+  {
+    "node_id": "N5",
+    "points": []
+  },
+  {
+    "node_id": "N9",
+    "points": []
+  }
+]

@@ -1,0 +1,109 @@
+{
+  "winner": "N8",
+  "final_answer": "[networking_systems] Consolidated answer for 'During peak login traffic, we see DB lock contention and higher latency. At the same time,': Reproduce issue with minimal failing test; Transform expression using valid algebraic rules; Avoid full table scans on hot paths; Use retries with timeout and backoff strategy",
+  "metrics": {
+    "pass": {
+      "N1": 8,
+      "N6": 8,
+      "N2": 8,
+      "N7": 9,
+      "N3": 7,
+      "N8": 9,
+      "N4": 6,
+      "N10": 9,
+      "N5": 3,
+      "N9": 7
+    },
+    "fail": {
+      "N1": 0,
+      "N6": 1,
+      "N2": 1,
+      "N7": 0,
+      "N3": 1,
+      "N8": 0,
+      "N4": 1,
+      "N10": 0,
+      "N5": 4,
+      "N9": 2
+    },
+    "agree": {
+      "N1": 58,
+      "N6": 63,
+      "N2": 66,
+      "N7": 68,
+      "N3": 60,
+      "N8": 68,
+      "N4": 53,
+      "N10": 67,
+      "N5": 31,
+      "N9": 55
+    },
+    "reject": {
+      "N1": 9,
+      "N6": 10,
+      "N2": 7,
+      "N7": 7,
+      "N3": 13,
+      "N8": 3,
+      "N4": 7,
+      "N10": 6,
+      "N5": 22,
+      "N9": 14
+    },
+    "eligible_reviews": {
+      "N1": 9,
+      "N6": 9,
+      "N2": 9,
+      "N7": 9,
+      "N3": 9,
+      "N8": 9,
+      "N4": 9,
+      "N10": 9,
+      "N5": 9,
+      "N9": 9
+    },
+    "used_points": {
+      "N1": 10,
+      "N6": 10,
+      "N2": 10,
+      "N7": 10,
+      "N3": 10,
+      "N8": 10,
+      "N4": 10,
+      "N10": 10,
+      "N5": 10,
+      "N9": 10
+    },
+    "agree_rate": {
+      "N1": 0.6444444444444445,
+      "N6": 0.7,
+      "N2": 0.7333333333333333,
+      "N7": 0.7555555555555555,
+      "N3": 0.6666666666666666,
+      "N8": 0.7555555555555555,
+      "N4": 0.5888888888888889,
+      "N10": 0.7444444444444445,
+      "N5": 0.34444444444444444,
+      "N9": 0.6111111111111112
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "N8": 5.0,
+      "N5": -2.0,
+      "N9": -2.0
+    },
+    "point_rep_delta": {
+      "N1": 55.0,
+      "N6": 59.0,
+      "N2": 52.0,
+      "N7": 69.0,
+      "N3": 25.0,
+      "N8": 42.0,
+      "N4": 63.0,
+      "N10": 60.0,
+      "N5": 45.0,
+      "N9": 21.0
+    }
+  }
+}
