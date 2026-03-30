@@ -1,0 +1,85 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:81094541",
+        "text": "Fever is a common symptom of COVID-19 [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:1:1b83bd59",
+        "text": "Cough is frequently reported in COVID-19 cases [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:2:67983fde",
+        "text": "Loss of smell (anosmia) is a typical COVID-19 symptom [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:3:9ca87eec",
+        "text": "Loss of taste (ageusia) often accompanies COVID-19 infection [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:4:ffffa95",
+        "text": "Fatigue is commonly experienced by COVID-19 patients [doc1_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_a:5:42f7a201",
+        "text": "Breathing difficulties can occur in COVID-19, especially in moderate to severe cases [doc1_covid19.txt:chunk_00011]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:df2f0bb4",
+        "text": "Congestion, runny nose, or sore throat (common cold symptoms) [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:1:92fdbc64",
+        "text": "Dry cough [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:2:abb3a2bf",
+        "text": "Shortness of breath [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:3:123cf597",
+        "text": "Loss of taste or smell [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:4:fd92bfd1",
+        "text": "Extreme fatigue (tiredness) [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:5:86381ed4",
+        "text": "Fever or chills [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:6:e946abc0",
+        "text": "Headaches and body or muscle aches [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:7:1238a23",
+        "text": "Digestive symptoms such as upset stomach, vomiting, or diarrhea [doc2_covid19.txt:chunk_00002]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:690aa27",
+        "text": "Fever is one of the most common COVID-19 symptoms [doc3_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_c:1:5640c05e",
+        "text": "Cough is a common COVID-19 symptom [doc3_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_c:2:a88b3a57",
+        "text": "Tiredness (fatigue) is a common COVID-19 symptom [doc3_covid19.txt:chunk_00001]"
+      }
+    ]
+  }
+]

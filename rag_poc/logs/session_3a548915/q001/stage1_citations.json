@@ -1,0 +1,66 @@
+{
+  "node_a": [
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00004",
+      "text": "COVID‑19 transmission occurs when infectious particles are breathed in or come into contact with the eyes, nose, or mouth. The risk is highest when people are in close proximity, but small airborne particles containing the virus can remain suspended in the air and travel over longer distances, particularly indoors. Transmission can also occur when people touch their eyes, nose, or mouth after touching surfaces or objects that have been contaminated by the virus. People remain contagious for up to 20 days and can spread the virus even if they do not develop symptoms.[16]",
+      "score": 0.6622
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00024",
+      "text": "COVID‑19 is caused by infection with a strain of coronavirus known as \"severe acute respiratory syndrome coronavirus 2\" (SARS-CoV-2).[85]\nTransmission\nMain article: Transmission of COVID-19\nTransmission of COVID‑19\n\nCOVID-19 is mainly transmitted from person to person through inhaling air contaminated by droplets/aerosols and small airborne particles containing the virus. Infected people exhale those particles as they breathe, talk, cough, sneeze, or sing.[86][87][88][89] Transmission is most likely at closer range but can also occur over longer distances, particularly indoors.[86][90]",
+      "score": 0.6408
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00209",
+      "text": "By December 2019, the spread of infection was almost entirely driven by human-to-human transmission.[373][428] The number of COVID-19 cases in Hubei gradually increased, reaching 60 by 20 December,[429] and at least 266 by 31 December.[430] On 24 December, Wuhan Central Hospital sent a bronchoalveolar lavage fluid (BAL) sample from an unresolved clinical case to sequencing company Vision Medicals",
+      "score": 0.594
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00216",
+      "text": ", the outbreak spread by a factor of 100 to 200 times.[444]",
+      "score": 0.5887
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00025",
+      "text": "The virus spreads through virus-laden fluid particles, or droplets, which are created in the respiratory tract, and they are expelled by the mouth and the nose",
+      "score": 0.5777
+    }
+  ],
+  "node_b": [
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00008",
+      "text": "The coronavirus carried by the breath of a person with the infection can land directly on the face of a nearby person, after a sneeze or cough, for example. The droplets or particles could also be breathed in by other people if they are close together or in areas with low airflow.\n\nIt's possible to get COVID-19 more than once.",
+      "score": 0.5898
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00000",
+      "text": "Overview\n\nCoronavirus disease 2019 (COVID-19), is an illness caused by a virus. The virus is called severe acute respiratory syndrome coronavirus 2 or, more commonly, SARS-CoV-2. It started spreading at the end of 2019 and became a pandemic disease in 2020.\n\nThe virus that causes COVID-19 spreads between people in close contact. Most commonly, it spreads through the air in tiny droplets of fluid. Many people with COVID-19 have mild illness or no symptoms. But for older adults and people with certain medical conditions, COVID-19 can lead to the need for care in the hospital or death.",
+      "score": 0.5729
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00022",
+      "text": "Besides vaccination, there are other ways to stop the spread of the virus that causes COVID-19. If you are at a higher risk of serious illness, talk with your healthcare professional about how best to protect yourself. Know what to do if you get sick so you can quickly start treatment. If you feel ill or have COVID-19, stay home and away from others, including pets, if possible.\n\nIn general, make it a habit to:",
+      "score": 0.5361
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00021",
+      "text": "Your healthcare team may suggest added doses of COVID-19 vaccine if you have a moderately or seriously weakened immune system. In the U.S., the Food and Drug Administration (FDA) also has authorized the monoclonal antibody pemivibart (Pemgarda) to prevent COVID-19 in some people with weakened immune systems.\nHow to control the spread of the virus",
+      "score": 0.5355
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00001",
+      "text": "Staying up to date on your COVID-19 vaccine helps prevent serious illness, the need for hospital care due to COVID-19 and death from COVID-19. Other things that may help prevent the spread of this coronavirus include good indoor airflow, physical distancing, wearing a mask in the right setting and good hygiene.\n\nMedicine can limit the seriousness of the viral infection. Most people recover without long-term effects, but some people have symptoms that continue for months.\nProvider applying Bandaid to upper arm\nAre you fully protected?\n\nCreate your personalized vaccination plan.\nSymptoms",
+      "score": 0.5127
+    }
+  ]
+}

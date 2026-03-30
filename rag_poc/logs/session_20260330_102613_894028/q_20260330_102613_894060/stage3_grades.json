@@ -1,0 +1,43 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:883e3eca",
+      "node_a:1:eb36e634",
+      "node_a:2:e0cd9b04",
+      "node_a:3:59626358",
+      "node_a:5:50fbf77c",
+      "node_b:1:b3f04986",
+      "node_b:2:ea842b16",
+      "node_b:3:899be1f2"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:4:bed6709c",
+      "node_b:0:e974bb44"
+    ],
+    "note": "No clear contradiction found"
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:883e3eca",
+      "node_a:1:eb36e634",
+      "node_a:2:e0cd9b04",
+      "node_a:3:59626358",
+      "node_a:4:bed6709c",
+      "node_a:5:50fbf77c",
+      "node_b:0:e974bb44",
+      "node_b:1:b3f04986",
+      "node_b:2:ea842b16",
+      "node_b:3:899be1f2"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "No clear contradiction found"
+  }
+]

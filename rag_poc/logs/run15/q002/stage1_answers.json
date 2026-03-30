@@ -1,0 +1,77 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:a479a0da",
+        "text": "COVID-19 is a contagious disease caused by the coronavirus SARS‑CoV‑2. [doc1_covid19.txt:chunk_00000]"
+      },
+      {
+        "point_id": "node_a:1:60d73ca",
+        "text": "The disease emerged in January 2020 and spread worldwide, leading to the COVID‑19 pandemic. [doc1_covid19.txt:chunk_00000]"
+      },
+      {
+        "point_id": "node_a:2:5f7ee840",
+        "text": "The WHO declared COVID‑19 a global health emergency in March 2020 and ended the emergency in May 2023. [doc1_covid19.txt:chunk_00000]"
+      },
+      {
+        "point_id": "node_a:3:5deffde3",
+        "text": "The official name COVID‑19 (short for “coronavirus disease 2019”) and the virus name SARS‑CoV‑2 were issued by WHO on 11 Feb 2020. [doc1_covid19.txt:chunk_00009"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:8ceb7784",
+        "text": "COVID-19 is an illness caused by the virus SARS‑CoV‑2. [doc2_covid19.txt:chunk_00000]"
+      },
+      {
+        "point_id": "node_b:1:f08e9d3b",
+        "text": "The virus spreads mainly through close contact via tiny respiratory droplets in the air. [doc2_covid19.txt:chunk_00000]"
+      },
+      {
+        "point_id": "node_b:2:c30b07ba",
+        "text": "Transmission can also occur when infected people cough, sneeze, breathe, sing or talk, releasing virus‑laden breath. [doc2_covid19.txt:chunk_00007]"
+      },
+      {
+        "point_id": "node_b:3:117529d6",
+        "text": "Many infected individuals have mild illness or no symptoms, but older adults and those with certain conditions may require hospital care or die. [doc2_covid19.t"
+      },
+      {
+        "point_id": "node_b:4:36bd76db",
+        "text": "High‑risk groups include people 65+, infants under 6 months, and those with heart disease, diabetes, chronic organ disease, obesity, smoking, etc. [doc2_covid19"
+      },
+      {
+        "point_id": "node_b:5:9b17d602",
+        "text": "Good indoor airflow, physical distancing, mask wearing, and hygiene help prevent spread. [doc2_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_b:6:7d27c7a4",
+        "text": "Vaccination (e.g., Moderna, Pfizer‑BioNTech, Novavax) reduces serious illness, hospitalisation, and death. [doc2_covid19.txt:chunk_00017][doc2_covid19.txt:chunk"
+      },
+      {
+        "point_id": "node_b:7:f4970f56",
+        "text": "COVID‑19 can be contracted more than once as immunity may wane and viral mutations can evade prior protection. [doc2_covid19.txt:chunk_00009][doc2_covid19.txt:c"
+      },
+      {
+        "point_id": "node_b:8:36fdbe7d",
+        "text": "The virus can infect some pets (cats, dogs, hamsters, ferrets), though transmission from pets to people is rare. [doc2_covid19.txt:chunk_00010]"
+      },
+      {
+        "point_id": "node_b:9:cfa55a0d",
+        "text": "Surface transmission is rare; infection from contaminated surfaces like public bathrooms is uncommon. [doc2_covid19.txt:chunk_00012]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:f6b56f70",
+        "text": "COVID-19 is an infectious respiratory illness caused by the coronavirus SARS‑CoV‑2."
+      }
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "[medical_covid] Consolidated answer for 'How does COVID spread?': Address query objective: How does COVID spread?; State known constraints; Avoid unsupported assumptions; Mark uncertainty explicitly",
+    "used_points": [
+      "node_a:0:d382a58b",
+      "node_a:1:eb36e634",
+      "node_a:2:e0cd9b04",
+      "node_a:3:59626358",
+      "node_a:4:bed6709c",
+      "node_a:5:f4f1b417",
+      "node_b:0:eb657f91",
+      "node_b:1:b3f04986",
+      "node_b:2:ea842b16",
+      "node_b:3:899be1f2"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "[medical_covid] Consolidated answer for 'How does COVID spread?': Address query objective: How does COVID spread?; State known constraints; Avoid unsupported assumptions; Mark uncertainty explicitly",
+    "used_points": [
+      "node_a:0:d382a58b",
+      "node_a:1:eb36e634",
+      "node_a:2:e0cd9b04",
+      "node_a:3:59626358",
+      "node_a:4:bed6709c",
+      "node_a:5:f4f1b417",
+      "node_b:0:eb657f91",
+      "node_b:1:b3f04986",
+      "node_b:2:ea842b16",
+      "node_b:3:899be1f2"
+    ]
+  }
+]

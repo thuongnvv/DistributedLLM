@@ -1,0 +1,30 @@
+[
+  {
+    "id": "q1_what_is_covid",
+    "query": "What is COVID-19?"
+  },
+  {
+    "id": "q2_common_symptoms",
+    "query": "What are the most common symptoms of COVID-19?"
+  },
+  {
+    "id": "q3_how_spreads",
+    "query": "How does COVID-19 spread?"
+  },
+  {
+    "id": "q4_basic_prevention",
+    "query": "What are simple ways to reduce the risk of getting COVID-19?"
+  },
+  {
+    "id": "q5_when_to_test",
+    "query": "When should someone consider getting tested for COVID-19?"
+  },
+  {
+    "id": "q6_isolation_basics",
+    "query": "If someone tests positive, what should they do right away?"
+  },
+  {
+    "id": "q7_difference_cold_flu_covid",
+    "query": "How is COVID-19 different from the common cold or flu?"
+  }
+]

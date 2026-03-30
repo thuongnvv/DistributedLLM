@@ -1,0 +1,34 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "[medical_covid] Consolidated answer for 'What are COVID-19 symptoms?': Address query objective: What are COVID-19 symptoms?; State known constraints; Avoid unsupported assumptions; Mark uncertainty explicitly",
+    "used_points": [
+      "node_a:0:883e3eca",
+      "node_a:1:eb36e634",
+      "node_a:2:e0cd9b04",
+      "node_a:3:59626358",
+      "node_a:4:bed6709c",
+      "node_a:5:50fbf77c",
+      "node_b:0:e974bb44",
+      "node_b:1:b3f04986",
+      "node_b:2:ea842b16",
+      "node_b:3:899be1f2"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "[medical_covid] Consolidated answer for 'What are COVID-19 symptoms?': Address query objective: What are COVID-19 symptoms?; State known constraints; Avoid unsupported assumptions; Mark uncertainty explicitly",
+    "used_points": [
+      "node_a:0:883e3eca",
+      "node_a:1:eb36e634",
+      "node_a:2:e0cd9b04",
+      "node_a:3:59626358",
+      "node_a:4:bed6709c",
+      "node_a:5:50fbf77c",
+      "node_b:0:e974bb44",
+      "node_b:1:b3f04986",
+      "node_b:2:ea842b16",
+      "node_b:3:899be1f2"
+    ]
+  }
+]

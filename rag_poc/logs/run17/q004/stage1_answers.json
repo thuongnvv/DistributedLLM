@@ -1,0 +1,117 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:f51e6a66",
+        "text": "Wear a face mask in public and when sharing indoor spaces with others. [doc1_covid19.txt:chunk_00006]"
+      },
+      {
+        "point_id": "node_a:1:38a9e0f8",
+        "text": "Maintain physical or social distancing of at least 1‑2 meters from people not in your household. [doc1_covid19.txt:chunk_00006]"
+      },
+      {
+        "point_id": "node_a:2:684d640f",
+        "text": "Keep indoor environments well ventilated by opening windows or using air filtration. [doc1_covid19.txt:chunk_00006]"
+      },
+      {
+        "point_id": "node_a:3:31729791",
+        "text": "Wash hands frequently with soap and water for at least 20 seconds. [doc1_covid19.txt:chunk_00094]"
+      },
+      {
+        "point_id": "node_a:4:4c4b5937",
+        "text": "Avoid touching your eyes, nose, or mouth with unwashed hands. [doc1_covid19.txt:chunk_00006]"
+      },
+      {
+        "point_id": "node_a:5:c7cb0623",
+        "text": "Stay home if you feel ill or suspect infection; seek medical care only when needed. [doc1_covid19.txt:chunk_00094]"
+      },
+      {
+        "point_id": "node_a:6:1f1bcc3a",
+        "text": "Cover coughs and sneezes with a tissue or the inside of your elbow. [doc1_covid19.txt:chunk_00094]"
+      },
+      {
+        "point_id": "node_a:7:6e0b394a",
+        "text": "Do not share personal household items such as utensils, towels, or phones. [doc1_covid19.txt:chunk_00094]"
+      },
+      {
+        "point_id": "node_a:8:741fb983",
+        "text": "Get vaccinated against COVID‑19 to lower risk of infection and severe disease. [doc1_covid19.txt:chunk_00006]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:7f420731",
+        "text": "Maintain good indoor airflow to dilute viral particles. [doc2_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_b:1:668f45db",
+        "text": "Keep physical distance from others, especially in crowded indoor spaces. [doc2_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_b:2:903b17ef",
+        "text": "Wear a mask in settings where COVID-19 transmission risk is high. [doc2_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_b:3:bcf038c5",
+        "text": "Practice frequent hand washing with soap for at least 20 seconds. [doc2_covid19.txt:chunk_00023]"
+      },
+      {
+        "point_id": "node_b:4:16b9552f",
+        "text": "Use alcohol-based hand sanitizer (≥60% alcohol) when soap isn’t available. [doc2_covid19.txt:chunk_00023]"
+      },
+      {
+        "point_id": "node_b:5:34ba4edf",
+        "text": "Cover coughs and sneezes with a tissue or your elbow, then wash hands. [doc2_covid19.txt:chunk_00023]"
+      },
+      {
+        "point_id": "node_b:6:6b1a85e3",
+        "text": "Avoid close contact with anyone who is sick or showing COVID-19 symptoms. [doc2_covid19.txt:chunk_00022]"
+      },
+      {
+        "point_id": "node_b:7:7894a227",
+        "text": "Limit time spent in poorly ventilated indoor areas with many people. [doc2_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_b:8:7002dc39",
+        "text": "Stay home if you feel ill or have been exposed to COVID-19. [doc2_covid19.txt:chunk_00022]"
+      },
+      {
+        "point_id": "node_b:9:92e0df78",
+        "text": "Follow vaccination recommendations to further lower infection risk. [doc2_covid19.txt:chunk_00001]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:1c575309",
+        "text": "Avoid crowded places and poorly ventilated indoor spaces. [doc3_covid19.txt:chunk_00016]"
+      },
+      {
+        "point_id": "node_c:1:4ad3cc4c",
+        "text": "Keep at least 1 metre distance from others in public. [doc3_covid19.txt:chunk_00016]"
+      },
+      {
+        "point_id": "node_c:2:fc717e04",
+        "text": "Wear a mask in public where community transmission is present or distancing is not possible. [doc3_covid19.txt:chunk_00016]"
+      },
+      {
+        "point_id": "node_c:3:e8d32520",
+        "text": "Wash hands frequently with soap and water or use an alcohol‑based hand rub. [doc3_covid19.txt:chunk_00016]"
+      },
+      {
+        "point_id": "node_c:4:9ee2933",
+        "text": "Ensure indoor areas are well ventilated. [doc3_covid19.txt:chunk_00016]"
+      },
+      {
+        "point_id": "node_c:5:55e7dfdd",
+        "text": "Get vaccinated and continue other measures like distancing and hand hygiene. [doc3_covid19.txt:chunk_00012]"
+      }
+    ]
+  }
+]

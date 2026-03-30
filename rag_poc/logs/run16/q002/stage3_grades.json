@@ -1,0 +1,70 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:0:84c650f0",
+      "node_b:1:c81e8d48"
+    ],
+    "note": "Insufficient context to verify the statements referenced by the points."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:0:8ca08f84"
+    ],
+    "note": "Insufficient context to verify the statement referenced by the point."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:0:2fcefcba"
+    ],
+    "note": "Insufficient context to verify the claim."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:0:8ca08f84"
+    ],
+    "note": "Insufficient context to verify the claim."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "FAIL",
+    "agree_points": [],
+    "reject_points": [
+      "node_a:0:2fcefcba"
+    ],
+    "unknown_points": [],
+    "note": "The draft incorrectly names the virus as SARS‑CoV‑12 and cites sources (doc1) not present in the provided context; the correct definition in the context is SARS‑CoV‑2."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "FAIL",
+    "agree_points": [],
+    "reject_points": [
+      "node_b:0:84c650f0",
+      "node_b:1:c81e8d48"
+    ],
+    "unknown_points": [],
+    "note": "The draft incorrectly names the virus as SARS‑CoV‑12 and adds timeline details not covered in the provided context; sources (doc2) are not part of the given material."
+  }
+]

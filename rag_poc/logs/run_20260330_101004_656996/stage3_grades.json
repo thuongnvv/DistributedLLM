@@ -1,0 +1,39 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:f8ccdfa0",
+      "node_a:1:bcb839e1",
+      "node_a:2:5913259b",
+      "node_a:3:df9491a2",
+      "node_a:4:4c6a180",
+      "node_a:5:169d6ee6",
+      "node_a:6:3a3b4e64",
+      "node_b:8:5dcfaa3d",
+      "node_b:9:8eaac50b"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All cited points are accurately reflected in the draft."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:0:f8ccdfa0",
+      "node_a:1:bcb839e1",
+      "node_a:2:5913259b",
+      "node_a:3:df9491a2",
+      "node_a:4:4c6a180",
+      "node_a:5:169d6ee6",
+      "node_a:6:3a3b4e64",
+      "node_a:7:d6e5a5e4"
+    ],
+    "note": "All used points reference doc1_covid19.txt, which is not part of the provided context (doc2_covid19.txt). Unable to verify correctness; therefore marked UNKNOWN."
+  }
+]

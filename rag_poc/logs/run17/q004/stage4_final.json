@@ -1,0 +1,47 @@
+{
+  "winner": "node_c",
+  "final_answer": "To lower your risk of COVID-19, wear a mask in public when community transmission is high or distancing is not possible, keep at least 1 metre distance from others, avoid crowded or poorly ventilated indoor spaces, ensure indoor areas are well ventilated, wash hands frequently with soap and water or an alcohol‑based hand rub, and get vaccinated [doc3_covid19.txt:chunk_00016] [doc3_covid19.txt:chunk_00012].",
+  "metrics": {
+    "pass": {
+      "node_a": 0,
+      "node_b": 0,
+      "node_c": 0
+    },
+    "fail": {
+      "node_a": 0,
+      "node_b": 0,
+      "node_c": 0
+    },
+    "agree": {
+      "node_a": 0,
+      "node_b": 0,
+      "node_c": 0
+    },
+    "reject": {
+      "node_a": 0,
+      "node_b": 0,
+      "node_c": 0
+    },
+    "eligible_reviews": {
+      "node_a": 2,
+      "node_b": 2,
+      "node_c": 2
+    },
+    "used_points": {
+      "node_a": 9,
+      "node_b": 10,
+      "node_c": 6
+    },
+    "agree_rate": {
+      "node_a": 0.0,
+      "node_b": 0.0,
+      "node_c": 0.0
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "node_c": 5.0
+    },
+    "point_rep_delta": {}
+  }
+}

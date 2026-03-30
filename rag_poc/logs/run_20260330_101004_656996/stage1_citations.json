@@ -1,0 +1,66 @@
+{
+  "node_a": [
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00010",
+      "text": "Signs and symptoms\nMain article: Symptoms of COVID-19\nSymptoms of COVID-19",
+      "score": 0.8861
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00011",
+      "text": "The symptoms of COVID-19 are variable depending on the type of variant contracted, ranging from mild symptoms to a potentially fatal illness.[41][42] Common symptoms include coughing, fever, loss of smell and taste, with less common ones including headaches, nasal congestion and runny nose, muscle pain, sore throat, diarrhea, eye irritation,[43] and toes swelling or turning purple,[44] and in moderate to severe cases, breathing difficulties.[45] People with the COVID-19 infection may have different symptoms, and their symptoms may change over time.",
+      "score": 0.8454
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00001",
+      "text": "The symptoms of COVID‑19 can vary but often include fever,[8] fatigue, cough, breathing difficulties, loss of smell, and loss of taste.[9][10][11] Symptoms may begin one to 14 days after exposure to the virus",
+      "score": 0.788
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00012",
+      "text": "Three common clusters of symptoms have been identified: a respiratory symptom cluster with cough, sputum, shortness of breath, and fever; a musculoskeletal symptom cluster with muscle and joint pain, headache, and fatigue; and a cluster of digestive symptoms with abdominal pain, vomiting, and diarrhea.[45] In people without prior ear, nose, or throat disorders, loss of taste combined with loss of smell is associated with COVID-19 and is reported in as many as 88% of symptomatic cases.[46][47][48]",
+      "score": 0.7142
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00157",
+      "text": "Around 10% to 30% of non-hospitalised people with COVID-19 go on to develop long COVID. For those that do need hospitalisation, the incidence of long-term effects is over 50%.[15] Long COVID is an often severe multisystem disease with a large set of symptoms. Common symptoms are fatigue, post-exertional malaise, cognitive issues, shortness of breath and pain. There are likely various, possibly coinciding, causes.[15] Organ damage from the acute infection can explain a part of the symptoms, but long COVID is also observed in people where organ damage seems to be absent.[330]",
+      "score": 0.707
+    }
+  ],
+  "node_b": [
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00002",
+      "text": "Create your personalized vaccination plan.\nSymptoms\n\nCOVID-19 symptoms often show up 2 to 14 days after contact with the virus. You may have common cold symptoms, such as congestion, runny nose or sore throat.\n\nOther symptoms include:\n\n    Dry cough.\n    Shortness of breath.\n    Loss of taste or smell.\n    Extreme tiredness, called fatigue.\n    Digestive symptoms such as upset stomach, vomiting or loose stools, also called diarrhea.\n    Pain, such as headaches and body or muscle aches.\n    Fever or chills.",
+      "score": 0.758
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00006",
+      "text": "Dizziness.\n    Dry mouth, crying with few or no tears, or less need to urinate, suggesting dehydration.\n    Frequent vomiting or loose stools, called diarrhea, for longer than 24 hours.\n    Fever that doesn't go away.\n    Trouble staying awake or waking up.\n    Being confused or agitated.\n\nThis list doesn't include every emergency symptom. If you or a person you're taking care of has symptoms that worry you, get help. Let the healthcare team know about a positive test for COVID-19 or symptoms of the illness.\n \nFrom Mayo Clinic to your inbox",
+      "score": 0.7101
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00005",
+      "text": "People who are at high risk of serious illness may get medicine to block the spread of the COVID-19 virus in the body. Or your healthcare team may plan regular checks to monitor your health.\n\nGet emergency help right away for any of these symptoms in adults:\n\n    Trouble breathing or catching your breath.\n    Skin, lips or nail beds that are pale, gray or blue.\n    New confusion.\n    Trouble staying awake or waking up.\n    Chest pain or pressure that is constant.\n\nGet emergency help right away for any of those symptoms in children, as well as the following symptoms:",
+      "score": 0.6691
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00015",
+      "text": "COVID-19: Who's at higher risk of serious symptoms? - Related informationCOVID-19: Who's at higher risk of serious symptoms?\n\nComplications\n\nComplications of severe COVID-19 illness can include:\n\n    Acute respiratory distress syndrome, which is when the body's organs do not get enough oxygen.\n    New heart issues or shock caused by the infection or heart conditions.\n    Overreaction of the immune system, called the inflammatory response.\n    Blood clots.\n    Damage to brain function, called encephalopathy.\n    Kidney injury.",
+      "score": 0.6685
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00000",
+      "text": "Overview\n\nCoronavirus disease 2019 (COVID-19), is an illness caused by a virus. The virus is called severe acute respiratory syndrome coronavirus 2 or, more commonly, SARS-CoV-2. It started spreading at the end of 2019 and became a pandemic disease in 2020.\n\nThe virus that causes COVID-19 spreads between people in close contact. Most commonly, it spreads through the air in tiny droplets of fluid. Many people with COVID-19 have mild illness or no symptoms. But for older adults and people with certain medical conditions, COVID-19 can lead to the need for care in the hospital or death.",
+      "score": 0.6571
+    }
+  ]
+}

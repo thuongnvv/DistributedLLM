@@ -1,0 +1,73 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:65304860",
+        "text": "COVID-19 spreads mainly by inhaling droplets or aerosols that contain SARS‑CoV‑2 from infected people. [doc1_covid19.txt:chunk_00024]"
+      },
+      {
+        "point_id": "node_a:1:775f43bf",
+        "text": "Infected individuals release these particles when they breathe, talk, cough, sneeze, or sing. [doc1_covid19.txt:chunk_00024]"
+      },
+      {
+        "point_id": "node_a:2:61c0da92",
+        "text": "Transmission is highest at close range but can occur over longer indoor distances as small particles stay airborne. [doc1_covid19.txt:chunk_00004]"
+      },
+      {
+        "point_id": "node_a:3:7b4b5906",
+        "text": "The virus can enter the body through the eyes, nose, or mouth when infectious particles are breathed in. [doc1_covid19.txt:chunk_00004]"
+      },
+      {
+        "point_id": "node_a:4:625ee21c",
+        "text": "Touching contaminated surfaces and then touching the face (eyes, nose, mouth) can also spread COVID‑19. [doc1_covid19.txt:chunk_00004]"
+      },
+      {
+        "point_id": "node_a:5:a68a9252",
+        "text": "People remain contagious for up to 20 days and can transmit the virus even without symptoms. [doc1_covid19.txt:chunk_00004]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:d2f45253",
+        "text": "COVID-19 spreads mainly person-to-person through respiratory droplets when an infected person coughs, sneezes, breathes, sings or talks. [doc2_covid19.txt:chunk"
+      },
+      {
+        "point_id": "node_b:1:d94ea288",
+        "text": "Droplets can land on a nearby person’s face or be inhaled by people close together, especially in low‑airflow settings. [doc2_covid19.txt:chunk_00008]"
+      },
+      {
+        "point_id": "node_b:2:4b0fab9b",
+        "text": "The virus travels in tiny airborne droplets that remain suspended and spread through the air in close contact situations. [doc2_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_b:3:ceb892ad",
+        "text": "Asymptomatic or pre‑symptomatic individuals can transmit the virus, making close contact a key risk factor. [doc2_covid19.txt:chunk_00007]"
+      },
+      {
+        "point_id": "node_b:4:c7b25ba3",
+        "text": "Risk increases with prolonged exposure (>30 min), crowded indoor spaces, and poor ventilation. [doc2_covid19.txt:chunk_00011]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:e78a5947",
+        "text": "COVID-19 spreads when an infected person releases droplets or aerosols from the mouth or nose while coughing, sneezing, speaking, singing, or breathing. [doc3_c"
+      },
+      {
+        "point_id": "node_c:1:ff7489c9",
+        "text": "Both large respiratory droplets and smaller aerosol particles can transmit the virus, and infected individuals can be contagious even without symptoms. [doc3_co"
+      },
+      {
+        "point_id": "node_c:2:ec7a1c39",
+        "text": "Touching surfaces contaminated with the virus and then touching the mouth, nose, or eyes can also cause infection. [doc3_covid19.txt:chunk_00005]"
+      }
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+# Runtime logs
+
+# Chroma vector stores
+data/node_a/chroma_store/
+data/node_b/chroma_store/
+data/node_c/chroma_store/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pyenv/
+
+# Env
+.env

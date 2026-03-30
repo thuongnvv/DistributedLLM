@@ -1,0 +1,60 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:883e3eca",
+        "text": "Address query objective: What are COVID-19 symptoms?"
+      },
+      {
+        "point_id": "node_a:1:eb36e634",
+        "text": "State known constraints"
+      },
+      {
+        "point_id": "node_a:2:e0cd9b04",
+        "text": "Avoid unsupported assumptions"
+      },
+      {
+        "point_id": "node_a:3:59626358",
+        "text": "Mark uncertainty explicitly"
+      },
+      {
+        "point_id": "node_a:4:bed6709c",
+        "text": "Provide next verification step"
+      },
+      {
+        "point_id": "node_a:5:50fbf77c",
+        "text": "Ground in provided input_text (len=2100)"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:e974bb44",
+        "text": "Address query objective: What are COVID-19 symptoms?"
+      },
+      {
+        "point_id": "node_b:1:b3f04986",
+        "text": "State known constraints"
+      },
+      {
+        "point_id": "node_b:2:ea842b16",
+        "text": "Avoid unsupported assumptions"
+      },
+      {
+        "point_id": "node_b:3:899be1f2",
+        "text": "Mark uncertainty explicitly"
+      },
+      {
+        "point_id": "node_b:4:c5eb84c7",
+        "text": "Provide next verification step"
+      },
+      {
+        "point_id": "node_b:5:352eabe7",
+        "text": "Ground in provided input_text (len=2932)"
+      }
+    ]
+  }
+]

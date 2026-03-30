@@ -1,0 +1,95 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "FAIL",
+    "agree_points": [
+      "node_b:1:92fdbc64",
+      "node_b:2:abb3a2bf",
+      "node_b:3:123cf597",
+      "node_b:4:fd92bfd1",
+      "node_b:5:86381ed4"
+    ],
+    "reject_points": [
+      "node_b:0:df2f0bb4",
+      "node_b:6:e946abc0",
+      "node_b:7:1238a23"
+    ],
+    "unknown_points": [],
+    "note": "Doc1 confirms fever, cough, loss of smell/taste, fatigue, and breathing difficulties, but lists headache, muscle aches, congestion, runny nose, sore throat, and digestive symptoms as less common; labeling them as most common is inaccurate."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:690aa27",
+      "node_c:1:5640c05e",
+      "node_c:2:a88b3a57"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "Doc1 supports fever, cough, and fatigue as common COVID-19 symptoms."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:0:81094541",
+      "node_a:1:1b83bd59",
+      "node_a:2:67983fde",
+      "node_a:3:9ca87eec",
+      "node_a:4:ffffa95"
+    ],
+    "note": "Insufficient context to verify points; source documents not provided."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:0:690aa27",
+      "node_c:1:5640c05e",
+      "node_c:2:a88b3a57"
+    ],
+    "note": "Insufficient context to verify points; source documents not provided."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:81094541",
+      "node_a:1:1b83bd59",
+      "node_a:2:67983fde",
+      "node_a:3:9ca87eec",
+      "node_a:4:ffffa95"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All cited symptoms (fever, cough, loss of smell, loss of taste, fatigue) are confirmed as common COVID-19 symptoms in doc3_covid19.txt:chunk_00001."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:df2f0bb4",
+      "node_b:1:92fdbc64",
+      "node_b:2:abb3a2bf",
+      "node_b:3:123cf597",
+      "node_b:4:fd92bfd1",
+      "node_b:5:86381ed4",
+      "node_b:6:e946abc0",
+      "node_b:7:1238a23"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All cited symptoms (congestion, runny nose, sore throat, dry cough, shortness of breath, loss of taste/smell, extreme fatigue, fever/chills, headaches, muscle aches, digestive symptoms) are supported by doc3_covid19.txt (chunks 00001 and 00002)."
+  }
+]

@@ -1,0 +1,76 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:0:2688a553",
+      "node_b:1:ab8a6792",
+      "node_b:2:bbd245c1",
+      "node_b:3:f8da2576"
+    ],
+    "note": "Insufficient context to verify the referenced points; they refer to external documents not provided."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:0:f0be5f17"
+    ],
+    "note": "Insufficient context to verify the referenced point; it refers to an external document not provided."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:0:2507e9f8",
+      "node_a:1:1a4ae692"
+    ],
+    "note": "Points reference external documents not present in the provided context; cannot verify their accuracy."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:0:f0be5f17"
+    ],
+    "note": "Point references an external document; no supporting information in the provided context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:0:2507e9f8",
+      "node_a:1:1a4ae692"
+    ],
+    "note": "Insufficient context to verify statements."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:0:2688a553",
+      "node_b:1:ab8a6792",
+      "node_b:2:bbd245c1",
+      "node_b:3:f8da2576"
+    ],
+    "note": "Insufficient context to verify statements."
+  }
+]

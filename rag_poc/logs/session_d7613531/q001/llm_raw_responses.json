@@ -1,0 +1,315 @@
+[
+  {
+    "timestamp": "2026-03-30T04:23:31.893235+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer_rag",
+      "node_id": "node_a"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\n- When grading, do not penalize missing info; only flag clear errors.\n\nYou are a knowledge provider node specializing in the document: doc1_covid19.txt\nDomain: medical_covid.\nScope: COVID-19 disease, SARS-CoV-2 virus, symptoms, treatment, prevention, variants.\nWorking style: medical researcher; evidence-based; cites sources.\nIMPORTANT: All your knowledge comes from the retrieved context. Cite sources as [doc_id:chunk_id] for factual claims."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"abstain\": true|false,\n  \"points\": [{\"text\": \"string\"}]\n}\nRules:\n- Answer ONLY using the provided context below.\n- Cite sources inline as [doc_id:chunk_id] for factual claims.\n- If the context does not contain enough information, set abstain=true.\n- Each point must be atomic and <= 160 chars.\n- Return at most 10 points.\nCONTEXT:\n[doc1_covid19.txt:chunk_00010]\nSigns and symptoms\nMain article: Symptoms of COVID-19\nSymptoms of COVID-19\n\n---\n\n[doc1_covid19.txt:chunk_00011]\nThe symptoms of COVID-19 are variable depending on the type of variant contracted, ranging from mild symptoms to a potentially fatal illness.[41][42] Common symptoms include coughing, fever, loss of smell and taste, with less common ones including headaches, nasal congestion and runny nose, muscle pain, sore throat, diarrhea, eye irritation,[43] and toes swelling or turning purple,[44] and in moderate to severe cases, breathing difficulties.[45] People with the COVID-19 infection may have different symptoms, and their symptoms may change over time.\n\n---\n\n[doc1_covid19.txt:chunk_00001]\nThe symptoms of COVID‑19 can vary but often include fever,[8] fatigue, cough, breathing difficulties, loss of smell, and loss of taste.[9][10][11] Symptoms may begin one to 14 days after exposure to the virus\n\n---\n\n[doc1_covid19.txt:chunk_00012]\nThree common clusters of symptoms have been identified: a respiratory symptom cluster with cough, sputum, shortness of breath, and fever; a musculoskeletal symptom cluster with muscle and joint pain, headache, and fatigue; and a cluster of digestive symptoms with abdominal pain, vomiting, and diarrhea.[45] In people without prior ear, nose, or throat disorders, loss of taste combined with loss of smell is associated with COVID-19 and is reported in as many as 88% of symptomatic cases.[46][47][48]\n\n---\n\n[doc1_covid19.txt:chunk_00157]\nAround 10% to 30% of non-hospitalised people with COVID-19 go on to develop long COVID. For those that do need hospitalisation, the incidence of long-term effects is over 50%.[15] Long COVID is an often severe multisystem disease with a large set of symptoms. Common symptoms are fatigue, post-exertional malaise, cognitive issues, shortness of breath and pain. There are likely various, possibly coinciding, causes.[15] Organ damage from the acute infection can explain a part of the symptoms, but long COVID is also observed in people where organ damage seems to be absent.[330]\n\nInput JSON:\n{\"query\": \"What are COVID-19 symptoms?\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"abstain\":false,\"points\":[{\"text\":\"Common COVID-19 symptoms are cough, fever, loss of smell and loss of taste [doc1_covid19.txt:chunk_00011] [doc1_covid19.txt:chunk_00001]\"},{\"text\":\"Other frequent symptoms include fatigue, headache, nasal congestion, runny nose, muscle pain, sore throat, diarrhea, and eye irritation [doc1_covid19.txt:chunk_00011]\"},{\"text\":\"In moderate to severe cases, breathing difficulties may develop [doc1_covid19.txt:chunk_00011]\"},{\"text\":\"Three symptom clusters: respiratory (cough, sputum, shortness of breath, fever); musculoskeletal (muscle/joint pain, headache, fatigue); digestive (abdominal pain, vomiting, diarrhea) [doc1_covid19.txt:chunk_00012]\"},{\"text\":\"Loss of taste together with loss of smell occurs in up to 88% of symptomatic cases without prior ENT disorders [doc1_covid19.txt:chunk_00012]\"},{\"text\":\"Symptoms typically begin 1 to 14 days after exposure to the virus [doc1_covid19.txt:chunk_00001]\"},{\"text\":\"Symptoms vary by variant and may change over time [doc1_covid19.txt:chunk_00011]\"}]}",
+    "response_json": {
+      "id": "chatcmpl-e9e2491c-c0ea-49b5-8e6f-69dabc86ebbf",
+      "object": "chat.completion",
+      "created": 1774844608,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"abstain\":false,\"points\":[{\"text\":\"Common COVID-19 symptoms are cough, fever, loss of smell and loss of taste [doc1_covid19.txt:chunk_00011] [doc1_covid19.txt:chunk_00001]\"},{\"text\":\"Other frequent symptoms include fatigue, headache, nasal congestion, runny nose, muscle pain, sore throat, diarrhea, and eye irritation [doc1_covid19.txt:chunk_00011]\"},{\"text\":\"In moderate to severe cases, breathing difficulties may develop [doc1_covid19.txt:chunk_00011]\"},{\"text\":\"Three symptom clusters: respiratory (cough, sputum, shortness of breath, fever); musculoskeletal (muscle/joint pain, headache, fatigue); digestive (abdominal pain, vomiting, diarrhea) [doc1_covid19.txt:chunk_00012]\"},{\"text\":\"Loss of taste together with loss of smell occurs in up to 88% of symptomatic cases without prior ENT disorders [doc1_covid19.txt:chunk_00012]\"},{\"text\":\"Symptoms typically begin 1 to 14 days after exposure to the virus [doc1_covid19.txt:chunk_00001]\"},{\"text\":\"Symptoms vary by variant and may change over time [doc1_covid19.txt:chunk_00011]\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 873,
+        "completion_tokens": 649,
+        "total_tokens": 1522
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-30T04:23:33.429461+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage1_answer_rag",
+      "node_id": "node_b"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\n- When grading, do not penalize missing info; only flag clear errors.\n\nYou are a knowledge provider node specializing in the document: doc2_covid19.txt\nDomain: medical_covid.\nScope: COVID-19 disease, SARS-CoV-2 virus, symptoms, treatment, prevention, vaccination.\nWorking style: healthcare provider; practical guidance; patient-focused.\nIMPORTANT: All your knowledge comes from the retrieved context. Cite sources as [doc_id:chunk_id] for factual claims."
+        },
+        {
+          "role": "user",
+          "content": "TASK: ANSWER\nReturn EXACT JSON schema:\n{\n  \"abstain\": true|false,\n  \"points\": [{\"text\": \"string\"}]\n}\nRules:\n- Answer ONLY using the provided context below.\n- Cite sources inline as [doc_id:chunk_id] for factual claims.\n- If the context does not contain enough information, set abstain=true.\n- Each point must be atomic and <= 160 chars.\n- Return at most 10 points.\nCONTEXT:\n[doc2_covid19.txt:chunk_00002]\nCreate your personalized vaccination plan.\nSymptoms\n\nCOVID-19 symptoms often show up 2 to 14 days after contact with the virus. You may have common cold symptoms, such as congestion, runny nose or sore throat.\n\nOther symptoms include:\n\n    Dry cough.\n    Shortness of breath.\n    Loss of taste or smell.\n    Extreme tiredness, called fatigue.\n    Digestive symptoms such as upset stomach, vomiting or loose stools, also called diarrhea.\n    Pain, such as headaches and body or muscle aches.\n    Fever or chills.\n\n---\n\n[doc2_covid19.txt:chunk_00006]\nDizziness.\n    Dry mouth, crying with few or no tears, or less need to urinate, suggesting dehydration.\n    Frequent vomiting or loose stools, called diarrhea, for longer than 24 hours.\n    Fever that doesn't go away.\n    Trouble staying awake or waking up.\n    Being confused or agitated.\n\nThis list doesn't include every emergency symptom. If you or a person you're taking care of has symptoms that worry you, get help. Let the healthcare team know about a positive test for COVID-19 or symptoms of the illness.\n \nFrom Mayo Clinic to your inbox\n\n---\n\n[doc2_covid19.txt:chunk_00005]\nPeople who are at high risk of serious illness may get medicine to block the spread of the COVID-19 virus in the body. Or your healthcare team may plan regular checks to monitor your health.\n\nGet emergency help right away for any of these symptoms in adults:\n\n    Trouble breathing or catching your breath.\n    Skin, lips or nail beds that are pale, gray or blue.\n    New confusion.\n    Trouble staying awake or waking up.\n    Chest pain or pressure that is constant.\n\nGet emergency help right away for any of those symptoms in children, as well as the following symptoms:\n\n---\n\n[doc2_covid19.txt:chunk_00015]\nCOVID-19: Who's at higher risk of serious symptoms? - Related informationCOVID-19: Who's at higher risk of serious symptoms?\n\nComplications\n\nComplications of severe COVID-19 illness can include:\n\n    Acute respiratory distress syndrome, which is when the body's organs do not get enough oxygen.\n    New heart issues or shock caused by the infection or heart conditions.\n    Overreaction of the immune system, called the inflammatory response.\n    Blood clots.\n    Damage to brain function, called encephalopathy.\n    Kidney injury.\n\n---\n\n[doc2_covid19.txt:chunk_00000]\nOverview\n\nCoronavirus disease 2019 (COVID-19), is an illness caused by a virus. The virus is called severe acute respiratory syndrome coronavirus 2 or, more commonly, SARS-CoV-2. It started spreading at the end of 2019 and became a pandemic disease in 2020.\n\nThe virus that causes COVID-19 spreads between people in close contact. Most commonly, it spreads through the air in tiny droplets of fluid. Many people with COVID-19 have mild illness or no symptoms. But for older adults and people with certain medical conditions, COVID-19 can lead to the need for care in the hospital or death.\n\nInput JSON:\n{\"query\": \"What are COVID-19 symptoms?\"}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"abstain\":false,\"points\":[{\"text\":\"Congestion, runny nose, or sore throat (common cold symptoms) [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Dry cough [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Shortness of breath [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Loss of taste or smell [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Extreme fatigue [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Digestive issues such as upset stomach, vomiting, or diarrhea [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Headaches and body or muscle aches [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Fever or chills [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Dizziness [doc2_covid19.txt:chunk_00006]\"},{\"text\":\"Persistent fever that doesn’t go away [doc2_covid19.txt:chunk_00006]\"}]}",
+    "response_json": {
+      "id": "chatcmpl-e2635939-b78a-4db6-a6aa-58a494f56f9d",
+      "object": "chat.completion",
+      "created": 1774844612,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"abstain\":false,\"points\":[{\"text\":\"Congestion, runny nose, or sore throat (common cold symptoms) [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Dry cough [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Shortness of breath [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Loss of taste or smell [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Extreme fatigue [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Digestive issues such as upset stomach, vomiting, or diarrhea [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Headaches and body or muscle aches [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Fever or chills [doc2_covid19.txt:chunk_00002]\"},{\"text\":\"Dizziness [doc2_covid19.txt:chunk_00006]\"},{\"text\":\"Persistent fever that doesn’t go away [doc2_covid19.txt:chunk_00006]\"}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1035,
+        "completion_tokens": 704,
+        "total_tokens": 1739
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-30T04:23:35.477868+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize_rag",
+      "node_id": "node_a"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\n- When grading, do not penalize missing info; only flag clear errors.\n\nYou are a knowledge provider node specializing in the document: doc1_covid19.txt\nDomain: medical_covid.\nScope: COVID-19 disease, SARS-CoV-2 virus, symptoms, treatment, prevention, variants.\nWorking style: medical researcher; evidence-based; cites sources.\nIMPORTANT: All your knowledge comes from the retrieved context. Cite sources as [doc_id:chunk_id] for factual claims."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules:\n- Synthesis must be grounded in provided points_map.\n- Do not invent IDs; used_points must be subset of keys(points_map).\n- Avoid redundant points that repeat the same idea.\n- If synthesis_text is not 'UNKNOWN', used_points must not be empty.\n- Every major claim in synthesis_text must be traceable to at least one point_id in used_points.\n- If you cannot support the answer with point IDs, return synthesis_text='UNKNOWN' and used_points=[].\n- Select at most 10 point IDs.\nInput JSON:\n{\"query\": \"What are COVID-19 symptoms?\", \"points_map\": {\"node_a:0:9009d27b\": \"Common COVID-19 symptoms are cough, fever, loss of smell and loss of taste [doc1_covid19.txt:chunk_00011] [doc1_covid19.txt:chunk_00001]\", \"node_a:1:edc9f6c\": \"Other frequent symptoms include fatigue, headache, nasal congestion, runny nose, muscle pain, sore throat, diarrhea, and eye irritation [doc1_covid19.txt:chunk_\", \"node_a:2:5816b8e7\": \"In moderate to severe cases, breathing difficulties may develop [doc1_covid19.txt:chunk_00011]\", \"node_a:3:f2da2411\": \"Three symptom clusters: respiratory (cough, sputum, shortness of breath, fever); musculoskeletal (muscle/joint pain, headache, fatigue); digestive (abdominal pa\", \"node_a:4:ca2a4747\": \"Loss of taste together with loss of smell occurs in up to 88% of symptomatic cases without prior ENT disorders [doc1_covid19.txt:chunk_00012]\", \"node_a:5:ff15c209\": \"Symptoms typically begin 1 to 14 days after exposure to the virus [doc1_covid19.txt:chunk_00001]\", \"node_a:6:3a98f010\": \"Symptoms vary by variant and may change over time [doc1_covid19.txt:chunk_00011]\", \"node_b:0:df2f0bb4\": \"Congestion, runny nose, or sore throat (common cold symptoms) [doc2_covid19.txt:chunk_00002]\", \"node_b:1:92fdbc64\": \"Dry cough [doc2_covid19.txt:chunk_00002]\", \"node_b:2:abb3a2bf\": \"Shortness of breath [doc2_covid19.txt:chunk_00002]\", \"node_b:3:123cf597\": \"Loss of taste or smell [doc2_covid19.txt:chunk_00002]\", \"node_b:4:c817319c\": \"Extreme fatigue [doc2_covid19.txt:chunk_00002]\", \"node_b:5:639881fe\": \"Digestive issues such as upset stomach, vomiting, or diarrhea [doc2_covid19.txt:chunk_00002]\", \"node_b:6:e946abc0\": \"Headaches and body or muscle aches [doc2_covid19.txt:chunk_00002]\", \"node_b:7:3c4297b1\": \"Fever or chills [doc2_covid19.txt:chunk_00002]\", \"node_b:8:895d5e78\": \"Dizziness [doc2_covid19.txt:chunk_00006]\", \"node_b:9:270e0a43\": \"Persistent fever that doesn\\u2019t go away [doc2_covid19.txt:chunk_00006]\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"COVID-19 typically presents with respiratory symptoms such as cough and fever, along with loss of smell or taste. Additional frequent manifestations include fatigue, headache, nasal congestion, runny nose, muscle or joint pain, sore throat, diarrhea, and eye irritation. In moderate to severe cases, breathing difficulties may develop.\",\"used_points\":[\"node_a:0:9009d27b\",\"node_a:1:edc9f6c\",\"node_a:2:5816b8e7\"]}",
+    "response_json": {
+      "id": "chatcmpl-2da4e2a6-88b2-4d63-94d9-92a0182af138",
+      "object": "chat.completion",
+      "created": 1774844614,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"COVID-19 typically presents with respiratory symptoms such as cough and fever, along with loss of smell or taste. Additional frequent manifestations include fatigue, headache, nasal congestion, runny nose, muscle or joint pain, sore throat, diarrhea, and eye irritation. In moderate to severe cases, breathing difficulties may develop.\",\"used_points\":[\"node_a:0:9009d27b\",\"node_a:1:edc9f6c\",\"node_a:2:5816b8e7\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1065,
+        "completion_tokens": 736,
+        "total_tokens": 1801
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-30T04:23:37.016925+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage2_synthesize_rag",
+      "node_id": "node_b"
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\n- When grading, do not penalize missing info; only flag clear errors.\n\nYou are a knowledge provider node specializing in the document: doc2_covid19.txt\nDomain: medical_covid.\nScope: COVID-19 disease, SARS-CoV-2 virus, symptoms, treatment, prevention, vaccination.\nWorking style: healthcare provider; practical guidance; patient-focused.\nIMPORTANT: All your knowledge comes from the retrieved context. Cite sources as [doc_id:chunk_id] for factual claims."
+        },
+        {
+          "role": "user",
+          "content": "TASK: SYNTHESIZE\nReturn EXACT JSON schema:\n{\n  \"synthesis_text\": \"string\",\n  \"used_points\": [\"point_id\", \"...\"]\n}\nRules:\n- Synthesis must be grounded in provided points_map.\n- Do not invent IDs; used_points must be subset of keys(points_map).\n- Avoid redundant points that repeat the same idea.\n- If synthesis_text is not 'UNKNOWN', used_points must not be empty.\n- Every major claim in synthesis_text must be traceable to at least one point_id in used_points.\n- If you cannot support the answer with point IDs, return synthesis_text='UNKNOWN' and used_points=[].\n- Select at most 10 point IDs.\nInput JSON:\n{\"query\": \"What are COVID-19 symptoms?\", \"points_map\": {\"node_a:0:9009d27b\": \"Common COVID-19 symptoms are cough, fever, loss of smell and loss of taste [doc1_covid19.txt:chunk_00011] [doc1_covid19.txt:chunk_00001]\", \"node_a:1:edc9f6c\": \"Other frequent symptoms include fatigue, headache, nasal congestion, runny nose, muscle pain, sore throat, diarrhea, and eye irritation [doc1_covid19.txt:chunk_\", \"node_a:2:5816b8e7\": \"In moderate to severe cases, breathing difficulties may develop [doc1_covid19.txt:chunk_00011]\", \"node_a:3:f2da2411\": \"Three symptom clusters: respiratory (cough, sputum, shortness of breath, fever); musculoskeletal (muscle/joint pain, headache, fatigue); digestive (abdominal pa\", \"node_a:4:ca2a4747\": \"Loss of taste together with loss of smell occurs in up to 88% of symptomatic cases without prior ENT disorders [doc1_covid19.txt:chunk_00012]\", \"node_a:5:ff15c209\": \"Symptoms typically begin 1 to 14 days after exposure to the virus [doc1_covid19.txt:chunk_00001]\", \"node_a:6:3a98f010\": \"Symptoms vary by variant and may change over time [doc1_covid19.txt:chunk_00011]\", \"node_b:0:df2f0bb4\": \"Congestion, runny nose, or sore throat (common cold symptoms) [doc2_covid19.txt:chunk_00002]\", \"node_b:1:92fdbc64\": \"Dry cough [doc2_covid19.txt:chunk_00002]\", \"node_b:2:abb3a2bf\": \"Shortness of breath [doc2_covid19.txt:chunk_00002]\", \"node_b:3:123cf597\": \"Loss of taste or smell [doc2_covid19.txt:chunk_00002]\", \"node_b:4:c817319c\": \"Extreme fatigue [doc2_covid19.txt:chunk_00002]\", \"node_b:5:639881fe\": \"Digestive issues such as upset stomach, vomiting, or diarrhea [doc2_covid19.txt:chunk_00002]\", \"node_b:6:e946abc0\": \"Headaches and body or muscle aches [doc2_covid19.txt:chunk_00002]\", \"node_b:7:3c4297b1\": \"Fever or chills [doc2_covid19.txt:chunk_00002]\", \"node_b:8:895d5e78\": \"Dizziness [doc2_covid19.txt:chunk_00006]\", \"node_b:9:270e0a43\": \"Persistent fever that doesn\\u2019t go away [doc2_covid19.txt:chunk_00006]\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\"synthesis_text\":\"COVID-19 can cause a wide range of symptoms. Common early signs include fever or chills, dry cough, and loss of taste or smell. Many patients also experience fatigue, headache, muscle or body aches, nasal congestion, runny nose, sore throat, and digestive problems such as diarrhea or upset stomach. In more severe cases, shortness of breath or other breathing difficulties may develop.\",\"used_points\":[\"node_b:0:df2f0bb4\",\"node_b:1:92fdbc64\",\"node_b:2:abb3a2bf\",\"node_b:3:123cf597\",\"node_b:4:c817319c\",\"node_b:5:639881fe\",\"node_b:6:e946abc0\",\"node_b:7:3c4297b1\",\"node_a:2:5816b8e7\"]}",
+    "response_json": {
+      "id": "chatcmpl-f2178e73-d38a-4c53-846b-5ea7a9b3eb42",
+      "object": "chat.completion",
+      "created": 1774844616,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"synthesis_text\":\"COVID-19 can cause a wide range of symptoms. Common early signs include fever or chills, dry cough, and loss of taste or smell. Many patients also experience fatigue, headache, muscle or body aches, nasal congestion, runny nose, sore throat, and digestive problems such as diarrhea or upset stomach. In more severe cases, shortness of breath or other breathing difficulties may develop.\",\"used_points\":[\"node_b:0:df2f0bb4\",\"node_b:1:92fdbc64\",\"node_b:2:abb3a2bf\",\"node_b:3:123cf597\",\"node_b:4:c817319c\",\"node_b:5:639881fe\",\"node_b:6:e946abc0\",\"node_b:7:3c4297b1\",\"node_a:2:5816b8e7\"]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1065,
+        "completion_tokens": 869,
+        "total_tokens": 1934
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-30T04:24:03.439154+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch_rag",
+      "node_id": "node_a",
+      "target_count": 1
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\n- When grading, do not penalize missing info; only flag clear errors.\n\nYou are a knowledge provider node specializing in the document: doc1_covid19.txt\nDomain: medical_covid.\nScope: COVID-19 disease, SARS-CoV-2 virus, symptoms, treatment, prevention, variants.\nWorking style: medical researcher; evidence-based; cites sources.\nIMPORTANT: All your knowledge comes from the retrieved context. Cite sources as [doc_id:chunk_id] for factual claims."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Use ONLY the provided context to evaluate drafts.\n- Include exactly one vote per target.\n- FAIL only on clear errors from context.\n- UNKNOWN if insufficient context.\n- Only classify IDs present in each target's used_points.\n- Every target_used_points ID must appear in exactly one list.\nCONTEXT:\n[doc1_covid19.txt:chunk_00010]\nSigns and symptoms\nMain article: Symptoms of COVID-19\nSymptoms of COVID-19\n\n---\n\n[doc1_covid19.txt:chunk_00011]\nThe symptoms of COVID-19 are variable depending on the type of variant contracted, ranging from mild symptoms to a potentially fatal illness.[41][42] Common symptoms include coughing, fever, loss of smell and taste, with less common ones including headaches, nasal congestion and runny nose, muscle pain, sore throat, diarrhea, eye irritation,[43] and toes swelling or turning purple,[44] and in moderate to severe cases, breathing difficulties.[45] People with the COVID-19 infection may have different symptoms, and their symptoms may change over time.\n\n---\n\n[doc1_covid19.txt:chunk_00001]\nThe symptoms of COVID‑19 can vary but often include fever,[8] fatigue, cough, breathing difficulties, loss of smell, and loss of taste.[9][10][11] Symptoms may begin one to 14 days after exposure to the virus\n\n---\n\n[doc1_covid19.txt:chunk_00012]\nThree common clusters of symptoms have been identified: a respiratory symptom cluster with cough, sputum, shortness of breath, and fever; a musculoskeletal symptom cluster with muscle and joint pain, headache, and fatigue; and a cluster of digestive symptoms with abdominal pain, vomiting, and diarrhea.[45] In people without prior ear, nose, or throat disorders, loss of taste combined with loss of smell is associated with COVID-19 and is reported in as many as 88% of symptomatic cases.[46][47][48]\n\n---\n\n[doc1_covid19.txt:chunk_00157]\nAround 10% to 30% of non-hospitalised people with COVID-19 go on to develop long COVID. For those that do need hospitalisation, the incidence of long-term effects is over 50%.[15] Long COVID is an often severe multisystem disease with a large set of symptoms. Common symptoms are fatigue, post-exertional malaise, cognitive issues, shortness of breath and pain. There are likely various, possibly coinciding, causes.[15] Organ damage from the acute infection can explain a part of the symptoms, but long COVID is also observed in people where organ damage seems to be absent.[330]\n\nInput JSON:\n{\"query\": \"What are COVID-19 symptoms?\", \"targets\": [{\"target_id\": \"node_b\", \"target_draft\": \"COVID-19 can cause a wide range of symptoms. Common early signs include fever or chills, dry cough, and loss of taste or smell. Many patients also experience fatigue, headache, muscle or body aches, nasal congestion, runny nose, sore throat, and digestive problems such as diarrhea or upset stomach. In more severe cases, shortness of breath or other breathing difficulties may develop.\", \"target_used_points\": [\"node_b:0:df2f0bb4\", \"node_b:1:92fdbc64\", \"node_b:2:abb3a2bf\", \"node_b:3:123cf597\", \"node_b:4:c817319c\", \"node_b:5:639881fe\", \"node_b:6:e946abc0\", \"node_b:7:3c4297b1\", \"node_a:2:5816b8e7\"]}], \"points_map\": {\"node_a:0:9009d27b\": \"Common COVID-19 symptoms are cough, fever, loss of smell and loss of taste [doc1_covid19.txt:chunk_00011] [doc1_covid19.txt:chunk_00001]\", \"node_a:1:edc9f6c\": \"Other frequent symptoms include fatigue, headache, nasal congestion, runny nose, muscle pain, sore throat, diarrhea, and eye irritation [doc1_covid19.txt:chunk_\", \"node_a:2:5816b8e7\": \"In moderate to severe cases, breathing difficulties may develop [doc1_covid19.txt:chunk_00011]\", \"node_a:3:f2da2411\": \"Three symptom clusters: respiratory (cough, sputum, shortness of breath, fever); musculoskeletal (muscle/joint pain, headache, fatigue); digestive (abdominal pa\", \"node_a:4:ca2a4747\": \"Loss of taste together with loss of smell occurs in up to 88% of symptomatic cases without prior ENT disorders [doc1_covid19.txt:chunk_00012]\", \"node_a:5:ff15c209\": \"Symptoms typically begin 1 to 14 days after exposure to the virus [doc1_covid19.txt:chunk_00001]\", \"node_a:6:3a98f010\": \"Symptoms vary by variant and may change over time [doc1_covid19.txt:chunk_00011]\", \"node_b:0:df2f0bb4\": \"Congestion, runny nose, or sore throat (common cold symptoms) [doc2_covid19.txt:chunk_00002]\", \"node_b:1:92fdbc64\": \"Dry cough [doc2_covid19.txt:chunk_00002]\", \"node_b:2:abb3a2bf\": \"Shortness of breath [doc2_covid19.txt:chunk_00002]\", \"node_b:3:123cf597\": \"Loss of taste or smell [doc2_covid19.txt:chunk_00002]\", \"node_b:4:c817319c\": \"Extreme fatigue [doc2_covid19.txt:chunk_00002]\", \"node_b:5:639881fe\": \"Digestive issues such as upset stomach, vomiting, or diarrhea [doc2_covid19.txt:chunk_00002]\", \"node_b:6:e946abc0\": \"Headaches and body or muscle aches [doc2_covid19.txt:chunk_00002]\", \"node_b:7:3c4297b1\": \"Fever or chills [doc2_covid19.txt:chunk_00002]\", \"node_b:8:895d5e78\": \"Dizziness [doc2_covid19.txt:chunk_00006]\", \"node_b:9:270e0a43\": \"Persistent fever that doesn\\u2019t go away [doc2_covid19.txt:chunk_00006]\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"votes\": [\n    {\n      \"target_id\": \"node_b\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [\"node_a:2:5816b8e7\"],\n      \"reject_points\": [],\n      \"unknown_points\": [\n        \"node_b:0:df2f0bb4\",\n        \"node_b:1:92fdbc64\",\n        \"node_b:2:abb3a2bf\",\n        \"node_b:3:123cf597\",\n        \"node_b:4:c817319c\",\n        \"node_b:5:639881fe\",\n        \"node_b:6:e946abc0\",\n        \"node_b:7:3c4297b1\"\n      ],\n      \"note\": \"Only the breathing difficulties point (node_a:2:5816b8e7) is supported by the provided doc1_covid19.txt context. All node_b points reference doc2_covid19.txt, which is not in the supplied context, so they are marked unknown. No clear factual errors detected.\"\n    }\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-739e74be-2fe9-42b1-9e29-77e713d229b9",
+      "object": "chat.completion",
+      "created": 1774844642,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"votes\": [\n    {\n      \"target_id\": \"node_b\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [\"node_a:2:5816b8e7\"],\n      \"reject_points\": [],\n      \"unknown_points\": [\n        \"node_b:0:df2f0bb4\",\n        \"node_b:1:92fdbc64\",\n        \"node_b:2:abb3a2bf\",\n        \"node_b:3:123cf597\",\n        \"node_b:4:c817319c\",\n        \"node_b:5:639881fe\",\n        \"node_b:6:e946abc0\",\n        \"node_b:7:3c4297b1\"\n      ],\n      \"note\": \"Only the breathing difficulties point (node_a:2:5816b8e7) is supported by the provided doc1_covid19.txt context. All node_b points reference doc2_covid19.txt, which is not in the supplied context, so they are marked unknown. No clear factual errors detected.\"\n    }\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1754,
+        "completion_tokens": 693,
+        "total_tokens": 2447
+      }
+    },
+    "retry_errors": [
+      {
+        "attempt": 1,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 23 seconds.\",\"retryAfter\":23,\"limit\":10,\"remaining\":0,\"reset\":1774844640}"
+      },
+      {
+        "attempt": 2,
+        "status_code": 429,
+        "error_preview": "{\"error\":\"rate_limit_exceeded\",\"message\":\"Rate limit exceeded. Try again in 2 seconds.\",\"retryAfter\":2,\"limit\":10,\"remaining\":0,\"reset\":1774844640}"
+      }
+    ],
+    "error": null
+  },
+  {
+    "timestamp": "2026-03-30T04:24:05.070707+00:00",
+    "mode": "mega",
+    "model": "openai-gpt-oss-120b",
+    "base_url": "https://ai.megallm.io/v1",
+    "trace": {
+      "phase": "stage3_grade_batch_rag",
+      "node_id": "node_b",
+      "target_count": 1
+    },
+    "status_code": 200,
+    "request": {
+      "model": "openai-gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a provider knowledge node in a distributed consensus network. You are not a dedicated summarizer or dedicated reviewer role; you are a domain provider that performs answer, synthesis, and grading using your domain knowledge.\nGlobal rules:\n- Output must be one valid JSON object only; no markdown.\n- Use UNKNOWN when uncertain; do not guess.\n- FAIL only on clear, concrete errors or contradictions.\n- Do not invent point_id values; only use IDs provided by client.\n- Be concise and technically precise.\n- When grading, do not penalize missing info; only flag clear errors.\n\nYou are a knowledge provider node specializing in the document: doc2_covid19.txt\nDomain: medical_covid.\nScope: COVID-19 disease, SARS-CoV-2 virus, symptoms, treatment, prevention, vaccination.\nWorking style: healthcare provider; practical guidance; patient-focused.\nIMPORTANT: All your knowledge comes from the retrieved context. Cite sources as [doc_id:chunk_id] for factual claims."
+        },
+        {
+          "role": "user",
+          "content": "TASK: GRADE_BATCH\nReturn EXACT JSON schema:\n{\n  \"votes\": [\n    {\n      \"target_id\": \"node_id\",\n      \"valid\": \"PASS|FAIL|UNKNOWN\",\n      \"agree_points\": [\"point_id\"],\n      \"reject_points\": [\"point_id\"],\n      \"unknown_points\": [\"point_id\"],\n      \"note\": \"string\"\n    }\n  ]\n}\nRules:\n- Use ONLY the provided context to evaluate drafts.\n- Include exactly one vote per target.\n- FAIL only on clear errors from context.\n- UNKNOWN if insufficient context.\n- Only classify IDs present in each target's used_points.\n- Every target_used_points ID must appear in exactly one list.\nCONTEXT:\n[doc2_covid19.txt:chunk_00002]\nCreate your personalized vaccination plan.\nSymptoms\n\nCOVID-19 symptoms often show up 2 to 14 days after contact with the virus. You may have common cold symptoms, such as congestion, runny nose or sore throat.\n\nOther symptoms include:\n\n    Dry cough.\n    Shortness of breath.\n    Loss of taste or smell.\n    Extreme tiredness, called fatigue.\n    Digestive symptoms such as upset stomach, vomiting or loose stools, also called diarrhea.\n    Pain, such as headaches and body or muscle aches.\n    Fever or chills.\n\n---\n\n[doc2_covid19.txt:chunk_00006]\nDizziness.\n    Dry mouth, crying with few or no tears, or less need to urinate, suggesting dehydration.\n    Frequent vomiting or loose stools, called diarrhea, for longer than 24 hours.\n    Fever that doesn't go away.\n    Trouble staying awake or waking up.\n    Being confused or agitated.\n\nThis list doesn't include every emergency symptom. If you or a person you're taking care of has symptoms that worry you, get help. Let the healthcare team know about a positive test for COVID-19 or symptoms of the illness.\n \nFrom Mayo Clinic to your inbox\n\n---\n\n[doc2_covid19.txt:chunk_00005]\nPeople who are at high risk of serious illness may get medicine to block the spread of the COVID-19 virus in the body. Or your healthcare team may plan regular checks to monitor your health.\n\nGet emergency help right away for any of these symptoms in adults:\n\n    Trouble breathing or catching your breath.\n    Skin, lips or nail beds that are pale, gray or blue.\n    New confusion.\n    Trouble staying awake or waking up.\n    Chest pain or pressure that is constant.\n\nGet emergency help right away for any of those symptoms in children, as well as the following symptoms:\n\n---\n\n[doc2_covid19.txt:chunk_00015]\nCOVID-19: Who's at higher risk of serious symptoms? - Related informationCOVID-19: Who's at higher risk of serious symptoms?\n\nComplications\n\nComplications of severe COVID-19 illness can include:\n\n    Acute respiratory distress syndrome, which is when the body's organs do not get enough oxygen.\n    New heart issues or shock caused by the infection or heart conditions.\n    Overreaction of the immune system, called the inflammatory response.\n    Blood clots.\n    Damage to brain function, called encephalopathy.\n    Kidney injury.\n\n---\n\n[doc2_covid19.txt:chunk_00000]\nOverview\n\nCoronavirus disease 2019 (COVID-19), is an illness caused by a virus. The virus is called severe acute respiratory syndrome coronavirus 2 or, more commonly, SARS-CoV-2. It started spreading at the end of 2019 and became a pandemic disease in 2020.\n\nThe virus that causes COVID-19 spreads between people in close contact. Most commonly, it spreads through the air in tiny droplets of fluid. Many people with COVID-19 have mild illness or no symptoms. But for older adults and people with certain medical conditions, COVID-19 can lead to the need for care in the hospital or death.\n\nInput JSON:\n{\"query\": \"What are COVID-19 symptoms?\", \"targets\": [{\"target_id\": \"node_a\", \"target_draft\": \"COVID-19 typically presents with respiratory symptoms such as cough and fever, along with loss of smell or taste. Additional frequent manifestations include fatigue, headache, nasal congestion, runny nose, muscle or joint pain, sore throat, diarrhea, and eye irritation. In moderate to severe cases, breathing difficulties may develop.\", \"target_used_points\": [\"node_a:0:9009d27b\", \"node_a:1:edc9f6c\", \"node_a:2:5816b8e7\"]}], \"points_map\": {\"node_a:0:9009d27b\": \"Common COVID-19 symptoms are cough, fever, loss of smell and loss of taste [doc1_covid19.txt:chunk_00011] [doc1_covid19.txt:chunk_00001]\", \"node_a:1:edc9f6c\": \"Other frequent symptoms include fatigue, headache, nasal congestion, runny nose, muscle pain, sore throat, diarrhea, and eye irritation [doc1_covid19.txt:chunk_\", \"node_a:2:5816b8e7\": \"In moderate to severe cases, breathing difficulties may develop [doc1_covid19.txt:chunk_00011]\", \"node_a:3:f2da2411\": \"Three symptom clusters: respiratory (cough, sputum, shortness of breath, fever); musculoskeletal (muscle/joint pain, headache, fatigue); digestive (abdominal pa\", \"node_a:4:ca2a4747\": \"Loss of taste together with loss of smell occurs in up to 88% of symptomatic cases without prior ENT disorders [doc1_covid19.txt:chunk_00012]\", \"node_a:5:ff15c209\": \"Symptoms typically begin 1 to 14 days after exposure to the virus [doc1_covid19.txt:chunk_00001]\", \"node_a:6:3a98f010\": \"Symptoms vary by variant and may change over time [doc1_covid19.txt:chunk_00011]\", \"node_b:0:df2f0bb4\": \"Congestion, runny nose, or sore throat (common cold symptoms) [doc2_covid19.txt:chunk_00002]\", \"node_b:1:92fdbc64\": \"Dry cough [doc2_covid19.txt:chunk_00002]\", \"node_b:2:abb3a2bf\": \"Shortness of breath [doc2_covid19.txt:chunk_00002]\", \"node_b:3:123cf597\": \"Loss of taste or smell [doc2_covid19.txt:chunk_00002]\", \"node_b:4:c817319c\": \"Extreme fatigue [doc2_covid19.txt:chunk_00002]\", \"node_b:5:639881fe\": \"Digestive issues such as upset stomach, vomiting, or diarrhea [doc2_covid19.txt:chunk_00002]\", \"node_b:6:e946abc0\": \"Headaches and body or muscle aches [doc2_covid19.txt:chunk_00002]\", \"node_b:7:3c4297b1\": \"Fever or chills [doc2_covid19.txt:chunk_00002]\", \"node_b:8:895d5e78\": \"Dizziness [doc2_covid19.txt:chunk_00006]\", \"node_b:9:270e0a43\": \"Persistent fever that doesn\\u2019t go away [doc2_covid19.txt:chunk_00006]\"}}"
+        }
+      ],
+      "temperature": 0.2
+    },
+    "raw_content": "{\n  \"votes\": [\n    {\n      \"target_id\": \"node_a\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [\n        \"node_a:0:9009d27b\",\n        \"node_a:1:edc9f6c\",\n        \"node_a:2:5816b8e7\"\n      ],\n      \"note\": \"The draft references points from doc1_covid19.txt, which is not present in the provided context; therefore verification is not possible.\"\n    }\n  ]\n}",
+    "response_json": {
+      "id": "chatcmpl-29a937f9-ef6d-456b-817c-ebd9c684a69d",
+      "object": "chat.completion",
+      "created": 1774844641,
+      "model": "gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"votes\": [\n    {\n      \"target_id\": \"node_a\",\n      \"valid\": \"UNKNOWN\",\n      \"agree_points\": [],\n      \"reject_points\": [],\n      \"unknown_points\": [\n        \"node_a:0:9009d27b\",\n        \"node_a:1:edc9f6c\",\n        \"node_a:2:5816b8e7\"\n      ],\n      \"note\": \"The draft references points from doc1_covid19.txt, which is not present in the provided context; therefore verification is not possible.\"\n    }\n  ]\n}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1836,
+        "completion_tokens": 443,
+        "total_tokens": 2279
+      }
+    },
+    "retry_errors": [],
+    "error": null
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:f8ccdfa0",
+        "text": "Fever is a common symptom of COVID-19. [doc1_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_a:1:bcb839e1",
+        "text": "Cough (often dry) frequently occurs. [doc1_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_a:2:5913259b",
+        "text": "Loss of smell and loss of taste are reported in up to 88% of symptomatic cases. [doc1_covid19.txt:chunk_00012]"
+      },
+      {
+        "point_id": "node_a:3:df9491a2",
+        "text": "Fatigue and muscle pain are common, part of the musculoskeletal symptom cluster. [doc1_covid19.txt:chunk_00012]"
+      },
+      {
+        "point_id": "node_a:4:4c6a180",
+        "text": "Shortness of breath or breathing difficulties can appear, especially in moderate to severe cases. [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:5:169d6ee6",
+        "text": "Headache and nasal congestion are less common COVID-19 symptoms. [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:6:3a3b4e64",
+        "text": "Diarrhea and other digestive issues may occur in COVID-19. [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:7:d6e5a5e4",
+        "text": "Eye irritation and toe swelling or discoloration have been reported in COVID-19 patients. [doc1_covid19.txt:chunk_00011]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:a2b30df6",
+        "text": "Symptoms appear 2–14 days after exposure. [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:1:1ace4d56",
+        "text": "Congestion, runny nose, or sore throat (common cold symptoms). [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:2:a7b61963",
+        "text": "Dry cough. [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:3:d70f38f5",
+        "text": "Shortness of breath. [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:4:8f244658",
+        "text": "Loss of taste or smell. [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:5:20b8749b",
+        "text": "Extreme fatigue. [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:6:62578a12",
+        "text": "Digestive issues: upset stomach, vomiting, or diarrhea. [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:7:80bdeb34",
+        "text": "Headaches and body or muscle aches. [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:8:5dcfaa3d",
+        "text": "Fever or chills. [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:9:8eaac50b",
+        "text": "Severe signs: persistent fever, confusion, or trouble staying awake (emergency). [doc2_covid19.txt:chunk_00006]"
+      }
+    ]
+  }
+]

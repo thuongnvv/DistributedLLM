@@ -1,0 +1,37 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:2fcefcba",
+        "text": "COVID-19 is a contagious disease caused by the coronavirus SARS‑CoV‑2 [doc1_covid19.txt:chunk_00000][doc1_covid19.txt:chunk_00024]."
+      },
+      {
+        "point_id": "node_a:1:af335e95",
+        "text": "The WHO declared COVID-19 a global health emergency in March 2020 and ended the emergency in May 2023 [doc1_covid19.txt:chunk_00000]."
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:84c650f0",
+        "text": "COVID-19 is an illness caused by the SARS‑CoV‑2 virus [doc2_covid19.txt:chunk_00000]"
+      },
+      {
+        "point_id": "node_b:1:c81e8d48",
+        "text": "It began spreading at the end of 2019 and became a pandemic in 2020 [doc2_covid19.txt:chunk_00000]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:8ca08f84",
+        "text": "COVID-19 is an infectious respiratory illness caused by the SARS‑CoV‑2 coronavirus; ‘CO’=corona, ‘VI’=virus, ‘D’=disease. [doc3_covid19.txt:chunk_00000]"
+      }
+    ]
+  }
+]

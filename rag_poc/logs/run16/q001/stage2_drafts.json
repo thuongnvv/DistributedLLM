@@ -1,0 +1,27 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "COVID-19 is a contagious disease caused by the coronavirus SARS‑CoV‑2 [doc1_covid19.txt:chunk_00000][doc1_covid19.txt:chunk_00024]; the World Health Organization declared it a global health emergency in March 2020 and ended the emergency in May 2023 [doc1_covid19.txt:chunk_00000].",
+    "used_points": [
+      "node_a:0:2507e9f8",
+      "node_a:1:1a4ae692"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "COVID-19 is an illness caused by the SARS‑CoV‑2 virus [doc2_covid19.txt:chunk_00000]. The virus began spreading at the end of 2019 and was declared a pandemic in 2020 [doc2_covid19.txt:chunk_00000]. It spreads mainly through close contact via respiratory droplets when an infected person coughs, sneezes, talks, or breathes [doc2_covid19.txt:chunk_00007]. Most infected people experience mild or no symptoms, but older adults and individuals with certain medical conditions are at higher risk of developing severe illness [doc2_covid19.txt:chunk_000].",
+    "used_points": [
+      "node_b:0:2688a553",
+      "node_b:1:ab8a6792",
+      "node_b:2:bbd245c1",
+      "node_b:3:f8da2576"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "COVID-19 is an infectious respiratory illness caused by the SARS‑CoV‑2 coronavirus; the term stands for corona, virus, disease [doc3_covid19.txt:chunk_00000].",
+    "used_points": [
+      "node_c:0:f0be5f17"
+    ]
+  }
+]

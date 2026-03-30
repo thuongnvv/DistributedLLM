@@ -1,0 +1,24 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "FAIL",
+    "agree_points": [],
+    "reject_points": [
+      "node_a:0:cf8969ad"
+    ],
+    "unknown_points": [],
+    "note": "The draft claims SARS‑CoV‑12, but the provided context identifies the virus as SARS‑CoV‑2, making the statement inaccurate."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "FAIL",
+    "agree_points": [],
+    "reject_points": [
+      "node_a:0:cf8969ad"
+    ],
+    "unknown_points": [],
+    "note": "The draft incorrectly names the virus as SARS‑CoV‑12; the correct name is SARS‑CoV‑2 according to the source document."
+  }
+]

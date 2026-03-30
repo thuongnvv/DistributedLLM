@@ -1,0 +1,94 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:0:5d85b90c",
+      "node_b:1:92fdbc64",
+      "node_b:2:abb3a2bf",
+      "node_b:3:123cf597",
+      "node_b:4:fd92bfd1",
+      "node_b:5:86381ed4",
+      "node_b:6:e946abc0"
+    ],
+    "note": "Draft aligns with known COVID-19 symptoms in doc1, but referenced points are from doc2 and not present in provided context; therefore all points are marked UNKNOWN."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:0:d7c8d989",
+      "node_c:1:e4a691d6",
+      "node_c:2:159731f6"
+    ],
+    "note": "Draft aligns with known COVID-19 symptoms in doc1, but referenced points are from doc3 and not present in provided context; therefore all points are marked UNKNOWN."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:0:58305aea",
+      "node_a:1:c0281c58",
+      "node_a:4:6b077c92",
+      "node_a:2:9eb540dc",
+      "node_a:3:2dd868be"
+    ],
+    "note": "Insufficient context to verify claims; referenced sources are not in the provided documents."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:0:d7c8d989",
+      "node_c:1:e4a691d6",
+      "node_c:2:159731f6"
+    ],
+    "note": "Insufficient context; referenced sources are not in the provided documents."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "FAIL",
+    "agree_points": [
+      "node_a:0:58305aea",
+      "node_a:1:c0281c58",
+      "node_a:4:6b077c92"
+    ],
+    "reject_points": [
+      "node_a:2:9eb540dc",
+      "node_a:3:2dd868be"
+    ],
+    "unknown_points": [],
+    "note": "Fever, cough, and fatigue are listed as the most common symptoms in the provided context; loss of smell and loss of taste are not described as most common, making those claims inaccurate."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "FAIL",
+    "agree_points": [
+      "node_b:5:86381ed4",
+      "node_b:1:92fdbc64",
+      "node_b:4:fd92bfd1"
+    ],
+    "reject_points": [
+      "node_b:2:abb3a2bf",
+      "node_b:0:5d85b90c",
+      "node_b:3:123cf597",
+      "node_b:6:e946abc0"
+    ],
+    "unknown_points": [],
+    "note": "Only fever/chills, dry cough, and extreme fatigue align with the 'most common' symptoms from the context; the other listed symptoms are not supported as most common, resulting in inaccurate claims."
+  }
+]

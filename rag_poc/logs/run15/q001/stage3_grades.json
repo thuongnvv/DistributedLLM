@@ -1,0 +1,88 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:1:d94ea288",
+      "node_b:3:ceb892ad",
+      "node_b:4:c7b25ba3"
+    ],
+    "note": "Content aligns with doc1 but citations refer to external documents; points cannot be verified."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:0:e78a5947",
+      "node_c:1:ff7489c9",
+      "node_c:2:ec7a1c39"
+    ],
+    "note": "Content aligns with doc1; point IDs not present in provided context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:65304860",
+      "node_a:1:775f43bf"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:2:61c0da92",
+      "node_a:3:7b4b5906",
+      "node_a:4:625ee21c",
+      "node_a:5:a68a9252"
+    ],
+    "note": "Points 0 and 1 are supported by doc2_covid19.txt (chunks 00007, 00008). Remaining points lack explicit support in the provided context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:e78a5947",
+      "node_c:1:ff7489c9"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:2:ec7a1c39"
+    ],
+    "note": "Points 0 and 1 are supported by doc2_covid19.txt (chunks 00007, 00008). Point 2 (fomite transmission) is not mentioned in the provided context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:0:65304860",
+      "node_a:1:775f43bf",
+      "node_a:2:61c0da92",
+      "node_a:3:7b4b5906",
+      "node_a:4:625ee21c",
+      "node_a:5:a68a9252"
+    ],
+    "note": "The cited points are from documents not present in the provided context; cannot assess their accuracy."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:1:d94ea288",
+      "node_b:3:ceb892ad",
+      "node_b:4:c7b25ba3"
+    ],
+    "note": "The cited points are from documents not present in the provided context; cannot assess their accuracy."
+  }
+]

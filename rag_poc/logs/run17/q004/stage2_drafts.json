@@ -1,0 +1,45 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "Simple ways to lower your risk of COVID‑19 include wearing a face mask in public and indoor settings [doc1_covid19.txt:chunk_00006], keeping a physical distance of at least 1–2 m from people not in your household [doc1_covid19.txt:chunk_00006], ensuring indoor environments are well ventilated by opening windows or using air filtration [doc1_covid19.txt:chunk_00006], washing hands frequently with soap and water for at least 20 seconds [doc1_covid19.txt:chunk_00094], avoiding touching your eyes, nose, or mouth with unwashed hands [doc1_covid19.txt:chunk_00006], staying home if you feel ill or suspect infection and seeking medical care only when needed [doc1_covid19.txt:chunk_00094], covering coughs and sneezes with a tissue or the inside of your elbow [doc1_covid19.txt:chunk_00094], not sharing personal household items such as utensils, towels, or phones [doc1_covid19.txt:chunk_00094], and getting vaccinated against COVID‑19 to lower the risk of infection and severe disease [doc1_covid19.txt:chunk_00006].",
+    "used_points": [
+      "node_a:0:f51e6a66",
+      "node_a:1:38a9e0f8",
+      "node_a:2:684d640f",
+      "node_a:3:31729791",
+      "node_a:4:4c4b5937",
+      "node_a:5:c7cb0623",
+      "node_a:6:1f1bcc3a",
+      "node_a:7:6e0b394a",
+      "node_a:8:741fb983"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "Simple ways to lower your risk of COVID-19 include keeping indoor air flowing well to dilute viral particles [doc2_covid19.txt:chunk_00001], maintaining physical distance from others especially in crowded indoor spaces [doc2_covid19.txt:chunk_00001], wearing a mask in high‑risk settings [doc2_covid19.txt:chunk_00001], washing hands with soap for at least 20 seconds or using an alcohol‑based sanitizer when soap isn’t available [doc2_covid19.txt:chunk_00023], covering coughs and sneezes with a tissue or your elbow and then washing your hands [doc2_covid19.txt:chunk_00023], avoiding close contact with anyone who is sick or showing symptoms [doc2_covid19.txt:chunk_00022], limiting time spent in poorly ventilated indoor areas with many people [doc2_covid19.txt:chunk_00011], staying home if you feel ill or have been exposed to COVID-19 [doc2_covid19.txt:chunk_00022], and following vaccination recommendations to further reduce infection risk [doc2_covid19.txt:chunk_00001].",
+    "used_points": [
+      "node_b:0:7f420731",
+      "node_b:1:668f45db",
+      "node_b:2:903b17ef",
+      "node_b:3:bcf038c5",
+      "node_b:4:16b9552f",
+      "node_b:5:34ba4edf",
+      "node_b:6:6b1a85e3",
+      "node_b:7:7894a227",
+      "node_b:8:7002dc39",
+      "node_b:9:92e0df78"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "To lower your risk of COVID-19, wear a mask in public when community transmission is high or distancing is not possible, keep at least 1 metre distance from others, avoid crowded or poorly ventilated indoor spaces, ensure indoor areas are well ventilated, wash hands frequently with soap and water or an alcohol‑based hand rub, and get vaccinated [doc3_covid19.txt:chunk_00016] [doc3_covid19.txt:chunk_00012].",
+    "used_points": [
+      "node_c:0:1c575309",
+      "node_c:1:4ad3cc4c",
+      "node_c:2:fc717e04",
+      "node_c:3:e8d32520",
+      "node_c:4:9ee2933",
+      "node_c:5:55e7dfdd"
+    ]
+  }
+]

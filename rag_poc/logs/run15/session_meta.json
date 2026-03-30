@@ -1,0 +1,16 @@
+{
+  "queries": [
+    {
+      "label": "q002",
+      "query": "what is covid 19",
+      "winner": "node_c",
+      "q_dir": "q002"
+    },
+    {
+      "label": "q001",
+      "query": "How does COVID-19 spread?",
+      "winner": "node_c",
+      "q_dir": "q001"
+    }
+  ]
+}

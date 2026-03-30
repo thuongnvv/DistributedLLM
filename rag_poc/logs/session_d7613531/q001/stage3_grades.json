@@ -1,0 +1,35 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "UNKNOWN",
+    "agree_points": [
+      "node_a:2:5816b8e7"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:0:df2f0bb4",
+      "node_b:1:92fdbc64",
+      "node_b:2:abb3a2bf",
+      "node_b:3:123cf597",
+      "node_b:4:c817319c",
+      "node_b:5:639881fe",
+      "node_b:6:e946abc0",
+      "node_b:7:3c4297b1"
+    ],
+    "note": "Only the breathing difficulties point (node_a:2:5816b8e7) is supported by the provided doc1_covid19.txt context. All node_b points reference doc2_covid19.txt, which is not in the supplied context, so they are marked unknown. No clear factual errors detected."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:0:9009d27b",
+      "node_a:1:edc9f6c",
+      "node_a:2:5816b8e7"
+    ],
+    "note": "The draft references points from doc1_covid19.txt, which is not present in the provided context; therefore verification is not possible."
+  }
+]

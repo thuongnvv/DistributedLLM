@@ -1,0 +1,26 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "COVID-19 typically presents with respiratory symptoms such as cough and fever, along with loss of smell or taste. Additional frequent manifestations include fatigue, headache, nasal congestion, runny nose, muscle or joint pain, sore throat, diarrhea, and eye irritation. In moderate to severe cases, breathing difficulties may develop.",
+    "used_points": [
+      "node_a:0:9009d27b",
+      "node_a:1:edc9f6c",
+      "node_a:2:5816b8e7"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "COVID-19 can cause a wide range of symptoms. Common early signs include fever or chills, dry cough, and loss of taste or smell. Many patients also experience fatigue, headache, muscle or body aches, nasal congestion, runny nose, sore throat, and digestive problems such as diarrhea or upset stomach. In more severe cases, shortness of breath or other breathing difficulties may develop.",
+    "used_points": [
+      "node_b:0:df2f0bb4",
+      "node_b:1:92fdbc64",
+      "node_b:2:abb3a2bf",
+      "node_b:3:123cf597",
+      "node_b:4:c817319c",
+      "node_b:5:639881fe",
+      "node_b:6:e946abc0",
+      "node_b:7:3c4297b1",
+      "node_a:2:5816b8e7"
+    ]
+  }
+]

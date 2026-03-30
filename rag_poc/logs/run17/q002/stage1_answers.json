@@ -1,0 +1,97 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:58305aea",
+        "text": "Fever is a frequent symptom of COVID‑19. [doc1_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_a:1:c0281c58",
+        "text": "Cough (or coughing) commonly occurs in COVID‑19 infection. [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:2:9eb540dc",
+        "text": "Loss of smell (anosmia) is a typical COVID‑19 symptom. [doc1_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_a:3:2dd868be",
+        "text": "Loss of taste (ageusia) often accompanies COVID‑19. [doc1_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_a:4:6b077c92",
+        "text": "Fatigue is commonly reported by COVID‑19 patients. [doc1_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_a:5:98e70bcc",
+        "text": "Breathing difficulties may appear, especially in moderate to severe cases. [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:6:66611c27",
+        "text": "Headaches can be a less common but noted symptom. [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:7:934638f8",
+        "text": "Nasal congestion and runny nose are reported symptoms. [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:8:697a7e51",
+        "text": "Muscle pain (myalgia) is among the symptoms. [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:9:faf4fda3",
+        "text": "Sore throat can be a symptom of COVID‑19. [doc1_covid19.txt:chunk_00011]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:5d85b90c",
+        "text": "Congestion, runny nose, or sore throat (common cold‑like symptoms) [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:1:92fdbc64",
+        "text": "Dry cough [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:2:abb3a2bf",
+        "text": "Shortness of breath [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:3:123cf597",
+        "text": "Loss of taste or smell [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:4:fd92bfd1",
+        "text": "Extreme fatigue (tiredness) [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:5:86381ed4",
+        "text": "Fever or chills [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:6:e946abc0",
+        "text": "Headaches and body or muscle aches [doc2_covid19.txt:chunk_00002]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:d7c8d989",
+        "text": "Fever is one of the most common COVID-19 symptoms."
+      },
+      {
+        "point_id": "node_c:1:e4a691d6",
+        "text": "Cough is a frequent symptom of COVID-19 infection."
+      },
+      {
+        "point_id": "node_c:2:159731f6",
+        "text": "Tiredness (fatigue) is commonly reported in COVID-19 cases."
+      }
+    ]
+  }
+]

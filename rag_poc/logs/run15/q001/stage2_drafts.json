@@ -1,0 +1,32 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "COVID‑19 spreads primarily through inhalation of respiratory droplets or aerosols that contain SARS‑CoV‑2 released by infected individuals when they breathe, talk, cough, sneeze or sing [doc1_covid19.txt:chunk_00024]. Transmission risk is highest at close range, but small airborne particles can remain suspended and travel longer distances, especially indoors [doc1_covid19.txt:chunk_00004]. The virus can enter the body via the eyes, nose or mouth when these particles are breathed in [doc1_covid19.txt:chunk_00004]. Contact with contaminated surfaces followed by touching the face can also lead to infection [doc1_covid19.txt:chunk_00004]. Infected persons remain contagious for up to 20 days and can transmit the virus even without symptoms [doc1_covid19.txt:chunk_00004].",
+    "used_points": [
+      "node_a:0:65304860",
+      "node_a:1:775f43bf",
+      "node_a:2:61c0da92",
+      "node_a:3:7b4b5906",
+      "node_a:4:625ee21c",
+      "node_a:5:a68a9252"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "COVID-19 spreads mainly person-to-person via respiratory droplets and aerosols released when infected individuals breathe, talk, cough, sneeze, or sing. These droplets can land on the face of nearby people or be inhaled, especially in close proximity and low‑airflow settings [doc2_covid19.txt:chunk_00008]. Asymptomatic or pre‑symptomatic individuals can also transmit the virus, making close contact a key risk factor [doc2_covid19.txt:chunk_00007]. Risk is higher with prolonged exposure (>30 min), crowded indoor spaces, and poor ventilation [doc2_covid19.txt:chunk_00011].",
+    "used_points": [
+      "node_b:1:d94ea288",
+      "node_b:3:ceb892ad",
+      "node_b:4:c7b25ba3"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "COVID-19 spreads primarily through respiratory droplets and aerosols released from an infected person’s mouth or nose when they cough, sneeze, speak, sing, or breathe; these particles can be inhaled or land on a nearby person’s face, and the virus can also be transmitted when a person touches surfaces contaminated with the virus and then touches their eyes, nose, or mouth. Infected individuals can be contagious even without showing symptoms. [doc3_covid19.txt:chunk_00003] [doc3_covid19.txt:chunk_00005]",
+    "used_points": [
+      "node_c:0:e78a5947",
+      "node_c:1:ff7489c9",
+      "node_c:2:ec7a1c39"
+    ]
+  }
+]

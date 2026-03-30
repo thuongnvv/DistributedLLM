@@ -1,0 +1,66 @@
+{
+  "node_a": [
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00130",
+      "text": "Treatment\nMain article: Treatment and management of COVID-19",
+      "score": 0.7736
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00000",
+      "text": "Coronavirus disease 2019 (COVID-19) is a contagious disease caused by the coronavirus SARS-CoV-2. Starting in January 2020, the disease spread worldwide, resulting in the COVID-19 pandemic. In March 2020, the World Health Organization declared COVID-19 a global health emergency; they declared the end of the emergency in May 2023.[7]",
+      "score": 0.7022
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00133",
+      "text": "Most cases of COVID-19 are mild. In these, supportive care includes medication such as paracetamol or NSAIDs to relieve symptoms (fever, body aches, cough), proper intake of fluids, rest, and nasal breathing.[267][268][269][270] Good personal hygiene and a healthy diet are also recommended.[271] As of April 2020 the U.S",
+      "score": 0.6848
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00010",
+      "text": "Signs and symptoms\nMain article: Symptoms of COVID-19\nSymptoms of COVID-19",
+      "score": 0.6792
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00131",
+      "text": "The treatment and management of COVID-19 combines both supportive care, which includes treatment to relieve symptoms, fluid therapy, oxygen support as needed,[262][263][264] and a growing list of approved medications",
+      "score": 0.6688
+    }
+  ],
+  "node_b": [
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00000",
+      "text": "Overview\n\nCoronavirus disease 2019 (COVID-19), is an illness caused by a virus. The virus is called severe acute respiratory syndrome coronavirus 2 or, more commonly, SARS-CoV-2. It started spreading at the end of 2019 and became a pandemic disease in 2020.\n\nThe virus that causes COVID-19 spreads between people in close contact. Most commonly, it spreads through the air in tiny droplets of fluid. Many people with COVID-19 have mild illness or no symptoms. But for older adults and people with certain medical conditions, COVID-19 can lead to the need for care in the hospital or death.",
+      "score": 0.7758
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00022",
+      "text": "Besides vaccination, there are other ways to stop the spread of the virus that causes COVID-19. If you are at a higher risk of serious illness, talk with your healthcare professional about how best to protect yourself. Know what to do if you get sick so you can quickly start treatment. If you feel ill or have COVID-19, stay home and away from others, including pets, if possible.\n\nIn general, make it a habit to:",
+      "score": 0.6425
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00009",
+      "text": "It's possible to get COVID-19 more than once.\n\n    Over time, the body's defense against the COVID-19 virus can fade.\n    A person may be exposed to so much of the virus that it breaks through the immune defense.\n    As a virus infects a group of people, the virus copies itself. During this process, the genetic code can randomly change in each copy. The changes are called mutations. If the coronavirus that causes COVID-19 changes in ways that make previous infections or vaccination less effective at preventing infection, people can get sick again.",
+      "score": 0.6163
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00017",
+      "text": "Other infections, such as the flu and polio, can lead to long-term illness. But researchers have only studied the virus that causes COVID-19 since it began to spread in 2019. So research continues into the specific effects of long-term COVID-19 symptoms.\n\nGetting a COVID-19 vaccine may help prevent post-COVID-19 syndrome.\nPrevention\n\nThe 2025-2026 COVID-19 vaccines available in the United States include Moderna, Pfizer-BioNTech and Novavax.\n\nModerna COVID-19 vaccine 2025-2026 formulas:",
+      "score": 0.6046
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00007",
+      "text": "Sign up for free and stay up to date on research advancements, health tips, current health topics, and expertise on managing health. Click here for an email preview.\nEmail\nCauses\n\nCOVID-19 is caused by infection with the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2).\n\nThe coronavirus spreads mainly from person to person, even from someone who is infected but has no symptoms. When people with COVID-19 cough, sneeze, breathe, sing or talk, their breath may contain the COVID-19 virus.",
+      "score": 0.5989
+    }
+  ]
+}

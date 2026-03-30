@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distributed LLM RAG PoC</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f1117;
+    color: #e0e0e0;
+    min-height: 100vh;
+    padding: 24px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  header h1 {
+    font-size: 1.8em;
+    color: #7dd3fc;
+    font-weight: 700;
+  }
+  header p {
+    color: #888;
+    margin-top: 6px;
+    font-size: 0.9em;
+  }
+
+  /* Query Input */
+  .query-box {
+    background: #1a1d27;
+    border: 1px solid #2a2d3a;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  .query-box textarea {
+    width: 100%;
+    background: #12141c;
+    border: 1px solid #2a2d3a;
+    border-radius: 8px;
+    color: #e0e0e0;
+    padding: 14px;
+    font-size: 1em;
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .query-box textarea:focus {
+    border-color: #7dd3fc;
+  }
+  .query-box .controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .query-box button {
+    background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+    color: #0f1117;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .query-box button:hover { opacity: 0.85; }
+  .query-box button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .mode-badge {
+    font-size: 0.8em;
+    color: #888;
+    background: #12141c;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid #2a2d3a;
+  }
+  .progress-log {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.75em;
+    color: #555;
+    margin-top: 10px;
+    max-height: 80px;
+    overflow-y: auto;
+    line-height: 1.6;
+  }
+  .progress-log .ok { color: #4ade80; }
+
+  /* Loading */
+  #loading {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    color: #7dd3fc;
+  }
+  #loading.active { display: block; }
+  .spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid #2a2d3a;
+    border-top-color: #7dd3fc;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 12px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Results */
+  #results { display: none; }
+  #results.active { display: block; }
+
+  /* Section cards */
+  .card {
+    background: #1a1d27;
+    border: 1px solid #2a2d3a;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .card-header {
+    background: #1e2130;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid transparent;
+  }
+  .card-header.open { border-bottom-color: #2a2d3a; }
+  .card-title {
+    font-weight: 600;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title .tag {
+    font-size: 0.75em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .tag-winner { background: #166534; color: #86efac; }
+  .tag-node { background: #1e3a5f; color: #7dd3fc; }
+  .tag-pass { background: #166534; color: #86efac; }
+  .tag-fail { background: #991b1b; color: #fca5a5; }
+  .tag-unknown { background: #451a03; color: #fdba74; }
+  .toggle-icon {
+    color: #555;
+    font-size: 1.2em;
+    transition: transform 0.2s;
+  }
+  .card-header.open .toggle-icon { transform: rotate(180deg); }
+  .card-body {
+    padding: 16px 20px;
+    display: none;
+  }
+  .card-body.open { display: block; }
+
+  /* Winner */
+  .winner-box {
+    background: linear-gradient(135deg, #0f2d1a, #1a3d2a);
+    border: 1px solid #22c55e44;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+  }
+  .winner-label {
+    font-size: 0.8em;
+    color: #86efac;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .winner-text { line-height: 1.7; white-space: pre-wrap; }
+
+  /* Node answer */
+  .node-section { margin-bottom: 20px; }
+  .node-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .node-name { font-weight: 700; font-size: 1.1em; }
+  .node-domain { color: #888; font-size: 0.8em; }
+
+  /* Points */
+  .points-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .point-chip {
+    background: #12141c;
+    border: 1px solid #2a2d3a;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 0.8em;
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .point-chip .pid {
+    color: #7dd3fc;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85em;
+    margin-right: 4px;
+  }
+  .no-points { color: #555; font-style: italic; font-size: 0.85em; }
+
+  /* Citations */
+  .citation-item {
+    background: #12141c;
+    border: 1px solid #2a2d3a;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+  }
+  .citation-meta {
+    font-size: 0.75em;
+    color: #7dd3fc;
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 4px;
+  }
+  .citation-text { font-size: 0.88em; color: #aaa; line-height: 1.5; }
+
+  /* Drafts */
+  .draft-item {
+    background: #12141c;
+    border: 1px solid #2a2d3a;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+  .draft-header {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+  }
+  .draft-text { line-height: 1.6; font-size: 0.9em; white-space: pre-wrap; }
+  .used-points-info {
+    margin-top: 8px;
+    font-size: 0.78em;
+    color: #555;
+    font-family: 'Fira Code', monospace;
+  }
+  .unknown-draft { color: #555; font-style: italic; }
+
+  /* Grades */
+  .vote-item {
+    background: #12141c;
+    border: 1px solid #2a2d3a;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+  .vote-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .vote-label { font-size: 0.8em; }
+  .vote-arrow { color: #555; }
+  .vote-point-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+  }
+  .vote-point {
+    font-size: 0.72em;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Fira Code', monospace;
+  }
+  .vote-point.agree { background: #166534; color: #86efac; }
+  .vote-point.reject { background: #991b1b; color: #fca5a5; }
+  .vote-point.unknown { background: #451a03; color: #fdba74; }
+  .vote-note { margin-top: 8px; font-size: 0.8em; color: #666; font-style: italic; }
+
+  /* Metrics */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .metric-card {
+    background: #12141c;
+    border: 1px solid #2a2d3a;
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .metric-label { font-size: 0.75em; color: #666; margin-bottom: 4px; }
+  .metric-value { font-size: 1.4em; font-weight: 700; }
+  .metric-value.green { color: #4ade80; }
+  .metric-value.red { color: #f87171; }
+  .metric-value.blue { color: #7dd3fc; }
+  .metric-value.orange { color: #fb923c; }
+
+  /* Reputation */
+  .rep-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .rep-card {
+    background: #12141c;
+    border: 1px solid #2a2d3a;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.85em;
+  }
+  .rep-card .rep-node { color: #7dd3fc; font-weight: 600; }
+  .rep-card .rep-delta { margin-top: 4px; }
+  .rep-delta .pos { color: #4ade80; }
+  .rep-delta .neg { color: #f87171; }
+
+  /* Log dir */
+  .log-dir {
+    font-size: 0.75em;
+    color: #555;
+    font-family: 'Fira Code', monospace;
+    margin-top: 6px;
+  }
+
+  /* Error */
+  #error {
+    display: none;
+    background: #1a0a0a;
+    border: 1px solid #f87171;
+    border-radius: 8px;
+    padding: 16px;
+    color: #f87171;
+    margin-bottom: 20px;
+  }
+  #error.active { display: block; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Distributed LLM RAG PoC</h1>
+    <p>2-node peer-review consensus system — answer &rarr; synthesize &rarr; cross-grade &rarr; finalize</p>
+  </header>
+
+  <div class="query-box">
+    <textarea id="queryInput" placeholder="Ask about COVID-19... (e.g. What are the symptoms of COVID-19?)"></textarea>
+    <div class="controls">
+      <button id="askBtn" onclick="handleAsk()">Ask</button>
+      <span class="mode-badge" id="modeBadge">mode: --</span>
+    </div>
+    <div class="progress-log" id="progressLog"></div>
+  </div>
+
+  <div id="error"></div>
+
+  <div id="loading">
+    <div class="spinner"></div>
+    <div>Running 4-stage pipeline...</div>
+  </div>
+
+  <div id="results"></div>
+</div>
+
+<script>
+const API = '';
+
+async function handleAsk() {
+  const query = document.getElementById('queryInput').value.trim();
+  if (!query) return;
+
+  document.getElementById('error').classList.remove('active');
+  document.getElementById('results').classList.remove('active');
+  document.getElementById('loading').classList.add('active');
+  document.getElementById('askBtn').disabled = true;
+  document.getElementById('progressLog').innerHTML = '';
+
+  const startTime = Date.now();
+
+  try {
+    const resp = await fetch(API + '/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query }),
+    });
+
+    const data = await resp.json();
+    document.getElementById('loading').classList.remove('active');
+    document.getElementById('askBtn').disabled = false;
+
+    if (!resp.ok) {
+      showError(data.detail || 'Error: ' + resp.status);
+      return;
+    }
+
+    renderResults(data);
+  } catch (err) {
+    document.getElementById('loading').classList.remove('active');
+    document.getElementById('askBtn').disabled = false;
+    showError('Network error: ' + err.message);
+  }
+}
+
+function showError(msg) {
+  const el = document.getElementById('error');
+  el.textContent = msg;
+  el.classList.add('active');
+}
+
+function renderResults(data) {
+  document.getElementById('results').classList.add('active');
+  const el = document.getElementById('results');
+  const elapsed = Date.now() - startTime;
+
+  let html = '';
+
+  // ===== WINNER =====
+  html += `
+  <div class="card">
+    <div class="card-header open" onclick="toggleCard(this)">
+      <span class="card-title">
+        <span class="tag tag-winner">WINNER</span>
+        ${esc(data.winner)} — Final Answer
+      </span>
+      <span class="toggle-icon">&#9660;</span>
+    </div>
+    <div class="card-body open">
+      <div class="winner-box">
+        <div class="winner-label">${esc(data.winner)} (selected as best draft)</div>
+        <div class="winner-text">${esc(data.final_answer)}</div>
+      </div>
+      <div class="log-dir">Log dir: ${esc(data.log_dir)} | Completed in ${elapsed}ms</div>
+    </div>
+  </div>`;
+
+  // ===== PER-NODE ANSWERS =====
+  html += `<div class="card">`;
+  html += `<div class="card-header open" onclick="toggleCard(this)">`;
+  html += `<span class="card-title">&#128172; Stage 1: Node Answers (${data.node_answers.length} nodes)</span>`;
+  html += `<span class="toggle-icon">&#9660;</span></div>`;
+  html += `<div class="card-body open">`;
+  for (const ans of data.node_answers) {
+    html += `<div class="node-section">`;
+    html += `<div class="node-header">`;
+    html += `<span class="node-name">${esc(ans.node_id)}</span>`;
+    if (ans.abstain) {
+      html += `<span class="tag tag-unknown">ABSTAIN</span>`;
+    }
+    html += `</div>`;
+
+    // Points
+    if (ans.points && ans.points.length > 0) {
+      html += `<div style="font-size:0.8em;color:#666;margin-bottom:6px;">Points (${ans.points.length}):</div>`;
+      html += `<div class="points-list">`;
+      for (const p of ans.points) {
+        html += `<div class="point-chip"><span class="pid">${esc(p.point_id)}</span>${esc(p.text)}</div>`;
+      }
+      html += `</div>`;
+    } else {
+      html += `<div class="no-points">No points (abstain or no retrieval)</div>`;
+    }
+
+    // Citations
+    if (ans.citations && ans.citations.length > 0) {
+      html += `<div style="font-size:0.8em;color:#666;margin-bottom:6px;margin-top:12px;">Retrieved Chunks (${ans.citations.length}):</div>`;
+      for (const c of ans.citations) {
+        html += `<div class="citation-item">`;
+        html += `<div class="citation-meta">[${esc(c.doc_id)}:${esc(c.chunk_id)}] score=${c.score?.toFixed(3)}</div>`;
+        html += `<div class="citation-text">${esc(c.text.substring(0, 300))}${c.text.length > 300 ? '...' : ''}</div>`;
+        html += `</div>`;
+      }
+    }
+    html += `</div>`;
+  }
+  html += `</div></div>`;
+
+  // ===== SYNTHESIS DRAFTS =====
+  html += `<div class="card">`;
+  html += `<div class="card-header" onclick="toggleCard(this)">`;
+  html += `<span class="card-title">&#128221; Stage 2: Synthesis Drafts (${data.node_drafts.length})</span>`;
+  html += `<span class="toggle-icon">&#9660;</span></div>`;
+  html += `<div class="card-body">`;
+  for (const d of data.node_drafts) {
+    const isUnknown = !d.synthesis_text || d.synthesis_text === 'UNKNOWN';
+    html += `<div class="draft-item">`;
+    html += `<div class="draft-header"><span class="tag tag-node">${esc(d.node_id)}</span></div>`;
+    if (isUnknown) {
+      html += `<div class="unknown-draft">UNKNOWN — abstain or no valid points</div>`;
+    } else {
+      html += `<div class="draft-text">${esc(d.synthesis_text)}</div>`;
+    }
+    if (d.used_points && d.used_points.length > 0) {
+      html += `<div class="used-points-info">used_points: ${d.used_points.map(p => esc(p)).join(', ')}</div>`;
+    }
+    html += `</div>`;
+  }
+  html += `</div></div>`;
+
+  // ===== GRADE VOTES =====
+  html += `<div class="card">`;
+  html += `<div class="card-header" onclick="toggleCard(this)">`;
+  html += `<span class="card-title">&#9983; Stage 3: Cross-Grading (${data.grade_votes.length} votes)</span>`;
+  html += `<span class="toggle-icon">&#9660;</span></div>`;
+  html += `<div class="card-body">`;
+  for (const g of data.grade_votes) {
+    const tagClass = g.valid === 'PASS' ? 'tag-pass' : g.valid === 'FAIL' ? 'tag-fail' : 'tag-unknown';
+    html += `<div class="vote-item">`;
+    html += `<div class="vote-header">`;
+    html += `<span class="tag tag-node">${esc(g.grader_id)}</span>`;
+    html += `<span class="vote-arrow">&#8594;</span>`;
+    html += `<span class="tag tag-node">${esc(g.target_id)}</span>`;
+    html += `<span class="tag ${tagClass}">${g.valid}</span>`;
+    html += `</div>`;
+    if (g.agree_points.length > 0) {
+      html += `<div style="font-size:0.78em;color:#86efac;margin-bottom:4px;">Agree:</div>`;
+      html += `<div class="vote-point-grid">`;
+      for (const p of g.agree_points) html += `<span class="vote-point agree">${esc(p)}</span>`;
+      html += `</div>`;
+    }
+    if (g.reject_points.length > 0) {
+      html += `<div style="font-size:0.78em;color:#fca5a5;margin-bottom:4px;margin-top:4px;">Reject:</div>`;
+      html += `<div class="vote-point-grid">`;
+      for (const p of g.reject_points) html += `<span class="vote-point reject">${esc(p)}</span>`;
+      html += `</div>`;
+    }
+    if (g.unknown_points.length > 0) {
+      html += `<div style="font-size:0.78em;color:#fdba74;margin-bottom:4px;margin-top:4px;">Unknown:</div>`;
+      html += `<div class="vote-point-grid">`;
+      for (const p of g.unknown_points) html += `<span class="vote-point unknown">${esc(p)}</span>`;
+      html += `</div>`;
+    }
+    if (g.note) html += `<div class="vote-note">${esc(g.note)}</div>`;
+    html += `</div>`;
+  }
+  if (data.grade_votes.length === 0) {
+    html += `<div style="color:#555;font-style:italic;">No grade votes recorded.</div>`;
+  }
+  html += `</div></div>`;
+
+  // ===== METRICS =====
+  const metrics = data.metrics || {};
+  html += `<div class="card">`;
+  html += `<div class="card-header" onclick="toggleCard(this)">`;
+  html += `<span class="card-title">&#9878; Stage 4: Metrics & Reputation</span>`;
+  html += `<span class="toggle-icon">&#9660;</span></div>`;
+  html += `<div class="card-body">`;
+
+  // Node-level metrics
+  const passCounts = metrics.pass_count || {};
+  const failCounts = metrics.fail_count || {};
+  const agreeCounts = metrics.agree_count || {};
+  const rejectCounts = metrics.reject_count || {};
+
+  if (Object.keys(passCounts).length > 0) {
+    html += `<div style="margin-bottom:16px;">`;
+    html += `<div style="font-size:0.85em;font-weight:600;margin-bottom:10px;">Voting Metrics</div>`;
+    html += `<div class="metrics-grid">`;
+    const nodes = Object.keys(passCounts);
+    for (const n of nodes) {
+      html += `<div class="metric-card">`;
+      html += `<div class="metric-label">${esc(n)}</div>`;
+      html += `<div style="font-size:0.8em;margin-bottom:6px;">PASS: <span class="metric-value green">${passCounts[n]||0}</span> FAIL: <span class="metric-value red">${failCounts[n]||0}</span></div>`;
+      html += `<div style="font-size:0.8em;">AGREE: <span class="metric-value blue">${agreeCounts[n]||0}</span> REJECT: <span class="metric-value orange">${rejectCounts[n]||0}</span></div>`;
+      html += `</div>`;
+    }
+    html += `</div></div>`;
+  }
+
+  // Reputation
+  const repUpdates = data.reputation_updates || {};
+  if (Object.keys(repUpdates).length > 0) {
+    html += `<div style="font-size:0.85em;font-weight:600;margin-bottom:8px;">Reputation Updates</div>`;
+    html += `<div class="rep-grid">`;
+    for (const [key, val] of Object.entries(repUpdates)) {
+      let delta = '';
+      if (typeof val === 'object') {
+        const nodeDelta = val.node_rep_delta;
+        delta = nodeDelta !== undefined ? (nodeDelta >= 0 ? `+${nodeDelta.toFixed(1)}` : nodeDelta.toFixed(1)) : '';
+      }
+      const cls = delta.startsWith('+') ? 'pos' : 'neg';
+      html += `<div class="rep-card">`;
+      html += `<span class="rep-node">${esc(key)}</span>`;
+      if (delta) html += `<div class="rep-delta"><span class="${cls}">${delta}</span></div>`;
+      html += `</div>`;
+    }
+    html += `</div>`;
+  }
+
+  html += `</div></div>`;
+
+  // ===== ALL CITATIONS =====
+  if (data.citations && data.citations.length > 0) {
+    html += `<div class="card">`;
+    html += `<div class="card-header" onclick="toggleCard(this)">`;
+    html += `<span class="card-title">&#128203; All Citations (${data.citations.length})</span>`;
+    html += `<span class="toggle-icon">&#9660;</span></div>`;
+    html += `<div class="card-body">`;
+    for (const c of data.citations) {
+      html += `<div class="citation-item">`;
+      html += `<div class="citation-meta">[${esc(c.doc_id)}:${esc(c.chunk_id)}] score=${c.score?.toFixed(3)}</div>`;
+      html += `<div class="citation-text">${esc(c.text.substring(0, 400))}${c.text.length > 400 ? '...' : ''}</div>`;
+      html += `</div>`;
+    }
+    html += `</div></div>`;
+  }
+
+  el.innerHTML = html;
+
+  // Fetch mode from health
+  fetch(API + '/health').then(r => r.json()).then(d => {
+    document.getElementById('modeBadge').textContent = 'mode: ' + d.mode;
+  });
+}
+
+function toggleCard(header) {
+  header.classList.toggle('open');
+  header.nextElementSibling.classList.toggle('open');
+}
+
+function esc(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// Keyboard shortcut: Enter in textarea = submit
+document.getElementById('queryInput').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && e.ctrlKey) {
+    handleAsk();
+  }
+});
+
+// Init: fetch health to show mode
+fetch('/health').then(r => r.json()).then(d => {
+  document.getElementById('modeBadge').textContent = 'mode: ' + d.mode;
+}).catch(() => {
+  document.getElementById('modeBadge').textContent = 'mode: unknown';
+});
+</script>
+</body>
+</html>
