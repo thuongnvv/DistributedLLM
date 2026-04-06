@@ -17,6 +17,10 @@ else:
 from config import (
     MAX_POINTS_PER_ANSWER,
     MAX_USED_POINTS,
+    GEMINI_BASE_URL,
+    GEMINI_MODEL,
+    GROQ_BASE_URL,
+    GROQ_MODEL,
     MEGA_BASE_URL,
     MEGA_MODEL,
     OPENAI_BASE_URL,
@@ -25,6 +29,8 @@ from config import (
     OPENAI_RETRY_BASE_SECONDS,
     OPENAI_TEMPERATURE,
     OPENAI_TIMEOUT,
+    OPENROUTER_BASE_URL,
+    OPENROUTER_MODEL,
     SUPPORTED_MODES,
 )
 from prompts import (
@@ -48,6 +54,18 @@ class LLMClient:
             self.model = model or os.getenv("MEGA_MODEL", MEGA_MODEL)
             self.base_url = os.getenv("MEGA_BASE_URL", MEGA_BASE_URL).rstrip("/")
             self.api_key = os.getenv("MEGALLM_API_KEY") or os.getenv("OPENAI_API_KEY")
+        elif mode == "gemini":
+            self.model = model or os.getenv("GEMINI_MODEL", GEMINI_MODEL)
+            self.base_url = os.getenv("GEMINI_BASE_URL", GEMINI_BASE_URL).rstrip("/")
+            self.api_key = os.getenv("GOOGLE_API_KEY")
+        elif mode == "groq":
+            self.model = model or os.getenv("GROQ_MODEL", GROQ_MODEL)
+            self.base_url = os.getenv("GROQ_BASE_URL", GROQ_BASE_URL).rstrip("/")
+            self.api_key = os.getenv("GROQ_API_KEY")
+        elif mode == "openrouter":
+            self.model = model or os.getenv("OPENROUTER_MODEL", OPENROUTER_MODEL)
+            self.base_url = os.getenv("OPENROUTER_BASE_URL", OPENROUTER_BASE_URL).rstrip("/")
+            self.api_key = os.getenv("OPENROUTER_API_KEY")
         else:
             self.model = model or os.getenv("OPENAI_MODEL", OPENAI_MODEL)
             self.base_url = os.getenv("OPENAI_BASE_URL", OPENAI_BASE_URL).rstrip("/")
@@ -602,7 +620,7 @@ class LLMClient:
         trace: dict[str, Any] | None = None,
     ) -> str:
         if not self.api_key:
-            raise RuntimeError("OPENAI_API_KEY (or MEGALLM_API_KEY) not set. Use --mode mock or provide key.")
+            raise RuntimeError(f"{self.mode.upper()}_API_KEY not set. Use --mode mock or provide API key.")
         if requests is None:
             raise RuntimeError(f"requests is required for openai mode: {_REQUESTS_IMPORT_ERROR}")
 
