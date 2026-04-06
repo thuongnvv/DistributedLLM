@@ -424,6 +424,14 @@ function renderResults(data) {
   document.getElementById('results').classList.add('active');
   const el = document.getElementById('results');
   const elapsed = Date.now() - startTime;
+  const adjudicationByNode = {};
+  for (const item of (data.synthesis_adjudications || [])) {
+    adjudicationByNode[item.node_id] = item.point_support || [];
+  }
+  const reviewTraceByPair = {};
+  for (const item of (data.review_trace || [])) {
+    reviewTraceByPair[`${item.grader_id}::${item.target_id}`] = item.point_reviews || [];
+  }
 
   let html = '';
 
@@ -442,7 +450,7 @@ function renderResults(data) {
         <div class="winner-label">${esc(data.winner)} (selected as best draft)</div>
         <div class="winner-text">${esc(data.final_answer)}</div>
       </div>
-      <div class="log-dir">Log dir: ${esc(data.log_dir)} | Completed in ${elapsed}ms</div>
+      <div class="log-dir">Log dir: ${esc(data.query_dir)} | Completed in ${elapsed}ms</div>
     </div>
   </div>`;
 
@@ -464,11 +472,15 @@ function renderResults(data) {
     // Points
     if (ans.points && ans.points.length > 0) {
       html += `<div style="font-size:0.8em;color:#666;margin-bottom:6px;">Points (${ans.points.length}):</div>`;
-      html += `<div class="points-list">`;
       for (const p of ans.points) {
-        html += `<div class="point-chip"><span class="pid">${esc(p.point_id)}</span>${esc(p.text)}</div>`;
+        html += `<div class="citation-item">`;
+        html += `<div class="citation-meta"><span class="pid">${esc(p.point_id)}</span></div>`;
+        html += `<div class="citation-text" style="margin-bottom:6px;color:#e5e7eb;">${esc(p.text)}</div>`;
+        if (p.citations && p.citations.length > 0) {
+          html += `<div style="font-size:0.78em;color:#7dd3fc;">origin citations: ${p.citations.map(c => esc(c)).join(', ')}</div>`;
+        }
+        html += `</div>`;
       }
-      html += `</div>`;
     } else {
       html += `<div class="no-points">No points (abstain or no retrieval)</div>`;
     }
@@ -495,6 +507,9 @@ function renderResults(data) {
   html += `<div class="card-body">`;
   for (const d of data.node_drafts) {
     const isUnknown = !d.synthesis_text || d.synthesis_text === 'UNKNOWN';
+    const pointSupport = adjudicationByNode[d.node_id] || [];
+    const supportMap = {};
+    for (const item of pointSupport) supportMap[item.point_id] = item;
     html += `<div class="draft-item">`;
     html += `<div class="draft-header"><span class="tag tag-node">${esc(d.node_id)}</span></div>`;
     if (isUnknown) {
@@ -503,7 +518,20 @@ function renderResults(data) {
       html += `<div class="draft-text">${esc(d.synthesis_text)}</div>`;
     }
     if (d.used_points && d.used_points.length > 0) {
-      html += `<div class="used-points-info">used_points: ${d.used_points.map(p => esc(p)).join(', ')}</div>`;
+      html += `<div class="used-points-info">used_points:</div>`;
+      html += `<div class="vote-point-grid">`;
+      for (const p of d.used_points) {
+        const decision = supportMap[p]?.decision || 'UNKNOWN';
+        const badge = decision === 'LOCAL_SUPPORTED' ? 'LOCAL' : decision === 'EXTERNAL_SUPPORTED' ? 'EXTERNAL' : decision;
+        html += `<span class="vote-point ${decision === 'LOCAL_SUPPORTED' ? 'agree' : 'unknown'}">${esc(p)} · ${esc(badge)}</span>`;
+      }
+      html += `</div>`;
+    }
+    if (pointSupport.length > 0) {
+      html += `<div style="font-size:0.78em;color:#888;margin-top:8px;">Point adjudication:</div>`;
+      for (const item of pointSupport) {
+        html += `<div class="vote-note">${esc(item.point_id)} → ${esc(item.decision)}${item.reason ? ` — ${esc(item.reason)}` : ''}</div>`;
+      }
     }
     html += `</div>`;
   }
@@ -517,6 +545,7 @@ function renderResults(data) {
   html += `<div class="card-body">`;
   for (const g of data.grade_votes) {
     const tagClass = g.valid === 'PASS' ? 'tag-pass' : g.valid === 'FAIL' ? 'tag-fail' : 'tag-unknown';
+    const pointReviews = reviewTraceByPair[`${g.grader_id}::${g.target_id}`] || [];
     html += `<div class="vote-item">`;
     html += `<div class="vote-header">`;
     html += `<span class="tag tag-node">${esc(g.grader_id)}</span>`;
@@ -543,6 +572,12 @@ function renderResults(data) {
       html += `</div>`;
     }
     if (g.note) html += `<div class="vote-note">${esc(g.note)}</div>`;
+    if (pointReviews.length > 0) {
+      html += `<div style="font-size:0.78em;color:#888;margin-top:8px;">Review trace:</div>`;
+      for (const item of pointReviews) {
+        html += `<div class="vote-note">${esc(item.point_id)} → ${esc(item.basis)}${item.reason ? ` — ${esc(item.reason)}` : ''}</div>`;
+      }
+    }
     html += `</div>`;
   }
   if (data.grade_votes.length === 0) {
@@ -559,23 +594,26 @@ function renderResults(data) {
   html += `<div class="card-body">`;
 
   // Node-level metrics
-  const passCounts = metrics.pass_count || {};
-  const failCounts = metrics.fail_count || {};
-  const agreeCounts = metrics.agree_count || {};
-  const rejectCounts = metrics.reject_count || {};
+  const passCounts = metrics.pass || {};
+  const failCounts = metrics.fail || {};
+  const agreeCounts = metrics.agree || {};
+  const rejectCounts = metrics.reject || {};
+  const usedCounts = metrics.used_points || {};
+  const agreeRates = metrics.agree_rate || {};
 
   if (Object.keys(passCounts).length > 0) {
     html += `<div style="margin-bottom:16px;">`;
     html += `<div style="font-size:0.85em;font-weight:600;margin-bottom:10px;">Voting Metrics</div>`;
     html += `<div class="metrics-grid">`;
     const nodes = Object.keys(passCounts);
-    for (const n of nodes) {
-      html += `<div class="metric-card">`;
-      html += `<div class="metric-label">${esc(n)}</div>`;
-      html += `<div style="font-size:0.8em;margin-bottom:6px;">PASS: <span class="metric-value green">${passCounts[n]||0}</span> FAIL: <span class="metric-value red">${failCounts[n]||0}</span></div>`;
-      html += `<div style="font-size:0.8em;">AGREE: <span class="metric-value blue">${agreeCounts[n]||0}</span> REJECT: <span class="metric-value orange">${rejectCounts[n]||0}</span></div>`;
-      html += `</div>`;
-    }
+      for (const n of nodes) {
+        html += `<div class="metric-card">`;
+        html += `<div class="metric-label">${esc(n)}</div>`;
+        html += `<div style="font-size:0.8em;margin-bottom:6px;">PASS: <span class="metric-value green">${passCounts[n]||0}</span> FAIL: <span class="metric-value red">${failCounts[n]||0}</span></div>`;
+        html += `<div style="font-size:0.8em;">AGREE: <span class="metric-value blue">${agreeCounts[n]||0}</span> REJECT: <span class="metric-value orange">${rejectCounts[n]||0}</span></div>`;
+        html += `<div style="font-size:0.78em;margin-top:6px;color:#9ca3af;">used_points: ${usedCounts[n]||0} · agree_rate: ${((agreeRates[n]||0)*100).toFixed(1)}%</div>`;
+        html += `</div>`;
+      }
     html += `</div></div>`;
   }
 
@@ -584,17 +622,17 @@ function renderResults(data) {
   if (Object.keys(repUpdates).length > 0) {
     html += `<div style="font-size:0.85em;font-weight:600;margin-bottom:8px;">Reputation Updates</div>`;
     html += `<div class="rep-grid">`;
-    for (const [key, val] of Object.entries(repUpdates)) {
-      let delta = '';
-      if (typeof val === 'object') {
-        const nodeDelta = val.node_rep_delta;
-        delta = nodeDelta !== undefined ? (nodeDelta >= 0 ? `+${nodeDelta.toFixed(1)}` : nodeDelta.toFixed(1)) : '';
-      }
-      const cls = delta.startsWith('+') ? 'pos' : 'neg';
-      html += `<div class="rep-card">`;
-      html += `<span class="rep-node">${esc(key)}</span>`;
-      if (delta) html += `<div class="rep-delta"><span class="${cls}">${delta}</span></div>`;
-      html += `</div>`;
+    const nodeDelta = repUpdates.node_rep_delta || {};
+    const pointDelta = repUpdates.point_rep_delta || {};
+    for (const [key, val] of Object.entries(nodeDelta)) {
+      const delta = Number(val);
+      const cls = delta >= 0 ? 'pos' : 'neg';
+      html += `<div class="rep-card"><span class="rep-node">${esc(key)} (winner/node)</span><div class="rep-delta"><span class="${cls}">${delta >= 0 ? '+' : ''}${delta.toFixed(1)}</span></div></div>`;
+    }
+    for (const [key, val] of Object.entries(pointDelta)) {
+      const delta = Number(val);
+      const cls = delta >= 0 ? 'pos' : 'neg';
+      html += `<div class="rep-card"><span class="rep-node">${esc(key)} (point)</span><div class="rep-delta"><span class="${cls}">${delta >= 0 ? '+' : ''}${delta.toFixed(1)}</span></div></div>`;
     }
     html += `</div>`;
   }
