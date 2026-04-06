@@ -183,6 +183,9 @@ class AskResponse(BaseModel):
     node_answers: list[dict]
     node_drafts: list[dict]
     grade_votes: list[dict]
+    point_evidence: dict
+    synthesis_adjudications: list[dict]
+    review_trace: list[dict]
     selected_nodes: list[str]
 
 
@@ -246,15 +249,27 @@ async def ask(req: AskRequest):
     # Load stage data
     lp = Path(query_dir)
     raw_answers, raw_drafts, raw_grades = [], [], []
+    raw_point_evidence: dict = {}
+    raw_synthesis_adjudications: list[dict] = []
+    raw_review_trace: list[dict] = []
     if (lp / "stage1_answers.json").exists():
         with open(lp / "stage1_answers.json") as f:
             raw_answers = json.load(f)
+    if (lp / "stage1_point_evidence.json").exists():
+        with open(lp / "stage1_point_evidence.json") as f:
+            raw_point_evidence = json.load(f)
     if (lp / "stage2_drafts.json").exists():
         with open(lp / "stage2_drafts.json") as f:
             raw_drafts = json.load(f)
+    if (lp / "stage2_adjudications.json").exists():
+        with open(lp / "stage2_adjudications.json") as f:
+            raw_synthesis_adjudications = json.load(f)
     if (lp / "stage3_grades.json").exists():
         with open(lp / "stage3_grades.json") as f:
             raw_grades = json.load(f)
+    if (lp / "stage3_review_trace.json").exists():
+        with open(lp / "stage3_review_trace.json") as f:
+            raw_review_trace = json.load(f)
 
     # Deduplicate citations
     all_citations: dict[str, dict] = {}
@@ -287,6 +302,9 @@ async def ask(req: AskRequest):
         node_answers=answers_with_citations,
         node_drafts=raw_drafts,
         grade_votes=raw_grades,
+        point_evidence=raw_point_evidence,
+        synthesis_adjudications=raw_synthesis_adjudications,
+        review_trace=raw_review_trace,
         selected_nodes=extra.get("selected_nodes", []),
     )
 
