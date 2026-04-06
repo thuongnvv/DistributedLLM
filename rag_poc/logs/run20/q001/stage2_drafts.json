@@ -1,0 +1,32 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "COVID-19 is a contagious disease caused by the coronavirus SARS-CoV-2 [doc1_covid19.txt:chunk_00000]. It is mainly transmitted from person to person through inhaling air contaminated by droplets/aerosols and small airborne particles containing the virus [doc1_covid19.txt:chunk_00024]. The disease can cause respiratory symptoms [doc1_covid19.txt:chunk_00010] and was declared a global health emergency by the World Health Organization (WHO) [doc1_covid19.txt:chunk_00000].",
+    "used_points": [
+      "node_a:0:f02f6a30",
+      "node_a:1:2b8d3c2d",
+      "node_a:2:ad74f9f",
+      "node_a:3:3ad81d99",
+      "node_a:4:45bb2433"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "COVID-19 is an illness caused by the virus severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) [doc2_covid19.txt:chunk_00000]. It spreads between people in close contact, mainly through the air in tiny droplets of fluid [doc2_covid19.txt:chunk_00000]. Most people have mild illness or no symptoms, but older adults and people with certain medical conditions are at higher risk of serious illness [doc2_covid19.txt:chunk_00000].",
+    "used_points": [
+      "node_b:0:5edb13ef",
+      "node_b:1:8ba86c54",
+      "node_b:2:c1280253",
+      "node_b:3:5d84aa0c"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "COVID-19 is an infectious respiratory illness caused by a coronavirus called SARS-CoV-2 [doc3_covid19.txt:chunk_00000]. It is also known as coronavirus disease, with 'CO' standing for corona, 'VI' for virus, and 'D' for disease [doc3_covid19.txt:chunk_00000].",
+    "used_points": [
+      "node_c:0:89dac9bb",
+      "node_c:1:e23cc11a",
+      "node_c:2:f8c14bdd"
+    ]
+  }
+]

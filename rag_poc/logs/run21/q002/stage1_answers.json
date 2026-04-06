@@ -1,0 +1,53 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:58572482",
+        "text": "Fever [doc1_covid19.txt:1]"
+      },
+      {
+        "point_id": "node_a:1:9c033637",
+        "text": "Cough [doc1_covid19.txt:2]"
+      },
+      {
+        "point_id": "node_a:2:512a6b09",
+        "text": "Fatigue [doc1_covid19.txt:3]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:c1912d45",
+        "text": "Fever [doc2_covid19.txt:1]"
+      },
+      {
+        "point_id": "node_b:1:fe1d2d9e",
+        "text": "Cough [doc2_covid19.txt:1]"
+      },
+      {
+        "point_id": "node_b:2:51cf15c4",
+        "text": "Shortness of breath [doc2_covid19.txt:1]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:67047424",
+        "text": "Fever [doc3_covid19.txt:chunk1]"
+      },
+      {
+        "point_id": "node_c:1:bfecd89f",
+        "text": "Cough [doc3_covid19.txt:chunk1]"
+      },
+      {
+        "point_id": "node_c:2:68e9ed94",
+        "text": "Fatigue [doc3_covid19.txt:chunk1]"
+      }
+    ]
+  }
+]

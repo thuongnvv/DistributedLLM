@@ -1,0 +1,133 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:4dbd85a6",
+        "text": "Fever [doc1_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_a:1:8f8a0af9",
+        "text": "Cough [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:2:fe8f6296",
+        "text": "Loss of smell [doc1_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_a:3:3fdeb034",
+        "text": "Loss of taste [doc1_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_a:4:8cdff633",
+        "text": "Headache [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:5:f4a344af",
+        "text": "Muscle pain [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:6:c7b55ec",
+        "text": "Fatigue [doc1_covid19.txt:chunk_00001]"
+      },
+      {
+        "point_id": "node_a:7:aa0aff93",
+        "text": "Breathing difficulties [doc1_covid19.txt:chunk_00011]"
+      },
+      {
+        "point_id": "node_a:8:22833662",
+        "text": "Diarrhea [doc1_covid19.txt:chunk_00011]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:241694e",
+        "text": "Congestion [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:1:975bdd1f",
+        "text": "Runny nose [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:2:e508d358",
+        "text": "Sore throat [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:3:6f0195c5",
+        "text": "Dry cough [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:4:9733ceac",
+        "text": "Shortness of breath [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:5:16fa8942",
+        "text": "Loss of taste or smell [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:6:e46a5cb5",
+        "text": "Fatigue [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:7:4c583e86",
+        "text": "Headaches [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:8:ae2dd7e",
+        "text": "Fever or chills [doc2_covid19.txt:chunk_00002]"
+      },
+      {
+        "point_id": "node_b:9:31ca4975",
+        "text": "Body or muscle aches [doc2_covid19.txt:chunk_00002]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:f4d886c8",
+        "text": "Fever"
+      },
+      {
+        "point_id": "node_c:1:7710ae1a",
+        "text": "Cough"
+      },
+      {
+        "point_id": "node_c:2:436b34d9",
+        "text": "Tiredness"
+      },
+      {
+        "point_id": "node_c:3:57fd9425",
+        "text": "Shortness of breath"
+      },
+      {
+        "point_id": "node_c:4:e8400933",
+        "text": "Chest pain or pressure"
+      },
+      {
+        "point_id": "node_c:5:16d634f4",
+        "text": "Headache"
+      },
+      {
+        "point_id": "node_c:6:823b296",
+        "text": "Loss of taste or smell"
+      },
+      {
+        "point_id": "node_c:7:b92a2692",
+        "text": "Confusion"
+      },
+      {
+        "point_id": "node_c:8:7e6cd2dc",
+        "text": "Sore throat"
+      },
+      {
+        "point_id": "node_c:9:18f059d9",
+        "text": "Diarrhea"
+      }
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "winner": "UNKNOWN",
+  "final_answer": "UNKNOWN",
+  "metrics": {
+    "pass": {},
+    "fail": {},
+    "agree": {},
+    "reject": {},
+    "eligible_reviews": {},
+    "used_points": {},
+    "agree_rate": {}
+  },
+  "reputation_updates": {
+    "node_rep_delta": {},
+    "point_rep_delta": {}
+  }
+}

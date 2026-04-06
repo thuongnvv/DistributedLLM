@@ -1,0 +1,41 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:494fb4e1",
+        "text": "COVID-19 is a disease [doc1_covid19.txt:1]"
+      },
+      {
+        "point_id": "node_a:1:5f000550",
+        "text": "Caused by SARS-CoV-2 virus [doc1_covid19.txt:2]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:7a1f8e55",
+        "text": "COVID-19 is a disease [doc2_covid19.txt:1]"
+      },
+      {
+        "point_id": "node_b:1:88bb1d26",
+        "text": "Caused by SARS-CoV-2 virus [doc2_covid19.txt:2]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:26570eee",
+        "text": "COVID-19 is a disease [doc3_covid19.txt:chunk_1]"
+      },
+      {
+        "point_id": "node_c:1:65a58263",
+        "text": "Caused by SARS-CoV-2 virus [doc3_covid19.txt:chunk_2]"
+      }
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "queries": [
+    {
+      "label": "q001",
+      "query": "What is COVID-19?",
+      "winner": "UNKNOWN",
+      "q_dir": "q001"
+    }
+  ]
+}

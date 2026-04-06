@@ -1,0 +1,27 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "COVID-19 is a contagious disease [doc1_covid19.txt:chunk_00000] caused by the coronavirus SARS-CoV-2 [doc1_covid19.txt:chunk_00000, doc1_covid19.txt:chunk_00024].",
+    "used_points": [
+      "node_a:0:3b4ecf28",
+      "node_a:1:8eb84ddf"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "COVID-19 is an illness caused by a virus [doc2_covid19.txt:chunk_00000], specifically the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) [doc2_covid19.txt:chunk_00000]. It is an infectious respiratory illness [node_c:0:c9027802] and can lead to hospital care or death [node_b:3:df09d2ee]. COVID-19 spreads between people in close contact [node_b:2:82eba3bc] and can cause serious medical complications [doc2_covid19.txt:chunk_00004].",
+    "used_points": [
+      "node_b:0:abc2857c",
+      "node_b:2:82eba3bc",
+      "node_b:3:df09d2ee",
+      "node_c:0:c9027802"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "COVID-19 is an infectious respiratory illness caused by a coronavirus called SARS-CoV-2 [doc3_covid19.txt:chunk_00000].",
+    "used_points": [
+      "node_c:0:c9027802"
+    ]
+  }
+]

@@ -1,0 +1,108 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:abc2857c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence from doc2_covid19.txt:chunk_00000 supports the claim that COVID-19 is an illness caused by a virus."
+      },
+      {
+        "point_id": "node_b:2:82eba3bc",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence from doc2_covid19.txt:chunk_00000 and doc2_covid19.txt:chunk_00008 supports the claim that COVID-19 spreads between people in close contact."
+      },
+      {
+        "point_id": "node_b:3:df09d2ee",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence from doc2_covid19.txt:chunk_00000 and doc2_covid19.txt:chunk_00004 supports the claim that COVID-19 can lead to hospital care or death."
+      },
+      {
+        "point_id": "node_c:0:c9027802",
+        "basis": "UNKNOWN",
+        "reason": "The point is not present in the local context, and the external evidence is not sufficient to make a judgment."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:c9027802",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence from doc3_covid19.txt:chunk_00000 supports the claim that COVID-19 is an infectious respiratory illness caused by a coronavirus called SARS-CoV-2."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:3b4ecf28",
+        "basis": "UNKNOWN",
+        "reason": "The local context does not provide information about the point 'COVID-19 is a contagious disease'. The external evidence is from a different document and cannot be verified against the local context."
+      },
+      {
+        "point_id": "node_a:1:8eb84ddf",
+        "basis": "UNKNOWN",
+        "reason": "The local context does provide information that COVID-19 is caused by the coronavirus SARS-CoV-2 [doc2_covid19.txt:chunk_00000], but the external evidence is from a different document and cannot be verified against the local context."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:c9027802",
+        "basis": "UNKNOWN",
+        "reason": "The local context does provide information that COVID-19 is an illness caused by a virus [doc2_covid19.txt:chunk_00000], but the external evidence is from a different document and cannot be verified against the local context."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:3b4ecf28",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context supports the point that COVID-19 is a contagious disease [doc3_covid19.txt:chunk_00000]."
+      },
+      {
+        "point_id": "node_a:1:8eb84ddf",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context supports the point that COVID-19 is caused by the coronavirus SARS-CoV-2 [doc3_covid19.txt:chunk_00000]."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:abc2857c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence supports the point that COVID-19 is an illness caused by a virus."
+      },
+      {
+        "point_id": "node_b:2:82eba3bc",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence supports the point that COVID-19 spreads between people in close contact."
+      },
+      {
+        "point_id": "node_b:3:df09d2ee",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence supports the point that COVID-19 can lead to hospital care or death."
+      },
+      {
+        "point_id": "node_c:0:c9027802",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context supports the point that COVID-19 is an infectious respiratory illness [doc3_covid19.txt:chunk_00000]."
+      }
+    ]
+  }
+]

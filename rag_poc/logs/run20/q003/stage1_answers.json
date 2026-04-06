@@ -1,0 +1,61 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:e737f1c6",
+        "text": "Through inhaling air contaminated by droplets/aerosols [doc1_covid19.txt:chunk_00024]"
+      },
+      {
+        "point_id": "node_a:1:8d8c6b53",
+        "text": "From person to person [doc1_covid19.txt:chunk_00024]"
+      },
+      {
+        "point_id": "node_a:2:ab173a0e",
+        "text": "By touching eyes, nose, or mouth after touching contaminated surfaces [doc1_covid19.txt:chunk_00004]"
+      },
+      {
+        "point_id": "node_a:3:dad65611",
+        "text": "Through small airborne particles containing the virus [doc1_covid19.txt:chunk_00004]"
+      },
+      {
+        "point_id": "node_a:4:95128d2c",
+        "text": "At closer range, but also over longer distances indoors [doc1_covid19.txt:chunk_00024]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:144ad023",
+        "text": "Through the air in tiny droplets of fluid [doc2_covid19.txt:chunk_00000]"
+      },
+      {
+        "point_id": "node_b:1:7b33eaec",
+        "text": "By breathing in droplets or particles from close people [doc2_covid19.txt:chunk_00008]"
+      },
+      {
+        "point_id": "node_b:2:2f162baa",
+        "text": "From person to person, even from someone with no symptoms [doc2_covid19.txt:chunk_00007]"
+      },
+      {
+        "point_id": "node_b:3:94133c9a",
+        "text": "When people with COVID-19 cough, sneeze, breathe, sing or talk [doc2_covid19.txt:chunk_00007]"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:e2ed8a68",
+        "text": "Through small droplets when infected person coughs, sneezes, speaks, sings or breathes [doc3_covid19.txt:chunk_00003]"
+      },
+      {
+        "point_id": "node_c:1:b8c36db5",
+        "text": "By touching mouth, nose or eyes after touching contaminated surfaces [doc3_covid19.txt:chunk_00005]"
+      }
+    ]
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:abc2857c",
+      "node_b:2:82eba3bc",
+      "node_b:3:df09d2ee"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:0:c9027802"
+    ],
+    "note": "The target draft is generally supported by the external evidence, but the point from node_c is unknown."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:c9027802"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "The target draft is supported by the external evidence."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:0:3b4ecf28",
+      "node_a:1:8eb84ddf"
+    ],
+    "note": "The target draft is based on external evidence that cannot be verified against the local context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:0:c9027802"
+    ],
+    "note": "The target draft is based on external evidence that cannot be verified against the local context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:3b4ecf28",
+      "node_a:1:8eb84ddf"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "The points in the target draft are supported by the local context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:abc2857c",
+      "node_b:2:82eba3bc",
+      "node_b:3:df09d2ee",
+      "node_c:0:c9027802"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "The points in the target draft are supported by the local context and external evidence."
+  }
+]

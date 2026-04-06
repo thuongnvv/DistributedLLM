@@ -1,0 +1,30 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "COVID-19 spreads from person to person through inhaling air contaminated by droplets/aerosols and small airborne particles containing the virus [doc1_covid19.txt:chunk_00024], particularly in close proximity, but also over longer distances indoors [doc1_covid19.txt:chunk_00004]. It can also be transmitted by touching eyes, nose, or mouth after touching contaminated surfaces [doc1_covid19.txt:chunk_00004].",
+    "used_points": [
+      "node_a:0:e737f1c6",
+      "node_a:1:8d8c6b53",
+      "node_a:2:ab173a0e",
+      "node_a:3:dad65611",
+      "node_a:4:95128d2c"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "COVID-19 spreads through the air in tiny droplets of fluid [doc2_covid19.txt:chunk_00000], by breathing in droplets or particles from close people [doc2_covid19.txt:chunk_00008], and from person to person, even from someone with no symptoms [doc2_covid19.txt:chunk_00007].",
+    "used_points": [
+      "node_b:0:144ad023",
+      "node_b:1:7b33eaec",
+      "node_b:2:2f162baa"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "COVID-19 spreads through small droplets when an infected person coughs, sneezes, speaks, sings or breathes [doc3_covid19.txt:chunk_00003], and also by touching mouth, nose or eyes after touching contaminated surfaces [doc3_covid19.txt:chunk_00005].",
+    "used_points": [
+      "node_c:0:e2ed8a68",
+      "node_c:1:b8c36db5"
+    ]
+  }
+]

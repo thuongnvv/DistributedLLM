@@ -1,0 +1,83 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:3b4ecf28",
+        "text": "COVID-19 is a contagious disease",
+        "citations": [
+          "doc1_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_a:1:8eb84ddf",
+        "text": "caused by the coronavirus SARS-CoV-2",
+        "citations": [
+          "doc1_covid19.txt:chunk_00000",
+          "doc1_covid19.txt:chunk_00024"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:abc2857c",
+        "text": "COVID-19 is an illness caused by a virus",
+        "citations": [
+          "doc2_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_b:1:504e04a4",
+        "text": "The virus is called SARS-CoV-2",
+        "citations": [
+          "doc2_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_b:2:82eba3bc",
+        "text": "COVID-19 spreads between people in close contact",
+        "citations": [
+          "doc2_covid19.txt:chunk_00000",
+          "doc2_covid19.txt:chunk_00007"
+        ]
+      },
+      {
+        "point_id": "node_b:3:40925913",
+        "text": "It can lead to mild illness or no symptoms",
+        "citations": [
+          "doc2_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_b:4:51ce7d5d",
+        "text": "Older adults and people with medical conditions are at higher risk",
+        "citations": [
+          "doc2_covid19.txt:chunk_00000",
+          "doc2_covid19.txt:chunk_00004"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:c9027802",
+        "text": "COVID-19 is an infectious respiratory illness",
+        "citations": [
+          "doc3_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_c:1:94e03820",
+        "text": "caused by a coronavirus called SARS-CoV-2",
+        "citations": [
+          "doc3_covid19.txt:chunk_00000"
+        ]
+      }
+    ]
+  }
+]
