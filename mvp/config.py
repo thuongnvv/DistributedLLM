@@ -1,9 +1,16 @@
 from __future__ import annotations
 
 import os
+from pathlib import Path
+
+# Auto-load .env from same directory
+_env = Path(__file__).parent / ".env"
+if _env.exists():
+    from dotenv import load_dotenv
+    load_dotenv(_env)
 
 DEFAULT_MODE = "mock"
-SUPPORTED_MODES = ("mock", "openai", "mega")
+SUPPORTED_MODES = ("mock", "openai", "mega", "gemini", "groq", "openrouter")
 
 DEFAULT_K = 5
 DEFAULT_TAU_FAIL = 2
@@ -43,3 +50,12 @@ OPENAI_RETRY_BASE_SECONDS = float(os.getenv("OPENAI_RETRY_BASE_SECONDS", "1.0"))
 
 MEGA_BASE_URL = os.getenv("MEGA_BASE_URL", "https://ai.megallm.io/v1").rstrip("/")
 MEGA_MODEL = os.getenv("MEGA_MODEL", "openai-gpt-oss-120b")
+
+GEMINI_BASE_URL = os.getenv("GEMINI_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai/").rstrip("/")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+
+GROQ_BASE_URL = os.getenv("GROQ_BASE_URL", "https://api.groq.com/openai/v1").rstrip("/")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+
+OPENROUTER_BASE_URL = os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1").rstrip("/")
+OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "google/gemini-2.5-flash")
