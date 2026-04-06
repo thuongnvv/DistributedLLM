@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Literal, Optional
 from pydantic import BaseModel, Field
 
 
@@ -14,6 +14,48 @@ class Point(BaseModel):
     """An atomic claim from a worker node."""
     point_id: str
     text: str
+
+
+class PointEvidenceRef(BaseModel):
+    """Origin evidence for a point produced in stage 1."""
+    point_id: str
+    origin_node_id: str
+    text: str
+    citations: list[str] = Field(default_factory=list)
+    evidence_chunks: list[Citation] = Field(default_factory=list)
+
+
+PointDecision = Literal["LOCAL_SUPPORTED", "EXTERNAL_SUPPORTED", "REJECTED", "UNKNOWN"]
+
+
+class PointAdjudication(BaseModel):
+    """Point-level synthesis decision for a node."""
+    point_id: str
+    decision: PointDecision = "UNKNOWN"
+    reason: str = ""
+
+
+class SynthesisAdjudication(BaseModel):
+    """All point adjudications emitted by one synthesizer."""
+    node_id: str
+    point_support: list[PointAdjudication] = Field(default_factory=list)
+
+
+ReviewBasis = Literal["LOCAL_SUPPORTED", "EXTERNAL_SUPPORTED", "CONTRADICTED", "UNKNOWN"]
+
+
+class ReviewTraceItem(BaseModel):
+    """Why a grader agreed/rejected/unknown'ed a point."""
+    point_id: str
+    basis: ReviewBasis = "UNKNOWN"
+    reason: str = ""
+
+
+class ReviewTrace(BaseModel):
+    """Point-level grading trace for a single grader/target pair."""
+    grader_id: str
+    target_id: str
+    point_reviews: list[ReviewTraceItem] = Field(default_factory=list)
 
 
 class WorkerAnswer(BaseModel):
