@@ -14,6 +14,9 @@ CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "600"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "80"))
 TOP_K = int(os.getenv("TOP_K", "10"))
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
+MAX_EVIDENCE_CHUNKS_PER_POINT = int(os.getenv("MAX_EVIDENCE_CHUNKS_PER_POINT", "2"))
+MAX_EXTERNAL_POINTS_SYNTH = int(os.getenv("MAX_EXTERNAL_POINTS_SYNTH", "6"))
+MAX_EXTERNAL_POINTS_GRADE = int(os.getenv("MAX_EXTERNAL_POINTS_GRADE", "8"))
 
 # Node configs
 NODE_A_DOC = os.getenv("NODE_A_DOC", str(BASE_DIR / "data/node_a/doc1_covid19.txt"))
