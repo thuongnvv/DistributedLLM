@@ -184,6 +184,8 @@ if st.session_state.result:
                     st.markdown(f"**Points ({len(ans['points'])})**")
                     for p in ans["points"]:
                         st.markdown(f"- `{p['point_id']}` — {p['text']}")
+                        if p.get("citations"):
+                            st.caption("origin citations: " + ", ".join(p["citations"]))
                 else:
                     st.markdown("_No points (abstain or no retrieval)_")
 
@@ -195,6 +197,10 @@ if st.session_state.result:
                         st.code(f"[{c['doc_id']}:{c['chunk_id']}] score={score:.3f}\n{text}", language=None)
 
     with tab2:
+        adjudication_by_node = {
+            item.get("node_id"): item.get("point_support", [])
+            for item in result.get("synthesis_adjudications", [])
+        }
         for draft in result.get("node_drafts", []):
             is_unknown = not draft.get("synthesis_text") or draft["synthesis_text"] == "UNKNOWN"
             with st.expander(f"**{draft['node_id']}**", expanded=True):
@@ -203,10 +209,32 @@ if st.session_state.result:
                 else:
                     st.markdown(draft["synthesis_text"])
                 if draft.get("used_points"):
-                    st.caption(f"Used points: {', '.join(draft['used_points'])}")
+                    support_map = {
+                        item.get("point_id"): item
+                        for item in adjudication_by_node.get(draft["node_id"], [])
+                    }
+                    st.caption(
+                        "Used points: "
+                        + ", ".join(
+                            f"{pid} ({'LOCAL' if support_map.get(pid, {}).get('decision') == 'LOCAL_SUPPORTED' else 'EXTERNAL' if support_map.get(pid, {}).get('decision') == 'EXTERNAL_SUPPORTED' else support_map.get(pid, {}).get('decision', 'UNKNOWN')})"
+                            for pid in draft["used_points"]
+                        )
+                    )
+                point_support = adjudication_by_node.get(draft["node_id"], [])
+                if point_support:
+                    st.markdown("**Point Adjudication**")
+                    for item in point_support:
+                        st.caption(
+                            f"{item.get('point_id')} -> {item.get('decision')}"
+                            + (f" | {item.get('reason')}" if item.get("reason") else "")
+                        )
 
     with tab3:
         votes = result.get("grade_votes", [])
+        review_trace_by_pair = {
+            (item.get("grader_id"), item.get("target_id")): item.get("point_reviews", [])
+            for item in result.get("review_trace", [])
+        }
         if not votes:
             st.info("No grade votes recorded.")
         for g in votes:
@@ -228,14 +256,22 @@ if st.session_state.result:
                         st.markdown(f"- `{p}` 🟡")
                 if g.get("note"):
                     st.caption(f"_Note: {g['note']}_")
+                point_reviews = review_trace_by_pair.get((g["grader_id"], g["target_id"]), [])
+                if point_reviews:
+                    st.markdown("**Review trace**")
+                    for item in point_reviews:
+                        st.caption(
+                            f"{item.get('point_id')} -> {item.get('basis')}"
+                            + (f" | {item.get('reason')}" if item.get("reason") else "")
+                        )
 
     with tab4:
         metrics = result.get("metrics", {})
         if metrics:
-            pass_counts = metrics.get("pass_count", {})
-            fail_counts = metrics.get("fail_count", {})
-            agree_counts = metrics.get("agree_count", {})
-            reject_counts = metrics.get("reject_count", {})
+            pass_counts = metrics.get("pass", {})
+            fail_counts = metrics.get("fail", {})
+            agree_counts = metrics.get("agree", {})
+            reject_counts = metrics.get("reject", {})
             used_counts = metrics.get("used_points", {})
             agree_rates = metrics.get("agree_rate", {})
 
@@ -256,12 +292,14 @@ if st.session_state.result:
         rep = result.get("reputation_updates", {})
         if rep:
             st.markdown("### Reputation Updates")
-            for key, val in rep.items():
-                if isinstance(val, dict):
-                    node_delta = val.get("node_rep_delta", 0)
-                    delta_str = f"+{node_delta:.1f}" if node_delta >= 0 else f"{node_delta:.1f}"
-                    icon = "🟢" if node_delta >= 0 else "🔴"
-                    st.markdown(f"**{key}**: {icon} `{delta_str}`")
+            for key, val in rep.get("node_rep_delta", {}).items():
+                delta_str = f"+{val:.1f}" if val >= 0 else f"{val:.1f}"
+                icon = "🟢" if val >= 0 else "🔴"
+                st.markdown(f"**{key} (winner/node)**: {icon} `{delta_str}`")
+            for key, val in rep.get("point_rep_delta", {}).items():
+                delta_str = f"+{val:.1f}" if val >= 0 else f"{val:.1f}"
+                icon = "🟢" if val >= 0 else "🔴"
+                st.markdown(f"**{key} (point)**: {icon} `{delta_str}`")
 
     with tab5:
         citations = result.get("citations", [])
