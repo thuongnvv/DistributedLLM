@@ -1,0 +1,188 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:3fa5ce02",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states COVID-19 is caused by SARS-CoV-2 and became a pandemic in 2020 [doc1_covid19.txt:chunk_00000]."
+      },
+      {
+        "point_id": "node_b:1:70647e1f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that the virus spreads mainly through close contact and droplets [doc1_covid19.txt:chunk_00024]."
+      },
+      {
+        "point_id": "node_b:2:0d90df4d",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that many people experience mild illness or no symptoms, especially older adults [doc1_covid19.txt:chunk_00133]."
+      },
+      {
+        "point_id": "node_b:3:4abf905a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that COVID-19 can lead to serious complications, including acute respiratory distress syndrome [doc1_covid19.txt:chunk_00131]."
+      },
+      {
+        "point_id": "node_b:4:8f64acc8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document supports that it's possible to get COVID-19 more than once due to mutations [doc1_covid19.txt:chunk_00024]."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:2e87af50",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms COVID-19 is caused by SARS-CoV-2 [doc1_covid19.txt:chunk_00000]."
+      },
+      {
+        "point_id": "node_c:1:5f2294d4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states the meaning of 'CO', 'VI', and 'D' in COVID-19 [doc1_covid19.txt:chunk_00000]."
+      },
+      {
+        "point_id": "node_c:2:00af6bbe",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that symptoms may appear 2 to 14 days after exposure [doc1_covid19.txt:chunk_00000]."
+      },
+      {
+        "point_id": "node_c:3:3579131c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that some infected individuals may not show symptoms [doc1_covid19.txt:chunk_00000]."
+      },
+      {
+        "point_id": "node_c:4:ed8552fe",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document describes COVID-19 as a pandemic, referring to its geographical spread [doc1_covid19.txt:chunk_00000]."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states COVID-19 is caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_a:1:460e7efd",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms the disease spread worldwide and became a pandemic."
+      },
+      {
+        "point_id": "node_a:3:ba2bc38b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions transmission through inhaling contaminated air."
+      },
+      {
+        "point_id": "node_a:4:4aaa34f9",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that infected people exhale particles while breathing, talking, or coughing."
+      },
+      {
+        "point_id": "node_c:1:5f2294d4",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "'CO', 'VI', and 'D' definitions are confirmed in external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:2e87af50",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states COVID-19 is caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_c:1:5f2294d4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "'CO', 'VI', and 'D' definitions are mentioned in the document."
+      },
+      {
+        "point_id": "node_c:2:00af6bbe",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions symptoms appearing 2 to 14 days after exposure."
+      },
+      {
+        "point_id": "node_c:3:3579131c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states some infected individuals may not show symptoms."
+      },
+      {
+        "point_id": "node_c:4:ed8552fe",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document describes COVID-19 as a pandemic."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states COVID-19 is caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_a:1:460e7efd",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms the pandemic declaration in March 2020."
+      },
+      {
+        "point_id": "node_a:3:ba2bc38b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions transmission through inhaling contaminated air."
+      },
+      {
+        "point_id": "node_a:4:4aaa34f9",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that transmission occurs when infected people exhale particles."
+      },
+      {
+        "point_id": "node_c:1:5f2294d4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document explains the meaning of 'CO', 'VI', and 'D' in COVID-19."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:3fa5ce02",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The origin document confirms COVID-19 is caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_b:1:70647e1f",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The origin document states the virus spreads through close contact and droplets."
+      },
+      {
+        "point_id": "node_b:2:0d90df4d",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The origin document mentions mild illness and severity in older adults."
+      },
+      {
+        "point_id": "node_b:3:4abf905a",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The origin document lists serious complications associated with COVID-19."
+      },
+      {
+        "point_id": "node_b:4:8f64acc8",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The origin document confirms the possibility of reinfection due to mutations."
+      }
+    ]
+  }
+]

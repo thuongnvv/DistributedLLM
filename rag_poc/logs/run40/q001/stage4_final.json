@@ -1,0 +1,51 @@
+{
+  "winner": "node_a",
+  "final_answer": "Individuals should consider getting tested for COVID-19 if they exhibit symptoms of the illness, such as fever, cough, or shortness of breath, to confirm infection [doc1_covid19.txt:chunk_00079]. Testing is also essential for those who believe they may be infected [doc1_covid19.txt:chunk_00194]. Additionally, it is advised to test five days after coming into contact with someone who has COVID-19 [doc2_covid19.txt:chunk_00023]. Children with symptoms should seek medical care and consider getting tested [doc3_covid19.txt:chunk_00021]. Fully vaccinated individuals showing symptoms should contact their doctor about testing [doc3_covid19.txt:chunk_00013].",
+  "metrics": {
+    "pass": {
+      "node_a": 2,
+      "node_b": 2,
+      "node_c": 2
+    },
+    "fail": {
+      "node_a": 0,
+      "node_b": 0,
+      "node_c": 0
+    },
+    "agree": {
+      "node_a": 10,
+      "node_b": 6,
+      "node_c": 6
+    },
+    "reject": {
+      "node_a": 0,
+      "node_b": 0,
+      "node_c": 0
+    },
+    "eligible_reviews": {
+      "node_a": 2,
+      "node_b": 2,
+      "node_c": 2
+    },
+    "used_points": {
+      "node_a": 5,
+      "node_b": 3,
+      "node_c": 3
+    },
+    "agree_rate": {
+      "node_a": 1.0,
+      "node_b": 1.0,
+      "node_c": 1.0
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "node_a": 5.0
+    },
+    "point_rep_delta": {
+      "node_a": 4.0,
+      "node_b": 6.0,
+      "node_c": 12.0
+    }
+  }
+}

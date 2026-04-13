@@ -1,0 +1,46 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "Simple ways to reduce the risk of getting COVID-19 include practicing good personal hygiene, such as regular hand washing, wearing face masks or coverings in public, maintaining physical or social distancing, ensuring proper ventilation of indoor spaces, staying home if diagnosed or suspect infection, covering coughs and sneezes, keeping unwashed hands away from the face, staying up to date on COVID-19 vaccinations, and maintaining clean indoor air [doc1_covid19.txt:chunk_00006][doc1_covid19.txt:chunk_00133][doc1_covid19.txt:chunk_00094][doc1_covid19.txt:chunk_00100][doc1_covid19.txt:chunk_00119].",
+    "used_points": [
+      "node_a:0:65efbdbe",
+      "node_a:1:9e029f2c",
+      "node_a:2:2cdc0376",
+      "node_a:3:f45ea82d",
+      "node_a:4:3bf9c6c0",
+      "node_a:5:b5d5d5a6",
+      "node_a:6:b0952b74",
+      "node_a:7:5ec69fcf",
+      "node_a:9:f2fe6719"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "To reduce the risk of getting COVID-19, it is important to stay home if you feel ill or have symptoms, maintain good indoor airflow, practice physical distancing, wear a mask in appropriate settings, wash your hands frequently, use hand sanitizer when soap isn't available, cover your coughs and sneezes, avoid close contact with anyone who is sick, and test for COVID-19 if you have symptoms or after exposure. Additionally, staying informed about COVID-19 updates and guidelines from health authorities and keeping up to date on vaccinations can enhance protection against the virus.",
+    "used_points": [
+      "node_b:0:9d79aba0",
+      "node_b:1:73ba7a33",
+      "node_b:2:f8ebc2e8",
+      "node_b:3:bbbc56dd",
+      "node_b:4:a8b4d537",
+      "node_b:5:58147166",
+      "node_b:6:3bfce4c0",
+      "node_b:7:899c9234",
+      "node_b:8:25ea32ff",
+      "node_c:5:d10aa6f3"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "To reduce the risk of getting COVID-19, it is important to avoid crowded places and practice physical distancing of at least 1 metre, wear a mask in public places where physical distancing is not possible, wash your hands frequently with soap and water or an alcohol-based hand rub, keep indoor spaces well ventilated, seek medical care early if experiencing symptoms, stay informed about COVID-19 updates and guidelines from health authorities, and get vaccinated to help reduce the spread of the virus.",
+    "used_points": [
+      "node_c:0:b162fba3",
+      "node_c:1:1b9e57a2",
+      "node_c:2:2fa2f5e8",
+      "node_c:3:b2a7dc77",
+      "node_c:4:b322475a",
+      "node_c:5:d10aa6f3",
+      "node_c:6:a697da86"
+    ]
+  }
+]

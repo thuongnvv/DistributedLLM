@@ -94,23 +94,21 @@ with st.sidebar:
     """)
     st.divider()
     st.markdown("### Nodes")
-    col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(2)
     with col1:
-        st.markdown("**Node A**\n`doc1_covid19.txt`")
+        st.markdown("**Node A** — COVID-19 (Wikipedia)\n**Node B** — COVID-19 (Mayo Clinic)\n**Node C** — COVID-19 (WHO)")
     with col2:
-        st.markdown("**Node B**\n`doc2_covid19.txt`")
-    with col3:
-        st.markdown("**Node C**\n`doc3_covid19.txt`")
+        st.markdown("**Node D** — Save and Grow (FAO)\n**Node E** — Farm Management\n**Node F** — IPM Strategies")
 
 
 # ==================== MAIN ====================
 st.title("🤖 Distributed LLM RAG PoC")
-st.markdown("*2-node peer-review consensus with real RAG retrieval*")
+st.markdown("*6-node peer-review consensus with real RAG retrieval*")
 
 query = st.text_area(
-    "Ask a question about COVID-19:",
+    "Ask a question:",
     value=st.session_state.query,
-    placeholder="e.g. What are the symptoms of COVID-19?",
+    placeholder="e.g. What are symptoms of COVID-19? or How to manage farm pests?",
     height=80,
 )
 

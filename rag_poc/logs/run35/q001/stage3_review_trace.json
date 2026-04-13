@@ -1,0 +1,188 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:1:3bed6930",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document lists dry cough, shortness of breath, and loss of taste or smell as common symptoms."
+      },
+      {
+        "point_id": "node_b:2:f9f073c2",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document states extreme tiredness (fatigue) is a common symptom."
+      },
+      {
+        "point_id": "node_b:5:01f3d26b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document mentions fever or chills as common symptoms."
+      },
+      {
+        "point_id": "node_b:3:db38ccd4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document indicates digestive symptoms such as upset stomach, vomiting, or diarrhea can occur."
+      },
+      {
+        "point_id": "node_b:4:2547bd69",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document confirms pain, including headaches and body or muscle aches, is a symptom."
+      },
+      {
+        "point_id": "node_b:0:701a6d86",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document states symptoms often show up 2 to 14 days after exposure."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:4831f02a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document states the most common symptoms are fever, cough, and tiredness."
+      },
+      {
+        "point_id": "node_c:1:6fdc6079",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document mentions other symptoms can include shortness of breath and chest pain or pressure."
+      },
+      {
+        "point_id": "node_c:2:2c0375cb",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document confirms muscle or body aches, headache, and loss of taste or smell are common."
+      },
+      {
+        "point_id": "node_c:3:a3f30eb2",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document states confusion, sore throat, and congestion or runny nose may occur."
+      },
+      {
+        "point_id": "node_c:4:d16eea45",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document indicates diarrhea, nausea and vomiting, abdominal pain, and skin rashes can be symptoms."
+      },
+      {
+        "point_id": "node_c:5:6628b053",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document mentions infants may experience difficulty feeding as a symptom."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:5d0c5bf0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions coughing, fever, and loss of smell and taste as common symptoms."
+      },
+      {
+        "point_id": "node_a:1:a8db8b41",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document includes headaches, nasal congestion, and muscle pain as additional symptoms."
+      },
+      {
+        "point_id": "node_a:2:e4cdca4f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that breathing difficulties can occur in moderate to severe cases."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:4831f02a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms fever, cough, and tiredness as common symptoms."
+      },
+      {
+        "point_id": "node_c:1:6fdc6079",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions shortness of breath and chest pain or pressure as additional symptoms."
+      },
+      {
+        "point_id": "node_c:2:2c0375cb",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document includes muscle or body aches, headache, and loss of taste or smell as common."
+      },
+      {
+        "point_id": "node_c:3:a3f30eb2",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states confusion, sore throat, and congestion or runny nose may occur."
+      },
+      {
+        "point_id": "node_c:4:d16eea45",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document lists diarrhea, nausea and vomiting, abdominal pain, and skin rashes as possible symptoms."
+      },
+      {
+        "point_id": "node_c:5:6628b053",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that infants may experience difficulty feeding."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:5d0c5bf0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document lists coughing, fever, and loss of smell and taste as common symptoms."
+      },
+      {
+        "point_id": "node_a:1:a8db8b41",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document mentions headaches, nasal congestion, and muscle pain as symptoms."
+      },
+      {
+        "point_id": "node_a:2:e4cdca4f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document states that breathing difficulties can occur in moderate to severe cases."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:1:3bed6930",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document lists dry cough, shortness of breath, and loss of taste or smell as common symptoms."
+      },
+      {
+        "point_id": "node_b:2:f9f073c2",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document confirms extreme tiredness (fatigue) as a common symptom."
+      },
+      {
+        "point_id": "node_b:5:01f3d26b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document states fever or chills are common symptoms."
+      },
+      {
+        "point_id": "node_b:3:db38ccd4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document mentions digestive symptoms such as upset stomach, vomiting, or diarrhea."
+      },
+      {
+        "point_id": "node_b:4:2547bd69",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document states pain, including headaches and body or muscle aches, is a symptom."
+      },
+      {
+        "point_id": "node_b:0:701a6d86",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document states symptoms often show up 2 to 14 days after contact with the virus."
+      }
+    ]
+  }
+]

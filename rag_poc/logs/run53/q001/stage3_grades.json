@@ -1,0 +1,128 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:6c4b001e",
+      "node_b:1:26899f11",
+      "node_b:2:30ae2b19",
+      "node_b:3:f012920b",
+      "node_b:4:b11e1637",
+      "node_b:5:2dbbfa4a",
+      "node_b:6:1769fa66",
+      "node_b:7:899c9234",
+      "node_b:8:9d79aba0"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:9:25ea32ff"
+    ],
+    "note": "All points except testing are supported by the local context."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:d9ee44a0",
+      "node_c:1:95b9522d",
+      "node_c:2:2fa2f5e8",
+      "node_c:3:afd55afa",
+      "node_c:4:b322475a",
+      "node_c:5:a1d0f995",
+      "node_c:6:a697da86",
+      "node_c:7:fc276859"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:8:066f07a9",
+      "node_a:9:7f9cb627"
+    ],
+    "note": "All points except surface cleaning are supported by the local context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:7b438a55",
+      "node_a:1:ddeaa568",
+      "node_a:2:cf7290f2",
+      "node_a:3:f9666c79",
+      "node_a:4:487567c0",
+      "node_a:5:f0129d8a",
+      "node_a:6:76a73fba",
+      "node_a:7:5ec69fcf",
+      "node_a:9:7f9cb627"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:8:afae4a0c"
+    ],
+    "note": "Point about keeping unwashed hands away from the face is not mentioned in the document."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:d9ee44a0",
+      "node_c:1:95b9522d",
+      "node_c:2:2fa2f5e8",
+      "node_c:3:afd55afa",
+      "node_c:4:b322475a",
+      "node_c:5:a1d0f995",
+      "node_c:6:a697da86",
+      "node_c:7:fc276859",
+      "node_a:9:7f9cb627"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:8:066f07a9"
+    ],
+    "note": "Point about regularly cleaning and disinfecting surfaces is not mentioned in the document."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:7b438a55",
+      "node_a:1:ddeaa568",
+      "node_a:2:cf7290f2",
+      "node_a:3:f9666c79",
+      "node_a:4:487567c0",
+      "node_a:5:f0129d8a",
+      "node_a:6:76a73fba",
+      "node_a:7:5ec69fcf"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:8:afae4a0c",
+      "node_a:9:7f9cb627"
+    ],
+    "note": "All points except two are supported by the document."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:6c4b001e",
+      "node_b:1:26899f11",
+      "node_b:2:30ae2b19",
+      "node_b:3:f012920b",
+      "node_b:4:b11e1637",
+      "node_b:5:2dbbfa4a",
+      "node_b:6:1769fa66",
+      "node_b:7:899c9234",
+      "node_b:8:9d79aba0"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:9:25ea32ff"
+    ],
+    "note": "All points except one are supported by the document."
+  }
+]

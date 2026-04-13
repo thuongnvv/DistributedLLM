@@ -1,0 +1,202 @@
+[
+  {
+    "node_id": "node_a",
+    "point_support": [
+      {
+        "point_id": "node_a:0:db7bb25d",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document confirms transmission through inhaling contaminated air."
+      },
+      {
+        "point_id": "node_a:1:377b09b1",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states infected individuals exhale particles when they breathe, talk, cough, sneeze, or sing."
+      },
+      {
+        "point_id": "node_a:2:ec24fe30",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document mentions transmission is most likely at close range but can occur over longer distances."
+      },
+      {
+        "point_id": "node_a:3:1c61ff88",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document confirms spread through contact with eyes, nose, or mouth."
+      },
+      {
+        "point_id": "node_a:4:f3e6a96a",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states small airborne particles can remain suspended and travel longer distances."
+      },
+      {
+        "point_id": "node_a:5:38604400",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document mentions transmission via touching contaminated surfaces."
+      },
+      {
+        "point_id": "node_a:6:89871063",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states people can spread the virus even if asymptomatic."
+      },
+      {
+        "point_id": "node_b:0:03db0aeb",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:3:f3060f0c",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:5:61ef2250",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:0:27aa7a6b",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:6:61f6573f",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:7:d848ded8",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "point_support": [
+      {
+        "point_id": "node_b:0:03db0aeb",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document confirms that COVID-19 spreads mainly from person to person through respiratory droplets."
+      },
+      {
+        "point_id": "node_b:1:c3956406",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states that the virus can be transmitted when an infected person coughs, sneezes, or talks."
+      },
+      {
+        "point_id": "node_b:2:2d80bb17",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:3:f3060f0c",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document indicates that COVID-19 can spread in areas with low airflow."
+      },
+      {
+        "point_id": "node_b:4:04d29f09",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document mentions that close contact with an infected person increases the risk of transmission."
+      },
+      {
+        "point_id": "node_b:5:61ef2250",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:6:61f6573f",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:7:d848ded8",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:3:1c61ff88",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:0:db7bb25d",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:0:27aa7a6b",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:6:89871063",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document confirms that it's possible to contract COVID-19 from asymptomatic individuals."
+      },
+      {
+        "point_id": "node_a:5:38604400",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states that touching contaminated surfaces can lead to transmission."
+      },
+      {
+        "point_id": "node_a:1:377b09b1",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "point_support": [
+      {
+        "point_id": "node_c:0:27aa7a6b",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states that the virus can spread from an infected person's mouth or nose in small droplets."
+      },
+      {
+        "point_id": "node_c:1:2390f7b7",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:2:55f0cc4a",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that people can be contagious whether or not they are displaying symptoms."
+      },
+      {
+        "point_id": "node_c:3:dbf0571f",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that infection can occur by touching the mouth, nose, or eyes after touching contaminated surfaces."
+      },
+      {
+        "point_id": "node_b:0:03db0aeb",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that COVID-19 spreads mainly from person to person through respiratory droplets."
+      },
+      {
+        "point_id": "node_a:3:1c61ff88",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:3:f3060f0c",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:0:db7bb25d",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:5:61ef2250",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document indicates that spending time in crowded spaces with poor airflow raises the risk of catching COVID-19."
+      },
+      {
+        "point_id": "node_b:6:61f6573f",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  }
+]

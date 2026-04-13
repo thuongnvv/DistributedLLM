@@ -1,0 +1,35 @@
+[
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:b45f35f8",
+      "node_c:2:eee8b440",
+      "node_c:3:82b008f5",
+      "node_c:4:3c4a11be",
+      "node_b:0:ebef32ac",
+      "node_b:4:cfef3f63"
+    ],
+    "reject_points": [
+      "node_c:1:71ee5bdf"
+    ],
+    "unknown_points": [],
+    "note": "One point was contradicted based on the document's emphasis on the need for testing to confirm COVID-19, which affects the claim about symptom severity."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:ebef32ac",
+      "node_b:1:43969c1c",
+      "node_b:4:cfef3f63",
+      "node_b:2:7c22d575",
+      "node_c:4:3c4a11be"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by local or external evidence."
+  }
+]

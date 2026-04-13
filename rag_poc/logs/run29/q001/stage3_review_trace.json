@@ -1,0 +1,238 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:5d0c5bf0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Common symptoms include coughing, fever, and loss of smell and taste."
+      },
+      {
+        "point_id": "node_a:1:a8db8b41",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Symptoms may also include headaches, nasal congestion, and muscle pain."
+      },
+      {
+        "point_id": "node_b:1:f59e055b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Common symptoms include congestion, runny nose, or sore throat."
+      },
+      {
+        "point_id": "node_b:2:85fb68a4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Dry cough is a common symptom of COVID-19."
+      },
+      {
+        "point_id": "node_b:3:e97f9d27",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Shortness of breath is another symptom associated with COVID-19."
+      },
+      {
+        "point_id": "node_b:4:c0fae3da",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Loss of taste or smell can occur in COVID-19 patients."
+      },
+      {
+        "point_id": "node_b:5:b62cb9bc",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Extreme tiredness, known as fatigue, is a symptom of COVID-19."
+      },
+      {
+        "point_id": "node_b:6:90407b2d",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Digestive symptoms like upset stomach, vomiting, or diarrhea may occur."
+      },
+      {
+        "point_id": "node_b:8:65ad722a",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      },
+      {
+        "point_id": "node_b:0:701a6d86",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:4831f02a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The most common symptoms are fever, cough, and tiredness."
+      },
+      {
+        "point_id": "node_c:1:ddf6ff4d",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Other symptoms can include shortness of breath, chest pain or pressure, and muscle or body aches."
+      },
+      {
+        "point_id": "node_c:2:23993677",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Headache, loss of taste or smell, confusion, and sore throat are also common symptoms."
+      },
+      {
+        "point_id": "node_c:4:1c3555dc",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Skin rashes may also be a symptom of COVID-19."
+      },
+      {
+        "point_id": "node_c:5:6628b053",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Infants may experience difficulty feeding as a symptom of COVID-19."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:5d0c5bf0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context."
+      },
+      {
+        "point_id": "node_a:1:a8db8b41",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context."
+      },
+      {
+        "point_id": "node_a:2:e4cdca4f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context."
+      },
+      {
+        "point_id": "node_a:4:ffebc87c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context."
+      },
+      {
+        "point_id": "node_b:3:e97f9d27",
+        "basis": "CONTRADICTED",
+        "reason": "Shortness of breath is not mentioned as a common symptom in the local context."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:4831f02a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by external evidence."
+      },
+      {
+        "point_id": "node_c:1:ddf6ff4d",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by external evidence."
+      },
+      {
+        "point_id": "node_c:2:23993677",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by external evidence."
+      },
+      {
+        "point_id": "node_c:4:1c3555dc",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by external evidence."
+      },
+      {
+        "point_id": "node_c:5:6628b053",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:5d0c5bf0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Accurate representation of common symptoms."
+      },
+      {
+        "point_id": "node_a:1:a8db8b41",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Includes additional symptoms supported by local context."
+      },
+      {
+        "point_id": "node_a:2:e4cdca4f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Breathing difficulties are correctly noted."
+      },
+      {
+        "point_id": "node_a:4:ffebc87c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Loss of taste and smell is accurately reported."
+      },
+      {
+        "point_id": "node_b:3:e97f9d27",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:5d0c5bf0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Accurate representation of common symptoms."
+      },
+      {
+        "point_id": "node_a:1:a8db8b41",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Includes additional symptoms supported by local context."
+      },
+      {
+        "point_id": "node_b:1:f59e055b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Congestion and runny nose are correctly noted."
+      },
+      {
+        "point_id": "node_b:2:85fb68a4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Dry cough is accurately reported."
+      },
+      {
+        "point_id": "node_b:3:e97f9d27",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Shortness of breath is another symptom associated with COVID-19."
+      },
+      {
+        "point_id": "node_b:4:c0fae3da",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Loss of taste or smell is correctly noted."
+      },
+      {
+        "point_id": "node_b:5:b62cb9bc",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Extreme tiredness is accurately reported."
+      },
+      {
+        "point_id": "node_b:6:90407b2d",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Digestive symptoms are correctly noted."
+      },
+      {
+        "point_id": "node_b:8:65ad722a",
+        "basis": "UNKNOWN",
+        "reason": "Fever or chills is not specifically cited in the provided context."
+      },
+      {
+        "point_id": "node_b:0:701a6d86",
+        "basis": "CONTRADICTED",
+        "reason": "The timing of symptom appearance is not supported by the local context."
+      }
+    ]
+  }
+]

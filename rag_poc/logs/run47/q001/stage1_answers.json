@@ -1,0 +1,143 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:fa3053a0",
+        "text": "COVID-19 spreads mainly through inhaling air contaminated by droplets and aerosols from infected individuals.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00024"
+        ]
+      },
+      {
+        "point_id": "node_a:1:6fb126e0",
+        "text": "Infected individuals exhale virus-containing particles when they breathe, talk, cough, sneeze, or sing.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00024"
+        ]
+      },
+      {
+        "point_id": "node_a:2:ec24fe30",
+        "text": "Transmission is most likely at close range but can occur over longer distances, especially indoors.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00024"
+        ]
+      },
+      {
+        "point_id": "node_a:3:db03ac9c",
+        "text": "COVID-19 can also spread when infectious particles contact the eyes, nose, or mouth.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00004"
+        ]
+      },
+      {
+        "point_id": "node_a:4:f3e6a96a",
+        "text": "Small airborne particles can remain suspended in the air and travel longer distances indoors.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00004"
+        ]
+      },
+      {
+        "point_id": "node_a:5:38604400",
+        "text": "Touching surfaces contaminated with the virus and then touching the face can also lead to transmission.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00004"
+        ]
+      },
+      {
+        "point_id": "node_a:6:0b780cd5",
+        "text": "People can spread the virus even if they do not show symptoms and remain contagious for up to 20 days.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00004"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:179eb57b",
+        "text": "COVID-19 spreads mainly from person to person through close contact.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00007"
+        ]
+      },
+      {
+        "point_id": "node_b:1:f71c7035",
+        "text": "The virus can spread through tiny droplets when an infected person coughs, sneezes, or talks.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00008"
+        ]
+      },
+      {
+        "point_id": "node_b:2:2b72cbe1",
+        "text": "Infected individuals can spread the virus even if they have no symptoms.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00007"
+        ]
+      },
+      {
+        "point_id": "node_b:3:2d80bb17",
+        "text": "Droplets from an infected person's breath can land on nearby individuals.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00008"
+        ]
+      },
+      {
+        "point_id": "node_b:4:3f01bf7f",
+        "text": "Close contact includes sitting next to someone or sharing a space.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00011"
+        ]
+      },
+      {
+        "point_id": "node_b:5:56bdbf4b",
+        "text": "Risk of transmission increases in crowded spaces with poor airflow.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00011"
+        ]
+      },
+      {
+        "point_id": "node_b:6:11e98261",
+        "text": "Spending more than 30 minutes in close contact with an infected person raises risk.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00010"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:27aa7a6b",
+        "text": "The virus can spread from an infected person's mouth or nose in small droplets when they cough, sneeze, or breathe.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00003"
+        ]
+      },
+      {
+        "point_id": "node_c:1:2390f7b7",
+        "text": "Particles can range in size from larger respiratory droplets to smaller aerosols.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00003"
+        ]
+      },
+      {
+        "point_id": "node_c:2:55f0cc4a",
+        "text": "People can be contagious whether or not they are displaying symptoms.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00003"
+        ]
+      },
+      {
+        "point_id": "node_c:3:dbf0571f",
+        "text": "Infection can also occur by touching the mouth, nose, or eyes after touching contaminated surfaces.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00005"
+        ]
+      }
+    ]
+  }
+]

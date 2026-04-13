@@ -1,0 +1,258 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:467cd68e",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports staying home and away from others, including pets."
+      },
+      {
+        "point_id": "node_b:1:7fd78044",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports informing healthcare team about a positive test."
+      },
+      {
+        "point_id": "node_b:2:aee9b087",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports seeking emergency help for severe symptoms."
+      },
+      {
+        "point_id": "node_b:3:b11e1637",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports washing hands often with soap and water."
+      },
+      {
+        "point_id": "node_b:4:899c9234",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports avoiding close contact with sick individuals."
+      },
+      {
+        "point_id": "node_a:1:a237b46c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Local context supports calling ahead before visiting a healthcare provider."
+      },
+      {
+        "point_id": "node_a:2:fe84ff2f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Local context supports wearing a face mask in healthcare settings."
+      },
+      {
+        "point_id": "node_a:0:6351c476",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Local context supports staying home except to get medical care."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:adf9ee61",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports seeking medical care early for symptoms."
+      },
+      {
+        "point_id": "node_c:1:1b7e9d52",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports avoiding public places to prevent spread."
+      },
+      {
+        "point_id": "node_c:2:e466194d",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports keeping indoor spaces well ventilated."
+      },
+      {
+        "point_id": "node_c:3:1b9e57a2",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports wearing a mask where distancing is not possible."
+      },
+      {
+        "point_id": "node_c:4:fa715005",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports regular handwashing."
+      },
+      {
+        "point_id": "node_b:1:7fd78044",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports informing healthcare team about a positive test."
+      },
+      {
+        "point_id": "node_a:1:a237b46c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Local context supports calling ahead before visiting a healthcare provider."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:6351c476",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_a."
+      },
+      {
+        "point_id": "node_a:1:a237b46c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_a."
+      },
+      {
+        "point_id": "node_a:2:fe84ff2f",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_a."
+      },
+      {
+        "point_id": "node_a:3:bcc8f0f8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The point is supported by local context [doc2_covid19.txt:chunk_00023]."
+      },
+      {
+        "point_id": "node_a:4:40178a9c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_a."
+      },
+      {
+        "point_id": "node_b:1:7fd78044",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The point is supported by local context [doc2_covid19.txt:chunk_00006]."
+      },
+      {
+        "point_id": "node_c:0:adf9ee61",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:adf9ee61",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_c:1:1b7e9d52",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_c:2:e466194d",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_c:3:1b9e57a2",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_c:4:fa715005",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The point is supported by local context [doc2_covid19.txt:chunk_00023]."
+      },
+      {
+        "point_id": "node_b:1:7fd78044",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The point is supported by local context [doc2_covid19.txt:chunk_00006]."
+      },
+      {
+        "point_id": "node_a:1:a237b46c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_a."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:6351c476",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports staying home except to get medical care if diagnosed with COVID-19."
+      },
+      {
+        "point_id": "node_a:1:a237b46c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports calling ahead before visiting a healthcare provider if you have COVID-19."
+      },
+      {
+        "point_id": "node_a:2:fe84ff2f",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports wearing a face mask before entering a healthcare provider's office and when in any room or vehicle with another person."
+      },
+      {
+        "point_id": "node_a:3:bcc8f0f8",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports covering coughs and sneezes with a tissue and regularly washing hands with soap and water."
+      },
+      {
+        "point_id": "node_a:4:40178a9c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports avoiding sharing personal household items if diagnosed with COVID-19."
+      },
+      {
+        "point_id": "node_b:1:7fd78044",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports informing your healthcare team about a positive COVID-19 test or symptoms."
+      },
+      {
+        "point_id": "node_c:0:adf9ee61",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Local context supports seeking medical care early if you have symptoms like fever, cough, or difficulty breathing."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:467cd68e",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports staying home and away from others, including pets, if possible."
+      },
+      {
+        "point_id": "node_b:1:7fd78044",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports informing your healthcare team about a positive COVID-19 test or symptoms."
+      },
+      {
+        "point_id": "node_b:2:aee9b087",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports seeking emergency help for severe symptoms like trouble breathing or chest pain."
+      },
+      {
+        "point_id": "node_b:3:b11e1637",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports washing your hands often with soap and water for at least 20 seconds."
+      },
+      {
+        "point_id": "node_b:4:899c9234",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports avoiding close contact with anyone who is sick or has symptoms."
+      },
+      {
+        "point_id": "node_a:1:a237b46c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports calling ahead before visiting a healthcare provider if you have COVID-19."
+      },
+      {
+        "point_id": "node_a:2:fe84ff2f",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports wearing a face mask before entering a healthcare provider's office and when in any room or vehicle with another person."
+      },
+      {
+        "point_id": "node_a:0:6351c476",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports staying home except to get medical care if diagnosed with COVID-19."
+      }
+    ]
+  }
+]

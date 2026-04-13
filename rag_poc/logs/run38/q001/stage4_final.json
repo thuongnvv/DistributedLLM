@@ -1,0 +1,51 @@
+{
+  "winner": "node_a",
+  "final_answer": "COVID-19 is mainly transmitted from person to person through inhaling air contaminated by droplets and aerosols containing the virus. Infected individuals exhale these particles when they breathe, talk, cough, sneeze, or sing. Transmission is most likely at close range but can occur over longer distances, especially indoors. Additionally, COVID-19 can spread when infectious particles come into contact with the eyes, nose, or mouth. Small airborne particles can remain suspended in the air and travel longer distances indoors. Touching surfaces contaminated with the virus and then touching the face can also lead to transmission. People can spread the virus even if they do not develop symptoms, remaining contagious for up to 20 days.",
+  "metrics": {
+    "pass": {
+      "node_a": 2,
+      "node_b": 2,
+      "node_c": 1
+    },
+    "fail": {
+      "node_a": 0,
+      "node_b": 0,
+      "node_c": 0
+    },
+    "agree": {
+      "node_a": 14,
+      "node_b": 12,
+      "node_c": 5
+    },
+    "reject": {
+      "node_a": 0,
+      "node_b": 0,
+      "node_c": 0
+    },
+    "eligible_reviews": {
+      "node_a": 2,
+      "node_b": 2,
+      "node_c": 2
+    },
+    "used_points": {
+      "node_a": 7,
+      "node_b": 6,
+      "node_c": 5
+    },
+    "agree_rate": {
+      "node_a": 1.0,
+      "node_b": 1.0,
+      "node_c": 0.5
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "node_a": 5.0
+    },
+    "point_rep_delta": {
+      "node_a": 18.0,
+      "node_b": 10.0,
+      "node_c": 3.0
+    }
+  }
+}

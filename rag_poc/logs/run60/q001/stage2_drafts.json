@@ -1,0 +1,47 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "COVID-19 primarily spreads through inhalation of air contaminated with droplets and aerosols from infected individuals who exhale these particles while breathing, talking, coughing, sneezing, or singing. Transmission is most likely at close range but can also occur over longer distances indoors. Additionally, the virus can spread by touching the eyes, nose, or mouth after contact with contaminated surfaces. Infected individuals can spread the virus even if they are asymptomatic and remain contagious for up to 20 days [doc1:chunk_00024, doc1:chunk_00004].",
+    "used_points": [
+      "node_a:0:07a8c695",
+      "node_a:1:2567fdd7",
+      "node_a:2:97cfd956",
+      "node_a:3:e765d8d1",
+      "node_a:4:59b04548",
+      "node_c:0:688ca7b0",
+      "node_c:2:5668c8d6",
+      "node_c:1:da9ca351",
+      "node_b:0:81c35db2",
+      "node_b:4:04360111"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "COVID-19 primarily spreads through the air via droplets and aerosols when infected individuals cough, sneeze, breathe, sing, or talk. The virus can land on the face of nearby individuals or be inhaled, especially in close proximity or poorly ventilated areas [doc2_covid19.txt:chunk_00000, chunk_00008]. Close contact, such as sitting next to someone or sharing a car, increases transmission risk [doc2_covid19.txt:chunk_00011]. People can spread the virus even if they are asymptomatic [doc2_covid19.txt:chunk_00007]. Additionally, touching the mouth, nose, or eyes after contact with contaminated surfaces can also lead to infection [node_a:3:e765d8d1, node_c:2:5668c8d6].",
+    "used_points": [
+      "node_b:0:81c35db2",
+      "node_b:1:6d670fce",
+      "node_b:2:5ef977e0",
+      "node_b:4:04360111",
+      "node_a:3:e765d8d1",
+      "node_c:2:5668c8d6",
+      "node_b:3:653e4be9"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "COVID-19 primarily spreads through respiratory droplets and aerosols from infected individuals when they cough, sneeze, speak, sing, or breathe. The virus can also spread by touching the mouth, nose, or eyes after contact with contaminated surfaces. People can be contagious even without symptoms. Preventive measures include wearing masks, hand washing, and avoiding close contact with symptomatic individuals [doc3_covid19.txt:chunk_00003, doc3_covid19.txt:chunk_00005, doc3_covid19.txt:chunk_00019].",
+    "used_points": [
+      "node_c:0:688ca7b0",
+      "node_c:1:da9ca351",
+      "node_c:2:5668c8d6",
+      "node_c:3:add54803",
+      "node_c:4:4e513b6d",
+      "node_b:2:5ef977e0",
+      "node_a:0:07a8c695",
+      "node_b:0:81c35db2",
+      "node_b:4:04360111",
+      "node_a:3:e765d8d1"
+    ]
+  }
+]

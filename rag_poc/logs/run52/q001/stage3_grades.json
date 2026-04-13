@@ -1,0 +1,92 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:3fa5ce02",
+      "node_b:1:70647e1f",
+      "node_b:2:0d90df4d",
+      "node_b:3:4abf905a",
+      "node_b:4:8f64acc8"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:2e87af50",
+      "node_c:1:5f2294d4",
+      "node_c:2:00af6bbe",
+      "node_c:3:3579131c",
+      "node_c:4:ed8552fe"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:cf1078a4",
+      "node_a:1:460e7efd",
+      "node_a:3:ba2bc38b",
+      "node_a:4:4aaa34f9",
+      "node_c:1:5f2294d4"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by local context or external evidence."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:2e87af50",
+      "node_c:1:5f2294d4",
+      "node_c:2:00af6bbe",
+      "node_c:3:3579131c",
+      "node_c:4:ed8552fe"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by local context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:cf1078a4",
+      "node_a:1:460e7efd",
+      "node_a:3:ba2bc38b",
+      "node_a:4:4aaa34f9",
+      "node_c:1:5f2294d4"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:3fa5ce02",
+      "node_b:1:70647e1f",
+      "node_b:2:0d90df4d",
+      "node_b:3:4abf905a",
+      "node_b:4:8f64acc8"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by external evidence."
+  }
+]

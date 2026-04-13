@@ -1,0 +1,188 @@
+{
+  "node_a": [
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00005",
+      "text": "There are two common tests to detect COVID. Antigen tests (also called rapid lateral flow tests) can be used at home. A positive test indicates an active infection. However, negative tests are not accurate, especially early or late in the infection. Health care providers can perform a more accurate PCR test, which is typically analysed in a laboratory.[17][18]",
+      "score": 0.5286
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00083",
+      "text": "The University of Oxford's CEBM has pointed to mounting evidence[184][185] that \"a good proportion of 'new' mild cases and people re-testing positives after quarantine or discharge from hospital are not infectious, but are simply clearing harmless virus particles which their immune system has efficiently dealt with\" and have called for \"an international effort to standardize and periodically calibrate testing\"[186] In September 2020",
+      "score": 0.4406
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00094",
+      "text": "Those diagnosed with COVID‑19 or who believe they may be infected are advised by the CDC to stay home except to get medical care, call ahead before visiting a healthcare provider, wear a face mask before entering the healthcare provider's office and when in any room or vehicle with another person, cover coughs and sneezes with a tissue, regularly wash hands with soap and water and avoid sharing personal household items.[202][203]",
+      "score": 0.417
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00084",
+      "text": ", the UK government issued \"guidance for procedures to be implemented in laboratories to provide assurance of positive SARS-CoV-2 RNA results during periods of low prevalence, when there is a reduction in the predictive value of positive test results\".[187]",
+      "score": 0.3824
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00079",
+      "text": "COVID‑19 can provisionally be diagnosed on the basis of symptoms and confirmed using reverse transcription polymerase chain reaction (RT-PCR) or other nucleic acid testing of infected secretions.[174][175] Along with laboratory testing, chest CT scans may be helpful to diagnose COVID‑19 in individuals with a high clinical suspicion of infection.[176] Detection of a past infection is possible with serological tests, which detect antibodies produced by the body in response to the infection.[174]\nViral testing\nMain article: COVID-19 testing",
+      "score": 0.3791
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00082",
+      "text": "Several laboratories and companies have developed serological tests, which detect antibodies produced by the body in response to infection. Some have been evaluated by Public Health England and approved for use in the UK.[183]",
+      "score": 0.3751
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00128",
+      "text": "A 2021 Cochrane rapid review found that based upon low-certainty evidence, international travel-related control measures such as restricting cross-border travel may help to contain the spread of COVID‑19.[261] Additionally, symptom/exposure-based screening measures at borders may miss many positive cases.[261] While test-based border screening measures may be more effective, it could also miss many positive cases if only conducted upon arrival without follow-up",
+      "score": 0.3544
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00081",
+      "text": "The standard methods of testing for presence of SARS-CoV-2 are nucleic acid tests,[174][177] which detects the presence of viral RNA fragments.[178] As these tests detect RNA but not infectious virus, its \"ability to determine duration of infectivity of patients is limited\".[179] The test is typically done on respiratory samples obtained by a nasopharyngeal swab; however, a nasal swab or sputum sample may also be used.[180][181] Results are generally available within hours.[174] The WHO has published several testing protocols for the disease.[182]",
+      "score": 0.3272
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00125",
+      "text": "Self-isolation at home has been recommended for those diagnosed with COVID‑19 and those who suspect they have been infected. Health agencies have issued detailed instructions for proper self-isolation.[258] Many governments have mandated or recommended self-quarantine for entire populations",
+      "score": 0.3254
+    },
+    {
+      "doc_id": "doc1_covid19.txt",
+      "chunk_id": "chunk_00016",
+      "text": "At least a third of the people who are infected with the virus do not develop noticeable symptoms at any point in time.[53][54][55] These asymptomatic carriers tend not to get tested and can still spread the disease.[55][56][57][58] Other infected people will develop symptoms later (called \"pre-symptomatic\") or have very mild symptoms and can also spread the virus.[58]",
+      "score": 0.3168
+    }
+  ],
+  "node_b": [
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00023",
+      "text": "Test for COVID-19. If you have symptoms of COVID-19 test for the illness. Or test five days after coming in contact with the virus.\n    Help from afar. Avoid close contact with anyone who is sick or has symptoms, if possible.\n    Wash your hands. Wash your hands well and often with soap and water for at least 20 seconds. Or use an alcohol-based hand sanitizer with at least 60% alcohol.\n    Cover your coughs and sneezes. Cough or sneeze into a tissue or your elbow. Then wash your hands.",
+      "score": 0.5312
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00003",
+      "text": "You may have only a few symptoms or none. People who have no symptoms but test positive for COVID-19 are called asymptomatic. For example, many children who test positive don't have symptoms of COVID-19 illness. People who go on to have symptoms are considered presymptomatic. People in both groups can still spread the COVID-19 virus to others.\n\nSome people may have symptoms that get worse about 5 to 7 days after symptoms start.",
+      "score": 0.4713
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00005",
+      "text": "People who are at high risk of serious illness may get medicine to block the spread of the COVID-19 virus in the body. Or your healthcare team may plan regular checks to monitor your health.\n\nGet emergency help right away for any of these symptoms in adults:\n\n    Trouble breathing or catching your breath.\n    Skin, lips or nail beds that are pale, gray or blue.\n    New confusion.\n    Trouble staying awake or waking up.\n    Chest pain or pressure that is constant.\n\nGet emergency help right away for any of those symptoms in children, as well as the following symptoms:",
+      "score": 0.4258
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00006",
+      "text": "Dizziness.\n    Dry mouth, crying with few or no tears, or less need to urinate, suggesting dehydration.\n    Frequent vomiting or loose stools, called diarrhea, for longer than 24 hours.\n    Fever that doesn't go away.\n    Trouble staying awake or waking up.\n    Being confused or agitated.\n\nThis list doesn't include every emergency symptom. If you or a person you're taking care of has symptoms that worry you, get help. Let the healthcare team know about a positive test for COVID-19 or symptoms of the illness.\n \nFrom Mayo Clinic to your inbox",
+      "score": 0.3567
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00001",
+      "text": "Staying up to date on your COVID-19 vaccine helps prevent serious illness, the need for hospital care due to COVID-19 and death from COVID-19. Other things that may help prevent the spread of this coronavirus include good indoor airflow, physical distancing, wearing a mask in the right setting and good hygiene.\n\nMedicine can limit the seriousness of the viral infection. Most people recover without long-term effects, but some people have symptoms that continue for months.\nProvider applying Bandaid to upper arm\nAre you fully protected?\n\nCreate your personalized vaccination plan.\nSymptoms",
+      "score": 0.3428
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00016",
+      "text": "COVID-19 illness also may worsen medical issues a person already manages.\nPost-COVID-19 syndrome\n\nAfter having COVID-19, some people report that their symptoms continue for months or they develop new symptoms. This syndrome has often been called long COVID. Some research reports that long COVID has happened whether a person had few symptoms or was seriously ill.",
+      "score": 0.2839
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00022",
+      "text": "Besides vaccination, there are other ways to stop the spread of the virus that causes COVID-19. If you are at a higher risk of serious illness, talk with your healthcare professional about how best to protect yourself. Know what to do if you get sick so you can quickly start treatment. If you feel ill or have COVID-19, stay home and away from others, including pets, if possible.\n\nIn general, make it a habit to:",
+      "score": 0.2822
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00025",
+      "text": "Try to spread out in crowded public areas, especially in places with poor airflow. This is important if you have a higher risk of serious illness.\n\nWear a mask when you're inside a crowded place with poor airflow. This is most important when many people in the area are sick with COVID-19 or the flu.\nHistory of infectious disease outbreaks and vaccines timeline.\n\nLearn about the history of major disease outbreaks, epidemics and pandemics, as well as the impact vaccines and research had on many infectious diseases.",
+      "score": 0.2697
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00017",
+      "text": "Other infections, such as the flu and polio, can lead to long-term illness. But researchers have only studied the virus that causes COVID-19 since it began to spread in 2019. So research continues into the specific effects of long-term COVID-19 symptoms.\n\nGetting a COVID-19 vaccine may help prevent post-COVID-19 syndrome.\nPrevention\n\nThe 2025-2026 COVID-19 vaccines available in the United States include Moderna, Pfizer-BioNTech and Novavax.\n\nModerna COVID-19 vaccine 2025-2026 formulas:",
+      "score": 0.2622
+    },
+    {
+      "doc_id": "doc2_covid19.txt",
+      "chunk_id": "chunk_00002",
+      "text": "Create your personalized vaccination plan.\nSymptoms\n\nCOVID-19 symptoms often show up 2 to 14 days after contact with the virus. You may have common cold symptoms, such as congestion, runny nose or sore throat.\n\nOther symptoms include:\n\n    Dry cough.\n    Shortness of breath.\n    Loss of taste or smell.\n    Extreme tiredness, called fatigue.\n    Digestive symptoms such as upset stomach, vomiting or loose stools, also called diarrhea.\n    Pain, such as headaches and body or muscle aches.\n    Fever or chills.",
+      "score": 0.244
+    }
+  ],
+  "node_c": [
+    {
+      "doc_id": "doc3_covid19.txt",
+      "chunk_id": "chunk_00012",
+      "text": "Experts around the world are continuously studying how the new variants affect the behaviour of the virus, including any potential impact on the effectiveness of COVID-19 vaccines.\n\nBut in the meantime, the important thing to do is to get vaccinated and continue measures to reduce the spread of the virus – which helps to reduce the chances for the virus to mutate – including physical distancing, mask wearing, good ventilation, regular handwashing and seeking care early if you have symptoms.\nI’ve been vaccinated, do I still need to get tested for COVID-19?",
+      "score": 0.3873
+    },
+    {
+      "doc_id": "doc3_covid19.txt",
+      "chunk_id": "chunk_00013",
+      "text": "If you have been fully vaccinated but are showing symptoms of COVID-19, you should contact your doctor about whether you should get tested.\nWhat is ‘Long COVID’? Can children be affected? \n\nPost COVID-19 condition, also sometimes referred to as ‘Long COVID,’ is a term used to describe symptoms persisting for weeks or months in some people after the initial recovery from COVID-19 infection.",
+      "score": 0.3723
+    },
+    {
+      "doc_id": "doc3_covid19.txt",
+      "chunk_id": "chunk_00021",
+      "text": "Children who have these symptoms should seek medical care. Early diagnosis and treatment are critical, but initial reports suggest most cases responded well to anti-inflammatory treatment. \nWhat should I do if my child has symptoms of COVID-19?\n\nSeek care early if your child is having symptoms and try to avoid going to public places (workplace, schools, public transport) to prevent it spreading to others.\nWhat precautions should I take for my family if we travel?",
+      "score": 0.3426
+    },
+    {
+      "doc_id": "doc3_covid19.txt",
+      "chunk_id": "chunk_00026",
+      "text": "Precautions include wearing a medical mask if available, washing your hands with soap and water or with an alcohol-based hand rub before and after touching your baby, and routinely cleaning and disinfecting surfaces you have touched.\n\n>> Breastfeeding safely during the COVID-19 pandemic\nI’m worried about bullying, discrimination and stigmatization. What’s the best way to talk about what’s happening?\n\nIt’s understandable if you’re feeling worried about the coronavirus. But fear and stigma make a difficult situation worse.",
+      "score": 0.3089
+    },
+    {
+      "doc_id": "doc3_covid19.txt",
+      "chunk_id": "chunk_00027",
+      "text": "Public health emergencies are stressful times for everyone affected. It’s important to stay informed and to be kind and supportive to each other. Words matter and using language that perpetuates existing stereotypes can drive people away from getting tested and taking the actions they need to protect themselves and their communities.\n\n>> Supporting your child’s mental health as they return to school during COVID-19\n\n>> How parents can support their child through COVID-19 losses",
+      "score": 0.2999
+    },
+    {
+      "doc_id": "doc3_covid19.txt",
+      "chunk_id": "chunk_00017",
+      "text": "Keep all indoor spaces well ventilated\n    Cover mouth and nose with flexed elbow or tissue when coughing or sneezing. Dispose of used tissue immediately\n    Regularly clean and disinfect frequently touched surfaces like phones, doorknobs, light switches and countertops\n    Seek medical care early if you or your child has a fever, cough, difficulty breathing or other symptoms of COVID-19",
+      "score": 0.286
+    },
+    {
+      "doc_id": "doc3_covid19.txt",
+      "chunk_id": "chunk_00007",
+      "text": "Children are not amongst the priority groups for receiving COVID-19 vaccines and that this will remain the case for many countries in the world. This is because the focus is on protecting those most at risk of severe disease and death due to COVID-19 – the elderly, those with other illnesses and front line health workers. These populations must be vaccinated prior to the vaccination of children. However, it is advisable to follow your local and national health guidelines, including when and if your child should receive the vaccine.",
+      "score": 0.2655
+    },
+    {
+      "doc_id": "doc3_covid19.txt",
+      "chunk_id": "chunk_00000",
+      "text": "What is COVID-19?\n\nCOVID-19 is an infectious respiratory illness caused by a coronavirus called SARS-CoV-2. ‘CO’ stands for corona, ‘VI’ for virus, and ‘D’ for disease.\nWhat are the symptoms of COVID-19?\n\nMany COVID-19 symptoms are similar to those of the flu, the common cold and other conditions, so a test is required to confirm if someone has COVID-19. Symptoms may appear 2 to 14 days after exposure to the virus and can range from very mild to severe illness. Some people who have been infected don’t have any symptoms.",
+      "score": 0.2641
+    },
+    {
+      "doc_id": "doc3_covid19.txt",
+      "chunk_id": "chunk_00016",
+      "text": "Avoid crowded places, confined and enclosed spaces with poor ventilation, and try to practice physical distancing from people in public, keeping at least 1 metre distance between yourself and others\n    Wear a mask when in public places where there is community transmission and where physical distancing is not possible\n    Wash your hands frequently using soap and water or an alcohol-based hand rub (Read: Everything you need to know about washing your hands to protect against COVID-19)\n    Keep all indoor spaces well ventilated",
+      "score": 0.2626
+    },
+    {
+      "doc_id": "doc3_covid19.txt",
+      "chunk_id": "chunk_00002",
+      "text": "Symptoms requiring urgent medical attention include difficulty breathing/fast or shallow breathing (also grunting, inability to breastfeed in infants), blue lips or face, chest pain or pressure, confusion, inability to awaken/not interacting, inability to drink or keep down any liquids and severe stomach pain.  \nHow does the COVID-19 virus spread?",
+      "score": 0.2584
+    }
+  ]
+}

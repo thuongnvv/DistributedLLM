@@ -1,0 +1,94 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:3a5b6a2a",
+        "text": "Individuals with symptoms of COVID-19 should consider getting tested to confirm infection.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00079"
+        ]
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "text": "Testing is essential for those who believe they may be infected with COVID-19.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00094"
+        ]
+      },
+      {
+        "point_id": "node_a:2:23c64557",
+        "text": "Health care providers can perform accurate PCR tests for COVID-19 diagnosis.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00005"
+        ]
+      },
+      {
+        "point_id": "node_a:3:1b5b873c",
+        "text": "A positive antigen test indicates an active COVID-19 infection.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00005"
+        ]
+      },
+      {
+        "point_id": "node_a:4:0f4be8f5",
+        "text": "Those diagnosed with COVID-19 should stay home and seek medical care if necessary.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00094"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:f774f4eb",
+        "text": "Test for COVID-19 if you have symptoms of the illness.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      },
+      {
+        "point_id": "node_b:1:04d0853e",
+        "text": "Consider testing five days after coming in contact with the virus.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:ef0d1272",
+        "text": "If you have symptoms of COVID-19, you should get tested to confirm the infection.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_c:1:fc336e56",
+        "text": "Symptoms may appear 2 to 14 days after exposure, and testing is required for confirmation.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_c:2:8080d67a",
+        "text": "If fully vaccinated and showing symptoms, contact your doctor about getting tested.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00013"
+        ]
+      },
+      {
+        "point_id": "node_c:3:3c07cbde",
+        "text": "Children with symptoms should seek medical care and consider testing.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00021"
+        ]
+      }
+    ]
+  }
+]

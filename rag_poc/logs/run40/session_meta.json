@@ -1,0 +1,10 @@
+{
+  "queries": [
+    {
+      "label": "q001",
+      "query": "When should someone consider getting tested for COVID-19?",
+      "winner": "node_a",
+      "q_dir": "q001"
+    }
+  ]
+}

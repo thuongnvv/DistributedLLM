@@ -1,0 +1,51 @@
+{
+  "winner": "node_c",
+  "final_answer": "The most common symptoms of COVID-19 include fever, cough, and tiredness. Other symptoms can include shortness of breath, chest pain or pressure, muscle or body aches, headache, loss of taste or smell, confusion, sore throat, congestion or runny nose, diarrhea, nausea and vomiting, abdominal pain, and skin rashes. Infants may also experience difficulty feeding as a symptom of COVID-19 [doc3_covid19.txt:chunk_00001].",
+  "metrics": {
+    "pass": {
+      "node_a": 2,
+      "node_b": 2,
+      "node_c": 2
+    },
+    "fail": {
+      "node_a": 0,
+      "node_b": 0,
+      "node_c": 0
+    },
+    "agree": {
+      "node_a": 6,
+      "node_b": 12,
+      "node_c": 12
+    },
+    "reject": {
+      "node_a": 0,
+      "node_b": 0,
+      "node_c": 0
+    },
+    "eligible_reviews": {
+      "node_a": 2,
+      "node_b": 2,
+      "node_c": 2
+    },
+    "used_points": {
+      "node_a": 3,
+      "node_b": 6,
+      "node_c": 6
+    },
+    "agree_rate": {
+      "node_a": 1.0,
+      "node_b": 1.0,
+      "node_c": 1.0
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "node_c": 5.0
+    },
+    "point_rep_delta": {
+      "node_a": 6.0,
+      "node_b": 12.0,
+      "node_c": 12.0
+    }
+  }
+}

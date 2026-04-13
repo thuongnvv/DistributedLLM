@@ -1,0 +1,52 @@
+{
+  "winner": "node_c",
+  "final_answer": "To reduce the risk of getting COVID-19, individuals should avoid crowded places and practice physical distancing of at least 1 metre [doc3_covid19.txt:chunk_00016]. Wearing a mask in public places where physical distancing is not possible is also recommended [doc3_covid19.txt:chunk_00016]. Frequent hand washing with soap and water or using an alcohol-based hand rub is essential [doc3_covid19.txt:chunk_00016]. Keeping indoor spaces well ventilated can help reduce the spread of the virus [doc3_covid19.txt:chunk_00016]. Staying informed about local COVID-19 guidance and recommendations is crucial [doc3_covid19.txt:chunk_00029]. Getting vaccinated helps reduce the spread of the virus and the severity of illness [doc3_covid19.txt:chunk_00012]. Regularly cleaning and disinfecting frequently touched surfaces is also important [doc3_covid19.txt:chunk_00026]. Finally, individuals should quarantine if exposed to someone with COVID-19 to prevent further spread [doc1_covid19.txt:chunk_00129] and stay home if diagnosed or suspect they may be infected [doc1_covid19.txt:chunk_00094].",
+  "metrics": {
+    "pass": {
+      "node_a": 1,
+      "node_b": 0,
+      "node_c": 2
+    },
+    "fail": {
+      "node_a": 1,
+      "node_b": 2,
+      "node_c": 0
+    },
+    "agree": {
+      "node_a": 17,
+      "node_b": 7,
+      "node_c": 17
+    },
+    "reject": {
+      "node_a": 2,
+      "node_b": 9,
+      "node_c": 0
+    },
+    "eligible_reviews": {
+      "node_a": 2,
+      "node_b": 2,
+      "node_c": 2
+    },
+    "used_points": {
+      "node_a": 10,
+      "node_b": 9,
+      "node_c": 9
+    },
+    "agree_rate": {
+      "node_a": 0.85,
+      "node_b": 0.3888888888888889,
+      "node_c": 0.9444444444444444
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "node_b": -2.0,
+      "node_c": 5.0
+    },
+    "point_rep_delta": {
+      "node_a": 18.0,
+      "node_b": -2.0,
+      "node_c": 14.0
+    }
+  }
+}

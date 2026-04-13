@@ -1,0 +1,87 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:3a5b6a2a",
+        "text": "Individuals with symptoms of COVID-19 should consider getting tested to confirm infection.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00079"
+        ]
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "text": "Testing is essential for those who believe they may be infected with COVID-19.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00094"
+        ]
+      },
+      {
+        "point_id": "node_a:2:075304f1",
+        "text": "Health care providers can perform accurate PCR tests for suspected COVID-19 cases.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00005"
+        ]
+      },
+      {
+        "point_id": "node_a:3:c52b2e50",
+        "text": "A positive antigen test indicates an active COVID-19 infection and warrants further testing.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00005"
+        ]
+      },
+      {
+        "point_id": "node_a:4:97dcea4a",
+        "text": "People with respiratory symptoms should be screened for COVID-19 to rule out co-infections.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00196"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:f774f4eb",
+        "text": "Test for COVID-19 if you have symptoms of the illness.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      },
+      {
+        "point_id": "node_b:1:04d0853e",
+        "text": "Consider testing five days after coming in contact with the virus.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:b6f761c4",
+        "text": "If you have symptoms of COVID-19, you should get tested to confirm if you have the virus.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_c:1:9990e9c8",
+        "text": "Contact your doctor about testing if you are fully vaccinated and showing symptoms of COVID-19.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00013"
+        ]
+      },
+      {
+        "point_id": "node_c:2:121a17d8",
+        "text": "Children showing symptoms of COVID-19 should seek medical care and consider testing.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00021"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "winner": "node_b",
+  "final_answer": "COVID-19 can lead to serious complications and death, unlike the common cold or flu, which are generally less severe. COVID-19 symptoms can include loss of taste or smell, which is not typical for the common cold or flu. The virus causing COVID-19, SARS-CoV-2, is genetically distinct from the viruses that cause the common cold and flu. COVID-19 spreads primarily through respiratory droplets, similar to the flu, but can also spread from asymptomatic individuals. COVID-19 can cause severe illness in people with pre-existing conditions, while colds and flu generally have milder outcomes.",
+  "metrics": {
+    "pass": {
+      "node_b": 1,
+      "node_c": 1
+    },
+    "fail": {
+      "node_b": 0,
+      "node_c": 0
+    },
+    "agree": {
+      "node_b": 5,
+      "node_c": 6
+    },
+    "reject": {
+      "node_b": 0,
+      "node_c": 1
+    },
+    "eligible_reviews": {
+      "node_b": 1,
+      "node_c": 1
+    },
+    "used_points": {
+      "node_b": 5,
+      "node_c": 7
+    },
+    "agree_rate": {
+      "node_b": 1.0,
+      "node_c": 0.8571428571428571
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "node_b": 5.0
+    },
+    "point_rep_delta": {
+      "node_b": 6.0,
+      "node_c": 4.0
+    }
+  }
+}

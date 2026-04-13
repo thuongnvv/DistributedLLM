@@ -1,0 +1,92 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:f774f4eb",
+      "node_b:1:04d0853e",
+      "node_a:1:0329e0d5"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:ef0d1272",
+      "node_c:1:fc336e56",
+      "node_c:2:8080d67a",
+      "node_c:3:3c07cbde",
+      "node_a:1:0329e0d5"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by external evidence."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:3a5b6a2a",
+      "node_a:1:0329e0d5",
+      "node_a:2:23c64557",
+      "node_a:3:1b5b873c",
+      "node_a:4:0f4be8f5",
+      "node_b:0:f774f4eb",
+      "node_c:0:ef0d1272"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by local or external evidence."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:ef0d1272",
+      "node_c:1:fc336e56",
+      "node_c:2:8080d67a",
+      "node_c:3:3c07cbde",
+      "node_a:1:0329e0d5"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by local or external evidence."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:3a5b6a2a",
+      "node_a:1:0329e0d5",
+      "node_a:2:23c64557",
+      "node_a:3:1b5b873c",
+      "node_a:4:0f4be8f5",
+      "node_b:0:f774f4eb",
+      "node_c:0:ef0d1272"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by local or external evidence."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:0:f774f4eb",
+      "node_b:1:04d0853e",
+      "node_a:1:0329e0d5"
+    ],
+    "note": "Missing target in batch response"
+  }
+]

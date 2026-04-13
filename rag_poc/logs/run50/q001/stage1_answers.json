@@ -1,0 +1,136 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:20647ad1",
+        "text": "Stay home except to get medical care.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00094"
+        ]
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "text": "Call ahead before visiting a healthcare provider.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00094"
+        ]
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "text": "Wear a face mask before entering the healthcare provider's office.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00094"
+        ]
+      },
+      {
+        "point_id": "node_a:3:7b8f3036",
+        "text": "Cover coughs and sneezes with a tissue.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00094"
+        ]
+      },
+      {
+        "point_id": "node_a:4:1e15c400",
+        "text": "Regularly wash hands with soap and water.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00094"
+        ]
+      },
+      {
+        "point_id": "node_a:5:6160868f",
+        "text": "Avoid sharing personal household items.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00094"
+        ]
+      },
+      {
+        "point_id": "node_a:6:45450e2f",
+        "text": "Self-isolate at home if diagnosed or suspect infection.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00125"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:467cd68e",
+        "text": "Stay home and away from others, including pets, if possible.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00022"
+        ]
+      },
+      {
+        "point_id": "node_b:1:ade07a45",
+        "text": "Test for COVID-19 if you have symptoms or after contact with the virus.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      },
+      {
+        "point_id": "node_b:2:6034abdf",
+        "text": "Wash your hands well and often with soap and water for at least 20 seconds.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      },
+      {
+        "point_id": "node_b:3:b0862161",
+        "text": "Use an alcohol-based hand sanitizer with at least 60% alcohol if soap is unavailable.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      },
+      {
+        "point_id": "node_b:4:1769fa66",
+        "text": "Cover your coughs and sneezes with a tissue or your elbow.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      },
+      {
+        "point_id": "node_b:5:b3208c8e",
+        "text": "Get emergency help if you experience trouble breathing or chest pain.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00005"
+        ]
+      },
+      {
+        "point_id": "node_b:6:2a2dee8a",
+        "text": "Let your healthcare team know about a positive test for COVID-19.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00006"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:bf8ab8d0",
+        "text": "Seek medical care early if you have symptoms of COVID-19.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00017"
+        ]
+      },
+      {
+        "point_id": "node_c:1:ac81552e",
+        "text": "Avoid going to public places to prevent spreading the virus.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00021"
+        ]
+      },
+      {
+        "point_id": "node_c:2:bb96c01f",
+        "text": "Contact your doctor about whether you should get tested.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00013"
+        ]
+      }
+    ]
+  }
+]

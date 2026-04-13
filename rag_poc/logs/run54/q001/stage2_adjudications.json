@@ -1,0 +1,242 @@
+[
+  {
+    "node_id": "node_a",
+    "point_support": [
+      {
+        "point_id": "node_a:0:65efbdbe",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document mentions good personal hygiene and regular hand washing as recommended."
+      },
+      {
+        "point_id": "node_a:1:9e029f2c",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states the use of face masks or coverings in public as a preventive measure."
+      },
+      {
+        "point_id": "node_a:2:2cdc0376",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document confirms maintaining physical or social distancing as a preventive measure."
+      },
+      {
+        "point_id": "node_a:3:f45ea82d",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document mentions ensuring proper ventilation of indoor spaces to reduce virus spread."
+      },
+      {
+        "point_id": "node_a:4:3bf9c6c0",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises staying home if diagnosed or suspect infection."
+      },
+      {
+        "point_id": "node_a:5:b5d5d5a6",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document recommends covering coughs and sneezes to prevent droplet spread."
+      },
+      {
+        "point_id": "node_a:6:b0952b74",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises keeping unwashed hands away from the face to avoid infection."
+      },
+      {
+        "point_id": "node_a:7:5ec69fcf",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states the importance of staying up to date on COVID-19 vaccinations."
+      },
+      {
+        "point_id": "node_a:8:18bbdb63",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:9:f2fe6719",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document mentions maintaining clean indoor air to reduce the risk of airborne transmission."
+      },
+      {
+        "point_id": "node_c:4:b322475a",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports seeking medical care early if experiencing symptoms."
+      },
+      {
+        "point_id": "node_c:5:d10aa6f3",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:8:25ea32ff",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:6:a697da86",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:0:9d79aba0",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:7:899c9234",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "point_support": [
+      {
+        "point_id": "node_b:0:9d79aba0",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states to stay home if feeling ill or having COVID-19 symptoms."
+      },
+      {
+        "point_id": "node_b:1:73ba7a33",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document mentions good indoor airflow as a preventive measure."
+      },
+      {
+        "point_id": "node_b:2:f8ebc2e8",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises practicing physical distancing."
+      },
+      {
+        "point_id": "node_b:3:bbbc56dd",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document recommends wearing a mask in appropriate settings."
+      },
+      {
+        "point_id": "node_b:4:a8b4d537",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document emphasizes frequent hand washing."
+      },
+      {
+        "point_id": "node_b:5:58147166",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states to use hand sanitizer when soap isn't available."
+      },
+      {
+        "point_id": "node_b:6:3bfce4c0",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises covering coughs and sneezes."
+      },
+      {
+        "point_id": "node_b:7:899c9234",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document suggests avoiding close contact with anyone who is sick."
+      },
+      {
+        "point_id": "node_b:8:25ea32ff",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states to test for COVID-19 if experiencing symptoms."
+      },
+      {
+        "point_id": "node_c:4:b322475a",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:5:d10aa6f3",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports staying informed about COVID-19 updates."
+      },
+      {
+        "point_id": "node_a:7:5ec69fcf",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:6:a697da86",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:4:3bf9c6c0",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:3:f45ea82d",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "point_support": [
+      {
+        "point_id": "node_c:0:b162fba3",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Confirmed in the local context that avoiding crowded places and practicing physical distancing is recommended."
+      },
+      {
+        "point_id": "node_c:1:1b9e57a2",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context supports wearing a mask in public places where physical distancing is not possible."
+      },
+      {
+        "point_id": "node_c:2:2fa2f5e8",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context confirms the importance of frequent handwashing."
+      },
+      {
+        "point_id": "node_c:3:b2a7dc77",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context emphasizes keeping indoor spaces well ventilated."
+      },
+      {
+        "point_id": "node_c:4:b322475a",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context advises seeking medical care early if experiencing symptoms."
+      },
+      {
+        "point_id": "node_c:5:d10aa6f3",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context encourages staying informed about COVID-19 updates."
+      },
+      {
+        "point_id": "node_c:6:a697da86",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context supports getting vaccinated to reduce virus spread."
+      },
+      {
+        "point_id": "node_c:7:dce791f1",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:8:25ea32ff",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the recommendation to test for COVID-19 if symptoms are present."
+      },
+      {
+        "point_id": "node_a:7:5ec69fcf",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports staying up to date on COVID-19 vaccinations."
+      },
+      {
+        "point_id": "node_b:0:9d79aba0",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence advises staying home if feeling ill or having COVID-19 symptoms."
+      },
+      {
+        "point_id": "node_b:7:899c9234",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence recommends avoiding close contact with anyone who is sick."
+      },
+      {
+        "point_id": "node_a:4:3bf9c6c0",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence advises staying home if diagnosed or suspecting infection."
+      },
+      {
+        "point_id": "node_b:1:73ba7a33",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports maintaining good indoor airflow to reduce virus spread."
+      }
+    ]
+  }
+]

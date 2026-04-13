@@ -1,0 +1,182 @@
+[
+  {
+    "node_id": "node_a",
+    "point_support": [
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states COVID-19 is caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_a:1:b24690d7",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document mentions the disease spread worldwide starting in January 2020."
+      },
+      {
+        "point_id": "node_a:2:e88c7060",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states the WHO declared COVID-19 a global health emergency in March 2020."
+      },
+      {
+        "point_id": "node_a:3:d798714e",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:4:e823ede5",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document describes transmission through inhaling contaminated air."
+      },
+      {
+        "point_id": "node_c:0:2e87af50",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:0:03f5bc77",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:4:ed8552fe",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:3:85526a3b",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The external source confirms that COVID-19 can lead to serious complications."
+      },
+      {
+        "point_id": "node_b:4:4f848e05",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:1:5f2294d4",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "point_support": [
+      {
+        "point_id": "node_b:0:03f5bc77",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context states that COVID-19 is caused by the SARS-CoV-2 virus and started spreading at the end of 2019."
+      },
+      {
+        "point_id": "node_b:1:673d7303",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that the virus spreads mainly through close contact and tiny droplets in the air."
+      },
+      {
+        "point_id": "node_b:2:896fa7d8",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context mentions that many people experience mild illness or no symptoms, but it can be severe for older adults and those with certain conditions."
+      },
+      {
+        "point_id": "node_b:3:85526a3b",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context states that COVID-19 can lead to serious complications like acute respiratory distress syndrome and blood clots."
+      },
+      {
+        "point_id": "node_b:4:4f848e05",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that it's possible to get COVID-19 more than once due to fading immunity and virus mutations."
+      },
+      {
+        "point_id": "node_c:0:2e87af50",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that COVID-19 is an infectious respiratory illness caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_a:3:d798714e",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence states that COVID-19 is caused by infection with the SARS-CoV-2 virus."
+      },
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that COVID-19 is a contagious disease caused by the coronavirus SARS-CoV-2."
+      },
+      {
+        "point_id": "node_c:4:ed8552fe",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence describes COVID-19 as a 'pandemic', referring to its geographical spread."
+      },
+      {
+        "point_id": "node_a:2:e88c7060",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence states that the World Health Organization declared COVID-19 a global health emergency in March 2020."
+      },
+      {
+        "point_id": "node_c:1:5f2294d4",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence explains the meaning of 'CO', 'VI', and 'D' in COVID-19."
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "point_support": [
+      {
+        "point_id": "node_c:0:2e87af50",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms COVID-19 is caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_c:1:5f2294d4",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context defines the acronym 'COVID'."
+      },
+      {
+        "point_id": "node_c:2:00af6bbe",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context states symptoms may appear 2 to 14 days after exposure."
+      },
+      {
+        "point_id": "node_c:3:3579131c",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context mentions that some infected individuals may be asymptomatic."
+      },
+      {
+        "point_id": "node_c:4:ed8552fe",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context describes COVID-19 as a pandemic."
+      },
+      {
+        "point_id": "node_a:3:d798714e",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms COVID-19 is caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_b:0:03f5bc77",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence states COVID-19 started spreading at the end of 2019."
+      },
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms COVID-19 is a contagious disease caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_b:3:85526a3b",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence states COVID-19 can lead to serious complications."
+      },
+      {
+        "point_id": "node_a:2:e88c7060",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the WHO declared COVID-19 a global health emergency."
+      },
+      {
+        "point_id": "node_b:4:4f848e05",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence states it's possible to get COVID-19 more than once."
+      }
+    ]
+  }
+]

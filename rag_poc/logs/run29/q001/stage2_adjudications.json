@@ -1,0 +1,227 @@
+[
+  {
+    "node_id": "node_a",
+    "point_support": [
+      {
+        "point_id": "node_a:0:5d0c5bf0",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_a:1:a8db8b41",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_a:2:e4cdca4f",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_a:3:c1e180b5",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:4:ffebc87c",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_a:5:29c8a897",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:6:fe416d64",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:7:2c4f282d",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:8:65ad722a",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:4:1c3555dc",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:3:e97f9d27",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_b:0:701a6d86",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:0:4831f02a",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:5:b62cb9bc",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "point_support": [
+      {
+        "point_id": "node_b:0:701a6d86",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The timing of symptom onset is supported by the local context."
+      },
+      {
+        "point_id": "node_b:1:f59e055b",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Congestion and runny nose are mentioned in the local context."
+      },
+      {
+        "point_id": "node_b:2:85fb68a4",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Dry cough is explicitly listed in the local context."
+      },
+      {
+        "point_id": "node_b:3:e97f9d27",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Shortness of breath is mentioned in the local context."
+      },
+      {
+        "point_id": "node_b:4:c0fae3da",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Loss of taste or smell is included in the local context."
+      },
+      {
+        "point_id": "node_b:5:b62cb9bc",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Extreme tiredness (fatigue) is listed in the local context."
+      },
+      {
+        "point_id": "node_b:6:90407b2d",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Digestive symptoms are mentioned in the local context."
+      },
+      {
+        "point_id": "node_b:7:d297d1aa",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:8:65ad722a",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Fever or chills is included in the local context."
+      },
+      {
+        "point_id": "node_b:9:dba05b52",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:4:1c3555dc",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:0:4831f02a",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:3:c1e180b5",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:5:6628b053",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:0:5d0c5bf0",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "This point is supported by the local context which lists common symptoms."
+      },
+      {
+        "point_id": "node_a:1:a8db8b41",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "This point is supported by the local context which includes headaches and muscle pain as symptoms."
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "point_support": [
+      {
+        "point_id": "node_c:0:4831f02a",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by the local context."
+      },
+      {
+        "point_id": "node_c:1:ddf6ff4d",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by the local context."
+      },
+      {
+        "point_id": "node_c:2:23993677",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by the local context."
+      },
+      {
+        "point_id": "node_c:3:b5195e09",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:4:1c3555dc",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by the local context."
+      },
+      {
+        "point_id": "node_c:5:6628b053",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by the local context."
+      },
+      {
+        "point_id": "node_b:8:65ad722a",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:3:e97f9d27",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:0:701a6d86",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:5:b62cb9bc",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:2:85fb68a4",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:3:c1e180b5",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  }
+]

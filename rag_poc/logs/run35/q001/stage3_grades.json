@@ -1,0 +1,92 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:1:3bed6930",
+      "node_b:2:f9f073c2",
+      "node_b:5:01f3d26b",
+      "node_b:3:db38ccd4",
+      "node_b:4:2547bd69",
+      "node_b:0:701a6d86"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:4831f02a",
+      "node_c:1:6fdc6079",
+      "node_c:2:2c0375cb",
+      "node_c:3:a3f30eb2",
+      "node_c:4:d16eea45",
+      "node_c:5:6628b053"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:5d0c5bf0",
+      "node_a:1:a8db8b41",
+      "node_a:2:e4cdca4f"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:4831f02a",
+      "node_c:1:6fdc6079",
+      "node_c:2:2c0375cb",
+      "node_c:3:a3f30eb2",
+      "node_c:4:d16eea45",
+      "node_c:5:6628b053"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:5d0c5bf0",
+      "node_a:1:a8db8b41",
+      "node_a:2:e4cdca4f"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:1:3bed6930",
+      "node_b:2:f9f073c2",
+      "node_b:5:01f3d26b",
+      "node_b:3:db38ccd4",
+      "node_b:4:2547bd69",
+      "node_b:0:701a6d86"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  }
+]

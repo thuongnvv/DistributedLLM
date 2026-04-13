@@ -1,0 +1,103 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "FAIL",
+    "agree_points": [],
+    "reject_points": [
+      "node_b:0:467cd68e",
+      "node_b:6:f47ee9af",
+      "node_b:2:6034abdf",
+      "node_b:3:b0862161",
+      "node_b:5:77d8d291"
+    ],
+    "unknown_points": [],
+    "note": "The points provided are accurate but lack citations from the correct document; they reference an external document instead."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:6:45450e2f",
+      "node_a:0:20647ad1",
+      "node_b:6:f47ee9af",
+      "node_a:1:ca2c266e",
+      "node_a:2:d4a9cbb8",
+      "node_c:2:f54907fd",
+      "node_c:3:a71128d0"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by local context and correctly cited."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:20647ad1",
+      "node_a:1:ca2c266e",
+      "node_a:2:d4a9cbb8",
+      "node_a:3:7b8f3036",
+      "node_a:4:1e15c400",
+      "node_a:5:6160868f",
+      "node_a:6:45450e2f",
+      "node_b:6:f47ee9af"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are well-supported by local context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:6:45450e2f",
+      "node_a:0:20647ad1",
+      "node_b:6:f47ee9af",
+      "node_a:1:ca2c266e",
+      "node_a:2:d4a9cbb8",
+      "node_c:2:f54907fd",
+      "node_c:3:a71128d0"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are well-supported by local context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "FAIL",
+    "agree_points": [],
+    "reject_points": [
+      "node_a:0:20647ad1",
+      "node_a:1:ca2c266e",
+      "node_a:2:d4a9cbb8",
+      "node_a:3:7b8f3036",
+      "node_a:4:1e15c400",
+      "node_a:5:6160868f",
+      "node_a:6:45450e2f"
+    ],
+    "unknown_points": [
+      "node_b:6:f47ee9af"
+    ],
+    "note": "The draft lacks emphasis on self-isolation, which is critical for those testing positive."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:467cd68e",
+      "node_b:6:f47ee9af",
+      "node_b:2:6034abdf",
+      "node_b:3:b0862161",
+      "node_b:5:77d8d291"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "The draft accurately reflects the necessary actions for someone who tests positive for COVID-19."
+  }
+]

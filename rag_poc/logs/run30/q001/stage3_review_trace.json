@@ -1,0 +1,248 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:179eb57b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Accurate description of transmission method."
+      },
+      {
+        "point_id": "node_b:1:f71c7035",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context on droplet transmission."
+      },
+      {
+        "point_id": "node_b:2:317f9d99",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Consistent with local context about asymptomatic transmission."
+      },
+      {
+        "point_id": "node_b:4:e53398bb",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Aligned with local context on transmission in low airflow."
+      },
+      {
+        "point_id": "node_b:5:21c9084e",
+        "basis": "UNKNOWN",
+        "reason": "Not supported by local context; external evidence needed."
+      },
+      {
+        "point_id": "node_b:6:02febb65",
+        "basis": "UNKNOWN",
+        "reason": "Not explicitly supported by local context."
+      },
+      {
+        "point_id": "node_b:7:346a1abe",
+        "basis": "UNKNOWN",
+        "reason": "Not explicitly supported by local context."
+      },
+      {
+        "point_id": "node_a:4:38604400",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Accurate description of surface transmission."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:179eb57b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Accurate description of transmission method."
+      },
+      {
+        "point_id": "node_a:0:fa3053a0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context on droplet and aerosol transmission."
+      },
+      {
+        "point_id": "node_b:1:f71c7035",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context on droplet transmission."
+      },
+      {
+        "point_id": "node_b:2:317f9d99",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Consistent with local context about asymptomatic transmission."
+      },
+      {
+        "point_id": "node_b:4:e53398bb",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Aligned with local context on transmission in low airflow."
+      },
+      {
+        "point_id": "node_c:1:aeee2eb8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Accurate description of particle size and asymptomatic transmission."
+      },
+      {
+        "point_id": "node_c:2:654602d2",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Accurate description of surface transmission."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:fa3053a0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context regarding transmission through inhaling contaminated air."
+      },
+      {
+        "point_id": "node_a:1:6fb126e0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context about exhaling virus-containing particles."
+      },
+      {
+        "point_id": "node_a:2:ec24fe30",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context on close range transmission."
+      },
+      {
+        "point_id": "node_a:3:1c61ff88",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context on contact with eyes, nose, or mouth."
+      },
+      {
+        "point_id": "node_a:4:38604400",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context on touching contaminated surfaces."
+      },
+      {
+        "point_id": "node_a:5:0f00bcea",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context on contagious period."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:179eb57b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context on person-to-person spread."
+      },
+      {
+        "point_id": "node_a:0:fa3053a0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context on inhaling contaminated air."
+      },
+      {
+        "point_id": "node_b:1:f71c7035",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context on droplets from coughing, sneezing, or talking."
+      },
+      {
+        "point_id": "node_b:2:317f9d99",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context on asymptomatic spread."
+      },
+      {
+        "point_id": "node_b:4:e53398bb",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context on low airflow increasing transmission risk."
+      },
+      {
+        "point_id": "node_c:1:aeee2eb8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by external evidence on particle sizes and asymptomatic contagion."
+      },
+      {
+        "point_id": "node_c:2:654602d2",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by external evidence on touching contaminated surfaces."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:fa3053a0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Accurately describes how COVID-19 spreads through droplets and aerosols."
+      },
+      {
+        "point_id": "node_a:1:6fb126e0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context regarding exhalation of virus-containing particles."
+      },
+      {
+        "point_id": "node_a:2:ec24fe30",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Describes transmission likelihood at close range and longer distances."
+      },
+      {
+        "point_id": "node_a:3:1c61ff88",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Correctly states that particles can contact eyes, nose, or mouth."
+      },
+      {
+        "point_id": "node_a:4:38604400",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Accurately mentions surface contamination as a transmission route."
+      },
+      {
+        "point_id": "node_a:5:0f00bcea",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Correctly states contagious period and asymptomatic transmission."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:179eb57b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Incorrectly cites external source; local context provides more accurate information."
+      },
+      {
+        "point_id": "node_b:1:f71c7035",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Misleading; local context emphasizes broader transmission mechanisms."
+      },
+      {
+        "point_id": "node_b:2:317f9d99",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Contradicted by local context which provides a more comprehensive view."
+      },
+      {
+        "point_id": "node_b:4:e53398bb",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Contradicted by local context regarding airflow and transmission."
+      },
+      {
+        "point_id": "node_b:5:21c9084e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Contradicted by local context; risk factors are not accurately represented."
+      },
+      {
+        "point_id": "node_b:6:02febb65",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Contradicted by local context; close contact is not the only risk."
+      },
+      {
+        "point_id": "node_b:7:346a1abe",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Contradicted by local context; duration of contact is not the sole factor."
+      },
+      {
+        "point_id": "node_a:4:38604400",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      }
+    ]
+  }
+]

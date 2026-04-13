@@ -1,0 +1,148 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:f774f4eb",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that testing is essential for those who believe they may be infected."
+      },
+      {
+        "point_id": "node_b:1:04d0853e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document supports testing five days after contact with the virus."
+      },
+      {
+        "point_id": "node_c:2:996a9e04",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The document supports that children with symptoms should seek medical care and consider testing."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:b6f761c4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that testing is required to confirm COVID-19 infection."
+      },
+      {
+        "point_id": "node_c:1:9990e9c8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document supports contacting a doctor for testing if fully vaccinated and showing symptoms."
+      },
+      {
+        "point_id": "node_c:2:996a9e04",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document supports that children with symptoms should seek medical care and consider testing."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:3a5b6a2a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that individuals with symptoms of COVID-19 should consider getting tested."
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that testing is essential for those who believe they may be infected."
+      },
+      {
+        "point_id": "node_b:1:04d0853e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document advises testing five days after contact with someone who has COVID-19."
+      },
+      {
+        "point_id": "node_c:2:996a9e04",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that children with symptoms should seek medical care and consider getting tested."
+      },
+      {
+        "point_id": "node_c:1:9990e9c8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that fully vaccinated individuals showing symptoms should contact their doctor about testing."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:b6f761c4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that individuals with symptoms of COVID-19 should get tested to confirm if they have the virus."
+      },
+      {
+        "point_id": "node_c:1:9990e9c8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that fully vaccinated individuals showing symptoms should contact their doctor about testing."
+      },
+      {
+        "point_id": "node_c:2:996a9e04",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that children with symptoms should seek medical care and consider getting tested."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:3a5b6a2a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that symptoms may require testing to confirm COVID-19 infection [doc3_covid19.txt:chunk_00000]."
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document supports the need for testing if one believes they may be infected [doc3_covid19.txt:chunk_00000]."
+      },
+      {
+        "point_id": "node_b:1:04d0853e",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence advises testing five days after contact with someone infected [doc2_covid19.txt:chunk_00023]."
+      },
+      {
+        "point_id": "node_c:2:996a9e04",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that children with symptoms should seek medical care and consider testing [doc3_covid19.txt:chunk_00021]."
+      },
+      {
+        "point_id": "node_c:1:9990e9c8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document advises fully vaccinated individuals with symptoms to contact their doctor about testing [doc3_covid19.txt:chunk_00013]."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:f774f4eb",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that individuals with symptoms should test for COVID-19 [doc2_covid19.txt:chunk_00023]."
+      },
+      {
+        "point_id": "node_b:1:04d0853e",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence advises testing five days after contact with someone infected [doc2_covid19.txt:chunk_00023]."
+      },
+      {
+        "point_id": "node_c:2:996a9e04",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that children with symptoms should seek medical care and consider testing [doc3_covid19.txt:chunk_00021]."
+      }
+    ]
+  }
+]

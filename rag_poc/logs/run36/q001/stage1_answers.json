@@ -1,0 +1,122 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "text": "COVID-19 is a contagious disease caused by the coronavirus SARS-CoV-2.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_a:1:b24690d7",
+        "text": "The disease spread worldwide starting in January 2020, leading to a pandemic.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_a:2:e88c7060",
+        "text": "The World Health Organization declared COVID-19 a global health emergency in March 2020.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_a:3:ce9f3073",
+        "text": "COVID-19 is caused by infection with SARS-CoV-2.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00024"
+        ]
+      },
+      {
+        "point_id": "node_a:4:0871af83",
+        "text": "Transmission occurs mainly through inhaling air contaminated by droplets or aerosols.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00024"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:de19a6f2",
+        "text": "COVID-19 is an illness caused by the SARS-CoV-2 virus, which emerged in late 2019 and became a pandemic in 2020.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_b:1:e8f36ee8",
+        "text": "The virus spreads mainly through close contact and tiny droplets from coughs, sneezes, or talking.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00007"
+        ]
+      },
+      {
+        "point_id": "node_b:2:896fa7d8",
+        "text": "Many people experience mild illness or no symptoms, but it can be severe for older adults and those with certain conditions.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_b:3:d99ee0bd",
+        "text": "Complications from severe COVID-19 can include respiratory distress, heart issues, and blood clots.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00015"
+        ]
+      },
+      {
+        "point_id": "node_b:4:7b9de632",
+        "text": "COVID-19 can lead to long-term symptoms, known as post-COVID-19 syndrome, which is still under research.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00017"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:2e87af50",
+        "text": "COVID-19 is an infectious respiratory illness caused by a coronavirus called SARS-CoV-2.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_c:1:5f2294d4",
+        "text": "'CO' stands for corona, 'VI' for virus, and 'D' for disease.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_c:2:00af6bbe",
+        "text": "Symptoms may appear 2 to 14 days after exposure to the virus and can range from very mild to severe illness.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_c:3:3579131c",
+        "text": "Some people who have been infected don’t have any symptoms.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_c:4:ed8552fe",
+        "text": "COVID-19 has been described as a 'pandemic', referring to its geographical spread.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00030"
+        ]
+      }
+    ]
+  }
+]

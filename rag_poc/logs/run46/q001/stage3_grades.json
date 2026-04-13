@@ -1,0 +1,100 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:701a6d86",
+      "node_b:1:f59e055b",
+      "node_b:2:1e357a9c",
+      "node_b:3:567772ca",
+      "node_b:4:7c0be73e",
+      "node_b:5:2af15bae",
+      "node_b:6:e066c460",
+      "node_b:7:db241610"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:4831f02a",
+      "node_c:1:ddf6ff4d",
+      "node_c:2:23993677",
+      "node_c:3:d4b4f059",
+      "node_c:4:427ea2c2",
+      "node_c:5:67f157f1"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:5d0c5bf0",
+      "node_a:2:e4cdca4f",
+      "node_a:3:c1e180b5",
+      "node_a:4:ffebc87c",
+      "node_a:6:fe416d64"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:4831f02a",
+      "node_c:1:ddf6ff4d",
+      "node_c:2:23993677",
+      "node_c:3:d4b4f059",
+      "node_c:4:427ea2c2",
+      "node_c:5:67f157f1"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:5d0c5bf0",
+      "node_a:2:e4cdca4f",
+      "node_a:3:c1e180b5",
+      "node_a:4:ffebc87c",
+      "node_a:6:fe416d64"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:701a6d86",
+      "node_b:1:f59e055b",
+      "node_b:2:1e357a9c",
+      "node_b:3:567772ca",
+      "node_b:4:7c0be73e",
+      "node_b:5:2af15bae",
+      "node_b:6:e066c460",
+      "node_b:7:db241610"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by external evidence."
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "node_id": "node_a",
+    "point_support": [
+      {
+        "point_id": "node_a:0:3a5b6a2a",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT mentions testing for COVID-19 based on symptoms."
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT emphasizes the importance of testing for those who believe they may be infected."
+      },
+      {
+        "point_id": "node_a:2:23c64557",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT confirms that health care providers can perform accurate PCR tests."
+      },
+      {
+        "point_id": "node_a:3:1b5b873c",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT states that a positive antigen test indicates an active infection."
+      },
+      {
+        "point_id": "node_a:4:0f4be8f5",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT advises those diagnosed with COVID-19 to stay home and seek medical care."
+      },
+      {
+        "point_id": "node_b:0:f774f4eb",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "EXTERNAL EVIDENCE supports testing for COVID-19 if symptoms are present."
+      },
+      {
+        "point_id": "node_c:0:ef0d1272",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "EXTERNAL EVIDENCE confirms that testing is recommended if symptoms of COVID-19 are present."
+      },
+      {
+        "point_id": "node_b:1:04d0853e",
+        "decision": "UNKNOWN",
+        "reason": "LOCAL CONTEXT does not mention testing five days after contact."
+      },
+      {
+        "point_id": "node_c:3:3c07cbde",
+        "decision": "UNKNOWN",
+        "reason": "LOCAL CONTEXT does not specifically mention children seeking medical care."
+      },
+      {
+        "point_id": "node_c:2:8080d67a",
+        "decision": "UNKNOWN",
+        "reason": "LOCAL CONTEXT does not address testing for fully vaccinated individuals with symptoms."
+      },
+      {
+        "point_id": "node_c:1:fc336e56",
+        "decision": "UNKNOWN",
+        "reason": "LOCAL CONTEXT does not specify the timing of symptom appearance and testing confirmation."
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "point_support": [
+      {
+        "point_id": "node_b:0:f774f4eb",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT confirms testing for symptoms."
+      },
+      {
+        "point_id": "node_b:1:04d0853e",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT mentions testing five days after contact."
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "EXTERNAL EVIDENCE confirms testing for those who believe they may be infected."
+      },
+      {
+        "point_id": "node_a:0:3a5b6a2a",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "EXTERNAL EVIDENCE confirms testing for individuals with symptoms."
+      },
+      {
+        "point_id": "node_c:0:ef0d1272",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "EXTERNAL EVIDENCE confirms testing for individuals with symptoms."
+      },
+      {
+        "point_id": "node_a:2:23c64557",
+        "decision": "UNKNOWN",
+        "reason": "No mention of PCR tests in LOCAL CONTEXT."
+      },
+      {
+        "point_id": "node_a:3:1b5b873c",
+        "decision": "UNKNOWN",
+        "reason": "No mention of antigen tests in LOCAL CONTEXT."
+      },
+      {
+        "point_id": "node_a:4:0f4be8f5",
+        "decision": "UNKNOWN",
+        "reason": "No mention of staying home after diagnosis in LOCAL CONTEXT."
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "point_support": [
+      {
+        "point_id": "node_c:0:ef0d1272",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT mentions getting tested if you have symptoms."
+      },
+      {
+        "point_id": "node_c:1:fc336e56",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT states symptoms may appear 2 to 14 days after exposure and testing is required for confirmation."
+      },
+      {
+        "point_id": "node_c:2:8080d67a",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT advises contacting a doctor about testing if fully vaccinated and showing symptoms."
+      },
+      {
+        "point_id": "node_c:3:3c07cbde",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT states children with symptoms should seek medical care and consider testing."
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "EXTERNAL EVIDENCE confirms testing is essential for those who believe they may be infected."
+      },
+      {
+        "point_id": "node_a:0:3a5b6a2a",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:0:f774f4eb",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:2:23c64557",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:3:1b5b873c",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:4:0f4be8f5",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  }
+]

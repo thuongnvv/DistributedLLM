@@ -1,0 +1,123 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:07a8c695",
+        "text": "COVID-19 spreads mainly through inhaling air contaminated by droplets and aerosols from infected people.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00024"
+        ]
+      },
+      {
+        "point_id": "node_a:1:2567fdd7",
+        "text": "Infected individuals exhale virus particles when they breathe, talk, cough, sneeze, or sing.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00024"
+        ]
+      },
+      {
+        "point_id": "node_a:2:97cfd956",
+        "text": "Transmission is most likely at close range but can occur over longer distances indoors.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00024"
+        ]
+      },
+      {
+        "point_id": "node_a:3:e765d8d1",
+        "text": "COVID-19 can spread by touching eyes, nose, or mouth after contact with contaminated surfaces.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00004"
+        ]
+      },
+      {
+        "point_id": "node_a:4:59b04548",
+        "text": "People can spread the virus even if they do not develop symptoms and remain contagious for up to 20 days.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00004"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:81c35db2",
+        "text": "COVID-19 spreads mainly from person to person through the air in tiny droplets when people cough, sneeze, breathe, sing, or talk.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00000",
+          "doc2_covid19.txt:chunk_00007"
+        ]
+      },
+      {
+        "point_id": "node_b:1:6d670fce",
+        "text": "The virus can land directly on the face of a nearby person after a sneeze or cough, or be breathed in by others in close proximity or areas with low airflow.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00008"
+        ]
+      },
+      {
+        "point_id": "node_b:2:5ef977e0",
+        "text": "Close contact, such as sitting next to someone or sharing a car, increases the risk of catching COVID-19.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00011"
+        ]
+      },
+      {
+        "point_id": "node_b:3:653e4be9",
+        "text": "Risk factors include living with someone who has COVID-19 and spending time in crowded spaces with poor airflow.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00010"
+        ]
+      },
+      {
+        "point_id": "node_b:4:04360111",
+        "text": "COVID-19 can spread from someone who is infected but has no symptoms.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00007"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:688ca7b0",
+        "text": "COVID-19 spreads through droplets from an infected person's mouth or nose when they cough, sneeze, speak, sing, or breathe.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00003"
+        ]
+      },
+      {
+        "point_id": "node_c:1:da9ca351",
+        "text": "The virus can spread via larger respiratory droplets and smaller aerosols, and people can be contagious without symptoms.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00003"
+        ]
+      },
+      {
+        "point_id": "node_c:2:5668c8d6",
+        "text": "COVID-19 can spread by touching the mouth, nose, or eyes after contacting contaminated surfaces.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00005"
+        ]
+      },
+      {
+        "point_id": "node_c:3:add54803",
+        "text": "Preventive measures include mask-wearing, hand washing, and avoiding close contact with symptomatic individuals.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00019"
+        ]
+      },
+      {
+        "point_id": "node_c:4:4e513b6d",
+        "text": "Experts continue to research how COVID-19 spreads and identify high-risk situations.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00005"
+        ]
+      }
+    ]
+  }
+]

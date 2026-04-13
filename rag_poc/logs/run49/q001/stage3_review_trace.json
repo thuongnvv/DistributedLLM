@@ -1,0 +1,188 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:f774f4eb",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that testing for COVID-19 is advised if symptoms are present."
+      },
+      {
+        "point_id": "node_b:1:04d0853e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document supports testing five days after exposure."
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that testing is essential for those who believe they may be infected."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:ef0d1272",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that testing is advised if symptoms are present."
+      },
+      {
+        "point_id": "node_c:1:fc336e56",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence supports that symptoms may appear 2 to 14 days after exposure."
+      },
+      {
+        "point_id": "node_c:2:8080d67a",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence supports contacting a doctor if fully vaccinated and showing symptoms."
+      },
+      {
+        "point_id": "node_c:3:3c07cbde",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence supports that children with symptoms should seek medical care."
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that testing is essential for those who believe they may be infected."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:3a5b6a2a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states to test for COVID-19 if you have symptoms."
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document advises testing for those who believe they may be infected."
+      },
+      {
+        "point_id": "node_a:2:23c64557",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms that healthcare providers can perform accurate PCR tests."
+      },
+      {
+        "point_id": "node_a:3:1b5b873c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms that a positive antigen test indicates an active infection."
+      },
+      {
+        "point_id": "node_a:4:0f4be8f5",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that those diagnosed with COVID-19 should stay home and seek medical care."
+      },
+      {
+        "point_id": "node_b:0:f774f4eb",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states to test for COVID-19 if you have symptoms."
+      },
+      {
+        "point_id": "node_c:0:ef0d1272",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms that if you have symptoms, you should get tested."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:ef0d1272",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states to get tested if you have symptoms."
+      },
+      {
+        "point_id": "node_c:1:fc336e56",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states symptoms may appear 2 to 14 days after exposure and testing is required."
+      },
+      {
+        "point_id": "node_c:2:8080d67a",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms that vaccinated individuals showing symptoms should contact their doctor about testing."
+      },
+      {
+        "point_id": "node_c:3:3c07cbde",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states children with symptoms should seek medical care and consider testing."
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms testing is essential for those who believe they may be infected."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:3a5b6a2a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that individuals with symptoms should get tested."
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document supports the need for testing if one believes they may be infected."
+      },
+      {
+        "point_id": "node_a:2:23c64557",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that healthcare providers can perform accurate PCR tests."
+      },
+      {
+        "point_id": "node_a:3:1b5b873c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that a positive antigen test indicates an active infection."
+      },
+      {
+        "point_id": "node_a:4:0f4be8f5",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document advises those diagnosed to stay home and seek medical care."
+      },
+      {
+        "point_id": "node_b:0:f774f4eb",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms testing for COVID-19 if symptoms are present."
+      },
+      {
+        "point_id": "node_c:0:ef0d1272",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that testing is required to confirm COVID-19 infection."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:f774f4eb",
+        "basis": "UNKNOWN",
+        "reason": "Missing target in batch response"
+      },
+      {
+        "point_id": "node_b:1:04d0853e",
+        "basis": "UNKNOWN",
+        "reason": "Missing target in batch response"
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "basis": "UNKNOWN",
+        "reason": "Missing target in batch response"
+      }
+    ]
+  }
+]

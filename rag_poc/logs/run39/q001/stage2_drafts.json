@@ -1,0 +1,47 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "To reduce the risk of getting COVID-19, practice good personal hygiene, including regular hand washing with soap and water [doc1_covid19.txt:chunk_00094]. Wear a face mask in public and when in close contact with others [doc1_covid19.txt:chunk_00006]. Maintain physical or social distancing to reduce transmission risk [doc1_covid19.txt:chunk_00006]. Keep indoor spaces well-ventilated to minimize airborne transmission [doc1_covid19.txt:chunk_00006]. Avoid sharing personal household items to prevent virus spread [doc1_covid19.txt:chunk_00094]. Stay home if you are feeling unwell or believe you may be infected [doc1_covid19.txt:chunk_00094]. Cover coughs and sneezes with a tissue or your elbow [doc1_covid19.txt:chunk_00006]. Stay up to date on COVID-19 vaccinations to reduce infection risk [doc1_covid19.txt:chunk_00100]. Practice physical distancing from individuals showing respiratory symptoms [doc1_covid19.txt:chunk_00019]. Quarantine for a minimum of 10 days if exposed to COVID-19 [doc1_covid19.txt:chunk_00129].",
+    "used_points": [
+      "node_a:0:7b438a55",
+      "node_a:1:ddeaa568",
+      "node_a:2:cf7290f2",
+      "node_a:3:66dc0e28",
+      "node_a:4:6faf5e1d",
+      "node_a:5:af0b1325",
+      "node_a:6:da12fe32",
+      "node_a:7:e75c667d",
+      "node_a:8:3c0ae705",
+      "node_a:9:85d3b82b"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "To reduce the risk of getting COVID-19, it is important to stay up to date on your COVID-19 vaccine, as this helps prevent serious illness [doc2_covid19.txt:chunk_00001]. Ensuring good indoor airflow can also help prevent the spread of the virus [doc2_covid19.txt:chunk_00001]. Practicing physical distancing reduces the risk of transmission [doc2_covid19.txt:chunk_00001]. Wearing a mask in appropriate settings provides protection for yourself and others [doc2_covid19.txt:chunk_00001]. Maintaining good hygiene by washing hands frequently with soap and water is essential [doc2_covid19.txt:chunk_00023]. Avoiding close contact with anyone who is sick or has symptoms is also advisable [doc2_covid19.txt:chunk_00023]. Additionally, covering your coughs and sneezes helps prevent spreading the virus [doc2_covid19.txt:chunk_00023]. Testing for COVID-19 if you have symptoms or after exposure is crucial for early detection [doc2_covid19.txt:chunk_00023]. Finally, staying informed about the latest COVID-19 guidance from local authorities can help you make informed decisions [doc2_covid19.txt:chunk_00022].",
+    "used_points": [
+      "node_b:0:6c4b001e",
+      "node_b:1:26899f11",
+      "node_b:2:30ae2b19",
+      "node_b:3:f012920b",
+      "node_b:4:56c8c427",
+      "node_b:5:899c9234",
+      "node_b:7:1542f06f",
+      "node_b:6:a89a4139",
+      "node_c:5:24aa1b02"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "To reduce the risk of getting COVID-19, individuals should avoid crowded places and practice physical distancing, keeping at least 1 metre distance from others [doc3_covid19.txt:chunk_00016]. Wearing a mask in public places where community transmission is present and physical distancing is not possible is also recommended [doc3_covid19.txt:chunk_00016]. Frequent handwashing with soap and water or an alcohol-based hand rub is crucial [doc3_covid19.txt:chunk_00016]. Keeping indoor spaces well ventilated helps reduce the risk of virus transmission [doc3_covid19.txt:chunk_00016]. Staying informed about the latest COVID-19 guidance from local authorities is important [doc3_covid19.txt:chunk_00029]. Getting vaccinated can help reduce the spread of the virus and its mutations [doc3_covid19.txt:chunk_00012]. Regularly cleaning and disinfecting frequently touched surfaces is also advised [doc3_covid19.txt:chunk_00026]. Finally, testing for COVID-19 if you have symptoms or after exposure to the virus is essential [doc2_covid19.txt:chunk_00023].",
+    "used_points": [
+      "node_c:0:5a109b5f",
+      "node_c:1:78d17119",
+      "node_c:2:2fa2f5e8",
+      "node_c:3:cd6343db",
+      "node_c:5:24aa1b02",
+      "node_c:6:0071e71d",
+      "node_c:7:d287cb76",
+      "node_b:6:a89a4139"
+    ]
+  }
+]

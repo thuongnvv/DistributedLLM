@@ -1,0 +1,35 @@
+{
+  "query": "What is COVID-19?",
+  "mode": "openai",
+  "k": 3,
+  "tau_fail": 2,
+  "max_evidence_chunks_per_point": 2,
+  "max_external_points_synth": 6,
+  "max_external_points_grade": 8,
+  "selected_nodes": [
+    {
+      "node_id": "node_a",
+      "domain": "medical_covid",
+      "style": "medical researcher; evidence-based; cites sources",
+      "scope": "COVID-19 disease, SARS-CoV-2 virus, symptoms, treatment, prevention, variants",
+      "doc_path": "/home/thuongnv/Documents/DistributedLLM/rag_poc/data/node_a/doc1_covid19.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "node_b",
+      "domain": "medical_covid",
+      "style": "healthcare provider; practical guidance; patient-focused",
+      "scope": "COVID-19 disease, SARS-CoV-2 virus, symptoms, treatment, prevention, vaccination",
+      "doc_path": "/home/thuongnv/Documents/DistributedLLM/rag_poc/data/node_b/doc2_covid19.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "node_c",
+      "domain": "medical_covid",
+      "style": "public health official; WHO guidance; global perspective; informational",
+      "scope": "COVID-19 disease, SARS-CoV-2 virus, symptoms, treatment, prevention, vaccination, variants, public health measures",
+      "doc_path": "/home/thuongnv/Documents/DistributedLLM/rag_poc/data/node_c/doc3_covid19.txt",
+      "rep_snapshot": 10.0
+    }
+  ]
+}

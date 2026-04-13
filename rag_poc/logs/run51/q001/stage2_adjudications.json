@@ -1,0 +1,116 @@
+[
+  {
+    "node_id": "node_a",
+    "point_support": []
+  },
+  {
+    "node_id": "node_b",
+    "point_support": [
+      {
+        "point_id": "node_b:0:ebef32ac",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT states that COVID-19 can lead to serious complications and death."
+      },
+      {
+        "point_id": "node_b:1:43969c1c",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT mentions loss of taste or smell as a symptom of COVID-19."
+      },
+      {
+        "point_id": "node_b:2:7c22d575",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT confirms that COVID-19 spreads primarily through respiratory droplets."
+      },
+      {
+        "point_id": "node_b:3:07430af2",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:4:cfef3f63",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "LOCAL CONTEXT identifies SARS-CoV-2 as the virus causing COVID-19, distinct from other viruses."
+      },
+      {
+        "point_id": "node_c:0:b45f35f8",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:4:3c4a11be",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "EXTERNAL EVIDENCE supports that COVID-19 can cause severe illness in people with pre-existing conditions."
+      },
+      {
+        "point_id": "node_c:2:eee8b440",
+        "decision": "UNKNOWN",
+        "reason": "No mention of multisystem inflammatory syndrome in the LOCAL CONTEXT."
+      },
+      {
+        "point_id": "node_c:1:71ee5bdf",
+        "decision": "UNKNOWN",
+        "reason": "LOCAL CONTEXT does not confirm the range of symptoms for COVID-19."
+      },
+      {
+        "point_id": "node_c:3:82b008f5",
+        "decision": "UNKNOWN",
+        "reason": "No mention of loss of taste or smell in the context of cold or flu in the LOCAL CONTEXT."
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "point_support": [
+      {
+        "point_id": "node_c:0:b45f35f8",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states COVID-19 is caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_c:1:71ee5bdf",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document mentions symptoms of COVID-19 can range from mild to severe, similar to flu and cold symptoms."
+      },
+      {
+        "point_id": "node_c:2:eee8b440",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document discusses serious complications like multisystem inflammatory syndrome in children associated with COVID-19."
+      },
+      {
+        "point_id": "node_c:3:82b008f5",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document lists loss of taste or smell as symptoms of COVID-19, which are not typical for cold or flu."
+      },
+      {
+        "point_id": "node_c:4:3c4a11be",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document indicates COVID-19 can cause severe illness in people with pre-existing conditions."
+      },
+      {
+        "point_id": "node_b:0:ebef32ac",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms COVID-19 can lead to serious complications and death, unlike the common cold or flu."
+      },
+      {
+        "point_id": "node_b:4:cfef3f63",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence states that SARS-CoV-2 is genetically distinct from the viruses that cause the common cold and flu."
+      },
+      {
+        "point_id": "node_b:2:7c22d575",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:1:43969c1c",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:3:07430af2",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  }
+]

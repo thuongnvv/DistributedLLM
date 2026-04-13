@@ -1,0 +1,39 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "Common symptoms of COVID-19 include coughing, fever, loss of smell and taste, and breathing difficulties, particularly in moderate to severe cases. Other symptoms may include headaches, nasal congestion, muscle pain, and fatigue. Loss of taste combined with loss of smell is reported in up to 88% of cases [doc1_covid19.txt:chunk_00011][doc1_covid19.txt:chunk_00012].",
+    "used_points": [
+      "node_a:0:5d0c5bf0",
+      "node_a:2:e4cdca4f",
+      "node_a:3:c1e180b5",
+      "node_a:4:ffebc87c",
+      "node_a:6:fe416d64"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "COVID-19 symptoms often show up 2 to 14 days after contact with the virus. Common symptoms include congestion, runny nose, or sore throat, dry cough, shortness of breath, loss of taste or smell, extreme tiredness (fatigue), digestive symptoms like upset stomach, vomiting, or diarrhea, pain such as headaches and body or muscle aches, and fever or chills [doc2_covid19.txt:chunk_00002].",
+    "used_points": [
+      "node_b:0:701a6d86",
+      "node_b:1:f59e055b",
+      "node_b:2:1e357a9c",
+      "node_b:3:567772ca",
+      "node_b:4:7c0be73e",
+      "node_b:5:2af15bae",
+      "node_b:6:e066c460",
+      "node_b:7:db241610"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "The most common symptoms of COVID-19 are fever, cough, and tiredness. Other symptoms can include shortness of breath, chest pain or pressure, muscle or body aches, headache, loss of taste or smell, confusion, sore throat, congestion or runny nose, diarrhea, nausea and vomiting, abdominal pain, and skin rashes. Infants may also experience difficulty feeding as a symptom [doc3_covid19.txt:chunk_00001].",
+    "used_points": [
+      "node_c:0:4831f02a",
+      "node_c:1:ddf6ff4d",
+      "node_c:2:23993677",
+      "node_c:3:d4b4f059",
+      "node_c:4:427ea2c2",
+      "node_c:5:67f157f1"
+    ]
+  }
+]

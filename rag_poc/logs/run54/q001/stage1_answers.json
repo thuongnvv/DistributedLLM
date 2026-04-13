@@ -1,0 +1,206 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:65efbdbe",
+        "text": "Practice good personal hygiene, including regular hand washing.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00006"
+        ]
+      },
+      {
+        "point_id": "node_a:1:9e029f2c",
+        "text": "Wear face masks or coverings in public to reduce transmission.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00006"
+        ]
+      },
+      {
+        "point_id": "node_a:2:2cdc0376",
+        "text": "Maintain physical or social distancing to minimize contact.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00006"
+        ]
+      },
+      {
+        "point_id": "node_a:3:f45ea82d",
+        "text": "Ensure proper ventilation of indoor spaces to reduce virus spread.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00006"
+        ]
+      },
+      {
+        "point_id": "node_a:4:3bf9c6c0",
+        "text": "Stay home if diagnosed or suspect infection, except for medical care.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00094"
+        ]
+      },
+      {
+        "point_id": "node_a:5:b5d5d5a6",
+        "text": "Cover coughs and sneezes with a tissue to prevent droplet spread.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00094"
+        ]
+      },
+      {
+        "point_id": "node_a:6:b0952b74",
+        "text": "Keep unwashed hands away from the face to avoid infection.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00094"
+        ]
+      },
+      {
+        "point_id": "node_a:7:5ec69fcf",
+        "text": "Stay up to date on COVID-19 vaccinations to enhance protection.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00019"
+        ]
+      },
+      {
+        "point_id": "node_a:8:18bbdb63",
+        "text": "Practice physical distancing from individuals infected with respiratory viruses.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00019"
+        ]
+      },
+      {
+        "point_id": "node_a:9:f2fe6719",
+        "text": "Maintain clean indoor air to reduce the risk of airborne transmission.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00019"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:9d79aba0",
+        "text": "Stay home if you feel ill or have COVID-19 symptoms.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00022"
+        ]
+      },
+      {
+        "point_id": "node_b:1:73ba7a33",
+        "text": "Maintain good indoor airflow to reduce virus spread.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "node_b:2:f8ebc2e8",
+        "text": "Practice physical distancing to minimize close contact.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "node_b:3:bbbc56dd",
+        "text": "Wear a mask in appropriate settings to protect yourself.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "node_b:4:a8b4d537",
+        "text": "Wash your hands frequently with soap for at least 20 seconds.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      },
+      {
+        "point_id": "node_b:5:58147166",
+        "text": "Use hand sanitizer with at least 60% alcohol when soap isn't available.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      },
+      {
+        "point_id": "node_b:6:3bfce4c0",
+        "text": "Cover your coughs and sneezes with a tissue or elbow.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      },
+      {
+        "point_id": "node_b:7:899c9234",
+        "text": "Avoid close contact with anyone who is sick or has symptoms.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      },
+      {
+        "point_id": "node_b:8:25ea32ff",
+        "text": "Test for COVID-19 if you have symptoms or after exposure.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:b162fba3",
+        "text": "Avoid crowded places and practice physical distancing of at least 1 metre.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00016"
+        ]
+      },
+      {
+        "point_id": "node_c:1:1b9e57a2",
+        "text": "Wear a mask in public places where physical distancing is not possible.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00016"
+        ]
+      },
+      {
+        "point_id": "node_c:2:2fa2f5e8",
+        "text": "Wash your hands frequently with soap and water or an alcohol-based hand rub.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00016"
+        ]
+      },
+      {
+        "point_id": "node_c:3:b2a7dc77",
+        "text": "Keep indoor spaces well ventilated to reduce virus spread.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00016"
+        ]
+      },
+      {
+        "point_id": "node_c:4:b322475a",
+        "text": "Seek medical care early if experiencing symptoms of COVID-19.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00021"
+        ]
+      },
+      {
+        "point_id": "node_c:5:d10aa6f3",
+        "text": "Stay informed about COVID-19 updates and guidelines from health authorities.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00029"
+        ]
+      },
+      {
+        "point_id": "node_c:6:a697da86",
+        "text": "Get vaccinated to help reduce the spread of the virus.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00012"
+        ]
+      },
+      {
+        "point_id": "node_c:7:dce791f1",
+        "text": "Avoid touching your face after touching surfaces that may be contaminated.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00005"
+        ]
+      }
+    ]
+  }
+]

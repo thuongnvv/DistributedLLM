@@ -1,0 +1,37 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "Simple ways to reduce the risk of getting COVID-19 include getting vaccinated to reduce the spread and severity of the virus [doc1_covid19.txt:chunk_00006], practicing good personal hygiene such as regular hand washing and covering coughs and sneezes [doc1_covid19.txt:chunk_00006], maintaining physical distancing and avoiding close contact with infected individuals [doc1_covid19.txt:chunk_00006], ensuring proper ventilation in indoor spaces [doc1_covid19.txt:chunk_00006], and staying home if diagnosed with COVID-19 or if you suspect infection [doc1_covid19.txt:chunk_00100].",
+    "used_points": [
+      "node_a:0:7e33d514",
+      "node_a:1:804b535d",
+      "node_a:2:f4f147cd",
+      "node_a:3:3a30e6d9",
+      "node_a:4:2beb2a50"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "To reduce the risk of getting COVID-19, it is important to stay home if you feel ill or have symptoms, maintain good indoor airflow, practice physical distancing, wear a mask in appropriate settings, wash hands frequently, cover coughs and sneezes, and get vaccinated. These measures help prevent the spread of the virus and protect both yourself and others [doc2_covid19.txt:chunk_00022][doc2_covid19.txt:chunk_00001][doc2_covid19.txt:chunk_00023][doc2_covid19.txt:chunk_00005][doc2_covid19.txt:chunk_00011].",
+    "used_points": [
+      "node_b:0:345fb563",
+      "node_b:1:df2098f9",
+      "node_b:2:6d8c1b45",
+      "node_b:3:6ab7f7ae",
+      "node_b:4:e86b8b10",
+      "node_a:0:7e33d514"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "To reduce the risk of getting COVID-19, it is important to avoid crowded places and maintain physical distance of at least 1 metre from others. Wearing a mask in public where community transmission is present and physical distancing isn't possible is also recommended. Frequent hand washing with soap and water or using alcohol-based hand rub is crucial. Ensuring good ventilation in indoor spaces can help reduce virus spread. Getting vaccinated is essential to help reduce the spread of the virus and its mutations [doc3_covid19.txt:chunk_00016].",
+    "used_points": [
+      "node_c:0:33023e5d",
+      "node_c:1:0331c9d8",
+      "node_c:2:b2c98949",
+      "node_c:3:fca1b663",
+      "node_c:4:0071e71d",
+      "node_a:0:7e33d514"
+    ]
+  }
+]

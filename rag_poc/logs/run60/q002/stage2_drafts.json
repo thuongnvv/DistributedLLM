@@ -1,0 +1,50 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "COVID-19 primarily spreads through inhaling air contaminated with droplets and aerosols from infected individuals, especially in close proximity or poorly ventilated indoor spaces. Transmission can occur when infectious particles are breathed in or come into contact with the eyes, nose, or mouth. The virus can also spread by touching contaminated surfaces and then touching the face. People can be contagious even without symptoms and remain so for up to 20 days [doc1:chunk_00024, doc1:chunk_00004].",
+    "used_points": [
+      "node_a:0:07a8c695",
+      "node_a:1:9c8c42a0",
+      "node_a:2:aea75553",
+      "node_a:3:4b16f261",
+      "node_a:4:59b04548",
+      "node_c:0:688ca7b0",
+      "node_b:2:04360111",
+      "node_c:4:c5ae8d18",
+      "node_b:0:9e8670ec",
+      "node_c:2:59c0f0eb"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "COVID-19 spreads primarily through the air via tiny droplets when people cough, sneeze, breathe, sing, or talk, and can also be transmitted by touching the face after contacting contaminated surfaces. The virus can spread from individuals who are asymptomatic, increasing the risk of transmission in close contact settings, especially with poor airflow. Living with someone who has COVID-19 or spending time in crowded spaces further elevates the risk of infection [doc2_covid19.txt:chunk_00000, doc2_covid19.txt:chunk_00008, doc2_covid19.txt:chunk_00007, doc2_covid19.txt:chunk_00011, doc2_covid19.txt:chunk_00010].",
+    "used_points": [
+      "node_b:0:9e8670ec",
+      "node_b:1:9d6e9c39",
+      "node_b:2:04360111",
+      "node_b:3:7830fa3f",
+      "node_b:4:bf42a525",
+      "node_a:0:07a8c695",
+      "node_a:3:4b16f261",
+      "node_c:0:688ca7b0",
+      "node_c:2:59c0f0eb",
+      "node_c:3:5668c8d6"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "COVID-19 spreads primarily through droplets and aerosols from an infected person's mouth or nose when they cough, sneeze, speak, sing, or breathe. It can also spread by touching the mouth, nose, or eyes after contacting contaminated surfaces. People can transmit the virus even if they are asymptomatic. Research is ongoing to understand the most risky situations for COVID-19 spread [doc3_covid19.txt:chunk_00003, doc3_covid19.txt:chunk_00005].",
+    "used_points": [
+      "node_c:0:688ca7b0",
+      "node_c:1:0456f48e",
+      "node_c:2:59c0f0eb",
+      "node_c:3:5668c8d6",
+      "node_c:4:c5ae8d18",
+      "node_b:2:04360111",
+      "node_b:3:7830fa3f",
+      "node_a:0:07a8c695",
+      "node_a:3:4b16f261",
+      "node_b:0:9e8670ec"
+    ]
+  }
+]

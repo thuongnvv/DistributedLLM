@@ -1,0 +1,74 @@
+[
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:b45f35f8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Accurate description of the causative virus for COVID-19."
+      },
+      {
+        "point_id": "node_c:1:bdffaeed",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Correctly states that symptoms can be similar to flu and cold."
+      },
+      {
+        "point_id": "node_c:2:368cb81b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Accurate information on the range of symptoms."
+      },
+      {
+        "point_id": "node_c:3:77fb6eda",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Correctly identifies multisystem inflammatory syndrome as a complication."
+      },
+      {
+        "point_id": "node_c:4:c30a5752",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Accurate mention of Long COVID as a post-infection phenomenon."
+      },
+      {
+        "point_id": "node_b:1:43969c1c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Correctly states loss of taste or smell is not typical for cold or flu."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:cc23953c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context that COVID-19 can lead to serious complications and death."
+      },
+      {
+        "point_id": "node_b:1:43969c1c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context that loss of taste or smell is a symptom of COVID-19."
+      },
+      {
+        "point_id": "node_b:4:57f6e050",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context that SARS-CoV-2 is the virus causing COVID-19."
+      },
+      {
+        "point_id": "node_c:4:c30a5752",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by local context regarding long COVID not being associated with the common cold or flu."
+      },
+      {
+        "point_id": "node_b:3:07430af2",
+        "basis": "CONTRADICTED",
+        "reason": "Local context does not support the claim that post-COVID-19 syndrome is still being studied as a unique phenomenon."
+      },
+      {
+        "point_id": "node_b:2:7c22d575",
+        "basis": "CONTRADICTED",
+        "reason": "Local context does not support the claim that COVID-19 spreads similarly to the flu from asymptomatic individuals."
+      }
+    ]
+  }
+]

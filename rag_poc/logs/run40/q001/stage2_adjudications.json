@@ -1,0 +1,152 @@
+[
+  {
+    "node_id": "node_a",
+    "point_support": [
+      {
+        "point_id": "node_a:0:3a5b6a2a",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document mentions testing for symptoms."
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document emphasizes the importance of testing for suspected infection."
+      },
+      {
+        "point_id": "node_a:2:23c64557",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:3:7b7e0e55",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:4:a06f87fe",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:0:f774f4eb",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:2:996a9e04",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External source advises children with symptoms to seek testing."
+      },
+      {
+        "point_id": "node_c:1:9990e9c8",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External source recommends vaccinated individuals with symptoms to consult a doctor."
+      },
+      {
+        "point_id": "node_c:0:b6f761c4",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:1:04d0853e",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External source supports testing after contact."
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "point_support": [
+      {
+        "point_id": "node_b:0:f774f4eb",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states to test for COVID-19 if you have symptoms."
+      },
+      {
+        "point_id": "node_b:1:04d0853e",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises testing five days after contact with the virus."
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:0:3a5b6a2a",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:2:996a9e04",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document mentions children with symptoms should consider getting tested."
+      },
+      {
+        "point_id": "node_a:3:7b7e0e55",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:2:23c64557",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:1:9990e9c8",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "point_support": [
+      {
+        "point_id": "node_c:0:b6f761c4",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states symptoms require testing to confirm infection."
+      },
+      {
+        "point_id": "node_c:1:9990e9c8",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises contacting a doctor if vaccinated and symptomatic."
+      },
+      {
+        "point_id": "node_c:2:996a9e04",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states children with symptoms should seek medical care."
+      },
+      {
+        "point_id": "node_a:1:0329e0d5",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:0:3a5b6a2a",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:0:f774f4eb",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:3:7b7e0e55",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:2:23c64557",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:4:a06f87fe",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  }
+]

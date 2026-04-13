@@ -1,0 +1,338 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:9e8670ec",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that COVID-19 spreads mainly through the air in tiny droplets when people cough, sneeze, breathe, sing, or talk."
+      },
+      {
+        "point_id": "node_b:1:9d6e9c39",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that the virus can land on the face of a nearby person after a sneeze or cough, or be inhaled in areas with low airflow."
+      },
+      {
+        "point_id": "node_b:2:04360111",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that COVID-19 can spread from someone who is infected but has no symptoms."
+      },
+      {
+        "point_id": "node_b:3:7830fa3f",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that the risk of catching COVID-19 increases with close contact, poor airflow, and activities like talking or sharing a car."
+      },
+      {
+        "point_id": "node_b:4:bf42a525",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that living with someone who has COVID-19 or spending time in crowded spaces increases the risk of infection."
+      },
+      {
+        "point_id": "node_a:0:07a8c695",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that COVID-19 spreads mainly through inhaling air contaminated by droplets and aerosols from infected people."
+      },
+      {
+        "point_id": "node_a:3:4b16f261",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that COVID-19 can spread from touching contaminated surfaces and then touching the face."
+      },
+      {
+        "point_id": "node_c:0:688ca7b0",
+        "basis": "UNKNOWN",
+        "reason": "The local document does not mention this point, and it is not supported by external evidence."
+      },
+      {
+        "point_id": "node_c:2:59c0f0eb",
+        "basis": "UNKNOWN",
+        "reason": "The local document does not mention this point, and it is not supported by external evidence."
+      },
+      {
+        "point_id": "node_c:3:5668c8d6",
+        "basis": "UNKNOWN",
+        "reason": "The local document does not mention this point, and it is not supported by external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:688ca7b0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that COVID-19 spreads through droplets from an infected person's mouth or nose when they cough, sneeze, speak, sing, or breathe."
+      },
+      {
+        "point_id": "node_c:1:0456f48e",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that the virus can be transmitted via larger respiratory droplets and smaller aerosols."
+      },
+      {
+        "point_id": "node_c:2:59c0f0eb",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that people can spread COVID-19 even if they are not showing symptoms."
+      },
+      {
+        "point_id": "node_c:3:5668c8d6",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that COVID-19 can spread by touching the mouth, nose, or eyes after contacting contaminated surfaces."
+      },
+      {
+        "point_id": "node_c:4:c5ae8d18",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that research is ongoing to understand the most risky situations for COVID-19 spread."
+      },
+      {
+        "point_id": "node_b:2:04360111",
+        "basis": "UNKNOWN",
+        "reason": "The local document does not mention this point, and it is not supported by external evidence."
+      },
+      {
+        "point_id": "node_b:3:7830fa3f",
+        "basis": "UNKNOWN",
+        "reason": "The local document does not mention this point, and it is not supported by external evidence."
+      },
+      {
+        "point_id": "node_a:0:07a8c695",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that COVID-19 spreads mainly through inhaling air contaminated by droplets and aerosols from infected people."
+      },
+      {
+        "point_id": "node_a:3:4b16f261",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that COVID-19 can spread from touching contaminated surfaces and then touching the face."
+      },
+      {
+        "point_id": "node_b:0:9e8670ec",
+        "basis": "UNKNOWN",
+        "reason": "The local document does not mention this point, and it is not supported by external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:07a8c695",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that COVID-19 spreads mainly through inhaling air contaminated by droplets and aerosols from infected people."
+      },
+      {
+        "point_id": "node_a:1:9c8c42a0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions transmission occurs when infectious particles are breathed in or contact the eyes, nose, or mouth."
+      },
+      {
+        "point_id": "node_a:2:aea75553",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document supports that the risk of transmission is highest at close range but can occur over longer distances indoors."
+      },
+      {
+        "point_id": "node_a:3:4b16f261",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document supports that COVID-19 can spread from touching contaminated surfaces and then touching the face."
+      },
+      {
+        "point_id": "node_a:4:59b04548",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document supports that people can spread the virus even if they do not develop symptoms and remain contagious for up to 20 days."
+      },
+      {
+        "point_id": "node_c:0:688ca7b0",
+        "basis": "UNKNOWN",
+        "reason": "The document does not explicitly mention droplets from an infected person's mouth or nose."
+      },
+      {
+        "point_id": "node_b:2:04360111",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document supports that COVID-19 can spread from someone who is infected but has no symptoms."
+      },
+      {
+        "point_id": "node_c:4:c5ae8d18",
+        "basis": "UNKNOWN",
+        "reason": "The document does not mention ongoing research to understand the most risky situations for COVID-19 spread."
+      },
+      {
+        "point_id": "node_b:0:9e8670ec",
+        "basis": "UNKNOWN",
+        "reason": "The document does not explicitly mention COVID-19 spreading mainly through the air in tiny droplets when people cough, sneeze, breathe, sing, or talk."
+      },
+      {
+        "point_id": "node_c:2:59c0f0eb",
+        "basis": "UNKNOWN",
+        "reason": "The document does not explicitly mention people spreading COVID-19 even if they are not showing symptoms."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:688ca7b0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that COVID-19 spreads through droplets from an infected person's mouth or nose."
+      },
+      {
+        "point_id": "node_c:1:0456f48e",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that the virus can be transmitted via larger respiratory droplets and smaller aerosols."
+      },
+      {
+        "point_id": "node_c:2:59c0f0eb",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that people can spread COVID-19 even if they are not showing symptoms."
+      },
+      {
+        "point_id": "node_c:3:5668c8d6",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that COVID-19 can spread by touching the mouth, nose, or eyes after contacting contaminated surfaces."
+      },
+      {
+        "point_id": "node_c:4:c5ae8d18",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that research is ongoing to understand the most risky situations for COVID-19 spread."
+      },
+      {
+        "point_id": "node_b:2:04360111",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document supports that COVID-19 can spread from someone who is infected but has no symptoms."
+      },
+      {
+        "point_id": "node_b:3:7830fa3f",
+        "basis": "UNKNOWN",
+        "reason": "The document does not explicitly mention the risk of catching COVID-19 increases with close contact, poor airflow, and activities like talking or sharing a car."
+      },
+      {
+        "point_id": "node_a:0:07a8c695",
+        "basis": "UNKNOWN",
+        "reason": "The document does not explicitly mention COVID-19 spreading mainly through inhaling air contaminated by droplets and aerosols from infected people."
+      },
+      {
+        "point_id": "node_a:3:4b16f261",
+        "basis": "UNKNOWN",
+        "reason": "The document does not explicitly mention COVID-19 spreading from touching contaminated surfaces and then touching the face."
+      },
+      {
+        "point_id": "node_b:0:9e8670ec",
+        "basis": "UNKNOWN",
+        "reason": "The document does not explicitly mention COVID-19 spreading mainly through the air in tiny droplets when people cough, sneeze, breathe, sing, or talk."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:07a8c695",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that confirms COVID-19 spreads mainly through inhaling air contaminated by droplets and aerosols from infected people."
+      },
+      {
+        "point_id": "node_a:1:9c8c42a0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that confirms transmission occurs when infectious particles are breathed in or contact the eyes, nose, or mouth."
+      },
+      {
+        "point_id": "node_a:2:aea75553",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that confirms the risk of transmission is highest at close range but can occur over longer distances indoors."
+      },
+      {
+        "point_id": "node_a:3:4b16f261",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that confirms COVID-19 can spread from touching contaminated surfaces and then touching the face."
+      },
+      {
+        "point_id": "node_a:4:59b04548",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that confirms people can spread the virus even if they do not develop symptoms and remain contagious for up to 20 days."
+      },
+      {
+        "point_id": "node_c:0:688ca7b0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The point is supported by local context that confirms COVID-19 spreads through droplets from an infected person's mouth or nose when they cough, sneeze, speak, sing, or breathe."
+      },
+      {
+        "point_id": "node_b:2:04360111",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that confirms COVID-19 can spread from someone who is infected but has no symptoms."
+      },
+      {
+        "point_id": "node_c:4:c5ae8d18",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The point is supported by local context that confirms research is ongoing to understand the most risky situations for COVID-19 spread."
+      },
+      {
+        "point_id": "node_b:0:9e8670ec",
+        "basis": "UNKNOWN",
+        "reason": "The point is not explicitly mentioned in the local context or external evidence provided."
+      },
+      {
+        "point_id": "node_c:2:59c0f0eb",
+        "basis": "UNKNOWN",
+        "reason": "The point is not explicitly mentioned in the local context or external evidence provided."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:9e8670ec",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that confirms COVID-19 spreads mainly through the air in tiny droplets when people cough, sneeze, breathe, sing, or talk."
+      },
+      {
+        "point_id": "node_b:1:9d6e9c39",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that confirms the virus can land on the face of a nearby person after a sneeze or cough, or be inhaled in areas with low airflow."
+      },
+      {
+        "point_id": "node_b:2:04360111",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that confirms COVID-19 can spread from someone who is infected but has no symptoms."
+      },
+      {
+        "point_id": "node_b:3:7830fa3f",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that confirms the risk of catching COVID-19 increases with close contact, poor airflow, and activities like talking or sharing a car."
+      },
+      {
+        "point_id": "node_b:4:bf42a525",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that confirms living with someone who has COVID-19 or spending time in crowded spaces increases the risk of infection."
+      },
+      {
+        "point_id": "node_a:0:07a8c695",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that confirms COVID-19 spreads mainly through inhaling air contaminated by droplets and aerosols from infected people."
+      },
+      {
+        "point_id": "node_a:3:4b16f261",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that confirms COVID-19 can spread from touching contaminated surfaces and then touching the face."
+      },
+      {
+        "point_id": "node_c:0:688ca7b0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The point is supported by local context that confirms COVID-19 spreads through droplets from an infected person's mouth or nose when they cough, sneeze, speak, sing, or breathe."
+      },
+      {
+        "point_id": "node_c:2:59c0f0eb",
+        "basis": "UNKNOWN",
+        "reason": "The point is not explicitly mentioned in the local context or external evidence provided."
+      },
+      {
+        "point_id": "node_c:3:5668c8d6",
+        "basis": "UNKNOWN",
+        "reason": "The point is not explicitly mentioned in the local context or external evidence provided."
+      }
+    ]
+  }
+]

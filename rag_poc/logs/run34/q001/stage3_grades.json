@@ -1,0 +1,35 @@
+[
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:b45f35f8",
+      "node_c:1:bdffaeed",
+      "node_c:2:368cb81b",
+      "node_c:3:77fb6eda",
+      "node_c:4:c30a5752",
+      "node_b:1:43969c1c"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by local context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "FAIL",
+    "agree_points": [
+      "node_b:0:cc23953c",
+      "node_b:1:43969c1c",
+      "node_b:4:57f6e050",
+      "node_c:4:c30a5752"
+    ],
+    "reject_points": [
+      "node_b:2:7c22d575",
+      "node_b:3:07430af2"
+    ],
+    "unknown_points": [],
+    "note": "The points regarding spread and long-term symptoms are contradicted by local context."
+  }
+]

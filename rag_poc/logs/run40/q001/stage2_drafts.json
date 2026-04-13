@@ -1,0 +1,31 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "Individuals should consider getting tested for COVID-19 if they exhibit symptoms of the illness, such as fever, cough, or shortness of breath, to confirm infection [doc1_covid19.txt:chunk_00079]. Testing is also essential for those who believe they may be infected [doc1_covid19.txt:chunk_00194]. Additionally, it is advised to test five days after coming into contact with someone who has COVID-19 [doc2_covid19.txt:chunk_00023]. Children with symptoms should seek medical care and consider getting tested [doc3_covid19.txt:chunk_00021]. Fully vaccinated individuals showing symptoms should contact their doctor about testing [doc3_covid19.txt:chunk_00013].",
+    "used_points": [
+      "node_a:0:3a5b6a2a",
+      "node_a:1:0329e0d5",
+      "node_b:1:04d0853e",
+      "node_c:2:996a9e04",
+      "node_c:1:9990e9c8"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "Individuals should consider getting tested for COVID-19 if they have symptoms of the illness, as testing is essential for those who believe they may be infected [doc2_covid19.txt:chunk_00023]. Additionally, it is advised to test five days after coming into contact with the virus [doc2_covid19.txt:chunk_00023]. Children with symptoms should also seek medical care and consider getting tested [doc2_covid19.txt:chunk_00023].",
+    "used_points": [
+      "node_b:0:f774f4eb",
+      "node_b:1:04d0853e",
+      "node_c:2:996a9e04"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "Individuals should consider getting tested for COVID-19 if they exhibit symptoms of the illness, as testing is essential to confirm infection [doc3_covid19.txt:chunk_00000]. This includes contacting a doctor about testing if they are fully vaccinated and showing symptoms [doc3_covid19.txt:chunk_00013]. Children with symptoms should also seek medical care and consider getting tested [doc3_covid19.txt:chunk_00021].",
+    "used_points": [
+      "node_c:0:b6f761c4",
+      "node_c:1:9990e9c8",
+      "node_c:2:996a9e04"
+    ]
+  }
+]

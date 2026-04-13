@@ -1,0 +1,270 @@
+{
+  "node_a:0:0dba1eb0": {
+    "point_id": "node_a:0:0dba1eb0",
+    "origin_node_id": "node_a",
+    "text": "Get vaccinated against COVID-19 to reduce the risk of infection and severity of disease.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00006",
+      "doc1_covid19.txt:chunk_00100"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00006",
+        "text": "Several COVID-19 vaccines have been approved and distributed in various countries, many of which have initiated mass vaccination campaigns. Other preventive measures include physical or social distancing, quarantining, ventilation of indoor spaces, use of face masks or coverings in public, covering coughs and sneezes, hand washing, and keeping unwashed hands away from the face. While drugs have been developed to inhibit the virus, the primary treatment is still symptomatic, managing the disease through supportive care, isolation, and experimental measures.",
+        "score": 0.6777
+      },
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00100",
+        "text": "The COVID‑19 vaccines are widely credited for their role in reducing the spread of COVID‑19 and reducing the severity and death caused by COVID‑19.[211][214] Many countries implemented phased distribution plans that prioritized those at highest risk of complications, such as the elderly, and those at high risk of exposure, such as healthcare workers.[215][216] By December 2020, more than 10 billion vaccine doses had been preordered,[217] with about half of the doses purchased by high-income countries comprising 14% of the world's population.[218] As of August 2024",
+        "score": 0.6073
+      }
+    ]
+  },
+  "node_a:1:ef6a2285": {
+    "point_id": "node_a:1:ef6a2285",
+    "origin_node_id": "node_a",
+    "text": "Practice good personal hygiene, including regular hand washing and avoiding touching your face.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00006",
+      "doc1_covid19.txt:chunk_00094"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00006",
+        "text": "Several COVID-19 vaccines have been approved and distributed in various countries, many of which have initiated mass vaccination campaigns. Other preventive measures include physical or social distancing, quarantining, ventilation of indoor spaces, use of face masks or coverings in public, covering coughs and sneezes, hand washing, and keeping unwashed hands away from the face. While drugs have been developed to inhibit the virus, the primary treatment is still symptomatic, managing the disease through supportive care, isolation, and experimental measures.",
+        "score": 0.6777
+      },
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00094",
+        "text": "Those diagnosed with COVID‑19 or who believe they may be infected are advised by the CDC to stay home except to get medical care, call ahead before visiting a healthcare provider, wear a face mask before entering the healthcare provider's office and when in any room or vehicle with another person, cover coughs and sneezes with a tissue, regularly wash hands with soap and water and avoid sharing personal household items.[202][203]",
+        "score": 0.6708
+      }
+    ]
+  },
+  "node_a:2:0ae76809": {
+    "point_id": "node_a:2:0ae76809",
+    "origin_node_id": "node_a",
+    "text": "Maintain physical distancing and wear face masks in public to minimize exposure.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00006",
+      "doc1_covid19.txt:chunk_00100"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00006",
+        "text": "Several COVID-19 vaccines have been approved and distributed in various countries, many of which have initiated mass vaccination campaigns. Other preventive measures include physical or social distancing, quarantining, ventilation of indoor spaces, use of face masks or coverings in public, covering coughs and sneezes, hand washing, and keeping unwashed hands away from the face. While drugs have been developed to inhibit the virus, the primary treatment is still symptomatic, managing the disease through supportive care, isolation, and experimental measures.",
+        "score": 0.6777
+      },
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00100",
+        "text": "The COVID‑19 vaccines are widely credited for their role in reducing the spread of COVID‑19 and reducing the severity and death caused by COVID‑19.[211][214] Many countries implemented phased distribution plans that prioritized those at highest risk of complications, such as the elderly, and those at high risk of exposure, such as healthcare workers.[215][216] By December 2020, more than 10 billion vaccine doses had been preordered,[217] with about half of the doses purchased by high-income countries comprising 14% of the world's population.[218] As of August 2024",
+        "score": 0.6073
+      }
+    ]
+  },
+  "node_a:3:236ee77b": {
+    "point_id": "node_a:3:236ee77b",
+    "origin_node_id": "node_a",
+    "text": "Ensure proper ventilation in indoor spaces to reduce airborne transmission.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00006"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00006",
+        "text": "Several COVID-19 vaccines have been approved and distributed in various countries, many of which have initiated mass vaccination campaigns. Other preventive measures include physical or social distancing, quarantining, ventilation of indoor spaces, use of face masks or coverings in public, covering coughs and sneezes, hand washing, and keeping unwashed hands away from the face. While drugs have been developed to inhibit the virus, the primary treatment is still symptomatic, managing the disease through supportive care, isolation, and experimental measures.",
+        "score": 0.6777
+      }
+    ]
+  },
+  "node_a:4:2beb2a50": {
+    "point_id": "node_a:4:2beb2a50",
+    "origin_node_id": "node_a",
+    "text": "Stay home if diagnosed with COVID-19 or if you suspect infection, and follow self-isolation guidelines.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00094",
+      "doc1_covid19.txt:chunk_00125"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00094",
+        "text": "Those diagnosed with COVID‑19 or who believe they may be infected are advised by the CDC to stay home except to get medical care, call ahead before visiting a healthcare provider, wear a face mask before entering the healthcare provider's office and when in any room or vehicle with another person, cover coughs and sneezes with a tissue, regularly wash hands with soap and water and avoid sharing personal household items.[202][203]",
+        "score": 0.6708
+      },
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00125",
+        "text": "Self-isolation at home has been recommended for those diagnosed with COVID‑19 and those who suspect they have been infected. Health agencies have issued detailed instructions for proper self-isolation.[258] Many governments have mandated or recommended self-quarantine for entire populations",
+        "score": 0.6041
+      }
+    ]
+  },
+  "node_b:0:345fb563": {
+    "point_id": "node_b:0:345fb563",
+    "origin_node_id": "node_b",
+    "text": "Stay home if you feel ill or have COVID-19 symptoms to prevent spreading the virus.",
+    "citations": [
+      "doc2_covid19.txt:chunk_00022"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19.txt",
+        "chunk_id": "chunk_00022",
+        "text": "Besides vaccination, there are other ways to stop the spread of the virus that causes COVID-19. If you are at a higher risk of serious illness, talk with your healthcare professional about how best to protect yourself. Know what to do if you get sick so you can quickly start treatment. If you feel ill or have COVID-19, stay home and away from others, including pets, if possible.\n\nIn general, make it a habit to:",
+        "score": 0.743
+      }
+    ]
+  },
+  "node_b:1:c10baa58": {
+    "point_id": "node_b:1:c10baa58",
+    "origin_node_id": "node_b",
+    "text": "Maintain good indoor airflow and practice physical distancing to reduce transmission risk.",
+    "citations": [
+      "doc2_covid19.txt:chunk_00001"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19.txt",
+        "chunk_id": "chunk_00001",
+        "text": "Staying up to date on your COVID-19 vaccine helps prevent serious illness, the need for hospital care due to COVID-19 and death from COVID-19. Other things that may help prevent the spread of this coronavirus include good indoor airflow, physical distancing, wearing a mask in the right setting and good hygiene.\n\nMedicine can limit the seriousness of the viral infection. Most people recover without long-term effects, but some people have symptoms that continue for months.\nProvider applying Bandaid to upper arm\nAre you fully protected?\n\nCreate your personalized vaccination plan.\nSymptoms",
+        "score": 0.7393
+      }
+    ]
+  },
+  "node_b:2:3ceeff57": {
+    "point_id": "node_b:2:3ceeff57",
+    "origin_node_id": "node_b",
+    "text": "Wear a mask in appropriate settings to help prevent the spread of COVID-19.",
+    "citations": [
+      "doc2_covid19.txt:chunk_00001"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19.txt",
+        "chunk_id": "chunk_00001",
+        "text": "Staying up to date on your COVID-19 vaccine helps prevent serious illness, the need for hospital care due to COVID-19 and death from COVID-19. Other things that may help prevent the spread of this coronavirus include good indoor airflow, physical distancing, wearing a mask in the right setting and good hygiene.\n\nMedicine can limit the seriousness of the viral infection. Most people recover without long-term effects, but some people have symptoms that continue for months.\nProvider applying Bandaid to upper arm\nAre you fully protected?\n\nCreate your personalized vaccination plan.\nSymptoms",
+        "score": 0.7393
+      }
+    ]
+  },
+  "node_b:3:c5d03e79": {
+    "point_id": "node_b:3:c5d03e79",
+    "origin_node_id": "node_b",
+    "text": "Wash hands frequently with soap and water or use hand sanitizer with at least 60% alcohol.",
+    "citations": [
+      "doc2_covid19.txt:chunk_00023"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19.txt",
+        "chunk_id": "chunk_00023",
+        "text": "Test for COVID-19. If you have symptoms of COVID-19 test for the illness. Or test five days after coming in contact with the virus.\n    Help from afar. Avoid close contact with anyone who is sick or has symptoms, if possible.\n    Wash your hands. Wash your hands well and often with soap and water for at least 20 seconds. Or use an alcohol-based hand sanitizer with at least 60% alcohol.\n    Cover your coughs and sneezes. Cough or sneeze into a tissue or your elbow. Then wash your hands.",
+        "score": 0.5721
+      }
+    ]
+  },
+  "node_b:4:bab989a7": {
+    "point_id": "node_b:4:bab989a7",
+    "origin_node_id": "node_b",
+    "text": "Cover your coughs and sneezes with a tissue or your elbow, then wash your hands.",
+    "citations": [
+      "doc2_covid19.txt:chunk_00023"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19.txt",
+        "chunk_id": "chunk_00023",
+        "text": "Test for COVID-19. If you have symptoms of COVID-19 test for the illness. Or test five days after coming in contact with the virus.\n    Help from afar. Avoid close contact with anyone who is sick or has symptoms, if possible.\n    Wash your hands. Wash your hands well and often with soap and water for at least 20 seconds. Or use an alcohol-based hand sanitizer with at least 60% alcohol.\n    Cover your coughs and sneezes. Cough or sneeze into a tissue or your elbow. Then wash your hands.",
+        "score": 0.5721
+      }
+    ]
+  },
+  "node_c:0:98400fd0": {
+    "point_id": "node_c:0:98400fd0",
+    "origin_node_id": "node_c",
+    "text": "Avoid crowded places and maintain physical distancing of at least 1 metre from others.",
+    "citations": [
+      "doc3_covid19.txt:chunk_00016"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19.txt",
+        "chunk_id": "chunk_00016",
+        "text": "Avoid crowded places, confined and enclosed spaces with poor ventilation, and try to practice physical distancing from people in public, keeping at least 1 metre distance between yourself and others\n    Wear a mask when in public places where there is community transmission and where physical distancing is not possible\n    Wash your hands frequently using soap and water or an alcohol-based hand rub (Read: Everything you need to know about washing your hands to protect against COVID-19)\n    Keep all indoor spaces well ventilated",
+        "score": 0.5773
+      }
+    ]
+  },
+  "node_c:1:aeb2cd6d": {
+    "point_id": "node_c:1:aeb2cd6d",
+    "origin_node_id": "node_c",
+    "text": "Wear a mask in public areas where community transmission is present and physical distancing is not possible.",
+    "citations": [
+      "doc3_covid19.txt:chunk_00016"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19.txt",
+        "chunk_id": "chunk_00016",
+        "text": "Avoid crowded places, confined and enclosed spaces with poor ventilation, and try to practice physical distancing from people in public, keeping at least 1 metre distance between yourself and others\n    Wear a mask when in public places where there is community transmission and where physical distancing is not possible\n    Wash your hands frequently using soap and water or an alcohol-based hand rub (Read: Everything you need to know about washing your hands to protect against COVID-19)\n    Keep all indoor spaces well ventilated",
+        "score": 0.5773
+      }
+    ]
+  },
+  "node_c:2:a74f2a18": {
+    "point_id": "node_c:2:a74f2a18",
+    "origin_node_id": "node_c",
+    "text": "Wash hands frequently with soap and water or an alcohol-based hand rub.",
+    "citations": [
+      "doc3_covid19.txt:chunk_00016"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19.txt",
+        "chunk_id": "chunk_00016",
+        "text": "Avoid crowded places, confined and enclosed spaces with poor ventilation, and try to practice physical distancing from people in public, keeping at least 1 metre distance between yourself and others\n    Wear a mask when in public places where there is community transmission and where physical distancing is not possible\n    Wash your hands frequently using soap and water or an alcohol-based hand rub (Read: Everything you need to know about washing your hands to protect against COVID-19)\n    Keep all indoor spaces well ventilated",
+        "score": 0.5773
+      }
+    ]
+  },
+  "node_c:3:5fbe2456": {
+    "point_id": "node_c:3:5fbe2456",
+    "origin_node_id": "node_c",
+    "text": "Ensure good ventilation in indoor spaces to reduce virus transmission.",
+    "citations": [
+      "doc3_covid19.txt:chunk_00016"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19.txt",
+        "chunk_id": "chunk_00016",
+        "text": "Avoid crowded places, confined and enclosed spaces with poor ventilation, and try to practice physical distancing from people in public, keeping at least 1 metre distance between yourself and others\n    Wear a mask when in public places where there is community transmission and where physical distancing is not possible\n    Wash your hands frequently using soap and water or an alcohol-based hand rub (Read: Everything you need to know about washing your hands to protect against COVID-19)\n    Keep all indoor spaces well ventilated",
+        "score": 0.5773
+      }
+    ]
+  },
+  "node_c:4:0071e71d": {
+    "point_id": "node_c:4:0071e71d",
+    "origin_node_id": "node_c",
+    "text": "Get vaccinated to help reduce the spread of the virus and its mutations.",
+    "citations": [
+      "doc3_covid19.txt:chunk_00012"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19.txt",
+        "chunk_id": "chunk_00012",
+        "text": "Experts around the world are continuously studying how the new variants affect the behaviour of the virus, including any potential impact on the effectiveness of COVID-19 vaccines.\n\nBut in the meantime, the important thing to do is to get vaccinated and continue measures to reduce the spread of the virus – which helps to reduce the chances for the virus to mutate – including physical distancing, mask wearing, good ventilation, regular handwashing and seeking care early if you have symptoms.\nI’ve been vaccinated, do I still need to get tested for COVID-19?",
+        "score": 0.5643
+      }
+    ]
+  }
+}

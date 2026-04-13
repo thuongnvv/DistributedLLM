@@ -1,0 +1,128 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:9e8670ec",
+      "node_b:1:9d6e9c39",
+      "node_b:2:04360111",
+      "node_b:3:7830fa3f",
+      "node_b:4:bf42a525",
+      "node_a:0:07a8c695",
+      "node_a:3:4b16f261"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:0:688ca7b0",
+      "node_c:2:59c0f0eb",
+      "node_c:3:5668c8d6"
+    ],
+    "note": "The draft accurately describes the main modes of COVID-19 transmission as supported by the local document and external evidence. Some points are marked as UNKNOWN due to lack of specific mention in the local context or external evidence."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:688ca7b0",
+      "node_c:1:0456f48e",
+      "node_c:2:59c0f0eb",
+      "node_c:3:5668c8d6",
+      "node_c:4:c5ae8d18",
+      "node_a:0:07a8c695",
+      "node_a:3:4b16f261"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:2:04360111",
+      "node_b:3:7830fa3f",
+      "node_b:0:9e8670ec"
+    ],
+    "note": "The draft accurately describes the main modes of COVID-19 transmission as supported by the local document and external evidence. Some points are marked as UNKNOWN due to lack of specific mention in the local context or external evidence."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:07a8c695",
+      "node_a:1:9c8c42a0",
+      "node_a:2:aea75553",
+      "node_a:3:4b16f261",
+      "node_a:4:59b04548",
+      "node_b:2:04360111"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:0:688ca7b0",
+      "node_c:4:c5ae8d18",
+      "node_b:0:9e8670ec",
+      "node_c:2:59c0f0eb"
+    ],
+    "note": "All points are either supported by the local context or are unknown due to lack of explicit mention in the document."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:688ca7b0",
+      "node_c:1:0456f48e",
+      "node_c:2:59c0f0eb",
+      "node_c:3:5668c8d6",
+      "node_c:4:c5ae8d18",
+      "node_b:2:04360111"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:3:7830fa3f",
+      "node_a:0:07a8c695",
+      "node_a:3:4b16f261",
+      "node_b:0:9e8670ec"
+    ],
+    "note": "All points are either supported by external evidence or are unknown due to lack of explicit mention in the document."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:07a8c695",
+      "node_a:1:9c8c42a0",
+      "node_a:2:aea75553",
+      "node_a:3:4b16f261",
+      "node_a:4:59b04548",
+      "node_c:0:688ca7b0",
+      "node_b:2:04360111",
+      "node_c:4:c5ae8d18"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:0:9e8670ec",
+      "node_c:2:59c0f0eb"
+    ],
+    "note": "All points are either supported by local or external evidence, except for two points which are marked as unknown due to lack of specific mention."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:9e8670ec",
+      "node_b:1:9d6e9c39",
+      "node_b:2:04360111",
+      "node_b:3:7830fa3f",
+      "node_b:4:bf42a525",
+      "node_a:0:07a8c695",
+      "node_a:3:4b16f261",
+      "node_c:0:688ca7b0"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:2:59c0f0eb",
+      "node_c:3:5668c8d6"
+    ],
+    "note": "All points are either supported by local or external evidence, except for two points which are marked as unknown due to lack of specific mention."
+  }
+]

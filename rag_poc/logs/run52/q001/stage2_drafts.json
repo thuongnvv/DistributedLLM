@@ -1,0 +1,35 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "COVID-19 is a contagious disease caused by the coronavirus SARS-CoV-2. Starting in January 2020, the disease spread worldwide, resulting in the COVID-19 pandemic. In March 2020, the World Health Organization declared COVID-19 a global health emergency; they declared the end of the emergency in May 2023. COVID-19 is mainly transmitted from person to person through inhaling air contaminated by droplets/aerosols and small airborne particles containing the virus. Infected people exhale those particles as they breathe, talk, cough, sneeze, or sing. 'CO' stands for corona, 'VI' for virus, and 'D' for disease.",
+    "used_points": [
+      "node_a:0:cf1078a4",
+      "node_a:1:460e7efd",
+      "node_a:3:ba2bc38b",
+      "node_a:4:4aaa34f9",
+      "node_c:1:5f2294d4"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "COVID-19 is an illness caused by the SARS-CoV-2 virus, which became a pandemic in 2020. The virus spreads mainly through close contact and tiny droplets from coughs or sneezes. Many people experience mild illness or no symptoms, but it can be severe for older adults and those with medical conditions. COVID-19 can lead to serious complications, including acute respiratory distress syndrome and blood clots. It's possible to get COVID-19 more than once due to mutations in the virus.",
+    "used_points": [
+      "node_b:0:3fa5ce02",
+      "node_b:1:70647e1f",
+      "node_b:2:0d90df4d",
+      "node_b:3:4abf905a",
+      "node_b:4:8f64acc8"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "COVID-19 is an infectious respiratory illness caused by a coronavirus called SARS-CoV-2. ‘CO’ stands for corona, ‘VI’ for virus, and ‘D’ for disease. Symptoms may appear 2 to 14 days after exposure to the virus and can range from very mild to severe illness. Some people who have been infected don’t have any symptoms. COVID-19 has been described as a 'pandemic', referring to its geographical spread.",
+    "used_points": [
+      "node_c:0:2e87af50",
+      "node_c:1:5f2294d4",
+      "node_c:2:00af6bbe",
+      "node_c:3:3579131c",
+      "node_c:4:ed8552fe"
+    ]
+  }
+]

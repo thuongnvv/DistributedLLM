@@ -1,0 +1,228 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:701a6d86",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that COVID-19 symptoms often show up 2 to 14 days after contact with the virus."
+      },
+      {
+        "point_id": "node_b:1:f59e055b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document lists congestion, runny nose, or sore throat as common symptoms."
+      },
+      {
+        "point_id": "node_b:2:1e357a9c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions dry cough and shortness of breath as symptoms."
+      },
+      {
+        "point_id": "node_b:3:567772ca",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms loss of taste or smell as a common symptom."
+      },
+      {
+        "point_id": "node_b:4:7c0be73e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that extreme tiredness, known as fatigue, can occur."
+      },
+      {
+        "point_id": "node_b:5:2af15bae",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document includes digestive symptoms like upset stomach, vomiting, or diarrhea."
+      },
+      {
+        "point_id": "node_b:6:e066c460",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions pain, including headaches and body or muscle aches, as possible."
+      },
+      {
+        "point_id": "node_b:7:db241610",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that fever or chills are common symptoms of COVID-19."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:4831f02a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that the most common symptoms are fever, cough, and tiredness."
+      },
+      {
+        "point_id": "node_c:1:ddf6ff4d",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document lists other symptoms including shortness of breath, chest pain or pressure, and muscle or body aches."
+      },
+      {
+        "point_id": "node_c:2:23993677",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms headache, loss of taste or smell, confusion, and sore throat as common symptoms."
+      },
+      {
+        "point_id": "node_c:3:d4b4f059",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions congestion or runny nose, diarrhea, nausea and vomiting, and abdominal pain as possible symptoms."
+      },
+      {
+        "point_id": "node_c:4:427ea2c2",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that skin rashes can be a symptom of COVID-19."
+      },
+      {
+        "point_id": "node_c:5:67f157f1",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that infants may experience difficulty feeding as a symptom."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:5d0c5bf0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions common symptoms including coughing, fever, and loss of smell and taste."
+      },
+      {
+        "point_id": "node_a:2:e4cdca4f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that breathing difficulties can occur in moderate to severe cases."
+      },
+      {
+        "point_id": "node_a:3:c1e180b5",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document lists fever, fatigue, cough, and breathing difficulties as common symptoms."
+      },
+      {
+        "point_id": "node_a:4:ffebc87c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document reports that loss of taste combined with loss of smell is associated with COVID-19."
+      },
+      {
+        "point_id": "node_a:6:fe416d64",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document includes muscle and joint pain, headache, and fatigue as part of the symptom clusters."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:4831f02a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that the most common symptoms are fever, cough, and tiredness."
+      },
+      {
+        "point_id": "node_c:1:ddf6ff4d",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions other symptoms including shortness of breath, chest pain or pressure, and muscle or body aches."
+      },
+      {
+        "point_id": "node_c:2:23993677",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document lists headache, loss of taste or smell, confusion, and sore throat as common symptoms."
+      },
+      {
+        "point_id": "node_c:3:d4b4f059",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document includes congestion or runny nose, diarrhea, nausea and vomiting, and abdominal pain as possible symptoms."
+      },
+      {
+        "point_id": "node_c:4:427ea2c2",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that skin rashes can be a symptom of COVID-19."
+      },
+      {
+        "point_id": "node_c:5:67f157f1",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that infants may experience difficulty feeding as a symptom."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:5d0c5bf0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states common symptoms include coughing, fever, and loss of smell and taste [doc1_covid19.txt:chunk_00011]."
+      },
+      {
+        "point_id": "node_a:2:e4cdca4f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions breathing difficulties can occur in moderate to severe cases [doc1_covid19.txt:chunk_00011]."
+      },
+      {
+        "point_id": "node_a:3:c1e180b5",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document lists fever, fatigue, cough, and breathing difficulties as often reported symptoms [doc1_covid19.txt:chunk_00001]."
+      },
+      {
+        "point_id": "node_a:4:ffebc87c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states loss of taste combined with loss of smell is reported in up to 88% of cases [doc1_covid19.txt:chunk_00012]."
+      },
+      {
+        "point_id": "node_a:6:fe416d64",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document includes muscle and joint pain, headache, and fatigue as part of a musculoskeletal symptom cluster [doc1_covid19.txt:chunk_00012]."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:701a6d86",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that COVID-19 symptoms often show up 2 to 14 days after contact with the virus [doc2_covid19.txt:chunk_00002]."
+      },
+      {
+        "point_id": "node_b:1:f59e055b",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence lists common symptoms including congestion, runny nose, or sore throat [doc2_covid19.txt:chunk_00002]."
+      },
+      {
+        "point_id": "node_b:2:1e357a9c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence states that other symptoms include dry cough and shortness of breath [doc2_covid19.txt:chunk_00002]."
+      },
+      {
+        "point_id": "node_b:3:567772ca",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms loss of taste or smell is a common symptom [doc2_covid19.txt:chunk_00002]."
+      },
+      {
+        "point_id": "node_b:4:7c0be73e",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence mentions extreme tiredness, known as fatigue, can occur [doc2_covid19.txt:chunk_00002]."
+      },
+      {
+        "point_id": "node_b:5:2af15bae",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence states digestive symptoms like upset stomach, vomiting, or diarrhea are possible [doc2_covid19.txt:chunk_00002]."
+      },
+      {
+        "point_id": "node_b:6:e066c460",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence mentions pain, including headaches and body or muscle aches, may be present [doc2_covid19.txt:chunk_00002]."
+      },
+      {
+        "point_id": "node_b:7:db241610",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms fever or chills are also common symptoms of COVID-19 [doc2_covid19.txt:chunk_00002]."
+      }
+    ]
+  }
+]

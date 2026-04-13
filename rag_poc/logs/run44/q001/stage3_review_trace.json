@@ -1,0 +1,188 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:03f5bc77",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states COVID-19 is caused by the SARS-CoV-2 virus."
+      },
+      {
+        "point_id": "node_b:1:673d7303",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that the virus spreads mainly through close contact and tiny droplets."
+      },
+      {
+        "point_id": "node_b:2:896fa7d8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that many people experience mild illness or no symptoms, but it can be severe for older adults."
+      },
+      {
+        "point_id": "node_b:3:85526a3b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document indicates that COVID-19 can lead to serious complications."
+      },
+      {
+        "point_id": "node_b:4:4f848e05",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document supports the claim that it's possible to get COVID-19 more than once."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:2e87af50",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms COVID-19 is an infectious respiratory illness caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_c:1:5f2294d4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states the breakdown of the acronym COVID-19."
+      },
+      {
+        "point_id": "node_c:2:00af6bbe",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that symptoms may appear 2 to 14 days after exposure."
+      },
+      {
+        "point_id": "node_c:3:3579131c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that some infected individuals may not show symptoms."
+      },
+      {
+        "point_id": "node_c:4:ed8552fe",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document describes COVID-19 as a pandemic."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that COVID-19 is caused by the SARS-CoV-2 virus."
+      },
+      {
+        "point_id": "node_a:1:b24690d7",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that the disease spread worldwide starting in January 2020."
+      },
+      {
+        "point_id": "node_a:2:e88c7060",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions the WHO declared COVID-19 a global health emergency in March 2020."
+      },
+      {
+        "point_id": "node_a:4:e823ede5",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that transmission occurs mainly through inhaling contaminated air."
+      },
+      {
+        "point_id": "node_b:3:85526a3b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document lists serious complications of COVID-19, including acute respiratory distress syndrome and blood clots."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:2e87af50",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states COVID-19 is caused by the SARS-CoV-2 virus."
+      },
+      {
+        "point_id": "node_c:1:5f2294d4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document explains the meaning of 'CO', 'VI', and 'D' in COVID-19."
+      },
+      {
+        "point_id": "node_c:2:00af6bbe",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions symptoms may appear 2 to 14 days after exposure."
+      },
+      {
+        "point_id": "node_c:3:3579131c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states some infected individuals may not show symptoms."
+      },
+      {
+        "point_id": "node_c:4:ed8552fe",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document describes COVID-19 as a pandemic."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document states COVID-19 is a contagious disease caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_a:1:b24690d7",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document confirms the disease spread worldwide starting in January 2020."
+      },
+      {
+        "point_id": "node_a:2:e88c7060",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document states WHO declared COVID-19 a global health emergency in March 2020."
+      },
+      {
+        "point_id": "node_a:4:e823ede5",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document mentions transmission occurs through inhaling contaminated air."
+      },
+      {
+        "point_id": "node_b:3:85526a3b",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms COVID-19 can lead to serious complications."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:03f5bc77",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document states COVID-19 is caused by SARS-CoV-2 and started spreading at the end of 2019."
+      },
+      {
+        "point_id": "node_b:1:673d7303",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document confirms the virus spreads mainly through close contact and tiny droplets."
+      },
+      {
+        "point_id": "node_b:2:896fa7d8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document states many people experience mild illness or no symptoms, but it can be severe."
+      },
+      {
+        "point_id": "node_b:3:85526a3b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document confirms COVID-19 can lead to serious complications."
+      },
+      {
+        "point_id": "node_b:4:4f848e05",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports the possibility of reinfection due to fading immunity."
+      }
+    ]
+  }
+]

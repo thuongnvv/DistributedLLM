@@ -17,6 +17,9 @@ from settings import (
     NODE_A_ID, NODE_A_DOC, NODE_A_CHROMA,
     NODE_B_ID, NODE_B_DOC, NODE_B_CHROMA,
     NODE_C_ID, NODE_C_DOC, NODE_C_CHROMA,
+    NODE_D_ID, NODE_D_DOC, NODE_D_CHROMA,
+    NODE_E_ID, NODE_E_DOC, NODE_E_CHROMA,
+    NODE_F_ID, NODE_F_DOC, NODE_F_CHROMA,
 )
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
@@ -105,6 +108,30 @@ def build_rag_nodes() -> list[RAGNode]:
             domain="medical_covid",
             style="public health official; WHO guidance; global perspective; informational",
             scope="COVID-19 disease, SARS-CoV-2 virus, symptoms, treatment, prevention, vaccination, variants, public health measures",
+        ),
+        RAGNode(
+            node_id=NODE_D_ID,
+            doc_path=NODE_D_DOC,
+            chroma_path=NODE_D_CHROMA,
+            domain="agriculture_farming",
+            style="FAO agricultural expert; sustainable farming advocate",
+            scope="Save and Grow farming; sustainable crop production; FAO guidelines; soil health; water management; conservation agriculture",
+        ),
+        RAGNode(
+            node_id=NODE_E_ID,
+            doc_path=NODE_E_DOC,
+            chroma_path=NODE_E_CHROMA,
+            domain="agriculture_farming",
+            style="farm management specialist; practical farmer guidance",
+            scope="Farm management practices; crop planning; livestock management; farm economics; labor management; risk management; agricultural decision-making",
+        ),
+        RAGNode(
+            node_id=NODE_F_ID,
+            doc_path=NODE_F_DOC,
+            chroma_path=NODE_F_CHROMA,
+            domain="agriculture_ipm",
+            style="IPM specialist; pest management expert; ecological approach",
+            scope="Integrated pest management; IPM strategies; biological control; cultural practices; pesticide management; pest monitoring; crop protection",
         ),
     ]
 

@@ -1,0 +1,43 @@
+{
+  "winner": "node_c",
+  "final_answer": "COVID-19 is caused by the SARS-CoV-2 virus, while the common cold and flu are caused by different viruses [doc3_covid19.txt:chunk_00000]. Symptoms of COVID-19 can range from mild to severe, similar to the flu and common cold, making testing necessary for confirmation [doc3_covid19.txt:chunk_00000]. COVID-19 can lead to serious complications, such as difficulty breathing and multisystem inflammatory syndrome in children, unlike typical colds [doc3_covid19.txt:chunk_00002]. Additionally, COVID-19 symptoms include loss of taste or smell, which are not common in the flu or common cold [doc3_covid19.txt:chunk_00001]. COVID-19 has a longer incubation period of 2 to 14 days, compared to the common cold and flu [doc3_covid19.txt:chunk_00000]. Older adults and those with certain medical conditions are at higher risk for severe COVID-19 illness compared to the flu [doc3_covid19.txt:chunk_00000].",
+  "metrics": {
+    "pass": {
+      "node_b": 1,
+      "node_c": 1
+    },
+    "fail": {
+      "node_b": 0,
+      "node_c": 0
+    },
+    "agree": {
+      "node_b": 4,
+      "node_c": 6
+    },
+    "reject": {
+      "node_b": 1,
+      "node_c": 0
+    },
+    "eligible_reviews": {
+      "node_b": 1,
+      "node_c": 1
+    },
+    "used_points": {
+      "node_b": 5,
+      "node_c": 6
+    },
+    "agree_rate": {
+      "node_b": 0.8,
+      "node_c": 1.0
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "node_c": 5.0
+    },
+    "point_rep_delta": {
+      "node_b": 2.0,
+      "node_c": 7.0
+    }
+  }
+}

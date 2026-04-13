@@ -1,0 +1,16 @@
+{
+  "queries": [
+    {
+      "label": "q001",
+      "query": "What are simple ways to reduce the risk of getting COVID-19",
+      "winner": "node_c",
+      "q_dir": "q001"
+    },
+    {
+      "label": "q002",
+      "query": "What are simple ways to reduce the risk of getting COVID-19",
+      "winner": "node_b",
+      "q_dir": "q002"
+    }
+  ]
+}

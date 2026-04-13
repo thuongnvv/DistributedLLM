@@ -1,0 +1,242 @@
+[
+  {
+    "node_id": "node_a",
+    "point_support": [
+      {
+        "point_id": "node_a:0:8b131250",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states that common symptoms include cough, fever, and loss of smell and taste."
+      },
+      {
+        "point_id": "node_a:1:57b86ae8",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document lists fatigue, breathing difficulties, muscle pain, sore throat, and diarrhea as symptoms."
+      },
+      {
+        "point_id": "node_a:2:b4473c89",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that loss of taste and smell can occur in up to 88% of symptomatic cases."
+      },
+      {
+        "point_id": "node_a:3:d766d9b4",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document indicates that symptoms can vary based on the variant and may change over time."
+      },
+      {
+        "point_id": "node_a:4:8edb4b71",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states that severe cases may include shortness of breath and require hospitalization."
+      },
+      {
+        "point_id": "node_c:0:0a2473ca",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:3:6628b053",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:1:da908f2d",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:0:0de394cf",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:2:9359f1e3",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:1:dd82d7a1",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:2:19b780f3",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:3:04f3a062",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:4:e81ece1b",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:4:f1c95092",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "point_support": [
+      {
+        "point_id": "node_b:0:0de394cf",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Symptoms listed match the document's description of common COVID-19 symptoms."
+      },
+      {
+        "point_id": "node_b:1:da908f2d",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Additional symptoms mentioned are supported by the document."
+      },
+      {
+        "point_id": "node_b:2:19b780f3",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states symptoms can appear 2 to 14 days after exposure."
+      },
+      {
+        "point_id": "node_b:3:04f3a062",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Severe symptoms requiring emergency help are explicitly mentioned in the document."
+      },
+      {
+        "point_id": "node_b:4:f1c95092",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document notes that symptoms may worsen around 5 to 7 days after onset."
+      },
+      {
+        "point_id": "node_c:0:0a2473ca",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:0:8b131250",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:3:6628b053",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:1:57b86ae8",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:2:9359f1e3",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:1:dd82d7a1",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:3:d766d9b4",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:4:8edb4b71",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:4:e81ece1b",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:2:b4473c89",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "point_support": [
+      {
+        "point_id": "node_c:0:0a2473ca",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly stated in the local context."
+      },
+      {
+        "point_id": "node_c:1:dd82d7a1",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly stated in the local context."
+      },
+      {
+        "point_id": "node_c:2:9359f1e3",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly stated in the local context."
+      },
+      {
+        "point_id": "node_c:3:6628b053",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly stated in the local context."
+      },
+      {
+        "point_id": "node_c:4:e81ece1b",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly stated in the local context."
+      },
+      {
+        "point_id": "node_a:0:8b131250",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:1:da908f2d",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:1:57b86ae8",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:0:0de394cf",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:3:d766d9b4",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:2:19b780f3",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:4:8edb4b71",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:3:04f3a062",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:4:f1c95092",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:2:b4473c89",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  }
+]

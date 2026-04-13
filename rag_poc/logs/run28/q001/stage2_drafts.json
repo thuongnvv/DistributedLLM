@@ -1,0 +1,35 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "COVID-19 is a contagious disease caused by the coronavirus SARS-CoV-2, which emerged in late 2019 and led to a global pandemic declared by the World Health Organization in March 2020. The disease primarily spreads through inhaling air contaminated by droplets or aerosols from infected individuals [doc1_covid19.txt:chunk_00000][doc1_covid19.txt:chunk_00024].",
+    "used_points": [
+      "node_a:0:cf1078a4",
+      "node_a:1:b24690d7",
+      "node_a:2:e88c7060",
+      "node_a:4:0871af83"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "COVID-19 is an illness caused by the SARS-CoV-2 virus, which is a contagious disease that spreads mainly through close contact and tiny droplets in the air. Many people experience mild illness or no symptoms, but it can be severe for older adults and those with medical conditions. COVID-19 can lead to serious complications, including respiratory distress and blood clots. Additionally, infection can occur more than once due to mutations in the virus [doc2_covid19.txt:chunk_00000][doc2_covid19.txt:chunk_00007][doc2_covid19.txt:chunk_00009][doc2_covid19.txt:chunk_00015].",
+    "used_points": [
+      "node_b:0:3fa5ce02",
+      "node_b:1:673d7303",
+      "node_b:2:0d90df4d",
+      "node_b:3:d2c92cbd",
+      "node_b:4:d9c0346a"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "COVID-19 is an infectious respiratory illness caused by a coronavirus called SARS-CoV-2. The term 'COVID-19' stands for 'corona', 'virus', and 'disease'. This disease is contagious and can lead to serious complications, including respiratory distress and blood clots. COVID-19 was declared a global health emergency by the World Health Organization in March 2020, following its spread worldwide starting in January 2020, which led to a pandemic in 2020.",
+    "used_points": [
+      "node_c:0:2e87af50",
+      "node_c:1:5f2294d4",
+      "node_a:0:cf1078a4",
+      "node_b:3:d2c92cbd",
+      "node_a:2:e88c7060",
+      "node_a:1:b24690d7"
+    ]
+  }
+]

@@ -1,0 +1,185 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:5d0c5bf0",
+        "text": "Common symptoms include coughing, fever, and loss of smell and taste.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00011"
+        ]
+      },
+      {
+        "point_id": "node_a:1:a8db8b41",
+        "text": "Symptoms may also include headaches, nasal congestion, and muscle pain.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00011"
+        ]
+      },
+      {
+        "point_id": "node_a:2:e4cdca4f",
+        "text": "Breathing difficulties can occur in moderate to severe cases.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00011"
+        ]
+      },
+      {
+        "point_id": "node_a:3:c1e180b5",
+        "text": "Fever, fatigue, cough, and breathing difficulties are often reported.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "node_a:4:7e714290",
+        "text": "Loss of taste combined with loss of smell is reported in many cases.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00012"
+        ]
+      },
+      {
+        "point_id": "node_a:5:29c8a897",
+        "text": "A respiratory symptom cluster includes cough, sputum, and shortness of breath.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00012"
+        ]
+      },
+      {
+        "point_id": "node_a:6:fe416d64",
+        "text": "Muscle and joint pain, headache, and fatigue are part of a musculoskeletal symptom cluster.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00012"
+        ]
+      },
+      {
+        "point_id": "node_a:7:2c4f282d",
+        "text": "Digestive symptoms can include abdominal pain, vomiting, and diarrhea.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00012"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:701a6d86",
+        "text": "COVID-19 symptoms often show up 2 to 14 days after contact with the virus.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00002"
+        ]
+      },
+      {
+        "point_id": "node_b:1:3bed6930",
+        "text": "Common symptoms include dry cough, shortness of breath, and loss of taste or smell.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00002"
+        ]
+      },
+      {
+        "point_id": "node_b:2:f9f073c2",
+        "text": "Extreme tiredness, called fatigue, is also a common symptom of COVID-19.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00002"
+        ]
+      },
+      {
+        "point_id": "node_b:3:db38ccd4",
+        "text": "Digestive symptoms such as upset stomach, vomiting, or diarrhea can occur.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00002"
+        ]
+      },
+      {
+        "point_id": "node_b:4:2547bd69",
+        "text": "Pain, including headaches and body or muscle aches, is a symptom of COVID-19.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00002"
+        ]
+      },
+      {
+        "point_id": "node_b:5:01f3d26b",
+        "text": "Fever or chills are common symptoms associated with COVID-19.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00002"
+        ]
+      },
+      {
+        "point_id": "node_b:6:0d0e24d2",
+        "text": "Dizziness and dry mouth can also be symptoms of COVID-19.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00006"
+        ]
+      },
+      {
+        "point_id": "node_b:7:b20b0d3e",
+        "text": "New confusion and trouble staying awake are serious symptoms to watch for.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00005"
+        ]
+      },
+      {
+        "point_id": "node_b:8:64ecd280",
+        "text": "Chest pain or pressure that is constant requires emergency help.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00005"
+        ]
+      },
+      {
+        "point_id": "node_b:9:461044bf",
+        "text": "Symptoms may worsen about 5 to 7 days after they start.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00003"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:4831f02a",
+        "text": "The most common symptoms are fever, cough, and tiredness.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "node_c:1:6fdc6079",
+        "text": "Other symptoms can include shortness of breath and chest pain or pressure.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "node_c:2:2c0375cb",
+        "text": "Muscle or body aches, headache, and loss of taste or smell are also common.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "node_c:3:a3f30eb2",
+        "text": "Confusion, sore throat, and congestion or runny nose may occur.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "node_c:4:d16eea45",
+        "text": "Diarrhea, nausea and vomiting, abdominal pain, and skin rashes can be symptoms.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "node_c:5:6628b053",
+        "text": "Infants may experience difficulty feeding as a symptom of COVID-19.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00001"
+        ]
+      }
+    ]
+  }
+]

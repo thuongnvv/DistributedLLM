@@ -1,0 +1,197 @@
+[
+  {
+    "node_id": "node_a",
+    "point_support": [
+      {
+        "point_id": "node_a:0:20647ad1",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_a:3:7b8f3036",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_a:4:1e15c400",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_a:5:6160868f",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_a:6:45450e2f",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_b:6:f47ee9af",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "Supported by external evidence."
+      },
+      {
+        "point_id": "node_b:1:ade07a45",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:0:bf8ab8d0",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:4:1769fa66",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:5:77d8d291",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:2:6034abdf",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "point_support": [
+      {
+        "point_id": "node_b:0:467cd68e",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_b:1:ade07a45",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:2:6034abdf",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_b:3:b0862161",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_b:4:1769fa66",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:5:77d8d291",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_b:6:f47ee9af",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Directly supported by local context."
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:0:bf8ab8d0",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:6:45450e2f",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:0:20647ad1",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:3:7b8f3036",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "point_support": [
+      {
+        "point_id": "node_c:0:bf8ab8d0",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:1:ac81552e",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:2:f54907fd",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Keeping indoor spaces well ventilated is a public health measure."
+      },
+      {
+        "point_id": "node_c:3:a71128d0",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Frequent handwashing is a key preventive measure."
+      },
+      {
+        "point_id": "node_b:6:f47ee9af",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "Informing healthcare teams about positive tests is supported by external sources."
+      },
+      {
+        "point_id": "node_b:1:ade07a45",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Calling ahead before visiting a healthcare provider is advised."
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Wearing a mask in healthcare settings is recommended."
+      },
+      {
+        "point_id": "node_a:6:45450e2f",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Self-isolation is recommended for those diagnosed with COVID-19."
+      },
+      {
+        "point_id": "node_a:0:20647ad1",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Staying home except for medical care is advised."
+      }
+    ]
+  }
+]

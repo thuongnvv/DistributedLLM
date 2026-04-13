@@ -1,0 +1,93 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "FAIL",
+    "agree_points": [
+      "node_b:0:f774f4eb",
+      "node_b:1:04d0853e",
+      "node_c:2:121a17d8"
+    ],
+    "reject_points": [
+      "node_a:4:97dcea4a"
+    ],
+    "unknown_points": [],
+    "note": "The target contains a contradiction regarding the necessity of screening for respiratory symptoms."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:b6f761c4",
+      "node_c:1:9990e9c8",
+      "node_c:2:121a17d8",
+      "node_a:1:0329e0d5"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points in the target are supported by local context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:3a5b6a2a",
+      "node_a:1:0329e0d5",
+      "node_a:4:97dcea4a",
+      "node_b:1:04d0853e"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:2:121a17d8",
+      "node_c:1:9990e9c8"
+    ],
+    "note": "All points are supported by local context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:b6f761c4",
+      "node_c:1:9990e9c8",
+      "node_c:2:121a17d8",
+      "node_a:1:0329e0d5"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by local context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "FAIL",
+    "agree_points": [
+      "node_a:0:3a5b6a2a",
+      "node_a:1:0329e0d5",
+      "node_a:4:97dcea4a"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:1:04d0853e",
+      "node_c:2:121a17d8",
+      "node_c:1:9990e9c8"
+    ],
+    "note": "Points about PCR tests and antigen tests are not supported by the provided context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:f774f4eb",
+      "node_b:1:04d0853e",
+      "node_c:2:121a17d8",
+      "node_a:4:97dcea4a"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are well-supported by the local context."
+  }
+]

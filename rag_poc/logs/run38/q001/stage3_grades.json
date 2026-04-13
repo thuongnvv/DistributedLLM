@@ -1,0 +1,93 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:03db0aeb",
+      "node_b:1:c3956406",
+      "node_b:4:04d29f09",
+      "node_b:3:f3060f0c",
+      "node_a:6:89871063",
+      "node_a:5:38604400"
+    ],
+    "reject_points": [],
+    "unknown_points": []
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "UNKNOWN",
+    "agree_points": [],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:0:03db0aeb",
+      "node_c:0:27aa7a6b",
+      "node_c:2:55f0cc4a",
+      "node_c:3:dbf0571f",
+      "node_b:5:61ef2250"
+    ],
+    "note": "Missing target in batch response"
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:db7bb25d",
+      "node_a:1:377b09b1",
+      "node_a:2:ec24fe30",
+      "node_a:3:1c61ff88",
+      "node_a:4:f3e6a96a",
+      "node_a:5:38604400",
+      "node_a:6:89871063"
+    ],
+    "reject_points": [],
+    "unknown_points": []
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:03db0aeb",
+      "node_c:0:27aa7a6b",
+      "node_c:2:55f0cc4a",
+      "node_c:3:dbf0571f",
+      "node_b:5:61ef2250"
+    ],
+    "reject_points": [],
+    "unknown_points": []
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:db7bb25d",
+      "node_a:1:377b09b1",
+      "node_a:2:ec24fe30",
+      "node_a:3:1c61ff88",
+      "node_a:4:f3e6a96a",
+      "node_a:5:38604400",
+      "node_a:6:89871063"
+    ],
+    "reject_points": [],
+    "unknown_points": []
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:03db0aeb",
+      "node_b:1:c3956406",
+      "node_b:4:04d29f09",
+      "node_b:3:f3060f0c",
+      "node_a:6:89871063",
+      "node_a:5:38604400"
+    ],
+    "reject_points": [],
+    "unknown_points": []
+  }
+]

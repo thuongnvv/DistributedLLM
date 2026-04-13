@@ -1,0 +1,42 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "If someone tests positive for COVID-19, they should stay home except to get medical care, call ahead before visiting a healthcare provider, wear a face mask when around others, cover coughs and sneezes, regularly wash hands, and avoid sharing personal items. Additionally, they should inform their healthcare team about the positive test and seek medical care early if they have symptoms like fever or difficulty breathing [doc1:chunk_00094, doc1:chunk_00125, node_b:1:7fd78044, node_c:0:adf9ee61].",
+    "used_points": [
+      "node_a:0:6351c476",
+      "node_a:1:a237b46c",
+      "node_a:2:fe84ff2f",
+      "node_a:3:bcc8f0f8",
+      "node_a:4:40178a9c",
+      "node_b:1:7fd78044",
+      "node_c:0:adf9ee61"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "If someone tests positive for COVID-19, they should stay home and away from others, including pets, if possible [doc2_covid19.txt:chunk_00022]. It's important to inform their healthcare team about the positive test or symptoms [doc2_covid19.txt:chunk_00006]. They should seek emergency help for severe symptoms like trouble breathing or chest pain [doc2_covid19.txt:chunk_00005]. Regular hand washing with soap and water for at least 20 seconds is advised [doc2_covid19.txt:chunk_00023]. Additionally, they should avoid close contact with anyone who is sick or has symptoms [doc2_covid19.txt:chunk_00023]. External sources also recommend calling ahead before visiting a healthcare provider [doc1_covid19.txt:chunk_00094], wearing a face mask in healthcare settings and when around others [doc1_covid19.txt:chunk_00094], and staying home except to get medical care [doc1_covid19.txt:chunk_00094].",
+    "used_points": [
+      "node_b:0:467cd68e",
+      "node_b:1:7fd78044",
+      "node_b:2:aee9b087",
+      "node_b:3:b11e1637",
+      "node_b:4:899c9234",
+      "node_a:1:a237b46c",
+      "node_a:2:fe84ff2f",
+      "node_a:0:6351c476"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "If someone tests positive for COVID-19, they should take several immediate actions to prevent spreading the virus and ensure their own health. They should seek medical care early if they have symptoms like fever, cough, or difficulty breathing [doc3_covid19.txt:chunk_00017]. It is important to avoid going to public places to prevent spreading the virus to others [doc3_covid19.txt:chunk_00021]. Keeping indoor spaces well ventilated can help reduce the spread of the virus [doc3_covid19.txt:chunk_00017]. Wearing a mask in public places where physical distancing is not possible is also recommended [doc3_covid19.txt:chunk_00016]. Regular handwashing with soap and water or using an alcohol-based hand rub is crucial [doc3_covid19.txt:chunk_00016]. Additionally, informing your healthcare team about a positive COVID-19 test or symptoms is advised [node_b:1:7fd78044]. Calling ahead before visiting a healthcare provider is recommended to prevent spreading the virus [node_a:1:a237b46c].",
+    "used_points": [
+      "node_c:0:adf9ee61",
+      "node_c:1:1b7e9d52",
+      "node_c:2:e466194d",
+      "node_c:3:1b9e57a2",
+      "node_c:4:fa715005",
+      "node_b:1:7fd78044",
+      "node_a:1:a237b46c"
+    ]
+  }
+]

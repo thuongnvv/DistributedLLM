@@ -1,0 +1,207 @@
+[
+  {
+    "node_id": "node_a",
+    "point_support": [
+      {
+        "point_id": "node_a:0:20647ad1",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises staying home except for medical care."
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises calling ahead before visiting healthcare providers."
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises wearing a face mask in healthcare settings."
+      },
+      {
+        "point_id": "node_a:3:7b8f3036",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises covering coughs and sneezes."
+      },
+      {
+        "point_id": "node_a:4:1e15c400",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises regular handwashing."
+      },
+      {
+        "point_id": "node_a:5:6160868f",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises avoiding sharing personal items."
+      },
+      {
+        "point_id": "node_a:6:45450e2f",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises self-isolation for those diagnosed or suspected of infection."
+      },
+      {
+        "point_id": "node_b:7:2a2dee8a",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External source confirms the need to inform healthcare team about positive test."
+      },
+      {
+        "point_id": "node_b:1:ade07a45",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:6:20acb045",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:5:90703482",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:0:bf8ab8d0",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:4:1769fa66",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "point_support": [
+      {
+        "point_id": "node_b:0:467cd68e",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document confirms the need to stay home."
+      },
+      {
+        "point_id": "node_b:1:ade07a45",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:2:6034abdf",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document emphasizes handwashing."
+      },
+      {
+        "point_id": "node_b:3:b0862161",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:4:1769fa66",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises covering coughs and sneezes."
+      },
+      {
+        "point_id": "node_b:5:90703482",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document lists emergency symptoms to monitor."
+      },
+      {
+        "point_id": "node_b:6:20acb045",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:7:2a2dee8a",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises informing healthcare team about positive test."
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:0:bf8ab8d0",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:6:45450e2f",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:0:20647ad1",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:3:7b8f3036",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "point_support": [
+      {
+        "point_id": "node_c:0:bf8ab8d0",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document mentions seeking medical care early if symptoms are present."
+      },
+      {
+        "point_id": "node_c:1:ac81552e",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document advises avoiding public places to prevent virus spread."
+      },
+      {
+        "point_id": "node_c:2:f54907fd",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:3:a71128d0",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:4:12064e05",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:7:2a2dee8a",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports notifying healthcare team about a positive test."
+      },
+      {
+        "point_id": "node_b:1:ade07a45",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:6:20acb045",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports getting emergency help for severe symptoms."
+      },
+      {
+        "point_id": "node_b:5:90703482",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports monitoring for emergency symptoms."
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports calling ahead before visiting a healthcare provider."
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports wearing a mask before entering a healthcare provider's office."
+      }
+    ]
+  }
+]

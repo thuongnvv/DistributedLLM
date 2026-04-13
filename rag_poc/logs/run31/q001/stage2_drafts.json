@@ -1,0 +1,48 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "To reduce the risk of getting COVID-19, individuals should practice good personal hygiene, including regular hand washing with soap and water [doc1_covid19.txt:chunk_00094]. Wearing a face mask in public and when in close contact with others is also recommended [doc1_covid19.txt:chunk_00006]. Maintaining physical or social distancing can help lower transmission risk [doc1_covid19.txt:chunk_00006]. Ensuring proper ventilation of indoor spaces decreases the likelihood of virus spread [doc1_covid19.txt:chunk_00006]. It is crucial to stay home if diagnosed with COVID-19 or if you believe you may be infected [doc1_covid19.txt:chunk_00094]. Covering coughs and sneezes with a tissue or your elbow helps prevent the spread of droplets [doc1_covid19.txt:chunk_00094]. Avoiding sharing personal household items minimizes transmission risk [doc1_covid19.txt:chunk_00094]. Staying up to date on COVID-19 vaccinations enhances protection against severe illness [doc1_covid19.txt:chunk_00006]. Keeping unwashed hands away from your face can prevent infection [doc1_covid19.txt:chunk_00006]. Finally, quarantining if exposed to someone with COVID-19 is essential to prevent further spread [doc1_covid19.txt:chunk_00129].",
+    "used_points": [
+      "node_a:0:7b438a55",
+      "node_a:1:ddeaa568",
+      "node_a:2:cf7290f2",
+      "node_a:3:f9666c79",
+      "node_a:4:b0399b1b",
+      "node_a:5:dc263054",
+      "node_a:6:36e0592d",
+      "node_a:7:5ec69fcf",
+      "node_a:8:8bf527f8",
+      "node_a:9:7f9cb627"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "To reduce the risk of getting COVID-19, it is important to stay up to date on your COVID-19 vaccinations, which helps prevent serious illness [doc2_covid19.txt:chunk_00001]. Ensuring good indoor airflow can also help prevent the spread of the virus [doc2_covid19.txt:chunk_00001]. Practicing physical distancing reduces the risk of transmission [doc2_covid19.txt:chunk_00001]. Wearing a mask in appropriate settings protects both yourself and others [doc2_covid19.txt:chunk_00001]. Maintaining good hygiene by washing hands frequently with soap and water is essential [doc2_covid19.txt:chunk_00023]. Avoiding close contact with anyone who is sick or has symptoms further minimizes risk [doc2_covid19.txt:chunk_00023]. Additionally, covering your coughs and sneezes helps prevent spreading the virus [doc2_covid19.txt:chunk_00023]. Testing for COVID-19 if you have symptoms or after exposure is also recommended [doc2_covid19.txt:chunk_00023]. Finally, staying informed about local COVID-19 guidance and recommendations can provide valuable information for prevention [doc3_covid19.txt:chunk_00029].",
+    "used_points": [
+      "node_b:0:6c4b001e",
+      "node_b:1:26899f11",
+      "node_b:2:30ae2b19",
+      "node_b:3:f012920b",
+      "node_b:4:56c8c427",
+      "node_b:5:899c9234",
+      "node_b:6:1542f06f",
+      "node_b:7:a89a4139",
+      "node_c:5:0a0f5153"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "To reduce the risk of getting COVID-19, individuals should avoid crowded places and practice physical distancing of at least 1 metre [doc3_covid19.txt:chunk_00016]. Wearing a mask in public places where physical distancing is not possible is also recommended [doc3_covid19.txt:chunk_00016]. Frequent hand washing with soap and water or using an alcohol-based hand rub is essential [doc3_covid19.txt:chunk_00016]. Keeping indoor spaces well ventilated can help reduce the spread of the virus [doc3_covid19.txt:chunk_00016]. Staying informed about local COVID-19 guidance and recommendations is crucial [doc3_covid19.txt:chunk_00029]. Getting vaccinated helps reduce the spread of the virus and the severity of illness [doc3_covid19.txt:chunk_00012]. Regularly cleaning and disinfecting frequently touched surfaces is also important [doc3_covid19.txt:chunk_00026]. Finally, individuals should quarantine if exposed to someone with COVID-19 to prevent further spread [doc1_covid19.txt:chunk_00129] and stay home if diagnosed or suspect they may be infected [doc1_covid19.txt:chunk_00094].",
+    "used_points": [
+      "node_c:0:b162fba3",
+      "node_c:1:1b9e57a2",
+      "node_c:2:2fa2f5e8",
+      "node_c:3:b2a7dc77",
+      "node_c:5:0a0f5153",
+      "node_c:6:a697da86",
+      "node_c:7:066f07a9",
+      "node_a:9:7f9cb627",
+      "node_a:4:b0399b1b"
+    ]
+  }
+]

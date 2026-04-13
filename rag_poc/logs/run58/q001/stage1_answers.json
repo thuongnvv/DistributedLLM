@@ -1,0 +1,126 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:0dba1eb0",
+        "text": "Get vaccinated against COVID-19 to reduce the risk of infection and severity of disease.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00006",
+          "doc1_covid19.txt:chunk_00100"
+        ]
+      },
+      {
+        "point_id": "node_a:1:ef6a2285",
+        "text": "Practice good personal hygiene, including regular hand washing and avoiding touching your face.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00006",
+          "doc1_covid19.txt:chunk_00094"
+        ]
+      },
+      {
+        "point_id": "node_a:2:0ae76809",
+        "text": "Maintain physical distancing and wear face masks in public to minimize exposure.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00006",
+          "doc1_covid19.txt:chunk_00100"
+        ]
+      },
+      {
+        "point_id": "node_a:3:236ee77b",
+        "text": "Ensure proper ventilation in indoor spaces to reduce airborne transmission.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00006"
+        ]
+      },
+      {
+        "point_id": "node_a:4:2beb2a50",
+        "text": "Stay home if diagnosed with COVID-19 or if you suspect infection, and follow self-isolation guidelines.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00094",
+          "doc1_covid19.txt:chunk_00125"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:345fb563",
+        "text": "Stay home if you feel ill or have COVID-19 symptoms to prevent spreading the virus.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00022"
+        ]
+      },
+      {
+        "point_id": "node_b:1:c10baa58",
+        "text": "Maintain good indoor airflow and practice physical distancing to reduce transmission risk.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "node_b:2:3ceeff57",
+        "text": "Wear a mask in appropriate settings to help prevent the spread of COVID-19.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "node_b:3:c5d03e79",
+        "text": "Wash hands frequently with soap and water or use hand sanitizer with at least 60% alcohol.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      },
+      {
+        "point_id": "node_b:4:bab989a7",
+        "text": "Cover your coughs and sneezes with a tissue or your elbow, then wash your hands.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00023"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:98400fd0",
+        "text": "Avoid crowded places and maintain physical distancing of at least 1 metre from others.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00016"
+        ]
+      },
+      {
+        "point_id": "node_c:1:aeb2cd6d",
+        "text": "Wear a mask in public areas where community transmission is present and physical distancing is not possible.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00016"
+        ]
+      },
+      {
+        "point_id": "node_c:2:a74f2a18",
+        "text": "Wash hands frequently with soap and water or an alcohol-based hand rub.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00016"
+        ]
+      },
+      {
+        "point_id": "node_c:3:5fbe2456",
+        "text": "Ensure good ventilation in indoor spaces to reduce virus transmission.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00016"
+        ]
+      },
+      {
+        "point_id": "node_c:4:0071e71d",
+        "text": "Get vaccinated to help reduce the spread of the virus and its mutations.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00012"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "To reduce the risk of getting COVID-19, it is essential to get vaccinated, practice good personal hygiene, maintain physical distancing, ensure proper ventilation in indoor spaces, and stay home if diagnosed or suspect infection. Vaccination helps prevent infection and severe disease [doc1_covid19.txt:chunk_00006]. Good hygiene practices, including regular hand washing and avoiding face touching, are crucial [doc1_covid19.txt:chunk_00006]. Physical distancing and wearing masks in public settings minimize exposure [doc1_covid19.txt:chunk_00006]. Proper ventilation reduces airborne transmission [doc1_covid19.txt:chunk_00006]. Lastly, self-isolation when symptomatic or diagnosed is vital to prevent spreading the virus [doc1_covid19.txt:chunk_00094].",
+    "used_points": [
+      "node_a:0:0dba1eb0",
+      "node_a:1:ef6a2285",
+      "node_a:2:0ae76809",
+      "node_a:3:236ee77b",
+      "node_a:4:2beb2a50"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "To reduce the risk of getting COVID-19, it is important to stay home if you feel ill or have symptoms, maintain good indoor airflow, practice physical distancing, wear a mask in appropriate settings, wash hands frequently, and cover coughs and sneezes. Vaccination is also crucial in minimizing the risk of infection and severity of the disease. These measures collectively help to prevent the spread of the virus and protect both individual and public health [doc2_covid19.txt:chunk_00022][doc2_covid19.txt:chunk_00001][doc2_covid19.txt:chunk_00023][doc1_covid19.txt:chunk_00006].",
+    "used_points": [
+      "node_b:0:345fb563",
+      "node_b:1:c10baa58",
+      "node_b:2:3ceeff57",
+      "node_b:3:c5d03e79",
+      "node_b:4:bab989a7",
+      "node_a:0:0dba1eb0",
+      "node_a:4:2beb2a50",
+      "node_c:4:0071e71d",
+      "node_c:3:5fbe2456",
+      "node_c:2:a74f2a18"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "To reduce the risk of getting COVID-19, individuals should avoid crowded places and maintain physical distancing of at least 1 metre from others, wear masks in public areas where community transmission is present and physical distancing is not possible, wash hands frequently with soap and water or an alcohol-based hand rub, ensure good ventilation in indoor spaces, and get vaccinated to help reduce the spread of the virus and its mutations. These measures are supported by various health guidelines and evidence indicating their effectiveness in minimizing transmission risk [doc3:chunk_00016][doc3:chunk_00012][doc1_covid19.txt:chunk_00006].",
+    "used_points": [
+      "node_c:0:98400fd0",
+      "node_c:1:aeb2cd6d",
+      "node_c:2:a74f2a18",
+      "node_c:3:5fbe2456",
+      "node_c:4:0071e71d"
+    ]
+  }
+]

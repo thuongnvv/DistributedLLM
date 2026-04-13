@@ -1,0 +1,87 @@
+[
+  {
+    "node_id": "node_a",
+    "points": []
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:cc23953c",
+        "text": "COVID-19 can lead to serious complications and death, unlike the common cold or flu, which are generally milder illnesses.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00004"
+        ]
+      },
+      {
+        "point_id": "node_b:1:43969c1c",
+        "text": "COVID-19 symptoms can include loss of taste or smell, which is not typical for the common cold or flu.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00002"
+        ]
+      },
+      {
+        "point_id": "node_b:2:7c22d575",
+        "text": "COVID-19 spreads primarily through respiratory droplets, similar to the flu, but can also spread from asymptomatic individuals.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00007"
+        ]
+      },
+      {
+        "point_id": "node_b:3:07430af2",
+        "text": "COVID-19 can cause long-term symptoms, known as post-COVID-19 syndrome, which is still being studied.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00017"
+        ]
+      },
+      {
+        "point_id": "node_b:4:347ab415",
+        "text": "Older adults and those with certain medical conditions are at higher risk for severe COVID-19 illness compared to the flu.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00004"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:b45f35f8",
+        "text": "COVID-19 is caused by the SARS-CoV-2 virus, while the common cold and flu are caused by different viruses.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_c:1:ad50074d",
+        "text": "Symptoms of COVID-19 can range from mild to severe, similar to the flu and common cold, making testing necessary for confirmation.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_c:2:44e434d6",
+        "text": "COVID-19 can lead to serious complications, such as difficulty breathing and multisystem inflammatory syndrome in children, unlike typical colds.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00002",
+          "doc3_covid19.txt:chunk_00020"
+        ]
+      },
+      {
+        "point_id": "node_c:3:432a1f1e",
+        "text": "COVID-19 symptoms include loss of taste or smell, which are not common in the flu or common cold.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "node_c:4:a31074ab",
+        "text": "COVID-19 has a longer incubation period of 2 to 14 days, compared to the common cold and flu.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00000"
+        ]
+      }
+    ]
+  }
+]

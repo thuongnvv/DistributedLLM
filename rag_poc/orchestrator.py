@@ -99,7 +99,10 @@ _CITATION_PATTERN = re.compile(r"\[([^\[\]]+:[^\[\]]+)\]")
 
 
 def _build_answer_prompt_rag(query: str, context: str, max_points: int | None) -> str:
-    max_rule = f"- Return at most {max_points} points.\n" if max_points is not None else "- Return as many valid points as possible.\n"
+    if max_points is not None:
+        max_rule = f"- Return EXACTLY {max_points} atomic, non-redundant points. Merge similar ideas into single points.\n"
+    else:
+        max_rule = "- Return as many non-redundant points as possible.\n"
     return (
         f"QUERY: {query}\n\n"
         "TASK: Answer the QUERY using ONLY the CONTEXT below. If the CONTEXT does not contain relevant information, set abstain=true.\n"
@@ -112,7 +115,8 @@ def _build_answer_prompt_rag(query: str, context: str, max_points: int | None) -
         "}\n"
         "Rules:\n"
         "- Answer ONLY from the CONTEXT. Do NOT use your own knowledge.\n"
-        "- Each point must be atomic and at most 160 characters.\n"
+        "- Each point must be atomic and at most 200 characters.\n"
+        "- Combine similar ideas into ONE point — do NOT list overlapping facts as separate points.\n"
         "- Do NOT include inline citation markers inside point.text.\n"
         "- Every point must include at least one citation from the CONTEXT using the string form doc_id:chunk_id.\n"
         "- If abstain=true, points must be empty.\n"
@@ -161,10 +165,71 @@ def _build_synthesize_prompt_rag(
 ) -> str:
     repair_rule = f"- Contract repair note: {repair_feedback}\n" if repair_feedback else ""
     max_rule = f"- Select at most {max_used_points} points.\n" if max_used_points is not None else "- Use as many relevant points as possible.\n"
-    points_text = "\n".join(f"  {pid}: {ptext}" for pid, ptext in points_map.items())
+
+    # Build LOCAL CONTEXT and EXTERNAL EVIDENCE sections first (before POINTS)
+    local_ctx_block = f"LOCAL CONTEXT (from your own document — check this first):\n{context}\n"
+
+    ev_sections: list[str] = []
+    for pid, ev in external_evidence_map.items():
+        origin = ev.get("origin_node_id", "?")
+        ptext = ev.get("point_text", "")[:]
+        chunks = ev.get("evidence_chunks", [])
+        lines = [f"--- External point [{pid}] (origin: {origin}) ---", f'Point text: "{ptext}"']
+        for ch in chunks:
+            lines.append(f"  Evidence from {ch.get('citation','')}: {ch.get('text','')[:]}")
+        ev_sections.append("\n".join(lines))
+    ev_block = ("EXTERNAL EVIDENCE (from origin nodes — use when LOCAL CONTEXT is insufficient):\n"
+                + "\n\n".join(ev_sections) + "\n" if ev_sections else "")
+
+    # Build POINTS with inline evidence for external points
+    local_pids = {pid for pid in points_map if pid not in external_evidence_map}
+    external_pids = set(external_evidence_map.keys())
+    points_lines: list[str] = []
+    for pid, ptext in points_map.items():
+        if pid in external_pids:
+            ev = external_evidence_map[pid]
+            origin = ev.get("origin_node_id", "?")
+            # Include first evidence chunk inline for quick reference
+            chunks = ev.get("evidence_chunks", [])
+            ev_inline = ""
+            if chunks:
+                first_ch = chunks[0]
+                ev_text = first_ch.get("text", "")[:]
+                ev_inline = f" | Evidence: {first_ch.get('citation','?')}: {ev_text[:300]}"
+            points_lines.append(f"  {pid} [EXTERNAL from {origin}]: {ptext}{ev_inline}")
+        else:
+            points_lines.append(f"  {pid} [LOCAL]: {ptext}")
+    points_text = "\n".join(points_lines)
+
+    # Determine which points are local vs external
+    if external_pids:
+        local_list = ", ".join(sorted(local_pids))
+        ext_list = ", ".join(sorted(external_pids))
+        scope_note = (
+            f"\nPoint scope:\n"
+            f"  LOCAL points (your document): {local_list if local_list else '(none)'}\n"
+            f"  EXTERNAL points (other nodes): {ext_list}\n"
+        )
+    else:
+        scope_note = ""
+
     return (
         f"QUERY: {query}\n\n"
-        "TASK: Synthesize a final answer to the QUERY using the provided POINTS.\n"
+        "TASK: Evaluate EVERY point below (both LOCAL and EXTERNAL), decide support, then write a synthesis.\n"
+        "You MUST return a decision for EVERY single point_id listed. No exceptions.\n\n"
+        "DECISION RULES:\n"
+        "  LOCAL_SUPPORTED: your LOCAL CONTEXT contains information that SUPPORTS or IS RELATED TO this point — even if worded differently.\n"
+        "    Synonyms and paraphrases count. If your doc covers the same topic, it's LOCAL_SUPPORTED.\n"
+        "  EXTERNAL_SUPPORTED: your LOCAL CONTEXT is silent/irrelevant, but the EXTERNAL EVIDENCE section confirms this point.\n"
+        "  REJECTED: your LOCAL CONTEXT explicitly contradicts this point (says it is FALSE).\n"
+        "  UNKNOWN: BOTH local AND external evidence are completely silent on this topic.\n\n"
+        "IMPORTANT:\n"
+        "  1. You MUST return EXACTLY ONE entry in point_support for EVERY point_id in POINTS. Zero exceptions.\n"
+        "  2. used_points must contain ONLY LOCAL_SUPPORTED or EXTERNAL_SUPPORTED points.\n"
+        "  3. REJECTED and UNKNOWN points must NOT appear in used_points.\n"
+        "  4. synthesis_text must cite sources as [doc_id:chunk_id].\n"
+        "  5. If synthesis_text is not UNKNOWN, it must be non-empty and used_points must not be empty.\n"
+        f"{scope_note}"
         "Return EXACT JSON:\n"
         "{\n"
         '  "synthesis_text": "string",\n'
@@ -173,23 +238,11 @@ def _build_synthesize_prompt_rag(
         '    {"point_id": "string", "decision": "LOCAL_SUPPORTED|EXTERNAL_SUPPORTED|REJECTED|UNKNOWN", "reason": "string"}\n'
         "  ]\n"
         "}\n"
-        "Rules:\n"
-        "- Build synthesis_text from the POINTS below. Do NOT use your own knowledge.\n"
-        "- First evaluate each point against your LOCAL CONTEXT.\n"
-        "- If LOCAL CONTEXT is insufficient for a point, you may consult EXTERNAL EVIDENCE for that point.\n"
-        "- Local contradiction is stronger than external support; do not use contradicted points.\n"
-        "- Every point_id in POINTS must appear exactly once in point_support.\n"
-        "- Every factual claim in synthesis_text must be traceable to a point_id in used_points.\n"
-        "- Cite sources as [doc_id:chunk_id] in synthesis_text for every claim.\n"
-        "- Avoid redundant points that repeat the same idea.\n"
-        "- If synthesis_text is not 'UNKNOWN', used_points must not be empty.\n"
-        "- Only point_support decisions LOCAL_SUPPORTED or EXTERNAL_SUPPORTED may appear in used_points.\n"
-        "- If no point supports the answer, return synthesis_text='UNKNOWN' and used_points=[]; do NOT make up content.\n"
         f"{max_rule}"
         f"{repair_rule}"
-        f"POINTS (all provided claims):\n{points_text}\n\n"
-        f"LOCAL CONTEXT (your document):\n{context}\n\n"
-        f"EXTERNAL EVIDENCE (origin citations for non-local points):\n{json.dumps(external_evidence_map, ensure_ascii=False)}\n"
+        f"POINTS (evaluate ALL — return decision for EACH):\n{points_text}\n\n"
+        f"{local_ctx_block}\n"
+        f"{ev_block}"
     )
 
 
@@ -680,12 +733,26 @@ class RAGOrchestrator:
                 if isinstance(x, str) and x in points_map:
                     used.append(x)
         used = dedupe_keep_order(used)
-        if max_used_points and max_used_points > 0:
-            used = used[:max_used_points]
         point_support = self._parse_point_adjudications(
             obj.get("point_support", []),
             candidate_point_ids=list(points_map.keys()),
         )
+
+        # AUTO-ENFORCE CONTRACT: add LOCAL_SUPPORTED and EXTERNAL_SUPPORTED points
+        # if LLM marked them as supported but forgot to include in used_points
+        supported_ids = {p.point_id for p in point_support
+                        if p.decision in ("LOCAL_SUPPORTED", "EXTERNAL_SUPPORTED")}
+        missing = supported_ids - set(used)
+        if missing:
+            # Add missing LOCAL first, then EXTERNAL, within max_used_points limit
+            missing_local = [pid for pid in missing if pid.startswith(f"{persona.node_id}:")]
+            missing_external = [pid for pid in missing if pid not in missing_local]
+            for pid in missing_local + missing_external:
+                if max_used_points is None or len(used) < max_used_points:
+                    used.append(pid)
+
+        if max_used_points and max_used_points > 0:
+            used = used[:max_used_points]
         return synthesis_text, used, point_support
 
     def _llm_grade_batch_rag(
@@ -1241,9 +1308,41 @@ def _build_grade_batch_prompt_rag(
     targets: list[dict[str, Any]],
     points_map: dict[str, str],
 ) -> str:
+    # Build external evidence as a readable section, NOT nested in JSON
+    ev_sections = []
+    for t in targets:
+        tid = t.get("target_id", "?")
+        ev_map = t.get("external_evidence", {})
+        if not ev_map:
+            continue
+        lines = [f"EXTERNAL EVIDENCE FOR {tid.upper()}: (use when LOCAL CONTEXT is insufficient)"]
+        for pid, ev in ev_map.items():
+            origin = ev.get("origin_node_id", "?")
+            ptext = ev.get("point_text", "")
+            chunks = ev.get("evidence_chunks", [])
+            lines.append(f"  [{pid}] (origin: {origin}) — \"{ptext[:]}\"")
+            for ch in chunks:
+                lines.append(f"    {ch.get('citation','')}: {ch.get('text','')[:]}")
+        ev_sections.append("\n".join(lines))
+
+    ev_block = "\n\n".join(ev_sections)
+
     return (
-        "TASK: GRADE_BATCH\n"
-        "Return EXACT JSON schema:\n"
+        f"QUERY: {query}\n\n"
+        "TASK: GRADE each target draft by evaluating every used point.\n\n"
+        "DECISION GUIDELINES — follow this order for EACH point:\n"
+        "Step 1: Check if LOCAL CONTEXT explicitly CONTRADICTS this point.\n"
+        "  CONTRADICTED only if: the doc says 'NOT', 'DOES NOT', 'is false', 'is incorrect', 'is wrong'.\n"
+        "  WRONG: Point='X causes Y' + Doc='Y has many causes' → NOT CONTRADICTED (doc doesn't say X is NOT a cause).\n"
+        "  WRONG: Point='X' + Doc mentions X but doesn't state effectiveness → NOT CONTRADICTED.\n"
+        "  WRONG: Point='X is common' + Doc='X is common' → NOT CONTRADICTED.\n"
+        "Step 2: If no contradiction, check if LOCAL CONTEXT SUPPORTS this point.\n"
+        "  LOCAL_SUPPORTED: the doc confirms, mentions, or includes the point's claim.\n"
+        "  Semantic match counts — if doc covers the same topic, it IS supported.\n"
+        "Step 3: If LOCAL CONTEXT does NOT mention this point, check EXTERNAL EVIDENCE.\n"
+        "  EXTERNAL_SUPPORTED: origin doc confirms the point (even if your doc doesn't mention it).\n"
+        "  UNKNOWN: neither LOCAL CONTEXT nor EXTERNAL EVIDENCE mentions this point.\n\n"
+        "Return EXACT JSON:\n"
         "{\n"
         '  "votes": [\n'
         "    {\n"
@@ -1260,16 +1359,19 @@ def _build_grade_batch_prompt_rag(
         "  ]\n"
         "}\n"
         "Rules:\n"
-        "- Use LOCAL CONTEXT first to evaluate each point in a draft.\n"
-        "- If LOCAL CONTEXT is insufficient for a point, you may use the target's EXTERNAL EVIDENCE for that point.\n"
-        "- Local contradiction is stronger than external support.\n"
+        "- Evaluate EACH point individually. One wrong decision ruins the whole trace.\n"
+        "- CONTRADICTED: doc EXPLICITLY says the claim is FALSE.\n"
+        "- LOCAL_SUPPORTED: doc confirms or mentions the claim (even as part of a list or related topic).\n"
+        "- EXTERNAL_SUPPORTED: your doc doesn't mention it, but origin doc confirms it.\n"
+        "- UNKNOWN: neither your doc nor external evidence mentions it.\n"
+        "- Local CONTRADICTION overrides external SUPPORT.\n"
         "- Include exactly one vote per target.\n"
-        "- FAIL only on clear errors from context.\n"
-        "- UNKNOWN only if both LOCAL CONTEXT and EXTERNAL EVIDENCE are insufficient.\n"
-        "- Only classify IDs present in each target's used_points.\n"
-        "- Every target_used_points ID must appear in exactly one list.\n"
-        "- Every target_used_points ID must also appear exactly once in review_trace.\n"
-        f"CONTEXT:\n{context}\n\n"
+        "- FAIL only on clear CONTRADICTED points.\n"
+        "- UNKNOWN only if BOTH local and external evidence are silent on the point.\n"
+        "- Every target_used_points ID must appear in exactly one of: agree_points, reject_points, unknown_points.\n"
+        "- Every target_used_points ID must also appear exactly once in review_trace.\n\n"
+        f"LOCAL CONTEXT (your document — evaluate here first):\n{context}\n\n"
+        f"{ev_block}\n\n"
         f"Input JSON:\n"
         f'{{"query": {json.dumps(query)}, "targets": {json.dumps(targets)}, "points_map": {json.dumps(points_map)}}}'
     )

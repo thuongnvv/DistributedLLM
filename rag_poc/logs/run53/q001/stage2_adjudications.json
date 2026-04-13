@@ -1,0 +1,252 @@
+[
+  {
+    "node_id": "node_a",
+    "point_support": [
+      {
+        "point_id": "node_a:0:7b438a55",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Good personal hygiene is recommended in the local context."
+      },
+      {
+        "point_id": "node_a:1:ddeaa568",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Wearing face masks in public is mentioned as a preventive measure."
+      },
+      {
+        "point_id": "node_a:2:cf7290f2",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Physical or social distancing is listed as a preventive measure."
+      },
+      {
+        "point_id": "node_a:3:f9666c79",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Proper ventilation of indoor spaces is mentioned as a preventive measure."
+      },
+      {
+        "point_id": "node_a:4:487567c0",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Staying home if diagnosed or suspected of having COVID-19 is advised."
+      },
+      {
+        "point_id": "node_a:5:f0129d8a",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Covering coughs and sneezes is recommended to prevent spread."
+      },
+      {
+        "point_id": "node_a:6:76a73fba",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Avoiding sharing personal household items is mentioned."
+      },
+      {
+        "point_id": "node_a:7:5ec69fcf",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "Staying up to date on vaccinations is supported by external evidence."
+      },
+      {
+        "point_id": "node_a:8:afae4a0c",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Keeping unwashed hands away from the face is mentioned as a preventive measure."
+      },
+      {
+        "point_id": "node_a:9:7f9cb627",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Quarantining if exposed to COVID-19 is advised."
+      },
+      {
+        "point_id": "node_c:5:a1d0f995",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:4:b322475a",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:9:25ea32ff",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:0:6c4b001e",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:6:a697da86",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:8:9d79aba0",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "point_support": [
+      {
+        "point_id": "node_b:0:6c4b001e",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context mentions staying up to date on COVID-19 vaccine helps prevent serious illness."
+      },
+      {
+        "point_id": "node_b:1:26899f11",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context mentions good indoor airflow helps prevent the spread of the virus."
+      },
+      {
+        "point_id": "node_b:2:30ae2b19",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context mentions physical distancing to reduce the risk of transmission."
+      },
+      {
+        "point_id": "node_b:3:f012920b",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context mentions wearing a mask in the right setting."
+      },
+      {
+        "point_id": "node_b:4:b11e1637",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context mentions washing hands often with soap and water."
+      },
+      {
+        "point_id": "node_b:5:2dbbfa4a",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context mentions using alcohol-based hand sanitizer when needed."
+      },
+      {
+        "point_id": "node_b:6:1769fa66",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context mentions covering coughs and sneezes."
+      },
+      {
+        "point_id": "node_b:7:899c9234",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context mentions avoiding close contact with anyone who is sick."
+      },
+      {
+        "point_id": "node_b:8:9d79aba0",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context mentions staying home if feeling ill or having COVID-19 symptoms."
+      },
+      {
+        "point_id": "node_b:9:25ea32ff",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Local context mentions testing for COVID-19 if you have symptoms or after exposure."
+      },
+      {
+        "point_id": "node_c:5:a1d0f995",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:4:b322475a",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:9:7f9cb627",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:4:487567c0",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:6:a697da86",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:7:5ec69fcf",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "point_support": [
+      {
+        "point_id": "node_c:0:d9ee44a0",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Confirmed in local context: 'Avoid crowded places... practice physical distancing from people in public...'"
+      },
+      {
+        "point_id": "node_c:1:95b9522d",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Confirmed in local context: 'Wear a mask when in public places where there is community transmission...'"
+      },
+      {
+        "point_id": "node_c:2:2fa2f5e8",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Confirmed in local context: 'Wash your hands frequently using soap and water or an alcohol-based hand rub...'"
+      },
+      {
+        "point_id": "node_c:3:afd55afa",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Confirmed in local context: 'Keep all indoor spaces well ventilated...'"
+      },
+      {
+        "point_id": "node_c:4:b322475a",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Confirmed in local context: 'Seek care early if your child is having symptoms...'"
+      },
+      {
+        "point_id": "node_c:5:a1d0f995",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Confirmed in local context: 'keep up to date on travel, education and other guidance provided by your national or local authorities...'"
+      },
+      {
+        "point_id": "node_c:6:a697da86",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Confirmed in local context: 'the important thing to do is to get vaccinated...'"
+      },
+      {
+        "point_id": "node_c:7:fc276859",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Confirmed in local context: 'try to avoid going to public places...'"
+      },
+      {
+        "point_id": "node_c:8:066f07a9",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Confirmed in local context: 'routinely cleaning and disinfecting surfaces you have touched...'"
+      },
+      {
+        "point_id": "node_a:9:7f9cb627",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "Supported by external evidence: 'Quarantine if exposed to someone with COVID-19 to prevent spread.'"
+      },
+      {
+        "point_id": "node_a:4:487567c0",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "Supported by external evidence: 'Stay home if diagnosed with COVID-19 or if you believe you may be infected.'"
+      },
+      {
+        "point_id": "node_b:9:25ea32ff",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "Supported by external evidence: 'Test for COVID-19 if you have symptoms or after exposure.'"
+      },
+      {
+        "point_id": "node_b:0:6c4b001e",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "Supported by external evidence: 'Stay up to date on your COVID-19 vaccine to prevent serious illness.'"
+      },
+      {
+        "point_id": "node_a:7:5ec69fcf",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:8:9d79aba0",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  }
+]

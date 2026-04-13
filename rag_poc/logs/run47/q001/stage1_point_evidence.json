@@ -1,0 +1,290 @@
+{
+  "node_a:0:fa3053a0": {
+    "point_id": "node_a:0:fa3053a0",
+    "origin_node_id": "node_a",
+    "text": "COVID-19 spreads mainly through inhaling air contaminated by droplets and aerosols from infected individuals.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00024"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00024",
+        "text": "COVID‑19 is caused by infection with a strain of coronavirus known as \"severe acute respiratory syndrome coronavirus 2\" (SARS-CoV-2).[85]\nTransmission\nMain article: Transmission of COVID-19\nTransmission of COVID‑19\n\nCOVID-19 is mainly transmitted from person to person through inhaling air contaminated by droplets/aerosols and small airborne particles containing the virus. Infected people exhale those particles as they breathe, talk, cough, sneeze, or sing.[86][87][88][89] Transmission is most likely at closer range but can also occur over longer distances, particularly indoors.[86][90]",
+        "score": 0.7091
+      }
+    ]
+  },
+  "node_a:1:6fb126e0": {
+    "point_id": "node_a:1:6fb126e0",
+    "origin_node_id": "node_a",
+    "text": "Infected individuals exhale virus-containing particles when they breathe, talk, cough, sneeze, or sing.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00024"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00024",
+        "text": "COVID‑19 is caused by infection with a strain of coronavirus known as \"severe acute respiratory syndrome coronavirus 2\" (SARS-CoV-2).[85]\nTransmission\nMain article: Transmission of COVID-19\nTransmission of COVID‑19\n\nCOVID-19 is mainly transmitted from person to person through inhaling air contaminated by droplets/aerosols and small airborne particles containing the virus. Infected people exhale those particles as they breathe, talk, cough, sneeze, or sing.[86][87][88][89] Transmission is most likely at closer range but can also occur over longer distances, particularly indoors.[86][90]",
+        "score": 0.7091
+      }
+    ]
+  },
+  "node_a:2:ec24fe30": {
+    "point_id": "node_a:2:ec24fe30",
+    "origin_node_id": "node_a",
+    "text": "Transmission is most likely at close range but can occur over longer distances, especially indoors.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00024"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00024",
+        "text": "COVID‑19 is caused by infection with a strain of coronavirus known as \"severe acute respiratory syndrome coronavirus 2\" (SARS-CoV-2).[85]\nTransmission\nMain article: Transmission of COVID-19\nTransmission of COVID‑19\n\nCOVID-19 is mainly transmitted from person to person through inhaling air contaminated by droplets/aerosols and small airborne particles containing the virus. Infected people exhale those particles as they breathe, talk, cough, sneeze, or sing.[86][87][88][89] Transmission is most likely at closer range but can also occur over longer distances, particularly indoors.[86][90]",
+        "score": 0.7091
+      }
+    ]
+  },
+  "node_a:3:db03ac9c": {
+    "point_id": "node_a:3:db03ac9c",
+    "origin_node_id": "node_a",
+    "text": "COVID-19 can also spread when infectious particles contact the eyes, nose, or mouth.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00004"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00004",
+        "text": "COVID‑19 transmission occurs when infectious particles are breathed in or come into contact with the eyes, nose, or mouth. The risk is highest when people are in close proximity, but small airborne particles containing the virus can remain suspended in the air and travel over longer distances, particularly indoors. Transmission can also occur when people touch their eyes, nose, or mouth after touching surfaces or objects that have been contaminated by the virus. People remain contagious for up to 20 days and can spread the virus even if they do not develop symptoms.[16]",
+        "score": 0.6749
+      }
+    ]
+  },
+  "node_a:4:f3e6a96a": {
+    "point_id": "node_a:4:f3e6a96a",
+    "origin_node_id": "node_a",
+    "text": "Small airborne particles can remain suspended in the air and travel longer distances indoors.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00004"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00004",
+        "text": "COVID‑19 transmission occurs when infectious particles are breathed in or come into contact with the eyes, nose, or mouth. The risk is highest when people are in close proximity, but small airborne particles containing the virus can remain suspended in the air and travel over longer distances, particularly indoors. Transmission can also occur when people touch their eyes, nose, or mouth after touching surfaces or objects that have been contaminated by the virus. People remain contagious for up to 20 days and can spread the virus even if they do not develop symptoms.[16]",
+        "score": 0.6749
+      }
+    ]
+  },
+  "node_a:5:38604400": {
+    "point_id": "node_a:5:38604400",
+    "origin_node_id": "node_a",
+    "text": "Touching surfaces contaminated with the virus and then touching the face can also lead to transmission.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00004"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00004",
+        "text": "COVID‑19 transmission occurs when infectious particles are breathed in or come into contact with the eyes, nose, or mouth. The risk is highest when people are in close proximity, but small airborne particles containing the virus can remain suspended in the air and travel over longer distances, particularly indoors. Transmission can also occur when people touch their eyes, nose, or mouth after touching surfaces or objects that have been contaminated by the virus. People remain contagious for up to 20 days and can spread the virus even if they do not develop symptoms.[16]",
+        "score": 0.6749
+      }
+    ]
+  },
+  "node_a:6:0b780cd5": {
+    "point_id": "node_a:6:0b780cd5",
+    "origin_node_id": "node_a",
+    "text": "People can spread the virus even if they do not show symptoms and remain contagious for up to 20 days.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00004"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00004",
+        "text": "COVID‑19 transmission occurs when infectious particles are breathed in or come into contact with the eyes, nose, or mouth. The risk is highest when people are in close proximity, but small airborne particles containing the virus can remain suspended in the air and travel over longer distances, particularly indoors. Transmission can also occur when people touch their eyes, nose, or mouth after touching surfaces or objects that have been contaminated by the virus. People remain contagious for up to 20 days and can spread the virus even if they do not develop symptoms.[16]",
+        "score": 0.6749
+      }
+    ]
+  },
+  "node_b:0:179eb57b": {
+    "point_id": "node_b:0:179eb57b",
+    "origin_node_id": "node_b",
+    "text": "COVID-19 spreads mainly from person to person through close contact.",
+    "citations": [
+      "doc2_covid19.txt:chunk_00007"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19.txt",
+        "chunk_id": "chunk_00007",
+        "text": "Sign up for free and stay up to date on research advancements, health tips, current health topics, and expertise on managing health. Click here for an email preview.\nEmail\nCauses\n\nCOVID-19 is caused by infection with the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2).\n\nThe coronavirus spreads mainly from person to person, even from someone who is infected but has no symptoms. When people with COVID-19 cough, sneeze, breathe, sing or talk, their breath may contain the COVID-19 virus.",
+        "score": 0.6083
+      }
+    ]
+  },
+  "node_b:1:f71c7035": {
+    "point_id": "node_b:1:f71c7035",
+    "origin_node_id": "node_b",
+    "text": "The virus can spread through tiny droplets when an infected person coughs, sneezes, or talks.",
+    "citations": [
+      "doc2_covid19.txt:chunk_00008"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19.txt",
+        "chunk_id": "chunk_00008",
+        "text": "The coronavirus carried by the breath of a person with the infection can land directly on the face of a nearby person, after a sneeze or cough, for example. The droplets or particles could also be breathed in by other people if they are close together or in areas with low airflow.\n\nIt's possible to get COVID-19 more than once.",
+        "score": 0.6412
+      }
+    ]
+  },
+  "node_b:2:2b72cbe1": {
+    "point_id": "node_b:2:2b72cbe1",
+    "origin_node_id": "node_b",
+    "text": "Infected individuals can spread the virus even if they have no symptoms.",
+    "citations": [
+      "doc2_covid19.txt:chunk_00007"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19.txt",
+        "chunk_id": "chunk_00007",
+        "text": "Sign up for free and stay up to date on research advancements, health tips, current health topics, and expertise on managing health. Click here for an email preview.\nEmail\nCauses\n\nCOVID-19 is caused by infection with the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2).\n\nThe coronavirus spreads mainly from person to person, even from someone who is infected but has no symptoms. When people with COVID-19 cough, sneeze, breathe, sing or talk, their breath may contain the COVID-19 virus.",
+        "score": 0.6083
+      }
+    ]
+  },
+  "node_b:3:2d80bb17": {
+    "point_id": "node_b:3:2d80bb17",
+    "origin_node_id": "node_b",
+    "text": "Droplets from an infected person's breath can land on nearby individuals.",
+    "citations": [
+      "doc2_covid19.txt:chunk_00008"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19.txt",
+        "chunk_id": "chunk_00008",
+        "text": "The coronavirus carried by the breath of a person with the infection can land directly on the face of a nearby person, after a sneeze or cough, for example. The droplets or particles could also be breathed in by other people if they are close together or in areas with low airflow.\n\nIt's possible to get COVID-19 more than once.",
+        "score": 0.6412
+      }
+    ]
+  },
+  "node_b:4:3f01bf7f": {
+    "point_id": "node_b:4:3f01bf7f",
+    "origin_node_id": "node_b",
+    "text": "Close contact includes sitting next to someone or sharing a space.",
+    "citations": [
+      "doc2_covid19.txt:chunk_00011"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19.txt",
+        "chunk_id": "chunk_00011",
+        "text": "Many factors affect your risk of catching the virus that causes COVID-19. How long you are in contact with the virus, whether the space has good airflow and the activities you're doing in the space all affect the risk. Also, your risk may change based on whether you or others wear masks, whether someone has COVID-19 symptoms, and how close you are to others. Close contact includes sitting next to and talking to other people, for example, or sharing a car or bedroom.",
+        "score": 0.5465
+      }
+    ]
+  },
+  "node_b:5:56bdbf4b": {
+    "point_id": "node_b:5:56bdbf4b",
+    "origin_node_id": "node_b",
+    "text": "Risk of transmission increases in crowded spaces with poor airflow.",
+    "citations": [
+      "doc2_covid19.txt:chunk_00011"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19.txt",
+        "chunk_id": "chunk_00011",
+        "text": "Many factors affect your risk of catching the virus that causes COVID-19. How long you are in contact with the virus, whether the space has good airflow and the activities you're doing in the space all affect the risk. Also, your risk may change based on whether you or others wear masks, whether someone has COVID-19 symptoms, and how close you are to others. Close contact includes sitting next to and talking to other people, for example, or sharing a car or bedroom.",
+        "score": 0.5465
+      }
+    ]
+  },
+  "node_b:6:11e98261": {
+    "point_id": "node_b:6:11e98261",
+    "origin_node_id": "node_b",
+    "text": "Spending more than 30 minutes in close contact with an infected person raises risk.",
+    "citations": [
+      "doc2_covid19.txt:chunk_00010"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19.txt",
+        "chunk_id": "chunk_00010",
+        "text": "The virus that causes COVID-19 can infect some pets. Cats, dogs, hamsters and ferrets have caught this coronavirus and had symptoms. It's rare for a person to get COVID-19 from a pet.\nRisk factors\n\nThe main risk factors for COVID-19 are:\n\n    Living with someone who has COVID-19.\n    Spending time in crowded spaces with poor airflow when the virus is spreading.\n    Spending more than 30 minutes in close contact with someone who has COVID-19.",
+        "score": 0.5422
+      }
+    ]
+  },
+  "node_c:0:27aa7a6b": {
+    "point_id": "node_c:0:27aa7a6b",
+    "origin_node_id": "node_c",
+    "text": "The virus can spread from an infected person's mouth or nose in small droplets when they cough, sneeze, or breathe.",
+    "citations": [
+      "doc3_covid19.txt:chunk_00003"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19.txt",
+        "chunk_id": "chunk_00003",
+        "text": "The virus can spread from an infected person’s mouth or nose in small droplets when they cough, sneeze, speak, sing or breathe. These particles can range in size from larger respiratory droplets to smaller aerosols, and people can be contagious whether or not they are displaying symptoms.",
+        "score": 0.4997
+      }
+    ]
+  },
+  "node_c:1:2390f7b7": {
+    "point_id": "node_c:1:2390f7b7",
+    "origin_node_id": "node_c",
+    "text": "Particles can range in size from larger respiratory droplets to smaller aerosols.",
+    "citations": [
+      "doc3_covid19.txt:chunk_00003"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19.txt",
+        "chunk_id": "chunk_00003",
+        "text": "The virus can spread from an infected person’s mouth or nose in small droplets when they cough, sneeze, speak, sing or breathe. These particles can range in size from larger respiratory droplets to smaller aerosols, and people can be contagious whether or not they are displaying symptoms.",
+        "score": 0.4997
+      }
+    ]
+  },
+  "node_c:2:55f0cc4a": {
+    "point_id": "node_c:2:55f0cc4a",
+    "origin_node_id": "node_c",
+    "text": "People can be contagious whether or not they are displaying symptoms.",
+    "citations": [
+      "doc3_covid19.txt:chunk_00003"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19.txt",
+        "chunk_id": "chunk_00003",
+        "text": "The virus can spread from an infected person’s mouth or nose in small droplets when they cough, sneeze, speak, sing or breathe. These particles can range in size from larger respiratory droplets to smaller aerosols, and people can be contagious whether or not they are displaying symptoms.",
+        "score": 0.4997
+      }
+    ]
+  },
+  "node_c:3:dbf0571f": {
+    "point_id": "node_c:3:dbf0571f",
+    "origin_node_id": "node_c",
+    "text": "Infection can also occur by touching the mouth, nose, or eyes after touching contaminated surfaces.",
+    "citations": [
+      "doc3_covid19.txt:chunk_00005"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19.txt",
+        "chunk_id": "chunk_00005",
+        "text": "People may also become infected by touching their mouth, nose or eyes after touching surfaces contaminated with the virus. Experts are continuing their research into how COVID-19 spreads, and which situations are most risky.\nAre the COVID-19 vaccines safe and effective?",
+        "score": 0.5691
+      }
+    ]
+  }
+}

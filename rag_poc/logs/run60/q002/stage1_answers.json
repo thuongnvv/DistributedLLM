@@ -1,0 +1,124 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:07a8c695",
+        "text": "COVID-19 spreads mainly through inhaling air contaminated by droplets and aerosols from infected people.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00024"
+        ]
+      },
+      {
+        "point_id": "node_a:1:9c8c42a0",
+        "text": "Transmission occurs when infectious particles are breathed in or contact the eyes, nose, or mouth.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00004"
+        ]
+      },
+      {
+        "point_id": "node_a:2:aea75553",
+        "text": "The risk of transmission is highest at close range but can occur over longer distances indoors.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00024",
+          "doc1_covid19.txt:chunk_00004"
+        ]
+      },
+      {
+        "point_id": "node_a:3:4b16f261",
+        "text": "COVID-19 can spread from touching contaminated surfaces and then touching the face.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00004"
+        ]
+      },
+      {
+        "point_id": "node_a:4:59b04548",
+        "text": "People can spread the virus even if they do not develop symptoms and remain contagious for up to 20 days.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00004"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:9e8670ec",
+        "text": "COVID-19 spreads mainly through the air in tiny droplets when people cough, sneeze, breathe, sing, or talk.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00000",
+          "doc2_covid19.txt:chunk_00007"
+        ]
+      },
+      {
+        "point_id": "node_b:1:9d6e9c39",
+        "text": "The virus can land on the face of a nearby person after a sneeze or cough, or be inhaled in areas with low airflow.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00008"
+        ]
+      },
+      {
+        "point_id": "node_b:2:04360111",
+        "text": "COVID-19 can spread from someone who is infected but has no symptoms.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00007"
+        ]
+      },
+      {
+        "point_id": "node_b:3:7830fa3f",
+        "text": "Risk of catching COVID-19 increases with close contact, poor airflow, and activities like talking or sharing a car.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00011"
+        ]
+      },
+      {
+        "point_id": "node_b:4:bf42a525",
+        "text": "Living with someone who has COVID-19 or spending time in crowded spaces increases the risk of infection.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00010"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:688ca7b0",
+        "text": "COVID-19 spreads through droplets from an infected person's mouth or nose when they cough, sneeze, speak, sing, or breathe.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00003"
+        ]
+      },
+      {
+        "point_id": "node_c:1:0456f48e",
+        "text": "The virus can be transmitted via larger respiratory droplets and smaller aerosols.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00003"
+        ]
+      },
+      {
+        "point_id": "node_c:2:59c0f0eb",
+        "text": "People can spread COVID-19 even if they are not showing symptoms.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00003"
+        ]
+      },
+      {
+        "point_id": "node_c:3:5668c8d6",
+        "text": "COVID-19 can spread by touching the mouth, nose, or eyes after contacting contaminated surfaces.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00005"
+        ]
+      },
+      {
+        "point_id": "node_c:4:c5ae8d18",
+        "text": "Research is ongoing to understand the most risky situations for COVID-19 spread.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00005"
+        ]
+      }
+    ]
+  }
+]

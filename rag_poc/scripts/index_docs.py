@@ -42,13 +42,37 @@ def build_rag_nodes() -> list[RAGNode]:
             style="public health official; WHO guidance; global perspective; informational",
             scope="COVID-19 disease, SARS-CoV-2 virus, symptoms, treatment, prevention, vaccination, variants, public health measures",
         ),
+        RAGNode(
+            node_id=settings.NODE_D_ID,
+            doc_path=settings.NODE_D_DOC,
+            chroma_path=settings.NODE_D_CHROMA,
+            domain="agriculture_farming",
+            style="FAO agricultural expert; sustainable farming advocate",
+            scope="Save and Grow farming; sustainable crop production; FAO guidelines; soil health; water management; conservation agriculture",
+        ),
+        RAGNode(
+            node_id=settings.NODE_E_ID,
+            doc_path=settings.NODE_E_DOC,
+            chroma_path=settings.NODE_E_CHROMA,
+            domain="agriculture_farming",
+            style="farm management specialist; practical farmer guidance",
+            scope="Farm management practices; crop planning; livestock management; farm economics; labor management; risk management; agricultural decision-making",
+        ),
+        RAGNode(
+            node_id=settings.NODE_F_ID,
+            doc_path=settings.NODE_F_DOC,
+            chroma_path=settings.NODE_F_CHROMA,
+            domain="agriculture_ipm",
+            style="IPM specialist; pest management expert; ecological approach",
+            scope="Integrated pest management; IPM strategies; biological control; cultural practices; pesticide management; pest monitoring; crop protection",
+        ),
     ]
 
 
 def main():
     parser = argparse.ArgumentParser(description="Index documents into Chroma")
     parser.add_argument("--force", action="store_true", help="Force reindex even if store exists")
-    parser.add_argument("--node", choices=["node_a", "node_b", "node_c", "all"], default="all")
+    parser.add_argument("--node", choices=["node_a", "node_b", "node_c", "node_d", "node_e", "node_f", "all"], default="all")
     args = parser.parse_args()
 
     print("=" * 60)

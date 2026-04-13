@@ -1,0 +1,238 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:467cd68e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document advises to stay home and away from others if infected."
+      },
+      {
+        "point_id": "node_b:7:2a2dee8a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states to let the healthcare team know about a positive test."
+      },
+      {
+        "point_id": "node_b:5:90703482",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions monitoring for emergency symptoms."
+      },
+      {
+        "point_id": "node_b:2:6034abdf",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document recommends washing hands frequently."
+      },
+      {
+        "point_id": "node_b:4:1769fa66",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document advises covering coughs and sneezes."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:bf8ab8d0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence supports seeking medical care early for symptoms."
+      },
+      {
+        "point_id": "node_b:7:2a2dee8a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states to let the healthcare team know about a positive test."
+      },
+      {
+        "point_id": "node_b:5:90703482",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions monitoring for emergency symptoms."
+      },
+      {
+        "point_id": "node_b:6:20acb045",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence supports getting emergency help for severe symptoms."
+      },
+      {
+        "point_id": "node_c:1:ac81552e",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence supports avoiding public places to prevent spreading the virus."
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document advises calling ahead before visiting a healthcare provider."
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document advises wearing a mask before entering the healthcare provider's office."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:20647ad1",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states to stay home except to get medical care [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document advises to call ahead before visiting a healthcare provider [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document recommends wearing a face mask before entering the healthcare provider's office [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:3:7b8f3036",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions covering coughs and sneezes with a tissue [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:4:1e15c400",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states to regularly wash hands with soap and water [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:5:6160868f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document advises avoiding sharing personal household items [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:6:45450e2f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document recommends self-isolation at home if diagnosed or suspect infection [doc1_covid19.txt:chunk_00125]."
+      },
+      {
+        "point_id": "node_b:7:2a2dee8a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states to let the healthcare team know about a positive test for COVID-19 [doc2_covid19.txt:chunk_00006]."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:bf8ab8d0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The origin document confirms seeking medical care early if symptoms are present [doc3_covid19.txt:chunk_00017]."
+      },
+      {
+        "point_id": "node_b:7:2a2dee8a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states to let the healthcare team know about a positive test for COVID-19 [doc2_covid19.txt:chunk_00006]."
+      },
+      {
+        "point_id": "node_b:5:90703482",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions monitoring for emergency symptoms like trouble breathing or confusion [doc2_covid19.txt:chunk_00005]."
+      },
+      {
+        "point_id": "node_b:6:20acb045",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document advises getting emergency help right away for severe symptoms [doc2_covid19.txt:chunk_00005]."
+      },
+      {
+        "point_id": "node_c:1:ac81552e",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The origin document confirms avoiding public places to prevent spreading the virus [doc3_covid19.txt:chunk_00021]."
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document advises calling ahead before visiting a healthcare provider [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document recommends wearing a face mask before entering the healthcare provider's office [doc1_covid19.txt:chunk_00094]."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:20647ad1",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document advises to stay home except for medical care."
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document advises to call ahead before visiting a healthcare provider."
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document advises to wear a face mask before entering a healthcare provider's office."
+      },
+      {
+        "point_id": "node_a:3:7b8f3036",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document advises to cover coughs and sneezes with a tissue."
+      },
+      {
+        "point_id": "node_a:4:1e15c400",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document advises to regularly wash hands with soap and water."
+      },
+      {
+        "point_id": "node_a:5:6160868f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document advises to avoid sharing personal household items."
+      },
+      {
+        "point_id": "node_a:6:45450e2f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document advises self-isolation at home if diagnosed or suspect infection."
+      },
+      {
+        "point_id": "node_b:7:2a2dee8a",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports notifying healthcare team about a positive test."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:467cd68e",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence advises to stay home and away from others."
+      },
+      {
+        "point_id": "node_b:7:2a2dee8a",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports notifying healthcare team about a positive test."
+      },
+      {
+        "point_id": "node_b:5:90703482",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence advises monitoring for emergency symptoms."
+      },
+      {
+        "point_id": "node_b:2:6034abdf",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence advises washing hands well and often."
+      },
+      {
+        "point_id": "node_b:4:1769fa66",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence advises covering coughs and sneezes."
+      }
+    ]
+  }
+]

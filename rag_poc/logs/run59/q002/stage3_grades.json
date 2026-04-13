@@ -1,0 +1,126 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:c5f67dff",
+      "node_b:1:266a58d0",
+      "node_b:2:92d5d04a",
+      "node_b:3:6034abdf",
+      "node_b:4:d22b1fcd",
+      "node_a:4:aaf22521",
+      "node_c:4:a8ba601d",
+      "node_a:2:b7424b0d"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:3:899d67d1",
+      "node_a:1:03de03d2"
+    ],
+    "note": "The draft is mostly supported by external evidence, with some points supported locally. Two points remain unknown due to lack of explicit mention in the provided context."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:2878dfe6",
+      "node_c:1:3bf0457b",
+      "node_c:2:3a172f97",
+      "node_c:3:2f1880c3",
+      "node_c:4:a8ba601d",
+      "node_b:0:c5f67dff",
+      "node_a:2:b7424b0d",
+      "node_b:4:d22b1fcd",
+      "node_a:4:aaf22521",
+      "node_b:1:266a58d0"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by either local or external evidence, providing a comprehensive set of preventive measures against COVID-19."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:2179f1b5",
+      "node_a:1:03de03d2",
+      "node_a:2:b7424b0d",
+      "node_a:3:899d67d1",
+      "node_a:4:aaf22521",
+      "node_b:4:d22b1fcd",
+      "node_b:0:c5f67dff"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:4:a8ba601d",
+      "node_c:0:2878dfe6",
+      "node_b:1:266a58d0"
+    ],
+    "note": "The draft is mostly supported by external evidence, with some points not explicitly covered in the local or external context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:2878dfe6",
+      "node_c:1:3bf0457b",
+      "node_c:2:3a172f97",
+      "node_c:3:2f1880c3",
+      "node_c:4:a8ba601d",
+      "node_b:0:c5f67dff"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:2:b7424b0d",
+      "node_b:4:d22b1fcd",
+      "node_a:4:aaf22521",
+      "node_b:1:266a58d0"
+    ],
+    "note": "The draft is well-supported by external evidence, with some points not explicitly covered in the local or external context."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:2179f1b5",
+      "node_a:1:03de03d2",
+      "node_a:2:b7424b0d",
+      "node_a:3:899d67d1",
+      "node_a:4:aaf22521",
+      "node_b:4:d22b1fcd"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:0:c5f67dff",
+      "node_c:4:a8ba601d",
+      "node_c:0:2878dfe6",
+      "node_b:1:266a58d0"
+    ],
+    "note": "All points are supported by either local context or external evidence, confirming the measures to reduce COVID-19 risk."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:c5f67dff",
+      "node_b:1:266a58d0",
+      "node_b:2:92d5d04a",
+      "node_b:3:6034abdf",
+      "node_b:4:d22b1fcd",
+      "node_a:4:aaf22521",
+      "node_c:4:a8ba601d",
+      "node_a:2:b7424b0d",
+      "node_a:3:899d67d1",
+      "node_a:1:03de03d2"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by either local context or external evidence, confirming the measures to reduce COVID-19 risk."
+  }
+]

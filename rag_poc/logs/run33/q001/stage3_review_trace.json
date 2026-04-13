@@ -1,0 +1,238 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:467cd68e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Staying home is advised for those who test positive for COVID-19 [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_b:6:f47ee9af",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Informing healthcare providers about a positive test is recommended [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_b:2:6034abdf",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Washing hands frequently is advised [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_b:3:b0862161",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Using hand sanitizer is recommended if soap is unavailable [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_b:5:77d8d291",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Seeking emergency help for severe symptoms is advised [doc1_covid19.txt:chunk_00005]."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_a:6:45450e2f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Self-isolation is recommended for those diagnosed or suspecting infection [doc1_covid19.txt:chunk_00125]."
+      },
+      {
+        "point_id": "node_a:0:20647ad1",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Staying home except for medical care is advised [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_b:6:f47ee9af",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Informing healthcare providers about a positive test is recommended [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Calling ahead before visiting a healthcare provider is advised [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Wearing a face mask before entering a healthcare provider's office is advised [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_c:2:f54907fd",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Keeping indoor spaces well ventilated is recommended [doc3_covid19.txt:chunk_00016]."
+      },
+      {
+        "point_id": "node_c:3:a71128d0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Washing hands frequently is advised [doc3_covid19.txt:chunk_00016]."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:20647ad1",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by CDC recommendations to stay home except for medical care [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by CDC recommendations to call ahead before visiting a healthcare provider [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by CDC recommendations to wear a face mask before entering a healthcare provider's office [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:3:7b8f3036",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by CDC recommendations to cover coughs and sneezes with a tissue [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:4:1e15c400",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by CDC recommendations to wash hands regularly [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:5:6160868f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by CDC recommendations to avoid sharing personal household items [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:6:45450e2f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by recommendations for self-isolation if diagnosed or suspect infection [doc1_covid19.txt:chunk_00125]."
+      },
+      {
+        "point_id": "node_b:6:f47ee9af",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by recommendations to inform healthcare team about positive test or concerning symptoms [doc2_covid19.txt:chunk_00006]."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_a:6:45450e2f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by recommendations for self-isolation if diagnosed or suspect infection [doc1_covid19.txt:chunk_00125]."
+      },
+      {
+        "point_id": "node_a:0:20647ad1",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by CDC recommendations to stay home except for medical care [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_b:6:f47ee9af",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by recommendations to inform healthcare team about positive test or concerning symptoms [doc2_covid19.txt:chunk_00006]."
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by CDC recommendations to call ahead before visiting a healthcare provider [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by CDC recommendations to wear a face mask before entering a healthcare provider's office [doc1_covid19.txt:chunk_00094]."
+      },
+      {
+        "point_id": "node_c:2:f54907fd",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by recommendations to keep indoor spaces well ventilated [doc3_covid19.txt:chunk_00016]."
+      },
+      {
+        "point_id": "node_c:3:a71128d0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Supported by recommendations to wash hands frequently [doc3_covid19.txt:chunk_00016]."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:20647ad1",
+        "basis": "CONTRADICTED",
+        "reason": "The draft states to stay home except for medical care, which is correct, but does not mention the need to self-isolate at home, which is critical."
+      },
+      {
+        "point_id": "node_a:1:ca2c266e",
+        "basis": "CONTRADICTED",
+        "reason": "While calling ahead is important, it is insufficient without emphasizing self-isolation."
+      },
+      {
+        "point_id": "node_a:2:d4a9cbb8",
+        "basis": "CONTRADICTED",
+        "reason": "Wearing a mask is necessary, but the draft lacks the emphasis on self-isolation."
+      },
+      {
+        "point_id": "node_a:3:7b8f3036",
+        "basis": "CONTRADICTED",
+        "reason": "Covering coughs and sneezes is important, but the draft fails to mention self-isolation."
+      },
+      {
+        "point_id": "node_a:4:1e15c400",
+        "basis": "CONTRADICTED",
+        "reason": "Handwashing is crucial, but the draft does not include self-isolation."
+      },
+      {
+        "point_id": "node_a:5:6160868f",
+        "basis": "CONTRADICTED",
+        "reason": "Avoiding sharing personal items is relevant, but self-isolation is not mentioned."
+      },
+      {
+        "point_id": "node_a:6:45450e2f",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Self-isolation is correctly mentioned in the external evidence."
+      },
+      {
+        "point_id": "node_b:6:f47ee9af",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:467cd68e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Staying home and away from others is supported by the context."
+      },
+      {
+        "point_id": "node_b:6:f47ee9af",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Informing the healthcare team about a positive test is supported."
+      },
+      {
+        "point_id": "node_b:2:6034abdf",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Washing hands frequently is supported."
+      },
+      {
+        "point_id": "node_b:3:b0862161",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Using alcohol-based hand sanitizer is supported."
+      },
+      {
+        "point_id": "node_b:5:77d8d291",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Getting emergency help for severe symptoms is supported."
+      }
+    ]
+  }
+]

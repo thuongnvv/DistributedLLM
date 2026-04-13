@@ -1,0 +1,338 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:6c4b001e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document states that staying up to date on COVID-19 vaccines helps prevent serious illness."
+      },
+      {
+        "point_id": "node_b:1:26899f11",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document mentions good indoor airflow as a preventive measure."
+      },
+      {
+        "point_id": "node_b:2:30ae2b19",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports physical distancing as a recommended measure."
+      },
+      {
+        "point_id": "node_b:3:f012920b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports wearing masks in appropriate settings."
+      },
+      {
+        "point_id": "node_b:4:b11e1637",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document states the importance of handwashing."
+      },
+      {
+        "point_id": "node_b:5:2dbbfa4a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports using alcohol-based hand sanitizer."
+      },
+      {
+        "point_id": "node_b:6:1769fa66",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document mentions covering coughs and sneezes."
+      },
+      {
+        "point_id": "node_b:7:899c9234",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document advises avoiding close contact with sick individuals."
+      },
+      {
+        "point_id": "node_b:8:9d79aba0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document emphasizes staying home if feeling ill."
+      },
+      {
+        "point_id": "node_b:9:25ea32ff",
+        "basis": "UNKNOWN",
+        "reason": "Document does not mention testing for COVID-19."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:d9ee44a0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports avoiding crowded places and practicing physical distancing."
+      },
+      {
+        "point_id": "node_c:1:95b9522d",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports wearing masks in public places with transmission."
+      },
+      {
+        "point_id": "node_c:2:2fa2f5e8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports frequent handwashing."
+      },
+      {
+        "point_id": "node_c:3:afd55afa",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports keeping indoor spaces well ventilated."
+      },
+      {
+        "point_id": "node_c:4:b322475a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document advises seeking medical care early for symptoms."
+      },
+      {
+        "point_id": "node_c:5:a1d0f995",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports staying informed about local guidance."
+      },
+      {
+        "point_id": "node_c:6:a697da86",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports getting vaccinated."
+      },
+      {
+        "point_id": "node_c:7:fc276859",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document advises avoiding public places if symptomatic."
+      },
+      {
+        "point_id": "node_c:8:066f07a9",
+        "basis": "UNKNOWN",
+        "reason": "Document does not mention cleaning and disinfecting surfaces."
+      },
+      {
+        "point_id": "node_a:9:7f9cb627",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:7b438a55",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document mentions practicing good hygiene, including hand washing."
+      },
+      {
+        "point_id": "node_a:1:ddeaa568",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports wearing masks in public and close contact."
+      },
+      {
+        "point_id": "node_a:2:cf7290f2",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports maintaining physical or social distancing."
+      },
+      {
+        "point_id": "node_a:3:f9666c79",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports ensuring proper ventilation of indoor spaces."
+      },
+      {
+        "point_id": "node_a:4:487567c0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports staying home if diagnosed with COVID-19."
+      },
+      {
+        "point_id": "node_a:5:f0129d8a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports covering coughs and sneezes."
+      },
+      {
+        "point_id": "node_a:6:76a73fba",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports avoiding sharing personal household items."
+      },
+      {
+        "point_id": "node_a:7:5ec69fcf",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports staying up to date on vaccinations."
+      },
+      {
+        "point_id": "node_a:8:afae4a0c",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      },
+      {
+        "point_id": "node_a:9:7f9cb627",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports quarantining if exposed to someone with COVID-19."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:d9ee44a0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports avoiding crowded places and practicing physical distancing."
+      },
+      {
+        "point_id": "node_c:1:95b9522d",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports wearing a mask in public places with community transmission."
+      },
+      {
+        "point_id": "node_c:2:2fa2f5e8",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports frequent hand washing."
+      },
+      {
+        "point_id": "node_c:3:afd55afa",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports keeping indoor spaces well ventilated."
+      },
+      {
+        "point_id": "node_c:4:b322475a",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports seeking medical care early if experiencing symptoms."
+      },
+      {
+        "point_id": "node_c:5:a1d0f995",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports staying informed about local COVID-19 guidance."
+      },
+      {
+        "point_id": "node_c:6:a697da86",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports getting vaccinated to reduce virus spread."
+      },
+      {
+        "point_id": "node_c:7:fc276859",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports avoiding public places if symptomatic."
+      },
+      {
+        "point_id": "node_c:8:066f07a9",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      },
+      {
+        "point_id": "node_a:9:7f9cb627",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports quarantining if exposed to someone with COVID-19."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:7b438a55",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document mentions regular hand washing as a precaution."
+      },
+      {
+        "point_id": "node_a:1:ddeaa568",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports wearing a mask in public."
+      },
+      {
+        "point_id": "node_a:2:cf7290f2",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports maintaining physical distancing."
+      },
+      {
+        "point_id": "node_a:3:f9666c79",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports ensuring proper ventilation."
+      },
+      {
+        "point_id": "node_a:4:487567c0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document advises staying home if diagnosed or suspected of COVID-19."
+      },
+      {
+        "point_id": "node_a:5:f0129d8a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports covering coughs and sneezes."
+      },
+      {
+        "point_id": "node_a:6:76a73fba",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document advises against sharing personal household items."
+      },
+      {
+        "point_id": "node_a:7:5ec69fcf",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports staying up to date on vaccinations."
+      },
+      {
+        "point_id": "node_a:8:afae4a0c",
+        "basis": "UNKNOWN",
+        "reason": "Document does not mention keeping unwashed hands away from the face."
+      },
+      {
+        "point_id": "node_a:9:7f9cb627",
+        "basis": "UNKNOWN",
+        "reason": "Document does not mention quarantining if exposed."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:6c4b001e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports staying up to date on vaccinations."
+      },
+      {
+        "point_id": "node_b:1:26899f11",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports ensuring good indoor airflow."
+      },
+      {
+        "point_id": "node_b:2:30ae2b19",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports practicing physical distancing."
+      },
+      {
+        "point_id": "node_b:3:f012920b",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports wearing a mask in appropriate settings."
+      },
+      {
+        "point_id": "node_b:4:b11e1637",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports washing hands often."
+      },
+      {
+        "point_id": "node_b:5:2dbbfa4a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports using alcohol-based hand sanitizer."
+      },
+      {
+        "point_id": "node_b:6:1769fa66",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports covering coughs and sneezes."
+      },
+      {
+        "point_id": "node_b:7:899c9234",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports avoiding close contact with sick individuals."
+      },
+      {
+        "point_id": "node_b:8:9d79aba0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Document supports staying home if feeling ill."
+      },
+      {
+        "point_id": "node_b:9:25ea32ff",
+        "basis": "UNKNOWN",
+        "reason": "Document does not mention testing for COVID-19 after exposure."
+      }
+    ]
+  }
+]

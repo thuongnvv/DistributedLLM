@@ -1,0 +1,162 @@
+{
+  "node_a:0:3a5b6a2a": {
+    "point_id": "node_a:0:3a5b6a2a",
+    "origin_node_id": "node_a",
+    "text": "Individuals with symptoms of COVID-19 should consider getting tested to confirm infection.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00079"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00079",
+        "text": "COVID‑19 can provisionally be diagnosed on the basis of symptoms and confirmed using reverse transcription polymerase chain reaction (RT-PCR) or other nucleic acid testing of infected secretions.[174][175] Along with laboratory testing, chest CT scans may be helpful to diagnose COVID‑19 in individuals with a high clinical suspicion of infection.[176] Detection of a past infection is possible with serological tests, which detect antibodies produced by the body in response to the infection.[174]\nViral testing\nMain article: COVID-19 testing",
+        "score": 0.6654
+      }
+    ]
+  },
+  "node_a:1:0329e0d5": {
+    "point_id": "node_a:1:0329e0d5",
+    "origin_node_id": "node_a",
+    "text": "Testing is essential for those who believe they may be infected with COVID-19.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00094"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00094",
+        "text": "Those diagnosed with COVID‑19 or who believe they may be infected are advised by the CDC to stay home except to get medical care, call ahead before visiting a healthcare provider, wear a face mask before entering the healthcare provider's office and when in any room or vehicle with another person, cover coughs and sneezes with a tissue, regularly wash hands with soap and water and avoid sharing personal household items.[202][203]",
+        "score": 0.603
+      }
+    ]
+  },
+  "node_a:2:23c64557": {
+    "point_id": "node_a:2:23c64557",
+    "origin_node_id": "node_a",
+    "text": "Health care providers can perform accurate PCR tests for COVID-19 diagnosis.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00005"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00005",
+        "text": "There are two common tests to detect COVID. Antigen tests (also called rapid lateral flow tests) can be used at home. A positive test indicates an active infection. However, negative tests are not accurate, especially early or late in the infection. Health care providers can perform a more accurate PCR test, which is typically analysed in a laboratory.[17][18]",
+        "score": 0.6578
+      }
+    ]
+  },
+  "node_a:3:7b7e0e55": {
+    "point_id": "node_a:3:7b7e0e55",
+    "origin_node_id": "node_a",
+    "text": "Antigen tests can be used at home to detect active COVID-19 infections.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00005"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00005",
+        "text": "There are two common tests to detect COVID. Antigen tests (also called rapid lateral flow tests) can be used at home. A positive test indicates an active infection. However, negative tests are not accurate, especially early or late in the infection. Health care providers can perform a more accurate PCR test, which is typically analysed in a laboratory.[17][18]",
+        "score": 0.6578
+      }
+    ]
+  },
+  "node_a:4:a06f87fe": {
+    "point_id": "node_a:4:a06f87fe",
+    "origin_node_id": "node_a",
+    "text": "Those diagnosed with COVID-19 are advised to stay home and seek medical care.",
+    "citations": [
+      "doc1_covid19.txt:chunk_00094"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19.txt",
+        "chunk_id": "chunk_00094",
+        "text": "Those diagnosed with COVID‑19 or who believe they may be infected are advised by the CDC to stay home except to get medical care, call ahead before visiting a healthcare provider, wear a face mask before entering the healthcare provider's office and when in any room or vehicle with another person, cover coughs and sneezes with a tissue, regularly wash hands with soap and water and avoid sharing personal household items.[202][203]",
+        "score": 0.603
+      }
+    ]
+  },
+  "node_b:0:f774f4eb": {
+    "point_id": "node_b:0:f774f4eb",
+    "origin_node_id": "node_b",
+    "text": "Test for COVID-19 if you have symptoms of the illness.",
+    "citations": [
+      "doc2_covid19.txt:chunk_00023"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19.txt",
+        "chunk_id": "chunk_00023",
+        "text": "Test for COVID-19. If you have symptoms of COVID-19 test for the illness. Or test five days after coming in contact with the virus.\n    Help from afar. Avoid close contact with anyone who is sick or has symptoms, if possible.\n    Wash your hands. Wash your hands well and often with soap and water for at least 20 seconds. Or use an alcohol-based hand sanitizer with at least 60% alcohol.\n    Cover your coughs and sneezes. Cough or sneeze into a tissue or your elbow. Then wash your hands.",
+        "score": 0.6589
+      }
+    ]
+  },
+  "node_b:1:04d0853e": {
+    "point_id": "node_b:1:04d0853e",
+    "origin_node_id": "node_b",
+    "text": "Consider testing five days after coming in contact with the virus.",
+    "citations": [
+      "doc2_covid19.txt:chunk_00023"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19.txt",
+        "chunk_id": "chunk_00023",
+        "text": "Test for COVID-19. If you have symptoms of COVID-19 test for the illness. Or test five days after coming in contact with the virus.\n    Help from afar. Avoid close contact with anyone who is sick or has symptoms, if possible.\n    Wash your hands. Wash your hands well and often with soap and water for at least 20 seconds. Or use an alcohol-based hand sanitizer with at least 60% alcohol.\n    Cover your coughs and sneezes. Cough or sneeze into a tissue or your elbow. Then wash your hands.",
+        "score": 0.6589
+      }
+    ]
+  },
+  "node_c:0:b6f761c4": {
+    "point_id": "node_c:0:b6f761c4",
+    "origin_node_id": "node_c",
+    "text": "If you have symptoms of COVID-19, you should get tested to confirm if you have the virus.",
+    "citations": [
+      "doc3_covid19.txt:chunk_00000"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19.txt",
+        "chunk_id": "chunk_00000",
+        "text": "What is COVID-19?\n\nCOVID-19 is an infectious respiratory illness caused by a coronavirus called SARS-CoV-2. ‘CO’ stands for corona, ‘VI’ for virus, and ‘D’ for disease.\nWhat are the symptoms of COVID-19?\n\nMany COVID-19 symptoms are similar to those of the flu, the common cold and other conditions, so a test is required to confirm if someone has COVID-19. Symptoms may appear 2 to 14 days after exposure to the virus and can range from very mild to severe illness. Some people who have been infected don’t have any symptoms.",
+        "score": 0.6071
+      }
+    ]
+  },
+  "node_c:1:9990e9c8": {
+    "point_id": "node_c:1:9990e9c8",
+    "origin_node_id": "node_c",
+    "text": "Contact your doctor about testing if you are fully vaccinated and showing symptoms of COVID-19.",
+    "citations": [
+      "doc3_covid19.txt:chunk_00013"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19.txt",
+        "chunk_id": "chunk_00013",
+        "text": "If you have been fully vaccinated but are showing symptoms of COVID-19, you should contact your doctor about whether you should get tested.\nWhat is ‘Long COVID’? Can children be affected? \n\nPost COVID-19 condition, also sometimes referred to as ‘Long COVID,’ is a term used to describe symptoms persisting for weeks or months in some people after the initial recovery from COVID-19 infection.",
+        "score": 0.5922
+      }
+    ]
+  },
+  "node_c:2:996a9e04": {
+    "point_id": "node_c:2:996a9e04",
+    "origin_node_id": "node_c",
+    "text": "Children with symptoms of COVID-19 should seek medical care and consider getting tested.",
+    "citations": [
+      "doc3_covid19.txt:chunk_00021"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19.txt",
+        "chunk_id": "chunk_00021",
+        "text": "Children who have these symptoms should seek medical care. Early diagnosis and treatment are critical, but initial reports suggest most cases responded well to anti-inflammatory treatment. \nWhat should I do if my child has symptoms of COVID-19?\n\nSeek care early if your child is having symptoms and try to avoid going to public places (workplace, schools, public transport) to prevent it spreading to others.\nWhat precautions should I take for my family if we travel?",
+        "score": 0.5526
+      }
+    ]
+  }
+}

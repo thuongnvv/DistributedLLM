@@ -1,0 +1,122 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:81c35db2",
+      "node_b:1:6d670fce",
+      "node_b:2:5ef977e0",
+      "node_b:4:04360111",
+      "node_a:3:e765d8d1",
+      "node_c:2:5668c8d6"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:3:653e4be9"
+    ],
+    "note": "All points are supported except for the risk factors related to living with someone who has COVID-19 and crowded spaces, which are not mentioned in the local context."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:688ca7b0",
+      "node_c:1:da9ca351",
+      "node_c:2:5668c8d6",
+      "node_c:3:add54803",
+      "node_b:2:5ef977e0",
+      "node_a:0:07a8c695",
+      "node_b:0:81c35db2",
+      "node_b:4:04360111",
+      "node_a:3:e765d8d1"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:4:4e513b6d"
+    ],
+    "note": "All points are supported except for the ongoing research into high-risk situations, which is not mentioned in the local context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:07a8c695",
+      "node_a:1:2567fdd7",
+      "node_a:2:97cfd956",
+      "node_a:3:e765d8d1",
+      "node_a:4:59b04548",
+      "node_c:0:688ca7b0",
+      "node_c:2:5668c8d6",
+      "node_c:1:da9ca351",
+      "node_b:0:81c35db2"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:4:04360111"
+    ],
+    "note": "All points are supported except for one which is marked as unknown due to lack of explicit mention in the document or external evidence."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:688ca7b0",
+      "node_c:1:da9ca351",
+      "node_c:2:5668c8d6",
+      "node_c:3:add54803",
+      "node_b:2:5ef977e0",
+      "node_a:0:07a8c695",
+      "node_b:0:81c35db2"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:4:4e513b6d",
+      "node_a:3:e765d8d1",
+      "node_b:4:04360111"
+    ],
+    "note": "Most points are supported by the document or external evidence, with two points marked as unknown due to lack of explicit mention."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:07a8c695",
+      "node_a:1:2567fdd7",
+      "node_a:2:97cfd956",
+      "node_a:3:e765d8d1",
+      "node_a:4:59b04548",
+      "node_c:0:688ca7b0",
+      "node_c:2:5668c8d6",
+      "node_c:1:da9ca351"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:0:81c35db2",
+      "node_b:4:04360111"
+    ],
+    "note": "All points are supported except for node_b points which are unknown due to lack of local or external evidence."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:81c35db2",
+      "node_b:1:6d670fce",
+      "node_b:2:5ef977e0",
+      "node_b:4:04360111",
+      "node_a:3:e765d8d1",
+      "node_c:2:5668c8d6"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:3:653e4be9"
+    ],
+    "note": "All points are supported except for node_b:3:653e4be9 which is unknown due to lack of local or external evidence."
+  }
+]

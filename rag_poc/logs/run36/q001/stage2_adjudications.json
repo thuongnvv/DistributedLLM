@@ -1,0 +1,182 @@
+[
+  {
+    "node_id": "node_a",
+    "point_support": [
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states COVID-19 is caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_a:1:b24690d7",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document confirms the global spread of COVID-19 starting in January 2020."
+      },
+      {
+        "point_id": "node_a:2:e88c7060",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document mentions the WHO declared COVID-19 a global health emergency in March 2020."
+      },
+      {
+        "point_id": "node_a:3:ce9f3073",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:4:0871af83",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document describes transmission through inhaling contaminated air."
+      },
+      {
+        "point_id": "node_c:0:2e87af50",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:4:ed8552fe",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:0:de19a6f2",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:3:d99ee0bd",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:4:7b9de632",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:1:5f2294d4",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "point_support": [
+      {
+        "point_id": "node_b:0:de19a6f2",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document confirms COVID-19 is caused by SARS-CoV-2 and became a pandemic."
+      },
+      {
+        "point_id": "node_b:1:e8f36ee8",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states the virus spreads through close contact and droplets."
+      },
+      {
+        "point_id": "node_b:2:896fa7d8",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document mentions many people have mild illness or no symptoms."
+      },
+      {
+        "point_id": "node_b:3:d99ee0bd",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document lists complications from severe COVID-19."
+      },
+      {
+        "point_id": "node_b:4:7b9de632",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document discusses long-term symptoms related to COVID-19."
+      },
+      {
+        "point_id": "node_c:0:2e87af50",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:3:ce9f3073",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:4:ed8552fe",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:2:e88c7060",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:1:5f2294d4",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "point_support": [
+      {
+        "point_id": "node_c:0:2e87af50",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document confirms COVID-19 is caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_c:1:5f2294d4",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document explains the acronym for COVID-19."
+      },
+      {
+        "point_id": "node_c:2:00af6bbe",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document states symptoms may appear 2 to 14 days after exposure."
+      },
+      {
+        "point_id": "node_c:3:3579131c",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document mentions some infected individuals may be asymptomatic."
+      },
+      {
+        "point_id": "node_c:4:ed8552fe",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Document describes COVID-19 as a pandemic."
+      },
+      {
+        "point_id": "node_a:3:ce9f3073",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:0:de19a6f2",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:2:e88c7060",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:3:d99ee0bd",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:4:7b9de632",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  }
+]

@@ -1,0 +1,69 @@
+[
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:b45f35f8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states COVID-19 is caused by SARS-CoV-2, while the common cold and flu are caused by different viruses."
+      },
+      {
+        "point_id": "node_c:1:ad50074d",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that COVID-19 symptoms can range from mild to severe, similar to the flu and common cold."
+      },
+      {
+        "point_id": "node_c:2:44e434d6",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document indicates that COVID-19 can lead to serious complications, including difficulty breathing and multisystem inflammatory syndrome."
+      },
+      {
+        "point_id": "node_c:3:432a1f1e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that loss of taste or smell is a symptom of COVID-19, which is not common in the flu or common cold."
+      },
+      {
+        "point_id": "node_c:4:a31074ab",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that COVID-19 has a longer incubation period of 2 to 14 days compared to the common cold and flu."
+      },
+      {
+        "point_id": "node_b:4:347ab415",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that older adults and those with certain medical conditions are at higher risk for severe COVID-19 illness."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:cc23953c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states that COVID-19 can cause serious medical complications and lead to death, unlike the common cold or flu."
+      },
+      {
+        "point_id": "node_b:1:43969c1c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that loss of taste or smell is a symptom of COVID-19, which is not typical for the common cold or flu."
+      },
+      {
+        "point_id": "node_c:0:b45f35f8",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that COVID-19 is caused by the SARS-CoV-2 virus, while the common cold and flu are caused by different viruses."
+      },
+      {
+        "point_id": "node_c:4:a31074ab",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that COVID-19 has a longer incubation period of 2 to 14 days compared to the common cold and flu."
+      },
+      {
+        "point_id": "node_b:4:347ab415",
+        "basis": "CONTRADICTED",
+        "reason": "The document does not explicitly state that older adults and those with certain medical conditions are at higher risk for severe COVID-19 illness compared to the flu."
+      }
+    ]
+  }
+]

@@ -1,0 +1,120 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:6c4b001e",
+      "node_b:1:26899f11",
+      "node_b:2:30ae2b19",
+      "node_b:3:f012920b",
+      "node_b:4:56c8c427",
+      "node_b:5:899c9234",
+      "node_b:7:1542f06f",
+      "node_b:6:a89a4139"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:5:24aa1b02"
+    ],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:5a109b5f",
+      "node_c:1:78d17119",
+      "node_c:2:2fa2f5e8",
+      "node_c:3:cd6343db",
+      "node_c:5:24aa1b02",
+      "node_c:6:0071e71d",
+      "node_c:7:d287cb76",
+      "node_b:6:a89a4139"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the local context."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:7b438a55",
+      "node_a:1:ddeaa568",
+      "node_a:2:cf7290f2",
+      "node_a:3:66dc0e28",
+      "node_a:4:6faf5e1d",
+      "node_a:5:af0b1325",
+      "node_a:6:da12fe32",
+      "node_a:7:e75c667d"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:8:3c0ae705",
+      "node_a:9:85d3b82b"
+    ],
+    "note": "All points except two are supported by the document."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:5a109b5f",
+      "node_c:1:78d17119",
+      "node_c:2:2fa2f5e8",
+      "node_c:3:cd6343db",
+      "node_c:5:24aa1b02",
+      "node_c:6:0071e71d",
+      "node_c:7:d287cb76",
+      "node_b:6:a89a4139"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by the document."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "FAIL",
+    "agree_points": [
+      "node_a:0:7b438a55",
+      "node_a:1:ddeaa568",
+      "node_a:2:cf7290f2",
+      "node_a:3:66dc0e28",
+      "node_a:4:6faf5e1d",
+      "node_a:5:af0b1325",
+      "node_a:6:da12fe32",
+      "node_a:7:e75c667d"
+    ],
+    "reject_points": [
+      "node_a:8:3c0ae705",
+      "node_a:9:85d3b82b"
+    ],
+    "unknown_points": [],
+    "note": "Two points were contradicted by the document, leading to a FAIL."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:6c4b001e",
+      "node_b:1:26899f11",
+      "node_b:2:30ae2b19",
+      "node_b:3:f012920b",
+      "node_b:4:56c8c427",
+      "node_b:5:899c9234",
+      "node_b:7:1542f06f",
+      "node_b:6:a89a4139"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_c:5:24aa1b02"
+    ],
+    "note": "All points are supported by the document."
+  }
+]

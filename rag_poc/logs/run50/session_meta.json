@@ -1,0 +1,10 @@
+{
+  "queries": [
+    {
+      "label": "q001",
+      "query": "If someone tests positive, what should they do right away?",
+      "winner": "node_a",
+      "q_dir": "q001"
+    }
+  ]
+}
