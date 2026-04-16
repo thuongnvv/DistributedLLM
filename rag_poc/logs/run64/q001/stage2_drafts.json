@@ -1,0 +1,50 @@
+[
+  {
+    "node_id": "node_a",
+    "synthesis_text": "COVID-19 is a contagious disease caused by the coronavirus SARS-CoV-2, which began spreading worldwide in January 2020, leading to a pandemic. The World Health Organization declared it a global health emergency in March 2020 and ended the emergency status in May 2023. The disease can be diagnosed using RT-PCR or other nucleic acid tests, and confirmed with chest CT scans. Preventive measures include vaccination, physical distancing, mask-wearing, and handwashing [doc1_covid19.txt:chunk_00000, doc1_covid19.txt:chunk_00079, node_c:4:f813ab80].",
+    "used_points": [
+      "node_a:0:cf1078a4",
+      "node_a:1:b24690d7",
+      "node_a:2:fb2bf361",
+      "node_a:4:c719db02",
+      "node_c:4:f813ab80",
+      "node_a:3:285740e1",
+      "node_b:2:736f7311",
+      "node_b:0:4dbd49a8",
+      "node_b:3:eced3163",
+      "node_c:0:7f6104cc"
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "synthesis_text": "COVID-19 is an illness caused by the virus SARS-CoV-2, which began spreading in late 2019 and became a pandemic in 2020. It spreads mainly through the air via tiny droplets from coughs, sneezes, or talking, especially in close contact. COVID-19 can cause mild illness or no symptoms, but can lead to hospitalization or death in older adults and those with certain conditions. It's possible to get COVID-19 more than once due to fading immunity or virus mutations. Preventive measures include vaccination, good airflow, physical distancing, mask-wearing, and hygiene [doc2_covid19.txt:chunk_00000, doc2_covid19.txt:chunk_00001, doc2_covid19.txt:chunk_00009, doc2_covid19.txt:chunk_00022].",
+    "used_points": [
+      "node_b:0:4dbd49a8",
+      "node_b:1:f626dfed",
+      "node_b:2:736f7311",
+      "node_b:3:eced3163",
+      "node_b:4:5f773f88",
+      "node_a:2:fb2bf361",
+      "node_a:4:c719db02",
+      "node_a:0:cf1078a4",
+      "node_a:3:285740e1",
+      "node_c:0:7f6104cc"
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "synthesis_text": "COVID-19 is an infectious respiratory illness caused by the coronavirus SARS-CoV-2. Symptoms can appear 2 to 14 days after exposure and range from mild to severe, with urgent symptoms including difficulty breathing and chest pain. COVID-19 vaccines undergo rigorous testing to ensure safety and effectiveness. Preventive measures include vaccination, physical distancing, mask-wearing, and handwashing [doc3_covid19.txt:chunk_00000, chunk_00002, chunk_00006, chunk_00012].",
+    "used_points": [
+      "node_c:0:7f6104cc",
+      "node_c:1:8acfd5b8",
+      "node_c:2:fc1c692c",
+      "node_c:3:6870e258",
+      "node_c:4:f813ab80",
+      "node_b:2:736f7311",
+      "node_a:0:cf1078a4",
+      "node_b:0:4dbd49a8",
+      "node_b:3:eced3163",
+      "node_a:3:285740e1"
+    ]
+  }
+]

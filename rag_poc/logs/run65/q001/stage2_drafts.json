@@ -1,0 +1,50 @@
+[
+  {
+    "node_id": "doc1_covid19",
+    "synthesis_text": "COVID-19 symptoms vary widely, ranging from mild to severe. Common symptoms include coughing, fever, and loss of smell and taste [doc1_covid19:0:c10f2c08]. Less common symptoms are headaches, nasal congestion, runny nose, muscle pain, sore throat, diarrhea, and eye irritation [doc1_covid19:1:dac16583]. In moderate to severe cases, breathing difficulties may occur [doc1_covid19:2:6ee39cef]. Symptoms can begin one to 14 days after exposure to the virus [doc1_covid19:3:439efabe]. Additionally, three symptom clusters have been identified: respiratory, musculoskeletal, and digestive symptoms [doc1_covid19:4:3d205f00]. External sources confirm these findings, noting symptoms such as fever, cough, tiredness, shortness of breath, and digestive issues [doc2_covid19:4:6e73a8ac, doc3_covid19:0:ca62de7d].",
+    "used_points": [
+      "doc1_covid19:0:c10f2c08",
+      "doc1_covid19:1:dac16583",
+      "doc1_covid19:2:6ee39cef",
+      "doc1_covid19:3:439efabe",
+      "doc1_covid19:4:3d205f00",
+      "doc2_covid19:4:6e73a8ac",
+      "doc3_covid19:0:ca62de7d",
+      "doc2_covid19:2:b62cb9bc",
+      "doc2_covid19:0:ebebb3ea",
+      "doc3_covid19:1:dd82d7a1"
+    ]
+  },
+  {
+    "node_id": "doc2_covid19",
+    "synthesis_text": "COVID-19 symptoms are diverse and can include respiratory, musculoskeletal, and digestive symptoms. Common symptoms include fever, cough, and loss of taste or smell. Other symptoms may involve congestion, runny nose, sore throat, shortness of breath, fatigue, headaches, body or muscle aches, and digestive issues such as diarrhea. Symptoms typically appear 2 to 14 days after exposure to the virus. In severe cases, symptoms like difficulty breathing, chest pain, and confusion may require urgent medical attention [doc2_covid19:0:ebebb3ea; doc2_covid19:1:353c1cc7; doc2_covid19:2:b62cb9bc; doc2_covid19:3:49dc5868; doc2_covid19:4:6e73a8ac; doc1_covid19:0:c10f2c08; doc3_covid19:0:ca62de7d; doc1_covid19:1:dac16583; doc3_covid19:1:dd82d7a1; doc3_covid19:4:6ec39909].",
+    "used_points": [
+      "doc2_covid19:0:ebebb3ea",
+      "doc2_covid19:1:353c1cc7",
+      "doc2_covid19:2:b62cb9bc",
+      "doc2_covid19:3:49dc5868",
+      "doc2_covid19:4:6e73a8ac",
+      "doc1_covid19:0:c10f2c08",
+      "doc3_covid19:0:ca62de7d",
+      "doc1_covid19:1:dac16583",
+      "doc3_covid19:1:dd82d7a1",
+      "doc3_covid19:4:6ec39909"
+    ]
+  },
+  {
+    "node_id": "doc3_covid19",
+    "synthesis_text": "COVID-19 symptoms can vary widely, ranging from mild to severe. Common symptoms include fever, cough, and tiredness, with other symptoms such as shortness of breath, chest pain, muscle aches, headache, and loss of taste or smell also reported. Symptoms typically appear 2 to 14 days after exposure. In infants, difficulty feeding may be a symptom, and urgent medical attention is required for severe symptoms like difficulty breathing, blue lips, and confusion [doc3_covid19:0:ca62de7d, doc3_covid19:1:dd82d7a1, doc3_covid19:2:4c9db9ec, doc3_covid19:3:02c68eb7, doc3_covid19:4:6ec39909].",
+    "used_points": [
+      "doc3_covid19:0:ca62de7d",
+      "doc3_covid19:1:dd82d7a1",
+      "doc3_covid19:2:4c9db9ec",
+      "doc3_covid19:3:02c68eb7",
+      "doc3_covid19:4:6ec39909",
+      "doc2_covid19:2:b62cb9bc",
+      "doc2_covid19:0:ebebb3ea",
+      "doc1_covid19:1:dac16583",
+      "doc2_covid19:4:6e73a8ac",
+      "doc1_covid19:0:c10f2c08"
+    ]
+  }
+]

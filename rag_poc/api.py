@@ -1,33 +1,30 @@
 """
 FastAPI server for RAG PoC.
-Serves /ask, /session, /session/{id}, /health.
+Serves /ask, /session, /session/{id}, /nodes/*, /health.
 """
 from __future__ import annotations
 
 import json
+import shutil
 import sys
 from pathlib import Path
+from typing import Any
+
+import pdfplumber
+import settings
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from settings import (
-    LLM_MODE, HOST, PORT, LOGS_ROOT, K, TAU_FAIL,
-    WIN_BONUS, FAIL_PENALTY, POINT_SCORE_WEIGHT,
-    MAX_POINTS_PER_ANSWER, MAX_USED_POINTS,
-    NODE_A_ID, NODE_A_DOC, NODE_A_CHROMA,
-    NODE_B_ID, NODE_B_DOC, NODE_B_CHROMA,
-    NODE_C_ID, NODE_C_DOC, NODE_C_CHROMA,
-    NODE_D_ID, NODE_D_DOC, NODE_D_CHROMA,
-    NODE_E_ID, NODE_E_DOC, NODE_E_CHROMA,
-    NODE_F_ID, NODE_F_DOC, NODE_F_CHROMA,
-)
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 from rag.node import RAGNode
+from rag.chunker import chunk_document
+from rag.embedder import embed_texts
 from orchestrator import RAGOrchestrator, RAGPersona, _rag_persona_prompt
-from mvp.llm_client import LLMClient
+from lib.llm_client import LLMClient
+from lib.utils import extract_first_json_object
 
 
 # ==================== SESSION MANAGEMENT ====================
@@ -38,7 +35,6 @@ class SessionStore:
         self.logs_root = Path(logs_root)
         self._sessions: dict[str, dict] = {}
         self._query_counters: dict = {}
-        # Auto-detect next run number from existing directories
         existing = list(self.logs_root.glob("run*"))
         nums = []
         for d in existing:
@@ -49,7 +45,6 @@ class SessionStore:
         self._run_counter: int = max(nums) if nums else 14
 
     def create_session(self, session_id: str | None = None) -> dict:
-        # Auto-generate run<N> if no explicit id provided
         if session_id is None:
             self._run_counter += 1
             session_id = f"run{self._run_counter}"
@@ -82,109 +77,142 @@ class SessionStore:
         return {"queries": []}
 
 
-# ==================== BUILD ORCHESTRATOR ====================
-def build_rag_nodes() -> list[RAGNode]:
-    return [
-        RAGNode(
-            node_id=NODE_A_ID,
-            doc_path=NODE_A_DOC,
-            chroma_path=NODE_A_CHROMA,
-            domain="medical_covid",
-            style="medical researcher; evidence-based; cites sources",
-            scope="COVID-19 disease, SARS-CoV-2 virus, symptoms, treatment, prevention, variants",
-        ),
-        RAGNode(
-            node_id=NODE_B_ID,
-            doc_path=NODE_B_DOC,
-            chroma_path=NODE_B_CHROMA,
-            domain="medical_covid",
-            style="healthcare provider; practical guidance; patient-focused",
-            scope="COVID-19 disease, SARS-CoV-2 virus, symptoms, treatment, prevention, vaccination",
-        ),
-        RAGNode(
-            node_id=NODE_C_ID,
-            doc_path=NODE_C_DOC,
-            chroma_path=NODE_C_CHROMA,
-            domain="medical_covid",
-            style="public health official; WHO guidance; global perspective; informational",
-            scope="COVID-19 disease, SARS-CoV-2 virus, symptoms, treatment, prevention, vaccination, variants, public health measures",
-        ),
-        RAGNode(
-            node_id=NODE_D_ID,
-            doc_path=NODE_D_DOC,
-            chroma_path=NODE_D_CHROMA,
-            domain="agriculture_farming",
-            style="FAO agricultural expert; sustainable farming advocate",
-            scope="Save and Grow farming; sustainable crop production; FAO guidelines; soil health; water management; conservation agriculture",
-        ),
-        RAGNode(
-            node_id=NODE_E_ID,
-            doc_path=NODE_E_DOC,
-            chroma_path=NODE_E_CHROMA,
-            domain="agriculture_farming",
-            style="farm management specialist; practical farmer guidance",
-            scope="Farm management practices; crop planning; livestock management; farm economics; labor management; risk management; agricultural decision-making",
-        ),
-        RAGNode(
-            node_id=NODE_F_ID,
-            doc_path=NODE_F_DOC,
-            chroma_path=NODE_F_CHROMA,
-            domain="agriculture_ipm",
-            style="IPM specialist; pest management expert; ecological approach",
-            scope="Integrated pest management; IPM strategies; biological control; cultural practices; pesticide management; pest monitoring; crop protection",
-        ),
-    ]
+# ==================== NODE REGISTRY ====================
+PROVIDER_DATA_DIR = Path(__file__).parent / "data" / "providers"
+NODES_REGISTRY_PATH = PROVIDER_DATA_DIR / "nodes.json"
 
 
-def build_rag_personas() -> list[RAGPersona]:
-    nodes = build_rag_nodes()
-    return [
-        RAGPersona(
-            node_id=n.node_id,
-            rag_node=n,
-            domain=n.domain,
-            style=n.style,
-            scope=n.scope,
-            system_prompt=_rag_persona_prompt(
+def load_node_registry() -> dict[str, Any]:
+    if not NODES_REGISTRY_PATH.exists():
+        return {"nodes": []}
+    return json.loads(NODES_REGISTRY_PATH.read_text())
+
+
+def save_node_registry(registry: dict[str, Any]) -> None:
+    NODES_REGISTRY_PATH.parent.mkdir(parents=True, exist_ok=True)
+    NODES_REGISTRY_PATH.write_text(json.dumps(registry, indent=2))
+
+
+def get_active_nodes(registry: dict[str, Any] | None = None) -> list[dict[str, Any]]:
+    if registry is None:
+        registry = load_node_registry()
+    return [n for n in registry.get("nodes", []) if n.get("status") == "active"]
+
+
+def slugify(node_id: str) -> str:
+    """Convert a string to a valid slug."""
+    import re
+    slug = re.sub(r"[^a-z0-9_-]", "_", node_id.lower().strip())
+    slug = re.sub(r"_+", "_", slug)
+    return slug.strip("_")
+
+
+def _gen_node_id(file_bytes: bytes) -> str:
+    """Generate a short, fixed 7-char node_id from file content hash."""
+    import hashlib
+    h = hashlib.sha256(file_bytes).hexdigest()[:7]
+    return f"nd{h}"
+
+
+# ==================== BUILD PERSONAS FROM REGISTRY ====================
+def build_rag_nodes_from_registry(registry: dict[str, Any] | None = None) -> list[RAGNode]:
+    if registry is None:
+        registry = load_node_registry()
+    nodes: list[RAGNode] = []
+    for n in get_active_nodes(registry):
+        doc_path = Path(__file__).parent / n["doc_path"]
+        chroma_path = Path(__file__).parent / n["chroma_path"]
+        nodes.append(
+            RAGNode(
+                node_id=n["node_id"],
+                doc_path=str(doc_path),
+                chroma_path=str(chroma_path),
+                domain=n.get("domain", "general"),
+                style=n.get("style", "knowledge provider"),
+                scope=n.get("scope", ""),
+            )
+        )
+    return nodes
+
+
+def build_rag_personas_from_registry(
+    registry: dict[str, Any] | None = None,
+    rep_map: dict[str, float] | None = None,
+) -> list[RAGPersona]:
+    if registry is None:
+        registry = load_node_registry()
+    if rep_map is None:
+        rep_map = {}
+    nodes = build_rag_nodes_from_registry(registry)
+    personas: list[RAGPersona] = []
+    for n in nodes:
+        personas.append(
+            RAGPersona(
+                node_id=n.node_id,
+                rag_node=n,
                 domain=n.domain,
                 style=n.style,
                 scope=n.scope,
-                doc_id=n.doc_path.name,
-            ),
-            rep_snapshot=10.0,
+                system_prompt=_rag_persona_prompt(
+                    domain=n.domain,
+                    style=n.style,
+                    scope=n.scope,
+                    doc_id=n.doc_path.name,
+                ),
+                rep_snapshot=rep_map.get(n.node_id, 10.0),
+            )
         )
-        for n in nodes
-    ]
+    return personas
 
 
+# ==================== GLOBAL STATE ====================
 _llm_client: LLMClient | None = None
 _orchestrator: RAGOrchestrator | None = None
 _session_store: SessionStore | None = None
+_node_registry: dict[str, Any] | None = None
+
+
+def get_llm_client() -> LLMClient:
+    global _llm_client
+    if _llm_client is None:
+        _llm_client = LLMClient(mode=settings.LLM_MODE)
+    return _llm_client
 
 
 def get_orchestrator() -> RAGOrchestrator:
-    global _llm_client, _orchestrator
+    global _llm_client, _orchestrator, _node_registry
     if _orchestrator is None:
-        _llm_client = LLMClient(mode=LLM_MODE)
+        _node_registry = load_node_registry()
+        _llm_client = get_llm_client()
         _orchestrator = RAGOrchestrator(
-            rag_personas=build_rag_personas(),
+            rag_personas=build_rag_personas_from_registry(_node_registry),
             llm_client=_llm_client,
-            k=K,
-            tau_fail=TAU_FAIL,
-            max_points_per_answer=MAX_POINTS_PER_ANSWER,
-            max_used_points=MAX_USED_POINTS,
-            win_bonus=WIN_BONUS,
-            fail_penalty=FAIL_PENALTY,
-            point_score_weight=POINT_SCORE_WEIGHT,
-            logs_root=LOGS_ROOT,
+            k=settings.K,
+            tau_fail=settings.TAU_FAIL,
+            max_points_per_answer=settings.MAX_POINTS_PER_ANSWER,
+            max_used_points=settings.MAX_USED_POINTS,
+            win_bonus=settings.WIN_BONUS,
+            fail_penalty=settings.FAIL_PENALTY,
+            point_score_weight=settings.POINT_SCORE_WEIGHT,
+            logs_root=settings.LOGS_ROOT,
         )
     return _orchestrator
+
+
+def reload_orchestrator() -> None:
+    """Reload orchestrator personas from updated registry."""
+    global _orchestrator, _node_registry, _llm_client
+    _node_registry = load_node_registry()
+    if _orchestrator is None:
+        get_orchestrator()
+    else:
+        _orchestrator.reload_personas(build_rag_personas_from_registry(_node_registry))
 
 
 def get_store() -> SessionStore:
     global _session_store
     if _session_store is None:
-        _session_store = SessionStore(LOGS_ROOT)
+        _session_store = SessionStore(settings.LOGS_ROOT)
     return _session_store
 
 
@@ -192,8 +220,10 @@ def get_store() -> SessionStore:
 app = FastAPI(title="Distributed LLM RAG PoC", version="0.1.0")
 
 
+# ==================== REQUEST/RESPONSE MODELS ====================
 class AskRequest(BaseModel):
     query: str
+    node_ids: list[str] | None = None  # user-selected nodes
     session_id: str | None = None
 
 
@@ -216,6 +246,37 @@ class AskResponse(BaseModel):
     selected_nodes: list[str]
 
 
+class NodeInfo(BaseModel):
+    node_id: str
+    domain: str
+    style: str
+    scope: str
+    type: str  # "builtin" or "provider"
+    status: str
+    doc_path: str
+    chroma_path: str
+    chunk_count: int | None = None
+
+
+class NodePreviewResponse(BaseModel):
+    node_id: str
+    extracted_snippet: str
+    domain: str
+    style: str
+    scope: str
+    suggested_chunk_count: int
+    file_path: str  # temp file path for registration
+
+
+class NodeRegisterRequest(BaseModel):
+    node_id: str
+    domain: str
+    style: str
+    scope: str
+    file_path: str  # temp path of uploaded file (saved by /preview)
+
+
+# ==================== ENDPOINTS ====================
 @app.get("/")
 async def root():
     ui_path = Path(__file__).parent / "ui" / "index.html"
@@ -226,12 +287,18 @@ async def root():
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "mode": LLM_MODE}
+    reg = load_node_registry()
+    return {
+        "status": "ok",
+        "mode": settings.LLM_MODE,
+        "total_nodes": len(get_active_nodes(reg)),
+        "provider_nodes": len([n for n in get_active_nodes(reg) if n.get("type") == "provider"]),
+    }
 
 
+# ----- Sessions -----
 @app.post("/session")
 async def create_session():
-    """Create a new session."""
     store = get_store()
     session = store.create_session()
     return {"session_id": session["session_id"], "session_dir": session["session_dir"]}
@@ -239,9 +306,7 @@ async def create_session():
 
 @app.get("/session/{session_id}")
 async def get_session(session_id: str):
-    """Get session query history."""
     store = get_store()
-    # Ensure session is loaded
     store.create_session(session_id)
     history = store.get_history(session_id)
     if history is None:
@@ -249,10 +314,237 @@ async def get_session(session_id: str):
     return {"session_id": session_id, **history}
 
 
+# ----- Nodes -----
+@app.get("/nodes")
+async def list_nodes():
+    """List all registered nodes."""
+    registry = load_node_registry()
+    nodes: list[dict[str, Any]] = []
+    for n in get_active_nodes(registry):
+        chroma_path = Path(__file__).parent / n["chroma_path"]
+        chunk_count = None
+        if chroma_path.exists():
+            try:
+                from rag.retriever import Retriever
+                r = Retriever(str(chroma_path), f"chunks_{n['node_id']}")
+                chunk_count = r.count()
+            except Exception:
+                pass
+        nodes.append({**n, "chunk_count": chunk_count})
+    return {"nodes": nodes, "total": len(nodes)}
+
+
+@app.get("/nodes/{node_id}")
+async def get_node(node_id: str):
+    """Get details of a specific node."""
+    registry = load_node_registry()
+    for n in registry.get("nodes", []):
+        if n["node_id"] == node_id:
+            chroma_path = Path(__file__).parent / n["chroma_path"]
+            chunk_count = None
+            if chroma_path.exists():
+                try:
+                    from rag.retriever import Retriever
+                    r = Retriever(str(chroma_path), f"chunks_{n['node_id']}")
+                    chunk_count = r.count()
+                except Exception:
+                    pass
+            return {**n, "chunk_count": chunk_count}
+    raise HTTPException(status_code=404, detail=f"Node '{node_id}' not found")
+
+
+@app.post("/nodes/preview")
+async def preview_node(
+    file: UploadFile = File(...),
+    node_id: str | None = Form(None),
+    domain: str | None = Form(None),
+    style: str | None = Form(None),
+    scope: str | None = Form(None),
+):
+    """
+    Upload document, extract text, auto-detect metadata.
+    Returns preview for provider review. Does NOT register yet.
+    """
+    from llm_utils import detect_node_metadata, extract_text_from_upload, estimate_chunk_count
+
+    # Auto-generate node_id from file content hash
+    file_bytes = await file.read()
+    node_id = _gen_node_id(file_bytes)
+    await file.seek(0)  # reset so file can be read again later
+
+    registry = load_node_registry()
+    for n in registry.get("nodes", []):
+        if n["node_id"] == node_id:
+            raise HTTPException(status_code=409, detail=f"Node '{node_id}' already exists")
+
+    # Extract text
+    content = await file.read()
+    text = extract_text_from_upload(content, file.filename)
+    if not text.strip():
+        raise HTTPException(status_code=400, detail="Could not extract text from file")
+
+    # Snippet for preview
+    snippet = text[:300].strip()
+
+    # Estimate chunk count
+    est_chunks = estimate_chunk_count(text)
+
+    # LLM auto-detect if not all fields provided
+    if not domain or not style or not scope:
+        llm = get_llm_client()
+        detected = detect_node_metadata(text, llm, node_id)
+        domain = domain or detected.get("domain", "general")
+        style = style or detected.get("style", "knowledge provider; informational")
+        scope = scope or detected.get("scope", "general knowledge")
+
+    # Save temp file for later registration
+    import tempfile
+    with tempfile.NamedTemporaryFile(suffix=Path(file.filename).suffix, delete=False, mode="wb") as tmp:
+        tmp.write(content)
+        tmp_path = tmp.name
+
+    return NodePreviewResponse(
+        node_id=node_id,
+        extracted_snippet=snippet,
+        domain=domain,
+        style=style,
+        scope=scope,
+        suggested_chunk_count=est_chunks,
+        file_path=tmp_path,
+    )
+
+
+@app.post("/nodes/register")
+async def register_node(req: NodeRegisterRequest):
+    """
+    Register a provider node after provider reviews and approves metadata.
+    """
+    from llm_utils import extract_text_from_file
+
+    node_id = slugify(req.node_id)
+    if not node_id:
+        raise HTTPException(status_code=400, detail="Invalid node_id")
+
+    registry = load_node_registry()
+
+    # Check not already registered
+    for n in registry.get("nodes", []):
+        if n["node_id"] == node_id:
+            raise HTTPException(status_code=409, detail=f"Node '{node_id}' already exists")
+
+    # Move doc to provider data dir
+    provider_dir = PROVIDER_DATA_DIR / node_id
+    provider_dir.mkdir(parents=True, exist_ok=True)
+    doc_path = provider_dir / "doc.txt"
+
+    temp_path = Path(req.file_path)
+    if not temp_path.exists():
+        raise HTTPException(status_code=400, detail=f"File not found: {req.file_path}")
+
+    # Extract and save text
+    text = extract_text_from_file(temp_path)
+    doc_path.write_text(text, encoding="utf-8")
+    temp_path.unlink(missing_ok=True)
+
+    # Index into Chroma
+    chroma_path = provider_dir / "chroma_store"
+    doc_id = f"{node_id}_doc.txt"
+
+    from rag.retriever import Retriever
+
+    # Delete existing collection if any
+    try:
+        r = Retriever(str(chroma_path), f"chunks_{node_id}")
+        r.client.delete_collection(name=f"chunks_{node_id}")
+    except Exception:
+        pass
+
+    # Chunk and embed
+    chunks = chunk_document(text, doc_id)
+    chunk_texts = [c["text"] for c in chunks]
+    embeddings = embed_texts(chunk_texts)
+
+    r2 = Retriever(str(chroma_path), f"chunks_{node_id}")
+    col = r2.collection
+    col.add(
+        ids=[c["chunk_id"] for c in chunks],
+        documents=chunk_texts,
+        embeddings=embeddings,
+        metadatas=[{"doc_id": doc_id} for _ in chunks],
+    )
+
+    # Register in registry
+    chroma_rel = str(chroma_path.relative_to(Path(__file__).parent))
+    doc_rel = str(doc_path.relative_to(Path(__file__).parent))
+    node_entry = {
+        "node_id": node_id,
+        "doc_path": doc_rel,
+        "chroma_path": chroma_rel,
+        "domain": req.domain,
+        "style": req.style,
+        "scope": req.scope,
+        "type": "provider",
+        "status": "active",
+    }
+    registry.setdefault("nodes", [])
+    registry["nodes"].append(node_entry)
+    save_node_registry(registry)
+
+    # Reload orchestrator
+    reload_orchestrator()
+
+    return {
+        "node_id": node_id,
+        "status": "registered",
+        "chunks_indexed": len(chunks),
+        "domain": req.domain,
+        "style": req.style,
+        "scope": req.scope,
+    }
+
+
+@app.delete("/nodes/{node_id}")
+async def delete_node(node_id: str):
+    """Unregister and delete a node."""
+    registry = load_node_registry()
+    found = False
+    new_nodes = []
+    for n in registry.get("nodes", []):
+        if n["node_id"] == node_id:
+            found = True
+            provider_dir = PROVIDER_DATA_DIR / node_id
+            if provider_dir.exists():
+                shutil.rmtree(provider_dir)
+        else:
+            new_nodes.append(n)
+    if not found:
+        raise HTTPException(status_code=404, detail=f"Node '{node_id}' not found")
+
+    registry["nodes"] = new_nodes
+    save_node_registry(registry)
+    reload_orchestrator()
+    return {"node_id": node_id, "status": "deleted"}
+
+
+@app.post("/nodes/reload")
+async def reload_nodes():
+    """Reload orchestrator personas from registry."""
+    reload_orchestrator()
+    reg = load_node_registry()
+    return {
+        "status": "reloaded",
+        "total_nodes": len(get_active_nodes(reg)),
+    }
+
+
+# ----- Ask -----
 @app.post("/ask", response_model=AskResponse)
 async def ask(req: AskRequest):
     if not req.query.strip():
         raise HTTPException(status_code=400, detail="query must be non-empty")
+
+    if not req.node_ids or len(req.node_ids) < 2:
+        raise HTTPException(status_code=400, detail="node_ids must contain at least 2 nodes")
 
     store = get_store()
     session = store.create_session(req.session_id)
@@ -271,6 +563,7 @@ async def ask(req: AskRequest):
         progress=progress,
         session_dir=session_dir,
         query_label=query_label,
+        selected_node_ids=req.node_ids,
     )
 
     # Load stage data
@@ -338,4 +631,4 @@ async def ask(req: AskRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host=HOST, port=PORT)
+    uvicorn.run(app, host=settings.HOST, port=settings.PORT)

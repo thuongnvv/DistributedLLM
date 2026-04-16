@@ -1,0 +1,128 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:4dbd49a8",
+      "node_b:1:f626dfed",
+      "node_b:2:736f7311",
+      "node_b:3:eced3163",
+      "node_b:4:5f773f88"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:2:fb2bf361",
+      "node_a:4:c719db02",
+      "node_a:0:cf1078a4",
+      "node_a:3:285740e1",
+      "node_c:0:7f6104cc"
+    ],
+    "note": "All points in the target draft are supported by external evidence from node_b."
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:7f6104cc",
+      "node_c:1:8acfd5b8",
+      "node_c:2:fc1c692c",
+      "node_c:3:6870e258",
+      "node_c:4:f813ab80"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:2:736f7311",
+      "node_a:0:cf1078a4",
+      "node_b:0:4dbd49a8",
+      "node_b:3:eced3163",
+      "node_a:3:285740e1"
+    ],
+    "note": "All points in the target draft are supported by external evidence from node_c."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:cf1078a4",
+      "node_a:1:b24690d7",
+      "node_a:2:fb2bf361",
+      "node_a:4:c719db02",
+      "node_c:4:f813ab80"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:3:285740e1",
+      "node_b:2:736f7311",
+      "node_b:0:4dbd49a8",
+      "node_b:3:eced3163",
+      "node_c:0:7f6104cc"
+    ],
+    "note": "All points are either supported by external evidence or unknown due to lack of mention in the local context and external evidence."
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "valid": "PASS",
+    "agree_points": [
+      "node_c:0:7f6104cc",
+      "node_c:1:8acfd5b8",
+      "node_c:2:fc1c692c",
+      "node_c:3:6870e258",
+      "node_c:4:f813ab80"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_b:2:736f7311",
+      "node_a:0:cf1078a4",
+      "node_b:0:4dbd49a8",
+      "node_b:3:eced3163",
+      "node_a:3:285740e1"
+    ],
+    "note": "All points are either supported by external evidence or unknown due to lack of mention in the local context and external evidence."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "valid": "PASS",
+    "agree_points": [
+      "node_a:0:cf1078a4",
+      "node_a:1:b24690d7",
+      "node_a:2:fb2bf361",
+      "node_a:4:c719db02",
+      "node_c:4:f813ab80"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:3:285740e1",
+      "node_b:2:736f7311",
+      "node_b:0:4dbd49a8",
+      "node_b:3:eced3163",
+      "node_c:0:7f6104cc"
+    ],
+    "note": "The target draft is mostly supported by local and external evidence, with some points remaining unknown due to lack of specific mention in the document."
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "valid": "PASS",
+    "agree_points": [
+      "node_b:0:4dbd49a8",
+      "node_b:1:f626dfed",
+      "node_b:2:736f7311",
+      "node_b:3:eced3163",
+      "node_b:4:5f773f88"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "node_a:2:fb2bf361",
+      "node_a:4:c719db02",
+      "node_a:0:cf1078a4",
+      "node_a:3:285740e1",
+      "node_c:0:7f6104cc"
+    ],
+    "note": "The target draft is supported by external evidence, with some points remaining unknown due to lack of specific mention in the document."
+  }
+]

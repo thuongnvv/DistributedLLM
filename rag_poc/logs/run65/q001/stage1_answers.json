@@ -1,0 +1,122 @@
+[
+  {
+    "node_id": "doc1_covid19",
+    "points": [
+      {
+        "point_id": "doc1_covid19:0:c10f2c08",
+        "text": "Common symptoms of COVID-19 include coughing, fever, and loss of smell and taste.",
+        "citations": [
+          "doc1_covid19_doc.txt:chunk_00011"
+        ]
+      },
+      {
+        "point_id": "doc1_covid19:1:dac16583",
+        "text": "Less common symptoms are headaches, nasal congestion, runny nose, muscle pain, sore throat, diarrhea, and eye irritation.",
+        "citations": [
+          "doc1_covid19_doc.txt:chunk_00011"
+        ]
+      },
+      {
+        "point_id": "doc1_covid19:2:6ee39cef",
+        "text": "In moderate to severe cases, breathing difficulties may occur.",
+        "citations": [
+          "doc1_covid19_doc.txt:chunk_00011"
+        ]
+      },
+      {
+        "point_id": "doc1_covid19:3:439efabe",
+        "text": "Symptoms can begin one to 14 days after exposure to the virus.",
+        "citations": [
+          "doc1_covid19_doc.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "doc1_covid19:4:3d205f00",
+        "text": "Three symptom clusters are identified: respiratory, musculoskeletal, and digestive symptoms.",
+        "citations": [
+          "doc1_covid19_doc.txt:chunk_00012"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "doc2_covid19",
+    "points": [
+      {
+        "point_id": "doc2_covid19:0:ebebb3ea",
+        "text": "COVID-19 symptoms can include congestion, runny nose, or sore throat.",
+        "citations": [
+          "doc2_covid19_doc.txt:chunk_00002"
+        ]
+      },
+      {
+        "point_id": "doc2_covid19:1:353c1cc7",
+        "text": "Common symptoms are dry cough, shortness of breath, and loss of taste or smell.",
+        "citations": [
+          "doc2_covid19_doc.txt:chunk_00002"
+        ]
+      },
+      {
+        "point_id": "doc2_covid19:2:b62cb9bc",
+        "text": "Extreme tiredness, known as fatigue, is a symptom of COVID-19.",
+        "citations": [
+          "doc2_covid19_doc.txt:chunk_00002"
+        ]
+      },
+      {
+        "point_id": "doc2_covid19:3:49dc5868",
+        "text": "Digestive symptoms such as upset stomach, vomiting, or diarrhea may occur.",
+        "citations": [
+          "doc2_covid19_doc.txt:chunk_00002"
+        ]
+      },
+      {
+        "point_id": "doc2_covid19:4:6e73a8ac",
+        "text": "Fever or chills, headaches, and body or muscle aches are symptoms of COVID-19.",
+        "citations": [
+          "doc2_covid19_doc.txt:chunk_00002"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "doc3_covid19",
+    "points": [
+      {
+        "point_id": "doc3_covid19:0:ca62de7d",
+        "text": "Common symptoms include fever, cough, and tiredness.",
+        "citations": [
+          "doc3_covid19_doc.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "doc3_covid19:1:dd82d7a1",
+        "text": "Other symptoms can include shortness of breath, chest pain, muscle aches, headache, and loss of taste or smell.",
+        "citations": [
+          "doc3_covid19_doc.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "doc3_covid19:2:4c9db9ec",
+        "text": "Symptoms may appear 2 to 14 days after exposure and range from mild to severe.",
+        "citations": [
+          "doc3_covid19_doc.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "doc3_covid19:3:02c68eb7",
+        "text": "Infants may have difficulty feeding as a symptom.",
+        "citations": [
+          "doc3_covid19_doc.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "doc3_covid19:4:6ec39909",
+        "text": "Symptoms requiring urgent attention include difficulty breathing, blue lips, chest pain, confusion, and inability to drink.",
+        "citations": [
+          "doc3_covid19_doc.txt:chunk_00002"
+        ]
+      }
+    ]
+  }
+]

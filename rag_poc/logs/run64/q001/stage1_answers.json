@@ -1,0 +1,122 @@
+[
+  {
+    "node_id": "node_a",
+    "points": [
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "text": "COVID-19 is a contagious disease caused by the coronavirus SARS-CoV-2.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_a:1:b24690d7",
+        "text": "The disease spread worldwide starting in January 2020, leading to a pandemic.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_a:2:fb2bf361",
+        "text": "WHO declared COVID-19 a global health emergency in March 2020 and ended it in May 2023.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_a:3:285740e1",
+        "text": "COVID-19 is shorthand for 'coronavirus disease 2019', named by WHO on 11 February 2020.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00009"
+        ]
+      },
+      {
+        "point_id": "node_a:4:c719db02",
+        "text": "COVID-19 can be diagnosed with RT-PCR or other nucleic acid tests and confirmed with chest CT scans.",
+        "citations": [
+          "doc1_covid19.txt:chunk_00079"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "points": [
+      {
+        "point_id": "node_b:0:4dbd49a8",
+        "text": "COVID-19 is an illness caused by the virus SARS-CoV-2, which began spreading in late 2019 and became a pandemic in 2020.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_b:1:f626dfed",
+        "text": "The virus spreads mainly through the air via tiny droplets from coughs, sneezes, or talking, especially in close contact.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00007"
+        ]
+      },
+      {
+        "point_id": "node_b:2:736f7311",
+        "text": "COVID-19 can cause mild illness or no symptoms, but can lead to hospitalization or death in older adults and those with certain conditions.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_b:3:eced3163",
+        "text": "It's possible to get COVID-19 more than once due to fading immunity or virus mutations.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00009"
+        ]
+      },
+      {
+        "point_id": "node_b:4:5f773f88",
+        "text": "Preventive measures include vaccination, good airflow, physical distancing, mask-wearing, and hygiene.",
+        "citations": [
+          "doc2_covid19.txt:chunk_00001"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "points": [
+      {
+        "point_id": "node_c:0:7f6104cc",
+        "text": "COVID-19 is an infectious respiratory illness caused by the coronavirus SARS-CoV-2.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_c:1:8acfd5b8",
+        "text": "Symptoms of COVID-19 can appear 2 to 14 days after exposure and range from mild to severe.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00000"
+        ]
+      },
+      {
+        "point_id": "node_c:2:fc1c692c",
+        "text": "Urgent symptoms include difficulty breathing, blue lips, chest pain, confusion, and severe stomach pain.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00002"
+        ]
+      },
+      {
+        "point_id": "node_c:3:6870e258",
+        "text": "COVID-19 vaccines undergo rigorous testing to meet safety and effectiveness standards.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00006"
+        ]
+      },
+      {
+        "point_id": "node_c:4:f813ab80",
+        "text": "Precautions to prevent COVID-19 include vaccination, physical distancing, mask wearing, and handwashing.",
+        "citations": [
+          "doc3_covid19.txt:chunk_00012"
+        ]
+      }
+    ]
+  }
+]

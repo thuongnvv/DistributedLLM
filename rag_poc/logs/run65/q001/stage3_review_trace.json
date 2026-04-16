@@ -1,0 +1,338 @@
+[
+  {
+    "grader_id": "doc1_covid19",
+    "target_id": "doc2_covid19",
+    "point_reviews": [
+      {
+        "point_id": "doc2_covid19:0:ebebb3ea",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Congestion, runny nose, and sore throat are mentioned as symptoms in the local context."
+      },
+      {
+        "point_id": "doc2_covid19:1:353c1cc7",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Dry cough, shortness of breath, and loss of taste or smell are supported by the local context."
+      },
+      {
+        "point_id": "doc2_covid19:2:b62cb9bc",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Fatigue is mentioned as a symptom in the local context."
+      },
+      {
+        "point_id": "doc2_covid19:3:49dc5868",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Digestive symptoms such as diarrhea are supported by the local context."
+      },
+      {
+        "point_id": "doc2_covid19:4:6e73a8ac",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Fever, headaches, and muscle aches are mentioned as symptoms in the local context."
+      },
+      {
+        "point_id": "doc1_covid19:0:c10f2c08",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Coughing, fever, and loss of smell and taste are common symptoms mentioned in the local context."
+      },
+      {
+        "point_id": "doc3_covid19:0:ca62de7d",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Fever, cough, and tiredness are common symptoms supported by the local context."
+      },
+      {
+        "point_id": "doc1_covid19:1:dac16583",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Headaches, nasal congestion, runny nose, muscle pain, sore throat, diarrhea, and eye irritation are less common symptoms mentioned in the local context."
+      },
+      {
+        "point_id": "doc3_covid19:1:dd82d7a1",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Shortness of breath, chest pain, muscle aches, headache, and loss of taste or smell are supported by the local context."
+      },
+      {
+        "point_id": "doc3_covid19:4:6ec39909",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Difficulty breathing, blue lips, chest pain, confusion, and inability to drink are symptoms requiring urgent attention mentioned in the local context."
+      }
+    ]
+  },
+  {
+    "grader_id": "doc1_covid19",
+    "target_id": "doc3_covid19",
+    "point_reviews": [
+      {
+        "point_id": "doc3_covid19:0:ca62de7d",
+        "basis": "UNKNOWN",
+        "reason": "Missing target in batch response"
+      },
+      {
+        "point_id": "doc3_covid19:1:dd82d7a1",
+        "basis": "UNKNOWN",
+        "reason": "Missing target in batch response"
+      },
+      {
+        "point_id": "doc3_covid19:2:4c9db9ec",
+        "basis": "UNKNOWN",
+        "reason": "Missing target in batch response"
+      },
+      {
+        "point_id": "doc3_covid19:3:02c68eb7",
+        "basis": "UNKNOWN",
+        "reason": "Missing target in batch response"
+      },
+      {
+        "point_id": "doc3_covid19:4:6ec39909",
+        "basis": "UNKNOWN",
+        "reason": "Missing target in batch response"
+      },
+      {
+        "point_id": "doc2_covid19:2:b62cb9bc",
+        "basis": "UNKNOWN",
+        "reason": "Missing target in batch response"
+      },
+      {
+        "point_id": "doc2_covid19:0:ebebb3ea",
+        "basis": "UNKNOWN",
+        "reason": "Missing target in batch response"
+      },
+      {
+        "point_id": "doc1_covid19:1:dac16583",
+        "basis": "UNKNOWN",
+        "reason": "Missing target in batch response"
+      },
+      {
+        "point_id": "doc2_covid19:4:6e73a8ac",
+        "basis": "UNKNOWN",
+        "reason": "Missing target in batch response"
+      },
+      {
+        "point_id": "doc1_covid19:0:c10f2c08",
+        "basis": "UNKNOWN",
+        "reason": "Missing target in batch response"
+      }
+    ]
+  },
+  {
+    "grader_id": "doc2_covid19",
+    "target_id": "doc1_covid19",
+    "point_reviews": [
+      {
+        "point_id": "doc1_covid19:0:c10f2c08",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from doc1_covid19."
+      },
+      {
+        "point_id": "doc1_covid19:1:dac16583",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from doc1_covid19."
+      },
+      {
+        "point_id": "doc1_covid19:2:6ee39cef",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from doc1_covid19."
+      },
+      {
+        "point_id": "doc1_covid19:3:439efabe",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from doc1_covid19."
+      },
+      {
+        "point_id": "doc1_covid19:4:3d205f00",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from doc1_covid19."
+      },
+      {
+        "point_id": "doc2_covid19:4:6e73a8ac",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The point is supported by local context in doc2_covid19."
+      },
+      {
+        "point_id": "doc3_covid19:0:ca62de7d",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from doc3_covid19."
+      },
+      {
+        "point_id": "doc2_covid19:2:b62cb9bc",
+        "basis": "UNKNOWN",
+        "reason": "The point is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "doc2_covid19:0:ebebb3ea",
+        "basis": "UNKNOWN",
+        "reason": "The point is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "doc3_covid19:1:dd82d7a1",
+        "basis": "UNKNOWN",
+        "reason": "The point is not mentioned in the local context or external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "doc2_covid19",
+    "target_id": "doc3_covid19",
+    "point_reviews": [
+      {
+        "point_id": "doc3_covid19:0:ca62de7d",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from doc3_covid19."
+      },
+      {
+        "point_id": "doc3_covid19:1:dd82d7a1",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from doc3_covid19."
+      },
+      {
+        "point_id": "doc3_covid19:2:4c9db9ec",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from doc3_covid19."
+      },
+      {
+        "point_id": "doc3_covid19:3:02c68eb7",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from doc3_covid19."
+      },
+      {
+        "point_id": "doc3_covid19:4:6ec39909",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from doc3_covid19."
+      },
+      {
+        "point_id": "doc2_covid19:2:b62cb9bc",
+        "basis": "UNKNOWN",
+        "reason": "The point is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "doc2_covid19:0:ebebb3ea",
+        "basis": "UNKNOWN",
+        "reason": "The point is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "doc1_covid19:1:dac16583",
+        "basis": "UNKNOWN",
+        "reason": "The point is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "doc2_covid19:4:6e73a8ac",
+        "basis": "UNKNOWN",
+        "reason": "The point is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "doc1_covid19:0:c10f2c08",
+        "basis": "UNKNOWN",
+        "reason": "The point is not mentioned in the local context or external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "doc3_covid19",
+    "target_id": "doc1_covid19",
+    "point_reviews": [
+      {
+        "point_id": "doc1_covid19:0:c10f2c08",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions fever, cough, and loss of taste or smell as common symptoms."
+      },
+      {
+        "point_id": "doc1_covid19:1:dac16583",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document lists headaches, nasal congestion, runny nose, muscle pain, sore throat, diarrhea, and eye irritation as less common symptoms."
+      },
+      {
+        "point_id": "doc1_covid19:2:6ee39cef",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Breathing difficulties are mentioned as a symptom in moderate to severe cases."
+      },
+      {
+        "point_id": "doc1_covid19:3:439efabe",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states symptoms can appear 2 to 14 days after exposure."
+      },
+      {
+        "point_id": "doc1_covid19:4:3d205f00",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence supports the identification of symptom clusters."
+      },
+      {
+        "point_id": "doc2_covid19:4:6e73a8ac",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Fever, headaches, and muscle aches are supported by external evidence."
+      },
+      {
+        "point_id": "doc3_covid19:0:ca62de7d",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document lists fever, cough, and tiredness as common symptoms."
+      },
+      {
+        "point_id": "doc2_covid19:2:b62cb9bc",
+        "basis": "UNKNOWN",
+        "reason": "Extreme tiredness is not explicitly mentioned in the local context."
+      },
+      {
+        "point_id": "doc2_covid19:0:ebebb3ea",
+        "basis": "UNKNOWN",
+        "reason": "Congestion, runny nose, or sore throat are not explicitly mentioned in the local context."
+      },
+      {
+        "point_id": "doc3_covid19:1:dd82d7a1",
+        "basis": "UNKNOWN",
+        "reason": "The specific combination of symptoms is not explicitly mentioned in the local context."
+      }
+    ]
+  },
+  {
+    "grader_id": "doc3_covid19",
+    "target_id": "doc2_covid19",
+    "point_reviews": [
+      {
+        "point_id": "doc2_covid19:0:ebebb3ea",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Congestion, runny nose, or sore throat are supported by external evidence."
+      },
+      {
+        "point_id": "doc2_covid19:1:353c1cc7",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Dry cough, shortness of breath, and loss of taste or smell are supported by external evidence."
+      },
+      {
+        "point_id": "doc2_covid19:2:b62cb9bc",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Extreme tiredness is supported by external evidence."
+      },
+      {
+        "point_id": "doc2_covid19:3:49dc5868",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Digestive symptoms are supported by external evidence."
+      },
+      {
+        "point_id": "doc2_covid19:4:6e73a8ac",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Fever, headaches, and muscle aches are supported by external evidence."
+      },
+      {
+        "point_id": "doc1_covid19:0:c10f2c08",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Coughing, fever, and loss of smell and taste are supported by external evidence."
+      },
+      {
+        "point_id": "doc3_covid19:0:ca62de7d",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document lists fever, cough, and tiredness as common symptoms."
+      },
+      {
+        "point_id": "doc1_covid19:1:dac16583",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Headaches, nasal congestion, runny nose, muscle pain, sore throat, diarrhea, and eye irritation are supported by external evidence."
+      },
+      {
+        "point_id": "doc3_covid19:1:dd82d7a1",
+        "basis": "UNKNOWN",
+        "reason": "The specific combination of symptoms is not explicitly mentioned in the local context."
+      },
+      {
+        "point_id": "doc3_covid19:4:6ec39909",
+        "basis": "UNKNOWN",
+        "reason": "Symptoms requiring urgent attention are not explicitly mentioned in the local context."
+      }
+    ]
+  }
+]

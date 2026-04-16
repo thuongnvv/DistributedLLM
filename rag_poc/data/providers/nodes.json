@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "node_id": "doc1_covid19",
+      "doc_path": "data/providers/doc1_covid19/doc.txt",
+      "chroma_path": "data/providers/doc1_covid19/chroma_store",
+      "domain": "healthcare",
+      "style": "evidence-based, formal, clinical",
+      "scope": "COVID-19 symptoms, transmission methods, diagnostic tests, vaccines, preventive measures, treatment options, pandemic history, zoonotic origins, global health emergency, long COVID",
+      "type": "provider",
+      "status": "active"
+    },
+    {
+      "node_id": "doc2_covid19",
+      "doc_path": "data/providers/doc2_covid19/doc.txt",
+      "chroma_path": "data/providers/doc2_covid19/chroma_store",
+      "domain": "healthcare",
+      "style": "informative, evidence-based, formal",
+      "scope": "COVID-19, SARS-CoV-2, symptoms, prevention, vaccination, transmission, risk factors, treatment, complications, emergency care",
+      "type": "provider",
+      "status": "active"
+    },
+    {
+      "node_id": "doc3_covid19",
+      "doc_path": "data/providers/doc3_covid19/doc.txt",
+      "chroma_path": "data/providers/doc3_covid19/chroma_store",
+      "domain": "healthcare",
+      "style": "informative, evidence-based, formal",
+      "scope": "COVID-19 symptoms, virus transmission, vaccine safety, vaccine effectiveness, pediatric considerations",
+      "type": "provider",
+      "status": "active"
+    }
+  ]
+}

@@ -14,22 +14,20 @@ from pathlib import Path
 from typing import Any, Callable, Sequence
 from dataclasses import dataclass, field
 
-# Add repo root for mvp imports
-# Add repo root + mvp explicitly before any imports
+# Add repo root for rag imports
 _repo_root = str(Path(__file__).parent.parent)
 sys.path.insert(0, _repo_root)
-sys.path.insert(1, str(Path(_repo_root) / "mvp"))
 
-from mvp.config import (
+from lib.config import (
     FAIL_PENALTY,
     MAX_POINTS_PER_ANSWER,
     MAX_USED_POINTS,
     POINT_SCORE_WEIGHT,
     WIN_BONUS,
 )
-from mvp.llm_client import LLMClient
-from mvp.prompts import Persona, _base_constitution
-from mvp.protocol import (
+from lib.llm_client import LLMClient
+from lib.prompts import Persona, _base_constitution
+from lib.protocol import (
     FinalizationOutput,
     GradeVote,
     Point as MVPPoint,
@@ -41,8 +39,8 @@ from mvp.protocol import (
     validate_synthesis_draft,
     validate_worker_answer,
 )
-from mvp.scoring import finalize_output
-from mvp.utils import ensure_dir, run_timestamp, save_json, dedupe_keep_order, extract_first_json_object, generate_point_id
+from lib.scoring import finalize_output
+from lib.utils import ensure_dir, run_timestamp, save_json, dedupe_keep_order, extract_first_json_object, generate_point_id
 
 from rag.node import RAGNode
 from rag.embedder import embed_query, embed_texts
@@ -263,8 +261,6 @@ class RAGOrchestrator:
     ):
         if k <= 0:
             raise ValueError("k must be > 0")
-        if k > len(rag_personas):
-            raise ValueError(f"k={k} exceeds available rag_personas={len(rag_personas)}")
 
         self.rag_personas = rag_personas
         self.llm_client = llm_client
@@ -290,13 +286,14 @@ class RAGOrchestrator:
         progress: Callable[[str], None] | None = None,
         session_dir: Path | None = None,
         query_label: str | None = None,
+        selected_node_ids: list[str] | None = None,
     ) -> tuple[FinalizationOutput, Path, dict[str, Any]]:
         """Run the full 4-stage RAG pipeline. Returns (final_output, query_dir, extra_data)."""
         if not query.strip():
             raise ValueError("Query must be non-empty")
 
         self.llm_client.reset_raw_events()
-        selected = self._select_workers()
+        selected = self._select_workers(selected_node_ids=selected_node_ids)
         self._emit(progress, f"selected_nodes={','.join(rp.node_id for rp in selected)}")
 
         # Build per-query log dir inside session
@@ -1205,8 +1202,25 @@ class RAGOrchestrator:
             payload.append({"node_id": answer.node_id, "points": points_payload})
         return payload
 
-    def _select_workers(self) -> list[RAGPersona]:
-        return self.rag_personas[: self.k]
+    def _select_workers(self, selected_node_ids: list[str] | None = None) -> list[RAGPersona]:
+        if selected_node_ids is not None and len(selected_node_ids) > 0:
+            # User-selected nodes: validate and filter
+            selected = [self._persona_map[nid] for nid in selected_node_ids if nid in self._persona_map]
+            if len(selected) < 2:
+                # Fallback to K-random if too few valid nodes
+                import random
+                rng = random.Random(self.seed)
+                selected = rng.sample(self.rag_personas, min(self.k, len(self.rag_personas)))
+            return selected
+        # Default: random K nodes (when node_ids is None or empty)
+        import random
+        rng = random.Random(self.seed)
+        return rng.sample(self.rag_personas, min(self.k, len(self.rag_personas)))
+
+    def reload_personas(self, new_personas: list[RAGPersona]) -> None:
+        """Hot-reload personas with new/updated nodes."""
+        self.rag_personas = new_personas
+        self._persona_map = {rp.node_id: rp for rp in new_personas}
 
     def _emit(self, progress: Callable[[str], None] | None, message: str) -> None:
         if progress:

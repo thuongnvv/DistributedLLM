@@ -1,0 +1,242 @@
+{
+  "doc1_covid19:0:c10f2c08": {
+    "point_id": "doc1_covid19:0:c10f2c08",
+    "origin_node_id": "doc1_covid19",
+    "text": "Common symptoms of COVID-19 include coughing, fever, and loss of smell and taste.",
+    "citations": [
+      "doc1_covid19_doc.txt:chunk_00011"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19_doc.txt",
+        "chunk_id": "chunk_00011",
+        "text": "The symptoms of COVID-19 are variable depending on the type of variant contracted, ranging from mild symptoms to a potentially fatal illness.[41][42] Common symptoms include coughing, fever, loss of smell and taste, with less common ones including headaches, nasal congestion and runny nose, muscle pain, sore throat, diarrhea, eye irritation,[43] and toes swelling or turning purple,[44] and in moderate to severe cases, breathing difficulties.[45] People with the COVID-19 infection may have different symptoms, and their symptoms may change over time.",
+        "score": 0.8712
+      }
+    ]
+  },
+  "doc1_covid19:1:dac16583": {
+    "point_id": "doc1_covid19:1:dac16583",
+    "origin_node_id": "doc1_covid19",
+    "text": "Less common symptoms are headaches, nasal congestion, runny nose, muscle pain, sore throat, diarrhea, and eye irritation.",
+    "citations": [
+      "doc1_covid19_doc.txt:chunk_00011"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19_doc.txt",
+        "chunk_id": "chunk_00011",
+        "text": "The symptoms of COVID-19 are variable depending on the type of variant contracted, ranging from mild symptoms to a potentially fatal illness.[41][42] Common symptoms include coughing, fever, loss of smell and taste, with less common ones including headaches, nasal congestion and runny nose, muscle pain, sore throat, diarrhea, eye irritation,[43] and toes swelling or turning purple,[44] and in moderate to severe cases, breathing difficulties.[45] People with the COVID-19 infection may have different symptoms, and their symptoms may change over time.",
+        "score": 0.8712
+      }
+    ]
+  },
+  "doc1_covid19:2:6ee39cef": {
+    "point_id": "doc1_covid19:2:6ee39cef",
+    "origin_node_id": "doc1_covid19",
+    "text": "In moderate to severe cases, breathing difficulties may occur.",
+    "citations": [
+      "doc1_covid19_doc.txt:chunk_00011"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19_doc.txt",
+        "chunk_id": "chunk_00011",
+        "text": "The symptoms of COVID-19 are variable depending on the type of variant contracted, ranging from mild symptoms to a potentially fatal illness.[41][42] Common symptoms include coughing, fever, loss of smell and taste, with less common ones including headaches, nasal congestion and runny nose, muscle pain, sore throat, diarrhea, eye irritation,[43] and toes swelling or turning purple,[44] and in moderate to severe cases, breathing difficulties.[45] People with the COVID-19 infection may have different symptoms, and their symptoms may change over time.",
+        "score": 0.8712
+      }
+    ]
+  },
+  "doc1_covid19:3:439efabe": {
+    "point_id": "doc1_covid19:3:439efabe",
+    "origin_node_id": "doc1_covid19",
+    "text": "Symptoms can begin one to 14 days after exposure to the virus.",
+    "citations": [
+      "doc1_covid19_doc.txt:chunk_00001"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19_doc.txt",
+        "chunk_id": "chunk_00001",
+        "text": "The symptoms of COVID‑19 can vary but often include fever,[8] fatigue, cough, breathing difficulties, loss of smell, and loss of taste.[9][10][11] Symptoms may begin one to 14 days after exposure to the virus",
+        "score": 0.8155
+      }
+    ]
+  },
+  "doc1_covid19:4:3d205f00": {
+    "point_id": "doc1_covid19:4:3d205f00",
+    "origin_node_id": "doc1_covid19",
+    "text": "Three symptom clusters are identified: respiratory, musculoskeletal, and digestive symptoms.",
+    "citations": [
+      "doc1_covid19_doc.txt:chunk_00012"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc1_covid19_doc.txt",
+        "chunk_id": "chunk_00012",
+        "text": "Three common clusters of symptoms have been identified: a respiratory symptom cluster with cough, sputum, shortness of breath, and fever; a musculoskeletal symptom cluster with muscle and joint pain, headache, and fatigue; and a cluster of digestive symptoms with abdominal pain, vomiting, and diarrhea.[45] In people without prior ear, nose, or throat disorders, loss of taste combined with loss of smell is associated with COVID-19 and is reported in as many as 88% of symptomatic cases.[46][47][48]",
+        "score": 0.7002
+      }
+    ]
+  },
+  "doc2_covid19:0:ebebb3ea": {
+    "point_id": "doc2_covid19:0:ebebb3ea",
+    "origin_node_id": "doc2_covid19",
+    "text": "COVID-19 symptoms can include congestion, runny nose, or sore throat.",
+    "citations": [
+      "doc2_covid19_doc.txt:chunk_00002"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19_doc.txt",
+        "chunk_id": "chunk_00002",
+        "text": "Create your personalized vaccination plan.\nSymptoms\n\nCOVID-19 symptoms often show up 2 to 14 days after contact with the virus. You may have common cold symptoms, such as congestion, runny nose or sore throat.\n\nOther symptoms include:\n\n    Dry cough.\n    Shortness of breath.\n    Loss of taste or smell.\n    Extreme tiredness, called fatigue.\n    Digestive symptoms such as upset stomach, vomiting or loose stools, also called diarrhea.\n    Pain, such as headaches and body or muscle aches.\n    Fever or chills.",
+        "score": 0.7717
+      }
+    ]
+  },
+  "doc2_covid19:1:353c1cc7": {
+    "point_id": "doc2_covid19:1:353c1cc7",
+    "origin_node_id": "doc2_covid19",
+    "text": "Common symptoms are dry cough, shortness of breath, and loss of taste or smell.",
+    "citations": [
+      "doc2_covid19_doc.txt:chunk_00002"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19_doc.txt",
+        "chunk_id": "chunk_00002",
+        "text": "Create your personalized vaccination plan.\nSymptoms\n\nCOVID-19 symptoms often show up 2 to 14 days after contact with the virus. You may have common cold symptoms, such as congestion, runny nose or sore throat.\n\nOther symptoms include:\n\n    Dry cough.\n    Shortness of breath.\n    Loss of taste or smell.\n    Extreme tiredness, called fatigue.\n    Digestive symptoms such as upset stomach, vomiting or loose stools, also called diarrhea.\n    Pain, such as headaches and body or muscle aches.\n    Fever or chills.",
+        "score": 0.7717
+      }
+    ]
+  },
+  "doc2_covid19:2:b62cb9bc": {
+    "point_id": "doc2_covid19:2:b62cb9bc",
+    "origin_node_id": "doc2_covid19",
+    "text": "Extreme tiredness, known as fatigue, is a symptom of COVID-19.",
+    "citations": [
+      "doc2_covid19_doc.txt:chunk_00002"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19_doc.txt",
+        "chunk_id": "chunk_00002",
+        "text": "Create your personalized vaccination plan.\nSymptoms\n\nCOVID-19 symptoms often show up 2 to 14 days after contact with the virus. You may have common cold symptoms, such as congestion, runny nose or sore throat.\n\nOther symptoms include:\n\n    Dry cough.\n    Shortness of breath.\n    Loss of taste or smell.\n    Extreme tiredness, called fatigue.\n    Digestive symptoms such as upset stomach, vomiting or loose stools, also called diarrhea.\n    Pain, such as headaches and body or muscle aches.\n    Fever or chills.",
+        "score": 0.7717
+      }
+    ]
+  },
+  "doc2_covid19:3:49dc5868": {
+    "point_id": "doc2_covid19:3:49dc5868",
+    "origin_node_id": "doc2_covid19",
+    "text": "Digestive symptoms such as upset stomach, vomiting, or diarrhea may occur.",
+    "citations": [
+      "doc2_covid19_doc.txt:chunk_00002"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19_doc.txt",
+        "chunk_id": "chunk_00002",
+        "text": "Create your personalized vaccination plan.\nSymptoms\n\nCOVID-19 symptoms often show up 2 to 14 days after contact with the virus. You may have common cold symptoms, such as congestion, runny nose or sore throat.\n\nOther symptoms include:\n\n    Dry cough.\n    Shortness of breath.\n    Loss of taste or smell.\n    Extreme tiredness, called fatigue.\n    Digestive symptoms such as upset stomach, vomiting or loose stools, also called diarrhea.\n    Pain, such as headaches and body or muscle aches.\n    Fever or chills.",
+        "score": 0.7717
+      }
+    ]
+  },
+  "doc2_covid19:4:6e73a8ac": {
+    "point_id": "doc2_covid19:4:6e73a8ac",
+    "origin_node_id": "doc2_covid19",
+    "text": "Fever or chills, headaches, and body or muscle aches are symptoms of COVID-19.",
+    "citations": [
+      "doc2_covid19_doc.txt:chunk_00002"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc2_covid19_doc.txt",
+        "chunk_id": "chunk_00002",
+        "text": "Create your personalized vaccination plan.\nSymptoms\n\nCOVID-19 symptoms often show up 2 to 14 days after contact with the virus. You may have common cold symptoms, such as congestion, runny nose or sore throat.\n\nOther symptoms include:\n\n    Dry cough.\n    Shortness of breath.\n    Loss of taste or smell.\n    Extreme tiredness, called fatigue.\n    Digestive symptoms such as upset stomach, vomiting or loose stools, also called diarrhea.\n    Pain, such as headaches and body or muscle aches.\n    Fever or chills.",
+        "score": 0.7717
+      }
+    ]
+  },
+  "doc3_covid19:0:ca62de7d": {
+    "point_id": "doc3_covid19:0:ca62de7d",
+    "origin_node_id": "doc3_covid19",
+    "text": "Common symptoms include fever, cough, and tiredness.",
+    "citations": [
+      "doc3_covid19_doc.txt:chunk_00001"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19_doc.txt",
+        "chunk_id": "chunk_00001",
+        "text": "The most common symptoms are fever, cough, and tiredness. Other symptoms can include shortness of breath, chest pain or pressure, muscle or body aches, headache, loss of taste or smell, confusion, sore throat, congestion or runny nose, diarrhea, nausea and vomiting, abdominal pain, and skin rashes. In addition to these symptoms, infants may have difficulty feeding.\n\nChildren of any age can become ill with COVID-19. While children and adults experience similar symptoms, children generally have less serious illness than adults.",
+        "score": 0.7404
+      }
+    ]
+  },
+  "doc3_covid19:1:dd82d7a1": {
+    "point_id": "doc3_covid19:1:dd82d7a1",
+    "origin_node_id": "doc3_covid19",
+    "text": "Other symptoms can include shortness of breath, chest pain, muscle aches, headache, and loss of taste or smell.",
+    "citations": [
+      "doc3_covid19_doc.txt:chunk_00001"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19_doc.txt",
+        "chunk_id": "chunk_00001",
+        "text": "The most common symptoms are fever, cough, and tiredness. Other symptoms can include shortness of breath, chest pain or pressure, muscle or body aches, headache, loss of taste or smell, confusion, sore throat, congestion or runny nose, diarrhea, nausea and vomiting, abdominal pain, and skin rashes. In addition to these symptoms, infants may have difficulty feeding.\n\nChildren of any age can become ill with COVID-19. While children and adults experience similar symptoms, children generally have less serious illness than adults.",
+        "score": 0.7404
+      }
+    ]
+  },
+  "doc3_covid19:2:4c9db9ec": {
+    "point_id": "doc3_covid19:2:4c9db9ec",
+    "origin_node_id": "doc3_covid19",
+    "text": "Symptoms may appear 2 to 14 days after exposure and range from mild to severe.",
+    "citations": [
+      "doc3_covid19_doc.txt:chunk_00000"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19_doc.txt",
+        "chunk_id": "chunk_00000",
+        "text": "What is COVID-19?\n\nCOVID-19 is an infectious respiratory illness caused by a coronavirus called SARS-CoV-2. ‘CO’ stands for corona, ‘VI’ for virus, and ‘D’ for disease.\nWhat are the symptoms of COVID-19?\n\nMany COVID-19 symptoms are similar to those of the flu, the common cold and other conditions, so a test is required to confirm if someone has COVID-19. Symptoms may appear 2 to 14 days after exposure to the virus and can range from very mild to severe illness. Some people who have been infected don’t have any symptoms.",
+        "score": 0.7448
+      }
+    ]
+  },
+  "doc3_covid19:3:02c68eb7": {
+    "point_id": "doc3_covid19:3:02c68eb7",
+    "origin_node_id": "doc3_covid19",
+    "text": "Infants may have difficulty feeding as a symptom.",
+    "citations": [
+      "doc3_covid19_doc.txt:chunk_00001"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19_doc.txt",
+        "chunk_id": "chunk_00001",
+        "text": "The most common symptoms are fever, cough, and tiredness. Other symptoms can include shortness of breath, chest pain or pressure, muscle or body aches, headache, loss of taste or smell, confusion, sore throat, congestion or runny nose, diarrhea, nausea and vomiting, abdominal pain, and skin rashes. In addition to these symptoms, infants may have difficulty feeding.\n\nChildren of any age can become ill with COVID-19. While children and adults experience similar symptoms, children generally have less serious illness than adults.",
+        "score": 0.7404
+      }
+    ]
+  },
+  "doc3_covid19:4:6ec39909": {
+    "point_id": "doc3_covid19:4:6ec39909",
+    "origin_node_id": "doc3_covid19",
+    "text": "Symptoms requiring urgent attention include difficulty breathing, blue lips, chest pain, confusion, and inability to drink.",
+    "citations": [
+      "doc3_covid19_doc.txt:chunk_00002"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "doc3_covid19_doc.txt",
+        "chunk_id": "chunk_00002",
+        "text": "Symptoms requiring urgent medical attention include difficulty breathing/fast or shallow breathing (also grunting, inability to breastfeed in infants), blue lips or face, chest pain or pressure, confusion, inability to awaken/not interacting, inability to drink or keep down any liquids and severe stomach pain.  \nHow does the COVID-19 virus spread?",
+        "score": 0.7502
+      }
+    ]
+  }
+}

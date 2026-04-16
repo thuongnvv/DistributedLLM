@@ -1,0 +1,338 @@
+[
+  {
+    "grader_id": "node_a",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:4dbd49a8",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_b."
+      },
+      {
+        "point_id": "node_b:1:f626dfed",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_b."
+      },
+      {
+        "point_id": "node_b:2:736f7311",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_b."
+      },
+      {
+        "point_id": "node_b:3:eced3163",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_b."
+      },
+      {
+        "point_id": "node_b:4:5f773f88",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_b."
+      },
+      {
+        "point_id": "node_a:2:fb2bf361",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      },
+      {
+        "point_id": "node_a:4:c719db02",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      },
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      },
+      {
+        "point_id": "node_a:3:285740e1",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      },
+      {
+        "point_id": "node_c:0:7f6104cc",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      }
+    ]
+  },
+  {
+    "grader_id": "node_a",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:7f6104cc",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_c:1:8acfd5b8",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_c:2:fc1c692c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_c:3:6870e258",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_c:4:f813ab80",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_b:2:736f7311",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      },
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      },
+      {
+        "point_id": "node_b:0:4dbd49a8",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      },
+      {
+        "point_id": "node_b:3:eced3163",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      },
+      {
+        "point_id": "node_a:3:285740e1",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_a."
+      },
+      {
+        "point_id": "node_a:1:b24690d7",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_a."
+      },
+      {
+        "point_id": "node_a:2:fb2bf361",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_a."
+      },
+      {
+        "point_id": "node_a:4:c719db02",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_a."
+      },
+      {
+        "point_id": "node_c:4:f813ab80",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_a:3:285740e1",
+        "basis": "UNKNOWN",
+        "reason": "The local context and external evidence do not mention this point."
+      },
+      {
+        "point_id": "node_b:2:736f7311",
+        "basis": "UNKNOWN",
+        "reason": "The local context and external evidence do not mention this point."
+      },
+      {
+        "point_id": "node_b:0:4dbd49a8",
+        "basis": "UNKNOWN",
+        "reason": "The local context and external evidence do not mention this point."
+      },
+      {
+        "point_id": "node_b:3:eced3163",
+        "basis": "UNKNOWN",
+        "reason": "The local context and external evidence do not mention this point."
+      },
+      {
+        "point_id": "node_c:0:7f6104cc",
+        "basis": "UNKNOWN",
+        "reason": "No trace returned"
+      }
+    ]
+  },
+  {
+    "grader_id": "node_b",
+    "target_id": "node_c",
+    "point_reviews": [
+      {
+        "point_id": "node_c:0:7f6104cc",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_c:1:8acfd5b8",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_c:2:fc1c692c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_c:3:6870e258",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_c:4:f813ab80",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from node_c."
+      },
+      {
+        "point_id": "node_b:2:736f7311",
+        "basis": "UNKNOWN",
+        "reason": "The local context and external evidence do not mention this point."
+      },
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "basis": "UNKNOWN",
+        "reason": "The local context and external evidence do not mention this point."
+      },
+      {
+        "point_id": "node_b:0:4dbd49a8",
+        "basis": "UNKNOWN",
+        "reason": "The local context and external evidence do not mention this point."
+      },
+      {
+        "point_id": "node_b:3:eced3163",
+        "basis": "UNKNOWN",
+        "reason": "The local context and external evidence do not mention this point."
+      },
+      {
+        "point_id": "node_a:3:285740e1",
+        "basis": "UNKNOWN",
+        "reason": "The local context and external evidence do not mention this point."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_a",
+    "point_reviews": [
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document states COVID-19 is caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_a:1:b24690d7",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the disease spread worldwide starting in January 2020."
+      },
+      {
+        "point_id": "node_a:2:fb2bf361",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms WHO declared a global health emergency in March 2020 and ended it in May 2023."
+      },
+      {
+        "point_id": "node_a:4:c719db02",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms COVID-19 can be diagnosed with RT-PCR and chest CT scans."
+      },
+      {
+        "point_id": "node_c:4:f813ab80",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The document mentions preventive measures including vaccination, physical distancing, mask-wearing, and handwashing."
+      },
+      {
+        "point_id": "node_a:3:285740e1",
+        "basis": "UNKNOWN",
+        "reason": "The document does not mention the naming of COVID-19 by WHO on 11 February 2020."
+      },
+      {
+        "point_id": "node_b:2:736f7311",
+        "basis": "UNKNOWN",
+        "reason": "The document does not mention the severity of COVID-19 in older adults and those with certain conditions."
+      },
+      {
+        "point_id": "node_b:0:4dbd49a8",
+        "basis": "UNKNOWN",
+        "reason": "The document does not mention the specific timeline of the pandemic starting in late 2019."
+      },
+      {
+        "point_id": "node_b:3:eced3163",
+        "basis": "UNKNOWN",
+        "reason": "The document does not mention the possibility of getting COVID-19 more than once."
+      },
+      {
+        "point_id": "node_c:0:7f6104cc",
+        "basis": "UNKNOWN",
+        "reason": "The document does not provide additional context on COVID-19 as an infectious respiratory illness."
+      }
+    ]
+  },
+  {
+    "grader_id": "node_c",
+    "target_id": "node_b",
+    "point_reviews": [
+      {
+        "point_id": "node_b:0:4dbd49a8",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms COVID-19 is caused by SARS-CoV-2 and became a pandemic in 2020."
+      },
+      {
+        "point_id": "node_b:1:f626dfed",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the virus spreads through the air via droplets."
+      },
+      {
+        "point_id": "node_b:2:736f7311",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms COVID-19 can lead to severe outcomes in older adults and those with certain conditions."
+      },
+      {
+        "point_id": "node_b:3:eced3163",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the possibility of reinfection due to fading immunity or mutations."
+      },
+      {
+        "point_id": "node_b:4:5f773f88",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms preventive measures include vaccination, good airflow, and hygiene."
+      },
+      {
+        "point_id": "node_a:2:fb2bf361",
+        "basis": "UNKNOWN",
+        "reason": "The document does not mention the WHO's declaration of a global health emergency."
+      },
+      {
+        "point_id": "node_a:4:c719db02",
+        "basis": "UNKNOWN",
+        "reason": "The document does not mention the diagnostic methods for COVID-19."
+      },
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "basis": "UNKNOWN",
+        "reason": "The document does not mention COVID-19 as a contagious disease caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_a:3:285740e1",
+        "basis": "UNKNOWN",
+        "reason": "The document does not mention the naming of COVID-19 by WHO."
+      },
+      {
+        "point_id": "node_c:0:7f6104cc",
+        "basis": "UNKNOWN",
+        "reason": "The document does not provide additional context on COVID-19 as an infectious respiratory illness."
+      }
+    ]
+  }
+]

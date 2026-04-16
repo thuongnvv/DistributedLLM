@@ -3,11 +3,13 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).parent.resolve()
 
-# Auto-load .env from mvp/ sibling directory
-_mvp_env = Path(__file__).parent.parent / "mvp" / ".env"
-if _mvp_env.exists():
+# Auto-load .env from rag_poc/ or parent directory
+_env = BASE_DIR / ".env"
+if not _env.exists():
+    _env = BASE_DIR.parent / ".env"
+if _env.exists():
     from dotenv import load_dotenv
-    load_dotenv(_mvp_env)
+    load_dotenv(_env)
 
 # RAG settings
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "600"))
@@ -53,7 +55,7 @@ MAX_POINTS_PER_ANSWER = int(os.getenv("MAX_POINTS_PER_ANSWER", "5"))
 MAX_USED_POINTS = int(os.getenv("MAX_USED_POINTS", "10"))
 
 # LLM
-LLM_MODE = os.getenv("LLM_MODE", "mega")  # mock, openai, mega
+LLM_MODE = os.getenv("LLM_MODE", "openai")  # mock, openai, mega
 OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 OPENAI_TIMEOUT = float(os.getenv("OPENAI_TIMEOUT", "120.0"))

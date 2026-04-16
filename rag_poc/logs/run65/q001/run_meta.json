@@ -1,0 +1,35 @@
+{
+  "query": "what are symptoms of covid 19",
+  "mode": "openai",
+  "k": 3,
+  "tau_fail": 2,
+  "max_evidence_chunks_per_point": 3,
+  "max_external_points_synth": 10,
+  "max_external_points_grade": 8,
+  "selected_nodes": [
+    {
+      "node_id": "doc1_covid19",
+      "domain": "healthcare",
+      "style": "evidence-based, formal, clinical",
+      "scope": "COVID-19 symptoms, transmission methods, diagnostic tests, vaccines, preventive measures, treatment options, pandemic history, zoonotic origins, global health emergency, long COVID",
+      "doc_path": "/home/thuongnv/Documents/DistributedLLM/rag_poc/data/providers/doc1_covid19/doc.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "doc2_covid19",
+      "domain": "healthcare",
+      "style": "informative, evidence-based, formal",
+      "scope": "COVID-19, SARS-CoV-2, symptoms, prevention, vaccination, transmission, risk factors, treatment, complications, emergency care",
+      "doc_path": "/home/thuongnv/Documents/DistributedLLM/rag_poc/data/providers/doc2_covid19/doc.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "doc3_covid19",
+      "domain": "healthcare",
+      "style": "informative, evidence-based, formal",
+      "scope": "COVID-19 symptoms, virus transmission, vaccine safety, vaccine effectiveness, pediatric considerations",
+      "doc_path": "/home/thuongnv/Documents/DistributedLLM/rag_poc/data/providers/doc3_covid19/doc.txt",
+      "rep_snapshot": 10.0
+    }
+  ]
+}

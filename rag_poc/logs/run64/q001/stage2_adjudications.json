@@ -1,0 +1,242 @@
+[
+  {
+    "node_id": "node_a",
+    "point_support": [
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "COVID-19 is described as a contagious disease caused by SARS-CoV-2 [doc1_covid19.txt:chunk_00000]."
+      },
+      {
+        "point_id": "node_a:1:b24690d7",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states that COVID-19 spread worldwide starting in January 2020 [doc1_covid19.txt:chunk_00000]."
+      },
+      {
+        "point_id": "node_a:2:fb2bf361",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "WHO declared COVID-19 a global health emergency in March 2020 and ended it in May 2023 [doc1_covid19.txt:chunk_00000]."
+      },
+      {
+        "point_id": "node_a:3:285740e1",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "COVID-19 is shorthand for 'coronavirus disease 2019', named by WHO on 11 February 2020 [doc1_covid19.txt:chunk_00009]."
+      },
+      {
+        "point_id": "node_a:4:c719db02",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "COVID-19 can be diagnosed with RT-PCR or other nucleic acid tests and confirmed with chest CT scans [doc1_covid19.txt:chunk_00079]."
+      },
+      {
+        "point_id": "node_c:0:7f6104cc",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "COVID-19 is an infectious respiratory illness caused by SARS-CoV-2 [node_c:0:7f6104cc]."
+      },
+      {
+        "point_id": "node_b:0:4dbd49a8",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "COVID-19 is caused by SARS-CoV-2, spreading in late 2019 and becoming a pandemic in 2020 [node_b:0:4dbd49a8]."
+      },
+      {
+        "point_id": "node_b:2:736f7311",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "COVID-19 can cause mild illness or no symptoms, but can lead to hospitalization or death in older adults and those with certain conditions [node_b:2:736f7311]."
+      },
+      {
+        "point_id": "node_b:3:eced3163",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "It's possible to get COVID-19 more than once due to fading immunity or virus mutations [node_b:3:eced3163]."
+      },
+      {
+        "point_id": "node_c:4:f813ab80",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "Precautions to prevent COVID-19 include vaccination, physical distancing, mask wearing, and handwashing [node_c:4:f813ab80]."
+      },
+      {
+        "point_id": "node_c:1:8acfd5b8",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:3:6870e258",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:1:f626dfed",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:4:5f773f88",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:2:fc1c692c",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_b",
+    "point_support": [
+      {
+        "point_id": "node_b:0:4dbd49a8",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states that COVID-19 is caused by SARS-CoV-2 and became a pandemic in 2020."
+      },
+      {
+        "point_id": "node_b:1:f626dfed",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document explains that the virus spreads through the air via droplets from coughs, sneezes, or talking."
+      },
+      {
+        "point_id": "node_b:2:736f7311",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that COVID-19 can cause mild illness or no symptoms, but can be severe in older adults and those with certain conditions."
+      },
+      {
+        "point_id": "node_b:3:eced3163",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document notes that it's possible to get COVID-19 more than once due to fading immunity or virus mutations."
+      },
+      {
+        "point_id": "node_b:4:5f773f88",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document lists preventive measures such as vaccination, good airflow, physical distancing, mask-wearing, and hygiene."
+      },
+      {
+        "point_id": "node_c:0:7f6104cc",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms COVID-19 is an infectious respiratory illness caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_a:3:285740e1",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence provides the naming details of COVID-19 by WHO."
+      },
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms COVID-19 is a contagious disease caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_a:4:c719db02",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence describes the diagnostic methods for COVID-19."
+      },
+      {
+        "point_id": "node_a:2:fb2bf361",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence provides details on WHO's declaration of COVID-19 as a global health emergency."
+      },
+      {
+        "point_id": "node_c:4:f813ab80",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:1:8acfd5b8",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:3:6870e258",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:1:b24690d7",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_c:2:fc1c692c",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "node_c",
+    "point_support": [
+      {
+        "point_id": "node_c:0:7f6104cc",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states COVID-19 is an infectious respiratory illness caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_c:1:8acfd5b8",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document mentions symptoms appear 2 to 14 days after exposure and range from mild to severe."
+      },
+      {
+        "point_id": "node_c:2:fc1c692c",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Urgent symptoms like difficulty breathing and chest pain are listed in the document."
+      },
+      {
+        "point_id": "node_c:3:6870e258",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document confirms COVID-19 vaccines undergo rigorous testing for safety and effectiveness."
+      },
+      {
+        "point_id": "node_c:4:f813ab80",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Preventive measures such as vaccination, physical distancing, mask-wearing, and handwashing are mentioned in the document."
+      },
+      {
+        "point_id": "node_a:3:285740e1",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms COVID-19 is shorthand for 'coronavirus disease 2019', named by WHO."
+      },
+      {
+        "point_id": "node_a:0:cf1078a4",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that COVID-19 is a contagious disease caused by SARS-CoV-2."
+      },
+      {
+        "point_id": "node_b:0:4dbd49a8",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms COVID-19 is caused by SARS-CoV-2 and became a pandemic in 2020."
+      },
+      {
+        "point_id": "node_b:2:736f7311",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that COVID-19 can cause mild illness or no symptoms but can lead to severe outcomes in vulnerable populations."
+      },
+      {
+        "point_id": "node_b:3:eced3163",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the possibility of reinfection due to fading immunity or virus mutations."
+      },
+      {
+        "point_id": "node_a:4:c719db02",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:2:fb2bf361",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_a:1:b24690d7",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:1:f626dfed",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "node_b:4:5f773f88",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "queries": [
+    {
+      "label": "q001",
+      "query": "what are symptoms of covid 19",
+      "winner": "doc2_covid19",
+      "q_dir": "q001"
+    }
+  ]
+}
