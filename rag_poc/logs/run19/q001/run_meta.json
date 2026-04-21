@@ -1,0 +1,107 @@
+{
+  "query": "What contradictions can be found between the democratic ideals promoted by the U.S. and its actual actions in 'Third World' countries (such as Iran and Chile) during the Cold War?",
+  "mode": "openai",
+  "k": 3,
+  "tau_fail": 2,
+  "max_evidence_chunks_per_point": 3,
+  "max_external_points_synth": 10,
+  "max_external_points_grade": 8,
+  "selected_nodes": [
+    {
+      "node_id": "ndeaded7c",
+      "domain": "sociology",
+      "style": "historical analysis, cultural commentary, retrospective",
+      "scope": "Cold War, nuclear family, marriage trends, postwar America, baby boom, demographic changes, family stability, divorce rates, societal norms, consumer culture",
+      "doc_path": "/home/pyqt-hai/Projects/ai/DistributedLLM/rag_poc/data/providers/ndeaded7c/doc.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "ndf0bd955",
+      "domain": "history",
+      "style": "analytical, historical comparison, narrative",
+      "scope": "Great Depression, World War II, United States history, German history, political regimes, economic collapse, Franklin D. Roosevelt, Adolf Hitler, New Deal, American democracy",
+      "doc_path": "/home/pyqt-hai/Projects/ai/DistributedLLM/rag_poc/data/providers/ndf0bd955/doc.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "nd5892f77",
+      "domain": "education",
+      "style": "historical analysis, narrative, descriptive",
+      "scope": "World War II, Japanese American internment, civil liberties, Executive Order 9066, relocation camps, Issei and Nisei, Pearl Harbor impact, family dynamics, government policies, cultural identity",
+      "doc_path": "/home/pyqt-hai/Projects/ai/DistributedLLM/rag_poc/data/providers/nd5892f77/doc.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "nd502a541",
+      "domain": "history",
+      "style": "biographical, analytical, historical",
+      "scope": "Henry Kissinger, Cold War, foreign policy, Nazi Germany, Jewish refugees, US Army, counterintelligence, postwar Germany, international affairs, American discussions",
+      "doc_path": "/home/pyqt-hai/Projects/ai/DistributedLLM/rag_poc/data/providers/nd502a541/doc.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "nd02aaf19",
+      "domain": "geopolitics",
+      "style": "historical analysis, evidence-based, formal",
+      "scope": "Iranian political situation, US-Iran relations, Cold War history, Middle East geopolitics, Iran's nuclear ambitions, Iran-backed terrorism, Persian Gulf strategic importance, British and Russian influence in Iran, US foreign policy, Soviet-American competition",
+      "doc_path": "/home/pyqt-hai/Projects/ai/DistributedLLM/rag_poc/data/providers/nd02aaf19/doc.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "nd1cdfce4",
+      "domain": "history",
+      "style": "historical analysis, evidence-based, formal",
+      "scope": "African American military service, World War II, racial segregation in the military, Tuskegee Airmen, Women's Auxiliary Army Corps, racial discrimination, civil rights activism, Langston Hughes, Navy recruitment policies, Jim Crow practices",
+      "doc_path": "/home/pyqt-hai/Projects/ai/DistributedLLM/rag_poc/data/providers/nd1cdfce4/doc.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "nd04a456b",
+      "domain": "political-science",
+      "style": "academic, analytical, historical perspective",
+      "scope": "US foreign policy, Cold War, Ronald Reagan, Mikhail Gorbachev, Soviet Union, Eastern Europe, international affairs, political leadership, communism, historical analysis",
+      "doc_path": "/home/pyqt-hai/Projects/ai/DistributedLLM/rag_poc/data/providers/nd04a456b/doc.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "nd010283a",
+      "domain": "history",
+      "style": "analytical, historical perspective, formal",
+      "scope": "Vietnam War, US archives, Cold War, US foreign policy, Lyndon Johnson, military strategy, communist expansion, US alliances, anti-war criticism, historical documentation",
+      "doc_path": "/home/pyqt-hai/Projects/ai/DistributedLLM/rag_poc/data/providers/nd010283a/doc.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "nd17ac5a1",
+      "domain": "history",
+      "style": "historical analysis, diplomatic focus, formal",
+      "scope": "Cold War, China civil war, US foreign policy, Soviet Union, Chiang Kai-shek, Mao Zedong, Truman administration, George C. Marshall, Taiwan, Korean War",
+      "doc_path": "/home/pyqt-hai/Projects/ai/DistributedLLM/rag_poc/data/providers/nd17ac5a1/doc.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "nd48cfee7",
+      "domain": "general",
+      "style": "knowledge provider",
+      "scope": "general knowledge",
+      "doc_path": "/home/pyqt-hai/Projects/ai/DistributedLLM/rag_poc/data/providers/nd48cfee7/doc.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "nd87f4bcd",
+      "domain": "history",
+      "style": "historical analysis, evidence-based, formal",
+      "scope": "World War I, European alliances, trench warfare, American neutrality, economic impact, diplomatic relations, submarine warfare, Woodrow Wilson, military mobilizations, international trade",
+      "doc_path": "/home/pyqt-hai/Projects/ai/DistributedLLM/rag_poc/data/providers/nd87f4bcd/doc.txt",
+      "rep_snapshot": 10.0
+    },
+    {
+      "node_id": "nda91043d",
+      "domain": "history",
+      "style": "historical analysis, factual, narrative",
+      "scope": "World War II, global conflict, Axis powers, European theater, Pacific theater, military invasions, geopolitical changes, American involvement, Nazi Germany, Japanese expansion",
+      "doc_path": "/home/pyqt-hai/Projects/ai/DistributedLLM/rag_poc/data/providers/nda91043d/doc.txt",
+      "rep_snapshot": 10.0
+    }
+  ]
+}

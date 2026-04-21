@@ -1,0 +1,278 @@
+[
+  {
+    "node_id": "ndeaded7c",
+    "point_support": []
+  },
+  {
+    "node_id": "ndf0bd955",
+    "point_support": [
+      {
+        "point_id": "ndf0bd955:0:1c80a081",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The U.S. civilian economy grew during WWII, unlike other countries whose economies shrank [ndf0bd955:chunk_00017]."
+      },
+      {
+        "point_id": "ndf0bd955:1:cd2609ea",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The U.S. emerged from WWII triumphant, contrasting with the defeat of Germany [ndf0bd955:chunk_00013]."
+      },
+      {
+        "point_id": "ndf0bd955:2:2bee9eb6",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The Depression discredited political regimes in both the U.S. and Germany, leading to new leadership [ndf0bd955:chunk_00002]."
+      },
+      {
+        "point_id": "ndf0bd955:3:537499f1",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The U.S. paid a lower price in blood and treasure during WWII compared to Britain and the Soviet Union [ndf0bd955:chunk_00016]."
+      },
+      {
+        "point_id": "ndf0bd955:4:28d22e98",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The U.S. economy expanded by 15% during WWII, setting up postwar prosperity [ndf0bd955:chunk_00018]."
+      },
+      {
+        "point_id": "nda91043d:1:5f575fcd",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "Post-WWII, the U.S. experienced unmatched prosperity and military superiority [nda91043d:chunk_00075]."
+      },
+      {
+        "point_id": "nd87f4bcd:0:9ac37669",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. economy was centralized and coordinated by the federal government during WWI, setting precedents for future crises [nd87f4bcd:chunk_00018]."
+      },
+      {
+        "point_id": "nda91043d:0:1c2672c7",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. emerged from WWII with its cities and infrastructure intact, unlike Germany and Japan [nda91043d:chunk_00074]."
+      },
+      {
+        "point_id": "nd87f4bcd:2:4d936219",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. economy was heavily involved in international trade, with significant loans to Britain and reduced trade with Germany due to blockades [nd87f4bcd:chunk_00005]."
+      },
+      {
+        "point_id": "nd87f4bcd:1:ff5d653c",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "American industries like steel and petroleum profited greatly by selling war-related goods to the government during WWI [nd87f4bcd:chunk_00021]."
+      },
+      {
+        "point_id": "nda91043d:2:fc053a3a",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nda91043d:3:920a4a01",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nd87f4bcd:4:55ca2d26",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nda91043d:4:176abfba",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nd87f4bcd:3:d9d38ddf",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "nd5892f77",
+    "point_support": []
+  },
+  {
+    "node_id": "nd502a541",
+    "point_support": []
+  },
+  {
+    "node_id": "nd02aaf19",
+    "point_support": []
+  },
+  {
+    "node_id": "nd1cdfce4",
+    "point_support": []
+  },
+  {
+    "node_id": "nd04a456b",
+    "point_support": []
+  },
+  {
+    "node_id": "nd010283a",
+    "point_support": []
+  },
+  {
+    "node_id": "nd17ac5a1",
+    "point_support": []
+  },
+  {
+    "node_id": "nd48cfee7",
+    "point_support": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "point_support": [
+      {
+        "point_id": "nd87f4bcd:0:9ac37669",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states that the federal government centralized and coordinated the economy during WWI, setting precedents for future crises [nd87f4bcd:chunk_00018]."
+      },
+      {
+        "point_id": "nd87f4bcd:1:ff5d653c",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that American industries like steel and petroleum profited by selling war-related goods to the government during WWI [nd87f4bcd:chunk_00021]."
+      },
+      {
+        "point_id": "nd87f4bcd:2:4d936219",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document describes the U.S. involvement in international trade, with loans to Britain and reduced trade with Germany due to blockades [nd87f4bcd:chunk_00005]."
+      },
+      {
+        "point_id": "nd87f4bcd:3:d9d38ddf",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document details the Great Migration in the U.S. during WWI as African Americans moved north for factory jobs due to wartime production demands [nd87f4bcd:chunk_00024]."
+      },
+      {
+        "point_id": "nd87f4bcd:4:55ca2d26",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states that the U.S. maintained neutrality in WWI for over two years, unlike the immediate engagement of European nations [nd87f4bcd:chunk_00002]."
+      },
+      {
+        "point_id": "ndf0bd955:0:1c80a081",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms that the U.S. civilian economy grew during WWII, unlike other countries whose economies shrank [ndf0bd955_doc.txt:chunk_00017]."
+      },
+      {
+        "point_id": "nda91043d:1:5f575fcd",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nda91043d:0:1c2672c7",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "ndf0bd955:4:28d22e98",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence indicates that the U.S. economy expanded by 15% during WWII, setting up postwar prosperity [ndf0bd955_doc.txt:chunk_00018]."
+      },
+      {
+        "point_id": "nda91043d:2:fc053a3a",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that the U.S. launched the greatest industrial expansion in history during WWII [nda91043d_doc.txt:chunk_00036]."
+      },
+      {
+        "point_id": "ndf0bd955:1:cd2609ea",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "ndf0bd955:3:537499f1",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nda91043d:3:920a4a01",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nda91043d:4:176abfba",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "ndf0bd955:2:2bee9eb6",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "nda91043d",
+    "point_support": [
+      {
+        "point_id": "nda91043d:0:1c2672c7",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states that the U.S. emerged from WWII with its cities and infrastructure intact, unlike Germany and Japan [nda91043d:chunk_00074]."
+      },
+      {
+        "point_id": "nda91043d:1:5f575fcd",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that post-WWII, the U.S. experienced unmatched prosperity and military superiority [nda91043d:chunk_00075]."
+      },
+      {
+        "point_id": "nda91043d:2:fc053a3a",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document describes the U.S. launching the greatest industrial expansion in history during WWII [nda91043d:chunk_00036]."
+      },
+      {
+        "point_id": "nda91043d:3:920a4a01",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states that American factories produced more aircraft than Germany, Japan, and the British Empire combined by 1944 [nda91043d:chunk_00038]."
+      },
+      {
+        "point_id": "nda91043d:4:176abfba",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document notes that the U.S. initially had a small army, comparable to Rumania and Bulgaria, before WWII [nda91043d:chunk_00006]."
+      },
+      {
+        "point_id": "ndf0bd955:0:1c80a081",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms that the U.S. civilian economy grew during WWII, unlike other countries [ndf0bd955_doc.txt:chunk_00017]."
+      },
+      {
+        "point_id": "nd87f4bcd:0:9ac37669",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the U.S. economy was centralized and coordinated by the federal government during WWI [nd87f4bcd_doc.txt:chunk_00018]."
+      },
+      {
+        "point_id": "nd87f4bcd:2:4d936219",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the U.S. economy was heavily involved in international trade during WWI [nd87f4bcd_doc.txt:chunk_00005]."
+      },
+      {
+        "point_id": "ndf0bd955:4:28d22e98",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the U.S. economy expanded by 15% during WWII [ndf0bd955_doc.txt:chunk_00018]."
+      },
+      {
+        "point_id": "nd87f4bcd:1:ff5d653c",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms American industries profited by selling war-related goods during WWI [nd87f4bcd_doc.txt:chunk_00021]."
+      },
+      {
+        "point_id": "ndf0bd955:1:cd2609ea",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "ndf0bd955:3:537499f1",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nd87f4bcd:4:55ca2d26",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nd87f4bcd:3:d9d38ddf",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "ndf0bd955:2:2bee9eb6",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  }
+]

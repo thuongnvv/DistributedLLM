@@ -1,0 +1,242 @@
+{
+  "ndf0bd955:0:1c80a081": {
+    "point_id": "ndf0bd955:0:1c80a081",
+    "origin_node_id": "ndf0bd955",
+    "text": "The U.S. civilian economy grew during WWII, unlike other countries whose economies shrank.",
+    "citations": [
+      "ndf0bd955_doc.txt:chunk_00017"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "ndf0bd955_doc.txt",
+        "chunk_id": "chunk_00017",
+        "text": "Uniquely among all the belligerent countries in World War II—perhaps uniquely in the history of warfare—the United States alone had managed to grow its civilian economy even while waging a hugely costly war. In Britain and the Soviet Union, as well as Germany, the civilian standard of living went down by approximately one-third, exacting a huge price in terms of mundane, daily deprivation from peoples already afflicted by wholesale destruction and death",
+        "score": 0.5624
+      }
+    ]
+  },
+  "ndf0bd955:1:cd2609ea": {
+    "point_id": "ndf0bd955:1:cd2609ea",
+    "origin_node_id": "ndf0bd955",
+    "text": "The U.S. emerged from WWII triumphant, contrasting with the defeat of Germany.",
+    "citations": [
+      "ndf0bd955_doc.txt:chunk_00013"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "ndf0bd955_doc.txt",
+        "chunk_id": "chunk_00013",
+        "text": "In the great conflict of World War II, Hitler’s Germany and Roosevelt’s America also fought very different wars—and not just because Germany went down to defeat and America emerged triumphant. Indeed, America’s experience in World War II stands in vivid contrast with the experience of all other combatants, including not only Germany but America’s allies in the \"Grand Alliance\" as well.",
+        "score": 0.5993
+      }
+    ]
+  },
+  "ndf0bd955:2:2bee9eb6": {
+    "point_id": "ndf0bd955:2:2bee9eb6",
+    "origin_node_id": "ndf0bd955",
+    "text": "The Depression discredited political regimes in both the U.S. and Germany, leading to new leadership.",
+    "citations": [
+      "ndf0bd955_doc.txt:chunk_00002"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "ndf0bd955_doc.txt",
+        "chunk_id": "chunk_00002",
+        "text": "In the United States and Germany alike the Depression badly discredited existing political regimes and created opportunities for new leaders to emerge. In a striking contrast that speaks volumes about the different political cultures that spawned them, Germany got Adolf Hitler, and the United States got Franklin D. Roosevelt. At the outset, both asked to be judged on their records of success or failure in doing battle against the Depression. Both were ultimately judged on other grounds altogether—the one universally condemned in the history books, the other almost universally praised.",
+        "score": 0.4527
+      }
+    ]
+  },
+  "ndf0bd955:3:537499f1": {
+    "point_id": "ndf0bd955:3:537499f1",
+    "origin_node_id": "ndf0bd955",
+    "text": "The U.S. paid a lower price in blood and treasure during WWII compared to Britain and the Soviet Union.",
+    "citations": [
+      "ndf0bd955_doc.txt:chunk_00016"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "ndf0bd955_doc.txt",
+        "chunk_id": "chunk_00016",
+        "text": "Elsewhere, even Roosevelt’s wartime partners—Britain and the Soviet Union—had paid a far greater price in blood and treasure than their fortunate American ally.",
+        "score": 0.4971
+      }
+    ]
+  },
+  "ndf0bd955:4:28d22e98": {
+    "point_id": "ndf0bd955:4:28d22e98",
+    "origin_node_id": "ndf0bd955",
+    "text": "The U.S. economy expanded by 15% during WWII, setting up postwar prosperity.",
+    "citations": [
+      "ndf0bd955_doc.txt:chunk_00018"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "ndf0bd955_doc.txt",
+        "chunk_id": "chunk_00018",
+        "text": ". In the United States, on the other hand, the civilian economy actually expanded by 15 percent, preparing the way for phenomenal prosperity in the postwar decades.",
+        "score": 0.4117
+      }
+    ]
+  },
+  "nd87f4bcd:0:9ac37669": {
+    "point_id": "nd87f4bcd:0:9ac37669",
+    "origin_node_id": "nd87f4bcd",
+    "text": "The U.S. economy was centralized and coordinated by the federal government during WWI, setting precedents for future crises.",
+    "citations": [
+      "nd87f4bcd_doc.txt:chunk_00018"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd87f4bcd_doc.txt",
+        "chunk_id": "chunk_00018",
+        "text": "The First World War was a total war, requiring the complete mobilization of American society. During the war, the federal government exercised unprecedented powers to centralize and coordinate the economy. The methods used to mobilize the manufacturing and agricultural sectors, select men for the military, regulate transportation, and distribute propaganda set precedents for how the federal government would respond to the crises of the Great Depression and World War II",
+        "score": 0.5596
+      }
+    ]
+  },
+  "nd87f4bcd:1:ff5d653c": {
+    "point_id": "nd87f4bcd:1:ff5d653c",
+    "origin_node_id": "nd87f4bcd",
+    "text": "American industries like steel and petroleum profited greatly by selling war-related goods to the government during WWI.",
+    "citations": [
+      "nd87f4bcd_doc.txt:chunk_00021"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd87f4bcd_doc.txt",
+        "chunk_id": "chunk_00021",
+        "text": ". Wages increased slightly during the war, but the steel, copper, petroleum, and meatpacking industries all reaped tremendous profits by selling war-related goods to the government.",
+        "score": 0.515
+      }
+    ]
+  },
+  "nd87f4bcd:2:4d936219": {
+    "point_id": "nd87f4bcd:2:4d936219",
+    "origin_node_id": "nd87f4bcd",
+    "text": "The U.S. economy was heavily involved in international trade, with significant loans to Britain and reduced trade with Germany due to blockades.",
+    "citations": [
+      "nd87f4bcd_doc.txt:chunk_00005"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd87f4bcd_doc.txt",
+        "chunk_id": "chunk_00005",
+        "text": ". Wilson, however, lifted the ban in 1915. The Allies were running short of cash, and Wilson feared a widespread recession if those nations stopped buying American goods. By 1917 American banks were loaning Britain an average of $10 million a day to buy US goods. In the meantime, American trade with Germany dropped dramatically. Even if American manufacturers and banks had wanted to help Germany, trade became nearly impossible after the British navy blockaded Germany and cut the international cable between the United States and Germany",
+        "score": 0.4951
+      }
+    ]
+  },
+  "nd87f4bcd:3:d9d38ddf": {
+    "point_id": "nd87f4bcd:3:d9d38ddf",
+    "origin_node_id": "nd87f4bcd",
+    "text": "WWI led to the Great Migration in the U.S., as African Americans moved north for factory jobs due to wartime production demands.",
+    "citations": [
+      "nd87f4bcd_doc.txt:chunk_00024"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd87f4bcd_doc.txt",
+        "chunk_id": "chunk_00024",
+        "text": "World War I left several permanent marks on American society. The wartime emphasis on worker efficiency, conserving grain, and keeping alcohol away from soldiers in uniform hastened the adoption of the Eighteenth Amendment (1919) banning the sale, manufacture, and transportation of intoxicating liquors. A major demographic shift known as the Great Migration occurred when African Americans from the South moved north to take factory jobs, filling vacancies generated by booming wartime production, conscription, and the interrupted flow of immigrants from Europe",
+        "score": 0.4615
+      }
+    ]
+  },
+  "nd87f4bcd:4:55ca2d26": {
+    "point_id": "nd87f4bcd:4:55ca2d26",
+    "origin_node_id": "nd87f4bcd",
+    "text": "The U.S. initially maintained neutrality in WWI, debating involvement for over two years, unlike the immediate engagement of European nations.",
+    "citations": [
+      "nd87f4bcd_doc.txt:chunk_00002"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd87f4bcd_doc.txt",
+        "chunk_id": "chunk_00002",
+        "text": ". Most Europeans rushed into battle without considering what a general war would mean. Americans, however, followed a completely different road to war, openly debating for two and a half years whether this was their war to fight. In 1914, President Woodrow Wilson declared that the United States would remain neutral. There were many first- and second-generation immigrants from both the Central Powers and the Allied nations in the United States, and they disagreed over which country had started the war and which country to support",
+        "score": 0.4517
+      }
+    ]
+  },
+  "nda91043d:0:1c2672c7": {
+    "point_id": "nda91043d:0:1c2672c7",
+    "origin_node_id": "nda91043d",
+    "text": "The U.S. emerged from WWII with its cities and infrastructure intact, unlike Germany and Japan.",
+    "citations": [
+      "nda91043d_doc.txt:chunk_00074"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nda91043d_doc.txt",
+        "chunk_id": "chunk_00074",
+        "text": "In many respects, the United States was the big winner in World War II. Relative to Germany, Japan, and the Soviet Union, its battle deaths were relatively few in number. Its great cities, like New York, Chicago, Philadelphia, Boston, San Francisco, and Los Angeles, were never occupied by enemy armies or laid waste by falling bombs. Its factories and steel mills, farms and subdivisions, and stores and schools were unscathed by the conflict",
+        "score": 0.5478
+      }
+    ]
+  },
+  "nda91043d:1:5f575fcd": {
+    "point_id": "nda91043d:1:5f575fcd",
+    "origin_node_id": "nda91043d",
+    "text": "Post-WWII, the U.S. experienced unmatched prosperity and military superiority.",
+    "citations": [
+      "nda91043d_doc.txt:chunk_00075"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nda91043d_doc.txt",
+        "chunk_id": "chunk_00075",
+        "text": ". Alone among major world capitals, Washington emerged from the war more confident than ever, and its airplanes, fleets, and armies, not to mention its atomic weapons, gave it military superiority over any potential opponent. By every measure, the United States led the world in 1945, and it was about to begin two generations of prosperity unmatched in history.",
+        "score": 0.4923
+      }
+    ]
+  },
+  "nda91043d:2:fc053a3a": {
+    "point_id": "nda91043d:2:fc053a3a",
+    "origin_node_id": "nda91043d",
+    "text": "The U.S. launched the greatest industrial expansion in history during WWII.",
+    "citations": [
+      "nda91043d_doc.txt:chunk_00036"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nda91043d_doc.txt",
+        "chunk_id": "chunk_00036",
+        "text": "The United States had great military potential, but in December of 1941 it was still more potential than reality. Immediately, the nation launched the greatest industrial expansion in human history. Within months, new orders for munitions, uniforms, and combat vehicles absorbed the remaining unemployed workers from the Great Depression. Old factories were expanded and modernized, and giant new ones sprang up as if by magic, especially in the South and West. Outside Detroit, the Chrysler Tank Arsenal produced the tanks and armored vehicles that would become the spearheads of General George S",
+        "score": 0.451
+      }
+    ]
+  },
+  "nda91043d:3:920a4a01": {
+    "point_id": "nda91043d:3:920a4a01",
+    "origin_node_id": "nda91043d",
+    "text": "American factories produced more aircraft than Germany, Japan, and the British Empire combined by 1944.",
+    "citations": [
+      "nda91043d_doc.txt:chunk_00038"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nda91043d_doc.txt",
+        "chunk_id": "chunk_00038",
+        "text": "In the skies American dominance was clear. In Washington State and in Kansas, Boeing built the great four-engine, strategic bomber fleets that destroyed entire cities. As early as 1942, American factories were already churning out 48,000 airplanes, more than Germany and Japan combined. By 1944, assembly lines in southern California, Seattle, and Long Island were producing almost 100,000 aircraft, a total greater than the combined output of Germany, Japan, and the British Empire. Statistics for trucks, jeeps, landing ships, artillery pieces, and self-propelled guns were almost as dramatic.",
+        "score": 0.4327
+      }
+    ]
+  },
+  "nda91043d:4:176abfba": {
+    "point_id": "nda91043d:4:176abfba",
+    "origin_node_id": "nda91043d",
+    "text": "The U.S. initially had a small army, comparable to Rumania and Bulgaria, before WWII.",
+    "citations": [
+      "nda91043d_doc.txt:chunk_00006"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nda91043d_doc.txt",
+        "chunk_id": "chunk_00006",
+        "text": "In general, the American people did not want to have any part in a European war. They felt protected by great oceans on both sides of the North American continent. And they felt that, in World War I, American boys had fought and bled in France mostly to make fortunes for munitions makers and arms merchants. Moreover, the United States had allowed its armed forces to wither in the 1920s and 1930, so that when World War II broke out in Europe, its army of 190,000 men ranked about eighteenth in the global rankings, about on a par with Rumania and Bulgaria.",
+        "score": 0.4652
+      }
+    ]
+  }
+}

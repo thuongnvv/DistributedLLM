@@ -1,0 +1,51 @@
+{
+  "winner": "nd87f4bcd",
+  "final_answer": "The U.S. economy during World War I and World War II had unique characteristics compared to other nations involved in these conflicts. During WWI, the U.S. economy was centralized and coordinated by the federal government, setting precedents for future crises [nd87f4bcd:0:9ac37669]. American industries, such as steel and petroleum, profited significantly by selling war-related goods to the government [nd87f4bcd:1:ff5d653c]. The U.S. was heavily involved in international trade, providing significant loans to Britain while trade with Germany was reduced due to blockades [nd87f4bcd:2:4d936219]. The U.S. initially maintained neutrality in WWI, unlike the immediate engagement of European nations [nd87f4bcd:4:55ca2d26]. During WWII, the U.S. civilian economy grew, unlike other countries whose economies shrank [ndf0bd955:0:1c80a081]. The U.S. launched the greatest industrial expansion in history during WWII [nda91043d:2:fc053a3a], and its economy expanded by 15%, setting up postwar prosperity [ndf0bd955:4:28d22e98].",
+  "metrics": {
+    "pass": {
+      "ndf0bd955": 2,
+      "nd87f4bcd": 2,
+      "nda91043d": 2
+    },
+    "fail": {
+      "ndf0bd955": 0,
+      "nd87f4bcd": 0,
+      "nda91043d": 0
+    },
+    "agree": {
+      "ndf0bd955": 10,
+      "nd87f4bcd": 14,
+      "nda91043d": 11
+    },
+    "reject": {
+      "ndf0bd955": 0,
+      "nd87f4bcd": 0,
+      "nda91043d": 0
+    },
+    "eligible_reviews": {
+      "ndf0bd955": 2,
+      "nd87f4bcd": 2,
+      "nda91043d": 2
+    },
+    "used_points": {
+      "ndf0bd955": 9,
+      "nd87f4bcd": 8,
+      "nda91043d": 10
+    },
+    "agree_rate": {
+      "ndf0bd955": 0.5555555555555556,
+      "nd87f4bcd": 0.875,
+      "nda91043d": 0.55
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "nd87f4bcd": 5.0
+    },
+    "point_rep_delta": {
+      "nd87f4bcd": 8.0,
+      "nda91043d": 14.0,
+      "ndf0bd955": 13.0
+    }
+  }
+}

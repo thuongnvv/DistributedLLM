@@ -1,0 +1,10 @@
+{
+  "queries": [
+    {
+      "label": "q001",
+      "query": "The U.S. economy had any unique similarities or differences compared to other countries involved in both World War I and World War II?",
+      "winner": "nd87f4bcd",
+      "q_dir": "q001"
+    }
+  ]
+}

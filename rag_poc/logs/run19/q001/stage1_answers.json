@@ -1,0 +1,122 @@
+[
+  {
+    "node_id": "ndeaded7c",
+    "points": []
+  },
+  {
+    "node_id": "ndf0bd955",
+    "points": []
+  },
+  {
+    "node_id": "nd5892f77",
+    "points": []
+  },
+  {
+    "node_id": "nd502a541",
+    "points": [
+      {
+        "point_id": "nd502a541:0:dbfa3165",
+        "text": "The U.S. promoted democracy but often limited it domestically by relying on unelected figures like Kissinger who avoided public debate.",
+        "citations": [
+          "nd502a541_doc.txt:chunk_00014"
+        ]
+      },
+      {
+        "point_id": "nd502a541:1:5960f625",
+        "text": "The U.S. used overwhelming military force to enforce democracy globally, contradicting its role as a defender of humanity.",
+        "citations": [
+          "nd502a541_doc.txt:chunk_00008"
+        ]
+      },
+      {
+        "point_id": "nd502a541:2:9c7878fa",
+        "text": "Kissinger's policies reflected a bias against negotiations with socialist regimes, partly due to racist assumptions about their susceptibility to communism.",
+        "citations": [
+          "nd502a541_doc.txt:chunk_00028"
+        ]
+      },
+      {
+        "point_id": "nd502a541:3:40045ecb",
+        "text": "Kissinger's focus on American national interests often ignored the negative impacts on 'third world' societies with histories of foreign imperialism.",
+        "citations": [
+          "nd502a541_doc.txt:chunk_00029"
+        ]
+      },
+      {
+        "point_id": "nd502a541:4:5541d366",
+        "text": "American Cold War policies were unevenly applied, reflecting contradictions in their approach to different regions.",
+        "citations": [
+          "nd502a541_doc.txt:chunk_00028"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "nd02aaf19",
+    "points": [
+      {
+        "point_id": "nd02aaf19:0:361d04a3",
+        "text": "US Cold War policy focused on preempting perceived threats, as seen in Iran in 1953, contradicting democratic ideals.",
+        "citations": [
+          "nd02aaf19_doc.txt:chunk_00027"
+        ]
+      },
+      {
+        "point_id": "nd02aaf19:1:aab57694",
+        "text": "US actions in Iran were driven by fear of Soviet influence, often ignoring local issues and democratic aspirations.",
+        "citations": [
+          "nd02aaf19_doc.txt:chunk_00007"
+        ]
+      },
+      {
+        "point_id": "nd02aaf19:2:6a37f5e7",
+        "text": "US support for the Shah in Iran ignored local resentment and democratic movements, leading to revolution.",
+        "citations": [
+          "nd02aaf19_doc.txt:chunk_00016"
+        ]
+      },
+      {
+        "point_id": "nd02aaf19:3:47c8f957",
+        "text": "US involvement in the Iran-Iraq War was driven by oil interests and Soviet containment, not local democratic concerns.",
+        "citations": [
+          "nd02aaf19_doc.txt:chunk_00024"
+        ]
+      },
+      {
+        "point_id": "nd02aaf19:4:64d30abd",
+        "text": "US actions during the Cold War were often motivated by geopolitical competition rather than promoting democracy.",
+        "citations": [
+          "nd02aaf19_doc.txt:chunk_00005"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "nd1cdfce4",
+    "points": []
+  },
+  {
+    "node_id": "nd04a456b",
+    "points": []
+  },
+  {
+    "node_id": "nd010283a",
+    "points": []
+  },
+  {
+    "node_id": "nd17ac5a1",
+    "points": []
+  },
+  {
+    "node_id": "nd48cfee7",
+    "points": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "points": []
+  },
+  {
+    "node_id": "nda91043d",
+    "points": []
+  }
+]

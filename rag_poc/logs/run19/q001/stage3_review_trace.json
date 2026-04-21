@@ -1,0 +1,99 @@
+[
+  {
+    "grader_id": "nd502a541",
+    "target_id": "nd02aaf19",
+    "point_reviews": [
+      {
+        "point_id": "nd02aaf19:0:361d04a3",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that US Cold War policy focused on preempting perceived threats, as seen in Iran in 1953, contradicting democratic ideals."
+      },
+      {
+        "point_id": "nd02aaf19:1:aab57694",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence supports that US actions in Iran were driven by fear of Soviet influence, often ignoring local issues and democratic aspirations."
+      },
+      {
+        "point_id": "nd02aaf19:2:6a37f5e7",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that US support for the Shah in Iran ignored local resentment and democratic movements, leading to revolution."
+      },
+      {
+        "point_id": "nd02aaf19:4:64d30abd",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence supports that US actions during the Cold War were often motivated by geopolitical competition rather than promoting democracy."
+      },
+      {
+        "point_id": "nd502a541:4:5541d366",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that American Cold War policies were unevenly applied, reflecting contradictions in their approach to different regions."
+      },
+      {
+        "point_id": "nd502a541:1:5960f625",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context supports that the U.S. used overwhelming military force to enforce democracy globally, contradicting its role as a defender of humanity."
+      },
+      {
+        "point_id": "nd502a541:3:40045ecb",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that Kissinger's focus on American national interests often ignored the negative impacts on 'third world' societies with histories of foreign imperialism."
+      }
+    ]
+  },
+  {
+    "grader_id": "nd02aaf19",
+    "target_id": "nd502a541",
+    "point_reviews": [
+      {
+        "point_id": "nd502a541:0:dbfa3165",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that discusses the reliance on unelected figures like Kissinger who avoided public debate."
+      },
+      {
+        "point_id": "nd502a541:3:40045ecb",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence indicating Kissinger's focus on American interests often ignored negative impacts on 'third world' societies."
+      },
+      {
+        "point_id": "nd02aaf19:0:361d04a3",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context supports the point about US Cold War policy focusing on preempting perceived threats, as seen in Iran in 1953."
+      },
+      {
+        "point_id": "nd02aaf19:1:aab57694",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context supports the point that US actions in Iran were driven by fear of Soviet influence, often ignoring local issues."
+      },
+      {
+        "point_id": "nd502a541:2:9c7878fa",
+        "basis": "UNKNOWN",
+        "reason": "Neither local nor external evidence in the provided context mentions Kissinger's bias against negotiations with socialist regimes due to racist assumptions."
+      },
+      {
+        "point_id": "nd502a541:1:5960f625",
+        "basis": "UNKNOWN",
+        "reason": "Neither local nor external evidence in the provided context mentions the use of overwhelming military force to enforce democracy globally."
+      },
+      {
+        "point_id": "nd502a541:4:5541d366",
+        "basis": "UNKNOWN",
+        "reason": "Neither local nor external evidence in the provided context mentions uneven application of American Cold War policies."
+      },
+      {
+        "point_id": "nd02aaf19:3:47c8f957",
+        "basis": "UNKNOWN",
+        "reason": "Neither local nor external evidence in the provided context mentions US involvement in the Iran-Iraq War being driven by oil interests and Soviet containment."
+      },
+      {
+        "point_id": "nd02aaf19:4:64d30abd",
+        "basis": "UNKNOWN",
+        "reason": "Neither local nor external evidence in the provided context mentions US actions during the Cold War being motivated by geopolitical competition rather than promoting democracy."
+      },
+      {
+        "point_id": "nd02aaf19:2:6a37f5e7",
+        "basis": "UNKNOWN",
+        "reason": "Neither local nor external evidence in the provided context mentions US support for the Shah in Iran ignoring local resentment and democratic movements."
+      }
+    ]
+  }
+]

@@ -1,0 +1,162 @@
+{
+  "nd502a541:0:dbfa3165": {
+    "point_id": "nd502a541:0:dbfa3165",
+    "origin_node_id": "nd502a541",
+    "text": "The U.S. promoted democracy but often limited it domestically by relying on unelected figures like Kissinger who avoided public debate.",
+    "citations": [
+      "nd502a541_doc.txt:chunk_00014"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd502a541_doc.txt",
+        "chunk_id": "chunk_00014",
+        "text": ". They were unelected figures who emphasized stability and American power as ballasts for a world that they feared could careen back to the horrors of the Second World War, especially if Stalin’s Russia continued to expand. This was the third and perhaps most difficult contradiction of the Cold War: Kissinger and his fellow Cold War intellectuals defended democracy abroad by limiting democracy at home. They were not elected to office, they did not subject their assumptions to open public debate, and they did not encourage alternative points of view",
+        "score": 0.5488
+      }
+    ]
+  },
+  "nd502a541:1:5960f625": {
+    "point_id": "nd502a541:1:5960f625",
+    "origin_node_id": "nd502a541",
+    "text": "The U.S. used overwhelming military force to enforce democracy globally, contradicting its role as a defender of humanity.",
+    "citations": [
+      "nd502a541_doc.txt:chunk_00008"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd502a541_doc.txt",
+        "chunk_id": "chunk_00008",
+        "text": "This was the first contradiction of Kissinger’s career, and of the Cold War: the United States established itself at the end of the Second World War as a defender of humanity and civilization through the use of overwhelming military force. As never before, American soldiers like Kissinger were deployed around the globe to enforce freedom, order, and democracy as the United States developed a large, permanent peacetime military force to police distant lands",
+        "score": 0.4849
+      }
+    ]
+  },
+  "nd502a541:2:9c7878fa": {
+    "point_id": "nd502a541:2:9c7878fa",
+    "origin_node_id": "nd502a541",
+    "text": "Kissinger's policies reflected a bias against negotiations with socialist regimes, partly due to racist assumptions about their susceptibility to communism.",
+    "citations": [
+      "nd502a541_doc.txt:chunk_00028"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd502a541_doc.txt",
+        "chunk_id": "chunk_00028",
+        "text": "The transition was particularly difficult because it was not evenly applied—a fourth contradiction in American Cold War policies. Kissinger continued to harbor strong ideological presumptions against negotiations with socialist and communist regimes in Latin America and Africa. In part, this reflected a racist judgment that people in these societies were more susceptible to communist propaganda and less capable of ruling themselves. It also grew from his ignorance of these regions",
+        "score": 0.4525
+      }
+    ]
+  },
+  "nd502a541:3:40045ecb": {
+    "point_id": "nd502a541:3:40045ecb",
+    "origin_node_id": "nd502a541",
+    "text": "Kissinger's focus on American national interests often ignored the negative impacts on 'third world' societies with histories of foreign imperialism.",
+    "citations": [
+      "nd502a541_doc.txt:chunk_00029"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd502a541_doc.txt",
+        "chunk_id": "chunk_00029",
+        "text": ". It also grew from his ignorance of these regions. Kissinger’s energetic efforts to pursue American national interests often blinded him to the very negative effects of his policies in “third world” societies that harbored distrust and animosity toward a long history of foreign imperialism.",
+        "score": 0.4346
+      }
+    ]
+  },
+  "nd502a541:4:5541d366": {
+    "point_id": "nd502a541:4:5541d366",
+    "origin_node_id": "nd502a541",
+    "text": "American Cold War policies were unevenly applied, reflecting contradictions in their approach to different regions.",
+    "citations": [
+      "nd502a541_doc.txt:chunk_00028"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd502a541_doc.txt",
+        "chunk_id": "chunk_00028",
+        "text": "The transition was particularly difficult because it was not evenly applied—a fourth contradiction in American Cold War policies. Kissinger continued to harbor strong ideological presumptions against negotiations with socialist and communist regimes in Latin America and Africa. In part, this reflected a racist judgment that people in these societies were more susceptible to communist propaganda and less capable of ruling themselves. It also grew from his ignorance of these regions",
+        "score": 0.4525
+      }
+    ]
+  },
+  "nd02aaf19:0:361d04a3": {
+    "point_id": "nd02aaf19:0:361d04a3",
+    "origin_node_id": "nd02aaf19",
+    "text": "US Cold War policy focused on preempting perceived threats, as seen in Iran in 1953, contradicting democratic ideals.",
+    "citations": [
+      "nd02aaf19_doc.txt:chunk_00027"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd02aaf19_doc.txt",
+        "chunk_id": "chunk_00027",
+        "text": ". George W. Bush’s national security doctrine reasserted Washington’s Cold War–era determination not to permit the emergence of another rival power (like the Soviets, or in an earlier era, the Nazis) to threaten American interests, and echoed Eisenhower’s concept, employed in Iran in 1953, of preempting a perceived threat. Although current US strategy no longer focuses on some of these ambitious concepts, their impact can be seen in the history of American involvement in the Middle East and continues to be felt across the region.",
+        "score": 0.5454
+      }
+    ]
+  },
+  "nd02aaf19:1:aab57694": {
+    "point_id": "nd02aaf19:1:aab57694",
+    "origin_node_id": "nd02aaf19",
+    "text": "US actions in Iran were driven by fear of Soviet influence, often ignoring local issues and democratic aspirations.",
+    "citations": [
+      "nd02aaf19_doc.txt:chunk_00007"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd02aaf19_doc.txt",
+        "chunk_id": "chunk_00007",
+        "text": "In two key incidents in Iran from the post-war period these precepts were plainly evident, and produced consequences for the United States that were in some ways utterly unanticipated. At other moments later in the Cold War, described further below, Washington’s fixation on the Soviet threat left it unprepared to deal with crises of local origin that were equally significant for America’s standing in the region.",
+        "score": 0.4816
+      }
+    ]
+  },
+  "nd02aaf19:2:6a37f5e7": {
+    "point_id": "nd02aaf19:2:6a37f5e7",
+    "origin_node_id": "nd02aaf19",
+    "text": "US support for the Shah in Iran ignored local resentment and democratic movements, leading to revolution.",
+    "citations": [
+      "nd02aaf19_doc.txt:chunk_00016"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd02aaf19_doc.txt",
+        "chunk_id": "chunk_00016",
+        "text": "By the 1970s, conditions inside Iran that were purely local in origin—with no connection to the Cold War—had begun to emerge that the United States was ill-equipped to address. Internal resentment against the Shah’s political and economic policies was building to a peak (and extending to his US sponsors), but the depth of the problem escaped the notice of American decision-makers. Led by Ayatollah Khomeini, a fierce public critic of Iran’s reliance on American backing who had been exiled for years for his views, Iran’s growing anti-Shah sentiments burst into open revolution in 1978–1979",
+        "score": 0.3929
+      }
+    ]
+  },
+  "nd02aaf19:3:47c8f957": {
+    "point_id": "nd02aaf19:3:47c8f957",
+    "origin_node_id": "nd02aaf19",
+    "text": "US involvement in the Iran-Iraq War was driven by oil interests and Soviet containment, not local democratic concerns.",
+    "citations": [
+      "nd02aaf19_doc.txt:chunk_00024"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd02aaf19_doc.txt",
+        "chunk_id": "chunk_00024",
+        "text": "The Iran-Iraq War took place during the Cold War but it had virtually nothing to do with the East-West conflict; it was a local dispute sparked by indigenous factors. Washington’s actions, however, did grow out of the American mindset of that era: a desire to protect the flow of oil from the Persian Gulf and a determination to block the Soviets from gaining influence in the region. Regardless of each side’s intentions, the war produced a number of enduring results. One was that the leaders of Iran’s revolution were able to link their cause to the survival of the nation itself",
+        "score": 0.4223
+      }
+    ]
+  },
+  "nd02aaf19:4:64d30abd": {
+    "point_id": "nd02aaf19:4:64d30abd",
+    "origin_node_id": "nd02aaf19",
+    "text": "US actions during the Cold War were often motivated by geopolitical competition rather than promoting democracy.",
+    "citations": [
+      "nd02aaf19_doc.txt:chunk_00005"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd02aaf19_doc.txt",
+        "chunk_id": "chunk_00005",
+        "text": "Both of these circumstances—Iran’s location between the USSR and the Persian Gulf, and the presence of major oil reserves—guaranteed the country’s importance during the Cold War. In addition, a third factor came into play: the emergence, even before the end of World War II, of the global military and ideological competition between the United States and the Soviet Union. Fear of losing influence in a vital part of the world to Soviet-led Communism motivated much of American foreign policy for the next several decades",
+        "score": 0.5238
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+[
+  {
+    "node_id": "ndeaded7c",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "ndf0bd955",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd5892f77",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd502a541",
+    "synthesis_text": "During the Cold War, the U.S. often acted in ways that contradicted its democratic ideals, particularly in 'Third World' countries like Iran and Chile. Locally, Kissinger's policies reflected a tendency to prioritize American national interests over the democratic aspirations of other nations, often ignoring the negative impacts on societies with histories of foreign imperialism [nd502a541:3:40045ecb]. The U.S. also relied on unelected figures like Kissinger, who avoided public debate, limiting democracy domestically while promoting it abroad [nd502a541:0:dbfa3165]. Externally, U.S. actions in Iran were driven by geopolitical competition and fear of Soviet influence, often ignoring local issues and democratic movements [nd02aaf19:1:aab57694]. This focus on preempting perceived threats, as seen in the 1953 Iran coup, further contradicted democratic ideals [nd02aaf19:0:361d04a3].",
+    "used_points": [
+      "nd502a541:0:dbfa3165",
+      "nd502a541:3:40045ecb",
+      "nd02aaf19:0:361d04a3",
+      "nd02aaf19:1:aab57694",
+      "nd502a541:2:9c7878fa",
+      "nd502a541:1:5960f625",
+      "nd502a541:4:5541d366",
+      "nd02aaf19:3:47c8f957",
+      "nd02aaf19:4:64d30abd",
+      "nd02aaf19:2:6a37f5e7"
+    ]
+  },
+  {
+    "node_id": "nd02aaf19",
+    "synthesis_text": "During the Cold War, U.S. actions in Iran and other 'Third World' countries often contradicted its democratic ideals. In Iran, the U.S. prioritized preempting perceived Soviet threats over supporting local democratic movements, as evidenced by the 1953 coup that reinstated the Shah despite local resentment [nd02aaf19:0:361d04a3, nd02aaf19:1:aab57694, nd02aaf19:2:6a37f5e7]. This focus on geopolitical competition rather than democracy was a recurring theme in U.S. foreign policy [nd02aaf19:4:64d30abd]. Externally, similar contradictions were observed in U.S. policies, such as the uneven application of democratic principles across different regions and the use of overwhelming military force to enforce democracy, which often ignored the negative impacts on societies with histories of foreign imperialism [nd502a541:4:5541d366, nd502a541:1:5960f625, nd502a541:3:40045ecb].",
+    "used_points": [
+      "nd02aaf19:0:361d04a3",
+      "nd02aaf19:1:aab57694",
+      "nd02aaf19:2:6a37f5e7",
+      "nd02aaf19:4:64d30abd",
+      "nd502a541:4:5541d366",
+      "nd502a541:1:5960f625",
+      "nd502a541:3:40045ecb"
+    ]
+  },
+  {
+    "node_id": "nd1cdfce4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd04a456b",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd010283a",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd17ac5a1",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd48cfee7",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nda91043d",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  }
+]

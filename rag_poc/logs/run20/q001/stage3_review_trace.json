@@ -1,0 +1,308 @@
+[
+  {
+    "grader_id": "ndf0bd955",
+    "target_id": "nd87f4bcd",
+    "point_reviews": [
+      {
+        "point_id": "nd87f4bcd:0:9ac37669",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from nd87f4bcd."
+      },
+      {
+        "point_id": "nd87f4bcd:1:ff5d653c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from nd87f4bcd."
+      },
+      {
+        "point_id": "nd87f4bcd:2:4d936219",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from nd87f4bcd."
+      },
+      {
+        "point_id": "nd87f4bcd:4:55ca2d26",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from nd87f4bcd."
+      },
+      {
+        "point_id": "ndf0bd955:0:1c80a081",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The point is supported by local context in ndf0bd955."
+      },
+      {
+        "point_id": "nda91043d:2:fc053a3a",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from nda91043d."
+      },
+      {
+        "point_id": "ndf0bd955:4:28d22e98",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The point is supported by local context in ndf0bd955."
+      },
+      {
+        "point_id": "nd87f4bcd:3:d9d38ddf",
+        "basis": "UNKNOWN",
+        "reason": "The point is not mentioned in the local context or external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "ndf0bd955",
+    "target_id": "nda91043d",
+    "point_reviews": [
+      {
+        "point_id": "nda91043d:0:1c2672c7",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from nda91043d."
+      },
+      {
+        "point_id": "nda91043d:1:5f575fcd",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from nda91043d."
+      },
+      {
+        "point_id": "nda91043d:2:fc053a3a",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from nda91043d."
+      },
+      {
+        "point_id": "nda91043d:3:920a4a01",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence from nda91043d."
+      },
+      {
+        "point_id": "ndf0bd955:0:1c80a081",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The point is supported by local context in ndf0bd955."
+      },
+      {
+        "point_id": "nda91043d:4:176abfba",
+        "basis": "UNKNOWN",
+        "reason": "The point is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:1:ff5d653c",
+        "basis": "UNKNOWN",
+        "reason": "The point is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "ndf0bd955:4:28d22e98",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The point is supported by local context in ndf0bd955."
+      },
+      {
+        "point_id": "nd87f4bcd:2:4d936219",
+        "basis": "UNKNOWN",
+        "reason": "The point is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:0:9ac37669",
+        "basis": "UNKNOWN",
+        "reason": "The point is not mentioned in the local context or external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "nd87f4bcd",
+    "target_id": "ndf0bd955",
+    "point_reviews": [
+      {
+        "point_id": "ndf0bd955:0:1c80a081",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. civilian economy grew during WWII, unlike other countries whose economies shrank."
+      },
+      {
+        "point_id": "ndf0bd955:4:28d22e98",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. economy expanded by 15% during WWII, setting up postwar prosperity."
+      },
+      {
+        "point_id": "nda91043d:0:1c2672c7",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. emerged from WWII with its cities and infrastructure intact, unlike Germany and Japan."
+      },
+      {
+        "point_id": "nda91043d:1:5f575fcd",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Post-WWII, the U.S. experienced unmatched prosperity and military superiority."
+      },
+      {
+        "point_id": "ndf0bd955:3:537499f1",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. paid a lower price in blood and treasure during WWII compared to Britain and the Soviet Union."
+      },
+      {
+        "point_id": "ndf0bd955:2:2bee9eb6",
+        "basis": "UNKNOWN",
+        "reason": "The Depression discredited political regimes in both the U.S. and Germany, leading to new leadership is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "ndf0bd955:1:cd2609ea",
+        "basis": "UNKNOWN",
+        "reason": "The U.S. emerged from WWII triumphant, contrasting with the defeat of Germany is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:1:ff5d653c",
+        "basis": "UNKNOWN",
+        "reason": "American industries like steel and petroleum profited greatly by selling war-related goods to the government during WWI is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:2:4d936219",
+        "basis": "UNKNOWN",
+        "reason": "The U.S. economy was heavily involved in international trade, with significant loans to Britain and reduced trade with Germany due to blockades is not mentioned in the local context or external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "nd87f4bcd",
+    "target_id": "nda91043d",
+    "point_reviews": [
+      {
+        "point_id": "nda91043d:0:1c2672c7",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. emerged from WWII with its cities and infrastructure intact, unlike Germany and Japan."
+      },
+      {
+        "point_id": "nda91043d:1:5f575fcd",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Post-WWII, the U.S. experienced unmatched prosperity and military superiority."
+      },
+      {
+        "point_id": "nda91043d:2:fc053a3a",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. launched the greatest industrial expansion in history during WWII."
+      },
+      {
+        "point_id": "nda91043d:3:920a4a01",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "American factories produced more aircraft than Germany, Japan, and the British Empire combined by 1944."
+      },
+      {
+        "point_id": "ndf0bd955:0:1c80a081",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. civilian economy grew during WWII, unlike other countries whose economies shrank."
+      },
+      {
+        "point_id": "nda91043d:4:176abfba",
+        "basis": "UNKNOWN",
+        "reason": "The U.S. initially had a small army, comparable to Rumania and Bulgaria, before WWII is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:1:ff5d653c",
+        "basis": "UNKNOWN",
+        "reason": "American industries like steel and petroleum profited greatly by selling war-related goods to the government during WWI is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "ndf0bd955:4:28d22e98",
+        "basis": "UNKNOWN",
+        "reason": "The U.S. economy expanded by 15% during WWII, setting up postwar prosperity is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:2:4d936219",
+        "basis": "UNKNOWN",
+        "reason": "The U.S. economy was heavily involved in international trade, with significant loans to Britain and reduced trade with Germany due to blockades is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:0:9ac37669",
+        "basis": "UNKNOWN",
+        "reason": "The U.S. economy was centralized and coordinated by the federal government during WWI, setting precedents for future crises is not mentioned in the local context or external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "nda91043d",
+    "target_id": "ndf0bd955",
+    "point_reviews": [
+      {
+        "point_id": "ndf0bd955:0:1c80a081",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. civilian economy grew during WWII, unlike other countries whose economies shrank."
+      },
+      {
+        "point_id": "ndf0bd955:4:28d22e98",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. economy expanded by 15% during WWII, setting up postwar prosperity."
+      },
+      {
+        "point_id": "nda91043d:0:1c2672c7",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The U.S. emerged from WWII with its cities and infrastructure intact, unlike Germany and Japan."
+      },
+      {
+        "point_id": "nda91043d:1:5f575fcd",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Post-WWII, the U.S. experienced unmatched prosperity and military superiority."
+      },
+      {
+        "point_id": "ndf0bd955:3:537499f1",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. paid a lower price in blood and treasure during WWII compared to Britain and the Soviet Union."
+      },
+      {
+        "point_id": "ndf0bd955:2:2bee9eb6",
+        "basis": "UNKNOWN",
+        "reason": "The Depression discredited political regimes in both the U.S. and Germany, leading to new leadership is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "ndf0bd955:1:cd2609ea",
+        "basis": "UNKNOWN",
+        "reason": "The U.S. emerged from WWII triumphant, contrasting with the defeat of Germany is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:1:ff5d653c",
+        "basis": "UNKNOWN",
+        "reason": "American industries like steel and petroleum profited greatly by selling war-related goods to the government during WWI is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:2:4d936219",
+        "basis": "UNKNOWN",
+        "reason": "The U.S. economy was heavily involved in international trade, with significant loans to Britain and reduced trade with Germany due to blockades is not mentioned in the local context or external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "nda91043d",
+    "target_id": "nd87f4bcd",
+    "point_reviews": [
+      {
+        "point_id": "nd87f4bcd:0:9ac37669",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. economy was centralized and coordinated by the federal government during WWI, setting precedents for future crises."
+      },
+      {
+        "point_id": "nd87f4bcd:1:ff5d653c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "American industries like steel and petroleum profited greatly by selling war-related goods to the government during WWI."
+      },
+      {
+        "point_id": "nd87f4bcd:2:4d936219",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. economy was heavily involved in international trade, with significant loans to Britain and reduced trade with Germany due to blockades."
+      },
+      {
+        "point_id": "nd87f4bcd:4:55ca2d26",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. initially maintained neutrality in WWI, debating involvement for over two years, unlike the immediate engagement of European nations."
+      },
+      {
+        "point_id": "ndf0bd955:0:1c80a081",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. civilian economy grew during WWII, unlike other countries whose economies shrank."
+      },
+      {
+        "point_id": "nda91043d:2:fc053a3a",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The U.S. launched the greatest industrial expansion in history during WWII."
+      },
+      {
+        "point_id": "ndf0bd955:4:28d22e98",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The U.S. economy expanded by 15% during WWII, setting up postwar prosperity."
+      },
+      {
+        "point_id": "nd87f4bcd:3:d9d38ddf",
+        "basis": "UNKNOWN",
+        "reason": "WWI led to the Great Migration in the U.S., as African Americans moved north for factory jobs due to wartime production demands is not mentioned in the local context or external evidence."
+      }
+    ]
+  }
+]

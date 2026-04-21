@@ -1,0 +1,92 @@
+[
+  {
+    "node_id": "ndeaded7c",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "ndf0bd955",
+    "synthesis_text": "The U.S. economy during World War II experienced unique growth compared to other countries involved in the conflict. Unlike Britain, the Soviet Union, and Germany, where civilian standards of living decreased significantly, the U.S. civilian economy grew by 15%, setting the stage for postwar prosperity [ndf0bd955:chunk_00017, ndf0bd955:chunk_00018]. This economic expansion was part of a broader industrial growth that was unmatched in history [nda91043d:2:fc053a3a]. Additionally, the U.S. emerged from WWII with its infrastructure intact, unlike Germany and Japan, which suffered extensive damage [nda91043d:0:1c2672c7]. The U.S. also paid a lower price in terms of casualties and economic burden compared to its allies [ndf0bd955:chunk_00016]. These factors contributed to the U.S. emerging as a global leader with unmatched prosperity and military superiority post-WWII [nda91043d:1:5f575fcd].",
+    "used_points": [
+      "ndf0bd955:0:1c80a081",
+      "ndf0bd955:4:28d22e98",
+      "nda91043d:0:1c2672c7",
+      "nda91043d:1:5f575fcd",
+      "ndf0bd955:3:537499f1",
+      "ndf0bd955:2:2bee9eb6",
+      "ndf0bd955:1:cd2609ea",
+      "nd87f4bcd:1:ff5d653c",
+      "nd87f4bcd:2:4d936219"
+    ]
+  },
+  {
+    "node_id": "nd5892f77",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd502a541",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd02aaf19",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd1cdfce4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd04a456b",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd010283a",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd17ac5a1",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd48cfee7",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "synthesis_text": "The U.S. economy during World War I and World War II had unique characteristics compared to other nations involved in these conflicts. During WWI, the U.S. economy was centralized and coordinated by the federal government, setting precedents for future crises [nd87f4bcd:0:9ac37669]. American industries, such as steel and petroleum, profited significantly by selling war-related goods to the government [nd87f4bcd:1:ff5d653c]. The U.S. was heavily involved in international trade, providing significant loans to Britain while trade with Germany was reduced due to blockades [nd87f4bcd:2:4d936219]. The U.S. initially maintained neutrality in WWI, unlike the immediate engagement of European nations [nd87f4bcd:4:55ca2d26]. During WWII, the U.S. civilian economy grew, unlike other countries whose economies shrank [ndf0bd955:0:1c80a081]. The U.S. launched the greatest industrial expansion in history during WWII [nda91043d:2:fc053a3a], and its economy expanded by 15%, setting up postwar prosperity [ndf0bd955:4:28d22e98].",
+    "used_points": [
+      "nd87f4bcd:0:9ac37669",
+      "nd87f4bcd:1:ff5d653c",
+      "nd87f4bcd:2:4d936219",
+      "nd87f4bcd:4:55ca2d26",
+      "ndf0bd955:0:1c80a081",
+      "nda91043d:2:fc053a3a",
+      "ndf0bd955:4:28d22e98",
+      "nd87f4bcd:3:d9d38ddf"
+    ]
+  },
+  {
+    "node_id": "nda91043d",
+    "synthesis_text": "The U.S. economy during World War II had unique characteristics compared to other countries involved in the conflict. The U.S. emerged from WWII with its cities and infrastructure intact, unlike Germany and Japan, which suffered extensive destruction [nda91043d:0:1c2672c7]. Post-WWII, the U.S. experienced unmatched prosperity and military superiority, setting it apart from other nations [nda91043d:1:5f575fcd]. The U.S. launched the greatest industrial expansion in history during WWII, significantly boosting its economic capacity [nda91043d:2:fc053a3a]. American factories produced more aircraft than Germany, Japan, and the British Empire combined by 1944, highlighting its industrial prowess [nda91043d:3:920a4a01]. Additionally, the U.S. civilian economy grew during WWII, unlike other countries whose economies shrank, further distinguishing its economic trajectory [ndf0bd955:0:1c80a081].",
+    "used_points": [
+      "nda91043d:0:1c2672c7",
+      "nda91043d:1:5f575fcd",
+      "nda91043d:2:fc053a3a",
+      "nda91043d:3:920a4a01",
+      "ndf0bd955:0:1c80a081",
+      "nda91043d:4:176abfba",
+      "nd87f4bcd:1:ff5d653c",
+      "ndf0bd955:4:28d22e98",
+      "nd87f4bcd:2:4d936219",
+      "nd87f4bcd:0:9ac37669"
+    ]
+  }
+]

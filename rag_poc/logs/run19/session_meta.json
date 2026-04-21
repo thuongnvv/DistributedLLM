@@ -1,0 +1,10 @@
+{
+  "queries": [
+    {
+      "label": "q001",
+      "query": "What contradictions can be found between the democratic ideals promoted by the U.S. and its actual actions in 'Third World' countries (such as Iran and Chile) during the Cold War?",
+      "winner": "nd02aaf19",
+      "q_dir": "q001"
+    }
+  ]
+}

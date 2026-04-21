@@ -1,0 +1,158 @@
+[
+  {
+    "node_id": "ndeaded7c",
+    "points": []
+  },
+  {
+    "node_id": "ndf0bd955",
+    "points": [
+      {
+        "point_id": "ndf0bd955:0:1c80a081",
+        "text": "The U.S. civilian economy grew during WWII, unlike other countries whose economies shrank.",
+        "citations": [
+          "ndf0bd955_doc.txt:chunk_00017"
+        ]
+      },
+      {
+        "point_id": "ndf0bd955:1:cd2609ea",
+        "text": "The U.S. emerged from WWII triumphant, contrasting with the defeat of Germany.",
+        "citations": [
+          "ndf0bd955_doc.txt:chunk_00013"
+        ]
+      },
+      {
+        "point_id": "ndf0bd955:2:2bee9eb6",
+        "text": "The Depression discredited political regimes in both the U.S. and Germany, leading to new leadership.",
+        "citations": [
+          "ndf0bd955_doc.txt:chunk_00002"
+        ]
+      },
+      {
+        "point_id": "ndf0bd955:3:537499f1",
+        "text": "The U.S. paid a lower price in blood and treasure during WWII compared to Britain and the Soviet Union.",
+        "citations": [
+          "ndf0bd955_doc.txt:chunk_00016"
+        ]
+      },
+      {
+        "point_id": "ndf0bd955:4:28d22e98",
+        "text": "The U.S. economy expanded by 15% during WWII, setting up postwar prosperity.",
+        "citations": [
+          "ndf0bd955_doc.txt:chunk_00018"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "nd5892f77",
+    "points": []
+  },
+  {
+    "node_id": "nd502a541",
+    "points": []
+  },
+  {
+    "node_id": "nd02aaf19",
+    "points": []
+  },
+  {
+    "node_id": "nd1cdfce4",
+    "points": []
+  },
+  {
+    "node_id": "nd04a456b",
+    "points": []
+  },
+  {
+    "node_id": "nd010283a",
+    "points": []
+  },
+  {
+    "node_id": "nd17ac5a1",
+    "points": []
+  },
+  {
+    "node_id": "nd48cfee7",
+    "points": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "points": [
+      {
+        "point_id": "nd87f4bcd:0:9ac37669",
+        "text": "The U.S. economy was centralized and coordinated by the federal government during WWI, setting precedents for future crises.",
+        "citations": [
+          "nd87f4bcd_doc.txt:chunk_00018"
+        ]
+      },
+      {
+        "point_id": "nd87f4bcd:1:ff5d653c",
+        "text": "American industries like steel and petroleum profited greatly by selling war-related goods to the government during WWI.",
+        "citations": [
+          "nd87f4bcd_doc.txt:chunk_00021"
+        ]
+      },
+      {
+        "point_id": "nd87f4bcd:2:4d936219",
+        "text": "The U.S. economy was heavily involved in international trade, with significant loans to Britain and reduced trade with Germany due to blockades.",
+        "citations": [
+          "nd87f4bcd_doc.txt:chunk_00005"
+        ]
+      },
+      {
+        "point_id": "nd87f4bcd:3:d9d38ddf",
+        "text": "WWI led to the Great Migration in the U.S., as African Americans moved north for factory jobs due to wartime production demands.",
+        "citations": [
+          "nd87f4bcd_doc.txt:chunk_00024"
+        ]
+      },
+      {
+        "point_id": "nd87f4bcd:4:55ca2d26",
+        "text": "The U.S. initially maintained neutrality in WWI, debating involvement for over two years, unlike the immediate engagement of European nations.",
+        "citations": [
+          "nd87f4bcd_doc.txt:chunk_00002"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "nda91043d",
+    "points": [
+      {
+        "point_id": "nda91043d:0:1c2672c7",
+        "text": "The U.S. emerged from WWII with its cities and infrastructure intact, unlike Germany and Japan.",
+        "citations": [
+          "nda91043d_doc.txt:chunk_00074"
+        ]
+      },
+      {
+        "point_id": "nda91043d:1:5f575fcd",
+        "text": "Post-WWII, the U.S. experienced unmatched prosperity and military superiority.",
+        "citations": [
+          "nda91043d_doc.txt:chunk_00075"
+        ]
+      },
+      {
+        "point_id": "nda91043d:2:fc053a3a",
+        "text": "The U.S. launched the greatest industrial expansion in history during WWII.",
+        "citations": [
+          "nda91043d_doc.txt:chunk_00036"
+        ]
+      },
+      {
+        "point_id": "nda91043d:3:920a4a01",
+        "text": "American factories produced more aircraft than Germany, Japan, and the British Empire combined by 1944.",
+        "citations": [
+          "nda91043d_doc.txt:chunk_00038"
+        ]
+      },
+      {
+        "point_id": "nda91043d:4:176abfba",
+        "text": "The U.S. initially had a small army, comparable to Rumania and Bulgaria, before WWII.",
+        "citations": [
+          "nda91043d_doc.txt:chunk_00006"
+        ]
+      }
+    ]
+  }
+]

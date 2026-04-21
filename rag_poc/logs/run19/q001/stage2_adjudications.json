@@ -1,0 +1,152 @@
+[
+  {
+    "node_id": "ndeaded7c",
+    "point_support": []
+  },
+  {
+    "node_id": "ndf0bd955",
+    "point_support": []
+  },
+  {
+    "node_id": "nd5892f77",
+    "point_support": []
+  },
+  {
+    "node_id": "nd502a541",
+    "point_support": [
+      {
+        "point_id": "nd502a541:0:dbfa3165",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document discusses how unelected figures like Kissinger limited democracy domestically while promoting it abroad."
+      },
+      {
+        "point_id": "nd502a541:1:5960f625",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document mentions the use of overwhelming military force to enforce democracy globally, which contradicts the U.S. role as a defender of humanity."
+      },
+      {
+        "point_id": "nd502a541:2:9c7878fa",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Kissinger's policies reflected a bias against negotiations with socialist regimes, partly due to assumptions about their susceptibility to communism."
+      },
+      {
+        "point_id": "nd502a541:3:40045ecb",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Kissinger's focus on American national interests often ignored the negative impacts on 'third world' societies."
+      },
+      {
+        "point_id": "nd502a541:4:5541d366",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document notes that American Cold War policies were unevenly applied, reflecting contradictions in their approach."
+      },
+      {
+        "point_id": "nd02aaf19:4:64d30abd",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence shows US actions were often motivated by geopolitical competition rather than promoting democracy."
+      },
+      {
+        "point_id": "nd02aaf19:0:361d04a3",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms US Cold War policy focused on preempting perceived threats, contradicting democratic ideals."
+      },
+      {
+        "point_id": "nd02aaf19:1:aab57694",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence indicates US actions in Iran were driven by fear of Soviet influence, ignoring local issues."
+      },
+      {
+        "point_id": "nd02aaf19:3:47c8f957",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence shows US involvement in the Iran-Iraq War was driven by oil interests and Soviet containment."
+      },
+      {
+        "point_id": "nd02aaf19:2:6a37f5e7",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence indicates US support for the Shah ignored local resentment and democratic movements."
+      }
+    ]
+  },
+  {
+    "node_id": "nd02aaf19",
+    "point_support": [
+      {
+        "point_id": "nd02aaf19:0:361d04a3",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document discusses the U.S. policy of preempting perceived threats in Iran, which contradicts democratic ideals [nd02aaf19_doc.txt:chunk_00027]."
+      },
+      {
+        "point_id": "nd02aaf19:1:aab57694",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "U.S. actions in Iran were driven by fear of Soviet influence, often ignoring local issues and democratic aspirations [nd02aaf19_doc.txt:chunk_00005]."
+      },
+      {
+        "point_id": "nd02aaf19:2:6a37f5e7",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The U.S. support for the Shah ignored local resentment and democratic movements, leading to revolution [nd02aaf19_doc.txt:chunk_00016]."
+      },
+      {
+        "point_id": "nd02aaf19:3:47c8f957",
+        "decision": "UNKNOWN",
+        "reason": "The document does not provide specific information about U.S. involvement in the Iran-Iraq War being driven by oil interests and Soviet containment, not local democratic concerns."
+      },
+      {
+        "point_id": "nd02aaf19:4:64d30abd",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "U.S. actions during the Cold War were often motivated by geopolitical competition rather than promoting democracy [nd02aaf19_doc.txt:chunk_00024]."
+      },
+      {
+        "point_id": "nd502a541:4:5541d366",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that American Cold War policies were unevenly applied, reflecting contradictions in their approach to different regions [nd502a541_doc.txt:chunk_00028]."
+      },
+      {
+        "point_id": "nd502a541:1:5960f625",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the U.S. used overwhelming military force to enforce democracy globally, contradicting its role as a defender of humanity [nd502a541_doc.txt:chunk_00008]."
+      },
+      {
+        "point_id": "nd502a541:3:40045ecb",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence indicates Kissinger's focus on American national interests often ignored the negative impacts on 'third world' societies [nd502a541_doc.txt:chunk_00029]."
+      },
+      {
+        "point_id": "nd502a541:0:dbfa3165",
+        "decision": "UNKNOWN",
+        "reason": "The document does not provide information on the U.S. promoting democracy but limiting it domestically by relying on unelected figures like Kissinger."
+      },
+      {
+        "point_id": "nd502a541:2:9c7878fa",
+        "decision": "UNKNOWN",
+        "reason": "The document does not provide information on Kissinger's policies reflecting a bias against negotiations with socialist regimes due to racist assumptions."
+      }
+    ]
+  },
+  {
+    "node_id": "nd1cdfce4",
+    "point_support": []
+  },
+  {
+    "node_id": "nd04a456b",
+    "point_support": []
+  },
+  {
+    "node_id": "nd010283a",
+    "point_support": []
+  },
+  {
+    "node_id": "nd17ac5a1",
+    "point_support": []
+  },
+  {
+    "node_id": "nd48cfee7",
+    "point_support": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "point_support": []
+  },
+  {
+    "node_id": "nda91043d",
+    "point_support": []
+  }
+]

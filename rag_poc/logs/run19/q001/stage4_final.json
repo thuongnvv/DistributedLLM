@@ -1,0 +1,43 @@
+{
+  "winner": "nd02aaf19",
+  "final_answer": "During the Cold War, U.S. actions in Iran and other 'Third World' countries often contradicted its democratic ideals. In Iran, the U.S. prioritized preempting perceived Soviet threats over supporting local democratic movements, as evidenced by the 1953 coup that reinstated the Shah despite local resentment [nd02aaf19:0:361d04a3, nd02aaf19:1:aab57694, nd02aaf19:2:6a37f5e7]. This focus on geopolitical competition rather than democracy was a recurring theme in U.S. foreign policy [nd02aaf19:4:64d30abd]. Externally, similar contradictions were observed in U.S. policies, such as the uneven application of democratic principles across different regions and the use of overwhelming military force to enforce democracy, which often ignored the negative impacts on societies with histories of foreign imperialism [nd502a541:4:5541d366, nd502a541:1:5960f625, nd502a541:3:40045ecb].",
+  "metrics": {
+    "pass": {
+      "nd502a541": 1,
+      "nd02aaf19": 1
+    },
+    "fail": {
+      "nd502a541": 0,
+      "nd02aaf19": 0
+    },
+    "agree": {
+      "nd502a541": 4,
+      "nd02aaf19": 7
+    },
+    "reject": {
+      "nd502a541": 0,
+      "nd02aaf19": 0
+    },
+    "eligible_reviews": {
+      "nd502a541": 1,
+      "nd02aaf19": 1
+    },
+    "used_points": {
+      "nd502a541": 10,
+      "nd02aaf19": 7
+    },
+    "agree_rate": {
+      "nd502a541": 0.4,
+      "nd02aaf19": 1.0
+    }
+  },
+  "reputation_updates": {
+    "node_rep_delta": {
+      "nd02aaf19": 5.0
+    },
+    "point_rep_delta": {
+      "nd02aaf19": 6.0,
+      "nd502a541": 5.0
+    }
+  }
+}

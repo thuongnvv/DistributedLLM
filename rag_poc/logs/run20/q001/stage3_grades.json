@@ -1,0 +1,122 @@
+[
+  {
+    "grader_id": "ndf0bd955",
+    "target_id": "nd87f4bcd",
+    "valid": "PASS",
+    "agree_points": [
+      "nd87f4bcd:0:9ac37669",
+      "nd87f4bcd:1:ff5d653c",
+      "nd87f4bcd:2:4d936219",
+      "nd87f4bcd:4:55ca2d26",
+      "ndf0bd955:0:1c80a081",
+      "nda91043d:2:fc053a3a",
+      "ndf0bd955:4:28d22e98"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "nd87f4bcd:3:d9d38ddf"
+    ],
+    "note": "All points except one are supported by either local or external evidence. The point about the Great Migration is unknown."
+  },
+  {
+    "grader_id": "ndf0bd955",
+    "target_id": "nda91043d",
+    "valid": "PASS",
+    "agree_points": [
+      "nda91043d:0:1c2672c7",
+      "nda91043d:1:5f575fcd",
+      "nda91043d:2:fc053a3a",
+      "nda91043d:3:920a4a01",
+      "ndf0bd955:0:1c80a081",
+      "ndf0bd955:4:28d22e98"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "nda91043d:4:176abfba",
+      "nd87f4bcd:1:ff5d653c",
+      "nd87f4bcd:2:4d936219",
+      "nd87f4bcd:0:9ac37669"
+    ],
+    "note": "Most points are supported by external or local evidence. Some points are unknown due to lack of mention in the context."
+  },
+  {
+    "grader_id": "nd87f4bcd",
+    "target_id": "ndf0bd955",
+    "valid": "PASS",
+    "agree_points": [
+      "ndf0bd955:0:1c80a081",
+      "ndf0bd955:4:28d22e98",
+      "nda91043d:0:1c2672c7",
+      "nda91043d:1:5f575fcd",
+      "ndf0bd955:3:537499f1"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "ndf0bd955:2:2bee9eb6",
+      "ndf0bd955:1:cd2609ea",
+      "nd87f4bcd:1:ff5d653c",
+      "nd87f4bcd:2:4d936219"
+    ],
+    "note": "The target draft accurately reflects the supported points about the U.S. economy during WWII, with some points marked as unknown due to lack of specific mention in the provided context."
+  },
+  {
+    "grader_id": "nd87f4bcd",
+    "target_id": "nda91043d",
+    "valid": "PASS",
+    "agree_points": [
+      "nda91043d:0:1c2672c7",
+      "nda91043d:1:5f575fcd",
+      "nda91043d:2:fc053a3a",
+      "nda91043d:3:920a4a01",
+      "ndf0bd955:0:1c80a081"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "nda91043d:4:176abfba",
+      "nd87f4bcd:1:ff5d653c",
+      "ndf0bd955:4:28d22e98",
+      "nd87f4bcd:2:4d936219",
+      "nd87f4bcd:0:9ac37669"
+    ],
+    "note": "The target draft accurately reflects the supported points about the U.S. economy during WWII, with some points marked as unknown due to lack of specific mention in the provided context."
+  },
+  {
+    "grader_id": "nda91043d",
+    "target_id": "ndf0bd955",
+    "valid": "PASS",
+    "agree_points": [
+      "ndf0bd955:0:1c80a081",
+      "ndf0bd955:4:28d22e98",
+      "nda91043d:0:1c2672c7",
+      "nda91043d:1:5f575fcd",
+      "ndf0bd955:3:537499f1"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "ndf0bd955:2:2bee9eb6",
+      "ndf0bd955:1:cd2609ea",
+      "nd87f4bcd:1:ff5d653c",
+      "nd87f4bcd:2:4d936219"
+    ],
+    "note": "The target draft accurately reflects the supported points regarding the U.S. economy during WWII, but some points related to WWI and political changes are not covered in the provided context."
+  },
+  {
+    "grader_id": "nda91043d",
+    "target_id": "nd87f4bcd",
+    "valid": "PASS",
+    "agree_points": [
+      "nd87f4bcd:0:9ac37669",
+      "nd87f4bcd:1:ff5d653c",
+      "nd87f4bcd:2:4d936219",
+      "nd87f4bcd:4:55ca2d26",
+      "ndf0bd955:0:1c80a081",
+      "nda91043d:2:fc053a3a",
+      "ndf0bd955:4:28d22e98"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "nd87f4bcd:3:d9d38ddf"
+    ],
+    "note": "The target draft accurately reflects the supported points regarding the U.S. economy during WWI and WWII, but the Great Migration point is not covered in the provided context."
+  }
+]

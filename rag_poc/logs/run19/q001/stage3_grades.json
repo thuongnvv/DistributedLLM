@@ -1,0 +1,40 @@
+[
+  {
+    "grader_id": "nd502a541",
+    "target_id": "nd02aaf19",
+    "valid": "PASS",
+    "agree_points": [
+      "nd02aaf19:0:361d04a3",
+      "nd02aaf19:1:aab57694",
+      "nd02aaf19:2:6a37f5e7",
+      "nd02aaf19:4:64d30abd",
+      "nd502a541:4:5541d366",
+      "nd502a541:1:5960f625",
+      "nd502a541:3:40045ecb"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by either local context or external evidence, confirming the contradictions between U.S. democratic ideals and actions during the Cold War."
+  },
+  {
+    "grader_id": "nd02aaf19",
+    "target_id": "nd502a541",
+    "valid": "PASS",
+    "agree_points": [
+      "nd502a541:0:dbfa3165",
+      "nd502a541:3:40045ecb",
+      "nd02aaf19:0:361d04a3",
+      "nd02aaf19:1:aab57694"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "nd502a541:2:9c7878fa",
+      "nd502a541:1:5960f625",
+      "nd502a541:4:5541d366",
+      "nd02aaf19:3:47c8f957",
+      "nd02aaf19:4:64d30abd",
+      "nd02aaf19:2:6a37f5e7"
+    ],
+    "note": "The draft correctly identifies contradictions between US democratic ideals and actions, supported by both local and external evidence for key points. Some points remain unknown due to lack of specific evidence in the provided context."
+  }
+]
