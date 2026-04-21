@@ -1,45 +1,166 @@
 [
   {
-    "node_id": "node_a",
+    "node_id": "ndeaded7c",
+    "points": []
+  },
+  {
+    "node_id": "ndf0bd955",
+    "points": []
+  },
+  {
+    "node_id": "nd5892f77",
     "points": [
       {
-        "point_id": "node_a:0:2507e9f8",
-        "text": "COVID-19 is a contagious disease caused by the coronavirus SARS‑CoV‑2.[doc1_covid19.txt:chunk_00000][doc1_covid19.txt:chunk_00024]"
+        "point_id": "nd5892f77:0:569dd5f7",
+        "text": "The US government froze assets of the Issei and imposed strict curfews after Pearl Harbor.",
+        "citations": [
+          "nd5892f77_doc.txt:chunk_00001"
+        ]
       },
       {
-        "point_id": "node_a:1:1a4ae692",
-        "text": "The WHO declared COVID-19 a global health emergency in March 2020 and ended the emergency in May 2023.[doc1_covid19.txt:chunk_00000]"
+        "point_id": "nd5892f77:1:ec79a42b",
+        "text": "The FBI followed community leaders with strong Japanese ties and raided homes for contraband.",
+        "citations": [
+          "nd5892f77_doc.txt:chunk_00001"
+        ]
+      },
+      {
+        "point_id": "nd5892f77:2:d755f489",
+        "text": "Japanese Americans were detained and interned as a result of official policy during WWII.",
+        "citations": [
+          "nd5892f77_doc.txt:chunk_00009"
+        ]
+      },
+      {
+        "point_id": "nd5892f77:3:139238ff",
+        "text": "Interned Japanese Americans could only take what they could carry, sustaining them for years.",
+        "citations": [
+          "nd5892f77_doc.txt:chunk_00005"
+        ]
+      },
+      {
+        "point_id": "nd5892f77:4:bc849d4c",
+        "text": "Anti-Japanese sentiment and aggression were widespread after Pearl Harbor, supporting removal policies.",
+        "citations": [
+          "nd5892f77_doc.txt:chunk_00010"
+        ]
       }
     ]
   },
   {
-    "node_id": "node_b",
+    "node_id": "nd502a541",
     "points": [
       {
-        "point_id": "node_b:0:2688a553",
-        "text": "COVID-19 is an illness caused by the virus SARS‑CoV‑2 [doc2_covid19.txt:chunk_00000]"
+        "point_id": "nd502a541:0:8a4601d6",
+        "text": "The Vietnam War inspired widespread dissent within the United States due to military intervention in support of a corrupt regime.",
+        "citations": [
+          "nd502a541_doc.txt:chunk_00019"
+        ]
       },
       {
-        "point_id": "node_b:1:ab8a6792",
-        "text": "The virus began spreading at the end of 2019 and was declared a pandemic in 2020 [doc2_covid19.txt:chunk_00000]"
+        "point_id": "nd502a541:1:5d3beae0",
+        "text": "American support for a military coup in Chile led to organized terror against opposition, causing international outrage.",
+        "citations": [
+          "nd502a541_doc.txt:chunk_00031"
+        ]
       },
       {
-        "point_id": "node_b:2:bbd245c1",
-        "text": "COVID‑19 spreads mainly through close contact via respiratory droplets when an infected person coughs, sneezes, talks, or breathes [doc2_covid19.txt:chunk_00007"
+        "point_id": "nd502a541:2:1aae853d",
+        "text": "Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate.",
+        "citations": [
+          "nd502a541_doc.txt:chunk_00014"
+        ]
       },
       {
-        "point_id": "node_b:3:f8da2576",
-        "text": "Many infected people have mild or no symptoms, but older adults and those with certain medical conditions can develop severe illness [doc2_covid19.txt:chunk_000"
+        "point_id": "nd502a541:3:fccb8c56",
+        "text": "Kissinger's Realpolitik focused on security over human rights, despite domestic protests advocating for the latter.",
+        "citations": [
+          "nd502a541_doc.txt:chunk_00017"
+        ]
+      },
+      {
+        "point_id": "nd502a541:4:bceeabc0",
+        "text": "Nixon and Kissinger aimed to preserve American power credibility by mixing de-escalation with force in Vietnam.",
+        "citations": [
+          "nd502a541_doc.txt:chunk_00020"
+        ]
       }
     ]
   },
   {
-    "node_id": "node_c",
+    "node_id": "nd02aaf19",
+    "points": []
+  },
+  {
+    "node_id": "nd1cdfce4",
+    "points": []
+  },
+  {
+    "node_id": "nd04a456b",
+    "points": []
+  },
+  {
+    "node_id": "nd010283a",
+    "points": []
+  },
+  {
+    "node_id": "nd17ac5a1",
     "points": [
       {
-        "point_id": "node_c:0:f0be5f17",
-        "text": "COVID-19 is an infectious respiratory illness caused by the SARS‑CoV‑2 coronavirus; the name stands for corona, virus, disease [doc3_covid19.txt:chunk_00000]"
+        "point_id": "nd17ac5a1:0:19e82853",
+        "text": "Senator Joe McCarthy used war hysteria to assault civil liberties in the U.S.",
+        "citations": [
+          "nd17ac5a1_doc.txt:chunk_00012"
+        ]
       }
     ]
+  },
+  {
+    "node_id": "nd48cfee7",
+    "points": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "points": [
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "text": "The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy.",
+        "citations": [
+          "nd87f4bcd_doc.txt:chunk_00022"
+        ]
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "text": "The Sedition Act of 1918 prohibited disloyal language against the government and armed forces.",
+        "citations": [
+          "nd87f4bcd_doc.txt:chunk_00022"
+        ]
+      },
+      {
+        "point_id": "nd87f4bcd:2:33644389",
+        "text": "The Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime.",
+        "citations": [
+          "nd87f4bcd_doc.txt:chunk_00023"
+        ]
+      },
+      {
+        "point_id": "nd87f4bcd:3:4bc93889",
+        "text": "The Committee on Public Information controlled war-related information to shape public opinion.",
+        "citations": [
+          "nd87f4bcd_doc.txt:chunk_00019"
+        ]
+      },
+      {
+        "point_id": "nd87f4bcd:4:0493dea1",
+        "text": "The federal government centralized and coordinated the economy for total war mobilization.",
+        "citations": [
+          "nd87f4bcd_doc.txt:chunk_00018"
+        ]
+      }
+    ]
+  },
+  {
+    "node_id": "nda91043d",
+    "points": []
   }
 ]

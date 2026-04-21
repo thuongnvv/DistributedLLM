@@ -1,47 +1,59 @@
 {
-  "winner": "node_c",
-  "final_answer": "COVID-19 is an infectious respiratory illness caused by the SARS‑CoV‑2 coronavirus; the term stands for corona, virus, disease [doc3_covid19.txt:chunk_00000].",
+  "winner": "nd17ac5a1",
+  "final_answer": "The U.S. government has historically curtailed civil liberties and suppressed dissent during large-scale wars. Locally, Senator Joe McCarthy used war hysteria during the Korean War to assault civil liberties [nd17ac5a1:0:19e82853]. Externally, the Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime [nd87f4bcd:2:33644389]. The Vietnam War inspired widespread dissent due to U.S. military intervention in support of a corrupt regime [nd502a541:0:8a4601d6]. The Committee on Public Information controlled war-related information to shape public opinion [nd87f4bcd:3:4bc93889]. The Sedition Act of 1918 prohibited disloyal language against the government and armed forces [nd87f4bcd:1:8fba4bc0]. The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy [nd87f4bcd:0:d6dd8de2]. Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate [nd502a541:2:1aae853d]. The federal government centralized and coordinated the economy for total war mobilization [nd87f4bcd:4:0493dea1]. The US government froze assets of the Issei and imposed strict curfews after Pearl Harbor [nd5892f77:0:569dd5f7].",
   "metrics": {
     "pass": {
-      "node_a": 0,
-      "node_b": 0,
-      "node_c": 0
+      "nd5892f77": 3,
+      "nd502a541": 3,
+      "nd17ac5a1": 3,
+      "nd87f4bcd": 3
     },
     "fail": {
-      "node_a": 0,
-      "node_b": 0,
-      "node_c": 0
+      "nd5892f77": 0,
+      "nd502a541": 0,
+      "nd17ac5a1": 0,
+      "nd87f4bcd": 0
     },
     "agree": {
-      "node_a": 0,
-      "node_b": 0,
-      "node_c": 0
+      "nd5892f77": 21,
+      "nd502a541": 18,
+      "nd17ac5a1": 27,
+      "nd87f4bcd": 13
     },
     "reject": {
-      "node_a": 0,
-      "node_b": 0,
-      "node_c": 0
+      "nd5892f77": 0,
+      "nd502a541": 0,
+      "nd17ac5a1": 0,
+      "nd87f4bcd": 0
     },
     "eligible_reviews": {
-      "node_a": 2,
-      "node_b": 2,
-      "node_c": 2
+      "nd5892f77": 3,
+      "nd502a541": 3,
+      "nd17ac5a1": 3,
+      "nd87f4bcd": 3
     },
     "used_points": {
-      "node_a": 2,
-      "node_b": 4,
-      "node_c": 1
+      "nd5892f77": 7,
+      "nd502a541": 10,
+      "nd17ac5a1": 9,
+      "nd87f4bcd": 10
     },
     "agree_rate": {
-      "node_a": 0.0,
-      "node_b": 0.0,
-      "node_c": 0.0
+      "nd5892f77": 1.0,
+      "nd502a541": 0.6,
+      "nd17ac5a1": 1.0,
+      "nd87f4bcd": 0.43333333333333335
     }
   },
   "reputation_updates": {
     "node_rep_delta": {
-      "node_c": 5.0
+      "nd17ac5a1": 5.0
     },
-    "point_rep_delta": {}
+    "point_rep_delta": {
+      "nd17ac5a1": 3.0,
+      "nd502a541": 12.0,
+      "nd5892f77": 21.0,
+      "nd87f4bcd": 43.0
+    }
   }
 }

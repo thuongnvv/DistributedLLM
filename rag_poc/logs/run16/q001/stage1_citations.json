@@ -1,188 +1,746 @@
 {
-  "node_a": [
+  "ndeaded7c": [
     {
-      "doc_id": "doc1_covid19.txt",
-      "chunk_id": "chunk_00130",
-      "text": "Treatment\nMain article: Treatment and management of COVID-19",
-      "score": 0.7554
+      "doc_id": "ndeaded7c_doc.txt",
+      "chunk_id": "chunk_00016",
+      "text": "What makes the postwar demographic explosion even more curious and remarkable is its pervasiveness across all groups in the society. Americans of all backgrounds rushed into marriage and childbearing, even though many of these newly formed families—most notably large numbers of Americans of color—were excluded from suburbia, the site of the \"American way of life.\" Racial and class divisions were concealed beneath an aura of unity in the aftermath of the war. Post–World War II America presented itself as a unified nation, politically harmonious and blessed with widespread affluence",
+      "score": 0.5515
     },
     {
-      "doc_id": "doc1_covid19.txt",
-      "chunk_id": "chunk_00000",
-      "text": "Coronavirus disease 2019 (COVID-19) is a contagious disease caused by the coronavirus SARS-CoV-2. Starting in January 2020, the disease spread worldwide, resulting in the COVID-19 pandemic. In March 2020, the World Health Organization declared COVID-19 a global health emergency; they declared the end of the emergency in May 2023.[7]",
-      "score": 0.7229
-    },
-    {
-      "doc_id": "doc1_covid19.txt",
-      "chunk_id": "chunk_00151",
-      "text": "Blood group\nThis section is an excerpt from Relationship between blood group and COVID-19.[edit]",
-      "score": 0.6953
-    },
-    {
-      "doc_id": "doc1_covid19.txt",
-      "chunk_id": "chunk_00010",
-      "text": "Signs and symptoms\nMain article: Symptoms of COVID-19\nSymptoms of COVID-19",
-      "score": 0.6922
-    },
-    {
-      "doc_id": "doc1_covid19.txt",
-      "chunk_id": "chunk_00133",
-      "text": "Most cases of COVID-19 are mild. In these, supportive care includes medication such as paracetamol or NSAIDs to relieve symptoms (fever, body aches, cough), proper intake of fluids, rest, and nasal breathing.[267][268][269][270] Good personal hygiene and a healthy diet are also recommended.[271] As of April 2020 the U.S",
-      "score": 0.6859
-    },
-    {
-      "doc_id": "doc1_covid19.txt",
-      "chunk_id": "chunk_00080",
-      "text": "Viral testing\nMain article: COVID-19 testing\nDemonstration of a nasopharyngeal swab for COVID‑19 testing",
-      "score": 0.654
-    },
-    {
-      "doc_id": "doc1_covid19.txt",
-      "chunk_id": "chunk_00131",
-      "text": "The treatment and management of COVID-19 combines both supportive care, which includes treatment to relieve symptoms, fluid therapy, oxygen support as needed,[262][263][264] and a growing list of approved medications",
-      "score": 0.65
-    },
-    {
-      "doc_id": "doc1_covid19.txt",
-      "chunk_id": "chunk_00009",
-      "text": ", the World Health Organization (WHO) recommended 2019-nCoV[33] and 2019-nCoV acute respiratory disease[34] as interim names for the virus and disease per 2015 guidance and international guidelines against using geographical locations or groups of people in disease and virus names to prevent social stigma.[35][36][37] The official names COVID‑19 and SARS-CoV-2 were issued by the WHO on 11 February 2020 with COVID-19 being shorthand for \"coronavirus disease 2019\".[38][39] The WHO additionally uses \"the COVID‑19 virus\" and \"the virus responsible for COVID‑19\" in public communications.[38][40]",
-      "score": 0.6451
-    },
-    {
-      "doc_id": "doc1_covid19.txt",
-      "chunk_id": "chunk_00024",
-      "text": "COVID‑19 is caused by infection with a strain of coronavirus known as \"severe acute respiratory syndrome coronavirus 2\" (SARS-CoV-2).[85]\nTransmission\nMain article: Transmission of COVID-19\nTransmission of COVID‑19\n\nCOVID-19 is mainly transmitted from person to person through inhaling air contaminated by droplets/aerosols and small airborne particles containing the virus. Infected people exhale those particles as they breathe, talk, cough, sneeze, or sing.[86][87][88][89] Transmission is most likely at closer range but can also occur over longer distances, particularly indoors.[86][90]",
-      "score": 0.6441
-    },
-    {
-      "doc_id": "doc1_covid19.txt",
-      "chunk_id": "chunk_00215",
-      "text": ", China reported nearly 140 new cases in one day, including two people in Beijing and one in Shenzhen.[441] Later official data shows 6,174 people had already developed symptoms by then,[373] and more may have been infected.[442] A report in The Lancet on 24 January indicated human transmission, strongly recommended personal protective equipment for health workers, and said testing for the virus was essential due to its \"pandemic potential\".[147][443] On 30 January, the WHO declared COVID-19 a Public Health Emergency of International Concern.[442] By this time",
-      "score": 0.642
-    }
-  ],
-  "node_b": [
-    {
-      "doc_id": "doc2_covid19.txt",
-      "chunk_id": "chunk_00000",
-      "text": "Overview\n\nCoronavirus disease 2019 (COVID-19), is an illness caused by a virus. The virus is called severe acute respiratory syndrome coronavirus 2 or, more commonly, SARS-CoV-2. It started spreading at the end of 2019 and became a pandemic disease in 2020.\n\nThe virus that causes COVID-19 spreads between people in close contact. Most commonly, it spreads through the air in tiny droplets of fluid. Many people with COVID-19 have mild illness or no symptoms. But for older adults and people with certain medical conditions, COVID-19 can lead to the need for care in the hospital or death.",
-      "score": 0.7801
-    },
-    {
-      "doc_id": "doc2_covid19.txt",
-      "chunk_id": "chunk_00009",
-      "text": "It's possible to get COVID-19 more than once.\n\n    Over time, the body's defense against the COVID-19 virus can fade.\n    A person may be exposed to so much of the virus that it breaks through the immune defense.\n    As a virus infects a group of people, the virus copies itself. During this process, the genetic code can randomly change in each copy. The changes are called mutations. If the coronavirus that causes COVID-19 changes in ways that make previous infections or vaccination less effective at preventing infection, people can get sick again.",
-      "score": 0.6242
-    },
-    {
-      "doc_id": "doc2_covid19.txt",
-      "chunk_id": "chunk_00008",
-      "text": "The coronavirus carried by the breath of a person with the infection can land directly on the face of a nearby person, after a sneeze or cough, for example. The droplets or particles could also be breathed in by other people if they are close together or in areas with low airflow.\n\nIt's possible to get COVID-19 more than once.",
-      "score": 0.6185
-    },
-    {
-      "doc_id": "doc2_covid19.txt",
-      "chunk_id": "chunk_00022",
-      "text": "Besides vaccination, there are other ways to stop the spread of the virus that causes COVID-19. If you are at a higher risk of serious illness, talk with your healthcare professional about how best to protect yourself. Know what to do if you get sick so you can quickly start treatment. If you feel ill or have COVID-19, stay home and away from others, including pets, if possible.\n\nIn general, make it a habit to:",
-      "score": 0.6072
-    },
-    {
-      "doc_id": "doc2_covid19.txt",
-      "chunk_id": "chunk_00015",
-      "text": "COVID-19: Who's at higher risk of serious symptoms? - Related informationCOVID-19: Who's at higher risk of serious symptoms?\n\nComplications\n\nComplications of severe COVID-19 illness can include:\n\n    Acute respiratory distress syndrome, which is when the body's organs do not get enough oxygen.\n    New heart issues or shock caused by the infection or heart conditions.\n    Overreaction of the immune system, called the inflammatory response.\n    Blood clots.\n    Damage to brain function, called encephalopathy.\n    Kidney injury.",
-      "score": 0.5957
-    },
-    {
-      "doc_id": "doc2_covid19.txt",
-      "chunk_id": "chunk_00007",
-      "text": "Sign up for free and stay up to date on research advancements, health tips, current health topics, and expertise on managing health. Click here for an email preview.\nEmail\nCauses\n\nCOVID-19 is caused by infection with the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2).\n\nThe coronavirus spreads mainly from person to person, even from someone who is infected but has no symptoms. When people with COVID-19 cough, sneeze, breathe, sing or talk, their breath may contain the COVID-19 virus.",
-      "score": 0.5927
-    },
-    {
-      "doc_id": "doc2_covid19.txt",
-      "chunk_id": "chunk_00017",
-      "text": "Other infections, such as the flu and polio, can lead to long-term illness. But researchers have only studied the virus that causes COVID-19 since it began to spread in 2019. So research continues into the specific effects of long-term COVID-19 symptoms.\n\nGetting a COVID-19 vaccine may help prevent post-COVID-19 syndrome.\nPrevention\n\nThe 2025-2026 COVID-19 vaccines available in the United States include Moderna, Pfizer-BioNTech and Novavax.\n\nModerna COVID-19 vaccine 2025-2026 formulas:",
-      "score": 0.5895
-    },
-    {
-      "doc_id": "doc2_covid19.txt",
-      "chunk_id": "chunk_00014",
-      "text": "Other conditions that raise the risk of serious COVID-19 illness are:\n\n    Heart disease, high blood pressure and heart failure.\n    Stroke.\n    Diabetes.\n    Chronic kidney, liver or lung disease.\n    Mood disorders or mental health conditions, such as schizophrenia.\n    Sickle cell disease.\n    Smoking.\n    Body mass index in the obese category.\n\nThis list is not complete. Other factors may raise the risk of serious COVID-19 illness too. Examples are living in a group home or lack of access to medical care.\nRelated information",
-      "score": 0.5875
-    },
-    {
-      "doc_id": "doc2_covid19.txt",
+      "doc_id": "ndeaded7c_doc.txt",
       "chunk_id": "chunk_00004",
-      "text": "Most people with COVID-19 have mild to moderate symptoms. But COVID-19 can cause serious medical complications and lead to death. Older adults and people who already have medical conditions are at greater risk of serious illness.\n\nRarely, people who catch this coronavirus can develop a group of symptoms linked to inflamed organs or tissues. This illness is called multisystem inflammatory syndrome. When children have this illness, it is called multisystem inflammatory syndrome in children (MIS-C). In adults, the name is MIS-A.\nWhen to see a doctor",
-      "score": 0.5793
+      "text": "Demographic indicators show that in the period immediately following World War II, Americans were more eager than ever to establish families",
+      "score": 0.5447
     },
     {
-      "doc_id": "doc2_covid19.txt",
-      "chunk_id": "chunk_00001",
-      "text": "Staying up to date on your COVID-19 vaccine helps prevent serious illness, the need for hospital care due to COVID-19 and death from COVID-19. Other things that may help prevent the spread of this coronavirus include good indoor airflow, physical distancing, wearing a mask in the right setting and good hygiene.\n\nMedicine can limit the seriousness of the viral infection. Most people recover without long-term effects, but some people have symptoms that continue for months.\nProvider applying Bandaid to upper arm\nAre you fully protected?\n\nCreate your personalized vaccination plan.\nSymptoms",
-      "score": 0.5717
+      "doc_id": "ndeaded7c_doc.txt",
+      "chunk_id": "chunk_00024",
+      "text": ". Like the young couple who honeymooned in the fallout shelter, postwar Americans set their sights on the affluent and protected home as the location of their own personal pursuit of happiness.",
+      "score": 0.3763
+    },
+    {
+      "doc_id": "ndeaded7c_doc.txt",
+      "chunk_id": "chunk_00017",
+      "text": ". Emerging triumphant from a war fought against racist and fascist regimes, spared the ravages of war-torn Europe and Asia, and prosperous from the booming wartime economy, the United States embraced its position as the \"leader of the free world.\"",
+      "score": 0.3742
+    },
+    {
+      "doc_id": "ndeaded7c_doc.txt",
+      "chunk_id": "chunk_00003",
+      "text": ". The self-contained home held out the promise of security in an insecure world. It also offered a vision of abundance and fulfillment. As the Cold War began, young postwar Americans were rushing into this vision of marriage and family life.",
+      "score": 0.3738
+    },
+    {
+      "doc_id": "ndeaded7c_doc.txt",
+      "chunk_id": "chunk_00012",
+      "text": "This demographic explosion in the American family represented a temporary disruption of long-term trends. It lasted only until the baby-boom children came of age. The parents, having grown up during the Depression and the war, had begun their families during years of prosperity. Their children, however, grew up amid affluence during the Cold War; they reached adulthood during the 1960s and 1970s, creating the counterculture and a new women’s liberation movement. In vast numbers, they rejected the political assumptions of the Cold War, along with the domestic and sexual codes of their parents",
+      "score": 0.3714
+    },
+    {
+      "doc_id": "ndeaded7c_doc.txt",
+      "chunk_id": "chunk_00019",
+      "text": ". The divisions in American society along racial, class, and gender lines threatened to weaken the society at home and damage its prestige in the world. In the propaganda battles that permeated the era, American leaders promoted the American way of life as the triumph of capitalism, allegedly available to all who believed in its values. This way of life was characterized by affluence, located in suburbia, and epitomized by white middle-class nuclear families. Increasing numbers of Americans gained access to this domestic ideal—but not everyone who aspired to it could achieve it.",
+      "score": 0.3636
+    },
+    {
+      "doc_id": "ndeaded7c_doc.txt",
+      "chunk_id": "chunk_00018",
+      "text": "But major challenges lay ahead if the nation was to maintain its leadership in the world. The atomic blasts that devastated Hiroshima and Nagasaki marked both the end of the Second World War and the beginning of the Cold War. The United States now faced its former ally, the Soviet Union, as its major foe. The Cold War was largely an ideological struggle between the two superpowers, both hoping to increase their power and influence across the globe",
+      "score": 0.359
+    },
+    {
+      "doc_id": "ndeaded7c_doc.txt",
+      "chunk_id": "chunk_00011",
+      "text": ". After the war, expanding job and educational opportunities, as well as the increasing availability of birth-control devices, might well have led young people to delay marriage or not marry at all, and to have fewer children if they did marry. Indeed, many observers at the time feared that these changes seriously threatened the stability of the American family. Yet, the evidence overwhelmingly indicates that postwar American society experienced a surge in family life and a reaffirmation of domesticity that rested on distinct roles for women and men.",
+      "score": 0.358
+    },
+    {
+      "doc_id": "ndeaded7c_doc.txt",
+      "chunk_id": "chunk_00022",
+      "text": ". Although strategists and foreign policy experts feared that the Soviet Union might gain the military strength and territorial expansion to achieve world domination, many leaders, pundits, and other observers worried that the real dangers to America were internal ones: racial strife, emancipated women, class conflict, and familial disruption.",
+      "score": 0.3555
     }
   ],
-  "node_c": [
+  "ndf0bd955": [
     {
-      "doc_id": "doc3_covid19.txt",
-      "chunk_id": "chunk_00000",
-      "text": "What is COVID-19?\n\nCOVID-19 is an infectious respiratory illness caused by a coronavirus called SARS-CoV-2. ‘CO’ stands for corona, ‘VI’ for virus, and ‘D’ for disease.\nWhat are the symptoms of COVID-19?\n\nMany COVID-19 symptoms are similar to those of the flu, the common cold and other conditions, so a test is required to confirm if someone has COVID-19. Symptoms may appear 2 to 14 days after exposure to the virus and can range from very mild to severe illness. Some people who have been infected don’t have any symptoms.",
-      "score": 0.749
-    },
-    {
-      "doc_id": "doc3_covid19.txt",
-      "chunk_id": "chunk_00002",
-      "text": "Symptoms requiring urgent medical attention include difficulty breathing/fast or shallow breathing (also grunting, inability to breastfeed in infants), blue lips or face, chest pain or pressure, confusion, inability to awaken/not interacting, inability to drink or keep down any liquids and severe stomach pain.  \nHow does the COVID-19 virus spread?",
-      "score": 0.6006
-    },
-    {
-      "doc_id": "doc3_covid19.txt",
-      "chunk_id": "chunk_00020",
-      "text": "There are reports of a rare but serious multisystem inflammatory syndrome affecting children and adolescents, possibly associated with COVID-19. Clinical features can include but are not limited to: persistent fever; rash; red or pink eyes; swollen and/or red lips, tongue, hands, feet; gastrointestinal problems; low blood pressure; poor blood flow to organs; and other signs of inflammation.",
-      "score": 0.5623
-    },
-    {
-      "doc_id": "doc3_covid19.txt",
-      "chunk_id": "chunk_00029",
-      "text": "There are a lot of myths and misinformation about coronavirus being shared online. UNICEF has launched a portal where you can find more information and guidance about COVID-19. It’s also advisable to keep up to date on travel, education and other guidance provided by your national or local authorities for the latest recommendations and news. In addition, the WHO has a useful section addressing some of the most frequently asked questions.",
-      "score": 0.5612
-    },
-    {
-      "doc_id": "doc3_covid19.txt",
-      "chunk_id": "chunk_00030",
-      "text": "If you see content online that you believe to be false or misleading, you can help stop it spreading by reporting it to the social media platform.\nCOVID-19 has been described as a “pandemic”. What does that mean?\n\nThe term “pandemic” refers to the geographical spread of COVID-19, it is not an indication of the number of people who have been infected by the virus.\nHow can I help?\n\n    You can join the fight against Covid-19 by spreading facts, not fear!\n\nWhat is UNICEF doing?",
-      "score": 0.5497
-    },
-    {
-      "doc_id": "doc3_covid19.txt",
-      "chunk_id": "chunk_00015",
-      "text": "Children and adolescents may also be affected by multisystem inflammatory syndrome in children (MIS-C), a rare but serious condition that appears to be linked to COVID-19. If your child or a family member is experiencing new or persistent symptoms following acute COVID-19 infection, you should consult your healthcare provider.\nHow can I protect myself and others from COVID-19?\n\nRecent surges of COVID-19 in some countries are a reminder of the importance of continuing to take precautions. Here are some things you and your family can take to help avoid infection:",
-      "score": 0.5335
-    },
-    {
-      "doc_id": "doc3_covid19.txt",
-      "chunk_id": "chunk_00011",
-      "text": "Experts are continuing to monitor these variants around the world to better understand their impact, including on children. So far, the evidence doesn’t suggest that these variants are specifically targeting children, and severe illness in young people remains relatively rare.\n\nParents should continue to encourage their children to take the same precautions as before to help prevent getting and spreading COVID-19.\nDo the COVID-19 vaccines work against the new variants?",
-      "score": 0.53
-    },
-    {
-      "doc_id": "doc3_covid19.txt",
-      "chunk_id": "chunk_00010",
-      "text": "Ultimately, as long as the virus is allowed to keep spreading anywhere in the world, it has more chances to mutate into new variants like Delta and Omicron. The clearest pathway out of the pandemic is to ensure every country has equal access to the tools to fight COVID – tests, treatments and life-saving vaccines. The more people get protected globally, the less room for new variants to emerge, and the sooner we can end the pandemic and return to normal.\nAre any of these new COVID-19 variants more dangerous for children?",
-      "score": 0.5285
-    },
-    {
-      "doc_id": "doc3_covid19.txt",
+      "doc_id": "ndf0bd955_doc.txt",
       "chunk_id": "chunk_00013",
-      "text": "If you have been fully vaccinated but are showing symptoms of COVID-19, you should contact your doctor about whether you should get tested.\nWhat is ‘Long COVID’? Can children be affected? \n\nPost COVID-19 condition, also sometimes referred to as ‘Long COVID,’ is a term used to describe symptoms persisting for weeks or months in some people after the initial recovery from COVID-19 infection.",
-      "score": 0.5193
+      "text": "In the great conflict of World War II, Hitler’s Germany and Roosevelt’s America also fought very different wars—and not just because Germany went down to defeat and America emerged triumphant. Indeed, America’s experience in World War II stands in vivid contrast with the experience of all other combatants, including not only Germany but America’s allies in the \"Grand Alliance\" as well.",
+      "score": 0.5354
     },
     {
-      "doc_id": "doc3_covid19.txt",
+      "doc_id": "ndf0bd955_doc.txt",
+      "chunk_id": "chunk_00021",
+      "text": "Our national mythology has enshrined the Depression as a time of unparalleled suffering, and World War II as a monument to patriotic sacrifice and unselfish service to the cause of freedom. Without denying those stories, a comparison with other people’s experience can serve as a reminder that for all the misery that Depression and war visited upon the United States, Americans could count their blessings that fortune—and wise leadership—had spared them the enormously more ghastly deprivations and horrors that were all too common elsewhere.",
+      "score": 0.4627
+    },
+    {
+      "doc_id": "ndf0bd955_doc.txt",
+      "chunk_id": "chunk_00015",
+      "text": ". America, meanwhile, in the words of Winston Churchill, stood at that same moment \"at the summit of the world,\" and Americans have ever after recollected World War II as \"the good war,\" fought and won by the \"greatest generation.\"",
+      "score": 0.4544
+    },
+    {
+      "doc_id": "ndf0bd955_doc.txt",
+      "chunk_id": "chunk_00000",
+      "text": "The Great Depression and World War II were events in world history, but they touched different countries in sometimes dramatically different ways. To paraphrase Tolstoy, many peoples suffered, but every unhappy people was unhappy in its own way—and understanding the particularities of the individual cases can do much to illuminate questions of national character and the role of contingency in history.",
+      "score": 0.4132
+    },
+    {
+      "doc_id": "ndf0bd955_doc.txt",
+      "chunk_id": "chunk_00017",
+      "text": "Uniquely among all the belligerent countries in World War II—perhaps uniquely in the history of warfare—the United States alone had managed to grow its civilian economy even while waging a hugely costly war. In Britain and the Soviet Union, as well as Germany, the civilian standard of living went down by approximately one-third, exacting a huge price in terms of mundane, daily deprivation from peoples already afflicted by wholesale destruction and death",
+      "score": 0.4126
+    },
+    {
+      "doc_id": "ndf0bd955_doc.txt",
+      "chunk_id": "chunk_00019",
+      "text": "And though it is true that 405,399 brave American servicemen died in World War II, proportionate to population, American losses were about one-third of Britain’s, and about one-sixtieth of those in the Soviet Union—where some eight million soldiers and a staggering sixteen million civilians lost their lives",
+      "score": 0.4062
+    },
+    {
+      "doc_id": "ndf0bd955_doc.txt",
+      "chunk_id": "chunk_00016",
+      "text": "Elsewhere, even Roosevelt’s wartime partners—Britain and the Soviet Union—had paid a far greater price in blood and treasure than their fortunate American ally.",
+      "score": 0.3738
+    },
+    {
+      "doc_id": "ndf0bd955_doc.txt",
+      "chunk_id": "chunk_00002",
+      "text": "In the United States and Germany alike the Depression badly discredited existing political regimes and created opportunities for new leaders to emerge. In a striking contrast that speaks volumes about the different political cultures that spawned them, Germany got Adolf Hitler, and the United States got Franklin D. Roosevelt. At the outset, both asked to be judged on their records of success or failure in doing battle against the Depression. Both were ultimately judged on other grounds altogether—the one universally condemned in the history books, the other almost universally praised.",
+      "score": 0.3606
+    },
+    {
+      "doc_id": "ndf0bd955_doc.txt",
+      "chunk_id": "chunk_00011",
+      "text": ". \"We are going to make a country,\" Roosevelt said, \"in which no one is left out.\" In that same year, Hitler codified the Nazis’ viciously anti-Semitic policies in the notorious Nuremberg Decrees, which stripped German Jews of their citizenship, barred them from the professions and military service, and prohibited marriage between Jews and \"Aryans\"—all gruesome steps on the road to the genocidal wartime Holocaust that would eventually decimate European Jewry.",
+      "score": 0.3231
+    },
+    {
+      "doc_id": "ndf0bd955_doc.txt",
+      "chunk_id": "chunk_00005",
+      "text": "Roosevelt’s entire presidency unfolded under the shadow of Hitler’s tyrannical fanaticism. Of the events that compose the great chapters of Roosevelt’s political biography—the drama of the \"Hundred Days,\" the battle against the Depression, the landmark social and economic reforms of the New Deal, and later the agony of uncertainty about Europe’s fate and America’s relation to it, the struggle against isolationism, and the waging of World War II—all played out against the looming threat and eventually the armed challenge of Hitler’s Nazi regime",
+      "score": 0.3203
+    }
+  ],
+  "nd5892f77": [
+    {
+      "doc_id": "nd5892f77_doc.txt",
+      "chunk_id": "chunk_00000",
+      "text": "Although World War II is covered in most school curricula, the story of American citizens who were stripped of their civil liberties here, on American soil, during that war is often omitted. Yet what happened to first-generation Japanese immigrants, or Issei, and second-generation Japanese Americans, or Nisei, during World War II, is critically important to understanding the intensity of feelings prompted by the attack on Pearl Harbor and to assessing the impact of that war on our nation.",
+      "score": 0.6357
+    },
+    {
+      "doc_id": "nd5892f77_doc.txt",
+      "chunk_id": "chunk_00021",
+      "text": ". Was military and political service the only way Japanese Americans could exhibit patriotism or valor? What about the ordinary Japanese American men and women who managed to keep their families intact while detained in the camps? Was theirs a story of heroism that deserved to be remembered and told? Should the men and women who actively resisted discrimination by dodging the draft, sabotaging War Relocation efforts, or secretly running businesses that had been declared illegal also be memorialized? In the end",
+      "score": 0.5656
+    },
+    {
+      "doc_id": "nd5892f77_doc.txt",
+      "chunk_id": "chunk_00022",
+      "text": ", the burden of a more complete account of the Japanese American experience during the war rests on the shoulders of historians and teachers.",
+      "score": 0.542
+    },
+    {
+      "doc_id": "nd5892f77_doc.txt",
+      "chunk_id": "chunk_00017",
+      "text": ". He openly linked his own success to America’s political supremacy in the world. But if the creed gave voice to Japanese-American patriotism, it could not preserve the historical memory of detention and relocation, for it had been written in 1940, before the policy of internment began.",
+      "score": 0.5341
+    },
+    {
+      "doc_id": "nd5892f77_doc.txt",
+      "chunk_id": "chunk_00019",
+      "text": ". In addition, they agreed to include quotes by Congressman Norman Mineta, a man whose family was detained in a Wyoming camp, and Senator Daniel Inouye, who served in the 442nd. The successful public careers of these men seemed to prove that, despite overt discrimination against them, Japanese Americans could succeed in the traditional sense and live the \"American Dream.\"",
+      "score": 0.5199
+    },
+    {
+      "doc_id": "nd5892f77_doc.txt",
+      "chunk_id": "chunk_00014",
+      "text": "Initially, planners intended to honor Japanese Americans who served in the military during World War II. Then it was agreed that the memorial should also represent the internment experience and Japanese patriotism and valor more broadly construed. But the memorial planners quickly discovered that there was no universal way to define these heroic qualities, no way to represent them outside of a specific historical context, even though they were crucial in shaping a positive sense of Japanese Americans for visitors to the projected memorial.",
+      "score": 0.5076
+    },
+    {
+      "doc_id": "nd5892f77_doc.txt",
+      "chunk_id": "chunk_00011",
+      "text": ". From Dr. Seuss cartoons to the covers of mainstream magazines, Japanese Americans were caricatured and referred to by the derogatory term \"Japs.\" A prejudice that had manifested itself in the Immigration Act of 1924 and other racially discriminatory measures again reared its head in the internment camps.",
+      "score": 0.4802
+    },
+    {
+      "doc_id": "nd5892f77_doc.txt",
+      "chunk_id": "chunk_00009",
+      "text": "My own students often greet these accounts of internment with disbelief. Surely American citizens could not be detained against their will and interned as the result of official policy. Surely this wasn’t official policy, they protest. Surely other Americans didn’t know this was going on. It is crucial, therefore, to help students understand the social and cultural milieu in which other Americans would be complicit with these acts",
+      "score": 0.4733
+    },
+    {
+      "doc_id": "nd5892f77_doc.txt",
+      "chunk_id": "chunk_00006",
+      "text": "Relocation wreaked havoc on traditional family and gender roles. Japanese men felt emasculated by the low wages they received for menial tasks in the camps, and women felt shamed in barrack commodes that left them exposed when they dressed and relieved themselves. Rather than sit for quiet family meals, fathers started eating with other men, while mothers fed their infants alone. Accommodations were so crowded that teenagers left for more privacy, further disintegrating the traditional Japanese family.",
+      "score": 0.4571
+    },
+    {
+      "doc_id": "nd5892f77_doc.txt",
+      "chunk_id": "chunk_00002",
+      "text": "Within two months President Roosevelt signed Executive Order 9066, authorizing the War Relocation Authority to force 110,000 Japanese and their American-born children into relocation camps. Internees relinquished their communities, homes, and livelihoods for cramped barracks in isolated interior areas of Arizona, Utah, California, Wyoming, Arkansas, Idaho, and Colorado. Officially, the government declared that the forced relocation was necessary for Japanese Americans’ safety. Unofficially, however, these citizens had become the enemy—and America had to be protected from them",
+      "score": 0.4376
+    }
+  ],
+  "nd502a541": [
+    {
+      "doc_id": "nd502a541_doc.txt",
+      "chunk_id": "chunk_00006",
+      "text": "In the weeks after the Japanese attack on Pearl Harbor on December 7, 1941, Henry Kissinger joined the US Army, which is where his foreign policy career began. Kissinger worked in counterintelligence, charged with helping American soldiers understand German society, identifying Nazi figures in Europe, and eventually managing postwar German society. Kissinger’s German language skills, his quick mind, and his Jewishness made him perfect for this job",
+      "score": 0.4246
+    },
+    {
+      "doc_id": "nd502a541_doc.txt",
+      "chunk_id": "chunk_00029",
+      "text": ". It also grew from his ignorance of these regions. Kissinger’s energetic efforts to pursue American national interests often blinded him to the very negative effects of his policies in “third world” societies that harbored distrust and animosity toward a long history of foreign imperialism.",
+      "score": 0.3824
+    },
+    {
+      "doc_id": "nd502a541_doc.txt",
+      "chunk_id": "chunk_00034",
+      "text": "Acting as a superpower was sometimes self-defeating. American leadership in the Cold War inspired both pride and regret. The same is true for the historical legacy of Henry Kissinger.",
+      "score": 0.3722
+    },
+    {
+      "doc_id": "nd502a541_doc.txt",
+      "chunk_id": "chunk_00001",
+      "text": ". Kissinger’s diverse experiences, and the varied public perceptions of them, captured many of the contradictions at the center of the Cold War. He remains influential and infamous in the early twenty-first century because those Cold War contradictions continue to characterize American discussions of foreign policy, from Iraq and Afghanistan to Israel and China.",
+      "score": 0.3581
+    },
+    {
+      "doc_id": "nd502a541_doc.txt",
+      "chunk_id": "chunk_00028",
+      "text": "The transition was particularly difficult because it was not evenly applied—a fourth contradiction in American Cold War policies. Kissinger continued to harbor strong ideological presumptions against negotiations with socialist and communist regimes in Latin America and Africa. In part, this reflected a racist judgment that people in these societies were more susceptible to communist propaganda and less capable of ruling themselves. It also grew from his ignorance of these regions",
+      "score": 0.349
+    },
+    {
+      "doc_id": "nd502a541_doc.txt",
+      "chunk_id": "chunk_00007",
+      "text": ". He understood German society, he could master incredible amounts of work, and there was little chance (because of his Jewish heritage) that he would sympathize with the Nazi leaders the United States sought to capture. As Kissinger remembers, his time in the army was the period when he first felt “American,” with a special role to play in helping his newfound society. Kissinger was helping defend humanity and civilization, he believed, against its gravest threats.",
+      "score": 0.348
+    },
+    {
+      "doc_id": "nd502a541_doc.txt",
+      "chunk_id": "chunk_00019",
+      "text": "Kissinger’s Realpolitik became most evident in Vietnam. The long American war in Southeast Asia had inspired widespread dissent within the United States and among allies. Since 1965, the United States had escalated its military intervention in defense of a weak, corrupt, and unpopular South Vietnamese regime. President Lyndon Johnson and other American leaders in the 1960s felt compelled to continue and expand Washington’s intervention for the sake of justifying past commitments.",
+      "score": 0.3478
+    },
+    {
+      "doc_id": "nd502a541_doc.txt",
+      "chunk_id": "chunk_00008",
+      "text": "This was the first contradiction of Kissinger’s career, and of the Cold War: the United States established itself at the end of the Second World War as a defender of humanity and civilization through the use of overwhelming military force. As never before, American soldiers like Kissinger were deployed around the globe to enforce freedom, order, and democracy as the United States developed a large, permanent peacetime military force to police distant lands",
+      "score": 0.3431
+    },
+    {
+      "doc_id": "nd502a541_doc.txt",
+      "chunk_id": "chunk_00009",
+      "text": ". Kissinger was a pioneer of this phenomenon, helping to bring American military power to Europe, rebuild Germany under American guidance, and establish new intelligence capabilities for the United States. Americans like Kissinger promoted American ideals with unprecedented force. This seemed necessary at the time, but many would later question whether this approach was appropriate in places like Korea, Vietnam, and post-Cold War Iraq.",
+      "score": 0.3294
+    },
+    {
+      "doc_id": "nd502a541_doc.txt",
+      "chunk_id": "chunk_00005",
+      "text": ". To help support his family, Kissinger worked in a brush factory during the day. Life in the United States on the eve of the Second World War was difficult, but it was livable for a family that faced certain death in its original home.",
+      "score": 0.3252
+    }
+  ],
+  "nd02aaf19": [
+    {
+      "doc_id": "nd02aaf19_doc.txt",
+      "chunk_id": "chunk_00007",
+      "text": "In two key incidents in Iran from the post-war period these precepts were plainly evident, and produced consequences for the United States that were in some ways utterly unanticipated. At other moments later in the Cold War, described further below, Washington’s fixation on the Soviet threat left it unprepared to deal with crises of local origin that were equally significant for America’s standing in the region.",
+      "score": 0.389
+    },
+    {
+      "doc_id": "nd02aaf19_doc.txt",
+      "chunk_id": "chunk_00019",
+      "text": ". This did not necessarily bode well for Washington, however. Instead, it was a sign of the rise of another factor in international politics that would have implications beyond the Cold War: Moslem fundamentalism, which not only incorporated the concept of national sovereignty (captured in the phrase \"neither East nor West\") but was animated at its core by the ambition of creating a theocratic state and spreading Islam across the region.",
+      "score": 0.353
+    },
+    {
+      "doc_id": "nd02aaf19_doc.txt",
       "chunk_id": "chunk_00024",
-      "text": "At this time, we still do not know if the virus can be transmitted from a mother to her baby during pregnancy. To date, the COVID-19 virus has not been found in vaginal fluid, in cord blood, breastmilk, amniotic fluid or the placenta. Research is still ongoing. Pregnant women should continue to follow appropriate precautions to protect themselves from exposure to the virus, and seek medical care early, if experiencing symptoms, such as fever, cough or difficulty breathing.\nIs it safe for a mother to breastfeed if she is infected with COVID-19?",
-      "score": 0.5168
+      "text": "The Iran-Iraq War took place during the Cold War but it had virtually nothing to do with the East-West conflict; it was a local dispute sparked by indigenous factors. Washington’s actions, however, did grow out of the American mindset of that era: a desire to protect the flow of oil from the Persian Gulf and a determination to block the Soviets from gaining influence in the region. Regardless of each side’s intentions, the war produced a number of enduring results. One was that the leaders of Iran’s revolution were able to link their cause to the survival of the nation itself",
+      "score": 0.3217
+    },
+    {
+      "doc_id": "nd02aaf19_doc.txt",
+      "chunk_id": "chunk_00027",
+      "text": ". George W. Bush’s national security doctrine reasserted Washington’s Cold War–era determination not to permit the emergence of another rival power (like the Soviets, or in an earlier era, the Nazis) to threaten American interests, and echoed Eisenhower’s concept, employed in Iran in 1953, of preempting a perceived threat. Although current US strategy no longer focuses on some of these ambitious concepts, their impact can be seen in the history of American involvement in the Middle East and continues to be felt across the region.",
+      "score": 0.3137
+    },
+    {
+      "doc_id": "nd02aaf19_doc.txt",
+      "chunk_id": "chunk_00005",
+      "text": "Both of these circumstances—Iran’s location between the USSR and the Persian Gulf, and the presence of major oil reserves—guaranteed the country’s importance during the Cold War. In addition, a third factor came into play: the emergence, even before the end of World War II, of the global military and ideological competition between the United States and the Soviet Union. Fear of losing influence in a vital part of the world to Soviet-led Communism motivated much of American foreign policy for the next several decades",
+      "score": 0.3055
+    },
+    {
+      "doc_id": "nd02aaf19_doc.txt",
+      "chunk_id": "chunk_00010",
+      "text": ". Stalin ultimately decided to withdraw from the country in late 1946. The actions of the United States were seen as a sign of genuine respect for the rights of sovereign states—highly unusual for a major power—and made a powerful impression on the Iranian people. To this day, the Azerbaijan crisis accounts for some of the positive views many still have of the United States.",
+      "score": 0.2961
+    },
+    {
+      "doc_id": "nd02aaf19_doc.txt",
+      "chunk_id": "chunk_00026",
+      "text": "Although the Cold War ostensibly came to an end twenty years ago, the United States still confronts circumstances in Iran that emerged during that crucial period. Some are unchanged—the critical need for oil, for example. Other challenges have been altered or eliminated, but new ones take their place. The Communist threat has disappeared, for instance, but the menace of international terrorism has strengthened. Meanwhile, certain US strategic concepts rooted in the ideological thinking of the Cold War have been temporarily revived. George W",
+      "score": 0.2683
+    },
+    {
+      "doc_id": "nd02aaf19_doc.txt",
+      "chunk_id": "chunk_00025",
+      "text": ". Another was the elevation of the status of the Revolutionary Guards, eventually rivaling even the power of the clerical leadership. (The country’s current combative president, Mahmoud Ahmedinejad, was a member during the war.) Still another outcome, of direct relevance to US standing in the region, was the cementing of the perception among the country’s hardliners of Washington as an irreconcilable enemy of the Islamic Republic.",
+      "score": 0.2631
+    },
+    {
+      "doc_id": "nd02aaf19_doc.txt",
+      "chunk_id": "chunk_00002",
+      "text": ". Why is Iran so important to the US? What explains the enduring animosity between the two countries? Answers to these and other questions about the United States’ position in the region today can be found by looking back to the Cold War.",
+      "score": 0.2563
+    },
+    {
+      "doc_id": "nd02aaf19_doc.txt",
+      "chunk_id": "chunk_00018",
+      "text": "In the context of the Cold War, the revolution appeared to many Americans to signify the \"loss\" of Iran to Soviet influence, a loss that was magnified by the USSR’s invasion of Afghanistan in December 1979. In fact, Moscow was never able to gain a foothold in Iran because of the Islamic Republic’s deep suspicion of Russia’s history of aggressive behavior and the religious leadership’s antipathy for official Soviet atheism. This did not necessarily bode well for Washington, however",
+      "score": 0.2506
+    }
+  ],
+  "nd1cdfce4": [
+    {
+      "doc_id": "nd1cdfce4_doc.txt",
+      "chunk_id": "chunk_00006",
+      "text": "Although African Americans supported their government during WWII, they were not silent about racial practices in America. In fact, some even noted the similarities between the way Jews were treated in Germany and the way blacks were treated in America. The poet Langston Hughes, for example, expressed this sentiment in his piece \"Nazi and Dixie Nordics.\"",
+      "score": 0.4997
+    },
+    {
+      "doc_id": "nd1cdfce4_doc.txt",
+      "chunk_id": "chunk_00000",
+      "text": "Although African Americans have been the victims of racial oppression throughout the history of the United States, they have always supported the nation, especially during wartime. When World War II erupted, over 2.5 million black men registered for the draft and one million served as draftees or volunteers in all of the branches of the Armed Forces during conflict. Most black men who served were in the Army and were relegated to segregated combat support groups",
+      "score": 0.4745
+    },
+    {
+      "doc_id": "nd1cdfce4_doc.txt",
+      "chunk_id": "chunk_00009",
+      "text": "Hughes, like millions of African Americans, was fully conscious of the gap between the stated ideals of the United States and its practices at home. African Americans were also aware that the war created an opportunity to press US leaders for full citizenship.\nDouble V Campaign",
+      "score": 0.4655
+    },
+    {
+      "doc_id": "nd1cdfce4_doc.txt",
+      "chunk_id": "chunk_00017",
+      "text": "Another crucial way that African Americans took advantage of America’s involvement in WWII to push for civil rights was through mass protest. When Nazi Germany began invading and occupying countries in Europe, American industries began contracting with the government to increase production of ships, tanks, guns, and other items for defense. Despite the urgent need for tens of thousands of skilled workers to help in the production of these items, war production companies refused to hire blacks",
+      "score": 0.4501
+    },
+    {
+      "doc_id": "nd1cdfce4_doc.txt",
+      "chunk_id": "chunk_00012",
+      "text": "According to the Courier the response to the introduction of its campaign was \"overwhelming.\" Its office had been swamped with telegrams and letters of support proving that its slogan represented the \"true battle cry of Colored Americans\" and that they were determined to protect their nation and the freedoms that they cherished. It argued that African Americans would wage a \"two-pronged attack\" against those who would enslave us \"at home and those who abroad would enslave us. WE HAVE A STAKE IN THIS FIGHT . . . WE ARE AMERICANS TOO!\"",
+      "score": 0.3751
+    },
+    {
+      "doc_id": "nd1cdfce4_doc.txt",
+      "chunk_id": "chunk_00003",
+      "text": ". Although the Navy put up great resistance and had only allowed blacks to serve as mess attendants, pressure from President Franklin Delano Roosevelt and civil rights organizations forced the Navy to start recruiting blacks in April 1942 for service. However, its policy of relegating blacks to segregated units led black leaders to accuse the Navy of practicing Jim Crow. Despite its goal of recruiting 14,000 volunteers in the first year, blacks never made up more than 5 percent of the entire Navy.",
+      "score": 0.3641
+    },
+    {
+      "doc_id": "nd1cdfce4_doc.txt",
+      "chunk_id": "chunk_00001",
+      "text": ". More than 12,000 black men who served in the segregated 92nd Division received citations and were decorated for their effort, and the all-black 761st Tank Battalion received the Presidential Unit Citation for \"extraordinary heroism.\"",
+      "score": 0.3537
+    },
+    {
+      "doc_id": "nd1cdfce4_doc.txt",
+      "chunk_id": "chunk_00008",
+      "text": ". Our local Nordics have a mass psychosis too, when it comes to race. As the Hitlerites treat the Jews, so they treat the Negroes, in varying degrees of viciousness ranging from the denial of educational opportunities to the denial of employment, from buses that pass Negroes by to jailers who beat and torture Negro prisoners, from the denial of the ballot to the denial of the right to live.",
+      "score": 0.3441
+    },
+    {
+      "doc_id": "nd1cdfce4_doc.txt",
+      "chunk_id": "chunk_00007",
+      "text": "\"The Germans are the victims of a mass psychosis,\" says an American sociologist. \"It will take drastic measures to control them when peace comes.\" These people were talking about Germany. To a Negro, they might just as well have been speaking of white Southerners in Dixie. Our local Nordics have a mass psychosis too, when it comes to race",
+      "score": 0.3428
+    },
+    {
+      "doc_id": "nd1cdfce4_doc.txt",
+      "chunk_id": "chunk_00015",
+      "text": "Besides the photos of the Double V Girls and Double V fashion, the Courier used numerous photos of whites standing alongside African Americans, emphasizing the point that the struggle for democracy was not a black issue but one that benefited the nation. The photos of blacks and whites flashing the Double V were to drive home the point that a unified country was essential for winning the war. Therefore, it urged the country not only preach democracy to the world but to practice it at home.",
+      "score": 0.3118
+    }
+  ],
+  "nd04a456b": [
+    {
+      "doc_id": "nd04a456b_doc.txt",
+      "chunk_id": "chunk_00022",
+      "text": "There is, in addition, another problem with the argument that an assertive Reagan fought the Soviets to a standstill and then wrestled them to the floor until they cried \"Uncle,\" and it is a problem that all teachers of history and world affairs confront on a daily basis in the classroom: complexity. What happens in history—as we all know—can never be explained in single-factor terms; and the end of the Cold War is no exception to this important rule. Indeed, this is why scholars from both sides of the Atlantic are still arguing about it",
+      "score": 0.3706
+    },
+    {
+      "doc_id": "nd04a456b_doc.txt",
+      "chunk_id": "chunk_00000",
+      "text": "For a British professor with more than a passing interest in US foreign policy and the role of the United States in ending the Cold War, it is indeed fascinating to observe how deeply divided opinion still remains over the part played in the making of 1989 by one very special American: President Ronald Reagan. Indeed, in a recent class I taught at my home institution—the London School of Economics—I asked a simple question about which policy-maker at the time was most instrumental in ending Soviet control in Eastern and Central Europe",
+      "score": 0.3493
+    },
+    {
+      "doc_id": "nd04a456b_doc.txt",
+      "chunk_id": "chunk_00020",
+      "text": ". The United States could raise its own military expenditures as high as it liked; it could have lent even more support to so-called \"freedom fighters\" in Afghanistan, but without a very different kind of Soviet leader responding to some very real Soviet problems it is impossible to envisage 1989 ever happening. The United States might have played its part in weakening the legitimacy of communism and exposing its weaknesses (of which Reagan was more aware than many American experts at the time)",
+      "score": 0.333
+    },
+    {
+      "doc_id": "nd04a456b_doc.txt",
+      "chunk_id": "chunk_00007",
+      "text": ". And, as many felt at the time, the United States stood on the cusp between one highly debilitating decade (Reagan later called the 1970s a \"decade of neglect\") and another whose prospects looked anything but bright.",
+      "score": 0.3307
+    },
+    {
+      "doc_id": "nd04a456b_doc.txt",
+      "chunk_id": "chunk_00032",
+      "text": ". It was time in his view for the United States to be bold and work with the USSR to make the world a safer place; not to hold back for fear of what might lay beyond the Cold War",
+      "score": 0.3273
+    },
+    {
+      "doc_id": "nd04a456b_doc.txt",
+      "chunk_id": "chunk_00006",
+      "text": "When Ronald Reagan took over the White House, the end of the Cold War not only seemed a very long way off—nobody in fact thought in such terms at the time—but in many respects it actually looked as if the USSR (and not the West) was winning. The Soviet Union had just invaded Afghanistan. Its supporters in the Third World from Central America to southern Africa seemed to be sweeping all opposition before them. America’s European allies were mired down in a politically bruising effort to deploy a new class of missiles at home",
+      "score": 0.3097
+    },
+    {
+      "doc_id": "nd04a456b_doc.txt",
+      "chunk_id": "chunk_00017",
+      "text": ". The issue is a critical one in terms of explaining the end of the Cold War. For if, as some believe, it was a policy of strength and contestation that ended the Cold War, then obviously one must conclude that it is the Reagan of the first term who needs to be celebrated",
+      "score": 0.2987
+    },
+    {
+      "doc_id": "nd04a456b_doc.txt",
+      "chunk_id": "chunk_00033",
+      "text": ". In this very important sense, Ronald Reagan ultimately demonstrated something that many of his erstwhile critics, and most of his admiring apologists, have never fully comprehended: that whatever role he may or may not have played in bringing about the end of the Cold War—and historians will continue to debate that for many decades to come I suspect—he had what few leaders have ever displayed since: a sense of a different global future in which all might play a constructive role.",
+      "score": 0.2813
+    },
+    {
+      "doc_id": "nd04a456b_doc.txt",
+      "chunk_id": "chunk_00012",
+      "text": "And compete the United States did with increasing determination, most immediately with a decisive military build up in what became known as SDI (the Strategic Defence Initiative). The United States, some of Reagan’s supporters loudly proclaimed, would, quite simply, spend the Soviet Union into bankruptcy. It would also make the USSR pay for its aggressive actions undertaken in the 1970s. Hence was born the \"Reagan doctrine,\" a form of proxy war fought by the United States from Afghanistan to Nicaragua using local forces to increase Soviet problems globally",
+      "score": 0.277
+    },
+    {
+      "doc_id": "nd04a456b_doc.txt",
+      "chunk_id": "chunk_00026",
+      "text": "Finally, how did Reagan himself—and indeed how do most Americans—view the historical figure of Ronald Reagan and what he did in bringing about the end of the Cold War. The simple answer to this is that it all depends on which American you talk to and when! This has certainly been my experience as a teacher. In fact, Americans seem to be even more divided about Reagan than nearly anybody else. There is not very much positive that the broad American left has to say about Reagan, and little indication either that they are prepared to give him any credit for anything",
+      "score": 0.2729
+    }
+  ],
+  "nd010283a": [
+    {
+      "doc_id": "nd010283a_doc.txt",
+      "chunk_id": "chunk_00018",
+      "text": ". As for Japan, South Korea, and Taiwan, the report offered similar judgment: with proper indications of continued US support, all of them would remain firmly within the American geopolitical orbit. Nor did the report see reason for alarm about the possibility that West European allies would interpret an American defeat in Vietnam as an indication of weakening US commitment to NATO. \"Most would understand that the American stake in Europe’s security is of a far different order of importance, and would not be disposed to make false analogies,\" the study concluded.",
+      "score": 0.3948
+    },
+    {
+      "doc_id": "nd010283a_doc.txt",
+      "chunk_id": "chunk_00006",
+      "text": ". Nor did US officials come under much pressure from anti-war critics to reckon in detail with the question of what would happen if the United States failed to achieve its objectives. Radical critics of the war, it’s true, sometimes speculated that defeat might humble the United States and produce thoroughgoing reform of US foreign policies, but that was hardly the kind of commentary that was likely to generate serious study in the corridors of power.",
+      "score": 0.3358
+    },
+    {
+      "doc_id": "nd010283a_doc.txt",
+      "chunk_id": "chunk_00027",
+      "text": ". In Europe, meanwhile, NATO survived. Throughout the Third World, the communist victory in Vietnam energized a few radical regimes and spurred a few insurgencies. Over the long run, though, those developments amounted to little, and new infusions of American military aid reversed the course of the Cold War in the Third World in the United States’ favor by the mid-1980s.",
+      "score": 0.3337
+    },
+    {
+      "doc_id": "nd010283a_doc.txt",
+      "chunk_id": "chunk_00002",
+      "text": "Yet the archival record of the war years is conspicuously thin in one area: detailed assessments of the consequences the United States would suffer if it failed to achieve its goals in Vietnam. Would defeat inevitably amount to a dangerous setback in the broader Cold War? Would it invite further communist aggression, or might the United States be able to contain the damage? Such questions went mostly unexamined during the peak years of American embroilment. To be sure, US leaders intensely analyzed these issues in the years leading up to the major escalation of American involvement in 1965",
+      "score": 0.3229
+    },
+    {
+      "doc_id": "nd010283a_doc.txt",
+      "chunk_id": "chunk_00016",
+      "text": ". At the same time, there was no reason to believe that every government around the world would view a US defeat in Vietnam as a grievous blow to American power and credibility. On the contrary, the study observed, some nations would be reassured by indications that the United States was using its power with \"greater responsibility\" and a \"better-balanced concern for other parts of the world than Southeast Asia.\" Even those governments that questioned American credibility could be significantly reassured by fresh indications of American resolve.",
+      "score": 0.3145
+    },
+    {
+      "doc_id": "nd010283a_doc.txt",
+      "chunk_id": "chunk_00003",
+      "text": ". Again and again, they came to the same conclusion: communist takeover of South Vietnam would open the way to communist expansion elsewhere in Asia and cause US allies and adversaries alike to question the credibility of US commitments around the world, thus inviting further aggression and endangering US alliances. On the strength of these conclusions, Lyndon Johnson committed the United States to a major war in the first months of 1965 despite abundant warnings that victory would be exceedingly difficult to achieve",
+      "score": 0.308
+    },
+    {
+      "doc_id": "nd010283a_doc.txt",
+      "chunk_id": "chunk_00004",
+      "text": ". Thereafter, however, US officials went mostly silent on the issue, content to rest on the assumptions embraced at the outset.",
+      "score": 0.3002
+    },
+    {
+      "doc_id": "nd010283a_doc.txt",
+      "chunk_id": "chunk_00021",
+      "text": ". Exactly what did American leaders believe they were fighting for in Vietnam? Why did LBJ and other American leaders continue the war even as evidence suggested a lack of progress? Why did they never really reexamine the assumptions that had led them to war in 1965? To put the matter bluntly, why did the Vietnam War last so long?",
+      "score": 0.2978
+    },
+    {
+      "doc_id": "nd010283a_doc.txt",
+      "chunk_id": "chunk_00017",
+      "text": "The largest chunk of the report sought to demonstrate, region by region, that the consequences of defeat would be less serious than commonly supposed. In Southeast Asia, the focus of American anxiety about falling dominoes and Chinese expansion, the CIA predicted communist takeovers in Laos and Cambodia. In Malaya, Burma, the Philippines, and Indonesia, however, the report saw good reason to believe that anti-communist political forces were firmly in control and, with fresh US reassurances, would stay that way",
+      "score": 0.2721
+    },
+    {
+      "doc_id": "nd010283a_doc.txt",
+      "chunk_id": "chunk_00020",
+      "text": "Was the CIA report correct its predictions? What would have happened if LBJ had accepted the logic of the report and sought to disengage the United States from Vietnam in 1967? Might the United States have safely wound down the war in 1967 or 1968, thereby saving more than 25,000 American lives and sparing Vietnam unimaginable destruction? These questions, posed after laying out the basic history of the war, would surely stir lively discussion in any classroom. There are, of course, no definitive answers. But like most good counterfactual problems, the questions can help clarify core issues",
+      "score": 0.2693
+    }
+  ],
+  "nd17ac5a1": [
+    {
+      "doc_id": "nd17ac5a1_doc.txt",
+      "chunk_id": "chunk_00001",
+      "text": "In the closing years of World War II, American military and diplomatic representatives in China recognized that civil war was likely to erupt between the Nationalist-controlled government headed by Chiang Kai-shek and the Chinese Communists led by Mao Zedong. The two armed parties had put aside their antagonism, at least nominally, as they confronted Japanese invaders, but after the defeat of Japan it was apparent that they were preparing to resume the struggle for control of the country",
+      "score": 0.4193
+    },
+    {
+      "doc_id": "nd17ac5a1_doc.txt",
+      "chunk_id": "chunk_00012",
+      "text": ". Once Chinese Communists were killing Americans, anger toward the Chinese mounted in the United States, and recognition would have been political suicide for Democrats already suffering from Republican charges that they were \"soft on communism.\" The war hysteria provided the context in which Senator Joe McCarthy (R-Wisconsin) attained influence that he used to assault the civil liberties of his countrymen. In this atmosphere, America’s WWII ally, Chiang Kai-shek, sought and ultimately won a new treaty of alliance that committed the United States to defend Taiwan",
+      "score": 0.381
+    },
+    {
+      "doc_id": "nd17ac5a1_doc.txt",
+      "chunk_id": "chunk_00053",
+      "text": "After the Cold War",
+      "score": 0.3658
+    },
+    {
+      "doc_id": "nd17ac5a1_doc.txt",
+      "chunk_id": "chunk_00000",
+      "text": "The Cold War Comes to Asia",
+      "score": 0.3596
+    },
+    {
+      "doc_id": "nd17ac5a1_doc.txt",
+      "chunk_id": "chunk_00024",
+      "text": ". Eisenhower recognized that the domestic political context of the 1950s precluded any rapprochement with China. His only significant success in furthering his vision came with Washington’s acceptance of increased trade between Japan and China and between Great Britain and China. Rapprochement would have to wait until the American political climate changed.",
+      "score": 0.3565
+    },
+    {
+      "doc_id": "nd17ac5a1_doc.txt",
+      "chunk_id": "chunk_00002",
+      "text": ". Initially, Washington attempted to avert civil war, mediating between the two sides and hoping to create a coalition government. When that effort faltered, President Harry Truman sent General George C. Marshall, the architect of victory in the war against Germany and Japan, to China to try to broker a peace agreement—and to determine the intentions of the Soviet Union in Manchuria and North China.",
+      "score": 0.353
+    },
+    {
+      "doc_id": "nd17ac5a1_doc.txt",
+      "chunk_id": "chunk_00008",
+      "text": "War in Korea",
+      "score": 0.3408
+    },
+    {
+      "doc_id": "nd17ac5a1_doc.txt",
+      "chunk_id": "chunk_00041",
+      "text": ". Although the act did not require the United States to send its own forces to defend the island, Deng was outraged and the issue continued to roil Chinese-American relations long after the Cold War ended.",
+      "score": 0.334
+    },
+    {
+      "doc_id": "nd17ac5a1_doc.txt",
+      "chunk_id": "chunk_00011",
+      "text": "From spring 1951 to spring 1953, the two sides jockeyed for position close to the 38th parallel. Before a truce was declared, the Chinese suffered 800,000 casualties and more than 50,000 Americans lost their lives in Korea—as did millions of Koreans, North and South, and thousands of UN troops who fought alongside the Americans",
+      "score": 0.3251
+    },
+    {
+      "doc_id": "nd17ac5a1_doc.txt",
+      "chunk_id": "chunk_00022",
+      "text": ". There was much unhappiness on Taiwan and among Chiang’s American friends.",
+      "score": 0.3239
+    }
+  ],
+  "nd48cfee7": [
+    {
+      "doc_id": "nd48cfee7_doc.txt",
+      "chunk_id": "chunk_00002",
+      "text": "Truman knew that any policy he proposed would be unprecedented. After the Second World War, most Americans wanted a return to ordinary times. Until 1946, many still thought of the Soviet Union as either an ally or a normal great power. Even when Americans started to become wary of the USSR, they expected the United Nations to resolve any problems. Through rhetoric and action, Truman had been educating his fellow Americans since 1945 about the nature and stakes of the Cold War",
+      "score": 0.4727
+    },
+    {
+      "doc_id": "nd48cfee7_doc.txt",
+      "chunk_id": "chunk_00001",
+      "text": ". Truman grasped that the United States would have to make an extraordinary and unprecedented commitment to Greece and Turkey, in the region he referred to as the \"gateway\" between East and West.",
+      "score": 0.4
+    },
+    {
+      "doc_id": "nd48cfee7_doc.txt",
+      "chunk_id": "chunk_00005",
+      "text": "At the end of February, a few days after hearing from the British, Truman invited congressional leaders to the White House for an important meeting about the situation in Greece and Turkey and its connection to the growing Cold War. Everyone from the majority and minority leaderships to the chairmen and ranking members of the Senate Foreign Relations Committee, House Committee on Foreign Affairs, and Appropriations committees was in attendance. Truman knew these men to be internationalists, but some were focused on Europe, while others placed their trust in the United Nations",
+      "score": 0.3657
+    },
+    {
+      "doc_id": "nd48cfee7_doc.txt",
+      "chunk_id": "chunk_00016",
+      "text": "The extraordinary nature of the Cold War prompted Truman to exercise presidential power in a sharp and often assertive way. Truman spoke morally in black-and-white terms. For him, the Cold War was a conflict between good and evil, freedom and tyranny, liberal democracy and totalitarianism, capitalism and communism. Truman wielded presidential power in a combination of political, military, and economic programs and policies. Consider the revolutionary nature of the containment strategy. Containment committed the United States to world politics as it had never been before",
+      "score": 0.3376
+    },
+    {
+      "doc_id": "nd48cfee7_doc.txt",
+      "chunk_id": "chunk_00003",
+      "text": ". Given the limitations of the United Nations—notably, the USSR had a veto vote as a permanent member of the Security Council, and the UN did not even have enough funds to build its own headquarters—Truman realized that the United States was the only power that would be able to lead the free world. He had no idea how long the struggle would last, but he perceived that the Cold War between East and West would be fought on political, strategic, economic, and moral terms.",
+      "score": 0.3339
+    },
+    {
+      "doc_id": "nd48cfee7_doc.txt",
+      "chunk_id": "chunk_00013",
+      "text": "The nature and exigencies of the Cold War drew out of Truman a strategy that was American rather than partisan. Truman started with first principles. When he considered an international environment that would sustain and advance the free world, he talked about freedom, justice, and order; and he deliberately put these principles in that precise order. Truman wanted peace for the world’s peoples, but he saw that freedom must precede order because freedom would provide the first and deepest roots for peace",
+      "score": 0.3222
+    },
+    {
+      "doc_id": "nd48cfee7_doc.txt",
+      "chunk_id": "chunk_00023",
+      "text": ". In the case of foreign policy, however, some or much—depending on the circumstances—cooperation is required. Truman not only had congressional experience, but he was also a keen, lifelong student of the presidency. He found it natural to invite members of Congress to the White House for frequent, ongoing conversations and to send top advisors to meet, work, and socialize with senators and congressmen",
+      "score": 0.3104
+    },
+    {
+      "doc_id": "nd48cfee7_doc.txt",
+      "chunk_id": "chunk_00010",
+      "text": ". In the struggle America faced, said Truman, \"One way of life is based upon the will of the majority, and is distinguished by free institutions, representative government, free elections, guarantees of individual liberty, freedom of speech and religion, and freedom from political oppression.\" By contrast, he continued, \"The second way of life is based upon the will of a minority forcibly imposed upon the majority\" and relies on terror, oppression, and the negating of free will and choice",
+      "score": 0.3069
+    },
+    {
+      "doc_id": "nd48cfee7_doc.txt",
+      "chunk_id": "chunk_00011",
+      "text": ". Truman stated outright that the United States had to help \"free peoples to maintain their free institutions and their national integrity\" against aggressive movements from totalitarian regimes. \"This is,\" he said, \"no more than a frank recognition that totalitarian regimes imposed upon free peoples, by direct or indirect aggression, undermine the foundations of international peace and hence the security of the United States.\" Truman made his remarks knowing that the way ahead would be difficult and that much would be required of him as president",
+      "score": 0.3011
+    },
+    {
+      "doc_id": "nd48cfee7_doc.txt",
+      "chunk_id": "chunk_00028",
+      "text": "Harry Truman is many Republicans’ favorite foreign policy president. For Democratic proponents of liberal internationalism, he is also a model. Truman was as partisan as they come—this was clear during the 1948 election campaign—but he understood that the country’s political parties had to be united in foreign policy. Truman based his foreign policy on concepts that were distinctively American, rather Democratic or Republican, and he laid the public and enduring foundation for the strategy that would eventually win the Cold War.",
+      "score": 0.2981
+    }
+  ],
+  "nd87f4bcd": [
+    {
+      "doc_id": "nd87f4bcd_doc.txt",
+      "chunk_id": "chunk_00002",
+      "text": ". Most Europeans rushed into battle without considering what a general war would mean. Americans, however, followed a completely different road to war, openly debating for two and a half years whether this was their war to fight. In 1914, President Woodrow Wilson declared that the United States would remain neutral. There were many first- and second-generation immigrants from both the Central Powers and the Allied nations in the United States, and they disagreed over which country had started the war and which country to support",
+      "score": 0.4752
+    },
+    {
+      "doc_id": "nd87f4bcd_doc.txt",
+      "chunk_id": "chunk_00003",
+      "text": ". Wanting both to stay out of the war and to prevent bitter divisions from ripping America apart, Wilson urged Americans to avoid \"passionately taking sides\" and to be \"impartial in thought, as well as action.\"[1]",
+      "score": 0.4421
+    },
+    {
+      "doc_id": "nd87f4bcd_doc.txt",
+      "chunk_id": "chunk_00024",
+      "text": "World War I left several permanent marks on American society. The wartime emphasis on worker efficiency, conserving grain, and keeping alcohol away from soldiers in uniform hastened the adoption of the Eighteenth Amendment (1919) banning the sale, manufacture, and transportation of intoxicating liquors. A major demographic shift known as the Great Migration occurred when African Americans from the South moved north to take factory jobs, filling vacancies generated by booming wartime production, conscription, and the interrupted flow of immigrants from Europe",
+      "score": 0.3999
+    },
+    {
+      "doc_id": "nd87f4bcd_doc.txt",
+      "chunk_id": "chunk_00011",
+      "text": ". German foreign minister Arthur Zimmermann hoped to further delay the arrival of American soldiers along the western front by stirring up trouble across the Atlantic. Attempting to benefit from recent tensions between the United States and Mexico, Zimmermann sent a telegram suggesting that Mexico start a border war with the United States if the United States and Germany went to war. In return, Zimmermann offered to help Mexico recover Texas, New Mexico, and Arizona (territory ceded in the nineteenth century)",
+      "score": 0.3527
+    },
+    {
+      "doc_id": "nd87f4bcd_doc.txt",
+      "chunk_id": "chunk_00018",
+      "text": "The First World War was a total war, requiring the complete mobilization of American society. During the war, the federal government exercised unprecedented powers to centralize and coordinate the economy. The methods used to mobilize the manufacturing and agricultural sectors, select men for the military, regulate transportation, and distribute propaganda set precedents for how the federal government would respond to the crises of the Great Depression and World War II",
+      "score": 0.3443
+    },
+    {
+      "doc_id": "nd87f4bcd_doc.txt",
+      "chunk_id": "chunk_00000",
+      "text": "War swept across Europe in the summer of 1914, igniting a global struggle that would eventually take nine million lives. World War I pitted the Allies (initially composed of Britain, France, Belgium, Serbia, and Russia, and eventually totaling eighteen nations including Japan, Italy, and the United States) against the Central Powers (Germany, Austria-Hungary, the Ottoman Empire, and Bulgaria)",
+      "score": 0.338
+    },
+    {
+      "doc_id": "nd87f4bcd_doc.txt",
+      "chunk_id": "chunk_00010",
+      "text": "In January 1917, however, Germany decided to resume unconditional submarine warfare, fully aware that renewed surprise attacks on merchant and passenger ships would likely prompt the United States to declare war. The United States posed no immediate military threat to Germany, having made few substantial preparations for war. Germany reasoned that a massive U-boat campaign would prevent supplies from reaching Britain and France, forcing the Allies to sue for peace before the Americans could arrive in force overseas",
+      "score": 0.3256
+    },
+    {
+      "doc_id": "nd87f4bcd_doc.txt",
+      "chunk_id": "chunk_00029",
+      "text": ". Opponents worried that by joining the League the United States would lose control of its own foreign policy. Membership might also invite international scrutiny of US armed interventions throughout Central America, where the United States was used to acting unilaterally. Isolationists and balance-of-power advocates joined forces to strenuously oppose joining the League, and their campaign gained momentum when a stroke (kept secret from the public) forced Wilson into seclusion for months. Wilson ultimately refused to compromise with his opponents, and the Senate rejected the treaty",
+      "score": 0.3245
+    },
+    {
+      "doc_id": "nd87f4bcd_doc.txt",
+      "chunk_id": "chunk_00012",
+      "text": ". In one of the war’s greatest intelligence coups, British agents intercepted and deciphered the Zimmermann telegram. When the State Department released it to the press, many Americans viewed it as proof that Germany had hostile intentions against the United States. Further evidence of German aggression came in March when German U-boats sank three American merchant ships",
+      "score": 0.3224
+    },
+    {
+      "doc_id": "nd87f4bcd_doc.txt",
+      "chunk_id": "chunk_00008",
+      "text": ". Germany also alleged that the Lusitania had been carrying munitions (a claim contested to this day). The sinking of the Lusitania was an ideological turning point for the United States, prompting Wilson to move away from his initial definition of neutrality being \"impartial in thought, as well as action.\" He now embraced neutrality as a concept that first and foremost gave neutral nations the indisputable right to trade and travel wherever they liked. Wilson’s insistence on protecting the rights of neutral nations put the United States on a collision course with Germany.",
+      "score": 0.3216
+    }
+  ],
+  "nda91043d": [
+    {
+      "doc_id": "nda91043d_doc.txt",
+      "chunk_id": "chunk_00042",
+      "text": "Japanese Americans and African Americans had a harder time proving their importance and finding full citizenship. Prejudice against Asians on the West Coast had been a theme of American history for generations before World War II, but the Pearl Harbor attack meant that Japanese Americans, many of whom had been citizens of the United States since birth, were suspected of being enemy agents. In one of the more disgraceful aspects of American history, they were rounded up and sent to makeshift internment camps far from their homes and businesses",
+      "score": 0.6753
+    },
+    {
+      "doc_id": "nda91043d_doc.txt",
+      "chunk_id": "chunk_00018",
+      "text": ". Moreover, many ethnic Americans were not anxious to help the British. German Americans and Italian Americans, for example, while loyal to the United States, were also proud that Hitler and Mussolini had restored pride and confidence to their homelands, while Irish Americans, long hostile to the government in London, did not want to go to war to advance the interests of the hated English",
+      "score": 0.4752
+    },
+    {
+      "doc_id": "nda91043d_doc.txt",
+      "chunk_id": "chunk_00035",
+      "text": ". But the American nation could make up such human and material losses. And the President knew how to funnel national anger at Japan into a much more critical war against Germany. FDR understood better than his countrymen that Germany was the greater threat and that Japan could be dealt with almost at leisure. It was a sentiment shared by British Prime Minister Winston Churchill. When he heard of the Pearl Harbor disaster, he actually breathed a sigh of relief, noting in his wartime diary: \"So we have won after all.\"",
+      "score": 0.4602
+    },
+    {
+      "doc_id": "nda91043d_doc.txt",
+      "chunk_id": "chunk_00043",
+      "text": ". Yet not a single conviction ever resulted from an unpatriotic act by a Japanese American, and many served with courage and honor in the armed forces.",
+      "score": 0.4454
+    },
+    {
+      "doc_id": "nda91043d_doc.txt",
+      "chunk_id": "chunk_00070",
+      "text": "Although the warlords in Tokyo could boast of brave and devoted soldiers, of airplanes (like the vaunted \"Zero\") that were as fine as any anywhere, and of ships and sailors that were world class, Japan never had a chance against the United States. It did not have enough of anything, except courage and fanaticism, to compete with a continental nation with almost infinite resources. At Tarawa, at Iwo Jima, and at Okinawa, the Japanese fought almost to the last man. It was no use",
+      "score": 0.4444
+    },
+    {
+      "doc_id": "nda91043d_doc.txt",
+      "chunk_id": "chunk_00000",
+      "text": "World War II was the central event of the twentieth century. It involved all six major continents, all three of the great oceans on the planet, scores of countries, and billions of people. It caused 57 million deaths and unimaginable human suffering. It brought about the redrawing of national boundaries in Europe and Asia, forced the relocation of many ethnic groups, made millions of families homeless, and led to the virtual annihilation of the Jewish population of Europe",
+      "score": 0.44
+    },
+    {
+      "doc_id": "nda91043d_doc.txt",
+      "chunk_id": "chunk_00024",
+      "text": "Why should the proud Japanese, with their centuries of tradition, their modern navy, and their ambitions for future glory, give up their dreams because those dreams did not fit with the wishes of white Westerners. They wanted their own empire and their own seat at the table among the great nations of the world.",
+      "score": 0.4374
+    },
+    {
+      "doc_id": "nda91043d_doc.txt",
+      "chunk_id": "chunk_00074",
+      "text": "In many respects, the United States was the big winner in World War II. Relative to Germany, Japan, and the Soviet Union, its battle deaths were relatively few in number. Its great cities, like New York, Chicago, Philadelphia, Boston, San Francisco, and Los Angeles, were never occupied by enemy armies or laid waste by falling bombs. Its factories and steel mills, farms and subdivisions, and stores and schools were unscathed by the conflict",
+      "score": 0.4307
+    },
+    {
+      "doc_id": "nda91043d_doc.txt",
+      "chunk_id": "chunk_00007",
+      "text": "The United States might never have entered World War II if Germany, Japan, and Italy had stopped after their initial conquests. But the three Axis powers made astonishing gains in the years before the Pearl Harbor attack. After taking over Norway and neutralizing Sweden, the Nazis turned their attention to the big prize. Early in the morning of May 10, 1940, Hitler launched a blitzkrieg or lightning war against France, whose army had previously been considered the finest in the world",
+      "score": 0.4289
+    },
+    {
+      "doc_id": "nda91043d_doc.txt",
+      "chunk_id": "chunk_00034",
+      "text": "President Roosevelt was happy that the United States was in the war, and in fact, he had manipulated the Japanese into firing the first shot. But he had expected the initial Japanese attack to be against the Philippines, not on a presumably impregnable naval base in the middle of a huge ocean. He was shocked by what happened at Pearl Harbor, and was horrified by the destruction of his battleships and the devastating number of deaths on December 7. But the American nation could make up such human and material losses",
+      "score": 0.4281
     }
   ]
 }

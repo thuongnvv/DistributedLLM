@@ -1,76 +1,236 @@
 [
   {
-    "grader_id": "node_a",
-    "target_id": "node_b",
-    "valid": "UNKNOWN",
-    "agree_points": [],
+    "grader_id": "nd5892f77",
+    "target_id": "nd502a541",
+    "valid": "PASS",
+    "agree_points": [
+      "nd502a541:0:8a4601d6",
+      "nd502a541:2:1aae853d",
+      "nd87f4bcd:0:d6dd8de2",
+      "nd87f4bcd:1:8fba4bc0",
+      "nd87f4bcd:2:33644389",
+      "nd5892f77:2:d755f489"
+    ],
     "reject_points": [],
     "unknown_points": [
-      "node_b:0:2688a553",
-      "node_b:1:ab8a6792",
-      "node_b:2:bbd245c1",
-      "node_b:3:f8da2576"
+      "nd502a541:3:fccb8c56",
+      "nd502a541:1:5d3beae0",
+      "nd502a541:4:bceeabc0",
+      "nd5892f77:4:bc849d4c"
     ],
-    "note": "Insufficient context to verify the referenced points; they refer to external documents not provided."
+    "note": "The target draft correctly identifies several historical actions by the U.S. government that curtailed civil liberties and suppressed dissent during large-scale wars, supported by both local and external evidence. Some points are marked as UNKNOWN due to lack of evidence."
   },
   {
-    "grader_id": "node_a",
-    "target_id": "node_c",
-    "valid": "UNKNOWN",
-    "agree_points": [],
-    "reject_points": [],
-    "unknown_points": [
-      "node_c:0:f0be5f17"
+    "grader_id": "nd5892f77",
+    "target_id": "nd17ac5a1",
+    "valid": "PASS",
+    "agree_points": [
+      "nd17ac5a1:0:19e82853",
+      "nd87f4bcd:2:33644389",
+      "nd502a541:0:8a4601d6",
+      "nd87f4bcd:3:4bc93889",
+      "nd87f4bcd:1:8fba4bc0",
+      "nd87f4bcd:0:d6dd8de2",
+      "nd502a541:2:1aae853d",
+      "nd87f4bcd:4:0493dea1",
+      "nd5892f77:0:569dd5f7"
     ],
-    "note": "Insufficient context to verify the referenced point; it refers to an external document not provided."
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "The target draft accurately reflects historical actions taken by the U.S. government to curtail civil liberties and suppress dissent during large-scale wars, with strong support from both local and external evidence."
   },
   {
-    "grader_id": "node_b",
-    "target_id": "node_a",
-    "valid": "UNKNOWN",
-    "agree_points": [],
+    "grader_id": "nd5892f77",
+    "target_id": "nd87f4bcd",
+    "valid": "PASS",
+    "agree_points": [
+      "nd87f4bcd:0:d6dd8de2",
+      "nd87f4bcd:1:8fba4bc0",
+      "nd87f4bcd:2:33644389",
+      "nd87f4bcd:3:4bc93889"
+    ],
     "reject_points": [],
     "unknown_points": [
-      "node_a:0:2507e9f8",
-      "node_a:1:1a4ae692"
+      "nd87f4bcd:4:0493dea1",
+      "nd502a541:0:8a4601d6",
+      "nd502a541:3:fccb8c56",
+      "nd17ac5a1:0:19e82853",
+      "nd502a541:1:5d3beae0",
+      "nd502a541:2:1aae853d"
     ],
-    "note": "Points reference external documents not present in the provided context; cannot verify their accuracy."
+    "note": "The target draft accurately describes the U.S. government's actions during World War I that curtailed civil liberties and suppressed dissent, with strong support from external evidence. Some points are marked as UNKNOWN due to lack of evidence."
   },
   {
-    "grader_id": "node_b",
-    "target_id": "node_c",
-    "valid": "UNKNOWN",
-    "agree_points": [],
-    "reject_points": [],
-    "unknown_points": [
-      "node_c:0:f0be5f17"
+    "grader_id": "nd502a541",
+    "target_id": "nd5892f77",
+    "valid": "PASS",
+    "agree_points": [
+      "nd5892f77:0:569dd5f7",
+      "nd5892f77:1:ec79a42b",
+      "nd5892f77:2:d755f489",
+      "nd5892f77:3:139238ff",
+      "nd5892f77:4:bc849d4c",
+      "nd87f4bcd:0:d6dd8de2",
+      "nd87f4bcd:1:8fba4bc0"
     ],
-    "note": "Point references an external document; no supporting information in the provided context."
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by external evidence."
   },
   {
-    "grader_id": "node_c",
-    "target_id": "node_a",
-    "valid": "UNKNOWN",
-    "agree_points": [],
-    "reject_points": [],
-    "unknown_points": [
-      "node_a:0:2507e9f8",
-      "node_a:1:1a4ae692"
+    "grader_id": "nd502a541",
+    "target_id": "nd17ac5a1",
+    "valid": "PASS",
+    "agree_points": [
+      "nd17ac5a1:0:19e82853",
+      "nd87f4bcd:2:33644389",
+      "nd502a541:0:8a4601d6",
+      "nd87f4bcd:3:4bc93889",
+      "nd87f4bcd:1:8fba4bc0",
+      "nd87f4bcd:0:d6dd8de2",
+      "nd502a541:2:1aae853d",
+      "nd87f4bcd:4:0493dea1",
+      "nd5892f77:0:569dd5f7"
     ],
-    "note": "Insufficient context to verify statements."
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by either local context or external evidence."
   },
   {
-    "grader_id": "node_c",
-    "target_id": "node_b",
-    "valid": "UNKNOWN",
-    "agree_points": [],
+    "grader_id": "nd502a541",
+    "target_id": "nd87f4bcd",
+    "valid": "PASS",
+    "agree_points": [
+      "nd87f4bcd:0:d6dd8de2",
+      "nd87f4bcd:1:8fba4bc0",
+      "nd87f4bcd:2:33644389",
+      "nd87f4bcd:3:4bc93889",
+      "nd87f4bcd:4:0493dea1"
+    ],
     "reject_points": [],
     "unknown_points": [
-      "node_b:0:2688a553",
-      "node_b:1:ab8a6792",
-      "node_b:2:bbd245c1",
-      "node_b:3:f8da2576"
+      "nd502a541:0:8a4601d6",
+      "nd502a541:3:fccb8c56",
+      "nd17ac5a1:0:19e82853",
+      "nd502a541:1:5d3beae0",
+      "nd502a541:2:1aae853d"
     ],
-    "note": "Insufficient context to verify statements."
+    "note": "Points related to WWI are supported by external evidence, while points related to other contexts are unknown."
+  },
+  {
+    "grader_id": "nd17ac5a1",
+    "target_id": "nd5892f77",
+    "valid": "PASS",
+    "agree_points": [
+      "nd5892f77:0:569dd5f7",
+      "nd5892f77:1:ec79a42b",
+      "nd5892f77:2:d755f489",
+      "nd5892f77:3:139238ff",
+      "nd5892f77:4:bc849d4c",
+      "nd87f4bcd:0:d6dd8de2",
+      "nd87f4bcd:1:8fba4bc0"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by external evidence, confirming the curtailment of civil liberties during WWII and WWI."
+  },
+  {
+    "grader_id": "nd17ac5a1",
+    "target_id": "nd502a541",
+    "valid": "PASS",
+    "agree_points": [
+      "nd502a541:0:8a4601d6",
+      "nd502a541:2:1aae853d",
+      "nd87f4bcd:0:d6dd8de2",
+      "nd87f4bcd:1:8fba4bc0",
+      "nd87f4bcd:2:33644389",
+      "nd5892f77:2:d755f489"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "nd502a541:3:fccb8c56",
+      "nd502a541:1:5d3beae0",
+      "nd502a541:4:bceeabc0",
+      "nd5892f77:4:bc849d4c"
+    ],
+    "note": "Most points are supported by external evidence, but some points are unknown due to lack of mention in both local and external contexts."
+  },
+  {
+    "grader_id": "nd17ac5a1",
+    "target_id": "nd87f4bcd",
+    "valid": "PASS",
+    "agree_points": [
+      "nd87f4bcd:0:d6dd8de2",
+      "nd87f4bcd:1:8fba4bc0",
+      "nd87f4bcd:2:33644389",
+      "nd87f4bcd:3:4bc93889"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "nd87f4bcd:4:0493dea1",
+      "nd502a541:0:8a4601d6",
+      "nd502a541:3:fccb8c56",
+      "nd17ac5a1:0:19e82853",
+      "nd502a541:1:5d3beae0",
+      "nd502a541:2:1aae853d"
+    ],
+    "note": "The points related to WWI are well-supported by external evidence, but several points are unknown due to lack of mention in both local and external contexts."
+  },
+  {
+    "grader_id": "nd87f4bcd",
+    "target_id": "nd5892f77",
+    "valid": "PASS",
+    "agree_points": [
+      "nd5892f77:0:569dd5f7",
+      "nd5892f77:1:ec79a42b",
+      "nd5892f77:2:d755f489",
+      "nd5892f77:3:139238ff",
+      "nd5892f77:4:bc849d4c",
+      "nd87f4bcd:0:d6dd8de2",
+      "nd87f4bcd:1:8fba4bc0"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by either local or external evidence, confirming the actions taken by the U.S. government during WWII and WWI to curtail civil liberties and suppress dissent."
+  },
+  {
+    "grader_id": "nd87f4bcd",
+    "target_id": "nd502a541",
+    "valid": "PASS",
+    "agree_points": [
+      "nd502a541:0:8a4601d6",
+      "nd502a541:2:1aae853d",
+      "nd87f4bcd:0:d6dd8de2",
+      "nd87f4bcd:1:8fba4bc0",
+      "nd87f4bcd:2:33644389",
+      "nd5892f77:2:d755f489"
+    ],
+    "reject_points": [],
+    "unknown_points": [
+      "nd502a541:3:fccb8c56",
+      "nd502a541:1:5d3beae0",
+      "nd502a541:4:bceeabc0",
+      "nd5892f77:4:bc849d4c"
+    ],
+    "note": "Most points are supported, but some points related to Kissinger's policies and the Chile coup are marked as unknown due to lack of direct evidence."
+  },
+  {
+    "grader_id": "nd87f4bcd",
+    "target_id": "nd17ac5a1",
+    "valid": "PASS",
+    "agree_points": [
+      "nd17ac5a1:0:19e82853",
+      "nd87f4bcd:2:33644389",
+      "nd502a541:0:8a4601d6",
+      "nd87f4bcd:3:4bc93889",
+      "nd87f4bcd:1:8fba4bc0",
+      "nd87f4bcd:0:d6dd8de2",
+      "nd502a541:2:1aae853d",
+      "nd87f4bcd:4:0493dea1",
+      "nd5892f77:0:569dd5f7"
+    ],
+    "reject_points": [],
+    "unknown_points": [],
+    "note": "All points are supported by either local or external evidence, confirming the actions taken by the U.S. government to curtail civil liberties and suppress dissent during various wars."
   }
 ]

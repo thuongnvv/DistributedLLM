@@ -1,44 +1,101 @@
 [
   {
-    "node_id": "node_a",
+    "node_id": "ndeaded7c",
+    "points": []
+  },
+  {
+    "node_id": "ndf0bd955",
+    "points": []
+  },
+  {
+    "node_id": "nd5892f77",
+    "points": []
+  },
+  {
+    "node_id": "nd502a541",
+    "points": []
+  },
+  {
+    "node_id": "nd02aaf19",
+    "points": []
+  },
+  {
+    "node_id": "nd1cdfce4",
     "points": [
       {
-        "point_id": "node_a:0:2507e9f8",
-        "text": "COVID-19 is a contagious disease caused by the coronavirus SARS‑CoV‑2.[doc1_covid19.txt:chunk_00000][doc1_covid19.txt:chunk_00024]"
+        "point_id": "nd1cdfce4:0:274ba919",
+        "text": "African Americans noted similarities between racial practices in the US and Nazi Germany.",
+        "citations": [
+          "nd1cdfce4_doc.txt:chunk_00006"
+        ]
       },
       {
-        "point_id": "node_a:1:1a4ae692",
-        "text": "The WHO declared COVID-19 a global health emergency in March 2020 and ended the emergency in May 2023.[doc1_covid19.txt:chunk_00000]"
+        "point_id": "nd1cdfce4:1:bdefb01f",
+        "text": "Langston Hughes highlighted the gap between US ideals and racial practices at home.",
+        "citations": [
+          "nd1cdfce4_doc.txt:chunk_00009"
+        ]
+      },
+      {
+        "point_id": "nd1cdfce4:2:8b62d70e",
+        "text": "African Americans faced racial discrimination in employment despite wartime labor needs.",
+        "citations": [
+          "nd1cdfce4_doc.txt:chunk_00017"
+        ]
+      },
+      {
+        "point_id": "nd1cdfce4:3:bbe821ec",
+        "text": "The Double V Campaign emphasized fighting oppression both at home and abroad.",
+        "citations": [
+          "nd1cdfce4_doc.txt:chunk_00012"
+        ]
+      },
+      {
+        "point_id": "nd1cdfce4:4:09b2ca08",
+        "text": "The Navy's segregation policies led to accusations of Jim Crow practices.",
+        "citations": [
+          "nd1cdfce4_doc.txt:chunk_00003"
+        ]
       }
     ]
   },
   {
-    "node_id": "node_b",
-    "points": [
-      {
-        "point_id": "node_b:0:2688a553",
-        "text": "COVID-19 is an illness caused by the virus SARS‑CoV‑2 [doc2_covid19.txt:chunk_00000]"
-      },
-      {
-        "point_id": "node_b:1:ab8a6792",
-        "text": "The virus began spreading at the end of 2019 and was declared a pandemic in 2020 [doc2_covid19.txt:chunk_00000]"
-      },
-      {
-        "point_id": "node_b:2:bbd245c1",
-        "text": "COVID‑19 spreads mainly through close contact via respiratory droplets when an infected person coughs, sneezes, talks, or breathes [doc2_covid19.txt:chunk_00007"
-      },
-      {
-        "point_id": "node_b:3:f8da2576",
-        "text": "Many infected people have mild or no symptoms, but older adults and those with certain medical conditions can develop severe illness [doc2_covid19.txt:chunk_000"
-      }
-    ]
+    "node_id": "nd04a456b",
+    "points": []
   },
   {
-    "node_id": "node_c",
+    "node_id": "nd010283a",
+    "points": []
+  },
+  {
+    "node_id": "nd17ac5a1",
+    "points": []
+  },
+  {
+    "node_id": "nd48cfee7",
+    "points": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "points": []
+  },
+  {
+    "node_id": "nda91043d",
     "points": [
       {
-        "point_id": "node_c:0:f0be5f17",
-        "text": "COVID-19 is an infectious respiratory illness caused by the SARS‑CoV‑2 coronavirus; the name stands for corona, virus, disease [doc3_covid19.txt:chunk_00000]"
+        "point_id": "nda91043d:0:76010d4c",
+        "text": "Japanese Americans faced internment despite being U.S. citizens and showing no unpatriotic acts.",
+        "citations": [
+          "nda91043d_doc.txt:chunk_00042",
+          "nda91043d_doc.txt:chunk_00043"
+        ]
+      },
+      {
+        "point_id": "nda91043d:1:da771287",
+        "text": "African Americans struggled to prove their importance and gain full citizenship during the war.",
+        "citations": [
+          "nda91043d_doc.txt:chunk_00042"
+        ]
       }
     ]
   }

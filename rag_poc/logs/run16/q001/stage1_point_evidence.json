@@ -1,0 +1,121 @@
+{
+  "nd1cdfce4:0:274ba919": {
+    "point_id": "nd1cdfce4:0:274ba919",
+    "origin_node_id": "nd1cdfce4",
+    "text": "African Americans noted similarities between racial practices in the US and Nazi Germany.",
+    "citations": [
+      "nd1cdfce4_doc.txt:chunk_00006"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd1cdfce4_doc.txt",
+        "chunk_id": "chunk_00006",
+        "text": "Although African Americans supported their government during WWII, they were not silent about racial practices in America. In fact, some even noted the similarities between the way Jews were treated in Germany and the way blacks were treated in America. The poet Langston Hughes, for example, expressed this sentiment in his piece \"Nazi and Dixie Nordics.\"",
+        "score": 0.4997
+      }
+    ]
+  },
+  "nd1cdfce4:1:bdefb01f": {
+    "point_id": "nd1cdfce4:1:bdefb01f",
+    "origin_node_id": "nd1cdfce4",
+    "text": "Langston Hughes highlighted the gap between US ideals and racial practices at home.",
+    "citations": [
+      "nd1cdfce4_doc.txt:chunk_00009"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd1cdfce4_doc.txt",
+        "chunk_id": "chunk_00009",
+        "text": "Hughes, like millions of African Americans, was fully conscious of the gap between the stated ideals of the United States and its practices at home. African Americans were also aware that the war created an opportunity to press US leaders for full citizenship.\nDouble V Campaign",
+        "score": 0.4655
+      }
+    ]
+  },
+  "nd1cdfce4:2:8b62d70e": {
+    "point_id": "nd1cdfce4:2:8b62d70e",
+    "origin_node_id": "nd1cdfce4",
+    "text": "African Americans faced racial discrimgìination in employment despite wartime labor needs.",
+    "citations": [
+      "nd1cdfce4_doc.txt:chunk_00017"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd1cdfce4_doc.txt",
+        "chunk_id": "chunk_00017",
+        "text": "Another crucial way that African Americans took advantage of America’s involvement in WWII to push for civil rights was through mass protest. When Nazi Germany began invading and occupying countries in Europe, American industries began contracting with the government to increase production of ships, tanks, guns, and other items for defense. Despite the urgent need for tens of thousands of skilled workers to help in the production of these items, war production companies refused to hire blacks",
+        "score": 0.4501
+      }
+    ]
+  },
+  "nd1cdfce4:3:bbe821ec": {
+    "point_id": "nd1cdfce4:3:bbe821ec",
+    "origin_node_id": "nd1cdfce4",
+    "text": "The Double V Campaign emphasized fighting oppression both at home and abroad.",
+    "citations": [
+      "nd1cdfce4_doc.txt:chunk_00012"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd1cdfce4_doc.txt",
+        "chunk_id": "chunk_00012",
+        "text": "According to the Courier the response to the introduction of its campaign was \"overwhelming.\" Its office had been swamped with telegrams and letters of support proving that its slogan represented the \"true battle cry of Colored Americans\" and that they were determined to protect their nation and the freedoms that they cherished. It argued that African Americans would wage a \"two-pronged attack\" against those who would enslave us \"at home and those who abroad would enslave us. WE HAVE A STAKE IN THIS FIGHT . . . WE ARE AMERICANS TOO!\"",
+        "score": 0.3751
+      }
+    ]
+  },
+  "nd1cdfce4:4:09b2ca08": {
+    "point_id": "nd1cdfce4:4:09b2ca08",
+    "origin_node_id": "nd1cdfce4",
+    "text": "The Navy's segregation policies led to accusations of Jim Crow practices.",
+    "citations": [
+      "nd1cdfce4_doc.txt:chunk_00003"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd1cdfce4_doc.txt",
+        "chunk_id": "chunk_00003",
+        "text": ". Although the Navy put up great resistance and had only allowed blacks to serve as mess attendants, pressure from President Franklin Delano Roosevelt and civil rights organizations forced the Navy to start recruiting blacks in April 1942 for service. However, its policy of relegating blacks to segregated units led black leaders to accuse the Navy of practicing Jim Crow. Despite its goal of recruiting 14,000 volunteers in the first year, blacks never made up more than 5 percent of the entire Navy.",
+        "score": 0.3641
+      }
+    ]
+  },
+  "nda91043d:0:76010d4c": {
+    "point_id": "nda91043d:0:76010d4c",
+    "origin_node_id": "nda91043d",
+    "text": "Japanese Americans faced internment despite being U.S. citizens and showing no unpatriotic acts.",
+    "citations": [
+      "nda91043d_doc.txt:chunk_00042",
+      "nda91043d_doc.txt:chunk_00043"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nda91043d_doc.txt",
+        "chunk_id": "chunk_00042",
+        "text": "Japanese Americans and African Americans had a harder time proving their importance and finding full citizenship. Prejudice against Asians on the West Coast had been a theme of American history for generations before World War II, but the Pearl Harbor attack meant that Japanese Americans, many of whom had been citizens of the United States since birth, were suspected of being enemy agents. In one of the more disgraceful aspects of American history, they were rounded up and sent to makeshift internment camps far from their homes and businesses",
+        "score": 0.6753
+      },
+      {
+        "doc_id": "nda91043d_doc.txt",
+        "chunk_id": "chunk_00043",
+        "text": ". Yet not a single conviction ever resulted from an unpatriotic act by a Japanese American, and many served with courage and honor in the armed forces.",
+        "score": 0.4454
+      }
+    ]
+  },
+  "nda91043d:1:da771287": {
+    "point_id": "nda91043d:1:da771287",
+    "origin_node_id": "nda91043d",
+    "text": "African Americans struggled to prove their importance and gain full citizenship during the war.",
+    "citations": [
+      "nda91043d_doc.txt:chunk_00042"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nda91043d_doc.txt",
+        "chunk_id": "chunk_00042",
+        "text": "Japanese Americans and African Americans had a harder time proving their importance and finding full citizenship. Prejudice against Asians on the West Coast had been a theme of American history for generations before World War II, but the Pearl Harbor attack meant that Japanese Americans, many of whom had been citizens of the United States since birth, were suspected of being enemy agents. In one of the more disgraceful aspects of American history, they were rounded up and sent to makeshift internment camps far from their homes and businesses",
+        "score": 0.6753
+      }
+    ]
+  }
+}

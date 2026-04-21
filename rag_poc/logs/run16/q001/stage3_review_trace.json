@@ -1,0 +1,84 @@
+[
+  {
+    "grader_id": "nd1cdfce4",
+    "target_id": "nda91043d",
+    "point_reviews": [
+      {
+        "point_id": "nda91043d:0:76010d4c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that Japanese Americans faced internment despite being U.S. citizens and showing no unpatriotic acts."
+      },
+      {
+        "point_id": "nda91043d:1:da771287",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that African Americans struggled to prove their importance and gain full citizenship during the war."
+      },
+      {
+        "point_id": "nd1cdfce4:0:274ba919",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that African Americans noted similarities between racial practices in the US and Nazi Germany."
+      },
+      {
+        "point_id": "nd1cdfce4:2:8b62d70e",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that African Americans faced racial discrimination in employment despite wartime labor needs."
+      },
+      {
+        "point_id": "nd1cdfce4:4:09b2ca08",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that the Navy's segregation policies led to accusations of Jim Crow practices."
+      },
+      {
+        "point_id": "nd1cdfce4:3:bbe821ec",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that the Double V Campaign emphasized fighting oppression both at home and abroad."
+      },
+      {
+        "point_id": "nd1cdfce4:1:bdefb01f",
+        "basis": "UNKNOWN",
+        "reason": "The local context mentions Langston Hughes highlighting the gap between US ideals and racial practices at home, but it is not directly related to the paradox experienced by African Americans and Japanese Americans during WWII."
+      }
+    ]
+  },
+  {
+    "grader_id": "nda91043d",
+    "target_id": "nd1cdfce4",
+    "point_reviews": [
+      {
+        "point_id": "nd1cdfce4:0:274ba919",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence indicating African Americans noted similarities between racial practices in the US and Nazi Germany."
+      },
+      {
+        "point_id": "nd1cdfce4:1:bdefb01f",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that Langston Hughes highlighted the gap between US ideals and racial practices."
+      },
+      {
+        "point_id": "nd1cdfce4:3:bbe821ec",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The point is supported by external evidence that the Double V Campaign emphasized fighting oppression both at home and abroad."
+      },
+      {
+        "point_id": "nda91043d:0:76010d4c",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context supports that Japanese Americans faced internment despite being U.S. citizens and showing no unpatriotic acts."
+      },
+      {
+        "point_id": "nda91043d:1:da771287",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context supports that African Americans struggled to prove their importance and gain full citizenship during the war."
+      },
+      {
+        "point_id": "nd1cdfce4:4:09b2ca08",
+        "basis": "UNKNOWN",
+        "reason": "Neither local context nor external evidence mentions the Navy's segregation policies leading to accusations of Jim Crow practices."
+      },
+      {
+        "point_id": "nd1cdfce4:2:8b62d70e",
+        "basis": "UNKNOWN",
+        "reason": "Neither local context nor external evidence mentions African Americans facing racial discrimination in employment despite wartime labor needs."
+      }
+    ]
+  }
+]

@@ -1,0 +1,334 @@
+[
+  {
+    "node_id": "ndeaded7c",
+    "point_support": []
+  },
+  {
+    "node_id": "ndf0bd955",
+    "point_support": []
+  },
+  {
+    "node_id": "nd5892f77",
+    "point_support": [
+      {
+        "point_id": "nd5892f77:0:569dd5f7",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states that the US government froze assets of the Issei and imposed strict curfews after Pearl Harbor [nd5892f77:0:569dd5f7]."
+      },
+      {
+        "point_id": "nd5892f77:1:ec79a42b",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document mentions that the FBI followed community leaders with strong Japanese ties and raided homes for contraband [nd5892f77:1:ec79a42b]."
+      },
+      {
+        "point_id": "nd5892f77:2:d755f489",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document confirms that Japanese Americans were detained and interned as a result of official policy during WWII [nd5892f77:2:d755f489]."
+      },
+      {
+        "point_id": "nd5892f77:3:139238ff",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states that interned Japanese Americans could only take what they could carry, sustaining them for years [nd5892f77:3:139238ff]."
+      },
+      {
+        "point_id": "nd5892f77:4:bc849d4c",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document describes widespread anti-Japanese sentiment and aggression after Pearl Harbor, supporting removal policies [nd5892f77:4:bc849d4c]."
+      },
+      {
+        "point_id": "nd17ac5a1:0:19e82853",
+        "decision": "UNKNOWN",
+        "reason": "The local context does not mention Senator Joe McCarthy or his actions, and the external evidence is not relevant to the local context."
+      },
+      {
+        "point_id": "nd87f4bcd:2:33644389",
+        "decision": "UNKNOWN",
+        "reason": "The local context does not cover the Supreme Court's upholding of the Espionage Act, and the external evidence is not relevant to the local context."
+      },
+      {
+        "point_id": "nd502a541:0:8a4601d6",
+        "decision": "UNKNOWN",
+        "reason": "The local context does not discuss the Vietnam War, and the external evidence is not relevant to the local context."
+      },
+      {
+        "point_id": "nd87f4bcd:3:4bc93889",
+        "decision": "UNKNOWN",
+        "reason": "The local context does not mention the Committee on Public Information, and the external evidence is not relevant to the local context."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that the Sedition Act of 1918 prohibited disloyal language against the government and armed forces [nd87f4bcd:1:8fba4bc0]."
+      },
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that the Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy [nd87f4bcd:0:d6dd8de2]."
+      },
+      {
+        "point_id": "nd502a541:2:1aae853d",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nd502a541:3:fccb8c56",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nd87f4bcd:4:0493dea1",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nd502a541:1:5d3beae0",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "nd502a541",
+    "point_support": [
+      {
+        "point_id": "nd502a541:0:8a4601d6",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document mentions widespread dissent in the U.S. due to military intervention in Vietnam [nd502a541:chunk_00019]."
+      },
+      {
+        "point_id": "nd502a541:1:5d3beae0",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document discusses American support for a military coup in Chile leading to organized terror against opposition [nd502a541:chunk_00031]."
+      },
+      {
+        "point_id": "nd502a541:2:1aae853d",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document states that Kissinger and Cold War intellectuals did not subject their policies to public debate, limiting democracy at home [nd502a541:chunk_00014]."
+      },
+      {
+        "point_id": "nd502a541:3:fccb8c56",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Kissinger's focus on security over human rights is mentioned in the context of domestic protests [nd502a541:chunk_00017]."
+      },
+      {
+        "point_id": "nd502a541:4:bceeabc0",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The document describes Nixon and Kissinger's strategy in Vietnam as mixing de-escalation with force to preserve American power credibility [nd502a541:chunk_00020]."
+      },
+      {
+        "point_id": "nd17ac5a1:0:19e82853",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms Senator Joe McCarthy used war hysteria to assault civil liberties [nd17ac5a1_doc.txt:chunk_00012]."
+      },
+      {
+        "point_id": "nd87f4bcd:2:33644389",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime [nd87f4bcd_doc.txt:chunk_00023]."
+      },
+      {
+        "point_id": "nd87f4bcd:3:4bc93889",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the Committee on Public Information controlled war-related information to shape public opinion [nd87f4bcd_doc.txt:chunk_00019]."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the Sedition Act of 1918 prohibited disloyal language against the government and armed forces [nd87f4bcd_doc.txt:chunk_00022]."
+      },
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy [nd87f4bcd_doc.txt:chunk_00022]."
+      },
+      {
+        "point_id": "nd87f4bcd:4:0493dea1",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the federal government centralized and coordinated the economy for total war mobilization [nd87f4bcd_doc.txt:chunk_00018]."
+      },
+      {
+        "point_id": "nd5892f77:0:569dd5f7",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the US government froze assets of the Issei and imposed strict curfews after Pearl Harbor [nd5892f77_doc.txt:chunk_00001]."
+      },
+      {
+        "point_id": "nd5892f77:4:bc849d4c",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms anti-Japanese sentiment and aggression were widespread after Pearl Harbor, supporting removal policies [nd5892f77_doc.txt:chunk_00010]."
+      },
+      {
+        "point_id": "nd5892f77:2:d755f489",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms Japanese Americans were detained and interned as a result of official policy during WWII [nd5892f77_doc.txt:chunk_00009]."
+      },
+      {
+        "point_id": "nd5892f77:1:ec79a42b",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms the FBI followed community leaders with strong Japanese ties and raided homes for contraband [nd5892f77_doc.txt:chunk_00001]."
+      }
+    ]
+  },
+  {
+    "node_id": "nd02aaf19",
+    "point_support": []
+  },
+  {
+    "node_id": "nd1cdfce4",
+    "point_support": []
+  },
+  {
+    "node_id": "nd04a456b",
+    "point_support": []
+  },
+  {
+    "node_id": "nd010283a",
+    "point_support": []
+  },
+  {
+    "node_id": "nd17ac5a1",
+    "point_support": [
+      {
+        "point_id": "nd17ac5a1:0:19e82853",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "Senator Joe McCarthy used war hysteria during the Korean War to assault civil liberties, as noted in the local context."
+      },
+      {
+        "point_id": "nd87f4bcd:2:33644389",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime, as confirmed by external evidence."
+      },
+      {
+        "point_id": "nd502a541:0:8a4601d6",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The Vietnam War inspired widespread dissent due to military intervention in support of a corrupt regime, as confirmed by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:3:4bc93889",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The Committee on Public Information controlled war-related information to shape public opinion, as confirmed by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The Sedition Act of 1918 prohibited disloyal language against the government and armed forces, as confirmed by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy, as confirmed by external evidence."
+      },
+      {
+        "point_id": "nd502a541:2:1aae853d",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate, as confirmed by external evidence."
+      },
+      {
+        "point_id": "nd502a541:3:fccb8c56",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nd87f4bcd:4:0493dea1",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The federal government centralized and coordinated the economy for total war mobilization, as confirmed by external evidence."
+      },
+      {
+        "point_id": "nd502a541:1:5d3beae0",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nd5892f77:0:569dd5f7",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "The US government froze assets of the Issei and imposed strict curfews after Pearl Harbor, as confirmed by external evidence."
+      }
+    ]
+  },
+  {
+    "node_id": "nd48cfee7",
+    "point_support": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "point_support": [
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy, as stated in the local context [nd87f4bcd_doc.txt:chunk_00022]."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The Sedition Act of 1918 prohibited disloyal language against the government and armed forces, as described in the local context [nd87f4bcd_doc.txt:chunk_00022]."
+      },
+      {
+        "point_id": "nd87f4bcd:2:33644389",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime, as noted in the local context [nd87f4bcd_doc.txt:chunk_00023]."
+      },
+      {
+        "point_id": "nd87f4bcd:3:4bc93889",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The Committee on Public Information controlled war-related information to shape public opinion, as mentioned in the local context [nd87f4bcd_doc.txt:chunk_00019]."
+      },
+      {
+        "point_id": "nd87f4bcd:4:0493dea1",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The federal government centralized and coordinated the economy for total war mobilization, as described in the local context [nd87f4bcd_doc.txt:chunk_00018]."
+      },
+      {
+        "point_id": "nd17ac5a1:0:19e82853",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that Senator Joe McCarthy used war hysteria to assault civil liberties in the U.S. [nd17ac5a1_doc.txt:chunk_00012]."
+      },
+      {
+        "point_id": "nd502a541:0:8a4601d6",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence confirms that the Vietnam War inspired widespread dissent within the U.S. due to military intervention [nd502a541_doc.txt:chunk_00019]."
+      },
+      {
+        "point_id": "nd502a541:2:1aae853d",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence indicates that Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate [nd502a541_doc.txt:chunk_00014]."
+      },
+      {
+        "point_id": "nd502a541:3:fccb8c56",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence shows Kissinger's Realpolitik focused on security over human rights, despite domestic protests [nd502a541_doc.txt:chunk_00017]."
+      },
+      {
+        "point_id": "nd502a541:1:5d3beae0",
+        "decision": "EXTERNAL_SUPPORTED",
+        "reason": "External evidence supports that American support for a military coup in Chile led to organized terror against opposition [nd502a541_doc.txt:chunk_00031]."
+      },
+      {
+        "point_id": "nd5892f77:0:569dd5f7",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nd502a541:4:bceeabc0",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nd5892f77:4:bc849d4c",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nd5892f77:2:d755f489",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      },
+      {
+        "point_id": "nd5892f77:1:ec79a42b",
+        "decision": "UNKNOWN",
+        "reason": "No adjudication returned"
+      }
+    ]
+  },
+  {
+    "node_id": "nda91043d",
+    "point_support": []
+  }
+]

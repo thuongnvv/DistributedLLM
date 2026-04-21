@@ -1,50 +1,17 @@
 {
-  "winner": "node_c",
-  "final_answer": "COVID-19 spreads primarily through respiratory droplets and aerosols released from an infected person’s mouth or nose when they cough, sneeze, speak, sing, or breathe; these particles can be inhaled or land on a nearby person’s face, and the virus can also be transmitted when a person touches surfaces contaminated with the virus and then touches their eyes, nose, or mouth. Infected individuals can be contagious even without showing symptoms. [doc3_covid19.txt:chunk_00003] [doc3_covid19.txt:chunk_00005]",
+  "winner": "UNKNOWN",
+  "final_answer": "UNKNOWN",
   "metrics": {
-    "pass": {
-      "node_a": 1,
-      "node_b": 1,
-      "node_c": 2
-    },
-    "fail": {
-      "node_a": 0,
-      "node_b": 0,
-      "node_c": 0
-    },
-    "agree": {
-      "node_a": 2,
-      "node_b": 0,
-      "node_c": 2
-    },
-    "reject": {
-      "node_a": 0,
-      "node_b": 0,
-      "node_c": 0
-    },
-    "eligible_reviews": {
-      "node_a": 2,
-      "node_b": 2,
-      "node_c": 2
-    },
-    "used_points": {
-      "node_a": 6,
-      "node_b": 3,
-      "node_c": 3
-    },
-    "agree_rate": {
-      "node_a": 0.16666666666666666,
-      "node_b": 0.0,
-      "node_c": 0.3333333333333333
-    }
+    "pass": {},
+    "fail": {},
+    "agree": {},
+    "reject": {},
+    "eligible_reviews": {},
+    "used_points": {},
+    "agree_rate": {}
   },
   "reputation_updates": {
-    "node_rep_delta": {
-      "node_c": 5.0
-    },
-    "point_rep_delta": {
-      "node_a": 2.0,
-      "node_c": 2.0
-    }
+    "node_rep_delta": {},
+    "point_rep_delta": {}
   }
 }

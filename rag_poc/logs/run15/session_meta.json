@@ -1,16 +1,22 @@
 {
   "queries": [
     {
+      "label": "q001",
+      "query": "Why is World War I often considered a cause of World War II",
+      "winner": "UNKNOWN",
+      "q_dir": "q001"
+    },
+    {
       "label": "q002",
-      "query": "what is covid 19",
-      "winner": "node_c",
+      "query": "Why is World War I often considered a cause of World War II",
+      "winner": "UNKNOWN",
       "q_dir": "q002"
     },
     {
-      "label": "q001",
-      "query": "How does COVID-19 spread?",
-      "winner": "node_c",
-      "q_dir": "q001"
+      "label": "q003",
+      "query": "What role did the Soviet Union play in defeating Nazi Germany",
+      "winner": "nda91043d",
+      "q_dir": "q003"
     }
   ]
 }

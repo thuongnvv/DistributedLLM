@@ -1,0 +1,68 @@
+[
+  {
+    "node_id": "ndeaded7c",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "ndf0bd955",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd5892f77",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd502a541",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd02aaf19",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd1cdfce4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd04a456b",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd010283a",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd17ac5a1",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd48cfee7",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nda91043d",
+    "synthesis_text": "The Soviet Union played a crucial role in defeating Nazi Germany during World War II. Hitler's decision to invade the Soviet Union in 1941 opened a two-front war, significantly engaging the USSR against Nazi Germany [nda91043d_doc.txt:chunk_00015]. The Eastern Front became a massive battleground where the majority of Wehrmacht soldiers who died in the war perished fighting the Red Army [nda91043d_doc.txt:chunk_00016]. The Soviet Union suffered immense casualties, with 27 million USSR citizens dying in what they call 'the Great Patriotic War' [nda91043d_doc.txt:chunk_00016]. The Red Army's victory at Stalingrad marked a turning point, leading to the systematic annihilation of the German Sixth Army [nda91043d_doc.txt:chunk_00055]. Additionally, the Red Army's advance into East Prussia contributed to the encirclement and eventual defeat of Nazi Germany [nda91043d_doc.txt:chunk_00067].",
+    "used_points": [
+      "nda91043d:0:b11cf8cc",
+      "nda91043d:1:ae932410",
+      "nda91043d:2:23a9bcc3",
+      "nda91043d:3:8ff3bad0",
+      "nda91043d:4:b062725d"
+    ]
+  }
+]

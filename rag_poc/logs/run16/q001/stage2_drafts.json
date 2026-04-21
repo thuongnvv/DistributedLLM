@@ -1,27 +1,78 @@
 [
   {
-    "node_id": "node_a",
-    "synthesis_text": "COVID-19 is a contagious disease caused by the coronavirus SARS‑CoV‑2 [doc1_covid19.txt:chunk_00000][doc1_covid19.txt:chunk_00024]; the World Health Organization declared it a global health emergency in March 2020 and ended the emergency in May 2023 [doc1_covid19.txt:chunk_00000].",
+    "node_id": "ndeaded7c",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "ndf0bd955",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd5892f77",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd502a541",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd02aaf19",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd1cdfce4",
+    "synthesis_text": "During World War II, both African Americans and Japanese Americans faced significant paradoxes in their own homeland. African Americans noted the similarities between racial practices in the US and Nazi Germany, highlighting the contradiction between fighting for democracy abroad while facing discrimination at home [nd1cdfce4:0:274ba919]. Langston Hughes emphasized the gap between US ideals and racial practices [nd1cdfce4:1:bdefb01f]. The Double V Campaign symbolized the fight against oppression both domestically and internationally [nd1cdfce4:3:bbe821ec]. Meanwhile, Japanese Americans, despite being US citizens, faced internment and suspicion without evidence of unpatriotic acts [nda91043d:0:76010d4c]. Both groups struggled to prove their importance and gain full citizenship during the war [nda91043d:1:da771287].",
     "used_points": [
-      "node_a:0:2507e9f8",
-      "node_a:1:1a4ae692"
+      "nd1cdfce4:0:274ba919",
+      "nd1cdfce4:1:bdefb01f",
+      "nd1cdfce4:3:bbe821ec",
+      "nda91043d:0:76010d4c",
+      "nda91043d:1:da771287",
+      "nd1cdfce4:4:09b2ca08",
+      "nd1cdfce4:2:8b62d70e"
     ]
   },
   {
-    "node_id": "node_b",
-    "synthesis_text": "COVID-19 is an illness caused by the SARS‑CoV‑2 virus [doc2_covid19.txt:chunk_00000]. The virus began spreading at the end of 2019 and was declared a pandemic in 2020 [doc2_covid19.txt:chunk_00000]. It spreads mainly through close contact via respiratory droplets when an infected person coughs, sneezes, talks, or breathes [doc2_covid19.txt:chunk_00007]. Most infected people experience mild or no symptoms, but older adults and individuals with certain medical conditions are at higher risk of developing severe illness [doc2_covid19.txt:chunk_000].",
-    "used_points": [
-      "node_b:0:2688a553",
-      "node_b:1:ab8a6792",
-      "node_b:2:bbd245c1",
-      "node_b:3:f8da2576"
-    ]
+    "node_id": "nd04a456b",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
   },
   {
-    "node_id": "node_c",
-    "synthesis_text": "COVID-19 is an infectious respiratory illness caused by the SARS‑CoV‑2 coronavirus; the term stands for corona, virus, disease [doc3_covid19.txt:chunk_00000].",
+    "node_id": "nd010283a",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd17ac5a1",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd48cfee7",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nda91043d",
+    "synthesis_text": "During World War II, both African Americans and Japanese Americans faced paradoxical situations in their homeland. Japanese Americans, despite being U.S. citizens and showing no unpatriotic acts, were interned due to suspicions fueled by the attack on Pearl Harbor [nda91043d:0:76010d4c]. African Americans, on the other hand, struggled to prove their importance and gain full citizenship, facing racial discrimination in employment despite the wartime labor needs [nda91043d:1:da771287; nd1cdfce4:2:8b62d70e]. They also noted the similarities between racial practices in the U.S. and Nazi Germany [nd1cdfce4:0:274ba919], and the Navy's segregation policies led to accusations of Jim Crow practices [nd1cdfce4:4:09b2ca08]. The Double V Campaign highlighted the fight against oppression both at home and abroad [nd1cdfce4:3:bbe821ec].",
     "used_points": [
-      "node_c:0:f0be5f17"
+      "nda91043d:0:76010d4c",
+      "nda91043d:1:da771287",
+      "nd1cdfce4:0:274ba919",
+      "nd1cdfce4:2:8b62d70e",
+      "nd1cdfce4:4:09b2ca08",
+      "nd1cdfce4:3:bbe821ec",
+      "nd1cdfce4:1:bdefb01f"
     ]
   }
 ]

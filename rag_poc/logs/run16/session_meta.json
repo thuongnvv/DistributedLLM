@@ -2,21 +2,9 @@
   "queries": [
     {
       "label": "q001",
-      "query": "What is COVID-19?",
-      "winner": "node_c",
+      "query": "What common paradox did African Americans and Japanese Americans experience in their own homeland when the United States participated in World War II?",
+      "winner": "nda91043d",
       "q_dir": "q001"
-    },
-    {
-      "label": "q002",
-      "query": "What is COVID-19?",
-      "winner": "node_c",
-      "q_dir": "q002"
-    },
-    {
-      "label": "q003",
-      "query": "What are the most common symptoms of COVID-19?",
-      "winner": "node_b",
-      "q_dir": "q003"
     }
   ]
 }

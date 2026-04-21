@@ -1,47 +1,43 @@
 {
-  "winner": "node_c",
-  "final_answer": "COVID-19 is an infectious respiratory illness caused by the SARS‑CoV‑2 coronavirus; the term stands for corona, virus, disease [doc3_covid19.txt:chunk_00000].",
+  "winner": "nda91043d",
+  "final_answer": "During World War II, both African Americans and Japanese Americans faced paradoxical situations in their homeland. Japanese Americans, despite being U.S. citizens and showing no unpatriotic acts, were interned due to suspicions fueled by the attack on Pearl Harbor [nda91043d:0:76010d4c]. African Americans, on the other hand, struggled to prove their importance and gain full citizenship, facing racial discrimination in employment despite the wartime labor needs [nda91043d:1:da771287; nd1cdfce4:2:8b62d70e]. They also noted the similarities between racial practices in the U.S. and Nazi Germany [nd1cdfce4:0:274ba919], and the Navy's segregation policies led to accusations of Jim Crow practices [nd1cdfce4:4:09b2ca08]. The Double V Campaign highlighted the fight against oppression both at home and abroad [nd1cdfce4:3:bbe821ec].",
   "metrics": {
     "pass": {
-      "node_a": 0,
-      "node_b": 0,
-      "node_c": 0
+      "nd1cdfce4": 1,
+      "nda91043d": 1
     },
     "fail": {
-      "node_a": 0,
-      "node_b": 0,
-      "node_c": 0
+      "nd1cdfce4": 0,
+      "nda91043d": 0
     },
     "agree": {
-      "node_a": 0,
-      "node_b": 0,
-      "node_c": 0
+      "nd1cdfce4": 5,
+      "nda91043d": 6
     },
     "reject": {
-      "node_a": 0,
-      "node_b": 0,
-      "node_c": 0
+      "nd1cdfce4": 0,
+      "nda91043d": 0
     },
     "eligible_reviews": {
-      "node_a": 2,
-      "node_b": 2,
-      "node_c": 2
+      "nd1cdfce4": 1,
+      "nda91043d": 1
     },
     "used_points": {
-      "node_a": 2,
-      "node_b": 4,
-      "node_c": 1
+      "nd1cdfce4": 7,
+      "nda91043d": 7
     },
     "agree_rate": {
-      "node_a": 0.0,
-      "node_b": 0.0,
-      "node_c": 0.0
+      "nd1cdfce4": 0.7142857142857143,
+      "nda91043d": 0.8571428571428571
     }
   },
   "reputation_updates": {
     "node_rep_delta": {
-      "node_c": 5.0
+      "nda91043d": 5.0
     },
-    "point_rep_delta": {}
+    "point_rep_delta": {
+      "nd1cdfce4": 7.0,
+      "nda91043d": 4.0
+    }
   }
 }

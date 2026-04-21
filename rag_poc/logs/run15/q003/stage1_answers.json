@@ -1,0 +1,86 @@
+[
+  {
+    "node_id": "ndeaded7c",
+    "points": []
+  },
+  {
+    "node_id": "ndf0bd955",
+    "points": []
+  },
+  {
+    "node_id": "nd5892f77",
+    "points": []
+  },
+  {
+    "node_id": "nd502a541",
+    "points": []
+  },
+  {
+    "node_id": "nd02aaf19",
+    "points": []
+  },
+  {
+    "node_id": "nd1cdfce4",
+    "points": []
+  },
+  {
+    "node_id": "nd04a456b",
+    "points": []
+  },
+  {
+    "node_id": "nd010283a",
+    "points": []
+  },
+  {
+    "node_id": "nd17ac5a1",
+    "points": []
+  },
+  {
+    "node_id": "nd48cfee7",
+    "points": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "points": []
+  },
+  {
+    "node_id": "nda91043d",
+    "points": [
+      {
+        "point_id": "nda91043d:0:b11cf8cc",
+        "text": "Hitler's invasion of the Soviet Union in 1941 opened a two-front war, crucially engaging the USSR against Nazi Germany.",
+        "citations": [
+          "nda91043d_doc.txt:chunk_00015"
+        ]
+      },
+      {
+        "point_id": "nda91043d:1:ae932410",
+        "text": "The Eastern Front was a massive battleground where four-fifths of all Wehrmacht soldiers who died in the war perished fighting the Red Army.",
+        "citations": [
+          "nda91043d_doc.txt:chunk_00016"
+        ]
+      },
+      {
+        "point_id": "nda91043d:2:23a9bcc3",
+        "text": "The Soviet Union suffered immense casualties, with 27 million USSR citizens dying in what they call 'the Great Patriotic War.'",
+        "citations": [
+          "nda91043d_doc.txt:chunk_00016"
+        ]
+      },
+      {
+        "point_id": "nda91043d:3:8ff3bad0",
+        "text": "The Red Army's victory at Stalingrad marked a turning point, leading to the systematic annihilation of the German Sixth Army.",
+        "citations": [
+          "nda91043d_doc.txt:chunk_00055"
+        ]
+      },
+      {
+        "point_id": "nda91043d:4:b062725d",
+        "text": "The Red Army's advance into East Prussia contributed to the encirclement and eventual defeat of Nazi Germany.",
+        "citations": [
+          "nda91043d_doc.txt:chunk_00067"
+        ]
+      }
+    ]
+  }
+]

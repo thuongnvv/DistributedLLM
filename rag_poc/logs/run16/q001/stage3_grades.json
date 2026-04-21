@@ -1,76 +1,38 @@
 [
   {
-    "grader_id": "node_a",
-    "target_id": "node_b",
-    "valid": "UNKNOWN",
-    "agree_points": [],
+    "grader_id": "nd1cdfce4",
+    "target_id": "nda91043d",
+    "valid": "PASS",
+    "agree_points": [
+      "nda91043d:0:76010d4c",
+      "nda91043d:1:da771287",
+      "nd1cdfce4:0:274ba919",
+      "nd1cdfce4:2:8b62d70e",
+      "nd1cdfce4:4:09b2ca08",
+      "nd1cdfce4:3:bbe821ec"
+    ],
     "reject_points": [],
     "unknown_points": [
-      "node_b:0:2688a553",
-      "node_b:1:ab8a6792",
-      "node_b:2:bbd245c1",
-      "node_b:3:f8da2576"
+      "nd1cdfce4:1:bdefb01f"
     ],
-    "note": "Insufficient context to verify the referenced points; they refer to external documents not provided."
+    "note": "All points are supported by either local or external evidence except for the point about Langston Hughes, which is marked as unknown due to lack of direct relevance to the query."
   },
   {
-    "grader_id": "node_a",
-    "target_id": "node_c",
-    "valid": "UNKNOWN",
-    "agree_points": [],
+    "grader_id": "nda91043d",
+    "target_id": "nd1cdfce4",
+    "valid": "PASS",
+    "agree_points": [
+      "nd1cdfce4:0:274ba919",
+      "nd1cdfce4:1:bdefb01f",
+      "nd1cdfce4:3:bbe821ec",
+      "nda91043d:0:76010d4c",
+      "nda91043d:1:da771287"
+    ],
     "reject_points": [],
     "unknown_points": [
-      "node_c:0:f0be5f17"
+      "nd1cdfce4:4:09b2ca08",
+      "nd1cdfce4:2:8b62d70e"
     ],
-    "note": "Insufficient context to verify the referenced point; it refers to an external document not provided."
-  },
-  {
-    "grader_id": "node_b",
-    "target_id": "node_a",
-    "valid": "UNKNOWN",
-    "agree_points": [],
-    "reject_points": [],
-    "unknown_points": [
-      "node_a:0:2507e9f8",
-      "node_a:1:1a4ae692"
-    ],
-    "note": "Points reference external documents not present in the provided context; cannot verify their accuracy."
-  },
-  {
-    "grader_id": "node_b",
-    "target_id": "node_c",
-    "valid": "UNKNOWN",
-    "agree_points": [],
-    "reject_points": [],
-    "unknown_points": [
-      "node_c:0:f0be5f17"
-    ],
-    "note": "Point references an external document; no supporting information in the provided context."
-  },
-  {
-    "grader_id": "node_c",
-    "target_id": "node_a",
-    "valid": "UNKNOWN",
-    "agree_points": [],
-    "reject_points": [],
-    "unknown_points": [
-      "node_a:0:2507e9f8",
-      "node_a:1:1a4ae692"
-    ],
-    "note": "Insufficient context to verify statements."
-  },
-  {
-    "grader_id": "node_c",
-    "target_id": "node_b",
-    "valid": "UNKNOWN",
-    "agree_points": [],
-    "reject_points": [],
-    "unknown_points": [
-      "node_b:0:2688a553",
-      "node_b:1:ab8a6792",
-      "node_b:2:bbd245c1",
-      "node_b:3:f8da2576"
-    ],
-    "note": "Insufficient context to verify statements."
+    "note": "The draft correctly identifies the paradoxes faced by African Americans and Japanese Americans during WWII, with most points supported by external evidence or local context. Two points are marked as unknown due to lack of specific mention in the provided context."
   }
 ]

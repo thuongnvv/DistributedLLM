@@ -1,0 +1,10 @@
+{
+  "queries": [
+    {
+      "label": "q001",
+      "query": "In large-scale wars, what actions has the U.S. government taken that demonstrate the curtailment of civil liberties and the suppression of dissent against its own citizens?",
+      "winner": "nd17ac5a1",
+      "q_dir": "q001"
+    }
+  ]
+}

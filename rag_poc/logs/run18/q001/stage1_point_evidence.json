@@ -1,0 +1,258 @@
+{
+  "nd5892f77:0:569dd5f7": {
+    "point_id": "nd5892f77:0:569dd5f7",
+    "origin_node_id": "nd5892f77",
+    "text": "The US government froze assets of the Issei and imposed strict curfews after Pearl Harbor.",
+    "citations": [
+      "nd5892f77_doc.txt:chunk_00001"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd5892f77_doc.txt",
+        "chunk_id": "chunk_00001",
+        "text": "The day after the Japanese attack on December 7, 1941, the US government froze assets of the Issei, and the FBI began to follow community leaders with strong Japanese ties. As American citizens, Issei and Nisei had enjoyed the rights of any US citizen; now their own government imposed strict curfews on them and raided their homes for \"contraband\"—anything that showed special connection to their former homeland.",
+        "score": 0.2785
+      }
+    ]
+  },
+  "nd5892f77:1:ec79a42b": {
+    "point_id": "nd5892f77:1:ec79a42b",
+    "origin_node_id": "nd5892f77" ,
+    "text": "The FBI followed community leaders with strong Japanese ties and raided homes for contraband.",
+    "citations": [
+      "nd5892f77_doc.txt:chunk_00001"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd5892f77_doc.txt",
+        "chunk_id": "chunk_00001",
+        "text": "The day after the Japanese attack on December 7, 1941, the US government froze assets of the Issei, and the FBI began to follow community leaders with strong Japanese ties. As American citizens, Issei and Nisei had enjoyed the rights of any US citizen; now their own government imposed strict curfews on them and raided their homes for \"contraband\"—anything that showed special connection to their former homeland.",
+        "score": 0.2785
+      }
+    ]
+  },
+  "nd5892f77:2:d755f489": {
+    "point_id": "nd5892f77:2:d755f489",
+    "origin_node_id": "nd5892f77",
+    "text": "Japanese Americans were detained and interned as a result of official policy during WWII.",
+    "citations": [
+      "nd5892f77_doc.txt:chunk_00009"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd5892f77_doc.txt",
+        "chunk_id": "chunk_00009",
+        "text": "My own students often greet these accounts of internment with disbelief. Surely American citizens could not be detained against their will and interned as the result of official policy. Surely this wasn’t official policy, they protest. Surely other Americans didn’t know this was going on. It is crucial, therefore, to help students understand the social and cultural milieu in which other Americans would be complicit with these acts",
+        "score": 0.2886
+      }
+    ]
+  },
+  "nd5892f77:3:139238ff": {
+    "point_id": "nd5892f77:3:139238ff",
+    "origin_node_id": "nd5892f77",
+    "text": "Interned Japanese Americans could only take what they could carry, sustaining them for years.",
+    "citations": [
+      "nd5892f77_doc.txt:chunk_00005"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd5892f77_doc.txt",
+        "chunk_id": "chunk_00005",
+        "text": ". They could take nothing with them other than what they could carry themselves, and these belongings would have to sustain many of them for the better part of four years since internment didn’t officially end until 1946.",
+        "score": 0.1866
+      }
+    ]
+  },
+  "nd5892f77:4:bc849d4c": {
+    "point_id": "nd5892f77:4:bc849d4c",
+    "origin_node_id": "nd5892f77",
+    "text": "Anti-Japanese sentiment and aggression were widespread after Pearl Harbor, supporting removal policies.",
+    "citations": [
+      "nd5892f77_doc.txt:chunk_00010"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd5892f77_doc.txt",
+        "chunk_id": "chunk_00010",
+        "text": ". The attack on Pearl Harbor had unleashed a wave of aggression against Japanese Americans that had been sublimated but, in the wake of the attack, now found an outlet. Workers and businessmen who long competed with the Japanese for wages and profits were eager supporters of the removal policy. Anti-Japanese sentiment quickly became widespread among those who did not stand to profit immediately from the confiscation of property and the removal of business and labor competition. From Dr",
+        "score": 0.2384
+      }
+    ]
+  },
+  "nd502a541:0:8a4601d6": {
+    "point_id": "nd502a541:0:8a4601d6",
+    "origin_node_id": "nd502a541",
+    "text": "The Vietnam War inspired widespread dissent within the United States due to military intervention in support of a corrupt regime.",
+    "citations": [
+      "nd502a541_doc.txt:chunk_00019"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd502a541_doc.txt",
+        "chunk_id": "chunk_00019",
+        "text": "Kissinger’s Realpolitik became most evident in Vietnam. The long American war in Southeast Asia had inspired widespread dissent within the United States and among allies. Since 1965, the United States had escalated its military intervention in defense of a weak, corrupt, and unpopular South Vietnamese regime. President Lyndon Johnson and other American leaders in the 1960s felt compelled to continue and expand Washington’s intervention for the sake of justifying past commitments.",
+        "score": 0.3953
+      }
+    ]
+  },
+  "nd502a541:1:5d3beae0": {
+    "point_id": "nd502a541:1:5d3beae0",
+    "origin_node_id": "nd502a541",
+    "text": "American support for a military coup in Chile led to organized terror against opposition, causing international outrage.",
+    "citations": [
+      "nd502a541_doc.txt:chunk_00031"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd502a541_doc.txt",
+        "chunk_id": "chunk_00031",
+        "text": ". By 1973 American actions included support for a bloody military coup against Allende. The government that replaced Salvador Allende, with American support, undertook a program of organized terror to imprison and murder all opposition—including non-communist figures. Outrage throughout the region and in Europe at American sponsorship of such brutality undermined America’s international standing. It made Kissinger a target for war crimes accusations that persist into the twenty-first century.",
+        "score": 0.3808
+      }
+    ]
+  },
+  "nd502a541:2:1aae853d": {
+    "point_id": "nd502a541:2:1aae853d",
+    "origin_node_id": "nd502a541",
+    "text": "Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate.",
+    "citations": [
+      "nd502a541_doc.txt:chunk_00014"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd502a541_doc.txt",
+        "chunk_id": "chunk_00014",
+        "text": ". They were unelected figures who emphasized stability and American power as ballasts for a world that they feared could careen back to the horrors of the Second World War, especially if Stalin’s Russia continued to expand. This was the third and perhaps most difficult contradiction of the Cold War: Kissinger and his fellow Cold War intellectuals defended democracy abroad by limiting democracy at home. They were not elected to office, they did not subject their assumptions to open public debate, and they did not encourage alternative points of view",
+        "score": 0.2572
+      }
+    ]
+  },
+  "nd502a541:3:fccb8c56": {
+    "point_id": "nd502a541:3:fccb8c56",
+    "origin_node_id": "nd502a541",
+    "text": "Kissinger's Realpolitik focused on security over human rights, despite domestic protests advocating for the latter.",
+    "citations": [
+      "nd502a541_doc.txt:chunk_00017"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd502a541_doc.txt",
+        "chunk_id": "chunk_00017",
+        "text": ". Instead of pursuing vague ideas of “development” or allying with weak regimes, like South Vietnam, Kissinger called for the United States to focus on security and negotiations with the biggest states. He wanted to increase American leverage by choosing American battles more carefully and committing American resources more wisely. He hoped to limit domestic acrimony after the protests of the late 1960s and focus on American interests abroad, even if they violated the principles of human rights that many citizens advocated. Kissinger, in this sense, was a believer in classic Realpolitik",
+        "score": 0.2949
+      }
+    ]
+  },
+  "nd502a541:4:bceeabc0": {
+    "point_id": "nd502a541:4:bceeabc0",
+    "origin_node_id": "nd502a541",
+    "text": "Nixon and Kissinger aimed to preserve American power credibility by mixing de-escalation with force in Vietnam.",
+    "citations": [
+      "nd502a541_doc.txt:chunk_00020"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd502a541_doc.txt",
+        "chunk_id": "chunk_00020",
+        "text": "President Richard Nixon and Henry Kissinger were determined to shed the American entanglement with South Vietnam. They were also determined to preserve the credibility of American power, proving that the United States could withdraw without showing weakness to adversaries in the region and around the world. This meant mixing de-escalation with conspicuous evidence of continued force",
+        "score": 0.3163
+      }
+    ]
+  },
+  "nd17ac5a1:0:19e82853": {
+    "point_id": "nd17ac5a1:0:19e82853",
+    "origin_node_id": "nd17ac5a1",
+    "text": "Senator Joe McCarthy used war hysteria to assault civil liberties in the U.S.",
+    "citations": [
+      "nd17ac5a1_doc.txt:chunk_00012"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd17ac5a1_doc.txt",
+        "chunk_id": "chunk_00012",
+        "text": ". Once Chinese Communists were killing Americans, anger toward the Chinese mounted in the United States, and recognition would have been political suicide for Democrats already suffering from Republican charges that they were \"soft on communism.\" The war hysteria provided the context in which Senator Joe McCarthy (R-Wisconsin) attained influence that he used to assault the civil liberties of his countrymen. In this atmosphere, America’s WWII ally, Chiang Kai-shek, sought and ultimately won a new treaty of alliance that committed the United States to defend Taiwan",
+        "score": 0.3139
+      }
+    ]
+  },
+  "nd87f4bcd:0:d6dd8de2": {
+    "point_id": "nd87f4bcd:0:d6dd8de2",
+    "origin_node_id": "nd87f4bcd",
+    "text": "The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy.",
+    "citations": [
+      "nd87f4bcd_doc.txt:chunk_00022"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd87f4bcd_doc.txt",
+        "chunk_id": "chunk_00022",
+        "text": "During the period of neutrality, Americans could freely voice their opposition to fighting against Germany. Once the nation was officially at war, however, the government curbed dissent. The 1917 Espionage Act made it a crime to obstruct military recruitment, to encourage mutiny, or to aid the enemy by spreading lies. The 1918 Sedition Act prohibited uttering, writing, or publishing \"any abusive or disloyal language\" concerning the flag, Constitution, government, or armed forces. Upholding the constitutionality of the Espionage Act in Schenck v",
+        "score": 0.4732
+      }
+    ]
+  },
+  "nd87f4bcd:1:8fba4bc0": {
+    "point_id": "nd87f4bcd:1:8fba4bc0",
+    "origin_node_id": "nd87f4bcd",
+    "text": "The Sedition Act of 1918 prohibited disloyal language against the government and armed forces.",
+    "citations": [
+      "nd87f4bcd_doc.txt:chunk_00022"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd87f4bcd_doc.txt",
+        "chunk_id": "chunk_00022",
+        "text": "During the period of neutrality, Americans could freely voice their opposition to fighting against Germany. Once the nation was officially at war, however, the government curbed dissent. The 1917 Espionage Act made it a crime to obstruct military recruitment, to encourage mutiny, or to aid the enemy by spreading lies. The 1918 Sedition Act prohibited uttering, writing, or publishing \"any abusive or disloyal language\" concerning the flag, Constitution, government, or armed forces. Upholding the constitutionality of the Espionage Act in Schenck v",
+        "score": 0.4732
+      }
+    ]
+  },
+  "nd87f4bcd:2:33644389": {
+    "point_id": "nd87f4bcd:2:33644389",
+    "origin_node_id": "nd87f4bcd",
+    "text": "The Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime.",
+    "citations": [
+      "nd87f4bcd_doc.txt:chunk_00023"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd87f4bcd_doc.txt",
+        "chunk_id": "chunk_00023",
+        "text": ". Upholding the constitutionality of the Espionage Act in Schenck v. United States (1919), the Supreme Court agreed that Congress could curtail speech that created a \"clear and present danger.\" Writing for the majority, Justice Oliver Wendell Holmes Jr. concluded that \"when the nation is at war many things that might be said in time of peace . . . will not be endured so long as men fight.\"",
+        "score": 0.4474
+      }
+    ]
+  },
+  "nd87f4bcd:3:4bc93889": {
+    "point_id": "nd87f4bcd:3:4bc93889",
+    "origin_node_id": "nd87f4bcd",
+    "text": "The Committee on Public Information controlled war-related information to shape public opinion.",
+    "citations": [
+      "nd87f4bcd_doc.txt:chunk_00019"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd87f4bcd_doc.txt",
+        "chunk_id": "chunk_00019",
+        "text": ". The Committee on Public Information controlled the flow of information to shape public opinion about the war and disseminated patriotic posters, pamphlets, and films. The agency also recruited so-called Four-Minute Men (named for the time that it took to change reels for silent movies) to speak before audiences in movie halls, markets, fairs, and churches. The Food Administration organized a massive food conservation campaign around the slogan \"food will win the war,\" urging citizens to observe wheatless Mondays, meatless Tuesdays, and porkless Saturdays to save food for the troops",
+        "score": 0.3171
+      }
+    ]
+  },
+  "nd87f4bcd:4:0493dea1": {
+    "point_id": "nd87f4bcd:4:0493dea1",
+    "origin_node_id": "nd87f4bcd",
+    "text": "The federal government centralized and coordinated the economy for total war mobilization.",
+    "citations": [
+      "nd87f4bcd_doc.txt:chunk_00018"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nd87f4bcd_doc.txt",
+        "chunk_id": "chunk_00018",
+        "text": "The First World War was a total war, requiring the complete mobilization of American society. During the war, the federal government exercised unprecedented powers to centralize and coordinate the economy. The methods used to mobilize the manufacturing and agricultural sectors, select men for the military, regulate transportation, and distribute propaganda set precedents for how the federal government would respond to the crises of the Great Depression and World War II",
+        "score": 0.3339
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+[
+  {
+    "node_id": "ndeaded7c",
+    "point_support": []
+  },
+  {
+    "node_id": "ndf0bd955",
+    "point_support": []
+  },
+  {
+    "node_id": "nd5892f77",
+    "point_support": []
+  },
+  {
+    "node_id": "nd502a541",
+    "point_support": []
+  },
+  {
+    "node_id": "nd02aaf19",
+    "point_support": []
+  },
+  {
+    "node_id": "nd1cdfce4",
+    "point_support": []
+  },
+  {
+    "node_id": "nd04a456b",
+    "point_support": []
+  },
+  {
+    "node_id": "nd010283a",
+    "point_support": []
+  },
+  {
+    "node_id": "nd17ac5a1",
+    "point_support": []
+  },
+  {
+    "node_id": "nd48cfee7",
+    "point_support": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "point_support": []
+  },
+  {
+    "node_id": "nda91043d",
+    "point_support": [
+      {
+        "point_id": "nda91043d:0:b11cf8cc",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context describes Hitler's invasion of the Soviet Union in 1941, opening a two-front war [nda91043d_doc.txt:chunk_00015]."
+      },
+      {
+        "point_id": "nda91043d:1:ae932410",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context states that four-fifths of all Wehrmacht soldiers who died in the war perished fighting the Red Army [nda91043d_doc.txt:chunk_00016]."
+      },
+      {
+        "point_id": "nda91043d:2:23a9bcc3",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context mentions that 27 million USSR citizens died in the war [nda91043d_doc.txt:chunk_00016]."
+      },
+      {
+        "point_id": "nda91043d:3:8ff3bad0",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context describes the Red Army's victory at Stalingrad and the annihilation of the German Sixth Army [nda91043d_doc.txt:chunk_00055]."
+      },
+      {
+        "point_id": "nda91043d:4:b062725d",
+        "decision": "LOCAL_SUPPORTED",
+        "reason": "The local context notes the Red Army's advance into East Prussia contributing to the defeat of Nazi Germany [nda91043d_doc.txt:chunk_00067]."
+      }
+    ]
+  }
+]

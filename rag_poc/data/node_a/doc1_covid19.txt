@@ -1,1 +1,0 @@
-/home/thuongnv/Documents/DistributedLLM/doc1_covid19.txt

@@ -1,32 +1,122 @@
 {
   "nodes": [
     {
-      "node_id": "doc1_covid19",
-      "doc_path": "data/providers/doc1_covid19/doc.txt",
-      "chroma_path": "data/providers/doc1_covid19/chroma_store",
-      "domain": "healthcare",
-      "style": "evidence-based, formal, clinical",
-      "scope": "COVID-19 symptoms, transmission methods, diagnostic tests, vaccines, preventive measures, treatment options, pandemic history, zoonotic origins, global health emergency, long COVID",
+      "node_id": "ndeaded7c",
+      "doc_path": "data/providers/ndeaded7c/doc.txt",
+      "chroma_path": "data/providers/ndeaded7c/chroma_store",
+      "domain": "sociology",
+      "style": "historical analysis, cultural commentary, retrospective",
+      "scope": "Cold War, nuclear family, marriage trends, postwar America, baby boom, demographic changes, family stability, divorce rates, societal norms, consumer culture",
       "type": "provider",
       "status": "active"
     },
     {
-      "node_id": "doc2_covid19",
-      "doc_path": "data/providers/doc2_covid19/doc.txt",
-      "chroma_path": "data/providers/doc2_covid19/chroma_store",
-      "domain": "healthcare",
-      "style": "informative, evidence-based, formal",
-      "scope": "COVID-19, SARS-CoV-2, symptoms, prevention, vaccination, transmission, risk factors, treatment, complications, emergency care",
+      "node_id": "ndf0bd955",
+      "doc_path": "data/providers/ndf0bd955/doc.txt",
+      "chroma_path": "data/providers/ndf0bd955/chroma_store",
+      "domain": "history",
+      "style": "analytical, historical comparison, narrative",
+      "scope": "Great Depression, World War II, United States history, German history, political regimes, economic collapse, Franklin D. Roosevelt, Adolf Hitler, New Deal, American democracy",
       "type": "provider",
       "status": "active"
     },
     {
-      "node_id": "doc3_covid19",
-      "doc_path": "data/providers/doc3_covid19/doc.txt",
-      "chroma_path": "data/providers/doc3_covid19/chroma_store",
-      "domain": "healthcare",
-      "style": "informative, evidence-based, formal",
-      "scope": "COVID-19 symptoms, virus transmission, vaccine safety, vaccine effectiveness, pediatric considerations",
+      "node_id": "nd5892f77",
+      "doc_path": "data/providers/nd5892f77/doc.txt",
+      "chroma_path": "data/providers/nd5892f77/chroma_store",
+      "domain": "education",
+      "style": "historical analysis, narrative, descriptive",
+      "scope": "World War II, Japanese American internment, civil liberties, Executive Order 9066, relocation camps, Issei and Nisei, Pearl Harbor impact, family dynamics, government policies, cultural identity",
+      "type": "provider",
+      "status": "active"
+    },
+    {
+      "node_id": "nd502a541",
+      "doc_path": "data/providers/nd502a541/doc.txt",
+      "chroma_path": "data/providers/nd502a541/chroma_store",
+      "domain": "history",
+      "style": "biographical, analytical, historical",
+      "scope": "Henry Kissinger, Cold War, foreign policy, Nazi Germany, Jewish refugees, US Army, counterintelligence, postwar Germany, international affairs, American discussions",
+      "type": "provider",
+      "status": "active"
+    },
+    {
+      "node_id": "nd02aaf19",
+      "doc_path": "data/providers/nd02aaf19/doc.txt",
+      "chroma_path": "data/providers/nd02aaf19/chroma_store",
+      "domain": "geopolitics",
+      "style": "historical analysis, evidence-based, formal",
+      "scope": "Iranian political situation, US-Iran relations, Cold War history, Middle East geopolitics, Iran's nuclear ambitions, Iran-backed terrorism, Persian Gulf strategic importance, British and Russian influence in Iran, US foreign policy, Soviet-American competition",
+      "type": "provider",
+      "status": "active"
+    },
+    {
+      "node_id": "nd1cdfce4",
+      "doc_path": "data/providers/nd1cdfce4/doc.txt",
+      "chroma_path": "data/providers/nd1cdfce4/chroma_store",
+      "domain": "history",
+      "style": "historical analysis, evidence-based, formal",
+      "scope": "African American military service, World War II, racial segregation in the military, Tuskegee Airmen, Women's Auxiliary Army Corps, racial discrimination, civil rights activism, Langston Hughes, Navy recruitment policies, Jim Crow practices",
+      "type": "provider",
+      "status": "active"
+    },
+    {
+      "node_id": "nd04a456b",
+      "doc_path": "data/providers/nd04a456b/doc.txt",
+      "chroma_path": "data/providers/nd04a456b/chroma_store",
+      "domain": "political-science",
+      "style": "academic, analytical, historical perspective",
+      "scope": "US foreign policy, Cold War, Ronald Reagan, Mikhail Gorbachev, Soviet Union, Eastern Europe, international affairs, political leadership, communism, historical analysis",
+      "type": "provider",
+      "status": "active"
+    },
+    {
+      "node_id": "nd010283a",
+      "doc_path": "data/providers/nd010283a/doc.txt",
+      "chroma_path": "data/providers/nd010283a/chroma_store",
+      "domain": "history",
+      "style": "analytical, historical perspective, formal",
+      "scope": "Vietnam War, US archives, Cold War, US foreign policy, Lyndon Johnson, military strategy, communist expansion, US alliances, anti-war criticism, historical documentation",
+      "type": "provider",
+      "status": "active"
+    },
+    {
+      "node_id": "nd17ac5a1",
+      "doc_path": "data/providers/nd17ac5a1/doc.txt",
+      "chroma_path": "data/providers/nd17ac5a1/chroma_store",
+      "domain": "history",
+      "style": "historical analysis, diplomatic focus, formal",
+      "scope": "Cold War, China civil war, US foreign policy, Soviet Union, Chiang Kai-shek, Mao Zedong, Truman administration, George C. Marshall, Taiwan, Korean War",
+      "type": "provider",
+      "status": "active"
+    },
+    {
+      "node_id": "nd48cfee7",
+      "doc_path": "data/providers/nd48cfee7/doc.txt",
+      "chroma_path": "data/providers/nd48cfee7/chroma_store",
+      "domain": "general",
+      "style": "knowledge provider",
+      "scope": "general knowledge",
+      "type": "provider",
+      "status": "active"
+    },
+    {
+      "node_id": "nd87f4bcd",
+      "doc_path": "data/providers/nd87f4bcd/doc.txt",
+      "chroma_path": "data/providers/nd87f4bcd/chroma_store",
+      "domain": "history",
+      "style": "historical analysis, evidence-based, formal",
+      "scope": "World War I, European alliances, trench warfare, American neutrality, economic impact, diplomatic relations, submarine warfare, Woodrow Wilson, military mobilizations, international trade",
+      "type": "provider",
+      "status": "active"
+    },
+    {
+      "node_id": "nda91043d",
+      "doc_path": "data/providers/nda91043d/doc.txt",
+      "chroma_path": "data/providers/nda91043d/chroma_store",
+      "domain": "history",
+      "style": "historical analysis, factual, narrative",
+      "scope": "World War II, global conflict, Axis powers, European theater, Pacific theater, military invasions, geopolitical changes, American involvement, Nazi Germany, Japanese expansion",
       "type": "provider",
       "status": "active"
     }

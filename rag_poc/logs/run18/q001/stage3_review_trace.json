@@ -1,0 +1,614 @@
+[
+  {
+    "grader_id": "nd5892f77",
+    "target_id": "nd502a541",
+    "point_reviews": [
+      {
+        "point_id": "nd502a541:0:8a4601d6",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Vietnam War inspired widespread dissent due to U.S. military intervention in support of a corrupt regime is supported by external evidence."
+      },
+      {
+        "point_id": "nd502a541:2:1aae853d",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Sedition Act of 1918 prohibited disloyal language against the government and armed forces is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:2:33644389",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime is supported by external evidence."
+      },
+      {
+        "point_id": "nd5892f77:2:d755f489",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Japanese Americans were detained and interned as a result of official policy during WWII is supported by local context."
+      },
+      {
+        "point_id": "nd502a541:3:fccb8c56",
+        "basis": "UNKNOWN",
+        "reason": "Kissinger's Realpolitik focused on security over human rights, despite domestic protests advocating for the latter is not mentioned in local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:1:5d3beae0",
+        "basis": "UNKNOWN",
+        "reason": "American support for a military coup in Chile led to organized terror against opposition, causing international outrage is not mentioned in local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:4:bceeabc0",
+        "basis": "UNKNOWN",
+        "reason": "Nixon and Kissinger aimed to preserve American power credibility by mixing de-escalation with force in Vietnam is not mentioned in local context or external evidence."
+      },
+      {
+        "point_id": "nd5892f77:4:bc849d4c",
+        "basis": "UNKNOWN",
+        "reason": "Anti-Japanese sentiment and aggression were widespread after Pearl Harbor, supporting removal policies is not mentioned in local context or external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "nd5892f77",
+    "target_id": "nd17ac5a1",
+    "point_reviews": [
+      {
+        "point_id": "nd17ac5a1:0:19e82853",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Senator Joe McCarthy used war hysteria to assault civil liberties in the U.S. is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:2:33644389",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime is supported by external evidence."
+      },
+      {
+        "point_id": "nd502a541:0:8a4601d6",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Vietnam War inspired widespread dissent due to U.S. military intervention in support of a corrupt regime is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:3:4bc93889",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Committee on Public Information controlled war-related information to shape public opinion is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Sedition Act of 1918 prohibited disloyal language against the government and armed forces is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy is supported by external evidence."
+      },
+      {
+        "point_id": "nd502a541:2:1aae853d",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:4:0493dea1",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The federal government centralized and coordinated the economy for total war mobilization is supported by external evidence."
+      },
+      {
+        "point_id": "nd5892f77:0:569dd5f7",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The US government froze assets of the Issei and imposed strict curfews after Pearl Harbor is supported by local context."
+      }
+    ]
+  },
+  {
+    "grader_id": "nd5892f77",
+    "target_id": "nd87f4bcd",
+    "point_reviews": [
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Sedition Act of 1918 prohibited disloyal language against the government and armed forces is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:2:33644389",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:3:4bc93889",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Committee on Public Information controlled war-related information to shape public opinion is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:4:0493dea1",
+        "basis": "UNKNOWN",
+        "reason": "The federal government centralized and coordinated the economy for total war mobilization is not mentioned in local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:0:8a4601d6",
+        "basis": "UNKNOWN",
+        "reason": "The Vietnam War inspired widespread dissent within the United States due to military intervention in support of a corrupt regime is not mentioned in local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:3:fccb8c56",
+        "basis": "UNKNOWN",
+        "reason": "Kissinger's Realpolitik focused on security over human rights, despite domestic protests advocating for the latter is not mentioned in local context or external evidence."
+      },
+      {
+        "point_id": "nd17ac5a1:0:19e82853",
+        "basis": "UNKNOWN",
+        "reason": "Senator Joe McCarthy used war hysteria to assault civil liberties in the U.S. is not mentioned in local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:1:5d3beae0",
+        "basis": "UNKNOWN",
+        "reason": "American support for a military coup in Chile led to organized terror against opposition, causing international outrage is not mentioned in local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:2:1aae853d",
+        "basis": "UNKNOWN",
+        "reason": "Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate is not mentioned in local context or external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "nd502a541",
+    "target_id": "nd5892f77",
+    "point_reviews": [
+      {
+        "point_id": "nd5892f77:0:569dd5f7",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The US government froze assets of the Issei and imposed strict curfews after Pearl Harbor is supported by external evidence."
+      },
+      {
+        "point_id": "nd5892f77:1:ec79a42b",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The FBI followed community leaders with strong Japanese ties and raided homes for contraband is supported by external evidence."
+      },
+      {
+        "point_id": "nd5892f77:2:d755f489",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Japanese Americans were detained and interned as a result of official policy during WWII is supported by external evidence."
+      },
+      {
+        "point_id": "nd5892f77:3:139238ff",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Interned Japanese Americans could only take what they could carry, sustaining them for years is supported by external evidence."
+      },
+      {
+        "point_id": "nd5892f77:4:bc849d4c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Anti-Japanese sentiment and aggression were widespread after Pearl Harbor, supporting removal policies is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Sedition Act of 1918 prohibited disloyal language against the government and armed forces is supported by external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "nd502a541",
+    "target_id": "nd17ac5a1",
+    "point_reviews": [
+      {
+        "point_id": "nd17ac5a1:0:19e82853",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Senator Joe McCarthy used war hysteria to assault civil liberties in the U.S. is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:2:33644389",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime is supported by external evidence."
+      },
+      {
+        "point_id": "nd502a541:0:8a4601d6",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The Vietnam War inspired widespread dissent within the United States due to military intervention in support of a corrupt regime is supported by local context."
+      },
+      {
+        "point_id": "nd87f4bcd:3:4bc93889",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Committee on Public Information controlled war-related information to shape public opinion is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Sedition Act of 1918 prohibited disloyal language against the government and armed forces is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy is supported by external evidence."
+      },
+      {
+        "point_id": "nd502a541:2:1aae853d",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate is supported by local context."
+      },
+      {
+        "point_id": "nd87f4bcd:4:0493dea1",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The federal government centralized and coordinated the economy for total war mobilization is supported by external evidence."
+      },
+      {
+        "point_id": "nd5892f77:0:569dd5f7",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The US government froze assets of the Issei and imposed strict curfews after Pearl Harbor is supported by external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "nd502a541",
+    "target_id": "nd87f4bcd",
+    "point_reviews": [
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Sedition Act of 1918 prohibited disloyal language against the government and armed forces is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:2:33644389",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:3:4bc93889",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Committee on Public Information controlled war-related information to shape public opinion is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:4:0493dea1",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The federal government centralized and coordinated the economy for total war mobilization is supported by external evidence."
+      },
+      {
+        "point_id": "nd502a541:0:8a4601d6",
+        "basis": "UNKNOWN",
+        "reason": "The Vietnam War inspired widespread dissent within the United States due to military intervention in support of a corrupt regime is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:3:fccb8c56",
+        "basis": "UNKNOWN",
+        "reason": "Kissinger's Realpolitik focused on security over human rights, despite domestic protests advocating for the latter is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd17ac5a1:0:19e82853",
+        "basis": "UNKNOWN",
+        "reason": "Senator Joe McCarthy used war hysteria to assault civil liberties in the U.S. is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:1:5d3beae0",
+        "basis": "UNKNOWN",
+        "reason": "American support for a military coup in Chile led to organized terror against opposition, causing international outrage is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:2:1aae853d",
+        "basis": "UNKNOWN",
+        "reason": "Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate is not mentioned in the local context or external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "nd17ac5a1",
+    "target_id": "nd5892f77",
+    "point_reviews": [
+      {
+        "point_id": "nd5892f77:0:569dd5f7",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The US government froze assets of the Issei and imposed strict curfews after Pearl Harbor is supported by external evidence."
+      },
+      {
+        "point_id": "nd5892f77:1:ec79a42b",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The FBI followed community leaders with strong Japanese ties and raided homes for contraband is supported by external evidence."
+      },
+      {
+        "point_id": "nd5892f77:2:d755f489",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Japanese Americans were detained and interned as a result of official policy during WWII is supported by external evidence."
+      },
+      {
+        "point_id": "nd5892f77:3:139238ff",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Interned Japanese Americans could only take what they could carry, sustaining them for years is supported by external evidence."
+      },
+      {
+        "point_id": "nd5892f77:4:bc849d4c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Anti-Japanese sentiment and aggression were widespread after Pearl Harbor, supporting removal policies is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Sedition Act of 1918 prohibited disloyal language against the government and armed forces is supported by external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "nd17ac5a1",
+    "target_id": "nd502a541",
+    "point_reviews": [
+      {
+        "point_id": "nd502a541:0:8a4601d6",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Vietnam War inspired widespread dissent within the United States due to military intervention in support of a corrupt regime is supported by external evidence."
+      },
+      {
+        "point_id": "nd502a541:2:1aae853d",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Sedition Act of 1918 prohibited disloyal language against the government and armed forces is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:2:33644389",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime is supported by external evidence."
+      },
+      {
+        "point_id": "nd5892f77:2:d755f489",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "Japanese Americans were detained and interned as a result of official policy during WWII is supported by external evidence."
+      },
+      {
+        "point_id": "nd502a541:3:fccb8c56",
+        "basis": "UNKNOWN",
+        "reason": "Kissinger's Realpolitik focused on security over human rights, despite domestic protests advocating for the latter is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:1:5d3beae0",
+        "basis": "UNKNOWN",
+        "reason": "American support for a military coup in Chile led to organized terror against opposition, causing international outrage is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:4:bceeabc0",
+        "basis": "UNKNOWN",
+        "reason": "Nixon and Kissinger aimed to preserve American power credibility by mixing de-escalation with force in Vietnam is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd5892f77:4:bc849d4c",
+        "basis": "UNKNOWN",
+        "reason": "Anti-Japanese sentiment and aggression were widespread after Pearl Harbor, supporting removal policies is not mentioned in the local context or external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "nd17ac5a1",
+    "target_id": "nd87f4bcd",
+    "point_reviews": [
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Sedition Act of 1918 prohibited disloyal language against the government and armed forces is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:2:33644389",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:3:4bc93889",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The Committee on Public Information controlled war-related information to shape public opinion is supported by external evidence."
+      },
+      {
+        "point_id": "nd87f4bcd:4:0493dea1",
+        "basis": "UNKNOWN",
+        "reason": "The federal government centralized and coordinated the economy for total war mobilization is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:0:8a4601d6",
+        "basis": "UNKNOWN",
+        "reason": "The Vietnam War inspired widespread dissent within the United States due to military intervention in support of a corrupt regime is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:3:fccb8c56",
+        "basis": "UNKNOWN",
+        "reason": "Kissinger's Realpolitik focused on security over human rights, despite domestic protests advocating for the latter is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd17ac5a1:0:19e82853",
+        "basis": "UNKNOWN",
+        "reason": "Senator Joe McCarthy used war hysteria to assault civil liberties in the U.S. is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:1:5d3beae0",
+        "basis": "UNKNOWN",
+        "reason": "American support for a military coup in Chile led to organized terror against opposition, causing international outrage is not mentioned in the local context or external evidence."
+      },
+      {
+        "point_id": "nd502a541:2:1aae853d",
+        "basis": "UNKNOWN",
+        "reason": "Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate is not mentioned in the local context or external evidence."
+      }
+    ]
+  },
+  {
+    "grader_id": "nd87f4bcd",
+    "target_id": "nd5892f77",
+    "point_reviews": [
+      {
+        "point_id": "nd5892f77:0:569dd5f7",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that the US government froze assets of the Issei and imposed strict curfews after Pearl Harbor."
+      },
+      {
+        "point_id": "nd5892f77:1:ec79a42b",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that the FBI followed community leaders with strong Japanese ties and raided homes for contraband."
+      },
+      {
+        "point_id": "nd5892f77:2:d755f489",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that Japanese Americans were detained and interned as a result of official policy during WWII."
+      },
+      {
+        "point_id": "nd5892f77:3:139238ff",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that interned Japanese Americans could only take what they could carry, sustaining them for years."
+      },
+      {
+        "point_id": "nd5892f77:4:bc849d4c",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that anti-Japanese sentiment and aggression were widespread after Pearl Harbor, supporting removal policies."
+      },
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that the Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that the Sedition Act of 1918 prohibited disloyal language against the government and armed forces."
+      }
+    ]
+  },
+  {
+    "grader_id": "nd87f4bcd",
+    "target_id": "nd502a541",
+    "point_reviews": [
+      {
+        "point_id": "nd502a541:0:8a4601d6",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that the Vietnam War inspired widespread dissent due to U.S. military intervention in support of a corrupt regime."
+      },
+      {
+        "point_id": "nd502a541:2:1aae853d",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate."
+      },
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that the Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that the Sedition Act of 1918 prohibited disloyal language against the government and armed forces."
+      },
+      {
+        "point_id": "nd87f4bcd:2:33644389",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that the Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime."
+      },
+      {
+        "point_id": "nd5892f77:2:d755f489",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that Japanese Americans were detained and interned as a result of official policy during WWII."
+      },
+      {
+        "point_id": "nd502a541:3:fccb8c56",
+        "basis": "UNKNOWN",
+        "reason": "The point about Kissinger's Realpolitik focusing on security over human rights is not directly supported by the local or external evidence provided."
+      },
+      {
+        "point_id": "nd502a541:1:5d3beae0",
+        "basis": "UNKNOWN",
+        "reason": "The point about American support for a military coup in Chile leading to organized terror is not directly supported by the local or external evidence provided."
+      },
+      {
+        "point_id": "nd502a541:4:bceeabc0",
+        "basis": "UNKNOWN",
+        "reason": "The point about Nixon and Kissinger aiming to preserve American power credibility is not directly supported by the local or external evidence provided."
+      },
+      {
+        "point_id": "nd5892f77:4:bc849d4c",
+        "basis": "UNKNOWN",
+        "reason": "The point about anti-Japanese sentiment and aggression being widespread after Pearl Harbor is not directly supported by the local or external evidence provided."
+      }
+    ]
+  },
+  {
+    "grader_id": "nd87f4bcd",
+    "target_id": "nd17ac5a1",
+    "point_reviews": [
+      {
+        "point_id": "nd17ac5a1:0:19e82853",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that Senator Joe McCarthy used war hysteria to assault civil liberties in the U.S."
+      },
+      {
+        "point_id": "nd87f4bcd:2:33644389",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that the Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime."
+      },
+      {
+        "point_id": "nd502a541:0:8a4601d6",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that the Vietnam War inspired widespread dissent due to U.S. military intervention in support of a corrupt regime."
+      },
+      {
+        "point_id": "nd87f4bcd:3:4bc93889",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that the Committee on Public Information controlled war-related information to shape public opinion."
+      },
+      {
+        "point_id": "nd87f4bcd:1:8fba4bc0",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that the Sedition Act of 1918 prohibited disloyal language against the government and armed forces."
+      },
+      {
+        "point_id": "nd87f4bcd:0:d6dd8de2",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that the Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy."
+      },
+      {
+        "point_id": "nd502a541:2:1aae853d",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate."
+      },
+      {
+        "point_id": "nd87f4bcd:4:0493dea1",
+        "basis": "LOCAL_SUPPORTED",
+        "reason": "The local context confirms that the federal government centralized and coordinated the economy for total war mobilization."
+      },
+      {
+        "point_id": "nd5892f77:0:569dd5f7",
+        "basis": "EXTERNAL_SUPPORTED",
+        "reason": "The external evidence confirms that the US government froze assets of the Issei and imposed strict curfews after Pearl Harbor."
+      }
+    ]
+  }
+]

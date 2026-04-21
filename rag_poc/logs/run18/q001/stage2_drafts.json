@@ -1,27 +1,102 @@
 [
   {
-    "node_id": "node_a",
-    "synthesis_text": "COVID-19 is a contagious disease caused by the coronavirus SARS‑CoV‑2 [doc1_covid19.txt:chunk_00000][doc1_covid19.txt:chunk_00024]; the World Health Organization declared it a global health emergency in March 2020 and ended the emergency in May 2023 [doc1_covid19.txt:chunk_00000].",
+    "node_id": "ndeaded7c",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "ndf0bd955",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd5892f77",
+    "synthesis_text": "During World War II, the U.S. government took significant actions that curtailed civil liberties, particularly against Japanese Americans. The government froze the assets of the Issei and imposed strict curfews following the attack on Pearl Harbor [nd5892f77:0:569dd5f7]. The FBI also targeted community leaders with strong Japanese ties, conducting raids for contraband [nd5892f77:1:ec79a42b]. Official policies led to the internment of Japanese Americans, where they were only allowed to take what they could carry, sustaining them for years [nd5892f77:2:d755f489, nd5892f77:3:139238ff]. Anti-Japanese sentiment was widespread, supporting these removal policies [nd5892f77:4:bc849d4c]. Externally, the Espionage Act of 1917 and the Sedition Act of 1918 further demonstrate the U.S. government's suppression of dissent by criminalizing obstructive speech and disloyal language during wartime [nd87f4bcd:0:d6dd8de2, nd87f4bcd:1:8fba4bc0].",
     "used_points": [
-      "node_a:0:2507e9f8",
-      "node_a:1:1a4ae692"
+      "nd5892f77:0:569dd5f7",
+      "nd5892f77:1:ec79a42b",
+      "nd5892f77:2:d755f489",
+      "nd5892f77:3:139238ff",
+      "nd5892f77:4:bc849d4c",
+      "nd87f4bcd:0:d6dd8de2",
+      "nd87f4bcd:1:8fba4bc0"
     ]
   },
   {
-    "node_id": "node_b",
-    "synthesis_text": "COVID-19 is an illness caused by the SARS‑CoV‑2 virus [doc2_covid19.txt:chunk_00000]. The virus began spreading at the end of 2019 and was declared a pandemic in 2020 [doc2_covid19.txt:chunk_00000]. It spreads mainly through close contact via respiratory droplets when an infected person coughs, sneezes, talks, or breathes [doc2_covid19.txt:chunk_00007]. Most infected people experience mild or no symptoms, but older adults and individuals with certain medical conditions are at higher risk of developing severe illness [doc2_covid19.txt:chunk_000].",
+    "node_id": "nd502a541",
+    "synthesis_text": "The U.S. government has historically curtailed civil liberties and suppressed dissent during large-scale wars. During the Vietnam War, widespread dissent arose due to U.S. military intervention in support of a corrupt regime [nd502a541:0:8a4601d6]. Kissinger and Cold War intellectuals limited domestic democracy by not subjecting their policies to public debate [nd502a541:2:1aae853d]. The Espionage Act of 1917 and the Sedition Act of 1918 are examples of legal measures that criminalized dissent and disloyal language during wartime [nd87f4bcd:0:d6dd8de2, nd87f4bcd:1:8fba4bc0]. The Supreme Court upheld these acts, allowing speech curtailment during wartime [nd87f4bcd:2:33644389]. Additionally, during WWII, Japanese Americans were detained and interned as a result of official policy [nd5892f77:2:d755f489]. These actions reflect a pattern of prioritizing national security over civil liberties during times of war.",
     "used_points": [
-      "node_b:0:2688a553",
-      "node_b:1:ab8a6792",
-      "node_b:2:bbd245c1",
-      "node_b:3:f8da2576"
+      "nd502a541:0:8a4601d6",
+      "nd502a541:2:1aae853d",
+      "nd87f4bcd:0:d6dd8de2",
+      "nd87f4bcd:1:8fba4bc0",
+      "nd87f4bcd:2:33644389",
+      "nd5892f77:2:d755f489",
+      "nd502a541:3:fccb8c56",
+      "nd502a541:1:5d3beae0",
+      "nd502a541:4:bceeabc0",
+      "nd5892f77:4:bc849d4c"
     ]
   },
   {
-    "node_id": "node_c",
-    "synthesis_text": "COVID-19 is an infectious respiratory illness caused by the SARS‑CoV‑2 coronavirus; the term stands for corona, virus, disease [doc3_covid19.txt:chunk_00000].",
+    "node_id": "nd02aaf19",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd1cdfce4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd04a456b",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd010283a",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd17ac5a1",
+    "synthesis_text": "The U.S. government has historically curtailed civil liberties and suppressed dissent during large-scale wars. Locally, Senator Joe McCarthy used war hysteria during the Korean War to assault civil liberties [nd17ac5a1:0:19e82853]. Externally, the Supreme Court upheld the Espionage Act, allowing speech curtailment during wartime [nd87f4bcd:2:33644389]. The Vietnam War inspired widespread dissent due to U.S. military intervention in support of a corrupt regime [nd502a541:0:8a4601d6]. The Committee on Public Information controlled war-related information to shape public opinion [nd87f4bcd:3:4bc93889]. The Sedition Act of 1918 prohibited disloyal language against the government and armed forces [nd87f4bcd:1:8fba4bc0]. The Espionage Act of 1917 criminalized obstructing military recruitment and aiding the enemy [nd87f4bcd:0:d6dd8de2]. Kissinger and Cold War intellectuals limited democracy at home by not subjecting their policies to public debate [nd502a541:2:1aae853d]. The federal government centralized and coordinated the economy for total war mobilization [nd87f4bcd:4:0493dea1]. The US government froze assets of the Issei and imposed strict curfews after Pearl Harbor [nd5892f77:0:569dd5f7].",
     "used_points": [
-      "node_c:0:f0be5f17"
+      "nd17ac5a1:0:19e82853",
+      "nd87f4bcd:2:33644389",
+      "nd502a541:0:8a4601d6",
+      "nd87f4bcd:3:4bc93889",
+      "nd87f4bcd:1:8fba4bc0",
+      "nd87f4bcd:0:d6dd8de2",
+      "nd502a541:2:1aae853d",
+      "nd87f4bcd:4:0493dea1",
+      "nd5892f77:0:569dd5f7"
     ]
+  },
+  {
+    "node_id": "nd48cfee7",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "synthesis_text": "During World War I, the U.S. government enacted measures that curtailed civil liberties and suppressed dissent. The Espionage Act of 1917 criminalized actions such as obstructing military recruitment and aiding the enemy, while the Sedition Act of 1918 prohibited disloyal language against the government and armed forces. The Supreme Court upheld the Espionage Act, allowing for speech curtailment during wartime, as seen in the Schenck v. United States case. Additionally, the Committee on Public Information controlled war-related information to shape public opinion. These actions demonstrate the government's efforts to suppress dissent and control public discourse during wartime [nd87f4bcd:0:d6dd8de2, nd87f4bcd:1:8fba4bc0, nd87f4bcd:2:33644389, nd87f4bcd:3:4bc93889].",
+    "used_points": [
+      "nd87f4bcd:0:d6dd8de2",
+      "nd87f4bcd:1:8fba4bc0",
+      "nd87f4bcd:2:33644389",
+      "nd87f4bcd:3:4bc93889",
+      "nd87f4bcd:4:0493dea1",
+      "nd502a541:0:8a4601d6",
+      "nd502a541:3:fccb8c56",
+      "nd17ac5a1:0:19e82853",
+      "nd502a541:1:5d3beae0",
+      "nd502a541:2:1aae853d"
+    ]
+  },
+  {
+    "node_id": "nda91043d",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
   }
 ]

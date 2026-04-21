@@ -1,0 +1,82 @@
+{
+  "nda91043d:0:b11cf8cc": {
+    "point_id": "nda91043d:0:b11cf8cc",
+    "origin_node_id": "nda91043d",
+    "text": "Hitler's invasion of the Soviet Union in 1941 opened a two-front war, crucially engaging the USSR against Nazi Germany.",
+    "citations": [
+      "nda91043d_doc.txt:chunk_00015"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nda91043d_doc.txt",
+        "chunk_id": "chunk_00015",
+        "text": "In 1941, however, Hitler made a colossal blunder. In fact, perhaps no event in human history can match in significance the Fuhrer’s decision to invade the Soviet Union in the early summer. He had not defeated Great Britain, and yet he was turning his armies to the east, initiating a two-front war. When his soldiers crossed the USSR frontier on June 22, the Nazis leader’s new opponent became Joseph Stalin, a dictator as ruthless and cunning as himself, and the head of both the largest country and the largest army on earth",
+        "score": 0.5777
+      }
+    ]
+  },
+  "nda91043d:1:ae932410": {
+    "point_id": "nda91043d:1:ae932410",
+    "origin_node_id": "nda91043d",
+    "text": "The Eastern Front was a massive battleground where four-fifths of all Wehrmacht soldiers who died in the war perished fighting the Red Army.",
+    "citations": [
+      "nda91043d_doc.txt:chunk_00016"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nda91043d_doc.txt",
+        "chunk_id": "chunk_00016",
+        "text": ". The eastern front, which involved hundreds of combat divisions stretched over thousands of miles of windswept terrain, would turn out to be a human furnace that consumed soldiers as hungrily as steam engines consume coals. Germany essentially bled to death in Russia, as four-fifths of all Wehrmacht soldiers who perished in the war died while fighting the Red Army. For the Soviet Union, the carnage was even worse. A staggering 27 million USSR citizens died in what for them will always be \"the Great Patriotic War.\"",
+        "score": 0.566
+      }
+    ]
+  },
+  "nda91043d:2:23a9bcc3": {
+    "point_id": "nda91043d:2:23a9bcc3",
+    "origin_node_id": "nda91043d",
+    "text": "The Soviet Union suffered immense casualties, with 27 million USSR citizens dying in what they call 'the Great Patriotic War.'",
+    "citations": [
+      "nda91043d_doc.txt:chunk_00016"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nda91043d_doc.txt",
+        "chunk_id": "chunk_00016",
+        "text": ". The eastern front, which involved hundreds of combat divisions stretched over thousands of miles of windswept terrain, would turn out to be a human furnace that consumed soldiers as hungrily as steam engines consume coals. Germany essentially bled to death in Russia, as four-fifths of all Wehrmacht soldiers who perished in the war died while fighting the Red Army. For the Soviet Union, the carnage was even worse. A staggering 27 million USSR citizens died in what for them will always be \"the Great Patriotic War.\"",
+        "score": 0.566
+      }
+    ]
+  },
+  "nda91043d:3:8ff3bad0": {
+    "point_id": "nda91043d:3:8ff3bad0",
+    "origin_node_id": "nda91043d",
+    "text": "The Red Army's victory at Stalingrad marked a turning point, leading to the systematic annihilation of the German Sixth Army.",
+    "citations": [
+      "nda91043d_doc.txt:chunk_00055"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nda91043d_doc.txt",
+        "chunk_id": "chunk_00055",
+        "text": ". Meanwhile, the Americans who had landed in Morocco and Algeria trapped thousands of Nazi soldiers who could not escape across the Mediterranean Sea. In 1943, a combined Anglo-American force invaded Sicily and then Italy, ultimately knocking that country out of the war. And in perhaps the most devastating battle of all time, at Stalingrad between August 1942 and February 1943, the proud German Sixth Army, conquerors of France, was systematically annihilated by a vengeful Red Army. Thereafter, Hitler’s legions were rarely able to attack",
+        "score": 0.4366
+      }
+    ]
+  },
+  "nda91043d:4:b062725d": {
+    "point_id": "nda91043d:4:b062725d",
+    "origin_node_id": "nda91043d",
+    "text": "The Red Army's advance into East Prussia contributed to the encirclement and eventual defeat of Nazi Germany.",
+    "citations": [
+      "nda91043d_doc.txt:chunk_00067"
+    ],
+    "evidence_chunks": [
+      {
+        "doc_id": "nda91043d_doc.txt",
+        "chunk_id": "chunk_00067",
+        "text": "The D-Day landings were successful, and despite bitter fighting over the coming months, the Allies used their heavy artillery, their enormous air armada, and their dozens of well-equipped infantry divisions to pulverize the once invincible German war machine. With the Red Army smashing into East Prussia from the east, the British and American heavy bombers raining destruction from the skies on German cities, and Allied armored columns crossing the Rhine River and encircling trapped Wehrmacht divisions, Adolf Hitler committed suicide in his Berlin bunker on April 30, 1945",
+        "score": 0.513
+      }
+    ]
+  }
+}

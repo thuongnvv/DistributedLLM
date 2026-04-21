@@ -1,37 +1,62 @@
 [
   {
-    "node_id": "node_a",
-    "synthesis_text": "COVID-19 is a contagious disease caused by the coronavirus SARS‑CoV‑2. It emerged in January 2020 and spread worldwide, leading to a pandemic. The World Health Organization declared it a global health emergency in March 2020 and ended the emergency in May 2023. The official name COVID‑19 (short for “coronavirus disease 2019”) and the virus name SARS‑CoV‑2 were issued by WHO on 11 February 2020. [doc1_covid19.txt:chunk_00000] [doc1_covid19.txt:chunk_00009]",
-    "used_points": [
-      "node_a:0:a479a0da",
-      "node_a:1:60d73ca",
-      "node_a:2:5f7ee840",
-      "node_a:3:5deffde3"
-    ]
+    "node_id": "ndeaded7c",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
   },
   {
-    "node_id": "node_b",
-    "synthesis_text": "COVID-19 is an illness caused by the SARS‑CoV‑2 virus [doc2_covid19.txt:chunk_00000]. It spreads primarily through close contact via tiny respiratory droplets in the air, and can also be transmitted when infected people cough, sneeze, breathe, sing or talk, releasing virus‑laden breath [doc2_covid19.txt:chunk_00000][doc2_covid19.txt:chunk_00007]. Most infected individuals have mild illness or no symptoms, but older adults and those with certain medical conditions may require hospital care or die [doc2_covid19.txt:chunk_00000]. High‑risk groups include people aged 65 years or older, infants under 6 months, and those with heart disease, diabetes, chronic organ disease, obesity, smoking, among others [doc2_covid19.txt:chunk_00012]. Good indoor airflow, physical distancing, mask wearing, and hygiene help prevent spread [doc2_covid19.txt:chunk_00001]. Vaccination (e.g., Moderna, Pfizer‑BioNTech, Novavax) reduces the risk of serious illness, hospitalization, and death [doc2_covid19.txt:chunk_00017]. Immunity may wane, so reinfection is possible [doc2_covid19.txt:chunk_00009]. The virus can infect some pets such as cats, dogs, hamsters, and ferrets, though transmission from pets to people is rare [doc2_covid19.txt:chunk_00010]. Transmission from contaminated surfaces is uncommon [doc2_covid19.txt:chunk_00012].",
-    "used_points": [
-      "node_b:0:8ceb7784",
-      "node_b:1:f08e9d3b",
-      "node_b:2:c30b07ba",
-      "node_b:3:117529d6",
-      "node_b:4:36bd76db",
-      "node_b:5:9b17d602",
-      "node_b:6:7d27c7a4",
-      "node_b:7:f4970f56",
-      "node_b:8:36fdbe7d",
-      "node_b:9:cfa55a0d"
-    ]
+    "node_id": "ndf0bd955",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
   },
   {
-    "node_id": "node_c",
-    "synthesis_text": "COVID-19 is an infectious respiratory illness caused by the coronavirus SARS‑CoV‑2. [doc3_covid19.txt:chunk_00000]",
-    "used_points": [
-      "node_c:0:f6b56f70",
-      "node_a:0:a479a0da",
-      "node_b:0:8ceb7784"
-    ]
+    "node_id": "nd5892f77",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd502a541",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd02aaf19",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd1cdfce4",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd04a456b",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd010283a",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd17ac5a1",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd48cfee7",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nd87f4bcd",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
+  },
+  {
+    "node_id": "nda91043d",
+    "synthesis_text": "UNKNOWN",
+    "used_points": []
   }
 ]
